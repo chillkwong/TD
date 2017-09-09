@@ -6,7 +6,8 @@
 				<div class="field">
 				  <label class="label">Email</label>
 				  <div class="control has-icons-left has-icons-right">
-				    <input class="input :is-danger='error.email'" type="email" placeholder="@">
+				    <input class="input :is-danger='error.email'" v-model="form.email" type="text" placeholder="@">
+				    <!-- <input type="text" class="form__control" v-model="form.email"> -->
 				    <span class="icon is-small is-left">
 				      <i class="fa fa-envelope"></i>
 				    </span>
@@ -58,7 +59,7 @@
 						if (res.data.authenticated) {
 							Auth.set(res.data.api_token, res.data.user_id)
 							Flash.setSuccess('You have successfully logged in!')
-							this.$router.push('/')
+							this.$router.push('/adm')
 						}
 						this.isProcessing = false
 					})
