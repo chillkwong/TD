@@ -1,17 +1,14 @@
 <template>
 	<div>
-	
-	<Header></Header>
-
+	<router-view class="view one" name="header"></router-view>
 	<router-view></router-view>
-
+	<router-view class="view three" name="footer"></router-view>
 	</div>
 </template>
 
 
 <script type="text/javascript">
-	import Header from './views/layouts/header.vue'
-	import Footer from  './views/layouts/footer.vue'
+
 	export default {
 		data(){
 			return {
@@ -19,7 +16,6 @@
 				changedLocales: 'en',
 			}
 		},
-		components: { Header},
 		watch: {
 			'changedLocales': 'updateLocale'
 		},

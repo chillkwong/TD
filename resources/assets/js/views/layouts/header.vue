@@ -1,5 +1,5 @@
 <template>
-	<section class="hero is-primary is-medium">
+	<section class="hero is-primary is-bold">
 	  <!-- Hero header: will stick at the top -->
 			  <nav class="navbar ">
 		  <div class="navbar-brand">

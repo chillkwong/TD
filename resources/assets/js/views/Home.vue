@@ -1,3 +1,10 @@
+<template>
+  <div>
+    123
+  </div>
+</template>
+
+
 <script type="text/javascript">
 
   // import Flash from '../helpers/flash'
