@@ -36,6 +36,7 @@ class AdminController extends Controller
 	    				'authenticated' => true,
 	    				'api_token' => $user->api_token,
 	    				'user_id' => $user->id
+	    				// 'role' => $user->roles()->first(['name'])
 	    				]);
 	    	}
 

@@ -8,6 +8,8 @@ import AdmHeader from '../views/adm/header.vue'
 import AdmFooter from '../views/adm/footer.vue'
 import Admin from '../views/adm/index.vue'
 
+import Auth from '../store/auth'
+
 import Home from '../views/home.vue'
 import AdmLogin from '../views/Auth/adm_login.vue'
 
@@ -24,7 +26,7 @@ const router = new VueRouter({
 
 
 	{path: '/td-login', component: AdmLogin},
-	{path: '/adm', components: {header:AdmHeader, default: Admin, footer:AdmFooter},
+	{path: '/adm', components: { default: Admin, header:AdmHeader, footer:AdmFooter}, meta: {login: Auth.state.loggedIn},
 		children:[
 		{path: 'posts',}
 		]}
