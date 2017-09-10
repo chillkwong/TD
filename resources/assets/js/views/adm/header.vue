@@ -1,17 +1,17 @@
 <template>
 <nav class="navbar">
   <div class="navbar-brand">
-    <a class="navbar-item" href="http://bulma.io">
+    <a class="navbar-item" href="/adm">
       <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
     </a>
 
-    <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
+    <a class="navbar-item is-hidden-desktop" href="/adm" target="_blank">
       <span class="icon" style="color: #333;">
         <i class="fa fa-github"></i>
       </span>
     </a>
 
-    <a class="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
+    <a class="navbar-item is-hidden-desktop" href="/adm" target="_blank">
       <span class="icon" style="color: #55acee;">
         <i class="fa fa-twitter"></i>
       </span>
@@ -27,8 +27,8 @@
   <div id="navMenubd-example" class="navbar-menu">
     <div class="navbar-start">
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link  is-active" href="/documentation/overview/start/">
-          Docs
+        <a class="navbar-link  is-active" href="/adm/invoice">
+          Invoice
         </a>
         <div class="navbar-dropdown ">
           <a class="navbar-item " href="/documentation/overview/start/">
@@ -70,8 +70,8 @@
         </div>
       </div>
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link " href="http://bulma.io/blog/">
-          Blog
+        <a class="navbar-link " href="/adm/customer">
+          Customer
         </a>
         <div id="blogDropdown" class="navbar-dropdown " data-style="width: 18rem;">
           
@@ -223,7 +223,7 @@
     },
 
     created(){
-      if (!this.Auth.state.api_token && !this.Auth.state.user_id) {
+      if (!Auth.state.api_token && !Auth.state.user_id) {
         this.$router.push('/td-login')
       }
     }

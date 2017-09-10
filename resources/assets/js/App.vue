@@ -1,6 +1,6 @@
 <template>
 	<div>
-	<router-view class="view one" name="header" :login="auth.loggedIn"></router-view>
+	<router-view class="view one" name="header"></router-view>
 	<router-view></router-view>
 	<router-view class="view three" name="footer"></router-view>
 	</div>

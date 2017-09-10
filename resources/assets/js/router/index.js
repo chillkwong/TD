@@ -14,6 +14,7 @@ import Admin from '../views/adm/index.vue'
 
 //invoice
 import InvoiceIndex from '../views/invoice/index.vue'
+import InvoiceShow from '../views/invoice/show.vue'
 
 //Auth
 import AdmLogin from '../views/Auth/adm_login.vue'
@@ -36,9 +37,12 @@ const router = new VueRouter({
 
 	{path: '/td-login', component: AdmLogin},
 	{path: '/adm', components: { default: Admin, header:AdmHeader, footer:AdmFooter},
+
 		children:[
-		{path: 'invoice', components: { default: InvoiceIndex, header:AdmHeader, footer:AdmFooter}}
+		{path: 'invoice', component: InvoiceIndex},
+		{path: 'invoice/:id', component: InvoiceShow}
 		]}
+
 	]
 	
 })

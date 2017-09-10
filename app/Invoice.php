@@ -11,10 +11,16 @@ class Invoice extends Model
     use FilterPaginateOrder;
 
 	protected $fillable = [
-	'customer_id', 'title', 'date','due_date', 'discount', 'sub_total', 'deposti','balance', 'total', 'created_at',
-    'customer.id', 'customer.email', 'customer.name', 
-            'customer.phone',  'customer.created_at'
-	];
+        'customer_id', 'title', 'date', 'due_date', 'discount',
+        'sub_total', 'total'
+    ];
+
+    protected $filter = [
+        'id', 'customer_id', 'title', 'date', 'due_date', 'discount',
+        'sub_total', 'total', 'created_at',
+        'customer.id', 'customer.company', 'customer.email', 'customer.name', 
+            'customer.phone', 'customer.address', 'customer.created_at'
+    ];
 
 	public function customer()
     {

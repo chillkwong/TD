@@ -38,7 +38,7 @@ trait FilterPaginateOrder{
 
 		return $query->orderBy($request->column, $request->direction)
 				->where(function($query) use ($request) {
-					if ($request->has('search_query_1')) {
+					if (!$request->search_query_1 == '') {
 						
 						if ($this->isRelatedColumn($request)) {
 							list($relation, $relatedColumn) = explode('.', $request->search_column);
