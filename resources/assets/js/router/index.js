@@ -1,17 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+//layouts
 import Header from '../views/layouts/header.vue'
 import Footer from '../views/layouts/footer.vue'
 
+//admin layouts
 import AdmHeader from '../views/adm/header.vue'
 import AdmFooter from '../views/adm/footer.vue'
 import Admin from '../views/adm/index.vue'
 
-import Auth from '../store/auth'
+//admin dashboard
 
-import Home from '../views/home.vue'
+//invoice
+import InvoiceIndex from '../views/invoice/index.vue'
+
+//Auth
 import AdmLogin from '../views/Auth/adm_login.vue'
+
+//home
+import Home from '../views/home.vue'
+
 
 Vue.use(VueRouter)
 
@@ -26,9 +35,9 @@ const router = new VueRouter({
 
 
 	{path: '/td-login', component: AdmLogin},
-	{path: '/adm', components: { default: Admin, header:AdmHeader, footer:AdmFooter}, meta: {login: Auth.state.loggedIn},
+	{path: '/adm', components: { default: Admin, header:AdmHeader, footer:AdmFooter},
 		children:[
-		{path: 'posts',}
+		{path: 'invoice', components: { default: InvoiceIndex, header:AdmHeader, footer:AdmFooter}}
 		]}
 	]
 	

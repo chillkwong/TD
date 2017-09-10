@@ -212,17 +212,18 @@
 </template>
 
 <script type="text/javascript">
-  
+
+  import Auth from '../../store/auth.js'
+
   export default{
     data(){
       return {
      
       }
     },
-    props: ['login'],
 
     created(){
-      if (!this.login) {
+      if (!this.Auth.state.api_token && !this.Auth.state.user_id) {
         this.$router.push('/td-login')
       }
     }

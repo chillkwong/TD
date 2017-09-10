@@ -22,7 +22,11 @@ Route::post('/register', 'AuthController@register');
 Route::post('/login', 'AuthController@login');
 Route::post('/logout', 'AuthController@logout');
 
+Route::resource('customer', 'CustomerController');
+
 Route::resource('posts', 'PostController');
 Route::resource('invoices', 'InvoiceController');
+
+
 
 Route::Post('td-login', 'AdminController@login');
