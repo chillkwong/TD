@@ -2,7 +2,7 @@
 <nav class="navbar">
   <div class="navbar-brand">
     <a class="navbar-item" href="/adm">
-      <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+      <img src="images.company.logo" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
     </a>
 
     <a class="navbar-item is-hidden-desktop" href="/adm" target="_blank">
@@ -27,7 +27,7 @@
   <div id="navMenubd-example" class="navbar-menu">
     <div class="navbar-start">
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link  is-active" href="/adm/invoice">
+        <a class="navbar-link  is-active" href="/adm/invoices">
           Invoice
         </a>
         <div class="navbar-dropdown ">
@@ -216,6 +216,7 @@
   import Auth from '../../store/auth.js'
 
   export default{
+    props: ['images'],
     data(){
       return {
      
@@ -223,9 +224,9 @@
     },
 
     created(){
-      if (!Auth.state.api_token && !Auth.state.user_id) {
-        this.$router.push('/td-login')
-      }
+      // if (!Auth.state.api_token && !Auth.state.user_id) {
+      //   this.$router.push('/td-login')
+      // }
     }
   }
 

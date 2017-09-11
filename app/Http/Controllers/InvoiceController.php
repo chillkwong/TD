@@ -21,7 +21,7 @@ class InvoiceController extends Controller
     {
     	return response()
     		->json([
-    			'form' =>Invoice::initialize(),
+    			'form' =>Invoice::form(),
     			'option' => [
     				'customers' => Customer::orderBy('name')->get()
     			]
@@ -80,7 +80,7 @@ class InvoiceController extends Controller
     		->json([
     			'form' => $invoice,
     			'option' => [
-                                            'customers' => Customer::orderBy('name')->get()
+                         'customers' => Customer::orderBy('name')->get()
                                          ],
 
     			]);

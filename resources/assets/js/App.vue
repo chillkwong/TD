@@ -1,6 +1,6 @@
 <template>
 	<div>
-	<router-view class="view one" name="header"></router-view>
+	<router-view class="view one" name="header" :images="images"></router-view>
 	<router-view></router-view>
 	<router-view class="view three" name="footer"></router-view>
 	</div>
@@ -13,6 +13,7 @@
 	import Flash from './helpers/flash'
 	import Auth from './store/auth'
 	import {post} from './helpers/api'
+	import Images from './helpers/images'
 
 	export default {
 
@@ -24,7 +25,8 @@
 				locales: [ 'en', 'hk', 'cn' ],
 				changedLocales: 'en',
 				flash: Flash.state,
-				auth: Auth.state
+				auth: Auth.state,
+				images: Images
 			}
 		},
 		watch: {

@@ -75,8 +75,9 @@
 </template>
 
 <script>
+
 	import Vue from 'vue'
-	import axios from 'axios'
+	import { get } from '../helpers/api'
 
 	export default {
 		props: ['source', 'thead', 'filter', 'create', 'title'],
@@ -140,10 +141,10 @@
 				this.fetchData()
 			},
 			fetchData(){
-				var vm = this
-				axios.get(this.buildURL())
-					.then(function(response){
-						Vue.set(vm.$data, 'model', response.data.model)
+
+					get(this.buildURL())
+					.then((res)=>{
+						Vue.set(this.$data, 'model', res.data.model)
 					})
 					.catch(function(error){
 						console.log(error)

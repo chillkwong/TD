@@ -17,7 +17,7 @@ class Invoice extends Model
 
     protected $filter = [
         'id', 'customer_id', 'title', 'date', 'due_date', 'discount',
-        'sub_total', 'total', 'created_at',
+        'sub_total','deposit','balance', 'total', 'created_at',
         'customer.id', 'customer.company', 'customer.email', 'customer.name', 
             'customer.phone', 'customer.address', 'customer.created_at'
     ];

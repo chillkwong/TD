@@ -1,6 +1,14 @@
 <template>
 	<div class="container">
-		
+		<nav class="level">
+			<div class="level-left">
+				<div class="level-item">
+					<p>
+						<img src="images.company.logo">1
+					</p>
+				</div>
+			</div>
+		</nav>
 	</div>
 </template>
 
@@ -15,8 +23,8 @@
 					customer: {},
 					items: []
 				},
-				resource: 'invoice',
-				redirect: '/invoice'
+				resource: 'invoices',
+				redirect: '/invoices'
 			}
 		},
 		beforeMount(){

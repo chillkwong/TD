@@ -39,8 +39,8 @@ const router = new VueRouter({
 	{path: '/adm', components: { default: Admin, header:AdmHeader, footer:AdmFooter},
 
 		children:[
-		{path: 'invoice', component: InvoiceIndex},
-		{path: 'invoice/:id', component: InvoiceShow}
+		{path: 'invoices', component: InvoiceIndex},
+		{path: 'invoices/:id', component: InvoiceShow}
 		]}
 
 	]
