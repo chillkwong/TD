@@ -9,6 +9,15 @@ use App\Customer;
 
 class InvoiceController extends Controller
 {
+    protected $company = [ 'info'=> [
+                            'name' => 'Ting Diamond Limited',
+                            'address' => 'Room 03, 3F, Koon Fook Centre, 9 knutsford Terrace, Tsim Sha Tsui, 
+                                            Hong Kong',
+                            'contact' => '852 54844533',
+                            'website' => 'www.tingdiamond.com'
+                                ]
+                        ];
+
     public function index()
     {
     	return response()
@@ -68,7 +77,8 @@ class InvoiceController extends Controller
 
     	return response()
     		->json([
-    			'model' =>$invoice
+    			'model' =>$invoice,
+                'company' => $this->company
     			]);
     }
 

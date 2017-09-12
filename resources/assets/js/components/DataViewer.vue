@@ -48,7 +48,7 @@
 				<button class="button is-info">Filter</button>
 			</div>
 		</div>
-		<table class="table">
+		<table class="table is-fullwidth">
 			<thead>
 				<tr>
 					<th v-for="item in thead">

@@ -2,7 +2,7 @@
 <nav class="navbar">
   <div class="navbar-brand">
     <a class="navbar-item" href="/adm">
-      <img src="images.company.logo" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+      <img :src="images.company.logo" alt="Bulma: a modern CSS framework based on Flexbox" width="40" height="200">
     </a>
 
     <a class="navbar-item is-hidden-desktop" href="/adm" target="_blank">
@@ -18,9 +18,9 @@
     </a>
 
     <div class="navbar-burger burger" data-target="navMenubd-example">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
     </div>
   </div>
 

@@ -15605,8 +15605,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('nav', {
     staticClass: "navbar"
   }, [_c('div', {
@@ -15618,12 +15616,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('img', {
     attrs: {
-      "src": "images.company.logo",
+      "src": _vm.images.company.logo,
       "alt": "Bulma: a modern CSS framework based on Flexbox",
-      "width": "112",
-      "height": "28"
+      "width": "40",
+      "height": "200"
     }
-  })]), _vm._v(" "), _c('a', {
+  })]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)]), _vm._v(" "), _vm._m(3)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
     staticClass: "navbar-item is-hidden-desktop",
     attrs: {
       "href": "/adm",
@@ -15636,7 +15636,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('i', {
     staticClass: "fa fa-github"
-  })])]), _vm._v(" "), _c('a', {
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
     staticClass: "navbar-item is-hidden-desktop",
     attrs: {
       "href": "/adm",
@@ -15649,12 +15651,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('i', {
     staticClass: "fa fa-twitter"
-  })])]), _vm._v(" "), _c('div', {
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "navbar-burger burger",
     attrs: {
       "data-target": "navMenubd-example"
     }
-  }, [_c('span'), _vm._v(" "), _c('span'), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
+  }, [_c('span', [_vm._v("1")]), _vm._v(" "), _c('span', [_vm._v("2")]), _vm._v(" "), _c('span', [_vm._v("3")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "navbar-menu",
     attrs: {
       "id": "navMenubd-example"
@@ -15888,7 +15894,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "icon"
   }, [_c('i', {
     staticClass: "fa fa-download"
-  })]), _vm._v(" "), _c('span', [_vm._v("Download")])])])])])])])])
+  })]), _vm._v(" "), _c('span', [_vm._v("Download")])])])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -16030,14 +16036,13 @@ module.exports = Component.exports
 //
 //
 //
-//
 
 /***/ }),
 /* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._v("\n\tdashboard\n\t"), _c('router-view')], 1)
+  return _c('div', [_c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -16490,7 +16495,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }) : _vm._e()]), _vm._v(" "), _c('button', {
     staticClass: "button is-info"
   }, [_vm._v("Filter")])])]) : _vm._e(), _vm._v(" "), _c('table', {
-    staticClass: "table"
+    staticClass: "table is-fullwidth"
   }, [_c('thead', [_c('tr', _vm._l((_vm.thead), function(item) {
     return _c('th', [(item.sort) ? _c('div', {
       on: {
@@ -16598,6 +16603,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_images__ = __webpack_require__(73);
 //
 //
 //
@@ -16612,6 +16618,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 
@@ -16623,6 +16669,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				customer: {},
 				items: []
 			},
+			company: [],
+			images: __WEBPACK_IMPORTED_MODULE_2__helpers_images__["a" /* default */],
 			resource: 'invoices',
 			redirect: '/invoices'
 		};
@@ -16639,6 +16687,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var vm = this;
 			__WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/' + this.resource + '/' + this.$route.params.id).then(function (response) {
 				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(vm.$data, 'model', response.data.model);
+				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(vm.$data, 'company', response.data.company);
 			}).catch(function (error) {
 				console.log(error);
 			});
@@ -16661,21 +16710,54 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "container"
-  }, [_c('nav', {
-    staticClass: "level"
   }, [_c('div', {
-    staticClass: "level-left"
+    staticClass: "columns"
   }, [_c('div', {
-    staticClass: "level-item"
-  }, [_c('p', [_c('img', {
+    staticClass: "column"
+  }, [_c('img', {
     attrs: {
-      "src": "images.company.logo"
+      "src": _vm.images.company.logo,
+      "alt": "Bulma: a modern CSS framework based on Flexbox",
+      "width": "60",
+      "height": "200"
     }
-  }), _vm._v("1\n\t\t\t\t")])])])])])
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "column"
+  }, [_c('h1', {
+    staticClass: "title is-1"
+  }, [_vm._v("Invoice")]), _vm._v(" "), _c('h1', {
+    staticClass: "title is-4"
+  }, [_vm._v(_vm._s(_vm.company.info.name))]), _vm._v(" "), _c('h1', {
+    staticClass: "subtitle is-6"
+  }, [_vm._v(_vm._s(_vm.company.info.address))]), _vm._v(" "), _c('h1', {
+    staticClass: "subtitle is-6"
+  }, [_vm._v(_vm._s(_vm.company.info.contact))]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "/"
+    }
+  }, [_vm._v(_vm._s(_vm.company.info.website))])])]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('div', {
+    staticClass: "columns"
+  }, [_c('div', {
+    staticClass: "column"
+  }, [_c('p', {
+    staticClass: "subtitle is-5"
+  }, [_vm._v("BILL TO")]), _vm._v(" "), _c('p', {
+    staticClass: "title is-5"
+  }, [_vm._v(_vm._s(_vm.model.customer.name))]), _vm._v(" "), _c('p', {
+    staticClass: "title is-6"
+  }, [_vm._v(_vm._s(_vm.model.customer.phone))])]), _vm._v(" "), _c('div', {
+    staticClass: "column"
+  }, [_c('p', [_c('strong', [_vm._v("Invoice Number: ")]), _vm._v(_vm._s(_vm.model.id))]), _vm._v(" "), _c('p', [_c('strong', [_vm._v(" Invoice Date: ")]), _vm._v(" " + _vm._s(_vm.model.date))]), _vm._v(" "), _c('p', [_c('strong', [_vm._v(" Payment Due: ")]), _vm._v(" " + _vm._s(_vm.model.due_date))]), _vm._v(" "), _c('p', [_c('strong', [_vm._v(" Amount Due (HKD): ")]), _vm._v(" $" + _vm._s(_vm.model.total))])])]), _vm._v(" "), _c('table', {
+    staticClass: "table is-fullwidth"
+  }, [_vm._m(0), _vm._v(" "), _c('tbody', _vm._l((_vm.model.items), function(item) {
+    return _c('tr', [_c('td', [_vm._v(_vm._s(item.name) + _vm._s(item.description))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item.qty))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item.unit_price))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item.unit_price * item.qty))])])
+  }))])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', {
+    staticClass: "table-head-color blue"
+  }, [_c('tr', [_c('th', [_vm._v("Items")]), _vm._v(" "), _c('th', [_vm._v("Quantity")]), _vm._v(" "), _c('th', [_vm._v("Price")]), _vm._v(" "), _c('th', [_vm._v("Amount")])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -17025,7 +17107,7 @@ if (false) {
 /* harmony default export */ __webpack_exports__["a"] = ({
 	root: '/images/',
 	company: {
-		logo: this.root + 'logo_PNG_sq_60x60_1.png'
+		logo: '/images/company/' + 'logo_PNG_sq_60x60_1.png'
 	}
 });
 
