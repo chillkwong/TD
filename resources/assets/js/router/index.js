@@ -36,6 +36,7 @@ const router = new VueRouter({
 
 
 	{path: '/td-login', component: AdmLogin},
+	{path: '/invoices/pdf/:id', component: InvoiceShow},
 	{path: '/adm', components: { default: Admin, header:AdmHeader, footer:AdmFooter},
 
 		children:[

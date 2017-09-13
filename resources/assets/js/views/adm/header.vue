@@ -16,8 +16,11 @@
         <i class="fa fa-twitter"></i>
       </span>
     </a>
-
-    <div class="navbar-burger burger" data-target="navMenubd-example">
+    <button @click=" navBurger='!navBurger'">hi</button>
+    <div class="navbar-burger burger is-active" @click="!navBurger" data-target="navMenubd-example">
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
       <span>1</span>
       <span>2</span>
       <span>3</span>
@@ -219,7 +222,7 @@
     props: ['images'],
     data(){
       return {
-     
+            navBurger: true
       }
     },
 
