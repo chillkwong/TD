@@ -25,7 +25,7 @@
 			return {
 				title: 'Invoices',
 				source: '/api/invoices',
-				create:'/invoices/create',
+				create:'/adm/invoices/create',
 				thead: [
 				{ title: 'ID', key: 'id', sort: true},
 				{ title: 'Date', key: 'date', sort: true},

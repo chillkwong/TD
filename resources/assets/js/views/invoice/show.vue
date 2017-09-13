@@ -1,21 +1,30 @@
 <template>
 	<div class="container">
-	<div v-if="fullpath" class="columns">
-		<div class="column">
-			<router-link :to="'/invoices/pdf/' + model.id" class="button is-primary">PDF</router-link>
+	<div v-if="fullpath">
+	<div class="columns">
+		<div class="column is-left">
+			<router-link :to="'/invoices/pdf/' + model.id" class="button is-primary">Print</router-link>
 		</div>
+		<div class="column is-right">
+			
+			<router-link :to="'/adm/invoices/create'" class="button is-primary">Create</router-link>
+			<router-link :to="'/adm/invoices/' + model.id + '/edit'" class="button is-primary">Edit</router-link>
+			</div>
+		</div>
+
 	</div>
+	<div class="box">
 		<div class="columns">
 			<div class="column">
 				
 			      <img :src="images.company.logo" alt="Bulma: a modern CSS framework based on Flexbox" width="60" height="200">
 			   
 			</div>
-			<div class="column is-4">
+			<div class="column is-5">
 				<h1 class="title is-1">Invoice</h1>			
 				<h1 class="title is-4">{{company.info.name}}</h1>			
 				<h1 class="subtitle is-6">{{company.info.address}}</h1>
-				<h1 class="subtitle is-6">{{company.info.contact}}</h1>
+				<h1 class="subtitle is-6">Tel: {{company.info.contact}}</h1>
 				<a href="/">{{company.info.website}}</a>
 			</div>
 		</div>
@@ -26,7 +35,7 @@
 				<p class="title is-5">{{model.customer.name}}</p>
 				<p class="title is-6">Phone: {{model.customer.phone}}</p>
 			</div>
-			<div class="column is-2">
+			<div class="column is-3">
 				<p ><strong>Invoice Number: </strong></p>			
 				<p ><strong> Invoice Date: </strong></p>			
 				<p ><strong> Payment Due: </strong></p>
@@ -39,6 +48,7 @@
 				<p >${{model.total}}</p>
 			</div>
 		</div>
+
 		<table class="table is-fullwidth">
 				<thead>
 					<tr>
@@ -57,43 +67,41 @@
 						<td>{{item.unit_price}}</td>
 						<td>${{item.unit_price * item.qty}}</td>
 					</tr>
+				</tbody>
+				<tfoot>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td colspan="3"></td>
 						<td><p class="subtitle is-6"><strong>Deposit:</strong></p></td>
 						<td>${{model.deposit}}</td>
 					</tr>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td colspan="3"></td>
 						<td><p class="subtitle is-6"><strong>Balance:</strong></p></td>
 						<td>${{model.balance}}</td>
 					</tr>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td colspan="3"></td>
 						<td><strong>Total:</strong></td>
 						<td>${{model.total}}</td>
 					</tr>
-				</tbody>
+				</tfoot>
 			</table>
 			<hr>
 			<div class="columns">
 				<div class="column">
-					
+					<p class="box">Notes:</p>
+					<p class="subtitle is-6">{{model.notes}}</p>
 				</div>
 			</div>
+		</div>
 	</div>
 </template>
 
 <script>
 
 	import Vue from 'vue'
-	import axios from 'axios'
 	import Images from '../../helpers/images'
+	import {get, del} from '../../helpers/api'
 
 	export default {
 		name: 'invoiceShow',
@@ -123,22 +131,22 @@
 		},
 		methods: {
 			fetchData(){
-				var vm = this
-				axios.get(`/api/${this.resource}/${this.$route.params.id}`)
-				.then(function(response){
-					Vue.set(vm.$data, 'model', response.data.model)
-					Vue.set(vm.$data, 'company', response.data.company)
+
+				get(`/api/${this.resource}/${this.$route.params.id}`)
+				.then((res)=>{
+					Vue.set(this.$data, 'model', res.data.model)
+					Vue.set(this.$data, 'company', res.data.company)
 				})
 				.catch(function(error){
 					console.log(error)
 				})
 			},
 			remove(){
-				var vm = this
-				axios.delete(`/api/${this.resource}/${this.$route.params.id}`)
-					.then(function(response){
-						if (response.data.deleted) {
-							vm.$router.push(vm.redirect)
+
+				del(`/api/${this.resource}/${this.$route.params.id}`)
+					.then((res)=>{
+						if (res.data.deleted) {
+							this.$router.push(this.redirect)
 						}
 					})
 					.catch(function(error){

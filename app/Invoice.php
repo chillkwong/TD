@@ -11,12 +11,12 @@ class Invoice extends Model
     use FilterPaginateOrder;
 
 	protected $fillable = [
-        'customer_id', 'title', 'date', 'due_date', 'discount',
+        'customer_id', 'title', 'notes','date', 'due_date', 'discount',
         'sub_total', 'total'
     ];
 
     protected $filter = [
-        'id', 'customer_id', 'title', 'date', 'due_date', 'discount',
+        'id', 'customer_id', 'title', 'notes', 'date', 'due_date', 'discount',
         'sub_total','deposit','balance', 'total', 'created_at',
         'customer.id', 'customer.company', 'customer.email', 'customer.name', 
             'customer.phone', 'customer.address', 'customer.created_at'
@@ -40,9 +40,9 @@ class Invoice extends Model
     {
     	return [
     	'customer_id' => 'select',
-    	'title' => 'Invoice For',
+    	'title' => '',
     	'date' => date('Y-m-d'),
-    	'discount' => null,
+    	'discount' => 0,
     	'sub_total' => 0,
     	'deposit' => 0,
     	'balance' => 0,
