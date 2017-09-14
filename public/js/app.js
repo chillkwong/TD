@@ -14963,7 +14963,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('section', {
     staticClass: "hero is-primary is-bold"
   }, [_c('nav', {
-    staticClass: "navbar "
+    staticClass: "navbar is-transparent"
   }, [_c('div', {
     staticClass: "navbar-brand"
   }, [_c('a', {
@@ -14990,7 +14990,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "color": "#333"
     }
   }, [_c('i', {
-    staticClass: "fa fa-github"
+    staticClass: "fa fa-lg fa-github"
   })])]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item is-hidden-desktop",
     attrs: {
@@ -15003,16 +15003,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "color": "#55acee"
     }
   }, [_c('i', {
-    staticClass: "fa fa-twitter"
+    staticClass: "fa fa-lg fa-twitter"
   })])]), _vm._v(" "), _c('div', {
     staticClass: "navbar-burger burger",
     attrs: {
-      "data-target": "navMenubd-example"
+      "data-target": "navMenuTransparentExample"
     }
   }, [_c('span'), _vm._v(" "), _c('span'), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
     staticClass: "navbar-menu",
     attrs: {
-      "id": "navMenubd-example"
+      "id": "navMenuTransparentExample"
     }
   }, [_c('div', {
     staticClass: "navbar-start"
@@ -15023,44 +15023,44 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "/documentation/overview/start/"
     }
-  }, [_vm._v("\n\t          Docs\n\t        ")]), _vm._v(" "), _c('div', {
-    staticClass: "navbar-dropdown "
+  }, [_vm._v("\n          Diamond\n        ")]), _vm._v(" "), _c('div', {
+    staticClass: "navbar-dropdown is-boxed"
   }, [_c('a', {
     staticClass: "navbar-item ",
     attrs: {
       "href": "/documentation/overview/start/"
     }
-  }, [_vm._v("\n\t            Overview\n\t          ")]), _vm._v(" "), _c('a', {
+  }, [_vm._v("\n            Loose Diamond\n          ")]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item ",
     attrs: {
       "href": "http://bulma.io/documentation/modifiers/syntax/"
     }
-  }, [_vm._v("\n\t            Modifiers\n\t          ")]), _vm._v(" "), _c('a', {
+  }, [_vm._v("\n            Modifiers\n          ")]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item ",
     attrs: {
       "href": "http://bulma.io/documentation/columns/basics/"
     }
-  }, [_vm._v("\n\t            Columns\n\t          ")]), _vm._v(" "), _c('a', {
+  }, [_vm._v("\n            Columns\n          ")]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item ",
     attrs: {
       "href": "http://bulma.io/documentation/layout/container/"
     }
-  }, [_vm._v("\n\t            Layout\n\t          ")]), _vm._v(" "), _c('a', {
+  }, [_vm._v("\n            Layout\n          ")]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item ",
     attrs: {
       "href": "http://bulma.io/documentation/form/general/"
     }
-  }, [_vm._v("\n\t            Form\n\t          ")]), _vm._v(" "), _c('a', {
+  }, [_vm._v("\n            Form\n          ")]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item ",
     attrs: {
       "href": "http://bulma.io/documentation/elements/box/"
     }
-  }, [_vm._v("\n\t            Elements\n\t          ")]), _vm._v(" "), _c('a', {
+  }, [_vm._v("\n            Elements\n          ")]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item is-active",
     attrs: {
       "href": "http://bulma.io/documentation/components/breadcrumb/"
     }
-  }, [_vm._v("\n\t              Components\n\t            ")]), _vm._v(" "), _c('hr', {
+  }, [_vm._v("\n              Components\n            ")]), _vm._v(" "), _c('hr', {
     staticClass: "navbar-divider"
   }), _vm._v(" "), _c('div', {
     staticClass: "navbar-item"
@@ -15068,7 +15068,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "is-size-6-desktop"
   }, [_c('strong', {
     staticClass: "has-text-info"
-  }, [_vm._v("0.5.1")])]), _vm._v(" "), _c('small', [_c('a', {
+  }, [_vm._v("0.5.2")])]), _vm._v(" "), _c('small', [_c('a', {
     staticClass: "bd-view-all-versions",
     attrs: {
       "href": "/versions"
@@ -15080,8 +15080,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "http://bulma.io/blog/"
     }
-  }, [_vm._v("\n\t          Blog\n\t        ")]), _vm._v(" "), _c('div', {
-    staticClass: "navbar-dropdown ",
+  }, [_vm._v("\n          Blog\n        ")]), _vm._v(" "), _c('div', {
+    staticClass: "navbar-dropdown is-boxed",
     attrs: {
       "id": "blogDropdown",
       "data-style": "width: 18rem;"
@@ -15118,7 +15118,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "http://bulma.io/blog/"
     }
-  }, [_vm._v("\n\t            More posts\n\t          ")]), _vm._v(" "), _c('hr', {
+  }, [_vm._v("\n            More posts\n          ")]), _vm._v(" "), _c('hr', {
     staticClass: "navbar-divider"
   }), _vm._v(" "), _c('div', {
     staticClass: "navbar-item"
@@ -15147,8 +15147,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "navbar-item has-dropdown is-hoverable"
   }, [_c('div', {
     staticClass: "navbar-link"
-  }, [_vm._v("\n\t          More\n\t        ")]), _vm._v(" "), _c('div', {
-    staticClass: "navbar-dropdown ",
+  }, [_vm._v("\n          More\n        ")]), _vm._v(" "), _c('div', {
+    staticClass: "navbar-dropdown is-boxed",
     attrs: {
       "id": "moreDropdown"
     }
@@ -15178,14 +15178,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('span', {
     staticClass: "bd-emoji"
-  }, [_vm._v("⭐️")]), _vm._v("\n\t        Expo\n\t      ")]), _vm._v(" "), _c('a', {
+  }, [_vm._v("⭐️")]), _vm._v("\n        Expo\n      ")]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item ",
     attrs: {
       "href": "http://bulma.io/love/"
     }
   }, [_c('span', {
     staticClass: "bd-emoji"
-  }, [_vm._v("❤️")]), _vm._v("\n\t        Love\n\t      ")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("❤️")]), _vm._v("\n        Love\n      ")])]), _vm._v(" "), _c('div', {
     staticClass: "navbar-end"
   }, [_c('a', {
     staticClass: "navbar-item is-hidden-desktop-only",
@@ -15199,7 +15199,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "color": "#333"
     }
   }, [_c('i', {
-    staticClass: "fa fa-github"
+    staticClass: "fa fa-lg fa-github"
   })])]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item is-hidden-desktop-only",
     attrs: {
@@ -15212,7 +15212,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "color": "#55acee"
     }
   }, [_c('i', {
-    staticClass: "fa fa-twitter"
+    staticClass: "fa fa-lg fa-twitter"
   })])]), _vm._v(" "), _c('div', {
     staticClass: "navbar-item"
   }, [_c('div', {
@@ -15232,12 +15232,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "icon"
   }, [_c('i', {
     staticClass: "fa fa-twitter"
-  })]), _vm._v(" "), _c('span', [_vm._v("\n\t    Tweet\n\t  ")])])]), _vm._v(" "), _c('p', {
+  })]), _vm._v(" "), _c('span', [_vm._v("\n    Tweet\n  ")])])]), _vm._v(" "), _c('p', {
     staticClass: "control"
   }, [_c('a', {
     staticClass: "button is-primary",
     attrs: {
-      "href": "https://github.com/jgthms/bulma/archive/0.5.1.zip"
+      "href": "https://github.com/jgthms/bulma/archive/0.5.2.zip"
     }
   }, [_c('span', {
     staticClass: "icon"
@@ -15249,9 +15249,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container has-text-centered"
   }, [_c('h1', {
     staticClass: "title"
-  }, [_vm._v("\n        Title\n      ")]), _vm._v(" "), _c('h2', {
+  }, [_vm._v("\n\t        Title\n\t      ")]), _vm._v(" "), _c('h2', {
     staticClass: "subtitle"
-  }, [_vm._v("\n        Subtitle\n      ")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n\t        Subtitle\n\t      ")])])]), _vm._v(" "), _c('div', {
     staticClass: "hero-foot"
   }, [_c('nav', {
     staticClass: "tabs"
@@ -15615,17 +15615,41 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
+  }
+});
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['images'],
   data: function data() {
     return {
-      navBurger: false
+      navBurger: true
     };
   },
 
   methods: {
     toggleNav: function toggleNav() {
-      this.navBurger = false;
+      this.navBurger = !this.navBurger;
     }
   },
   created: function created() {
@@ -15656,21 +15680,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "width": "40",
       "height": "200"
     }
-  })]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('button', {
-    on: {
-      "click": _vm.toggleNav
-    }
-  }, [_vm._v("hi")]), _vm._v(" "), _c('button', {
-    staticClass: "button navbar-burger is-active",
-    attrs: {
-      "data-target": "navMenubd-example"
-    },
-    on: {
-      "click": function($event) {
-        !_vm.navBurger
-      }
-    }
-  }, [_vm._m(2), _vm._v(" "), _c('span'), _vm._v(" "), _c('span')])]), _vm._v(" "), _vm._m(3)])
+  })]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)]), _vm._v(" "), _vm._m(3)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('a', {
     staticClass: "navbar-item is-hidden-desktop",
@@ -15702,11 +15712,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "fa fa-twitter"
   })])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', [_c('a', {
+  return _c('div', {
+    staticClass: "navbar-burger burger ",
     attrs: {
-      "href": "/adm"
+      "data-target": "navMenubd-example"
     }
-  }), _vm._v("adm")])
+  }, [_c('span'), _vm._v(" "), _c('span'), _vm._v(" "), _c('span')])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "navbar-menu",
