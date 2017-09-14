@@ -11,7 +11,7 @@ class Jewellry extends Model
 	'stock' ,'title' , 'description'
 	];
 	
-    public static function items(){
+    public function items(){
     	return $this->belongsToMnay(Item::class);
     }
 }

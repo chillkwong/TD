@@ -11,8 +11,8 @@ class Item extends Model
 	'qty', 'unit_price', 'name', 'description', 
 	];
 
-    public function invoices(){
-    	return $this->belongsToMany(Invoice::class);
+    public function invoice(){
+    	return $this->belongsTo(Invoice::class);
     }
 
     public function supplier(){

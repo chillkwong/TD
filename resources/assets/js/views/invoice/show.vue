@@ -9,6 +9,7 @@
 			
 			<router-link :to="'/adm/invoices/create'" class="button is-primary">Create</router-link>
 			<router-link :to="'/adm/invoices/' + model.id + '/edit'" class="button is-primary">Edit</router-link>
+			<button class="button is-primary" @click="remove">Delete</button>
 			</div>
 		</div>
 
@@ -89,8 +90,9 @@
 			<hr>
 			<div class="columns">
 				<div class="column">
-					<p class="box">Notes:</p>
-					<p class="subtitle is-6">{{model.notes}}</p>
+					<p class="box">Notes:
+						{{model.notes}}
+					</p>
 				</div>
 			</div>
 		</div>
@@ -114,7 +116,7 @@
 				company: [],
 				images: Images,
 				resource: 'invoices',
-				redirect: '/invoices'
+				redirect: '/adm/invoices'
 			}
 		},
 		beforeMount(){

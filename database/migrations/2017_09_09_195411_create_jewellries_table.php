@@ -15,11 +15,16 @@ class CreateJewellriesTable extends Migration
     {
         Schema::create('jewellries', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('item_id')->unsigned();
             $table->string('stock');
             $table->string('name');
             $table->string('description');
             $table->timestamps();
+        });
+
+        Schema::create('item_jewellry', function (Blueprint $table) {
+            $table->integer('item_id');
+            $table->integer('jewellry_id');            
+            $table->primary(['item_id','jewellry_id']);
         });
     }
 
@@ -31,5 +36,6 @@ class CreateJewellriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('jewellries');
+        Schema::dropIfExists('item_jewellry');
     }
 }

@@ -24,7 +24,7 @@ class CreateInvoicesTable extends Migration
             $table->integer('deposit');
             $table->integer('balance');
             $table->integer('total');
-            $table->string('notes');
+            $table->string('notes')->nullable();
             $table->boolean('count')->default(true);
             $table->timestamps();
         });

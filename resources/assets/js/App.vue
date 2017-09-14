@@ -12,7 +12,7 @@
 	import Locale from './helpers/locale'
 	import Flash from './helpers/flash'
 	import Auth from './store/auth'
-	import {post} from './helpers/api'
+	import {get} from './helpers/api'
 	import Images from './helpers/images'
 
 	export default {

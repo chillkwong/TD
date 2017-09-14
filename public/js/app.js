@@ -10751,6 +10751,7 @@ module.exports = defaults;
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = get;
 /* harmony export (immutable) */ __webpack_exports__["c"] = post;
+/* harmony export (immutable) */ __webpack_exports__["d"] = put;
 /* harmony export (immutable) */ __webpack_exports__["a"] = del;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
@@ -10778,6 +10779,17 @@ function get(url) {
 function post(url, data) {
 	return __WEBPACK_IMPORTED_MODULE_0_axios___default()({
 		method: 'POST',
+		url: url,
+		data: data,
+		headers: {
+			'Authorization': 'Bearer ' + __WEBPACK_IMPORTED_MODULE_1__store_auth__["a" /* default */].state.api_token
+		}
+	});
+}
+
+function put(url, data) {
+	return __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+		method: 'PUT',
 		url: url,
 		data: data,
 		headers: {
@@ -11235,7 +11247,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	methods: {
 		updateLocale: function updateLocale() {
 			__WEBPACK_IMPORTED_MODULE_0__helpers_locale__["a" /* default */].setLocale(this.changedLocales);
-			get();
+			Object(__WEBPACK_IMPORTED_MODULE_3__helpers_api__["b" /* get */])();
 		}
 	}
 });
@@ -15599,9 +15611,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 
@@ -15610,8 +15619,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ['images'],
   data: function data() {
     return {
-      navBurger: true
+      navBurger: false
     };
+  },
+
+  methods: {
+    toggleNav: function toggleNav() {
+      this.navBurger = false;
+    }
   },
   created: function created() {
     // if (!Auth.state.api_token && !Auth.state.user_id) {
@@ -15643,12 +15658,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('button', {
     on: {
-      "click": function($event) {
-        _vm.navBurger = '!navBurger'
-      }
+      "click": _vm.toggleNav
     }
-  }, [_vm._v("hi")]), _vm._v(" "), _c('div', {
-    staticClass: "navbar-burger burger is-active",
+  }, [_vm._v("hi")]), _vm._v(" "), _c('button', {
+    staticClass: "button navbar-burger is-active",
     attrs: {
       "data-target": "navMenubd-example"
     },
@@ -15657,7 +15670,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         !_vm.navBurger
       }
     }
-  }, [_c('span', [_vm._v("1")]), _vm._v(" "), _c('span', [_vm._v("2")]), _vm._v(" "), _c('span', [_vm._v("3")]), _vm._v(" "), _c('span', [_vm._v("1")]), _vm._v(" "), _c('span', [_vm._v("2")]), _vm._v(" "), _c('span', [_vm._v("3")])])]), _vm._v(" "), _vm._m(2)])
+  }, [_vm._m(2), _vm._v(" "), _c('span'), _vm._v(" "), _c('span')])]), _vm._v(" "), _vm._m(3)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('a', {
     staticClass: "navbar-item is-hidden-desktop",
@@ -15688,6 +15701,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('i', {
     staticClass: "fa fa-twitter"
   })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', [_c('a', {
+    attrs: {
+      "href": "/adm"
+    }
+  }), _vm._v("adm")])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "navbar-menu",
@@ -16731,6 +16750,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -16748,7 +16769,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			company: [],
 			images: __WEBPACK_IMPORTED_MODULE_1__helpers_images__["a" /* default */],
 			resource: 'invoices',
-			redirect: '/invoices'
+			redirect: '/adm/invoices'
 		};
 	},
 	beforeMount: function beforeMount() {
@@ -16816,7 +16837,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "to": '/adm/invoices/' + _vm.model.id + '/edit'
     }
-  }, [_vm._v("Edit")])], 1)])]) : _vm._e(), _vm._v(" "), _c('div', {
+  }, [_vm._v("Edit")]), _vm._v(" "), _c('button', {
+    staticClass: "button is-primary",
+    on: {
+      "click": _vm.remove
+    }
+  }, [_vm._v("Delete")])], 1)])]) : _vm._e(), _vm._v(" "), _c('div', {
     staticClass: "box"
   }, [_c('div', {
     staticClass: "columns"
@@ -16877,9 +16903,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "column"
   }, [_c('p', {
     staticClass: "box"
-  }, [_vm._v("Notes:")]), _vm._v(" "), _c('p', {
-    staticClass: "subtitle is-6"
-  }, [_vm._v(_vm._s(_vm.model.notes))])])])])])
+  }, [_vm._v("Notes:\n\t\t\t\t\t" + _vm._s(_vm.model.notes) + "\n\t\t\t\t")])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "column is-3"
@@ -17297,8 +17321,7 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_api__ = __webpack_require__(7);
 //
 //
 //
@@ -17413,6 +17436,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -17429,7 +17460,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			},
 			title: 'Create',
 			initialize: '/api/invoices/create',
-			redirect: '/invoices',
+			redirect: '/adm/invoices',
 			store: '/api/invoices',
 			method: 'post'
 		};
@@ -17457,7 +17488,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			return this.subTotal - parseFloat(this.form.discount);
 		},
 		balance: function balance() {
-			return this.total - this.form.deposit;
+			return this.form.balance = this.total - this.form.deposit;
 		}
 	},
 	methods: {
@@ -17469,23 +17500,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			});
 		},
 		fetchData: function fetchData() {
-			var vm = this;
-			__WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(this.initialize).then(function (response) {
-				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(vm.$data, 'form', response.data.form);
-				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(vm.$data, 'option', response.data.option);
+			var _this = this;
+
+			// var vm = this
+			Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["b" /* get */])(this.initialize).then(function (res) {
+				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(_this.$data, 'form', res.data.form);
+				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(_this.$data, 'option', res.data.option);
 			}).catch(function (error) {
 				console.log(error);
 			});
 		},
 		save: function save() {
-			var vm = this;
-			__WEBPACK_IMPORTED_MODULE_1_axios___default.a[this.method](this.store, this.form).then(function (response) {
-				if (response.data.saved) {
-					vm.$router.push(vm.redirect);
-				}
-			}).catch(function (error) {
-				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(vm.$data, 'errors', error.response.data);
-			});
+			var _this2 = this;
+
+			if (this.method === 'put') {
+				Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["d" /* put */])(this.store, this.form).then(function (res) {
+					if (res.data.saved) {
+						_this2.$router.push(_this2.redirect);
+					}
+				}).catch(function (error) {
+					__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(this.$data, 'errors', error.res.data);
+				});
+			} else {
+				Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["c" /* post */])(this.store, this.form).then(function (res) {
+					if (res.data.saved) {
+						_this2.$router.push(_this2.redirect);
+					}
+				}).catch(function (error) {
+					__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(this.$data, 'errors', error.res.data);
+				});
+			}
 		}
 	}
 });
@@ -17639,6 +17683,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       directives: [{
         name: "model",
         rawName: "v-model",
+        value: (item.name),
+        expression: "item.name"
+      }],
+      staticClass: "input",
+      attrs: {
+        "type": "text"
+      },
+      domProps: {
+        "value": (item.name)
+      },
+      on: {
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          item.name = $event.target.value
+        }
+      }
+    })]), _vm._v(" "), _c('td', [_c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
         value: (item.description),
         expression: "item.description"
       }],
@@ -17769,7 +17833,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "colspan": "2"
     }
-  }), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.total))])])])]), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.total))])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('td', [_c('textarea', {
+    staticClass: "textarea"
+  }, [_vm._v(_vm._s(_vm.form.notes))])])])])]), _vm._v(" "), _c('div', {
     staticClass: "columns is-centered"
   }, [_c('div', {
     staticClass: "column is-8"
@@ -17782,11 +17852,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Save")])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th', [_vm._v("Description")]), _vm._v(" "), _c('th', [_vm._v("Unit Price")]), _vm._v(" "), _c('th', [_vm._v("Qty")]), _vm._v(" "), _c('th', [_vm._v("Total")])])])
+  return _c('thead', [_c('tr', [_c('th', [_vm._v("Name")]), _vm._v(" "), _c('th', [_vm._v("Description")]), _vm._v(" "), _c('th', [_vm._v("Unit Price")]), _vm._v(" "), _c('th', [_vm._v("Qty")]), _vm._v(" "), _c('th', [_vm._v("Total")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('td', [_c('strong', [_vm._v("Deposit")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('td', [_c('strong', [_vm._v("Total")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('td', [_c('strong', [_vm._v("notes")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

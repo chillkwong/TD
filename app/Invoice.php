@@ -12,7 +12,7 @@ class Invoice extends Model
 
 	protected $fillable = [
         'customer_id', 'title', 'notes','date', 'due_date', 'discount',
-        'sub_total', 'total'
+        'sub_total', 'total', 'deposit','balance','notes'
     ];
 
     protected $filter = [
@@ -28,7 +28,7 @@ class Invoice extends Model
     }
 
     public function items(){
-    	return $this->belongsToMany(Item::class);
+    	return $this->hasMany(Item::class);
     }
 
     public function posts()
@@ -45,7 +45,8 @@ class Invoice extends Model
     	'discount' => 0,
     	'sub_total' => 0,
     	'deposit' => 0,
-    	'balance' => 0,
+        'balance' => 0,
+        'notes'=> 'Ring Size:#',
     	'total'=> 0,
     	'items' => [Item::form()]
     	];

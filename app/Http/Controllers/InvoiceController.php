@@ -47,6 +47,7 @@ class InvoiceController extends Controller
                 'discount' => 'required | numeric | min:0',
                 'items' => 'required | array | min:1',
                 'items.*.description' => 'required | max:255',
+                'items.*.name' => 'required | max:255',
                 'items.*.qty' => 'required | integer | min:1',
                 'items.*.unit_price' => 'required | numeric | min:0'
             ]);
@@ -57,7 +58,7 @@ class InvoiceController extends Controller
 
         foreach ($request->items as $item) {
             $data['sub_total'] += $item['unit_price'] * $item['qty']; 
-            $items[ ] = new InvoiceItem($item);
+            $items[ ] = new Item($item);
         }
 
         $data['total'] = $data['sub_total'] - $data['discount'];
@@ -101,6 +102,7 @@ class InvoiceController extends Controller
     	$this->validate($request,[
                 'customer_id' => 'required |exists:customers,id',
                 'title' => 'required',
+                'balance' => 'required | integer',
                 'date' => 'required | date_format:Y-m-d',
                 'due_date' => 'required | date_format:Y-m-d',
                 'discount' => 'required | numeric | min:0',
@@ -121,13 +123,13 @@ class InvoiceController extends Controller
             $data['sub_total'] += $item['unit_price'] * $item['qty']; 
             if (isset($item['id'])) {
 
-            	InvoiceItem::whereId($item['id'])
+            	Item::whereId($item['id'])
             		->whereInvoiceId($invoice->id)
             		->update($item);
 
                         $itemIds[] = $item['id'];
             }else{
-            	$items[ ] = new InvoiceItem($item);
+            	$items[ ] = new Item($item);
             }
         }
 
@@ -136,7 +138,7 @@ class InvoiceController extends Controller
         $invoice ->update($data);
 
         if (count($itemIds)) {
-        	InvoiceItem::whereInvoiceId($invoice->id)
+        	Item::whereInvoiceId($invoice->id)
         		->whereNotIn('id', $itemIds)
         		->delete();
         }
@@ -155,7 +157,7 @@ class InvoiceController extends Controller
     public function destroy($id)
     {
     	$invoice = Invoice::findOrFail($id);
-    	InvoiceItem::whereInvoiceId($invoice->id)
+    	Item::whereInvoiceId($invoice->id)
     		->delete();
 
     	$invoice->delete();

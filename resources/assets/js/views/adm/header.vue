@@ -16,15 +16,12 @@
         <i class="fa fa-twitter"></i>
       </span>
     </a>
-    <button @click=" navBurger='!navBurger'">hi</button>
-    <div class="navbar-burger burger is-active" @click="!navBurger" data-target="navMenubd-example">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-    </div>
+    <button @click="toggleNav">hi</button>
+    <button class="button navbar-burger is-active" @click="!navBurger" data-target="navMenubd-example">
+      <span><a href="/adm"></a>adm</span>
+      <span></span>
+      <span></span>
+    </button> 
   </div>
 
   <div id="navMenubd-example" class="navbar-menu">
@@ -222,10 +219,14 @@
     props: ['images'],
     data(){
       return {
-            navBurger: true
+            navBurger: false
       }
     },
-
+    methods:{
+      toggleNav(){
+          this.navBurger = false
+        }
+    },
     created(){
       // if (!Auth.state.api_token && !Auth.state.user_id) {
       //   this.$router.push('/td-login')

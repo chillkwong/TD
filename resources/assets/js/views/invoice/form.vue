@@ -49,6 +49,7 @@
 			<table class="table is-fullwidth">
 				<thead>
 					<tr>
+						<th>Name</th>
 						<th>Description</th>
 						<th>Unit Price</th>
 						<th>Qty</th>
@@ -57,6 +58,7 @@
 				</thead>
 				<tbody>
 					<tr v-for="(item,index) in form.items">
+						<td><input type="text" v-model="item.name" class="input"></td>
 						<td><input type="text" v-model="item.description" class="input"></td>
 						<td><input type="text" v-model="item.unit_price" class="input"></td>
 						<td><input type="text" v-model="item.qty" class="input"></td>
@@ -99,6 +101,11 @@
 							<td><strong>Total</strong></td>
 							<td>{{total}}</td>
 						</tr>
+						<tr>
+							<td colspan="2"></td>
+							<td><strong>notes</strong></td>
+							<td><textarea class="textarea">{{form.notes}}</textarea></td>
+						</tr>
 				</tfoot>
 			</table>
 			<div class="columns is-centered">
@@ -114,7 +121,8 @@
 
 <script>
 	import Vue from 'vue'
-	import axios from 'axios'
+	import {get, post, put} from '../../helpers/api'
+
 	export default {
 		name: 'InvoiceForm',
 		data(){
@@ -128,7 +136,7 @@
 				},
 				title: 'Create',
 				initialize: '/api/invoices/create',
-				redirect: '/invoices',
+				redirect: '/adm/invoices',
 				store: '/api/invoices',
 				method: 'post',
 			}
@@ -155,7 +163,7 @@
 				return this.subTotal - parseFloat(this.form.discount)
 			},
 			balance(){
-				return this.total - this.form.deposit
+				return this.form.balance = this.total - this.form.deposit
 			}
 		},
 		methods: {
@@ -167,27 +175,37 @@
 				})
 			},
 			fetchData(){
-				var vm = this
-				axios.get(this.initialize)
-					.then(function(response){
-						Vue.set(vm.$data, 'form', response.data.form)
-						Vue.set(vm.$data, 'option', response.data.option)
+				// var vm = this
+				get(this.initialize)
+					.then((res)=>{
+						Vue.set(this.$data, 'form', res.data.form)
+						Vue.set(this.$data, 'option', res.data.option)
 					})
 					.catch(function(error){
 						console.log(error)
 					})
 			},
 			save(){
-				var vm = this
-				axios[this.method](this.store, this.form)
-					.then(function(response){
-						if(response.data.saved){
-							vm.$router.push(vm.redirect)
+				if (this.method === 'put') {
+					put(this.store, this.form)
+						.then((res)=>{
+						if(res.data.saved){
+							this.$router.push(this.redirect)
 						}
 					})
 					.catch(function(error){
-						Vue.set(vm.$data, 'errors', error.response.data)
+						Vue.set(this.$data, 'errors', error.res.data)
 					})
+
+				}else{post(this.store, this.form)
+					.then((res)=>{
+						if(res.data.saved){
+							this.$router.push(this.redirect)
+						}
+					})
+					.catch(function(error){
+						Vue.set(this.$data, 'errors', error.res.data)
+					})}
 			}
 		}
 	}

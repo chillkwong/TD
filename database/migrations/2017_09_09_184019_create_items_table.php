@@ -19,20 +19,11 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->string('description');            
             $table->integer('unit_price');
+            $table->integer('invoice_id')->nullable();
+            $table->integer('supplier_id')->nullable();
             $table->timestamps();
         });
 
-        Schema::create('invoice_item', function (Blueprint $table) {
-            $table->integer('invoice_id');
-            $table->integer('item_id');
-            $table->primary(['invoice_id','item_id']);
-        });
-
-        Schema::create('supplier_item', function (Blueprint $table) {
-            $table->integer('supplier_id');
-            $table->integer('item_id');
-            $table->primary(['supplier_id','item_id']);
-        });
     }
 
     /**
@@ -43,8 +34,6 @@ class CreateItemsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('items');
-        Schema::dropIfExists('invoice_item');
-        Schema::dropIfExists('supplier_item');
 
     }
 }

@@ -30,6 +30,18 @@ export function post(url, data){
 }
 
 
+export function put(url, data){
+	return axios({
+		method: 'PUT',
+		url: url,
+		data: data,
+		headers: {
+			'Authorization' : `Bearer ${Auth.state.api_token}`
+		}
+	})
+
+}
+
 export function del(url){
 		return axios({
 		method: 'DELETE',
