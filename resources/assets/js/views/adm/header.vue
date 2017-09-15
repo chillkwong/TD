@@ -243,8 +243,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     },
     created(){
-      if (!Auth.state.api_token && !Auth.state.user_id) {
-        this.$router.push('/td-login')
+      // if (!Auth.state.api_token && !Auth.state.user_id) {
+      //   this.$router.push('/td-login')
       }
     }
   }

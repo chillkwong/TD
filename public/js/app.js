@@ -17439,7 +17439,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -17840,7 +17839,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "columns is-centered"
   }, [_c('div', {
     staticClass: "column is-8"
-  }, [_c('strong', [_vm._v("Count")]), _vm._v(" "), _c('button', {
+  }, [_c('button', {
     staticClass: "button",
     on: {
       "click": function($event) {

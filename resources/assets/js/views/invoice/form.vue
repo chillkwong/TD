@@ -110,7 +110,6 @@
 			</table>
 			<div class="columns is-centered">
 				<div class="column is-8">
-					<strong>Count</strong>
 					<button class="button" @click="form.count=!form.count">Count: {{form.count}}</button>
 				</div>
 
