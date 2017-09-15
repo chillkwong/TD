@@ -9,6 +9,7 @@ import Footer from '../views/layouts/footer.vue'
 import AdmHeader from '../views/adm/header.vue'
 import AdmFooter from '../views/adm/footer.vue'
 import Admin from '../views/adm/index.vue'
+import AdmMain from '../views/adm/main.vue'
 
 //admin dashboard
 
@@ -41,6 +42,7 @@ const router = new VueRouter({
 	{path: '/adm', components: { default: Admin, header:AdmHeader, footer:AdmFooter},
 
 		children:[
+		{path:'', component: AdmMain},
 		{path: 'invoices', component: InvoiceIndex},
 		{path: 'invoices/create', component: InvoiceForm},
 		{path: 'invoices/:id', component: InvoiceShow},

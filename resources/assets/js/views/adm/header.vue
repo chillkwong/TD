@@ -30,24 +30,12 @@
         <a class="navbar-link  is-active" href="/adm/invoices">
           Invoice
         </a>
-        <div class="navbar-dropdown ">
-          <a class="navbar-item " href="/documentation/overview/start/">
-            Overview
+        <div class="navbar-dropdown "> 
+          <a class="navbar-item " href="/adm/invoices">
+            Show
           </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
-            Modifiers
-          </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/columns/basics/">
-            Columns
-          </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/layout/container/">
-            Layout
-          </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/form/general/">
-            Form
-          </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/elements/box/">
-            Elements
+          <a class="navbar-item " href="/adm/invoices/create">
+            Create
           </a>
           
             <a class="navbar-item is-active" href="http://bulma.io/documentation/components/breadcrumb/">
@@ -255,9 +243,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     },
     created(){
-      // if (!Auth.state.api_token && !Auth.state.user_id) {
-      //   this.$router.push('/td-login')
-      // }
+      if (!Auth.state.api_token && !Auth.state.user_id) {
+        this.$router.push('/td-login')
+      }
     }
   }
 

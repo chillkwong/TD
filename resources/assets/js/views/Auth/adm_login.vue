@@ -57,7 +57,7 @@
 				post(`/api/td-login`, this.form)
 					.then((res) => {
 						if (res.data.authenticated) {
-							Auth.set(res.data.api_token, res.data.user_id)
+							Auth.set(res.data.api_token, res.data.user_id, res.data.role.name)
 							Flash.setSuccess('You have successfully logged in!')
 							this.$router.push('/adm')
 						}

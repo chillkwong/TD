@@ -103,6 +103,7 @@ class InvoiceController extends Controller
                 'customer_id' => 'required |exists:customers,id',
                 'title' => 'required',
                 'balance' => 'required | integer',
+                'count' => 'required | boolean',
                 'date' => 'required | date_format:Y-m-d',
                 'due_date' => 'required | date_format:Y-m-d',
                 'discount' => 'required | numeric | min:0',

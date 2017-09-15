@@ -12,7 +12,7 @@ class Invoice extends Model
 
 	protected $fillable = [
         'customer_id', 'title', 'notes','date', 'due_date', 'discount',
-        'sub_total', 'total', 'deposit','balance','notes'
+        'sub_total', 'total', 'deposit','balance','notes', 'count'
     ];
 
     protected $filter = [
@@ -44,7 +44,8 @@ class Invoice extends Model
     	'date' => date('Y-m-d'),
     	'discount' => 0,
     	'sub_total' => 0,
-    	'deposit' => 0,
+        'deposit' => 0,
+        'count' => 1,
         'balance' => 0,
         'notes'=> 'Ring Size:#',
     	'total'=> 0,

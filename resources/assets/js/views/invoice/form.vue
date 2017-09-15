@@ -109,7 +109,13 @@
 				</tfoot>
 			</table>
 			<div class="columns is-centered">
-				<div class="column is-8"></div>
+				<div class="column is-8">
+					<strong>Count</strong>
+					<button class="button" @click="form.count=!form.count">Count: {{form.count}}</button>
+				</div>
+
+							
+				
 				<div class="column ">
 					<button class="button is-primary" @click="save">Save</button>
 				</div>

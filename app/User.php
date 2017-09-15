@@ -34,7 +34,7 @@ class User extends Authenticatable
         ->withTimestamps();
     }
 
-        public function authorizeRoles($roles)
+     public function authorizeRoles($roles)
     {
       if ($this->hasAnyRole($roles)) {
         return true;

@@ -1,7 +1,7 @@
 <template>
 	<data-viewer :source = "source" :thead="thead" :filter="filter" :create="create" :title="title">
 		<template scope="props">
-			<tr @click="$router.push('/adm/invoices/' + props.item.id)">
+			<tr @click="$router.push('/adm/invoices/' + props.item.id)" v-if="userRole=='admin' || props.item.count">
 				<td>{{props.item.id}}</td>
 				<td>{{props.item.date}}</td>
 				<td>{{props.item.customer.name}}</td>
@@ -10,6 +10,7 @@
 				<td>{{props.item.balance}}</td>
 				<td>{{props.item.total}}</td>
 				<td>{{props.item.created_at}}</td>
+				<td>{{props.item.count}}</td>
 			</tr>
 		</template>
 	</data-viewer>
@@ -18,6 +19,7 @@
 
 <script>
 	import DataViewer from '../../components/DataViewer.vue'
+	import Auth from '../../store/auth'
 
 	export default {
 		name: 'InvoiceIndex',
@@ -26,6 +28,7 @@
 				title: 'Invoices',
 				source: '/api/invoices',
 				create:'/adm/invoices/create',
+				userRole: Auth.state.user_role,
 				thead: [
 				{ title: 'ID', key: 'id', sort: true},
 				{ title: 'Date', key: 'date', sort: true},

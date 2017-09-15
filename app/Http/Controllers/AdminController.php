@@ -23,9 +23,8 @@ class AdminController extends Controller
 	    		'password' => 'required | between:6,25'
 	    		]);
 
-	    	$user = User::where('email', $request->email)
-	    		->first();
-	    	$user->authorizeRoles(['admin']);
+	    	$user = User::where('email', $request->email)->first();
+	    	$user->authorizeRoles(['admin','employee']);
 
 	    	if ($user && Hash::check($request->password, $user->password)) {
 	    		$user->api_token = str_random(60);
@@ -35,8 +34,8 @@ class AdminController extends Controller
 	    			->json([
 	    				'authenticated' => true,
 	    				'api_token' => $user->api_token,
-	    				'user_id' => $user->id
-	    				// 'role' => $user->roles()->first(['name'])
+	    				'user_id' => $user->id,
+	    				'role' => $user->roles()->first(['name'])
 	    				]);
 	    	}
 

@@ -45,7 +45,7 @@
 				  <input type="text" class="input is-info" v-model="params.search_query_2" 
 						@keyup.enter="fetchData" placeholder="Search" v-if="params.search_operator === 'between' ">
 				</div>
-				<button class="button is-info">Filter</button>
+				<button class="button is-info" @click="fetchData">Filter</button>
 			</div>
 		</div>
 		<table class="table is-fullwidth">
@@ -83,7 +83,7 @@
 		props: ['source', 'thead', 'filter', 'create', 'title'],
 		data(){
 			return {
-				showFilter: false,
+				showFilter: true,
 				model: {
 					data:[]
 				},
@@ -93,11 +93,12 @@
 					per_page: 10,
 					page: 1,
 					search_column: 'id',
-					search_operator: 'equal_to',
+					search_operator: 'like',
 					search_query_1: '',
 					search_query_2: '',
 				},
 				operators: {
+					like: 'LIKE',
 					equal_to: '=',
 					not_equal: '<>',
 					less_than:'<',
@@ -106,7 +107,6 @@
 					greater_than_or_equal_to: '>=',
 					in: 'IN',
 					not_in: 'NOT IN',
-					like: 'LIKE',
 					between: 'BETWEEN',
 				}
 			}
