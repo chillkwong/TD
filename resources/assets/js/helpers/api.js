@@ -12,7 +12,9 @@ export function get(url){
 		url: url,
 		headers: {
 			'Authorization' : `Bearer ${Auth.state.api_token}`,
-			'X-localization' : Locale.temp.currentLocale
+			'X-localization' : Locale.temp.currentLocale,
+            'X-CSRF-TOKEN': document.querySelector('#token').getAttribute('value')
+    
 		}
 	})
 }
