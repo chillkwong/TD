@@ -11215,11 +11215,9 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_locale__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_flash__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_auth__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helpers_api__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__helpers_images__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_flash__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_auth__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_images__ = __webpack_require__(13);
 //
 //
 //
@@ -11230,8 +11228,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
-
 
 
 
@@ -11240,26 +11236,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	created: function created() {
-		__WEBPACK_IMPORTED_MODULE_2__store_auth__["a" /* default */].initialize();
+		__WEBPACK_IMPORTED_MODULE_1__store_auth__["a" /* default */].initialize();
 	},
 	data: function data() {
 		return {
-			locales: ['en', 'hk', 'cn'],
-			changedLocales: 'en',
-			flash: __WEBPACK_IMPORTED_MODULE_1__helpers_flash__["a" /* default */].state,
-			auth: __WEBPACK_IMPORTED_MODULE_2__store_auth__["a" /* default */].state,
-			images: __WEBPACK_IMPORTED_MODULE_4__helpers_images__["a" /* default */]
+			flash: __WEBPACK_IMPORTED_MODULE_0__helpers_flash__["a" /* default */].state,
+			auth: __WEBPACK_IMPORTED_MODULE_1__store_auth__["a" /* default */].state,
+			images: __WEBPACK_IMPORTED_MODULE_2__helpers_images__["a" /* default */]
 		};
-	},
-
-	watch: {
-		'changedLocales': 'updateLocale'
-	},
-	methods: {
-		updateLocale: function updateLocale() {
-			__WEBPACK_IMPORTED_MODULE_0__helpers_locale__["a" /* default */].setLocale(this.changedLocales);
-			Object(__WEBPACK_IMPORTED_MODULE_3__helpers_api__["b" /* get */])();
-		}
 	}
 });
 
@@ -14956,7 +14940,7 @@ if (inBrowser && window.Vue) {
 var disposed = false
 var Component = __webpack_require__(0)(
   /* script */
-  null,
+  __webpack_require__(92),
   /* template */
   __webpack_require__(43),
   /* styles */
@@ -14994,13 +14978,52 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('section', {
     staticClass: "hero is-primary is-bold"
   }, [_c('nav', {
     staticClass: "navbar is-transparent"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "navbar-menu",
+    attrs: {
+      "id": "navMenuTransparentExample"
+    }
+  }, [_vm._m(1), _vm._v(" "), _c('div', {
+    staticClass: "navbar-end"
+  }, [_vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('div', {
+    staticClass: "navbar-item"
   }, [_c('div', {
+    staticClass: "field is-grouped"
+  }, [_c('p', {
+    staticClass: "control"
+  }), _c('div', {
+    staticClass: "select"
+  }, [_c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.changedLocales),
+      expression: "changedLocales"
+    }],
+    on: {
+      "change": function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.changedLocales = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+      }
+    }
+  }, _vm._l((_vm.locales), function(locale) {
+    return _c('option', {
+      domProps: {
+        "value": locale
+      }
+    }, [_vm._v(_vm._s(locale))])
+  }))]), _vm._v(" "), _vm._m(4), _vm._v(" "), _c('p'), _vm._v(" "), _vm._m(5)])])])])]), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "navbar-brand"
   }, [_c('a', {
     staticClass: "navbar-item",
@@ -15045,12 +15068,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "data-target": "navMenuTransparentExample"
     }
-  }, [_c('span'), _vm._v(" "), _c('span'), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
-    staticClass: "navbar-menu",
-    attrs: {
-      "id": "navMenuTransparentExample"
-    }
-  }, [_c('div', {
+  }, [_c('span'), _vm._v(" "), _c('span'), _vm._v(" "), _c('span')])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "navbar-start"
   }, [_c('div', {
     staticClass: "navbar-item has-dropdown is-hoverable"
@@ -15221,9 +15241,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('span', {
     staticClass: "bd-emoji"
-  }, [_vm._v("❤️")]), _vm._v("\n        Love\n      ")])]), _vm._v(" "), _c('div', {
-    staticClass: "navbar-end"
-  }, [_c('a', {
+  }, [_vm._v("❤️")]), _vm._v("\n        Love\n      ")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
     staticClass: "navbar-item is-hidden-desktop-only",
     attrs: {
       "href": "https://github.com/jgthms/bulma",
@@ -15236,7 +15256,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('i', {
     staticClass: "fa fa-lg fa-github"
-  })])]), _vm._v(" "), _c('a', {
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
     staticClass: "navbar-item is-hidden-desktop-only",
     attrs: {
       "href": "https://twitter.com/jgthms",
@@ -15249,13 +15271,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('i', {
     staticClass: "fa fa-lg fa-twitter"
-  })])]), _vm._v(" "), _c('div', {
-    staticClass: "navbar-item"
-  }, [_c('div', {
-    staticClass: "field is-grouped"
-  }, [_c('p', {
-    staticClass: "control"
-  }, [_c('a', {
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
     staticClass: "bd-tw-button button",
     attrs: {
       "data-social-network": "Twitter",
@@ -15268,7 +15286,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "icon"
   }, [_c('i', {
     staticClass: "fa fa-twitter"
-  })]), _vm._v(" "), _c('span', [_vm._v("\n    Tweet\n  ")])])]), _vm._v(" "), _c('p', {
+  })]), _vm._v(" "), _c('span', [_vm._v("\n    Tweet\n  ")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
     staticClass: "control"
   }, [_c('a', {
     staticClass: "button is-primary",
@@ -15279,7 +15299,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "icon"
   }, [_c('i', {
     staticClass: "fa fa-download"
-  })]), _vm._v(" "), _c('span', [_vm._v("Download")])])])])])])])]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c('span', [_vm._v("Download")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "hero-body"
   }, [_c('div', {
     staticClass: "container has-text-centered"
@@ -15287,7 +15309,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "title"
   }, [_vm._v("\n\t        Title\n\t      ")]), _vm._v(" "), _c('h2', {
     staticClass: "subtitle"
-  }, [_vm._v("\n\t        Subtitle\n\t      ")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n\t        Subtitle\n\t      ")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "hero-foot"
   }, [_c('nav', {
     staticClass: "tabs"
@@ -15295,7 +15319,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container"
   }, [_c('ul', [_c('li', {
     staticClass: "is-active"
-  }, [_c('a', [_vm._v("Overview")])]), _vm._v(" "), _c('li', [_c('a', [_vm._v("Modifiers")])]), _vm._v(" "), _c('li', [_c('a', [_vm._v("Grid")])]), _vm._v(" "), _c('li', [_c('a', [_vm._v("Elements")])]), _vm._v(" "), _c('li', [_c('a', [_vm._v("Components")])]), _vm._v(" "), _c('li', [_c('a', [_vm._v("Layout")])])])])])])])
+  }, [_c('a', [_vm._v("Overview")])]), _vm._v(" "), _c('li', [_c('a', [_vm._v("Modifiers")])]), _vm._v(" "), _c('li', [_c('a', [_vm._v("Grid")])]), _vm._v(" "), _c('li', [_c('a', [_vm._v("Elements")])]), _vm._v(" "), _c('li', [_c('a', [_vm._v("Components")])]), _vm._v(" "), _c('li', [_c('a', [_vm._v("Layout")])])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -18773,6 +18797,289 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			});
 		}
 	}
+});
+
+/***/ }),
+/* 92 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_locale__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_api__ = __webpack_require__(4);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      locales: ['en', 'hk', 'cn'],
+      changedLocales: 'en'
+
+    };
+  },
+
+  watch: {
+    'changedLocales': 'updateLocale'
+  },
+  methods: {
+    updateLocale: function updateLocale() {
+      __WEBPACK_IMPORTED_MODULE_0__helpers_locale__["a" /* default */].setLocale(this.changedLocales);
+      Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["b" /* get */])();
+    }
+  }
 });
 
 /***/ })

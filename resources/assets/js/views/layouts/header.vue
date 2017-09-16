@@ -182,6 +182,13 @@
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
+
+                    <div class="select">
+                      <select v-model="changedLocales">
+                        <option v-for="locale in locales" :value="locale">{{locale}}</option>
+                      </select>
+                    </div>
+
             <a class="bd-tw-button button"
   data-social-network="Twitter"
   data-social-action="tweet"
@@ -240,4 +247,29 @@
 	  </div>
 	</section>
 </template>
+
+<script type="text/javascript">
+  
+  import Locale from '../../helpers/locale'
+  import {get} from '../../helpers/api'
+
+  export default{
+      data(){
+      return {
+        locales: [ 'en', 'hk', 'cn' ],
+        changedLocales: 'en',
+
+      }
+    },
+    watch: {
+      'changedLocales': 'updateLocale'
+    },
+    methods: {
+      updateLocale(){
+        Locale.setLocale(this.changedLocales)
+        get()
+      }
+    }
+  }
+</script>
 
