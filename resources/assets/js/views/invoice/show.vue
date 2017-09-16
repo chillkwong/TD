@@ -107,6 +107,7 @@
 
 	export default {
 		name: 'invoiceShow',
+		
 		data(){
 			return {
 				model: {

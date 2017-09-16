@@ -58,35 +58,26 @@
         </div>
       </div>
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link " href="/adm/customer">
-          Customer
+        <a class="navbar-link " href="/adm/customers">
+          Customers
         </a>
         <div id="blogDropdown" class="navbar-dropdown " data-style="width: 18rem;">
           
-            <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+            <a class="navbar-item" href="/adm/customers">
               <div class="navbar-content">
                 <p>
-                  <small class="has-text-info">03 Aug 2017</small>
+                  <small class="has-text-info">Show all customers</small>
                 </p>
-                <p>New feature: list of tags</p>
+                <p>Show</p>
               </div>
             </a>
           
-            <a class="navbar-item" href="/2017/08/01/bulma-bootstrap-comparison/">
+            <a class="navbar-item" href="/adm/customers/create">
               <div class="navbar-content">
                 <p>
-                  <small class="has-text-info">01 Aug 2017</small>
+                  <small class="has-text-info">Add new customers</small>
                 </p>
-                <p>Bulma / Bootstrap comparison</p>
-              </div>
-            </a>
-          
-            <a class="navbar-item" href="/2017/07/24/access-previous-bulma-versions/">
-              <div class="navbar-content">
-                <p>
-                  <small class="has-text-info">24 Jul 2017</small>
-                </p>
-                <p>Access previous Bulma versions</p>
+                <p>Create</p>
               </div>
             </a>
           

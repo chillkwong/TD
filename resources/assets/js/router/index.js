@@ -18,6 +18,12 @@ import InvoiceIndex from '../views/invoice/index.vue'
 import InvoiceShow from '../views/invoice/show.vue'
 import InvoiceForm from '../views/invoice/form.vue'
 
+//invoice
+import CusomterIndex from '../views/customer/index.vue'
+import CustomerShow from '../views/customer/show.vue'
+import CustomerForm from '../views/customer/form.vue'
+
+
 //Auth
 import AdmLogin from '../views/Auth/adm_login.vue'
 
@@ -43,10 +49,18 @@ const router = new VueRouter({
 
 		children:[
 		{path:'', component: AdmMain},
+
 		{path: 'invoices', component: InvoiceIndex},
 		{path: 'invoices/create', component: InvoiceForm},
 		{path: 'invoices/:id', component: InvoiceShow},
-		{path: 'invoices/:id/edit', component: InvoiceForm, meta:{mode:'edit'}}
+		{path: 'invoices/:id/edit', component: InvoiceForm, meta:{mode:'edit'}},
+
+		{path: 'customers', component: CusomterIndex},
+		{path: 'customers/create', component: CustomerForm},
+		{path: 'customers/:id', component: CustomerShow},
+		{path: 'customers/:id/edit', component: CustomerForm, meta:{mode:'edit'}}
+
+
 		]}
 
 	]

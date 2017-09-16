@@ -69,8 +69,32 @@
 					<slot v-for="item in model.data" :item="item"></slot>
 			</tbody>
 		</table>
-
-	
+		<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+		  <a class="pagination-previous" @click="prev">Previous</a>
+		  <div class="field">
+ 			 <div class="control">
+ 			 	<label>Per Page</label>
+			  	<div class="select is-primary">
+					<select v-model="params.per_page" @change="fetchData">
+						<option>10</option>
+						<option>25</option>
+						<option>50</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		  <a class="pagination-next" @click="next">Next page</a>
+		  <ul class="pagination-list">
+		    <li><a class="pagination-link" aria-label="Goto page 1" :diable="params.page-10">{{params.page-10 ? 0: params.page-10}}</a></li>
+		    <li><span class="pagination-ellipsis">&hellip;</span></li>
+		    <li><a class="pagination-link" aria-label="Goto page 45">{{params.page-1}}</a></li>
+		    <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">{{params.page}}</a></li>
+		    <li><a class="pagination-link" aria-label="Goto page 47">{{1+params.page}}</a></li>
+		    <li><span class="pagination-ellipsis">&hellip;</span></li>
+		    <li><a class="pagination-link" aria-label="Goto page 86">{{10+params.page}}</a></li>
+		  </ul>
+		</nav>
+		
 	</div>
 </template>
 
@@ -78,9 +102,11 @@
 
 	import Vue from 'vue'
 	import { get } from '../helpers/api'
+	// import Pagination from '../components/pagination.vue'
 
 	export default {
 		props: ['source', 'thead', 'filter', 'create', 'title'],
+		// components: { Pagination},
 		data(){
 			return {
 				showFilter: true,

@@ -7,6 +7,8 @@ use App\Support\FilterPaginateOrder;
 
 class Customer extends Model
 {
+    use FilterPaginateOrder;
+    
    	protected $fillable = [
 	'name', 'phone','email'
 	];
