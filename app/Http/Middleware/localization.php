@@ -15,11 +15,10 @@ class localization
      */
     public function handle($request, Closure $next)
     {
-         $local = ($request->hasHeader('X-localization')) ? $request->header('X-localization') : 'en';
-         // set laravel localization
-         app()->setLocale($local);
-        // continue request
-        return $next($request);
-
+        $local = ($request->hasHeader('X-localization')) ? $request->header('X-localization') : 'en';
+     // set laravel localization
+     app()->setLocale($local);
+    // continue request
+    return $next($request);
     }
 }
