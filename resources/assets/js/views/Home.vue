@@ -1,35 +1,41 @@
 <template>
   <div>
-  Home
+  <p>{{trans.hello}}{{trans.diamond}}1</p>
     <router-view></router-view>
+
   </div>
 </template>
 
 
 <script type="text/javascript">
 
-  // import Flash from '../helpers/flash'
-  // import Auth from '../store/auth'
-  // import {post} from '../helpers/api'
+  import Vue from 'vue'
+  import {get} from '../helpers/api'
 
 	export default {
 		data(){
 			return {
 				posts: [],
-				trans: [],
+				trans: {},
         items: []
 			}
 		},
+     watch: {
+      '$route': 'fetchData'
+    },
 		created(){
                 this.fetchData()
 		},
-            methods: {
-                        fetchData(){
-                                get(`/api/posts`)
-                                .then((res) =>{
-                                  this.posts = res.data.posts
-                                })
-                        }
-            }
+    methods: {
+          fetchData(){
+                  get(`/api/home`,this.$route.fullPath.slice(1,3))
+                  .then((res) =>{
+                    Vue.set(this.$data,'trans', res.data.trans)
+                    // this.posts = res.data.posts
+                  })
+                  .catch((err)=>{console.log(err)})
+
+          }
+    }
 	}
 </script>

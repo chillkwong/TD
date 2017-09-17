@@ -183,25 +183,46 @@
         <div class="field is-grouped">
           <p class="control">
 
-                    <div class="select">
+                    <!-- <div class="select">
                       <select v-model="changedLocales">
-                        <option v-for="locale in locales" :value="locale">{{locale}}</option>
+                        <option v-for="locale in locales" :value="locale"><a href="/">{{locale}}</a></option>
                       </select>
+                    </div> -->
+                   <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                      <button class="button is-info" aria-haspopup="true" aria-controls="dropdown-menu4">
+                        <span>Language</span>
+                        <span class="icon is-small">
+                          <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
                     </div>
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                      <div class="dropdown-content">
+                        <div class="dropdown-item">
+                          <router-link :to="'/en' + this.$route.fullPath.slice(3)" >EN</router-link>
+                          <hr class="dropdown-divider">
+                          <router-link :to="'/hk' + this.$route.fullPath.slice(3)" >HK</router-link>
+                          <hr class="dropdown-divider">
+                          <router-link :to="'/cn' + this.$route.fullPath.slice(3)" >CN</router-link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
             <a class="bd-tw-button button"
-  data-social-network="Twitter"
-  data-social-action="tweet"
-  data-social-target="http://bulma.io"
-  target="_blank"
-  href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&hashtags=bulmaio&url=http://bulma.io&via=jgthms">
-  <span class="icon">
-    <i class="fa fa-twitter"></i>
-  </span>
-  <span>
-    Tweet
-  </span>
-</a>
+              data-social-network="Twitter"
+              data-social-action="tweet"
+              data-social-target="http://bulma.io"
+              target="_blank"
+              href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&hashtags=bulmaio&url=http://bulma.io&via=jgthms">
+              <span class="icon">
+                <i class="fa fa-twitter"></i>
+              </span>
+              <span>
+                Tweet
+              </span>
+            </a>
 
           </p>
           <p class="control">
@@ -250,26 +271,28 @@
 
 <script type="text/javascript">
   
-  import Locale from '../../helpers/locale'
-  import {get} from '../../helpers/api'
+  //  import Vue from 'vue'
+  // import {get} from '../../helpers/api'
 
-  export default{
-      data(){
-      return {
-        locales: [ 'en', 'hk', 'cn' ],
-        changedLocales: 'en',
+  // export default {
+  
+  //    watch: {
+  //     '$route': 'fetchData'
+  //   },
+  //   created(){
+  //               this.fetchData()
+  //   },
+  //   methods: {
+  //         fetchData(){
+  //                 get(`/api/home`,this.$route.fullPath.slice(1,3))
+  //                 .then((res) =>{
+  //                   Vue.set(this.$data,'trans', res.data.trans)
+  //                   // this.posts = res.data.posts
+  //                 })
+  //                 .catch((err)=>{console.log(err)})
 
-      }
-    },
-    watch: {
-      'changedLocales': 'updateLocale'
-    },
-    methods: {
-      updateLocale(){
-        Locale.setLocale(this.changedLocales)
-        get()
-      }
-    }
-  }
+  //         }
+  //   }
+  // }
 </script>
 

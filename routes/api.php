@@ -17,15 +17,20 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
+Route::get('/home', 'HomeController@index');
 
 Route::post('/register', 'AuthController@register');
 Route::post('/login', 'AuthController@login');
 Route::post('/logout', 'AuthController@logout');
 
+//backend
 Route::resource('customers', 'CustomerController');
-
-Route::resource('posts', 'PostController');
 Route::resource('invoices', 'InvoiceController');
+Route::resource('items', 'ItemController');
+
+//front
+Route::resource('posts', 'PostController');
+
 
 
 

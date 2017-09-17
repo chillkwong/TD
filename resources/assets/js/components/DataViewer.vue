@@ -73,7 +73,7 @@
 		  <a class="pagination-previous" @click="prev">Previous</a>
 		  <div class="field">
  			 <div class="control">
- 			 	<label>Per Page</label>
+ 			 	<label>Per Page</label> 
 			  	<div class="select is-primary">
 					<select v-model="params.per_page" @change="fetchData">
 						<option>10</option>
