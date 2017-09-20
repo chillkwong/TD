@@ -18,13 +18,14 @@ class CreateJewellriesTable extends Migration
             $table->string('stock');
             $table->string('name');
             $table->string('description');
+            $table->integer('unit_price');
             $table->timestamps();
         });
 
-        Schema::create('item_jewellry', function (Blueprint $table) {
-            $table->integer('item_id');
+        Schema::create('invoice_jewellry', function (Blueprint $table) {
+            $table->integer('invoice_id');
             $table->integer('jewellry_id');            
-            $table->primary(['item_id','jewellry_id']);
+            $table->primary(['invoice_id','jewellry_id']);
         });
     }
 
@@ -36,6 +37,6 @@ class CreateJewellriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('jewellries');
-        Schema::dropIfExists('item_jewellry');
+        Schema::dropIfExists('invoice_jewellry');
     }
 }

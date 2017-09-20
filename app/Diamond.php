@@ -14,9 +14,9 @@ class Diamond extends Model
     			];
 
 
-    	public function items()
+    	public function supplier()
     	{
-    		return $this->belongsTo(Item::class);
+    		return $this->belongsTo(Supplier::class);
     	}
 
     	public static function form()

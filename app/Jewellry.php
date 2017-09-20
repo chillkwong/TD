@@ -6,12 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jewellry extends Model
 {
-
+    protected $hidden = array('pivot');
+    
 	protected $fillable =[
-	'stock' ,'title' , 'description'
+	'stock' ,'name' , 'description','unit_price',
 	];
 	
-    public function items(){
-    	return $this->belongsToMnay(Item::class);
+    public function invoices(){
+    	return $this->belongsToMany(Invoice::class);
     }
+
+    public static function form()
+    	{
+    		return [
+    		'id' => '' , 
+    		'name' => '' , 
+    		'description' => '' , 
+    		'unit_price' => ''     
+    		];
+    	}
 }

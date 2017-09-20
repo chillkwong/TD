@@ -33,7 +33,7 @@
 				{ title: 'ID', key: 'id', sort: true},
 				{ title: 'Date', key: 'date', sort: true},
 				{ title: 'Customer', key: 'customer', sort: false},
-				{ title: 'Title', key: 'title', sort: true},
+				{ title: 'title', key: 'title', sort: true},
 				{ title: 'deposit', key: 'deposit', sort: true},
 				{ title: 'balance', key: 'balance', sort: true},
 				{ title: 'Amount' , key: 'total', sort: true},

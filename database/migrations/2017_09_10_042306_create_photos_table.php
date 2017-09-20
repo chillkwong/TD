@@ -20,10 +20,10 @@ class CreatePhotosTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('item_photo', function (Blueprint $table) {
-            $table->string('item_id');
+        Schema::create('invoice_photo', function (Blueprint $table) {
+            $table->string('invoice_id');
             $table->string('photo_id');
-            $table->primary(['item_id','photo_id']);
+            $table->primary(['invoice_id','photo_id']);
             $table->timestamps();
         });
     }
@@ -36,6 +36,6 @@ class CreatePhotosTable extends Migration
     public function down()
     {
         Schema::dropIfExists('photos');
-        Schema::dropIfExists('item_photo');
+        Schema::dropIfExists('invoice_photo');
     }
 }

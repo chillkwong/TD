@@ -108,6 +108,59 @@
           </div>
         </div>
       </div>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link " href="/adm/items">
+                Items
+              </a>
+              <div id="blogDropdown" class="navbar-dropdown " data-style="width: 18rem;">
+                
+                  <a class="navbar-item" href="/adm/items">
+                    <div class="navbar-content">
+                      <p>
+                        <small class="has-text-info">Show all Items</small>
+                      </p>
+                      <p>Show</p>
+                    </div>
+                  </a>
+                
+                  <a class="navbar-item" href="/adm/items/create">
+                    <div class="navbar-content">
+                      <p>
+                        <small class="has-text-info">Add new Items</small>
+                      </p>
+                      <p>Create</p>
+                    </div>
+                  </a>
+                
+                <a class="navbar-item" href="http://bulma.io/blog/">
+                  More posts
+                </a>
+                <hr class="navbar-divider">
+                <div class="navbar-item">
+                  <div class="navbar-content">
+                    <div class="level is-mobile">
+                      <div class="level-left">
+                        <div class="level-item">
+                          <strong>Stay up to date!</strong>
+                        </div>
+                      </div>
+                      <div class="level-right">
+                        <div class="level-item">
+                          <a class="button bd-is-rss is-small" href="http://bulma.io/atom.xml">
+                            <span class="icon is-small">
+                              <i class="fa fa-rss"></i>
+                            </span>
+                            <span>Subscribe</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
       <div class="navbar-item has-dropdown is-hoverable">
         <div class="navbar-link">
           More

@@ -3,13 +3,20 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Support\FilterPaginateOrder;
 
 class Item extends Model
 {
+    use FilterPaginateOrder;
 
-	protected $fillable = [
-	'qty', 'unit_price', 'name', 'description', 
-	];
+    protected $fillable = [
+    'qty', 'unit_price', 'name', 'description','supplier_id','invoice_id' 
+    ];
+
+    protected $filter = [
+    'id', 'qty', 'unit_price', 'name', 'description','supplier_id','invoice_id',
+    'invoice.id'
+    ];
 
     public function invoice(){
     	return $this->belongsTo(Invoice::class);
@@ -24,14 +31,14 @@ class Item extends Model
     	return $this->belongsTo(Post::class);
     }
 
-    public function diamonds()
+    public function diamond()
     {
-        return $this->hasMany(Diamond::class);
+        return $this->hasOne(Diamond::class);
     }
 
-    public function jewellery()
+    public function jewellry()
     {
-        return $this->belongsToMany(Jewellery::class);
+        return $this->belongsTo(Jewellry::class);
     }
 
     public function photos(){

@@ -1,5 +1,8 @@
 <template>
 	<div class="container">
+	<nav class="level">
+		
+	</nav>
 	<div v-if="fullpath">
 	<div class="columns">
 		<div class="column is-left">
@@ -50,6 +53,12 @@
 			</div>
 		</div>
 
+    <div class="tile">
+   
+        <article class="tile notification is-primary">
+    
+        </article>
+       </div>
 		<table class="table is-fullwidth">
 				<thead>
 					<tr>
@@ -57,31 +66,35 @@
 						<th>Desciption</th>
 						<th>Quantity</th>
 						<th>Price</th>
-						<th>Amount</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="item in model.items">
-						<td>{{item.name}}</td>
-						<td>{{item.description}}</td>
-						<td>{{item.qty}}</td>
-						<td>{{item.unit_price}}</td>
-						<td>${{item.unit_price * item.qty}}</td>
+					<tr v-for="diamond in model.inv_diamonds" v-if="model.inv_diamonds">
+						<td>GIA:{{diamond.certificate}}</td>
+						<td>{{diamond.weight}},{{diamond.color}},{{diamond.clarity}},{{diamond.cut}},{{diamond.polish}},{{diamond.symmetry}},{{diamond.fluroscence}}</td>
+						<td>1</td>
+						<td>{{diamond.price}}</td>
+					</tr>
+					<tr v-for="jewellry in model.jewellries" v-if="model.jewellries">
+						<td>{{jewellry.name}}</td>
+						<td>{{jewellry.description}}</td>
+						<td>1</td>
+						<td>{{jewellry.unit_price}}</td>						
 					</tr>
 				</tbody>
 				<tfoot>
 					<tr>
-						<td colspan="3"></td>
+						<td colspan="2"></td>
 						<td><p class="subtitle is-6"><strong>Deposit:</strong></p></td>
 						<td>${{model.deposit}}</td>
 					</tr>
 					<tr>
-						<td colspan="3"></td>
+						<td colspan="2"></td>
 						<td><p class="subtitle is-6"><strong>Balance:</strong></p></td>
 						<td>${{model.balance}}</td>
 					</tr>
 					<tr>
-						<td colspan="3"></td>
+						<td colspan="2"></td>
 						<td><strong>Total:</strong></td>
 						<td>${{model.total}}</td>
 					</tr>

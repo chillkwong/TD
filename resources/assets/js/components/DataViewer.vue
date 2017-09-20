@@ -85,13 +85,13 @@
 		</div>
 		  <a class="pagination-next" @click="next">Next page</a>
 		  <ul class="pagination-list">
-		    <li><a class="pagination-link" aria-label="Goto page 1" :diable="params.page-10">{{params.page-10 ? 0: params.page-10}}</a></li>
+		    <li><a class="button" aria-label="Goto page 1" @click="moveTo(-5)" :disabled="params.page<5">{{params.page<5 ? 0: params.page-5}}</a></li>
 		    <li><span class="pagination-ellipsis">&hellip;</span></li>
-		    <li><a class="pagination-link" aria-label="Goto page 45">{{params.page-1}}</a></li>
+		    <li><a class="pagination-link" aria-label="Goto page 86" :diable="params.page" @click="moveTo(-1)">{{params.page-1}}</a></li>
 		    <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">{{params.page}}</a></li>
-		    <li><a class="pagination-link" aria-label="Goto page 47">{{1+params.page}}</a></li>
+		    <li><a class="pagination-link" aria-label="Goto page 86" :diable="params.page>params.last_page" @click="moveTo(1)">{{params.page+1}}</a></li>   
 		    <li><span class="pagination-ellipsis">&hellip;</span></li>
-		    <li><a class="pagination-link" aria-label="Goto page 86">{{10+params.page}}</a></li>
+		    <li><a class="pagination-link" aria-label="Goto page 86"  @click="moveTo(5)">{{5+params.page}}</a></li>
 		  </ul>
 		</nav>
 		
@@ -152,6 +152,12 @@
 					this.params.page--
 					this.fetchData()
 				}
+			},
+			moveTo(page){
+					if (this.params.page + page >0 ) {
+					this.params.page = this.params.page + page
+					this.fetchData()
+				}				
 			},
 			sort(column){
 				if (column === this.params.column) {

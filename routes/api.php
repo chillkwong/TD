@@ -23,6 +23,8 @@ Route::post('/register', 'AuthController@register');
 Route::post('/login', 'AuthController@login');
 Route::post('/logout', 'AuthController@logout');
 
+Route::Post('td-login', 'AdminController@login');
+
 //backend
 Route::resource('customers', 'CustomerController');
 Route::resource('invoices', 'InvoiceController');
@@ -32,6 +34,3 @@ Route::resource('items', 'ItemController');
 Route::resource('posts', 'PostController');
 
 
-
-
-Route::Post('td-login', 'AdminController@login');

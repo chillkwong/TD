@@ -12,22 +12,34 @@ class ItemController extends Controller
 {
     public function index()
     {
-    	$items = Item::orderBy('created_at', 'desc')->get();
+    	$items = Item::filterPaginateOrder();
 
     	return response()
     		->json([
-    			'items' => $items
+    			'model' => $items
+    			]);
+    }
+
+    public function show($id)
+    {
+    	$items  = Item::with('invoice','jewellry','diamond')->findOrFail($id);
+
+    	return response()
+    		->json([
+    			'model' =>$items,
     			]);
     }
 
     public function create()
     {
-    	return response()
-    		->json([
-    			'form' =>Invoice::form(),
-    			'option' => [
-    				'customers' => Customer::orderBy('name')->get()
-    			]
-    			]);
+        return response()
+            ->json([
+                'form' =>Item::form(),
+                'option' => [
+                    'jewellries' => Jewellry::orderBy('name')->get(),
+                    'diamonds' => Diamond::orderBy('weight')->get()
+
+                ]
+                ]);
     }
 }

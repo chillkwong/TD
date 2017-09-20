@@ -10,6 +10,8 @@ class Invoice extends Model
 
     use FilterPaginateOrder;
 
+    protected $hidden = array('pivot');
+
 	protected $fillable = [
         'customer_id', 'title', 'notes','date', 'due_date', 'discount',
         'sub_total', 'total', 'deposit','balance','notes', 'count'
@@ -27,8 +29,12 @@ class Invoice extends Model
     	return $this->belongsTo(Customer::class);
     }
 
-    public function items(){
-    	return $this->hasMany(Item::class);
+    public function invDiamonds(){
+    	return $this->hasMany(InvDiamond::class);
+    }
+
+    public function jewellries(){
+        return $this->belongsToMany(Jewellry::class);
     }
 
     public function posts()
@@ -49,7 +55,10 @@ class Invoice extends Model
         'balance' => 0,
         'notes'=> 'Ring Size:#',
     	'total'=> 0,
-    	'items' => [Item::form()]
+    	'inv_diamonds' =>[ InvDiamond::form()],
+        'jewellries' => [
+            // ['id'=>'',]
+            ]
     	];
     }
 }

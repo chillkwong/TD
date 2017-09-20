@@ -1,5 +1,8 @@
 <template>
 	<div class="container">
+		<nav class="level">
+		
+		</nav>
 		<div class="columns is-centered">
 			<div class="column is-9">
 				<p class="title is-2">{{model.name}}</p>

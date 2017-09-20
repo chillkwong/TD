@@ -1,10 +1,10 @@
 <template>
-	<data-viewer :source = "source" :thead="thead" :filter="filter" :create="create" :title="title">
+	<data-viewer :source = "source" :thead="thead" :filter="filter" :create="create" :name="name">
 		<template scope="props">
 			<tr @click="$router.push('/adm/customers/' + props.item.id)">
 				<td>{{props.item.id}}</td>
-				<td>{{props.item.company}}</td>
 				<td>{{props.item.name}}</td>
+				<td>{{props.item.phone}}</td>
 				<td>{{props.item.email}}</td>
 				<td>{{props.item.created_at}}</td>
 			</tr>
@@ -20,15 +20,15 @@
 		name: 'CustomerIndex',
 		data(){
 			return {
-				title: 'Customers',
+				name: 'Customers',
 				source: '/api/customers',
 				create:'/adm/customers/create',
 				thead: [
-				{ title: 'ID', key: 'id', sort: true},
-				{ title: 'Company', key: 'company', sort: true},
-				{ title: 'Name', key: 'name', sort: true},
-				{ title: 'Email Address', key: 'email', sort: true},
-				{ title: 'Created At', key: 'created_at', sort: true}
+				{ name: 'ID', key: 'id', sort: true},
+				{ name: 'Name', key: 'name', sort: true},
+				{ name: 'Phone', key: 'phone', sort: true},
+				{ name: 'Email Address', key: 'email', sort: true},
+				{ name: 'Created At', key: 'created_at', sort: true}
 				],
 				filter: [
 				'id', 'name', 'email', 'phone'

@@ -1,6 +1,6 @@
 <template>
 	<div>
-	<router-view class="view one" name="header" :images="images" :locales="locales" :changedLocales="changedLocales"></router-view>
+	<router-view class="view one" name="header" :images="images"></router-view>
 	<router-view class="view two" name="breadcrumb"></router-view>
 	<router-view></router-view>
 	<router-view class="view three" name="footer"></router-view>
@@ -23,8 +23,6 @@
 		},
 		data(){
 			return {
-				locales: [ 'en', 'hk', 'cn' ],
-       			changedLocales: 'en',
 				flash: Flash.state,
 				auth: Auth.state,
 				images: Images
@@ -41,3 +39,9 @@
 	    // }
 	}
 </script>
+
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+</style>

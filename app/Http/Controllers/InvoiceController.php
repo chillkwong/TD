@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Invoice;
-use App\Item;
+// use App\Item;
+use App\InvDiamond;
+use App\Jewellry;
 use App\Customer;
 
 class InvoiceController extends Controller
@@ -32,7 +34,8 @@ class InvoiceController extends Controller
     		->json([
     			'form' =>Invoice::form(),
     			'option' => [
-    				'customers' => Customer::orderBy('name')->get()
+    				'customers' => Customer::orderBy('name')->get(),
+                    'jewellries' => Jewellry::select('id','name as text','description','unit_price')->get()
     			]
     			]);
     }
@@ -45,27 +48,30 @@ class InvoiceController extends Controller
                 'date' => 'required | date_format:Y-m-d',
                 'due_date' => 'required | date_format:Y-m-d',
                 'discount' => 'required | numeric | min:0',
-                'items' => 'required | array | min:1',
-                'items.*.description' => 'required | max:255',
-                'items.*.name' => 'required | max:255',
-                'items.*.qty' => 'required | integer | min:1',
-                'items.*.unit_price' => 'required | numeric | min:0'
+                'deposit' => 'required | numeric | min:0',
+                'total' => 'required | numeric | min:0',
             ]);
 
-        $data = $request->except('items');
-        $data['sub_total'] = 0;
-        $items = [ ];
-
-        foreach ($request->items as $item) {
-            $data['sub_total'] += $item['unit_price'] * $item['qty']; 
-            $items[ ] = new Item($item);
+        $data = $request->except('diamonds','jewellries');
+        $data['sub_total'];
+        $diamonds = [ ];
+        $jewellries = [];
+        
+        foreach ($request->inv_diamonds as $diamond) {
+            $diamonds[] = new InvDiamond($diamond);
         }
 
         $data['total'] = $data['sub_total'] - $data['discount'];
+        $data['balance'] = $data['total'] - $data['deposit'];
         $invoice = Invoice::create($data);
-        $invoice->items()
-        		->saveMany($items);
+        $invoice->invDiamonds()
+        		->saveMany($diamonds);
 
+        foreach ($request->jewellries as $jewellry) {
+            $jewellries[] = $jewellry['id'];
+        }
+
+        $invoice->jewellries()->sync($jewellries);
         return response()
         		->json([
         			'saved' =>true
@@ -74,7 +80,7 @@ class InvoiceController extends Controller
 
     public function show($id)
     {
-    	$invoice  = Invoice::with('customer', 'items')->findOrFail($id);
+    	$invoice  = Invoice::with('customer', 'invDiamonds', 'jewellries')->findOrFail($id);
 
     	return response()
     		->json([
@@ -85,13 +91,18 @@ class InvoiceController extends Controller
 
     public function edit($id)
     {
-    	$invoice  = Invoice::with('items')->findOrFail($id);
+    	$invoice  = Invoice::with(['invDiamonds',
+                'jewellries'=>function($query){
+                   $query->get(['id']);
+                   }
+                ])->findOrFail($id);
 
     	return response()
     		->json([
     			'form' => $invoice,
     			'option' => [
-                         'customers' => Customer::orderBy('name')->get()
+                         'customers' => Customer::orderBy('name')->get(),
+                         'jewellries' => Jewellry::select('id','name as text','description','unit_price')->get()
                                          ],
 
     			]);
@@ -107,47 +118,45 @@ class InvoiceController extends Controller
                 'date' => 'required | date_format:Y-m-d',
                 'due_date' => 'required | date_format:Y-m-d',
                 'discount' => 'required | numeric | min:0',
-                'items' => 'required | array | min:1',
-                'items.*.description' => 'required | max:255',
-                'items.*.qty' => 'required | integer | min:1',
-                'items.*.unit_price' => 'required | numeric | min:0'
             ]);
 
     	$invoice = Invoice::findOrFail($id);
 
-        $data = $request->except('items');
-        $data['sub_total'] = 0;
-        $items = [ ];
-        $itemIds = [ ];
+        $data = $request->except('inv_diamonds','jewellries');
+        // $data['sub_total'] = 0;
+        $diamonds = [ ];
+        $diamondIds = [ ];
 
-        foreach ($request->items as $item) {
-            $data['sub_total'] += $item['unit_price'] * $item['qty']; 
-            if (isset($item['id'])) {
+        foreach ($request->inv_diamonds as $diamond) {
+            // $data['sub_total'] += $item['unit_price'] * $item['qty']; 
+            if (isset($diamond['id'])) {
 
-            	Item::whereId($item['id'])
+            	InvDiamond::whereId($diamond['id'])
             		->whereInvoiceId($invoice->id)
-            		->update($item);
+            		->update($diamond);
 
-                        $itemIds[] = $item['id'];
+                        $diamondIds[] = $diamond['id'];
             }else{
-            	$items[ ] = new Item($item);
+            	$diamonds[ ] = new InvDiamond($diamond);
             }
         }
 
-        $data['total'] = $data['sub_total'] - $data['discount'];
+        // $data['total'] = $data['sub_total'] - $data['discount'];
 
         $invoice ->update($data);
 
-        if (count($itemIds)) {
-        	Item::whereInvoiceId($invoice->id)
-        		->whereNotIn('id', $itemIds)
+        if (count($diamondIds)) {
+        	InvDiamond::whereInvoiceId($invoice->id)
+        		->whereNotIn('id', $diamondIds)
         		->delete();
         }
 
-        if (count($items)) {
-            $invoice->items()
-                            ->saveMany($items);
+        if (count($diamonds)) {
+            $invoice->invDiamonds()
+                            ->saveMany($diamonds);
         }
+
+        $invoice->jewellries()->sync($request->jewellries);
 
         return response()
         		->json([
