@@ -20,7 +20,7 @@ class InvDiamondController extends Controller
     {
     	return response()
     		->json([
-    			'form' =>Customer::form(),
+    			'form' =>InvDiamond::form(),
     			'option' =>[]
     		]);	
     }
@@ -28,11 +28,19 @@ class InvDiamondController extends Controller
     public function store(Request $request)
     {
     	$this->validate($request, [
-    		'name'  => 'required',
-    		'email' => 'required | email',
-    		'phone' =>'required',
+    		'price'  => 'required',
+            'clarity' => 'required',
+            'weight' => 'required',
+            'color' => 'required',
+            'cut' => 'required',
+            'polish' => 'required',
+            'symmetry' => 'required',
+            'fluroscence' => 'required',
+            'lab' => 'required',
+            'certificate' => 'required',
+            'shape' =>'required',
     		]);
-    	$customer = Customer::create($request->all());
+    	$invDiamond = InvDiamond::create($request->all());
 
     	return response()
     		->json([
@@ -42,21 +50,21 @@ class InvDiamondController extends Controller
 
     public function show($id)
     {
-    	$customer = Customer::findOrFail($id);
+    	$invDiamond = InvDiamond::findOrFail($id);
 
     	return response()
     		->json([
-    			'model' => $customer
+    			'model' => $invDiamond
     			]);
     }
 
     public function edit($id)
     {
-    	$customer = Customer::findOrFail($id);
+    	$invDiamond = InvDiamond::findOrFail($id);
 
     	return response()
     		->json([
-    			'form' =>$customer,
+    			'form' =>$invDiamond,
     			'option' => []
     			]);
     }
@@ -64,12 +72,20 @@ class InvDiamondController extends Controller
     public function update(Request $request, $id)
     {
     	    	$this->validate($request, [
-    		'name'  => 'required',
-    		'email' => 'required | email',
-    		'phone' =>'required',
+    		'price'  => 'required',
+            'clarity' => 'required',
+            'weight' => 'required',
+            'color' => 'required',
+            'cut' => 'required',
+            'polish' => 'required',
+            'symmetry' => 'required',
+            'fluroscence' => 'required',
+            'lab' => 'required',
+    		'certificate' => 'required',
+    		'shape' =>'required',
     		]);
-    	$customer = Customer::findOrFail($id);
-    	$customer->update($request->all());
+    	$invDiamond = InvDiamond::findOrFail($id);
+    	$invDiamond->update($request->all());
 
     	return response()
     		->json([
@@ -79,8 +95,8 @@ class InvDiamondController extends Controller
 
     public function destroy($id)
     {
-    	$customer = Customer::findOrFail($id);
-    	$customer->delete();
+    	$invDiamond = InvDiamond::findOrFail($id);
+    	$invDiamond->delete();
 
     	return response()
     		->json([

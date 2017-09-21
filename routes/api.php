@@ -29,6 +29,7 @@ Route::Post('td-login', 'AdminController@login');
 Route::resource('customers', 'CustomerController');
 Route::resource('invoices', 'InvoiceController');
 Route::resource('invDiamonds', 'InvDiamondController');
+Route::resource('jewellries', 'JewellryController');
 Route::resource('items', 'ItemController');
 
 //front

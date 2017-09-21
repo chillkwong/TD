@@ -25,14 +25,19 @@ import InvoiceShow from '../views/invoice/show.vue'
 import InvoiceForm from '../views/invoice/form.vue'
 
 //invoice
-import ItemIndex from '../views/item/index.vue'
-import ItemShow from '../views/item/show.vue'
-import ItemForm from '../views/item/form.vue'
+// import ItemIndex from '../views/item/index.vue'
+// import ItemShow from '../views/item/show.vue'
+// import ItemForm from '../views/item/form.vue'
 
 //invoice diamonds
 import InvDiamondIndex from '../views/invdiamond/index.vue'
 import InvDiamondShow from '../views/invdiamond/show.vue'
 import InvDiamondForm from '../views/invdiamond/form.vue'
+
+//invoice diamonds
+import JewellryIndex from '../views/jewellry/index.vue'
+import JewellryShow from '../views/jewellry/show.vue'
+import JewellryForm from '../views/jewellry/form.vue'
 
 //Post
 import PostIndex from '../views/post/index.vue'
@@ -80,6 +85,11 @@ const router = new VueRouter({
 		{path: 'inv-diamonds/create', component: InvDiamondForm},
 		{path: 'inv-diamonds/:id', component: InvDiamondShow},
 		{path: 'inv-diamonds/:id/edit', component: InvDiamondForm, meta:{mode:'edit'}},
+
+		{path: 'jewellries', component: JewellryIndex},
+		{path: 'jewellries/create', component: JewellryForm},
+		{path: 'jewellries/:id', component: JewellryShow},
+		{path: 'jewellries/:id/edit', component: JewellryForm, meta:{mode:'edit'}},
 
 
 		]},

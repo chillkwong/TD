@@ -171,9 +171,9 @@ class InvoiceController extends Controller
     public function destroy($id)
     {
     	$invoice = Invoice::findOrFail($id);
-    	Item::whereInvoiceId($invoice->id)
+    	InvDiamond::whereInvoiceId($invoice->id)
     		->delete();
-
+        $invoice->jewellries()->detach();
     	$invoice->delete();
 
     	return response()

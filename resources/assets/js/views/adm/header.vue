@@ -28,7 +28,7 @@
     <div class="navbar-start">
 
           <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link " href="/adm/invoices">
+              <a class="navbar-link is-active" href="/adm/invoices">
                 Invoice
               </a>
               <div id="blogDropdown" class="navbar-dropdown " data-style="width: 18rem;">
@@ -83,14 +83,33 @@
                       <div class="column">
                         <div class="navbar-content">
                           <p>
-                            <small class="has-text-info">invoivce diamonds</small>
+                            <small class="has-text-info">Diamonds</small>
                           </p>
                          <div class="level is-mobile">
                               <div class="navbar-item">
                                 <a href="/adm/inv-diamonds">Show</a>
                               </div>
+                         </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <hr class="navbar-divider">
+
+                  <a class="navbar-item" href="/adm/jewellries">
+                    <div class="columns">
+                      <div class="column">
+                        <div class="navbar-content">
+                          <p>
+                            <small class="has-text-info">Jewellries</small>
+                          </p>
+                         <div class="level is-mobile">
                               <div class="navbar-item">
-                                <a href="/adm/inv-diamonds/create">Create</a>
+                                <a href="/adm/jewellries">Show</a>
+                              </div>
+                              <div class="navbar-item">
+                                <a href="/adm/jewellries/create">Create</a>
                               </div>
                          </div>
                         </div>
@@ -102,40 +121,6 @@
           </div>
 
 
-
-
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link  is-active" href="/adm/invoices">
-          Invoice
-        </a>
-        <div class="navbar-dropdown "> 
-          <a class="navbar-item " href="/adm/invoices">
-            Show
-          </a>
-          <a class="navbar-item " href="/adm/invoices/create">
-            Create
-          </a>
-          
-            <a class="navbar-item is-active" href="http://bulma.io/documentation/components/breadcrumb/">
-              Components
-            </a>
-          
-          <hr class="navbar-divider">
-          <div class="navbar-item">
-            <div>
-              <p class="is-size-6-desktop">
-                <strong class="has-text-info">0.5.1</strong>
-              </p>
-              
-                <small>
-                  <a class="bd-view-all-versions" href="/versions">View all versions</a>
-                </small>
-              
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link " href="/adm/customers">
           Customers

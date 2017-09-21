@@ -7,12 +7,12 @@
 				<td>{{props.item.weight}}</td>
 				<td>{{props.item.color}}</td>
 				<td>{{props.item.clarity}}</td>
-				<td>{{props.item.fluroscence}}</td>
-				<td>{{props.item.certificate}}</td>
-				<td>{{props.item.stock}}</td>
 				<td>{{props.item.cut}}</td>
 				<td>{{props.item.polish}}</td>
 				<td>{{props.item.symmetry}}</td>
+				<td>{{props.item.fluroscence}}</td>
+				<td>{{props.item.certificate}}</td>
+				<td>{{props.item.stock}}</td>
 				<td>{{props.item.shape}}</td>
 				<td>{{props.item.lab}}</td>
 				<td>{{props.item.created_at}}</td>
@@ -38,12 +38,12 @@
 				{ title: 'Weight', key: 'weight', sort: true},
 				{ title: 'Color', key: 'color', sort: true},
 				{ title: 'Clarity', key: 'clarity', sort: true},
-				{ title: 'Fluroscence', key: 'fluroscence', sort: true},
-				{ title: 'Certificate', key: 'certificate', sort: true},
-				{ title: 'Stock', key: 'stock', sort: true},
 				{ title: 'Cut', key: 'cut', sort: true},
 				{ title: 'Polish', key: 'polish', sort: true},
 				{ title: 'Symmetry', key: 'symmetry', sort: true},
+				{ title: 'Fluroscence', key: 'fluroscence', sort: true},
+				{ title: 'Certificate', key: 'certificate', sort: true},
+				{ title: 'Stock', key: 'stock', sort: true},
 				{ title: 'Shape', key: 'shape', sort: true},
 				{ title: 'Lab', key: 'lab', sort: true},
 				{ title: 'Created At', key: 'created_at', sort: true}

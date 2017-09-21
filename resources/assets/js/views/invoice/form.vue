@@ -178,12 +178,12 @@
 				
 				<tfoot>
 						<tr>
-							<td colspan="2"><button class="button is-info" @click="addLine">Add Line</button></td>
+							<td colspan="4"></td>
 							<td>Sub Total</td>
 							<td>{{subTotal}}</td>
 						</tr>
 						<tr>
-							<td colspan="2">
+							<td colspan="4">
 							</td>
 							<td>Discount</td>
 							<td>
@@ -191,7 +191,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2">
+							<td colspan="4">
 							</td>
 							<td><strong>Deposit</strong></td>
 							<td>
@@ -199,7 +199,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2">
+							<td colspan="4">
 							</td>
 							<td>Balance</td>
 							<td>
@@ -207,12 +207,12 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2"></td>
+							<td colspan="4"></td>
 							<td><strong>Total</strong></td>
 							<td>{{total}}</td>
 						</tr>
 						<tr>
-							<td colspan="2"></td>
+							<td colspan="4"></td>
 							<td><strong>notes</strong></td>
 							<td><textarea class="textarea">{{form.notes}}</textarea></td>
 						</tr>
@@ -301,13 +301,6 @@
 		methods: {
 			addSelectedJew(){
 				this.form.jewellries.push({id:this.selectedJew})
-			},
-			addLine(){
-				this.form.items.push({
-					description: '',
-					unit_price: 0,
-					qty: 1
-				})
 			},
 			addDiamond(){
 				this.form.inv_diamonds.push({
