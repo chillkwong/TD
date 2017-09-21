@@ -29,6 +29,10 @@ import ItemIndex from '../views/item/index.vue'
 import ItemShow from '../views/item/show.vue'
 import ItemForm from '../views/item/form.vue'
 
+//invoice diamonds
+import InvDiamondIndex from '../views/invdiamond/index.vue'
+import InvDiamondShow from '../views/invdiamond/show.vue'
+import InvDiamondForm from '../views/invdiamond/form.vue'
 
 //Post
 import PostIndex from '../views/post/index.vue'
@@ -67,12 +71,15 @@ const router = new VueRouter({
 		{path: 'invoices/:id', component: InvoiceShow},
 		{path: 'invoices/:id/edit', component: InvoiceForm, meta:{mode:'edit'}},
 
-		{path: 'items', component: ItemIndex},
-		{path: 'items/create', component: ItemForm},
-		{path: 'items/:id', component: ItemShow},
-		{path: 'items/:id/edit', component: ItemForm, meta:{mode:'edit'}},
+		// {path: 'items', component: ItemIndex},
+		// {path: 'items/create', component: ItemForm},
+		// {path: 'items/:id', component: ItemShow},
+		// {path: 'items/:id/edit', component: ItemForm, meta:{mode:'edit'}},
 
-		
+		{path: 'inv-diamonds', component: InvDiamondIndex},
+		{path: 'inv-diamonds/create', component: InvDiamondForm},
+		{path: 'inv-diamonds/:id', component: InvDiamondShow},
+		{path: 'inv-diamonds/:id/edit', component: InvDiamondForm, meta:{mode:'edit'}},
 
 
 		]},

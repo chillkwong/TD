@@ -34,7 +34,7 @@ class InvoiceController extends Controller
     		->json([
     			'form' =>Invoice::form(),
     			'option' => [
-    				'customers' => Customer::orderBy('name')->get(),
+    				'customers' => Customer::orderBy('name')->select('id','name as text')->get(),
                     'jewellries' => Jewellry::select('id','name as text','description','unit_price')->get()
     			]
     			]);
@@ -101,8 +101,8 @@ class InvoiceController extends Controller
     		->json([
     			'form' => $invoice,
     			'option' => [
-                         'customers' => Customer::orderBy('name')->get(),
-                         'jewellries' => Jewellry::select('id','name as text','description','unit_price')->get()
+                    'customers' => Customer::orderBy('name')->select('id','name as text')->get(),
+                     'jewellries' => Jewellry::select('id','name as text','description','unit_price')->get()
                                          ],
 
     			]);
@@ -156,7 +156,11 @@ class InvoiceController extends Controller
                             ->saveMany($diamonds);
         }
 
-        $invoice->jewellries()->sync($request->jewellries);
+        foreach ($request->jewellries as $jewellry) {
+            $jewellries[] = $jewellry['id'];
+        }
+
+        $invoice->jewellries()->sync($jewellries);
 
         return response()
         		->json([

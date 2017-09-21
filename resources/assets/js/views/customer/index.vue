@@ -1,5 +1,5 @@
 <template>
-	<data-viewer :source = "source" :thead="thead" :filter="filter" :create="create" :name="name">
+	<data-viewer :source = "source" :thead="thead" :filter="filter" :create="create" :title="title">
 		<template scope="props">
 			<tr @click="$router.push('/adm/customers/' + props.item.id)">
 				<td>{{props.item.id}}</td>
@@ -20,15 +20,15 @@
 		name: 'CustomerIndex',
 		data(){
 			return {
-				name: 'Customers',
+				title: 'Customers',
 				source: '/api/customers',
 				create:'/adm/customers/create',
 				thead: [
-				{ name: 'ID', key: 'id', sort: true},
-				{ name: 'Name', key: 'name', sort: true},
-				{ name: 'Phone', key: 'phone', sort: true},
-				{ name: 'Email Address', key: 'email', sort: true},
-				{ name: 'Created At', key: 'created_at', sort: true}
+				{ title: 'ID', key: 'id', sort: true},
+				{ title: 'Name', key: 'name', sort: true},
+				{ title: 'Phone', key: 'phone', sort: true},
+				{ title: 'Email Address', key: 'email', sort: true},
+				{ title: 'Created At', key: 'created_at', sort: true}
 				],
 				filter: [
 				'id', 'name', 'email', 'phone'

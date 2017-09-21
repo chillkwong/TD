@@ -3,13 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Support\FilterPaginateOrder;
+
 
 class InvDiamond extends Model
 {
- protected $fillable = [
+    
+    use FilterPaginateOrder;
+
+    protected $fillable = [
 	'id', 'price', 'stock', 'certificate', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'lab'
 	];
-   	 public static $filters = [
+   	 protected $filter = [
     	'id', 'price', 'stock', 'certificate', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'lab'
     			];
 

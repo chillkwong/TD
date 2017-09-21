@@ -26,6 +26,85 @@
 
   <div id="navMenubd-example" class="navbar-menu">
     <div class="navbar-start">
+
+          <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link " href="/adm/invoices">
+                Invoice
+              </a>
+              <div id="blogDropdown" class="navbar-dropdown " data-style="width: 18rem;">
+                
+                  <a class="navbar-item" href="/adm/invoices">
+                    <div class="columns">
+                      <div class="column">
+                        <div class="navbar-content">
+                          <p>
+                            <small class="has-text-info">Invoice</small>
+                          </p>
+                         <div class="level is-mobile">
+                              <div class="navbar-item">
+                                <a href="/adm/invoices">Show</a>
+                              </div>
+                              <div class="navbar-item">
+                                <a href="/adm/invoices/create">Create</a>
+                              </div>
+                         </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <hr class="navbar-divider">
+
+                  <a class="navbar-item" href="/adm/customers">
+                    <div class="columns">
+                      <div class="column">
+                        <div class="navbar-content">
+                          <p>
+                            <small class="has-text-info">Customers</small>
+                          </p>
+                         <div class="level is-mobile">
+                              <div class="navbar-item">
+                                <a href="/adm/customers">Show</a>
+                              </div>
+                              <div class="navbar-item">
+                                <a href="/adm/customers/create">Create</a>
+                              </div>
+                         </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  
+                 <hr class="navbar-divider">
+
+
+                  <a class="navbar-item" href="/adm/inv-diamonds">
+                    <div class="columns">
+                      <div class="column">
+                        <div class="navbar-content">
+                          <p>
+                            <small class="has-text-info">invoivce diamonds</small>
+                          </p>
+                         <div class="level is-mobile">
+                              <div class="navbar-item">
+                                <a href="/adm/inv-diamonds">Show</a>
+                              </div>
+                              <div class="navbar-item">
+                                <a href="/adm/inv-diamonds/create">Create</a>
+                              </div>
+                         </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+
+              </div>
+          </div>
+
+
+
+
+
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link  is-active" href="/adm/invoices">
           Invoice
@@ -109,7 +188,7 @@
         </div>
       </div>
 
-      <div class="navbar-item has-dropdown is-hoverable">
+        <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link " href="/adm/items">
                 Items
               </a>
@@ -160,6 +239,9 @@
                 </div>
               </div>
             </div>
+
+
+
 
       <div class="navbar-item has-dropdown is-hoverable">
         <div class="navbar-link">

@@ -9,12 +9,8 @@
 				<div class="column is-4">
 						<label class="label">Customer</label>
 						<div class="control">
-							<div class="select">
-								<select v-model="form.customer_id">
-									<option>Select</option>
-									<option v-for="customer in option.customers" :value="customer.id">{{customer.name}}</option>
-								</select>
-							</div>
+							<typehead :options="option.customers" v-model="form.customer_id"></typehead>
+							
 							<small class="is-danger" v-if="errors.customer_id">{{errors.customer_id[0]}}</small>
 						</div>
 				</div>	
@@ -98,6 +94,13 @@
 								<small class="is-danger" v-if="errors.certificate">{{errors.certificate[0]}}</small>
 						</div>
 				</div>	
+				<div class="column is-2">
+						<div class="control">
+							<label class="label">stock</label>
+								<input type="text" class="input" v-model="diamond.stock" placeholder="stock" required>
+								<small class="is-danger" v-if="errors.stock">{{errors.stock[0]}}</small>
+						</div>
+				</div>
 				<div class="column is-1">
 						<div class="control">
 							<label class="label">cut</label>
@@ -112,7 +115,7 @@
 								<small class="is-danger" v-if="errors.polish">{{errors.polish[0]}}</small>
 						</div>
 				</div>	
-				<div class="column is-1">
+				<div class="column is-2">
 						<div class="control">
 							<label class="label">Symmetry</label>
 								<input type="text" class="input" v-model="diamond.symmetry" placeholder="symmetry" required>
@@ -133,13 +136,7 @@
 								<small class="is-danger" v-if="errors.lab">{{errors.lab[0]}}</small>
 						</div>
 				</div>
-				<div class="column is-1">
-						<div class="control">
-							<label class="label">stock</label>
-								<input type="text" class="input" v-model="diamond.stock" placeholder="stock" required>
-								<small class="is-danger" v-if="errors.stock">{{errors.stock[0]}}</small>
-						</div>
-				</div>
+				
 					
 
 			</div>
@@ -149,7 +146,6 @@
 		<div class="box" >
 			<div class="columns">
 				<div class="column is-4">
-						<!-- <typehead :options = "option.jewellries" v-model="form.jewellries[form.jewellries.length]" ></typehead> -->
 						<typehead :options = "option.jewellries" v-model="selectedJew" ></typehead>
 				</div>
 				
@@ -283,16 +279,16 @@
 		computed: {
 			subTotal(){
 				
-					var price = 0
-					for (var i = this.form.jewellries.length - 1; i >= 0; i--) {
-						price += this.option.jewellries[this.form.jewellries.length].unit_price
-					}
+			var price = 0
+			for (var i = this.form.jewellries.length - 1; i >= 0; i--) {
+				price += this.option.jewellries[this.form.jewellries.length].unit_price
+			}
 
-					price += this.form.inv_diamonds.reduce((carry, item)=>{
-						return carry += parseFloat(item.price)
-					},0)
+			price += this.form.inv_diamonds.reduce((carry, item)=>{
+				return carry += parseFloat(item.price)
+			},0)
 
-					return this.form.sub_total = price
+			return this.form.sub_total = price
 			},
 			total(){
 				return this.form.total = this.form.sub_total - this.form.discount
@@ -301,7 +297,6 @@
 				return this.form.balance = this.total - this.form.deposit
 			}
 		
-
 		},
 		methods: {
 			addSelectedJew(){
@@ -331,7 +326,6 @@
 				})
 			},
 			fetchData(){
-				// var vm = this
 				get(this.initialize)
 					.then((res)=>{
 						Vue.set(this.$data, 'form', res.data.form)

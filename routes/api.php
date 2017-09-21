@@ -28,6 +28,7 @@ Route::Post('td-login', 'AdminController@login');
 //backend
 Route::resource('customers', 'CustomerController');
 Route::resource('invoices', 'InvoiceController');
+Route::resource('invDiamonds', 'InvDiamondController');
 Route::resource('items', 'ItemController');
 
 //front
