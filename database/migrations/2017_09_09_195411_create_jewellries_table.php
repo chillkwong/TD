@@ -18,6 +18,12 @@ class CreateJewellriesTable extends Migration
             $table->string('stock');
             $table->string('name');
             $table->string('description');
+            $table->string('mounting')->default('4-prongs');
+            $table->string('shoulder')->default('slim');
+            $table->string('sideStone')->default(false);
+            $table->string('cover')->nullable();
+            $table->string('image1')->nullable();
+            $table->string('video')->nullable();            
             $table->integer('unit_price');
             $table->timestamps();
         });

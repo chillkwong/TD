@@ -1,0 +1,219 @@
+<template>
+<div class="container">
+	<div class="level">
+	</div>
+	<div class="tile is-vertical">
+		<article class="tile is-child box is-primary">
+			<div class="columns">
+				<div class="column">
+					<figure class="image"><img :src="`/images/${post.invoice_id}/${post.cover}`"></figure>
+				</div>
+			</div>
+		</article>
+	</div>
+
+	
+
+	<div class="tile box">
+		<div class="tile notification is-primary">
+				<p class="title">{{post.contents[0].content}}</p>
+		</div>       
+  	</div>
+
+  	<div class="tile is-ancestor">
+  		<div class="tile is-parent is-4">
+  			<div class="tile is-child box">
+
+  				<div class="tile is-chill">
+  				<article>
+  					<p>客人珠寶首飾分享，可作參考。
+					鑽石4Cs資料，
+
+					更詳細資料，亦可到GIA官方網站查詢：
+					</p>
+					<a :href="`https://www.gia.edu/report-check?reportno=${invoice[0].inv_diamonds[0].certificate}`"><center>GIA Certificate</center><figure class="image"><img src="https://www.gia.edu/onlineopinionV5/GIA-Logo.png"></figure></a>
+  				</article>
+  				</div>
+  				<article>
+  					<table class="table is-striped">
+					<thead>
+						<tr>
+							<th>Diamond Info({{invoice[0].inv_diamonds[0].shape}})</th>
+						</tr>
+					</thead>
+  						
+					<tbody>
+						<tr><td>Carat Weight</td><td>{{invoice[0].inv_diamonds[0].weight}}</td></tr>
+						<tr><td>Color Grade</td><td>{{invoice[0].inv_diamonds[0].color}}</td></tr>
+						<tr><td>Clarity Grade</td><td>{{invoice[0].inv_diamonds[0].clarity}}</td></tr>
+						<tr><td>Cut Grade</td><td>{{invoice[0].inv_diamonds[0].cut}}</td></tr>
+					</tbody>
+
+					<thead>
+						<tr>
+							<th>Finish</th>
+						</tr>
+					</thead>
+  						
+					<tbody>
+						<tr><td>Polish</td><td>{{invoice[0].inv_diamonds[0].polish}}</td></tr>
+						<tr><td>Symmetry</td><td>{{invoice[0].inv_diamonds[0].symmetry}}</td></tr>
+					</tbody>
+
+					<thead>
+						<tr>
+							<th>Fluorescence</th>
+						</tr>
+					</thead>
+  						
+					<tbody>
+						<tr><td>Fluorescence</td><td>{{invoice[0].inv_diamonds[0].fluorescence}}</td></tr>
+					</tbody>
+  					
+  					<thead>
+						<tr>
+							<th>Certificate</th>
+						</tr>
+					</thead>
+  						
+					<tbody>
+						<a :href="`https://www.gia.edu/report-check?reportno=${invoice[0].inv_diamonds[0].certificate}`">
+						<tr><td>Certificate</td><td>{{invoice[0].inv_diamonds[0].certificate}}</td></tr>
+						</a>
+					</tbody>
+
+  					</table>
+  				</article>
+
+  				
+  			</div>
+  		</div>
+  		<div class="tile is-parent">
+  				<div class="tile is-child box">
+  					<a :href="`https://www.gia.edu/report-check?reportno=${invoice[0].inv_diamonds[0].certificate}`">
+	  					<figure class="image">
+	  					<img :src="`/images/${post.invoice_id}/${post.image1}`">
+	  					</figure>
+  					</a>
+  				</div>
+  			</div>
+  	</div>
+
+  	<div class="tile is-ancestor">
+  		<div class="tile is-parent">
+  			<div class="tile is-child box is-7">
+  				<article>
+  					<figure><img :src="`/images/${post.invoice_id}/${post.image2}`"></figure>
+  				</article>
+  				
+  			</div>
+  			<div class="tile is-child box">
+  				<article>
+  					<figure><img src="/images/diamond/GIA-Laser-Inscription-girdle.jpg"></figure>
+  					<p class="subtitle">
+					鑽石腰部編號就好像是人的身份證，用來確認鑽石它的4Cs，到底是什麼那些級別。
+					</p>
+  				</article>
+  				
+  			</div>
+  			
+  		</div>
+  		
+  	</div>
+
+  	<nav class="level">
+	  <p class="level-item has-text-centered">
+	    <iframe width="888" height="500" :src="`https://www.youtube.com/embed/${post.video}`" frameborder="0" allowfullscreen></iframe>
+	  </p>
+	 </nav>
+
+  	<div class="tile box">
+  		<router-link :to="`/adm/customer-jewellries/${post.id}/edit`" class="button is-primary">
+							Edit
+		</router-link>
+		<button class="button is-danger" @click="remove" :disable="isRemoving">Delete</button>
+  	</div>
+	<!-- <div class="recipe__show">
+		<div class="recipe__row">
+			<div class="recipe__image">
+				<div class="recipe__box">
+					<img :src="`/images/${recipe.image}`" v-if="recipe.image">
+				</div>
+			</div>
+			<div class="recipe__details">
+				<div class="recipe__details_inner">
+					<small>Submitted By: {{recipe.user.name}}</small>
+					<h1 class="recipe__title">{{recipe.name}}</h1>
+					<p class="recipe_description">{{recipe.description}}</p>
+					<div v-if="auth.api_token && auth.user_id ===recipe.user_id">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="recipe__row">
+			<div class="recipe__ingredients">
+				<div class="recipe__box">
+					<h3 class="recipe__sub_title">Ingredients</h3>
+					<ul>
+						<li v-for="ingredient in recipe.ingredients">
+							<span>{{ingredient.name}}</span>
+							<span>{{ingredient.qty}}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="recipe__descriptions">
+				<div class="recipe_descriptions__inner">
+					<h3 class="recipe__sub_title">Direction</h3>
+					<ul>
+						<li v-for="(direction, i) in recipe.directions">
+							<strong>{{i+1}}</strong>
+							{{direction.description}}							
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div> -->
+</div>
+</template>
+
+<script type="text/javascript">
+	// import Auth from '../../store/auth'
+	import { get, del } from '../../helpers/api'
+	// import Flash from '../../helpers/flash'
+
+	export default {
+		data(){
+			return {
+				// auth: Auth.state,
+				isRemoving: false,
+				post: {
+					invoice: {},
+					content: []
+				},
+				invoice: ''
+			}
+		},
+		created(){
+			get(`/api/invPosts/${this.$route.params.id}`)
+			.then((res)=>{
+				this.post = res.data.post
+				this.invoice = res.data.invoice
+			})
+		},
+		methods: {
+			remove(){
+				this.isRemoving = false
+					del(`/api/invPosts/${this.$route.params.id}`)
+					,then((res)=>{
+						if (res.data.deleted) {
+							Flash.setSuccess('You have successfully deleted recipe!')
+							this.$router.push('/')
+						}
+					})
+			}
+		}
+	}
+</script>

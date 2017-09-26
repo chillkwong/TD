@@ -13,11 +13,11 @@ class Jewellry extends Model
     protected $hidden = array('pivot');
     
 	protected $fillable =[
-	'id','stock' ,'name' , 'description','unit_price',
+	'id','stock' ,'name' , 'description','mounting','sideStone','cover','image1','video','unit_price',
 	];
 
     protected $filter = [
-    'id','stock' ,'name' , 'description','unit_price',
+    'id','stock' ,'name' , 'description','mounting','sideStone','cover','image1','video','unit_price',
     ];
 	
     public function invoices(){
@@ -30,7 +30,14 @@ class Jewellry extends Model
     		'id' => '' , 
     		'name' => '' , 
     		'description' => '' , 
-    		'unit_price' => ''     
-    		];
+    		'unit_price' => '',
+            'mounting'=> '',
+            'sideStone' => false,
+            'cover' =>'',
+            'image1'=> '',
+            'image2'=> '',
+            'video'=> ''
+
+                		];
     	}
 }

@@ -37,9 +37,9 @@ class Invoice extends Model
         return $this->belongsToMany(Jewellry::class);
     }
 
-    public function posts()
+    public function invPosts()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(InvPost::class);
     }
 
     public static function form()

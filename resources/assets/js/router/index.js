@@ -39,6 +39,11 @@ import JewellryIndex from '../views/jewellry/index.vue'
 import JewellryShow from '../views/jewellry/show.vue'
 import JewellryForm from '../views/jewellry/form.vue'
 
+//customer Jewellries
+import CustomerJewIndex from '../views/customerJewellry/index.vue'
+import CustomerJewShow from '../views/customerJewellry/show.vue'
+import CustomerJewForm from '../views/customerJewellry/form.vue'
+
 //Post
 import PostIndex from '../views/post/index.vue'
 import PostShow from '../views/post/show.vue'
@@ -91,6 +96,15 @@ const router = new VueRouter({
 		{path: 'jewellries/:id', component: JewellryShow},
 		{path: 'jewellries/:id/edit', component: JewellryForm, meta:{mode:'edit'}},
 
+		{path: 'posts', component: PostIndex},
+		{path: 'posts/create', component: PostForm, meta: {mode: 'create'}},
+		{path: 'posts/:id/edit', component: PostForm, meta: {mode: 'edit'}},
+		{path: 'posts/:id', component: PostShow},
+
+		{path: 'customer-jewellries', component: CustomerJewIndex},
+		{path: 'customer-jewellries/create', component: CustomerJewForm, meta: {mode: 'create'}},
+		{path: 'customer-jewellries/:id/edit', component: CustomerJewForm, meta: {mode: 'edit'}},
+		{path: 'customer-jewellries/:id', component: CustomerJewShow},
 
 		]},
 

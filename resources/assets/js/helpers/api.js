@@ -25,7 +25,7 @@ export function get(url,lang){
 		url: url,
 		headers: {
 			'Authorization' : `Bearer ${Auth.state.api_token}`,
-			'X-localization' : lang
+			'X-localization' : lang?lang:'en'
 		}
 	})
 }
