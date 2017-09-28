@@ -10858,9 +10858,15 @@ module.exports = defaults;
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 function toMulipartedForm(form, mode) {
-	if (mode === 'edit' && typeof form.image === 'string') {
+	if (mode === 'eit') {
 		var temp = JSON.parse(JSON.stringify(form));
-		delete temp.image;
+		if (typeof form.cover === 'string') {
+			delete temp.cover;
+		}
+		if (typeof form.image1 === 'string') {
+			delete temp.image1;
+		}
+
 		return temp;
 	} else {
 		return objectToFormData(form);
@@ -21676,7 +21682,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		if (this.$route.meta.mode === 'edit') {
 			this.title = 'Edit';
 			this.initialize = '/api/jewellries/' + this.$route.params.id + '/edit';
-			this.store = '/api/jewellries/' + this.$route.params.id;
+			this.storeURL = '/api/jewellries/' + this.$route.params.id + '?_method=PUT';
 			this.method = 'put';
 		}
 		this.fetchData();
@@ -21699,24 +21705,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		save: function save() {
 			var _this2 = this;
 
-			if (this.method === 'post') {
-				var form = Object(__WEBPACK_IMPORTED_MODULE_2__helpers_form__["a" /* toMulipartedForm */])(this.form, this.$route.meta.mode);
-				Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["c" /* post */])(this.store, form).then(function (response) {
-					if (response.data.saved) {
-						_this2.$router.push(_this2.redirect);
-					}
-				}).catch(function (error) {
-					__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(this.$data, 'errors', error.response.data);
-				});
-			} else {
-				Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["d" /* put */])(this.store, this.form).then(function (response) {
-					if (response.data.saved) {
-						_this2.$router.push(_this2.redirect);
-					}
-				}).catch(function (error) {
-					__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(this.$data, 'errors', error.response.data);
-				});
-			}
+			var form = Object(__WEBPACK_IMPORTED_MODULE_2__helpers_form__["a" /* toMulipartedForm */])(this.form, this.$route.meta.mode);
+			Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["c" /* post */])(this.storeURL, form).then(function (response) {
+				if (response.data.saved) {
+					_this2.$router.push(_this2.redirect);
+				}
+			}).catch(function (error) {
+				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(this.$data, 'errors', error.response.data);
+			});
 		}
 	}
 });
@@ -22591,6 +22587,61 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // import Auth from '../../store/auth'
 
@@ -22653,7 +22704,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "image"
   }, [_c('img', {
     attrs: {
-      "src": ("/images/" + (_vm.post.invoice_id) + "/" + (_vm.post.cover))
+      "src": ("/images/" + (_vm.post.cover))
     }
   })])])])])]), _vm._v(" "), _c('div', {
     staticClass: "tile box"
@@ -22662,7 +22713,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('p', {
     staticClass: "title"
   }, [_vm._v(_vm._s(_vm.post.contents[0].content))])])]), _vm._v(" "), _c('div', {
-    staticClass: "tile is-ancestor"
+    staticClass: "tile is-ancestor "
   }, [_c('div', {
     staticClass: "tile is-parent is-4"
   }, [_c('div', {
@@ -22674,7 +22725,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": ("https://www.gia.edu/report-check?reportno=" + (_vm.invoice[0].inv_diamonds[0].certificate))
     }
   }, [_c('center', [_vm._v("GIA Certificate")]), _vm._m(0)], 1)])]), _vm._v(" "), _c('article', [_c('table', {
-    staticClass: "table is-striped"
+    staticClass: "table is-striped is-fullwidth"
   }, [_c('thead', [_c('tr', [_c('th', [_vm._v("Diamond Info(" + _vm._s(_vm.invoice[0].inv_diamonds[0].shape) + ")")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Carat Weight")]), _c('td', [_vm._v(_vm._s(_vm.invoice[0].inv_diamonds[0].weight))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Color Grade")]), _c('td', [_vm._v(_vm._s(_vm.invoice[0].inv_diamonds[0].color))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Clarity Grade")]), _c('td', [_vm._v(_vm._s(_vm.invoice[0].inv_diamonds[0].clarity))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Cut Grade")]), _c('td', [_vm._v(_vm._s(_vm.invoice[0].inv_diamonds[0].cut))])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Polish")]), _c('td', [_vm._v(_vm._s(_vm.invoice[0].inv_diamonds[0].polish))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Symmetry")]), _c('td', [_vm._v(_vm._s(_vm.invoice[0].inv_diamonds[0].symmetry))])])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Fluorescence")]), _c('td', [_vm._v(_vm._s(_vm.invoice[0].inv_diamonds[0].fluorescence))])])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('tbody', [_c('a', {
     attrs: {
       "href": ("https://www.gia.edu/report-check?reportno=" + (_vm.invoice[0].inv_diamonds[0].certificate))
@@ -22691,19 +22742,59 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "image"
   }, [_c('img', {
     attrs: {
-      "src": ("/images/" + (_vm.post.invoice_id) + "/" + (_vm.post.image1))
+      "src": ("/images/" + (_vm.post.image1))
     }
   })])])])])]), _vm._v(" "), _c('div', {
-    staticClass: "tile is-ancestor"
+    staticClass: "tile is-ancestor notification is-primary"
   }, [_c('div', {
     staticClass: "tile is-parent"
   }, [_c('div', {
-    staticClass: "tile is-child box is-7"
+    staticClass: "tile is-child is-7"
   }, [_c('article', [_c('figure', [_c('img', {
     attrs: {
-      "src": ("/images/" + (_vm.post.invoice_id) + "/" + (_vm.post.image2))
+      "src": ("/images/" + (_vm.post.image2))
     }
-  })])])]), _vm._v(" "), _vm._m(4)])]), _vm._v(" "), _c('nav', {
+  })])])]), _vm._v(" "), _vm._m(4)])]), _vm._v(" "), _c('div', {
+    staticClass: "tile is-ancestor"
+  }, [_c('div', {
+    staticClass: "tile is-parent is-6"
+  }, [_c('div', {
+    staticClass: "tile is-child box"
+  }, [_c('router-link', {
+    attrs: {
+      "to": '/adm/jewellries/' + _vm.invoice[0].jewellries[0].id
+    }
+  }, [_c('figure', {
+    staticClass: "image"
+  }, [_c('img', {
+    attrs: {
+      "src": ("/images/" + (_vm.invoice[0].jewellries[0].id) + "/" + (_vm.invoice[0].jewellries[0].cover))
+    }
+  })])]), _vm._v(" "), _c('router-link', {
+    attrs: {
+      "to": '/adm/jewellries/' + _vm.invoice[0].jewellries[0].id
+    }
+  }, [_c('figure', {
+    staticClass: "image"
+  }, [_c('img', {
+    attrs: {
+      "src": ("/images/" + (_vm.invoice[0].jewellries[0].id) + "/" + (_vm.invoice[0].jewellries[0].image1))
+    }
+  })])])], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('div', {
+    staticClass: "tile is-child box"
+  }, [_c('article', [_c('div', [_c('p', [_c('iframe', {
+    attrs: {
+      "width": "560",
+      "height": "315",
+      "src": ("https://www.youtube.com/embed/" + (_vm.invoice[0].jewellries[0].video)),
+      "frameborder": "0",
+      "allowfullscreen": ""
+    }
+  })])]), _vm._v(" "), _c('table', {
+    staticClass: "table is-striped is-fullwidth"
+  }, [_vm._m(5), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Stock No.")]), _c('td', [_vm._v(_vm._s(_vm.invoice[0].jewellries[0].stock))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Title")]), _c('td', [_vm._v(_vm._s(_vm.invoice[0].jewellries[0].name))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Description")]), _c('td', [_vm._v(_vm._s(_vm.invoice[0].jewellries[0].description))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Side stone")]), _c('td', [_vm._v(_vm._s(_vm.invoice[0].jewellries[0].sideStone ? 'Yes' : 'No'))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Mounting")]), _c('td', [_vm._v(_vm._s(_vm.invoice[0].jewellries[0].mounting))])])])])])])])]), _vm._v(" "), _vm._m(6), _vm._v(" "), _c('nav', {
     staticClass: "level"
   }, [_c('p', {
     staticClass: "level-item has-text-centered"
@@ -22747,7 +22838,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('thead', [_c('tr', [_c('th', [_vm._v("Certificate")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "tile is-child box"
+    staticClass: "tile is-child"
   }, [_c('article', [_c('figure', [_c('img', {
     attrs: {
       "src": "/images/diamond/GIA-Laser-Inscription-girdle.jpg"
@@ -22755,6 +22846,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), _c('p', {
     staticClass: "subtitle"
   }, [_vm._v("\n\t\t\t\t\t鑽石腰部編號就好像是人的身份證，用來確認鑽石它的4Cs，到底是什麼那些級別。\n\t\t\t\t\t")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', [_c('tr', [_c('th', [_vm._v("Jewellry Info")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('nav', {
+    staticClass: "level"
+  }, [_c('p', {
+    staticClass: "level-item has-text-centered"
+  }, [_c('label', [_vm._v("Product video")])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

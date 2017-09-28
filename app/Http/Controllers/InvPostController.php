@@ -47,19 +47,19 @@ class InvPostController extends Controller
 
         // $images = [];
         $cover = $this->getFileName($request->cover);
-        $request->cover->move(base_path('public/images/').$request->invoice_id, $cover);
+        $request->cover->move(base_path('public/images'), $cover);
 
 
         $image1 = '';
         if ($request->hasFile('image1')) {
         	$image1 = $this->getFileName($request->image1);
-        	$request->image1->move(base_path('public/images/').$request->invoice_id, $image1);
+        	$request->image1->move(base_path('public/images'), $image1);
         }
         
         $image2 = '';
         if ($request->hasFile('image2')) {
         	$image2 = $this->getFileName($request->image2);
-        	$request->image2->move(base_path('public/images/').$request->invoice_id, $image2);
+        	$request->image2->move(base_path('public/images'), $image2);
         }
         
 
@@ -86,7 +86,7 @@ class InvPostController extends Controller
 
     protected function getFileName($file)
     {
-    		return $file->getClientOriginalName();
+    		return str_random(). '.' .$file->extension();
     }
 
     public function show($id)

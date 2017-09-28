@@ -6,7 +6,7 @@
 		<article class="tile is-child box is-primary">
 			<div class="columns">
 				<div class="column">
-					<figure class="image"><img :src="`/images/${post.invoice_id}/${post.cover}`"></figure>
+					<figure class="image"><img :src="`/images/${post.cover}`"></figure>
 				</div>
 			</div>
 		</article>
@@ -20,7 +20,7 @@
 		</div>       
   	</div>
 
-  	<div class="tile is-ancestor">
+  	<div class="tile is-ancestor ">
   		<div class="tile is-parent is-4">
   			<div class="tile is-child box">
 
@@ -35,7 +35,7 @@
   				</article>
   				</div>
   				<article>
-  					<table class="table is-striped">
+  					<table class="table is-striped is-fullwidth">
 					<thead>
 						<tr>
 							<th>Diamond Info({{invoice[0].inv_diamonds[0].shape}})</th>
@@ -88,26 +88,28 @@
   				
   			</div>
   		</div>
+
   		<div class="tile is-parent">
   				<div class="tile is-child box">
   					<a :href="`https://www.gia.edu/report-check?reportno=${invoice[0].inv_diamonds[0].certificate}`">
 	  					<figure class="image">
-	  					<img :src="`/images/${post.invoice_id}/${post.image1}`">
+	  					<img :src="`/images/${post.image1}`">
 	  					</figure>
   					</a>
   				</div>
   			</div>
   	</div>
 
-  	<div class="tile is-ancestor">
+
+  	<div class="tile is-ancestor notification is-primary">
   		<div class="tile is-parent">
-  			<div class="tile is-child box is-7">
+  			<div class="tile is-child is-7">
   				<article>
-  					<figure><img :src="`/images/${post.invoice_id}/${post.image2}`"></figure>
+  					<figure><img :src="`/images/${post.image2}`"></figure>
   				</article>
   				
   			</div>
-  			<div class="tile is-child box">
+  			<div class="tile is-child">
   				<article>
   					<figure><img src="/images/diamond/GIA-Laser-Inscription-girdle.jpg"></figure>
   					<p class="subtitle">
@@ -121,6 +123,59 @@
   		
   	</div>
 
+
+  	<div class="tile is-ancestor">
+  		<div class="tile is-parent is-6">
+  				<div class="tile is-child box">
+  					<router-link :to="'/adm/jewellries/' + invoice[0].jewellries[0].id">
+	  					<figure class="image">
+	  					<img :src="`/images/${invoice[0].jewellries[0].id}/${invoice[0].jewellries[0].cover}`">
+	  					</figure>
+  					</router-link>
+  					<router-link :to="'/adm/jewellries/' + invoice[0].jewellries[0].id">
+	  					<figure class="image">
+	  					<img :src="`/images/${invoice[0].jewellries[0].id}/${invoice[0].jewellries[0].image1}`">
+	  					</figure>
+  					</router-link>
+  				</div>
+  			</div>
+  		<div class="tile is-parent">
+  			<div class="tile is-child box">
+  				<article>
+  					<div>
+					  <p>
+					    <iframe width="560" height="315" :src="`https://www.youtube.com/embed/${invoice[0].jewellries[0].video}`" frameborder="0" allowfullscreen></iframe>
+					  </p>
+					 </div>
+  					<table class="table is-striped is-fullwidth">
+					<thead>
+						<tr>
+							<th>Jewellry Info</th>
+						</tr>
+					</thead>
+  						
+					<tbody>
+						<tr><td>Stock No.</td><td>{{invoice[0].jewellries[0].stock}}</td></tr>	
+						<tr><td>Title</td><td>{{invoice[0].jewellries[0].name}}</td></tr>
+						<tr><td>Description</td><td>{{invoice[0].jewellries[0].description}}</td></tr>
+						<tr><td>Side stone</td><td>{{invoice[0].jewellries[0].sideStone?'Yes':'No'}}</td></tr>
+						<tr><td>Mounting</td><td>{{invoice[0].jewellries[0].mounting}}</td></tr>
+					</tbody>
+
+  					</table>
+  				</article>
+
+  				
+  			</div>
+  		</div>
+  		
+  	</div>
+
+  	<nav class="level">
+  		<p class="level-item has-text-centered">
+	  	<label>Product video</label>
+	 	</p>
+  	</nav>
   	<nav class="level">
 	  <p class="level-item has-text-centered">
 	    <iframe width="888" height="500" :src="`https://www.youtube.com/embed/${post.video}`" frameborder="0" allowfullscreen></iframe>

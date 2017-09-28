@@ -37,14 +37,16 @@ class JewellryController extends Controller
 
         $jewellry = Jewellry::create($request->all());
 
-        $cover = $request->cover->getClientOriginalName();
-        $request->cover->move(base_path('public/images/jewellry/').$jewellry->id, $cover);
-
+        $cover ='';
+         if ($request->hasFile('cover')) {
+        $cover = $this->getFileName($request->cover);
+        $request->cover->move(base_path('public/images'), $cover);
+        }
 
         $image1 = '';
         if ($request->hasFile('image1')) {
             $image1 = $request->image1->getClientOriginalName();
-            $request->image1->move(base_path('public/images/jewellry/').$jewellry->id, $image1);
+            $request->image1->move(base_path('public/images'), $image1);
         }
 
         
@@ -58,6 +60,11 @@ class JewellryController extends Controller
     		->json([
     			'saved' => true
     			]);
+    }
+
+      protected function getFileName($file)
+    {
+            return str_random(). '.' .$file->extension();
     }
 
     public function show($id)
@@ -91,6 +98,27 @@ class JewellryController extends Controller
     		]);
     	$jewellry = Jewellry::findOrFail($id);
 
+        dd($request->all());
+        
+        $cover ='';
+         if ($request->hasFile('cover')) {
+            $cover = $this->getFileName($request->cover);
+            $request->cover->move(base_path('public/images'), $cover);
+            File::delete(base_path('public/images'. $recipe->cover));
+            $request->cover = $cover;
+        }
+
+        $image1 = '';
+        if ($request->hasFile('image1')) {
+            $image1 = $this->getFileName($request->image1);
+            $request->image1->move(base_path('public/images'), $image1);
+            File::delete(base_path('public/images'. $recipe->image1));
+            $request->image1 = $image1;
+        }
+
+        
+        
+        
 
     	$jewellry->update($request->all());
 

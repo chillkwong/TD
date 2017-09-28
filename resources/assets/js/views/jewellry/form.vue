@@ -155,7 +155,7 @@
 			if (this.$route.meta.mode === 'edit') {
 				this.title = 'Edit'
 				this.initialize = '/api/jewellries/' + this.$route.params.id + '/edit'
-				this.store = '/api/jewellries/' + this.$route.params.id
+				this.storeURL = `/api/jewellries/${this.$route.params.id}?_method=PUT`
 				this.method = 'put'
 			}
 			this.fetchData()
@@ -175,9 +175,9 @@
 					})
 			},
 			save(){
-				if (this.method ==='post') {
+				
 					const form = toMulipartedForm(this.form, this.$route.meta.mode)
-					post(this.store, form)
+					post(this.storeURL, form)
 					.then((response)=>{
 						if(response.data.saved){
 							this.$router.push(this.redirect)
@@ -186,17 +186,8 @@
 					.catch(function(error){
 						Vue.set(this.$data, 'errors', error.response.data)
 					})
-					}else{
-						put(this.store, this.form)
-					.then((response)=>{
-						if(response.data.saved){
-							this.$router.push(this.redirect)
-						}
-					})
-					.catch(function(error){
-						Vue.set(this.$data, 'errors', error.response.data)
-					})
-					}
+					
+					
 			}
 				
 		}
