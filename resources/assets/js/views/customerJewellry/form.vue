@@ -16,9 +16,15 @@
 
 		<div class="columns">
 			<div class="column">
-				<select v-model="form.invoice_id">
-					<option v-for="selt in select">{{selt.id}}</option>
+				<select v-model="form.invoice_id" >
+					<option v-for="selt in select" :value="$route.params.id?$route.params.id:selt.id">{{selt.id}}</option>
 				</select>
+				<p v-if="form.invoice_id">Title: {{select[form.invoice_id-1].title}}</p>
+			</div>
+			<div class="column" v-if="$route.params.id">
+				<p>Invoice ID: {{$route.params.id}}</p>
+				<p>Title: {{select[$route.params.id-1].title}}</p>
+				
 			</div>
 		</div>
 
@@ -124,7 +130,9 @@
 		},
 		data(){
 			return{
-				select:[],
+				select:[
+				{title:''}
+				],
 				form: {
 					invoice_id:'',
 					
@@ -138,6 +146,9 @@
 			}
 		},
 		created(){
+			if (this.$route.meta.mode === 'create') {
+				this.form.invoice_id = this.$route.params.id
+			}
 			if (this.$route.meta.mode === 'edit') {
 				this.initializeURL = `/api/invPosts/${this.$route.params.id}/edit`
 				this.storeURL = `/api/invPosts/${this.$route.params.id}?_method=PUT`
@@ -157,7 +168,7 @@
 					.then((res)=>{
 						if (res.data.saved) {
 							Flash.setSuccess(res.data.message)
-							this.$router.push(`/adm/customer-jewellries/${res.data.id}`)
+							this.$router.push(`/en/customer-jewellries/${res.data.id}`)
 						}
 					})
 					.catch((err)=>{
@@ -167,15 +178,7 @@
 					this.isProcessing = false
 					})
 			},
-			addDirection(){
-				this.form.directions.push({description: ''})
-			},
-			addIngredient(){
-				this.form.ingredients.push({
-					name: '',
-					qty: ''
-				})
-			},
+			
 			remove(type, index){
 				if (this.form[type].length > 1) {
 					this.form[type].splice(index,1)

@@ -147,7 +147,7 @@
 				title: 'Create',
 				initialize: '/api/jewellries/create',
 				redirect: '/adm',
-				store: '/api/jewellries',
+				storeURL: '/api/jewellries',
 				method: 'post',
 			}
 		},

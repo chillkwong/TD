@@ -27,7 +27,6 @@ class Jewellry extends Model
     public static function form()
     	{
     		return [
-    		'id' => '' , 
     		'name' => '' , 
     		'description' => '' , 
     		'unit_price' => '',
@@ -35,7 +34,7 @@ class Jewellry extends Model
             'sideStone' => false,
             'cover' =>'',
             'image1'=> '',
-            'image2'=> '',
+            // 'image2'=> '',
             'video'=> ''
 
                 		];

@@ -144,7 +144,7 @@
   				<article>
   					<div>
 					  <p>
-					    <iframe width="560" height="315" :src="`https://www.youtube.com/embed/${invoice[0].jewellries[0].video}`" frameborder="0" allowfullscreen></iframe>
+					    <iframe width="90%" height="315" :src="`https://www.youtube.com/embed/${invoice[0].jewellries[0].video}`" frameborder="0" allowfullscreen></iframe>
 					  </p>
 					 </div>
   					<table class="table is-striped is-fullwidth">
@@ -178,12 +178,12 @@
   	</nav>
   	<nav class="level">
 	  <p class="level-item has-text-centered">
-	    <iframe width="888" height="500" :src="`https://www.youtube.com/embed/${post.video}`" frameborder="0" allowfullscreen></iframe>
+	    <iframe width="90%" height="555" :src="`https://www.youtube.com/embed/${post.video}`" frameborder="0" allowfullscreen></iframe>
 	  </p>
 	 </nav>
 
   	<div class="tile box">
-  		<router-link :to="$route.fullPath.slice(1,3) +`/customer-jewellries/${post.id}/edit`" class="button is-primary">
+  		<router-link :to=" `/adm/customer-jewellries/${post.id}/edit`" class="button is-primary">
 							Edit
 		</router-link>
 		<button class="button is-danger" @click="remove" :disable="isRemoving">Delete</button>
@@ -254,7 +254,7 @@
 		watch:{
 			'$route':'fetchData'
 		},
-		created(){
+		beforeMount(){
 			this.fetchData()
 			
 		},

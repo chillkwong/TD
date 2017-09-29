@@ -18066,6 +18066,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -18142,7 +18144,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "to": '/invoices/pdf/' + _vm.model.id
     }
-  }, [_vm._v("Print")])], 1), _vm._v(" "), _c('div', {
+  }, [_vm._v("Print")]), _vm._v(" "), _c('router-link', {
+    staticClass: "button is-primary",
+    attrs: {
+      "to": '/adm/customer-jewellries/' + _vm.model.id + '/create'
+    }
+  }, [_vm._v("Create Post")])], 1), _vm._v(" "), _c('div', {
     staticClass: "column is-right"
   }, [_c('router-link', {
     staticClass: "button is-primary",
@@ -21186,7 +21193,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			title: 'Create',
 			initialize: '/api/jewellries/create',
 			redirect: '/adm',
-			store: '/api/jewellries',
+			storeURL: '/api/jewellries',
 			method: 'post'
 		};
 	},
@@ -21842,7 +21849,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	watch: {
 		'$route': 'fetchData'
 	},
-	created: function created() {
+	beforeMount: function beforeMount() {
 		this.fetchData();
 	},
 
@@ -21875,7 +21882,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "tile"
     }, [_c('router-link', {
       attrs: {
-        "to": _vm.$route.fullPath + post.id
+        "to": _vm.$route.path + '/' + post.id
       }
     }, [(post.cover) ? _c('img', {
       attrs: {
@@ -22204,7 +22211,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	watch: {
 		'$route': 'fetchData'
 	},
-	created: function created() {
+	beforeMount: function beforeMount() {
 		this.fetchData();
 	},
 
@@ -22334,7 +22341,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "tile is-child box"
   }, [_c('article', [_c('div', [_c('p', [_c('iframe', {
     attrs: {
-      "width": "560",
+      "width": "90%",
       "height": "315",
       "src": ("https://www.youtube.com/embed/" + (_vm.invoice[0].jewellries[0].video)),
       "frameborder": "0",
@@ -22348,8 +22355,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "level-item has-text-centered"
   }, [_c('iframe', {
     attrs: {
-      "width": "888",
-      "height": "500",
+      "width": "90%",
+      "height": "555",
       "src": ("https://www.youtube.com/embed/" + (_vm.post.video)),
       "frameborder": "0",
       "allowfullscreen": ""
@@ -22359,7 +22366,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('router-link', {
     staticClass: "button is-primary",
     attrs: {
-      "to": _vm.$route.fullPath.slice(1, 3) + "/customer-jewellries/" + (_vm.post.id) + "/edit"
+      "to": ("/adm/customer-jewellries/" + (_vm.post.id) + "/edit")
     }
   }, [_vm._v("\n\t\t\t\t\t\t\tEdit\n\t\t")]), _vm._v(" "), _c('button', {
     staticClass: "button is-danger",
@@ -22577,6 +22584,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -22590,7 +22603,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 	data: function data() {
 		return {
-			select: [],
+			select: [{ title: '' }],
 			form: {
 				invoice_id: '',
 
@@ -22606,6 +22619,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	created: function created() {
 		var _this = this;
 
+		if (this.$route.meta.mode === 'create') {
+			this.form.invoice_id = this.$route.params.id;
+		}
 		if (this.$route.meta.mode === 'edit') {
 			this.initializeURL = '/api/invPosts/' + this.$route.params.id + '/edit';
 			this.storeURL = '/api/invPosts/' + this.$route.params.id + '?_method=PUT';
@@ -22626,22 +22642,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			Object(__WEBPACK_IMPORTED_MODULE_2__helpers_api__["c" /* post */])(this.storeURL, form).then(function (res) {
 				if (res.data.saved) {
 					__WEBPACK_IMPORTED_MODULE_1__helpers_flash__["a" /* default */].setSuccess(res.data.message);
-					_this2.$router.push('/adm/customer-jewellries/' + res.data.id);
+					_this2.$router.push('/en/customer-jewellries/' + res.data.id);
 				}
 			}).catch(function (err) {
 				if (err.response.status === 422) {
 					_this2.error = err.response.data;
 				}
 				_this2.isProcessing = false;
-			});
-		},
-		addDirection: function addDirection() {
-			this.form.directions.push({ description: '' });
-		},
-		addIngredient: function addIngredient() {
-			this.form.ingredients.push({
-				name: '',
-				qty: ''
 			});
 		},
 		remove: function remove(type, index) {
@@ -22704,8 +22711,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, _vm._l((_vm.select), function(selt) {
-    return _c('option', [_vm._v(_vm._s(selt.id))])
-  }))])]), _vm._v(" "), _c('div', {
+    return _c('option', {
+      domProps: {
+        "value": _vm.$route.params.id ? _vm.$route.params.id : selt.id
+      }
+    }, [_vm._v(_vm._s(selt.id))])
+  })), _vm._v(" "), (_vm.form.invoice_id) ? _c('p', [_vm._v("Title: " + _vm._s(_vm.select[_vm.form.invoice_id - 1].title))]) : _vm._e()]), _vm._v(" "), (_vm.$route.params.id) ? _c('div', {
+    staticClass: "column"
+  }, [_c('p', [_vm._v("Invoice ID: " + _vm._s(_vm.$route.params.id))]), _vm._v(" "), _c('p', [_vm._v("Title: " + _vm._s(_vm.select[_vm.$route.params.id - 1].title))])]) : _vm._e()]), _vm._v(" "), _c('div', {
     staticClass: "columns"
   }, [_c('div', {
     staticClass: "column is-4"

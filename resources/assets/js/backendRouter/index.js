@@ -92,7 +92,7 @@ const router = new VueRouter({
 		{path: 'inv-diamonds/:id/edit', component: InvDiamondForm, meta:{mode:'edit'}},
 
 		{path: 'jewellries', component: JewellryIndex},
-		{path: 'jewellries/create', component: JewellryForm},
+		{path: 'jewellries/create', component: JewellryForm, meta: {mode: 'create'}},
 		{path: 'jewellries/:id', component: JewellryShow},
 		{path: 'jewellries/:id/edit', component: JewellryForm, meta:{mode:'edit'}},
 
@@ -103,6 +103,7 @@ const router = new VueRouter({
 
 		
 		{path: 'customer-jewellries/create', component: CustomerJewForm, meta: {mode: 'create'}},
+		{path: 'customer-jewellries/:id/create', component: CustomerJewForm, meta: {mode: 'create'}},
 		{path: 'customer-jewellries/:id/edit', component: CustomerJewForm, meta: {mode: 'edit'}},
 		// {path: 'customer-jewellries/:id', component: CustomerJewShow},
 

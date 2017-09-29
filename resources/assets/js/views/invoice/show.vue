@@ -7,6 +7,7 @@
 	<div class="columns">
 		<div class="column is-left">
 			<router-link :to="'/invoices/pdf/' + model.id" class="button is-primary">Print</router-link>
+			<router-link :to="'/adm/customer-jewellries/' +model.id + '/create'" class="button is-primary">Create Post</router-link>
 		</div>
 		<div class="column is-right">
 			
@@ -17,6 +18,7 @@
 		</div>
 
 	</div>
+
 	<div class="box">
 		<div class="columns">
 			<div class="column">

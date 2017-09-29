@@ -9,7 +9,7 @@
 			<div class="tile is-parent is-4" v-for="post in posts">
 				<div class="tile is-child box">
 					<article class="tile">
-						<router-link :to="$route.fullPath + post.id" >
+						<router-link :to="$route.path +'/' + post.id" >
 							<img :src="`/images/${post.cover}`" v-if="post.cover">
 							<p class="subtitle">{{post.contents[0].content}}</p>
 						</router-link>
@@ -35,7 +35,7 @@ export default {
 	watch:{
 		'$route': 'fetchData'
 	},
-	created(){
+	beforeMount(){
 		this.fetchData()
 	},
 	methods:{
