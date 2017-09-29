@@ -1,12 +1,23 @@
 <template>
 	<div class="box">
 		<div class="columns">
-			<div class="column" v-for="post in posts">
-				<router-link :to="`/posts/${post.id}`" >
-					<img v-for="image in post.images" :src="`/images/${image}`" v-if="image">
-					<p class="subtitle">{{post}}</p>
-				</router-link>
+			<div class="column">
 			</div>
+		</div>
+
+		<div class="tile ancestor">
+			<div class="tile is-parent is-4" v-for="post in posts">
+				<div class="tile is-child box">
+					<article class="tile">
+						<router-link :to="$route.fullPath + post.id" >
+							<img :src="`/images/${post.cover}`" v-if="post.cover">
+							<p class="subtitle">{{post.contents[0].content}}</p>
+						</router-link>
+						
+					</article>
+				</div>
+			</div>		
+
 		</div>
 	</div>
 </template>
@@ -21,11 +32,19 @@ export default {
 			posts: []
 		}
 	},
+	watch:{
+		'$route': 'fetchData'
+	},
 	created(){
-		get(`/api/posts`)
-		.then((res)=>{
-			this.posts = res.data.posts
-		})
+		this.fetchData()
+	},
+	methods:{
+		fetchData(){
+			get(`/api/invPosts`, this.$route.fullPath.slice(1,3))
+			.then((res)=>{
+				this.posts = res.data.posts
+			})
+		}
 	}
 }
 </script>

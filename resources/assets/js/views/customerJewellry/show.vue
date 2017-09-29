@@ -129,12 +129,12 @@
   				<div class="tile is-child box">
   					<router-link :to="'/adm/jewellries/' + invoice[0].jewellries[0].id">
 	  					<figure class="image">
-	  					<img :src="`/images/${invoice[0].jewellries[0].id}/${invoice[0].jewellries[0].cover}`">
+	  					<img :src="`/images/${invoice[0].jewellries[0].cover}`">
 	  					</figure>
   					</router-link>
   					<router-link :to="'/adm/jewellries/' + invoice[0].jewellries[0].id">
 	  					<figure class="image">
-	  					<img :src="`/images/${invoice[0].jewellries[0].id}/${invoice[0].jewellries[0].image1}`">
+	  					<img :src="`/images/${invoice[0].jewellries[0].image1}`">
 	  					</figure>
   					</router-link>
   				</div>
@@ -183,7 +183,7 @@
 	 </nav>
 
   	<div class="tile box">
-  		<router-link :to="`/adm/customer-jewellries/${post.id}/edit`" class="button is-primary">
+  		<router-link :to="$route.fullPath.slice(1,3) +`/customer-jewellries/${post.id}/edit`" class="button is-primary">
 							Edit
 		</router-link>
 		<button class="button is-danger" @click="remove" :disable="isRemoving">Delete</button>
@@ -251,14 +251,21 @@
 				invoice: ''
 			}
 		},
+		watch:{
+			'$route':'fetchData'
+		},
 		created(){
-			get(`/api/invPosts/${this.$route.params.id}`)
-			.then((res)=>{
-				this.post = res.data.post
-				this.invoice = res.data.invoice
-			})
+			this.fetchData()
+			
 		},
 		methods: {
+			fetchData(){
+				get(`/api/invPosts/${this.$route.params.id}`,this.$route.fullPath.slice(1,3))
+				.then((res)=>{
+					this.post = res.data.post
+					this.invoice = res.data.invoice
+				})
+			},
 			remove(){
 				this.isRemoving = false
 					del(`/api/invPosts/${this.$route.params.id}`)

@@ -18,8 +18,8 @@ import Locale from '../helpers/locale'
 // }
 
 export function get(url,lang){
-	
-	Locale.setLastUrl(url)
+	// lang = Locale.temp.currentLocale
+	// Locale.setLastUrl(url)
 	return axios({
 		method: 'GET',
 		url: url,

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use File;
 use App\InvDiamond;
 use App\Jewellry;
 
@@ -98,29 +99,26 @@ class JewellryController extends Controller
     		]);
     	$jewellry = Jewellry::findOrFail($id);
 
-        dd($request->all());
-        
+        // dd($request->all());
         $cover ='';
          if ($request->hasFile('cover')) {
             $cover = $this->getFileName($request->cover);
             $request->cover->move(base_path('public/images'), $cover);
-            File::delete(base_path('public/images'. $recipe->cover));
-            $request->cover = $cover;
+            File::delete(base_path('public/images/'. $jewellry->cover));
+            $jewellry->cover = $cover;
         }
+        
 
-        $image1 = '';
+        $image1= '';
         if ($request->hasFile('image1')) {
             $image1 = $this->getFileName($request->image1);
             $request->image1->move(base_path('public/images'), $image1);
-            File::delete(base_path('public/images'. $recipe->image1));
-            $request->image1 = $image1;
+            File::delete(base_path('public/images/'. $jewellry->image1));
+            $jewellry->image1 = $image1;
         }
-
         
         
-        
-
-    	$jewellry->update($request->all());
+    	$jewellry->update($request->except(['cover','image1']));
 
     	return response()
     		->json([

@@ -1,22 +1,30 @@
 export function toMulipartedForm(form, mode){
-	if (mode === 'eit') {
-		const temp = JSON.parse(JSON.stringify(form))
-		if (typeof form.cover === 'string') {
-		delete temp.cover
-		}
-		if (typeof form.image1 === 'string') {
-		delete temp.image1
-		}
-		
-		return temp
-	}else{
+	// if (mode === 'edit') {
+	// 	if (typeof form.cover === 'string') {
+	// 	const temp = JSON.parse(JSON.stringify(form))
+	// 	delete temp.cover
+	// 	}else{
+	// 	objectToFormData(form.cover)
+	// 	}
+
+	// 	const temp = JSON.parse(JSON.stringify(form))		
+	// 	if (typeof form.image1 === 'string') {
+	// 	delete temp.image1
+	// 	}else{
+	// 	objectToFormData(form.image1)
+	// 	}
+	// 	console.log(temp)
+	// 	return temp
+	// }else{
 		return objectToFormData(form)
-	}
+	// }
 }
 
 export function objectToFormData(obj, form, namespace){
 	let fd = form || new FormData()
 	let formKey
+
+	console.log(fd)
 
 	for (var property in obj) {
 		if (obj.hasOwnProperty(property)) {

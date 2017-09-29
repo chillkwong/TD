@@ -1,7 +1,6 @@
-<template>
-	<!-- <section class="hero is-primary is-bold"> -->
-	  <!-- Hero header: will stick at the top -->
-	 <!-- <nav class="navbar is-transparent">
+<section class="hero is-primary is-bold">
+  <!-- Hero header: will stick at the top -->
+   <nav class="navbar is-transparent">
   <div class="navbar-brand">
     <a class="navbar-item" href="http://bulma.io">
       <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
@@ -183,29 +182,6 @@
         <div class="field is-grouped">
           <p class="control">
 
-
-                   <div class="dropdown is-hoverable">
-                    <div class="dropdown-trigger">
-                      <button class="button is-info" aria-haspopup="true" aria-controls="dropdown-menu4">
-                        <span>Language</span>
-                        <span class="icon is-small">
-                          <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                      </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                      <div class="dropdown-content">
-                        <div class="dropdown-item">
-                          <router-link :to="'/en' + this.$route.fullPath.slice(3)" >EN</router-link>
-                          <hr class="dropdown-divider">
-                          <router-link :to="'/hk' + this.$route.fullPath.slice(3)" >HK</router-link>
-                          <hr class="dropdown-divider">
-                          <router-link :to="'/cn' + this.$route.fullPath.slice(3)" >CN</router-link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
             <a class="bd-tw-button button"
               data-social-network="Twitter"
               data-social-action="tweet"
@@ -217,7 +193,7 @@
               </span>
               <span>
                 Tweet
-                {{$route.fullPath.slice(1,3)}}
+               
               </span>
             </a>
 
@@ -234,39 +210,33 @@
       </div>
     </div>
   </div>
-</nav> -->
+</nav>
 
-	  <!-- Hero content: will be in the middle -->
-	  <!-- <div class="hero-body">
-	    <div class="container has-text-centered">
-	      <h1 class="title">
-	        Title
-	      </h1>
-	      <h2 class="subtitle">
-	        Subtitle
-	      </h2>
-	    </div>
-	  </div> -->
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        Title
+      </h1>
+      <h2 class="subtitle">
+        Subtitle
+      </h2>
+    </div>
+  </div>
 
-	  <!-- Hero footer: will stick at the bottom -->
-    
-	  <!-- <div class="hero-foot">
-	    <nav class="tabs">
-	      <div class="container">
-	        <ul>
-	          <li class="is-active"><a>Overview</a></li>
-	          <li><a>Modifiers</a></li>
-	          <li><a>Grid</a></li>
-	          <li><a>Elements</a></li>
-	          <li><a>Components</a></li>
-	          <li><a>Layout</a></li>
-	        </ul>
-	      </div>
-	    </nav>
-	  </div>
-	</section> -->
-</template>
-
-
-
-
+  <!-- Hero footer: will stick at the bottom -->
+  <div class="hero-foot">
+    <nav class="tabs">
+      <div class="container">
+        <ul>
+          <li class="is-active"><a>Overview</a></li>
+          <li><a>Modifiers</a></li>
+          <li><a>Grid</a></li>
+          <li><a>Elements</a></li>
+          <li><a>Components</a></li>
+          <li><a>Layout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>

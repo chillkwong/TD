@@ -1,6 +1,6 @@
 export default {
 	temp:{
-	currentLocale: 'en',
+	currentLocale: '',
 	lastUrl: ''
 	},
 	setLocale(locale){

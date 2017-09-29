@@ -10,10 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/adm/{vue_capture?}', function () {
+    return view('backend');
+})->where('vue_capture', '[\/\w\.-]*');
 
 Route::get('/{vue_capture?}', function () {
     return view('welcome1');
 })->where('vue_capture', '[\/\w\.-]*');
+
+
 
 
 // Route::get('/{vue_capture?}', function () {

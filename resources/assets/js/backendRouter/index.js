@@ -64,35 +64,51 @@ const router = new VueRouter({
 	routes: [
 	{path: '/', components: {header:Header, default: Home, footer:Footer} },
 
-	{path: '/en', components: {header:Header, default: Home, footer:Footer}, 
+	{path: '/td-login', component: AdmLogin},
+	{path: '/invoices/pdf/:id', component: InvoiceShow},
+	{path: '/adm', components: { default: Admin, header:AdmHeader, footer:AdmFooter},
+
 		children:[
-		{path:'',  },
-		{path:'/posts/:id', component:PostIndex },
+		{path:'', component: AdmMain},
 
-		{path: 'customer-jewellries', component: CustomerJewIndex},
-		{path: 'customer-jewellries/:id', component: CustomerJewShow},
-	
-		]},
+		{path: 'customers', component: CusomterIndex},
+		{path: 'customers/create', component: CustomerForm},
+		{path: 'customers/:id', component: CustomerShow},
+		{path: 'customers/:id/edit', component: CustomerForm, meta:{mode:'edit'}},
 
+		{path: 'invoices', component: InvoiceIndex},
+		{path: 'invoices/create', component: InvoiceForm},
+		{path: 'invoices/:id', component: InvoiceShow},
+		{path: 'invoices/:id/edit', component: InvoiceForm, meta:{mode:'edit'}},
 
-	{path: '/hk', components: {header:Header, default: Home, footer:Footer}, 
-		children:[
-		{path:'',  },
+		// {path: 'items', component: ItemIndex},
+		// {path: 'items/create', component: ItemForm},
+		// {path: 'items/:id', component: ItemShow},
+		// {path: 'items/:id/edit', component: ItemForm, meta:{mode:'edit'}},
 
-		{path: 'customer-jewellries', component: CustomerJewIndex},
-		{path: 'customer-jewellries/:id', component: CustomerJewShow},
-	
-		]},
+		{path: 'inv-diamonds', component: InvDiamondIndex},
+		{path: 'inv-diamonds/create', component: InvDiamondForm},
+		{path: 'inv-diamonds/:id', component: InvDiamondShow},
+		{path: 'inv-diamonds/:id/edit', component: InvDiamondForm, meta:{mode:'edit'}},
 
+		{path: 'jewellries', component: JewellryIndex},
+		{path: 'jewellries/create', component: JewellryForm},
+		{path: 'jewellries/:id', component: JewellryShow},
+		{path: 'jewellries/:id/edit', component: JewellryForm, meta:{mode:'edit'}},
 
-	{path: '/cn', components: {header:Header, default: Home, footer:Footer}, 
-		children:[
-		{path:'', },
+		{path: 'posts', component: PostIndex},
+		{path: 'posts/create', component: PostForm, meta: {mode: 'create'}},
+		{path: 'posts/:id/edit', component: PostForm, meta: {mode: 'edit'}},
+		{path: 'posts/:id', component: PostShow},
+
 		
-		{path: 'customer-jewellries', component: CustomerJewIndex},
-		{path: 'customer-jewellries/:id', component: CustomerJewShow},
-	
+		{path: 'customer-jewellries/create', component: CustomerJewForm, meta: {mode: 'create'}},
+		{path: 'customer-jewellries/:id/edit', component: CustomerJewForm, meta: {mode: 'edit'}},
+		// {path: 'customer-jewellries/:id', component: CustomerJewShow},
+
 		]},
+
+
 
 	]
 	

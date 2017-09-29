@@ -117,6 +117,28 @@
                     </div>
                   </a>
 
+                  <hr class="navbar-divider">
+
+                  <a class="navbar-item" href="/en/customer-jewellries">
+                    <div class="columns">
+                      <div class="column">
+                        <div class="navbar-content">
+                          <p>
+                            <small class="has-text-info">Customer Jewellries</small>
+                          </p>
+                         <div class="level is-mobile">
+                              <div class="navbar-item">
+                                <a href="/en/customer-jewellries">Show</a>
+                              </div>
+                              <div class="navbar-item">
+                                <a href="/adm/customer-jewellries/create">Create</a>
+                              </div>
+                         </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+
               </div>
           </div>
 

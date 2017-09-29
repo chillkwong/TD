@@ -14,11 +14,11 @@
         <link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
        
     </head>
-    @include('layouts.header')
+
     <body>
-        <div id="root">
+        <div id="backend">
         	
         </div>
-        <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
+        <script type="text/javascript" src="{{mix('js/backend.js')}}"></script>
     </body>
 </html>
