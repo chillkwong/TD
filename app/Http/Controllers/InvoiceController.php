@@ -8,6 +8,7 @@ use App\Invoice;
 use App\InvDiamond;
 use App\Jewellry;
 use App\Customer;
+use App\InvPost;
 
 class InvoiceController extends Controller
 {
@@ -22,9 +23,10 @@ class InvoiceController extends Controller
 
     public function index()
     {
+                
     	return response()
     		->json([
-    			'model' => Invoice::with('customer')->filterPaginateOrder()
+    			'model' => Invoice::with('customer', 'invPosts')->filterPaginateOrder(),
     			]);
     }
 

@@ -229,4 +229,22 @@ class InvPostController extends Controller
                     'message' =>'You have successfully updated recipe!'
                     ]);
         }
+
+        public function destroy($id, Request $request)
+        {
+            $post = InvPost::findOrFail($id);
+
+            InvContent::where('inv_post_id', $post->id)->delete();
+
+
+            File::delete(base_path('public/images/'), $post->cover);
+            File::delete(base_path('public/images/'), $post->image1);
+
+            $post->delete();
+
+            return response()
+                ->json([
+                    'deleted' =>true
+                    ]);
+        }
 }

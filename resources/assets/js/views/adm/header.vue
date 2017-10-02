@@ -334,9 +334,6 @@
 
 <script type="text/javascript">
 
-  import Auth from '../../store/auth.js'
-
-
 document.addEventListener('DOMContentLoaded', function () {
 
   // Get all "navbar-burger" elements
@@ -362,6 +359,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+
+  import Auth from '../../store/auth.js'
+
 
   export default{
     props: ['images'],

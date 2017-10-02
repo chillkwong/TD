@@ -46,7 +46,7 @@ class JewellryController extends Controller
 
         $image1 = '';
         if ($request->hasFile('image1')) {
-            $image1 = $request->image1->getClientOriginalName();
+            $image1 = $this->getFileName($request->image1);
             $request->image1->move(base_path('public/images'), $image1);
         }
 
@@ -129,6 +129,10 @@ class JewellryController extends Controller
     public function destroy($id)
     {
     	$jewellry = Jewellry::findOrFail($id);
+
+        File::delete(base_path('public/images/'. $jewellry->cover));
+        File::delete(base_path('public/images/'. $jewellry->image1));
+        
     	$jewellry->delete();
 
     	return response()

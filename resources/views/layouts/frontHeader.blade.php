@@ -1,12 +1,23 @@
+<div id="header">
 <section class="hero is-primary is-bold">
   <!-- Hero header: will stick at the top -->
-   <nav class="navbar is-transparent">
+   <nav  class="navbar is-transparent">
   <div class="navbar-brand">
-    <a class="navbar-item" href="http://bulma.io">
-      <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+    <a class="navbar-item" href="./">
+      <img src="/images/company/logo_PNG_sq_60x60_1.png" alt="Bulma: a modern CSS framework based on Flexbox" width="60" height="60">
     </a>
 
-    <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
+    <router-link class="navbar-item is-hidden-desktop"  :to="'/en' + this.$route.fullPath.slice(3)" >
+      <img src="/images/langs/en.png" width="20" height="10">
+      </router-link>
+      <router-link class="navbar-item is-hidden-desktop"  :to="'/en' + this.$route.fullPath.slice(3)" >
+      <img src="/images/langs/hk.png" width="20" height="10">
+      </router-link>
+      <router-link class="navbar-item is-hidden-desktop"  :to="'/en' + this.$route.fullPath.slice(3)" >
+      <img src="/images/langs/china.png" width="20" height="10">
+      </router-link>
+
+    <!-- <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
       <span class="icon" style="color: #333;">
         <i class="fa fa-lg fa-github"></i>
       </span>
@@ -16,7 +27,7 @@
       <span class="icon" style="color: #55acee;">
         <i class="fa fa-lg fa-twitter"></i>
       </span>
-    </a>
+    </a> -->
 
     <div class="navbar-burger burger" data-target="navMenuTransparentExample">
       <span></span>
@@ -130,6 +141,9 @@
           </div>
         </div>
       </div>
+
+      
+
       <div class="navbar-item has-dropdown is-hoverable">
         <div class="navbar-link">
           More
@@ -168,16 +182,43 @@
     </div>
 
     <div class="navbar-end">
-      <a class="navbar-item is-hidden-desktop-only" href="https://github.com/jgthms/bulma" target="_blank">
+      <router-link class="navbar-item is-hidden-desktop-only"  :to="'/en' + this.$route.fullPath.slice(3)" >EN
+      </router-link>
+      <!-- <a href="https://github.com/jgthms/bulma" target="_blank">
         <span class="icon" style="color: #333;">
           <i class="fa fa-lg fa-github"></i>
         </span>
-      </a>
+      </a> -->
       <a class="navbar-item is-hidden-desktop-only" href="https://twitter.com/jgthms" target="_blank">
         <span class="icon" style="color: #55acee;">
           <i class="fa fa-lg fa-twitter"></i>
         </span>
       </a>
+
+      <div class="dropdown is-hoverable">
+    <div class="dropdown-trigger">
+      <button class="button is-info" aria-haspopup="true" aria-controls="dropdown-menu4">
+        <span>Language</span>
+        <span class="icon is-small">
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button> 
+
+        </div>
+
+            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+              <div class="dropdown-content">
+                <div class="dropdown-item">
+                  <router-link :to="'/en' + this.$route.fullPath.slice(3)" >EN</router-link>
+                  <hr class="dropdown-divider">
+                  <router-link :to="'/hk' + this.$route.fullPath.slice(3)" >HK</router-link>
+                  <hr class="dropdown-divider">
+                  <router-link :to="'/cn' + this.$route.fullPath.slice(3)" >CN</router-link>
+                </div>
+              </div>
+            </div>
+        </div>
+
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
@@ -216,27 +257,63 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title">
-        Title
+        Ting Diamond
       </h1>
       <h2 class="subtitle">
-        Subtitle
+        Prividing the best of Brilliance
       </h2>
     </div>
   </div>
 
   <!-- Hero footer: will stick at the bottom -->
-  <div class="hero-foot">
-    <nav class="tabs">
-      <div class="container">
-        <ul>
-          <li class="is-active"><a>Overview</a></li>
-          <li><a>Modifiers</a></li>
-          <li><a>Grid</a></li>
-          <li><a>Elements</a></li>
-          <li><a>Components</a></li>
-          <li><a>Layout</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+    <div class="hero-foot">
+      <nav class="tabs">
+        <div class="container">
+          <ul>
+            <li class="is-active"><a :href="this.$route.path.slice(0,3) + '/gia-loose-diamonds'">Diamonds</a></li>
+            <li><a :href="this.$route.fullPath.slice(0,3) + '/engagement-rings'">Engagement Rings</a></li>
+            <li><a :href="this.$route.fullPath.slice(0,3) + '/wedding-rings'">Wedding Rings</a></li>
+            <li><a :href="this.$route.fullPath.slice(0,3) + '/buying-procedure'">Buying Procedure</a></li>
+            <li><a :href="this.$route.fullPath.slice(0,3) + '/education-diamond-grading'">Education</a></li>
+            <li><a :href="this.$route.fullPath.slice(0,3) + '/customer-jewellries'">Customer Jewellries</a></li>
+            <li><a :href="this.$route.fullPath.slice(0,3) + '/about-us'">About</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+ 
+
 </section>
+ </div>
+
+<script type="text/javascript" src="{{mix('js/app.js')}}"></script> 
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+</script>
+

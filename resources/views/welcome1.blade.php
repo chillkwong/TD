@@ -9,16 +9,23 @@
         <title>Ting Diamond</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+       
         <link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
        
     </head>
-    @include('layouts.header')
+   
+    @include('layouts.frontHeader')
     <body>
         <div id="root">
         	
         </div>
-        <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
-    </body>
+
+
+    @include('layouts.frontFooter')
+
+
+     <script type="text/javascript" src="{{mix('js/app.js')}}"></script> 
+     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</body>
 </html>
