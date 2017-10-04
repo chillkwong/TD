@@ -90,7 +90,8 @@
 			</div>
 			</div>
 		</div>
-		<div class="tile">
+		<div class="tabs">
+		<div class="container">
 		<table class="table is-striped is-narrow is-fullwidth">
 			<div class="dv-body">
 				<div class="dv-table table table-hover">
@@ -135,6 +136,7 @@
 				</div>
 			</div>
 		</table>
+		</div>
 		</div>
 	</div>
 
