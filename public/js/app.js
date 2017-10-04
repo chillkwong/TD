@@ -19028,8 +19028,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.toggleValue(_vm.query.search_conditions.clarity[8].clicked, 'clarity', 8)
       }
     }
-  })])])])]), _vm._v(" "), _c('table', {
-    staticClass: "table is-fullwidth"
+  })])])])]), _vm._v(" "), _c('div', {
+    staticClass: "tile"
+  }, [_c('table', {
+    staticClass: "table is-striped is-narrow is-fullwidth"
   }, [_c('div', {
     staticClass: "dv-body"
   }, [_c('div', {
@@ -19118,7 +19120,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.next()
       }
     }
-  }, [_vm._v("»")])])])])])
+  }, [_vm._v("»")])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('h1', {
     staticClass: "subtitle is-6"

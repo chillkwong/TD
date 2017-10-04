@@ -90,52 +90,52 @@
 			</div>
 			</div>
 		</div>
+		<div class="tile">
+		<table class="table is-striped is-narrow is-fullwidth">
+			<div class="dv-body">
+				<div class="dv-table table table-hover">
+					<thead>
+						<tr>
+							<th v-for="column in columns" @click="toggleOrder(column)"> 
+								<span>{{ column }}</span>
+								<span class="dv-table-column" v-if="column === query.column">
+									<span v-if="query.direction === 'desc' ">&uarr;</span>
+									<span v-else >&darr;</span>
+								</span>
+							</th>
+						</tr>
+					</thead>
 
-	<table class="table is-fullwidth">
-		<div class="dv-body">
-			<div class="dv-table table table-hover">
-				<thead>
-					<tr>
-						<th v-for="column in columns" @click="toggleOrder(column)"> 
-							<span>{{ column }}</span>
-							<span class="dv-table-column" v-if="column === query.column">
-								<span v-if="query.direction === 'desc' ">&uarr;</span>
-								<span v-else >&darr;</span>
-							</span>
-						</th>
-					</tr>
-				</thead>
-
-				<tbody>
-					<tr v-for="row in model.data">
-						<td v-for="(value,key) in row"> {{ value }}</td>
-					</tr>
-				</tbody>
+					<tbody>
+						<tr v-for="row in model.data">
+							<td v-for="(value,key) in row"> {{ value }}</td>
+						</tr>
+					</tbody>
+				</div>
 			</div>
+
+			<div class="dv-footer">
+				<div class="dv-footer-item">
+					<span>Displaying {{ model.from }}  - {{ model.to }} of {{ model.total }} rows</span>
+				</div>
+				<div class="dv-footer-item">
+					<span>Rows per page</span>
+					<input type="text" 
+					v-model="query.per_page" 
+					class="dv-footer-input"
+					 @keyup.enter="fetchIndexData()">
+				</div>
+				<div class="dv-footer-sub">
+					<button class="dv-footer-btn"	 @click="prev()">&laquo;</button>
+					<input type="text" 
+					v-model="query.page" 
+					class="dv-footer-input"
+					 @keyup.enter="fetchIndexData()">
+					<button class="dv-footer-btn" @click="next()">&raquo;</button>
+				</div>
+			</div>
+		</table>
 		</div>
-
-		<div class="dv-footer">
-			<div class="dv-footer-item">
-				<span>Displaying {{ model.from }}  - {{ model.to }} of {{ model.total }} rows</span>
-			</div>
-			<div class="dv-footer-item">
-				<span>Rows per page</span>
-				<input type="text" 
-				v-model="query.per_page" 
-				class="dv-footer-input"
-				 @keyup.enter="fetchIndexData()">
-			</div>
-			<div class="dv-footer-sub">
-				<button class="dv-footer-btn"	 @click="prev()">&laquo;</button>
-				<input type="text" 
-				v-model="query.page" 
-				class="dv-footer-input"
-				 @keyup.enter="fetchIndexData()">
-				<button class="dv-footer-btn" @click="next()">&raquo;</button>
-			</div>
-		</div>
-	</table>
-
 	</div>
 
 </template>
