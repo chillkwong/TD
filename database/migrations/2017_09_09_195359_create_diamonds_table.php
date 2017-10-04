@@ -15,9 +15,7 @@ class CreateDiamondsTable extends Migration
     {
         Schema::create('diamonds', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('supplier_id')->unsigned()->nullable();
-            $table->string('stock');
-            $table->bigInteger('certificate');
+            $table->integer('price');
             $table->string('shape');
             $table->string('weight');
             $table->string('color');
@@ -26,8 +24,10 @@ class CreateDiamondsTable extends Migration
             $table->string('polish');
             $table->string('symmetry');
             $table->string('fluroscence');
-            $table->string('lab')->defult('gia');
-            $table->integer('price');
+            $table->bigInteger('certificate'); 
+            $table->string('lab')->defult('gia');           
+            $table->string('stock');
+            $table->integer('supplier_id')->unsigned()->nullable();
             $table->string('location')->default('hk');
             $table->text('iamgeLink')->nullable();
             $table->timestamps();

@@ -39,11 +39,15 @@
 		<div class="tile is-ancestor">
 			<div class="tile is-12">
 		    	<div class="tile is-parent">
+		    		<article class="tile is-child box " >
+		            	<div>Shape</div>
+		            	<button v-for="(value, index) in query.search_conditions.shape" class="button " :class=" {'is-info active' : query.search_conditions.shape[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shape[index].clicked,'shape', index)"><img :src="'/images/diamond_shapes/'+query.search_conditions.shape[index].description + '.png'" height="20" width="20"></button>
+					</article>
 		            	<article class="tile is-child box is-info" >
 
 		            	<div><h1 class="subtitle is-6">Price</h1></div>
 		            	<div class="level">
-			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.priceRange[0]">
+			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.priceRange[0]" @focus.native="$event.target.select()">
 
 			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.priceRange[1]">
 			            </div>            	
@@ -66,56 +70,61 @@
     	<div class="tile is-parent">
         	<article class="tile is-child box " >
             	<div>Color</div>
-				<input class="button " :class=" {'is-info active' : query.search_conditions.color[0].clicked} " type="button" @click="toggleValue(query.search_conditions.color[0].clicked,'color', 0)" :value="query.search_conditions.color[0].description"> 
-				<input class=" button " :class=" { 'is-info active' : query.search_conditions.color[1].clicked} " type="button" @click="toggleValue(query.search_conditions.color[1].clicked,'color', 1)" :value="query.search_conditions.color[1].description"> 
-				<input class=" button " :class=" { 'is-info active' : query.search_conditions.color[2].clicked} "  type="button" @click="toggleValue(query.search_conditions.color[2].clicked,'color', 2)" :value="query.search_conditions.color[2].description"> 
-				<input class=" button " :class=" { 'is-info active' : query.search_conditions.color[3].clicked} "  type="button" @click="toggleValue(query.search_conditions.color[3].clicked,'color', 3)" :value="query.search_conditions.color[3].description"> 
-				<input class=" button " :class=" { 'is-info active' : query.search_conditions.color[4].clicked} "  type="button" @click="toggleValue(query.search_conditions.color[4].clicked,'color', 4)" :value="query.search_conditions.color[4].description"> 
-				<input  class=" button " :class=" { 'is-info active' : query.search_conditions.color[5].clicked} " type="button" @click="toggleValue(query.search_conditions.color[5].clicked,'color', 5)" :value="query.search_conditions.color[5].description"> 
-				<input class=" button " :class=" { 'is-info active' : query.search_conditions.color[6].clicked} "  type="button" @click="toggleValue(query.search_conditions.color[6].clicked,'color', 6)" :value="query.search_conditions.color[6].description"> 
+            	<input v-for="(value, index) in query.search_conditions.color" class="button " :class=" {'is-info active' : query.search_conditions.color[index].clicked} " type="button" @click="toggleValue(query.search_conditions.color[index].clicked,'color', index)" :value="query.search_conditions.color[index].description"> 
 			</article>
 
 			<article class="tile is-child box" >
 				<div>Clarity</div>
-				<input class=" button " :class=" {'is-info active' : query.search_conditions.clarity[0].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[0].clicked,'clarity', 0)" :value="query.search_conditions.clarity[0].description"> 
-				<input class=" button " :class=" {'is-info active' : query.search_conditions.clarity[1].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[1].clicked,'clarity', 1)" :value="query.search_conditions.clarity[1].description"> 
-				<input class=" button " :class=" {'is-info active' : query.search_conditions.clarity[2].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[2].clicked,'clarity', 2)" :value="query.search_conditions.clarity[2].description"> 
-				<input class=" button " :class=" {'is-info active' : query.search_conditions.clarity[3].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[3].clicked,'clarity', 3)" :value="query.search_conditions.clarity[3].description"> 
-				<input class=" button " :class=" {'is-info active' : query.search_conditions.clarity[4].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[4].clicked,'clarity', 4)" :value="query.search_conditions.clarity[4].description"> 
-				<input class=" button " :class=" {'is-info active' : query.search_conditions.clarity[5].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[5].clicked,'clarity', 5)" :value="query.search_conditions.clarity[5].description"> 
-				<input class=" button " :class=" {'is-info active' : query.search_conditions.clarity[6].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[6].clicked,'clarity', 6)" :value="query.search_conditions.clarity[6].description"> 
-				<input class=" button " :class=" {'is-info active' : query.search_conditions.clarity[7].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[7].clicked,'clarity', 7)" :value="query.search_conditions.clarity[7].description"> 
-				<input class=" button " :class=" {'is-info active' : query.search_conditions.clarity[8].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[8].clicked,'clarity', 8)" :value="query.search_conditions.clarity[8].description"> 
-				</article>
+				<input v-for="(value, index) in query.search_conditions.clarity " class=" button " :class=" {'is-info active' : query.search_conditions.clarity[index].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[index].clicked,'clarity', index)" :value="query.search_conditions.clarity[index].description"> 
+			</article>
+
+			<article class="tile is-child box" >
+				<div>Cut</div>
+				<input v-for="(value, index) in query.search_conditions.cut " class=" button " :class=" {'is-info active' : query.search_conditions.cut[index].clicked} " type="button" @click="toggleValue(query.search_conditions.cut[index].clicked,'cut', index)" :value="query.search_conditions.cut[index].description"> 
+			</article>
 			</div>
 			</div>
 		</div>
+
 		<div class="tabs">
-		<div class="container">
-		<table class="table is-striped is-narrow is-fullwidth">
-			<div class="dv-body">
-				<div class="dv-table table table-hover">
+		<table class="table is-striped is-narrowed is-fullwidth ">
 					<thead>
-						<tr>
+						<tr class="is-selected ">
 							<th v-for="column in columns" @click="toggleOrder(column)"> 
 								<span>{{ column }}</span>
 								<span class="dv-table-column" v-if="column === query.column">
-									<span v-if="query.direction === 'desc' ">&uarr;</span>
-									<span v-else >&darr;</span>
+									<span v-if="query.direction === 'desc' ">&#x25BC;</span>
+									<span v-else >&#x25B2;</span>
 								</span>
 							</th>
 						</tr>
 					</thead>
 
 					<tbody>
-						<tr v-for="row in model.data">
-							<td v-for="(value,key) in row"> {{ value }}</td>
-						</tr>
-					</tbody>
-				</div>
-			</div>
+						
+						<tr v-for="(row, index) in model.data" @click="$router.push($route.path + '/' +row.id)">
+							<td > {{ row.id }}</td>
+							<td > {{ row.price }}</td>
+							<td > {{ row.shape }}</td>
+							<td > {{ row.weight }}</td>
+							<td > {{ row.color }}</td>
+							<td > {{ row.clarity }}</td>
+							<td > {{ row.cut }}</td>
+							<td > {{ row.polish }}</td>
+							<td > {{ row.symmetry }}</td>
+							<td > {{ row.fluroscence }}</td>
+							<td > {{ row.certificate }}</td>
+							<td > {{ row.lab }}</td>
 
-			<div class="dv-footer">
+						</tr>
+						
+						<!-- <tr v-for="row in model.data" v-if="opened.includes(row.id)">
+				        <td colspan="12">ON!</td>
+				     	</tr> -->
+
+					</tbody>
+				
+			<!--<div class="dv-footer">
 				<div class="dv-footer-item">
 					<span>Displaying {{ model.from }}  - {{ model.to }} of {{ model.total }} rows</span>
 				</div>
@@ -134,10 +143,37 @@
 					 @keyup.enter="fetchIndexData()">
 					<button class="dv-footer-btn" @click="next()">&raquo;</button>
 				</div>
-			</div>
+			</div> -->
+
 		</table>
 		</div>
+
+		<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+		  <a class="pagination-previous" @click="prev">Previous</a>
+		  <div class="field">
+ 			 <div class="control">
+ 			 	<label>Per Page</label> 
+			  	<div class="select is-primary">
+					<select v-model="model.per_page" @change="fetchData">
+						<option>10</option>
+						<option>25</option>
+						<option>50</option>
+					</select>
+				</div>
+			</div>
 		</div>
+		  <a class="pagination-next" @click="next">Next</a>
+		  <ul class="pagination-list">
+		    <li><a class="button" aria-label="Goto page 1" @click="moveTo(-5)" :disabled="model.current_page<5">{{model.current_page<5 ? 0: model.current_page-5}}</a></li>
+		    <li><span class="pagination-ellipsis">&hellip;</span></li>
+		    <li><a class="pagination-link" aria-label="Goto page 86" :diable="model.current_page" @click="moveTo(-1)">{{model.current_page-1}}</a></li>
+		    <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">{{model.current_page}}</a></li>
+		    <li><a class="pagination-link" aria-label="Goto page 86" :diable="model.current_page>model.last_page" @click="moveTo(1)">{{model.current_page+1}}</a></li>   
+		    <li><span class="pagination-ellipsis">&hellip;</span></li>
+		    <li><a class="pagination-link" aria-label="Goto page 86"  @click="moveTo(5)">{{5+model.current_page}}</a></li>
+		  </ul>
+		</nav>
+
 	</div>
 
 </template>
@@ -156,14 +192,18 @@
 			return {
 				source:'/api/diamonds',
 				fetchData: {
-					color: ['d','e','f','g'],
-					 cut: ['ex','vg','gd'],
+					shape: ['rd','ps','em','pr','mq','cu','ac','ov','ht','ra'],
+					 color: ['d','e','f','g','h','i','j','k'],
 					 clarity: ['fl','if','vvs1', 'vvs2', 'vs1', 'vs2'],
+					 cut: ['ex','vg','gd','fr','na'],
+					 polish: ['ex','vg','gd','fr'],
+					 symmetry: ['ex','vg','gd','fr'],
 					 priceRange: ['100', '5000000'],
 					 weight: ['0.10','20']
 				},
+				opened: [],
 				model: {},
-				columns:{},
+				columns:['id','price','shape','weight','color','clarity','cut','polish','symmetry','fluroscence','certificate','lab'],
 				query:{
 					page:1,
 					column: 'price',
@@ -173,6 +213,18 @@
 					search_operator: 'like',
 					search_input: '',
 					search_conditions:{
+						shape: [
+						{ description: 'rd', clicked: false},
+						{ description: 'ps', clicked: false},
+						{ description: 'em', clicked: false},
+						{ description: 'pr', clicked: false},
+						{ description: 'mq', clicked: false},
+						{ description: 'cu', clicked: false},
+						{ description: 'ac', clicked: false},
+						{ description: 'ov', clicked: false},
+						{ description: 'ht', clicked: false},
+						{ description: 'ra', clicked: false},
+						],
 						color: [
 						{ description: 'D', clicked: false},
 						{ description: 'E', clicked: false},
@@ -186,6 +238,7 @@
 						{ description: 'EX', clicked: false},
 						{ description: 'VG', clicked: false},
 						{ description: 'GD', clicked: false},
+						{ description: 'FR', clicked: false},
 						],
 						clarity: [
 						{ description: 'FL', clicked: false},
@@ -225,6 +278,20 @@
 			}
 		},
 		methods:{
+			toggle(id) {
+		    	const index = this.model.data.indexOf(id);
+		      if (index > -1) {
+		      	this.model.data.splice(index, 1)
+		      } else {
+		      	this.model.data.push(id)
+		      }
+		    },
+			moveTo(page){
+					if (this.query.page + page >0 ) {
+					this.query.page = this.query.page + page
+					this.fetchIndexData()
+				}				
+			},
 			filterFalse(condition){
 				var checked = this.query.search_conditions[condition].filter( condition => condition.clicked)
 				this.filterDescriptions(checked)
@@ -293,11 +360,12 @@
 					&color=${this.fetchData.color.toString()}
 					&clarity=${this.fetchData.clarity.toString()}
 					&cut=${this.fetchData.cut.toString()}
+					&shape=${this.fetchData.shape.toString()}
 					&price=${this.fetchData.priceRange}
 					&weight=${this.fetchData.weight}`)
 				.then(function(response){
 					Vue.set(vm.$data, 'model', response.data.model)
-					Vue.set(vm.$data, 'columns', response.data.columns)
+					// Vue.set(vm.$data, 'columns', response.data.columns)
 				}).catch(function(){
 					console.log(response)
 				})

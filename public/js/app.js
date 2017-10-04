@@ -18457,6 +18457,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -18469,14 +18505,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		return {
 			source: '/api/diamonds',
 			fetchData: {
-				color: ['d', 'e', 'f', 'g'],
-				cut: ['ex', 'vg', 'gd'],
+				shape: ['rd', 'ps', 'em', 'pr', 'mq', 'cu', 'ac', 'ov', 'ht', 'ra'],
+				color: ['d', 'e', 'f', 'g', 'h', 'i', 'j', 'k'],
 				clarity: ['fl', 'if', 'vvs1', 'vvs2', 'vs1', 'vs2'],
+				cut: ['ex', 'vg', 'gd', 'fr', 'na'],
+				polish: ['ex', 'vg', 'gd', 'fr'],
+				symmetry: ['ex', 'vg', 'gd', 'fr'],
 				priceRange: ['100', '5000000'],
 				weight: ['0.10', '20']
 			},
+			opened: [],
 			model: {},
-			columns: {},
+			columns: ['id', 'price', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
 			query: {
 				page: 1,
 				column: 'price',
@@ -18486,8 +18526,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				search_operator: 'like',
 				search_input: '',
 				search_conditions: {
+					shape: [{ description: 'rd', clicked: false }, { description: 'ps', clicked: false }, { description: 'em', clicked: false }, { description: 'pr', clicked: false }, { description: 'mq', clicked: false }, { description: 'cu', clicked: false }, { description: 'ac', clicked: false }, { description: 'ov', clicked: false }, { description: 'ht', clicked: false }, { description: 'ra', clicked: false }],
 					color: [{ description: 'D', clicked: false }, { description: 'E', clicked: false }, { description: 'F', clicked: false }, { description: 'G', clicked: false }, { description: 'H', clicked: false }, { description: 'I', clicked: false }, { description: 'J', clicked: false }],
-					cut: [{ description: 'EX', clicked: false }, { description: 'VG', clicked: false }, { description: 'GD', clicked: false }],
+					cut: [{ description: 'EX', clicked: false }, { description: 'VG', clicked: false }, { description: 'GD', clicked: false }, { description: 'FR', clicked: false }],
 					clarity: [{ description: 'FL', clicked: false }, { description: 'IF', clicked: false }, { description: 'VVS1', clicked: false }, { description: 'VVS2', clicked: false }, { description: 'VS1', clicked: false }, { description: 'VS2', clicked: false }, { description: 'SI1', clicked: false }, { description: 'SI2', clicked: false }, { description: 'I1', clicked: false }],
 					priceRange: [{ description: 'Price' }, { description: 'minPrice' }]
 				}
@@ -18516,6 +18557,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	methods: {
+		toggle: function toggle(id) {
+			var index = this.model.data.indexOf(id);
+			if (index > -1) {
+				this.model.data.splice(index, 1);
+			} else {
+				this.model.data.push(id);
+			}
+		},
+		moveTo: function moveTo(page) {
+			if (this.query.page + page > 0) {
+				this.query.page = this.query.page + page;
+				this.fetchIndexData();
+			}
+		},
 		filterFalse: function filterFalse(condition) {
 			var checked = this.query.search_conditions[condition].filter(function (condition) {
 				return condition.clicked;
@@ -18575,9 +18630,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		},
 		fetchIndexData: function fetchIndexData() {
 			var vm = this;
-			Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&color=' + this.fetchData.color.toString() + '\n\t\t\t\t\t&clarity=' + this.fetchData.clarity.toString() + '\n\t\t\t\t\t&cut=' + this.fetchData.cut.toString() + '\n\t\t\t\t\t&price=' + this.fetchData.priceRange + '\n\t\t\t\t\t&weight=' + this.fetchData.weight).then(function (response) {
+			Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&color=' + this.fetchData.color.toString() + '\n\t\t\t\t\t&clarity=' + this.fetchData.clarity.toString() + '\n\t\t\t\t\t&cut=' + this.fetchData.cut.toString() + '\n\t\t\t\t\t&shape=' + this.fetchData.shape.toString() + '\n\t\t\t\t\t&price=' + this.fetchData.priceRange + '\n\t\t\t\t\t&weight=' + this.fetchData.weight).then(function (response) {
 				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(vm.$data, 'model', response.data.model);
-				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(vm.$data, 'columns', response.data.columns);
+				// Vue.set(vm.$data, 'columns', response.data.columns)
 			}).catch(function () {
 				console.log(response);
 			});
@@ -18697,6 +18752,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "tile is-parent"
   }, [_c('article', {
+    staticClass: "tile is-child box "
+  }, [_c('div', [_vm._v("Shape")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.shape), function(value, index) {
+    return _c('button', {
+      staticClass: "button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.shape[index].clicked
+      },
+      attrs: {
+        "type": "button"
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.shape[index].clicked, 'shape', index)
+        }
+      }
+    }, [_c('img', {
+      attrs: {
+        "src": '/images/diamond_shapes/' + _vm.query.search_conditions.shape[index].description + '.png',
+        "height": "20",
+        "width": "20"
+      }
+    })])
+  })], 2), _vm._v(" "), _c('article', {
     staticClass: "tile is-child box is-info"
   }, [_vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "level"
@@ -18721,6 +18799,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "input": function($event) {
         if ($event.target.composing) { return; }
         _vm.$set(_vm.fetchData.priceRange, 0, $event.target.value)
+      }
+    },
+    nativeOn: {
+      "focus": function($event) {
+        $event.target.select()
       }
     }
   }), _vm._v(" "), _c('input', {
@@ -18804,243 +18887,65 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "tile is-parent"
   }, [_c('article', {
     staticClass: "tile is-child box "
-  }, [_c('div', [_vm._v("Color")]), _vm._v(" "), _c('input', {
-    staticClass: "button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.color[0].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.color[0].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.color[0].clicked, 'color', 0)
+  }, [_c('div', [_vm._v("Color")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.color), function(value, index) {
+    return _c('input', {
+      staticClass: "button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.color[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.color[index].description
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.color[index].clicked, 'color', index)
+        }
       }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.color[1].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.color[1].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.color[1].clicked, 'color', 1)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.color[2].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.color[2].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.color[2].clicked, 'color', 2)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.color[3].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.color[3].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.color[3].clicked, 'color', 3)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.color[4].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.color[4].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.color[4].clicked, 'color', 4)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.color[5].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.color[5].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.color[5].clicked, 'color', 5)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.color[6].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.color[6].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.color[6].clicked, 'color', 6)
-      }
-    }
-  })]), _vm._v(" "), _c('article', {
+    })
+  })], 2), _vm._v(" "), _c('article', {
     staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Clarity")]), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.clarity[0].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.clarity[0].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.clarity[0].clicked, 'clarity', 0)
+  }, [_c('div', [_vm._v("Clarity")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.clarity), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.clarity[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.clarity[index].description
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.clarity[index].clicked, 'clarity', index)
+        }
       }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.clarity[1].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.clarity[1].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.clarity[1].clicked, 'clarity', 1)
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Cut")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.cut), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.cut[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.cut[index].description
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.cut[index].clicked, 'cut', index)
+        }
       }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.clarity[2].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.clarity[2].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.clarity[2].clicked, 'clarity', 2)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.clarity[3].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.clarity[3].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.clarity[3].clicked, 'clarity', 3)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.clarity[4].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.clarity[4].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.clarity[4].clicked, 'clarity', 4)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.clarity[5].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.clarity[5].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.clarity[5].clicked, 'clarity', 5)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.clarity[6].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.clarity[6].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.clarity[6].clicked, 'clarity', 6)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.clarity[7].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.clarity[7].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.clarity[7].clicked, 'clarity', 7)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.query.search_conditions.clarity[8].clicked
-    },
-    attrs: {
-      "type": "button",
-      "value": _vm.query.search_conditions.clarity[8].description
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleValue(_vm.query.search_conditions.clarity[8].clicked, 'clarity', 8)
-      }
-    }
-  })])])])]), _vm._v(" "), _c('div', {
+    })
+  })], 2)])])]), _vm._v(" "), _c('div', {
     staticClass: "tabs"
-  }, [_c('div', {
-    staticClass: "container"
   }, [_c('table', {
-    staticClass: "table is-striped is-narrow is-fullwidth"
-  }, [_c('div', {
-    staticClass: "dv-body"
-  }, [_c('div', {
-    staticClass: "dv-table table table-hover"
-  }, [_c('thead', [_c('tr', _vm._l((_vm.columns), function(column) {
+    staticClass: "table is-striped is-narrowed is-fullwidth "
+  }, [_c('thead', [_c('tr', {
+    staticClass: "is-selected "
+  }, _vm._l((_vm.columns), function(column) {
     return _c('th', {
       on: {
         "click": function($event) {
@@ -19049,82 +18954,107 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('span', [_vm._v(_vm._s(column))]), _vm._v(" "), (column === _vm.query.column) ? _c('span', {
       staticClass: "dv-table-column"
-    }, [(_vm.query.direction === 'desc') ? _c('span', [_vm._v("↑")]) : _c('span', [_vm._v("↓")])]) : _vm._e()])
-  }))]), _vm._v(" "), _c('tbody', _vm._l((_vm.model.data), function(row) {
-    return _c('tr', _vm._l((row), function(value, key) {
-      return _c('td', [_vm._v(" " + _vm._s(value))])
-    }))
-  }))])]), _vm._v(" "), _c('div', {
-    staticClass: "dv-footer"
+    }, [(_vm.query.direction === 'desc') ? _c('span', [_vm._v("▼")]) : _c('span', [_vm._v("▲")])]) : _vm._e()])
+  }))]), _vm._v(" "), _c('tbody', _vm._l((_vm.model.data), function(row, index) {
+    return _c('tr', {
+      on: {
+        "click": function($event) {
+          _vm.$router.push(_vm.$route.path + '/' + row.id)
+        }
+      }
+    }, [_c('td', [_vm._v(" " + _vm._s(row.id))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.price))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.shape))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.weight))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.color))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.clarity))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.cut))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.polish))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.symmetry))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.fluroscence))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.certificate))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.lab))])])
+  }))])]), _vm._v(" "), _c('nav', {
+    staticClass: "pagination is-centered",
+    attrs: {
+      "role": "navigation",
+      "aria-label": "pagination"
+    }
+  }, [_c('a', {
+    staticClass: "pagination-previous",
+    on: {
+      "click": _vm.prev
+    }
+  }, [_vm._v("Previous")]), _vm._v(" "), _c('div', {
+    staticClass: "field"
   }, [_c('div', {
-    staticClass: "dv-footer-item"
-  }, [_c('span', [_vm._v("Displaying " + _vm._s(_vm.model.from) + "  - " + _vm._s(_vm.model.to) + " of " + _vm._s(_vm.model.total) + " rows")])]), _vm._v(" "), _c('div', {
-    staticClass: "dv-footer-item"
-  }, [_c('span', [_vm._v("Rows per page")]), _vm._v(" "), _c('input', {
+    staticClass: "control"
+  }, [_c('label', [_vm._v("Per Page")]), _vm._v(" "), _c('div', {
+    staticClass: "select is-primary"
+  }, [_c('select', {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.query.per_page),
-      expression: "query.per_page"
+      value: (_vm.model.per_page),
+      expression: "model.per_page"
     }],
-    staticClass: "dv-footer-input",
-    attrs: {
-      "type": "text"
-    },
-    domProps: {
-      "value": (_vm.query.per_page)
-    },
     on: {
-      "keyup": function($event) {
-        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
-        _vm.fetchIndexData()
-      },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.query.per_page = $event.target.value
-      }
+      "change": [function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.model.per_page = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+      }, _vm.fetchData]
     }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "dv-footer-sub"
-  }, [_c('button', {
-    staticClass: "dv-footer-btn",
+  }, [_c('option', [_vm._v("10")]), _vm._v(" "), _c('option', [_vm._v("25")]), _vm._v(" "), _c('option', [_vm._v("50")])])])])]), _vm._v(" "), _c('a', {
+    staticClass: "pagination-next",
+    on: {
+      "click": _vm.next
+    }
+  }, [_vm._v("Next")]), _vm._v(" "), _c('ul', {
+    staticClass: "pagination-list"
+  }, [_c('li', [_c('a', {
+    staticClass: "button",
+    attrs: {
+      "aria-label": "Goto page 1",
+      "disabled": _vm.model.current_page < 5
+    },
     on: {
       "click": function($event) {
-        _vm.prev()
+        _vm.moveTo(-5)
       }
     }
-  }, [_vm._v("«")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.query.page),
-      expression: "query.page"
-    }],
-    staticClass: "dv-footer-input",
+  }, [_vm._v(_vm._s(_vm.model.current_page < 5 ? 0 : _vm.model.current_page - 5))])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('li', [_c('a', {
+    staticClass: "pagination-link",
     attrs: {
-      "type": "text"
+      "aria-label": "Goto page 86",
+      "diable": _vm.model.current_page
     },
-    domProps: {
-      "value": (_vm.query.page)
-    },
-    on: {
-      "keyup": function($event) {
-        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
-        _vm.fetchIndexData()
-      },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.query.page = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('button', {
-    staticClass: "dv-footer-btn",
     on: {
       "click": function($event) {
-        _vm.next()
+        _vm.moveTo(-1)
       }
     }
-  }, [_vm._v("»")])])])])])])])
+  }, [_vm._v(_vm._s(_vm.model.current_page - 1))])]), _vm._v(" "), _c('li', [_c('a', {
+    staticClass: "pagination-link is-current",
+    attrs: {
+      "aria-label": "Page 46",
+      "aria-current": "page"
+    }
+  }, [_vm._v(_vm._s(_vm.model.current_page))])]), _vm._v(" "), _c('li', [_c('a', {
+    staticClass: "pagination-link",
+    attrs: {
+      "aria-label": "Goto page 86",
+      "diable": _vm.model.current_page > _vm.model.last_page
+    },
+    on: {
+      "click": function($event) {
+        _vm.moveTo(1)
+      }
+    }
+  }, [_vm._v(_vm._s(_vm.model.current_page + 1))])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('li', [_c('a', {
+    staticClass: "pagination-link",
+    attrs: {
+      "aria-label": "Goto page 86"
+    },
+    on: {
+      "click": function($event) {
+        _vm.moveTo(5)
+      }
+    }
+  }, [_vm._v(_vm._s(5 + _vm.model.current_page))])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('h1', {
     staticClass: "subtitle is-6"
@@ -19133,6 +19063,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', [_c('h1', {
     staticClass: "subtitle is-6"
   }, [_vm._v(" Weight ")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('li', [_c('span', {
+    staticClass: "pagination-ellipsis"
+  }, [_vm._v("…")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('li', [_c('span', {
+    staticClass: "pagination-ellipsis"
+  }, [_vm._v("…")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

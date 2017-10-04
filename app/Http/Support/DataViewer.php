@@ -50,11 +50,12 @@ trait DataViewer{
 			->where(function($query){
 				$this->hasSearchInput($query);
 			})
-			->whereBetween(self::$columns[5], explode(',', request()->weight))
+			->whereBetween(self::$columns[3], explode(',', request()->weight))
 			->whereBetween(self::$columns[1], explode(',', request()->price))
 			->whereIn('color', explode(',', request()->color))
 			->whereIn('clarity', explode(',', request()->clarity))
 			->whereIn('cut', explode(',', request()->cut))
+			->whereIn('shape', explode(',', request()->shape))
 			->paginate(request()->per_page);
 		
 		

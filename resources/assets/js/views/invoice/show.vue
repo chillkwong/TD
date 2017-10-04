@@ -57,13 +57,13 @@
 
     <div class="tile">
    
-        <article class="tile notification is-primary">
-    
+<!--         <article class="tile notification is-primary">
+ -->    
         </article>
        </div>
 		<table class="table is-fullwidth">
 				<thead>
-					<tr>
+					<tr class="is-selected">
 						<th>Items</th>
 						<th>Desciption</th>
 						<th>Quantity</th>

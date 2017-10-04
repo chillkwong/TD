@@ -19679,9 +19679,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "title is-6"
   }, [_vm._v("Phone: " + _vm._s(_vm.model.customer.phone))])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "column is-2"
-  }, [_c('p', [_vm._v(_vm._s(_vm.model.id))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.model.date))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.model.due_date))]), _vm._v(" "), _c('p', [_vm._v("$" + _vm._s(_vm.model.total))])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('table', {
+  }, [_c('p', [_vm._v(_vm._s(_vm.model.id))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.model.date))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.model.due_date))]), _vm._v(" "), _c('p', [_vm._v("$" + _vm._s(_vm.model.total))])])]), _vm._v(" "), _c('div', {
+    staticClass: "tile"
+  }), _vm._v(" "), _c('table', {
     staticClass: "table is-fullwidth"
-  }, [_vm._m(2), _vm._v(" "), _c('tbody', [_vm._l((_vm.model.inv_diamonds), function(diamond) {
+  }, [_vm._m(1), _vm._v(" "), _c('tbody', [_vm._l((_vm.model.inv_diamonds), function(diamond) {
     return (_vm.model.inv_diamonds) ? _c('tr', [_c('td', [_vm._v("GIA:" + _vm._s(diamond.certificate))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(diamond.weight) + "," + _vm._s(diamond.color) + "," + _vm._s(diamond.clarity) + "," + _vm._s(diamond.cut) + "," + _vm._s(diamond.polish) + "," + _vm._s(diamond.symmetry) + "," + _vm._s(diamond.fluroscence))]), _vm._v(" "), _c('td', [_vm._v("1")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(diamond.price))])]) : _vm._e()
   }), _vm._v(" "), _vm._l((_vm.model.jewellries), function(jewellry) {
     return (_vm.model.jewellries) ? _c('tr', [_c('td', [_vm._v(_vm._s(jewellry.name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(jewellry.description))]), _vm._v(" "), _c('td', [_vm._v("1")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(jewellry.unit_price))])]) : _vm._e()
@@ -19689,15 +19691,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "colspan": "2"
     }
-  }), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('td', [_vm._v("$" + _vm._s(_vm.model.deposit))])]), _vm._v(" "), _c('tr', [_c('td', {
+  }), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('td', [_vm._v("$" + _vm._s(_vm.model.deposit))])]), _vm._v(" "), _c('tr', [_c('td', {
     attrs: {
       "colspan": "2"
     }
-  }), _vm._v(" "), _vm._m(4), _vm._v(" "), _c('td', [_vm._v("$" + _vm._s(_vm.model.balance))])]), _vm._v(" "), _c('tr', [_c('td', {
+  }), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('td', [_vm._v("$" + _vm._s(_vm.model.balance))])]), _vm._v(" "), _c('tr', [_c('td', {
     attrs: {
       "colspan": "2"
     }
-  }), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('td', [_vm._v("$" + _vm._s(_vm.model.total))])])])]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), _vm._m(4), _vm._v(" "), _c('td', [_vm._v("$" + _vm._s(_vm.model.total))])])])]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('div', {
     staticClass: "columns"
   }, [_c('div', {
     staticClass: "column"
@@ -19709,13 +19711,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "column is-3"
   }, [_c('p', [_c('strong', [_vm._v("Invoice Number: ")])]), _vm._v(" "), _c('p', [_c('strong', [_vm._v(" Invoice Date: ")])]), _vm._v(" "), _c('p', [_c('strong', [_vm._v(" Payment Due: ")])]), _vm._v(" "), _c('p', [_c('strong', [_vm._v(" Amount Due (HKD): ")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "tile"
-  }, [_c('article', {
-    staticClass: "tile notification is-primary"
-  })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th', [_vm._v("Items")]), _vm._v(" "), _c('th', [_vm._v("Desciption")]), _vm._v(" "), _c('th', [_vm._v("Quantity")]), _vm._v(" "), _c('th', [_vm._v("Price")])])])
+  return _c('thead', [_c('tr', {
+    staticClass: "is-selected"
+  }, [_c('th', [_vm._v("Items")]), _vm._v(" "), _c('th', [_vm._v("Desciption")]), _vm._v(" "), _c('th', [_vm._v("Quantity")]), _vm._v(" "), _c('th', [_vm._v("Price")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('td', [_c('p', {
     staticClass: "subtitle is-6"

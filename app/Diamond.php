@@ -18,8 +18,6 @@ class Diamond extends Model
    	 public static $columns = [
     	       'id',
                 'price',
-                'stock',
-                'certificate',
                 'shape',
                 'weight',
                 'color',
@@ -28,7 +26,9 @@ class Diamond extends Model
                 'polish',
                 'symmetry',
                 'fluroscence',
+                'certificate',
                 'lab',
+                'stock',
                 'location',
                 'imageLink'];
 
