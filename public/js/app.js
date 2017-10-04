@@ -18493,6 +18493,126 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -18514,9 +18634,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				priceRange: ['100', '5000000'],
 				weight: ['0.10', '20']
 			},
+			showModal: false,
 			opened: [],
 			model: {},
-			columns: ['id', 'price', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
+			columns: ['shape', 'price', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
 			query: {
 				page: 1,
 				column: 'price',
@@ -18647,105 +18768,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
     staticClass: "level"
+  }), _vm._v(" "), _c('nav', {
+    staticClass: "navbar is-hidden-mobile"
   }, [_c('div', {
-    staticClass: "level-left"
+    staticClass: "navbar-item "
   }, [_c('div', {
-    staticClass: "level-item"
-  }, [_vm._v("\n\t\t\t\t" + _vm._s(_vm.title) + "\n\t\t\t")]), _vm._v(" "), _c('div', {
-    staticClass: "level-item"
-  }, [_c('span', [_vm._v("Search:")]), _vm._v(" "), _c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.query.search_column),
-      expression: "query.search_column"
-    }],
-    staticClass: "select",
-    on: {
-      "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.query.search_column = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-      }
-    }
-  }, _vm._l((_vm.columns), function(column) {
-    return _c('option', {
-      staticClass: "option",
-      domProps: {
-        "value": column
-      }
-    }, [_vm._v(_vm._s(column))])
-  }))]), _vm._v(" "), _c('div', {
-    staticClass: "level-item"
-  }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.query.search_operator),
-      expression: "query.search_operator"
-    }],
-    staticClass: "select",
-    on: {
-      "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.query.search_operator = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-      }
-    }
-  }, _vm._l((_vm.operators), function(value, key) {
-    return _c('option', {
-      staticClass: "option",
-      domProps: {
-        "value": key
-      }
-    }, [_vm._v(_vm._s(value))])
-  }))])]), _vm._v(" "), _c('div', {
-    staticClass: "level-left"
-  }, [_c('div', {
-    staticClass: "level-item"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.query.search_input),
-      expression: "query.search_input"
-    }],
-    staticClass: "input",
-    attrs: {
-      "type": "text",
-      "placeholder": "search"
-    },
-    domProps: {
-      "value": (_vm.query.search_input)
-    },
-    on: {
-      "keyup": function($event) {
-        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
-        _vm.fetchIndexData()
-      },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.query.search_input = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "level-item"
-  }, [_c('button', {
-    staticClass: "button is-primary",
-    on: {
-      "click": function($event) {
-        _vm.fetchIndexData()
-      }
-    }
-  }, [_vm._v("filter")])])])]), _vm._v(" "), _c('div', {
     staticClass: "tile is-ancestor"
   }, [_c('div', {
     staticClass: "tile is-12"
@@ -18796,14 +18823,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "keyup": function($event) {
         _vm.fetchIndexData()
       },
+      "focus": function($event) {
+        $event.target.select()
+      },
       "input": function($event) {
         if ($event.target.composing) { return; }
         _vm.$set(_vm.fetchData.priceRange, 0, $event.target.value)
-      }
-    },
-    nativeOn: {
-      "focus": function($event) {
-        $event.target.select()
       }
     }
   }), _vm._v(" "), _c('input', {
@@ -18823,6 +18848,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "keyup": function($event) {
         _vm.fetchIndexData()
+      },
+      "focus": function($event) {
+        $event.target.select()
       },
       "input": function($event) {
         if ($event.target.composing) { return; }
@@ -18851,6 +18879,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "keyup": function($event) {
         _vm.fetchIndexData()
       },
+      "focus": function($event) {
+        $event.target.select()
+      },
       "input": function($event) {
         if ($event.target.composing) { return; }
         _vm.$set(_vm.fetchData.weight, 0, $event.target.value)
@@ -18873,6 +18904,240 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "keyup": function($event) {
         _vm.fetchIndexData()
+      },
+      "focus": function($event) {
+        $event.target.select()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.fetchData.weight, 1, $event.target.value)
+      }
+    }
+  })])])])])])])]), _vm._v(" "), _c('nav', [_c('div', {
+    staticClass: "navbar-item is-hidden-mobile"
+  }, [_c('div', {
+    staticClass: "tile is-ancestor"
+  }, [_c('div', {
+    staticClass: "tile is-12"
+  }, [_c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('article', {
+    staticClass: "tile is-child box "
+  }, [_c('div', [_vm._v("Color")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.color), function(value, index) {
+    return _c('input', {
+      staticClass: "button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.color[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.color[index].description
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.color[index].clicked, 'color', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Clarity")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.clarity), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.clarity[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.clarity[index].description
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.clarity[index].clicked, 'clarity', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Cut")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.cut), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.cut[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.cut[index].description
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.cut[index].clicked, 'cut', index)
+        }
+      }
+    })
+  })], 2)])])])])]), _vm._v(" "), _c('nav', {
+    staticClass: "navbar"
+  }, [_c('div', {
+    staticClass: "navbar-item is-hidden-desktop"
+  }, [_c('div', {
+    on: {
+      "click": function($event) {
+        _vm.showModal = !_vm.showModal
+      }
+    }
+  }, [_c('button', {
+    staticClass: "button is-info "
+  }, [_vm._v("Search Diamonds")]), _vm._v(" "), _c('div', {
+    staticClass: "modal",
+    class: {
+      'is-active': _vm.showModal
+    }
+  }, [_c('div', {
+    staticClass: "modal-background"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "modal-card"
+  }, [_c('section', {
+    staticClass: "modal-card-body",
+    on: {
+      "click": function($event) {
+        _vm.showModal = !_vm.showModal
+      }
+    }
+  }, [_c('div', {
+    staticClass: "tile is-ancestor"
+  }, [_c('div', {
+    staticClass: "tile is-12"
+  }, [_c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('article', {
+    staticClass: "tile is-child box "
+  }, [_c('div', [_vm._v("Shape")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.shape), function(value, index) {
+    return _c('button', {
+      staticClass: "button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.shape[index].clicked
+      },
+      attrs: {
+        "type": "button"
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.shape[index].clicked, 'shape', index)
+        }
+      }
+    }, [_c('img', {
+      attrs: {
+        "src": '/images/diamond_shapes/' + _vm.query.search_conditions.shape[index].description + '.png',
+        "height": "20",
+        "width": "20"
+      }
+    })])
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box is-info"
+  }, [_vm._m(2), _vm._v(" "), _c('div', {
+    staticClass: "level"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.priceRange[0]),
+      expression: "fetchData.priceRange[0]"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.fetchData.priceRange[0])
+    },
+    on: {
+      "keyup": function($event) {
+        _vm.fetchIndexData()
+      },
+      "focus": function($event) {
+        $event.target.select()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.fetchData.priceRange, 0, $event.target.value)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.priceRange[1]),
+      expression: "fetchData.priceRange[1]"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.fetchData.priceRange[1])
+    },
+    on: {
+      "keyup": function($event) {
+        _vm.fetchIndexData()
+      },
+      "focus": function($event) {
+        $event.target.select()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.fetchData.priceRange, 1, $event.target.value)
+      }
+    }
+  })])]), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_vm._m(3), _vm._v(" "), _c('div', {
+    staticClass: "level"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.weight[0]),
+      expression: "fetchData.weight[0]"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.fetchData.weight[0])
+    },
+    on: {
+      "keyup": function($event) {
+        _vm.fetchIndexData()
+      },
+      "focus": function($event) {
+        $event.target.select()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.fetchData.weight, 0, $event.target.value)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.weight[1]),
+      expression: "fetchData.weight[1]"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.fetchData.weight[1])
+    },
+    on: {
+      "keyup": function($event) {
+        _vm.fetchIndexData()
+      },
+      "focus": function($event) {
+        $event.target.select()
       },
       "input": function($event) {
         if ($event.target.composing) { return; }
@@ -18939,7 +19204,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     })
-  })], 2)])])]), _vm._v(" "), _c('div', {
+  })], 2)])])])]), _vm._v(" "), _vm._m(4)])])])])]), _vm._v(" "), _c('div', {
     staticClass: "tabs"
   }, [_c('table', {
     staticClass: "table is-striped is-narrowed is-fullwidth "
@@ -18962,7 +19227,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           _vm.$router.push(_vm.$route.path + '/' + row.id)
         }
       }
-    }, [_c('td', [_vm._v(" " + _vm._s(row.id))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.price))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.shape))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.weight))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.color))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.clarity))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.cut))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.polish))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.symmetry))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.fluroscence))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.certificate))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.lab))])])
+    }, [_c('td', [_c('img', {
+      attrs: {
+        "src": '/images/diamond_shapes/' + row.shape + '.png',
+        "width": "20"
+      }
+    })]), _vm._v(" "), _c('td', [_vm._v(" $" + _vm._s(row.price))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.weight))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.color))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.clarity))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.cut))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.polish))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.symmetry))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.fluroscence))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.certificate))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.lab))])])
   }))])]), _vm._v(" "), _c('nav', {
     staticClass: "pagination is-centered",
     attrs: {
@@ -18996,7 +19266,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           return val
         });
         _vm.model.per_page = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-      }, _vm.fetchData]
+      }, function($event) {
+        _vm.fetchIndexData()
+      }]
     }
   }, [_c('option', [_vm._v("10")]), _vm._v(" "), _c('option', [_vm._v("25")]), _vm._v(" "), _c('option', [_vm._v("50")])])])])]), _vm._v(" "), _c('a', {
     staticClass: "pagination-next",
@@ -19016,7 +19288,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.moveTo(-5)
       }
     }
-  }, [_vm._v(_vm._s(_vm.model.current_page < 5 ? 0 : _vm.model.current_page - 5))])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('li', [_c('a', {
+  }, [_vm._v(_vm._s(_vm.model.current_page < 5 ? 0 : _vm.model.current_page - 5))])]), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('li', [_c('a', {
     staticClass: "pagination-link",
     attrs: {
       "aria-label": "Goto page 86",
@@ -19044,7 +19316,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.moveTo(1)
       }
     }
-  }, [_vm._v(_vm._s(_vm.model.current_page + 1))])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('li', [_c('a', {
+  }, [_vm._v(_vm._s(_vm.model.current_page + 1))])]), _vm._v(" "), _vm._m(6), _vm._v(" "), _c('li', [_c('a', {
     staticClass: "pagination-link",
     attrs: {
       "aria-label": "Goto page 86"
@@ -19063,6 +19335,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', [_c('h1', {
     staticClass: "subtitle is-6"
   }, [_vm._v(" Weight ")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('h1', {
+    staticClass: "subtitle is-6"
+  }, [_vm._v("Price")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('h1', {
+    staticClass: "subtitle is-6"
+  }, [_vm._v(" Weight ")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('footer', {
+    staticClass: "modal-card-foot"
+  }, [_c('button', {
+    staticClass: "button"
+  }, [_vm._v("Cancel")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('li', [_c('span', {
     staticClass: "pagination-ellipsis"

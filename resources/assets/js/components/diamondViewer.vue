@@ -1,40 +1,86 @@
 <template>
 <div>
 	<div class="level">
-		<div class="level-left">
 
-			<div class="level-item">
-				{{ title }}
-			</div>
+	</div>
 
-			<div class="level-item"> 
-				<span>Search:</span>
-				<select class="select" v-model="query.search_column">
-				<option class="option" v-for="column in columns" :value="column ">{{ column }}</option>
-					
-				</select>
-				
-			</div>
+	<nav class="navbar is-hidden-mobile">
+	  <div class="navbar-item ">
+		<div class="tile is-ancestor">
+			<div class="tile is-12">
+		    	<div class="tile is-parent">
+		    		<article class="tile is-child box " >
+		            	<div>Shape</div>
+		            	<button v-for="(value, index) in query.search_conditions.shape" class="button " :class=" {'is-info active' : query.search_conditions.shape[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shape[index].clicked,'shape', index)"><img :src="'/images/diamond_shapes/'+query.search_conditions.shape[index].description + '.png'" height="20" width="20"></button>
+					</article>
+		            	<article class="tile is-child box is-info" >
 
-			<div class="level-item">
-				<select class="select" v-model="query.search_operator">
-					<option class="option" v-for="(value, key) in operators" :value="key" >{{ value }}</option>
-				</select>
-			</div>
-		</div>	
-		<div class="level-left">
-			<div class="level-item">
-				<input type="text" class="input" 
-				placeholder="search" 
-				v-model="query.search_input"
-				@keyup.enter="fetchIndexData()">
-			</div>
-			
-			<div class="level-item">
-				<button class="button is-primary" @click="fetchIndexData()">filter</button>
+		            	<div><h1 class="subtitle is-6">Price</h1></div>
+		            	<div class="level">
+			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.priceRange[0]" @focus="$event.target.select()">
+
+			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.priceRange[1]" @focus="$event.target.select()">
+			            </div>            	
+		            	</article>
+
+		            	<article class="tile is-child box" >
+		            	<div><h1 class="subtitle is-6"> Weight </h1></div>
+		            	<div class="level">
+			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.weight[0]" @focus="$event.target.select()">
+
+			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.weight[1]" @focus="$event.target.select()">		
+			            </div>            	
+		            	</article>
+		            </div>
+		    </div>
+		</div>
+		</div>
+	</nav>
+
+	<nav>
+		<div class="navbar-item is-hidden-mobile">
+		<div class="tile is-ancestor">
+			<div class="tile is-12">
+	    		<div class="tile is-parent">
+		        	<article class="tile is-child box " >
+		            	<div>Color</div>
+		            	<input v-for="(value, index) in query.search_conditions.color" class="button " :class=" {'is-info active' : query.search_conditions.color[index].clicked} " type="button" @click="toggleValue(query.search_conditions.color[index].clicked,'color', index)" :value="query.search_conditions.color[index].description"> 
+					</article>
+
+					<article class="tile is-child box" >
+						<div>Clarity</div>
+						<input v-for="(value, index) in query.search_conditions.clarity " class=" button " :class=" {'is-info active' : query.search_conditions.clarity[index].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[index].clicked,'clarity', index)" :value="query.search_conditions.clarity[index].description"> 
+					</article>
+
+					<article class="tile is-child box" >
+						<div>Cut</div>
+						<input v-for="(value, index) in query.search_conditions.cut " class=" button " :class=" {'is-info active' : query.search_conditions.cut[index].clicked} " type="button" @click="toggleValue(query.search_conditions.cut[index].clicked,'cut', index)" :value="query.search_conditions.cut[index].description"> 
+					</article>
+				</div>
 			</div>
 		</div>
-	</div>
+
+	  </div>
+	</nav>
+
+
+<nav class="navbar" >
+<div class="navbar-item is-hidden-desktop">
+
+<div @click="showModal=!showModal">
+
+<button class="button is-info ">Search Diamonds</button>
+
+<div class="modal" :class="{ 'is-active':showModal}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+   <!--  <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete" aria-label="close"></button>
+    </header> -->
+    <section class="modal-card-body" @click="showModal=!showModal">
+      <!-- Content ... -->
+
 
 		<div class="tile is-ancestor">
 			<div class="tile is-12">
@@ -47,44 +93,119 @@
 
 		            	<div><h1 class="subtitle is-6">Price</h1></div>
 		            	<div class="level">
-			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.priceRange[0]" @focus.native="$event.target.select()">
+			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.priceRange[0]" @focus="$event.target.select()">
 
-			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.priceRange[1]">
+			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.priceRange[1]" @focus="$event.target.select()">
 			            </div>            	
 		            	</article>
 
 		            	<article class="tile is-child box" >
 		            	<div><h1 class="subtitle is-6"> Weight </h1></div>
 		            	<div class="level">
-			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.weight[0]">
+			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.weight[0]" @focus="$event.target.select()">
 
-			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.weight[1]">		
+			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.weight[1]" @focus="$event.target.select()">		
 			            </div>            	
 		            	</article>
 		            </div>
 		    </div>
 		</div>
-
+	
+	
+	
 		<div class="tile is-ancestor">
-		<div class="tile is-12">
-    	<div class="tile is-parent">
-        	<article class="tile is-child box " >
-            	<div>Color</div>
-            	<input v-for="(value, index) in query.search_conditions.color" class="button " :class=" {'is-info active' : query.search_conditions.color[index].clicked} " type="button" @click="toggleValue(query.search_conditions.color[index].clicked,'color', index)" :value="query.search_conditions.color[index].description"> 
-			</article>
+			<div class="tile is-12">
+	    		<div class="tile is-parent">
+		        	<article class="tile is-child box " >
+		            	<div>Color</div>
+		            	<input v-for="(value, index) in query.search_conditions.color" class="button " :class=" {'is-info active' : query.search_conditions.color[index].clicked} " type="button" @click="toggleValue(query.search_conditions.color[index].clicked,'color', index)" :value="query.search_conditions.color[index].description"> 
+					</article>
 
-			<article class="tile is-child box" >
-				<div>Clarity</div>
-				<input v-for="(value, index) in query.search_conditions.clarity " class=" button " :class=" {'is-info active' : query.search_conditions.clarity[index].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[index].clicked,'clarity', index)" :value="query.search_conditions.clarity[index].description"> 
-			</article>
+					<article class="tile is-child box" >
+						<div>Clarity</div>
+						<input v-for="(value, index) in query.search_conditions.clarity " class=" button " :class=" {'is-info active' : query.search_conditions.clarity[index].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[index].clicked,'clarity', index)" :value="query.search_conditions.clarity[index].description"> 
+					</article>
 
-			<article class="tile is-child box" >
-				<div>Cut</div>
-				<input v-for="(value, index) in query.search_conditions.cut " class=" button " :class=" {'is-info active' : query.search_conditions.cut[index].clicked} " type="button" @click="toggleValue(query.search_conditions.cut[index].clicked,'cut', index)" :value="query.search_conditions.cut[index].description"> 
-			</article>
-			</div>
+					<article class="tile is-child box" >
+						<div>Cut</div>
+						<input v-for="(value, index) in query.search_conditions.cut " class=" button " :class=" {'is-info active' : query.search_conditions.cut[index].clicked} " type="button" @click="toggleValue(query.search_conditions.cut[index].clicked,'cut', index)" :value="query.search_conditions.cut[index].description"> 
+					</article>
+				</div>
 			</div>
 		</div>
+
+	  
+
+    </section>
+    <footer class="modal-card-foot">
+<!--       <button class="button is-success">Save changes</button>
+ -->      <button class="button">Cancel</button>
+    </footer>
+  </div>
+</div>
+</div>
+</div>
+	</nav>
+
+
+	<!-- <nav class="navbar">
+	  <div class="navbar-item is-hidden-desktop">
+		<div class="tile is-ancestor">
+			<div class="tile is-12">
+		    	<div class="tile is-parent">
+		    		<article class="tile is-child box " >
+		            	<div>Shape</div>
+		            	<button v-for="(value, index) in query.search_conditions.shape" class="button " :class=" {'is-info active' : query.search_conditions.shape[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shape[index].clicked,'shape', index)"><img :src="'/images/diamond_shapes/'+query.search_conditions.shape[index].description + '.png'" height="20" width="20"></button>
+					</article>
+		            	<article class="tile is-child box is-info" >
+
+		            	<div><h1 class="subtitle is-6">Price</h1></div>
+		            	<div class="level">
+			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.priceRange[0]" @focus="$event.target.select()">
+
+			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.priceRange[1]" @focus="$event.target.select()">
+			            </div>            	
+		            	</article>
+
+		            	<article class="tile is-child box" >
+		            	<div><h1 class="subtitle is-6"> Weight </h1></div>
+		            	<div class="level">
+			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.weight[0]" @focus="$event.target.select()">
+
+			            	<input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.weight[1]" @focus="$event.target.select()">		
+			            </div>            	
+		            	</article>
+		            </div>
+		    </div>
+		</div>
+		</div>
+	</nav>
+	
+	<nav>
+		<div class="navbar-item is-hidden-desktop">
+		<div class="tile is-ancestor">
+			<div class="tile is-12">
+	    		<div class="tile is-parent">
+		        	<article class="tile is-child box " >
+		            	<div>Color</div>
+		            	<input v-for="(value, index) in query.search_conditions.color" class="button " :class=" {'is-info active' : query.search_conditions.color[index].clicked} " type="button" @click="toggleValue(query.search_conditions.color[index].clicked,'color', index)" :value="query.search_conditions.color[index].description"> 
+					</article>
+
+					<article class="tile is-child box" >
+						<div>Clarity</div>
+						<input v-for="(value, index) in query.search_conditions.clarity " class=" button " :class=" {'is-info active' : query.search_conditions.clarity[index].clicked} " type="button" @click="toggleValue(query.search_conditions.clarity[index].clicked,'clarity', index)" :value="query.search_conditions.clarity[index].description"> 
+					</article>
+
+					<article class="tile is-child box" >
+						<div>Cut</div>
+						<input v-for="(value, index) in query.search_conditions.cut " class=" button " :class=" {'is-info active' : query.search_conditions.cut[index].clicked} " type="button" @click="toggleValue(query.search_conditions.cut[index].clicked,'cut', index)" :value="query.search_conditions.cut[index].description"> 
+					</article>
+				</div>
+			</div>
+		</div>
+
+	  </div>
+	</nav> -->
 
 		<div class="tabs">
 		<table class="table is-striped is-narrowed is-fullwidth ">
@@ -103,9 +224,8 @@
 					<tbody>
 						
 						<tr v-for="(row, index) in model.data" @click="$router.push($route.path + '/' +row.id)">
-							<td > {{ row.id }}</td>
-							<td > {{ row.price }}</td>
-							<td > {{ row.shape }}</td>
+							<td ><img :src="'/images/diamond_shapes/' +row.shape+ '.png'" width="20"></td>
+							<td > ${{ row.price }}</td>
 							<td > {{ row.weight }}</td>
 							<td > {{ row.color }}</td>
 							<td > {{ row.clarity }}</td>
@@ -154,7 +274,7 @@
  			 <div class="control">
  			 	<label>Per Page</label> 
 			  	<div class="select is-primary">
-					<select v-model="model.per_page" @change="fetchData">
+					<select v-model="model.per_page" @change="fetchIndexData()">
 						<option>10</option>
 						<option>25</option>
 						<option>50</option>
@@ -201,9 +321,10 @@
 					 priceRange: ['100', '5000000'],
 					 weight: ['0.10','20']
 				},
+				showModal:false,
 				opened: [],
 				model: {},
-				columns:['id','price','shape','weight','color','clarity','cut','polish','symmetry','fluroscence','certificate','lab'],
+				columns:['shape','price','weight','color','clarity','cut','polish','symmetry','fluroscence','certificate','lab'],
 				query:{
 					page:1,
 					column: 'price',

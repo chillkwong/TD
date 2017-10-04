@@ -268,7 +268,7 @@
 
   <!-- Hero footer: will stick at the bottom -->
     <div class="hero-foot">
-      <nav class="tabs">
+      <nav class="tabs ">
         <div class="container">
           <ul>
             <li class="is-active"><a :href="this.$route.path.slice(0,3) + '/gia-loose-diamonds'">Diamonds</a>
