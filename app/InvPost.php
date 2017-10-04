@@ -22,6 +22,9 @@ class InvPost extends Model
         return $this->hasMany(InvContent::class);
     }
 
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
+    }
     public static function form()
     {
         return [

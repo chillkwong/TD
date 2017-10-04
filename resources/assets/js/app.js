@@ -35,3 +35,7 @@ const header = new Vue({
     // template: `<app></app>`,
     router
 });
+
+// const diamondViewer = new Vue({
+//     el: '#diamondViewer'
+// });

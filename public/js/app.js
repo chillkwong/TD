@@ -18074,6 +18074,10 @@ var header = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   router: __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */]
 });
 
+// const diamondViewer = new Vue({
+//     el: '#diamondViewer'
+// });
+
 /***/ }),
 /* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -18096,10 +18100,12 @@ var header = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_Auth_adm_login_vue__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_Auth_adm_login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_Auth_adm_login_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_home_vue__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_home_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_diamondViewer_vue__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_diamondViewer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_diamondViewer_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_Auth_adm_login_vue__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_Auth_adm_login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_Auth_adm_login_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_home_vue__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_home_vue__);
 
 
 
@@ -18146,6 +18152,9 @@ var header = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 // import CustomerJewForm from '../views/customerJewellry/form.vue'
 
+//Diamonds
+
+
 // //Post
 // import PostIndex from '../views/post/index.vue'
 // import PostShow from '../views/post/show.vue'
@@ -18162,17 +18171,23 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 	mode: 'history',
-	routes: [{ path: '/', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_10__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+	routes: [{ path: '/', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_11__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
 
 		children: [{ path: '' },
 		// {path:'/posts/:id', component:PostIndex },
 
-		{ path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue___default.a }] }, { path: '/en', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_10__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+		{ path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue___default.a },
+
+		//diamonds
+		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__components_diamondViewer_vue___default.a }] }, { path: '/en', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_11__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
 		children: [{ path: '' },
 		// {path:'/posts/:id', component:PostIndex },
 
-		{ path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue___default.a }] }, { path: '/hk', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_10__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
-		children: [{ path: '' }, { path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue___default.a }] }, { path: '/cn', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_10__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+		{ path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue___default.a },
+
+		//diamonds
+		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__components_diamondViewer_vue___default.a }] }, { path: '/hk', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_11__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+		children: [{ path: '' }, { path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue___default.a }] }, { path: '/cn', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_11__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
 		children: [{ path: '' }, { path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue___default.a }] }]
 
 });
@@ -18183,6 +18198,943 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(144),
+  /* template */
+  __webpack_require__(145),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/components/diamondViewer.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] diamondViewer.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-af8a79dc", Component.options)
+  } else {
+    hotAPI.reload("data-v-af8a79dc", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 144 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_api__ = __webpack_require__(2);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+	props: ['title'],
+	data: function data() {
+		return {
+			source: '/api/diamonds',
+			fetchData: {
+				color: ['d', 'e', 'f', 'g'],
+				cut: ['ex', 'vg', 'gd'],
+				clarity: ['fl', 'if', 'vvs1', 'vvs2', 'vs1', 'vs2'],
+				priceRange: ['100', '5000000'],
+				weight: ['0.10', '20']
+			},
+			model: {},
+			columns: {},
+			query: {
+				page: 1,
+				column: 'price',
+				direction: 'asc',
+				per_page: 10,
+				search_column: 'id',
+				search_operator: 'like',
+				search_input: '',
+				search_conditions: {
+					color: [{ description: 'D', clicked: false }, { description: 'E', clicked: false }, { description: 'F', clicked: false }, { description: 'G', clicked: false }, { description: 'H', clicked: false }, { description: 'I', clicked: false }, { description: 'J', clicked: false }],
+					cut: [{ description: 'EX', clicked: false }, { description: 'VG', clicked: false }, { description: 'GD', clicked: false }],
+					clarity: [{ description: 'FL', clicked: false }, { description: 'IF', clicked: false }, { description: 'VVS1', clicked: false }, { description: 'VVS2', clicked: false }, { description: 'VS1', clicked: false }, { description: 'VS2', clicked: false }, { description: 'SI1', clicked: false }, { description: 'SI2', clicked: false }, { description: 'I1', clicked: false }],
+					priceRange: [{ description: 'Price' }, { description: 'minPrice' }]
+				}
+			},
+			operators: {
+				equal: '=',
+				not_equal: '<>',
+				less_than: '<',
+				greater_than: '>',
+				less_than_or_equal_to: '<=',
+				greater_than_or_equal_to: '>=',
+				in: 'IN',
+				like: 'LIKE'
+			}
+		};
+	},
+	created: function created() {
+		this.fetchIndexData();
+	},
+
+	computed: {
+		colorClicked: function colorClicked() {
+			return this.query.search_conditions.color.filter(function (color) {
+				return color.clicked;
+			});
+		}
+	},
+	methods: {
+		filterFalse: function filterFalse(condition) {
+			var checked = this.query.search_conditions[condition].filter(function (condition) {
+				return condition.clicked;
+			});
+			this.filterDescriptions(checked);
+			this.fetchData[condition] = checked;
+
+			this.fetchIndexData();
+		},
+		filterDescriptions: function filterDescriptions(checked) {
+			for (var i = checked.length - 1; i >= 0; i--) {
+				checked[i] = checked[i].description;
+			}
+		},
+		toggleValue: function toggleValue(query, condition, number) {
+			var search_conditions = this.query.search_conditions[condition];
+
+			if (query === false) {
+				search_conditions[number].clicked = true;
+			} else {
+				search_conditions[number].clicked = false;
+			}
+
+			this.filterFalse(condition);
+		},
+
+		// toggleValueToFalseOnce(condition){
+		// 	var search_conditions = this.query.search_conditions[condition]
+		// 	for (var i = search_conditions.length - 1; i >= 0; i--) {
+		// 			search_conditions[i].clicked = false;
+		// 		}
+		// },
+		next: function next() {
+			if (this.model.next_page_url) {
+				this.query.page++;
+				this.fetchIndexData();
+			}
+		},
+		prev: function prev() {
+			if (this.model.prev_page_url) {
+				this.query.page--;
+				this.fetchIndexData();
+			}
+		},
+		toggleOrder: function toggleOrder(column) {
+			if (column === this.query.column) {
+				if (this.query.direction === 'desc') {
+					this.query.direction = 'asc';
+				} else {
+					this.query.direction = 'desc';
+				}
+			} else {
+				this.query.column = column;
+				this.direction = 'asc';
+			}
+			this.fetchIndexData();
+		},
+		fetchIndexData: function fetchIndexData() {
+			var vm = this;
+			Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&color=' + this.fetchData.color.toString() + '\n\t\t\t\t\t&clarity=' + this.fetchData.clarity.toString() + '\n\t\t\t\t\t&cut=' + this.fetchData.cut.toString() + '\n\t\t\t\t\t&price=' + this.fetchData.priceRange + '\n\t\t\t\t\t&weight=' + this.fetchData.weight).then(function (response) {
+				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(vm.$data, 'model', response.data.model);
+				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(vm.$data, 'columns', response.data.columns);
+			}).catch(function () {
+				console.log(response);
+			});
+		}
+	}
+});
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "level"
+  }, [_c('div', {
+    staticClass: "level-left"
+  }, [_c('div', {
+    staticClass: "level-item"
+  }, [_vm._v("\n\t\t\t\t" + _vm._s(_vm.title) + "\n\t\t\t")]), _vm._v(" "), _c('div', {
+    staticClass: "level-item"
+  }, [_c('span', [_vm._v("Search:")]), _vm._v(" "), _c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.query.search_column),
+      expression: "query.search_column"
+    }],
+    staticClass: "select",
+    on: {
+      "change": function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.query.search_column = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+      }
+    }
+  }, _vm._l((_vm.columns), function(column) {
+    return _c('option', {
+      staticClass: "option",
+      domProps: {
+        "value": column
+      }
+    }, [_vm._v(_vm._s(column))])
+  }))]), _vm._v(" "), _c('div', {
+    staticClass: "level-item"
+  }, [_c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.query.search_operator),
+      expression: "query.search_operator"
+    }],
+    staticClass: "select",
+    on: {
+      "change": function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.query.search_operator = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+      }
+    }
+  }, _vm._l((_vm.operators), function(value, key) {
+    return _c('option', {
+      staticClass: "option",
+      domProps: {
+        "value": key
+      }
+    }, [_vm._v(_vm._s(value))])
+  }))])]), _vm._v(" "), _c('div', {
+    staticClass: "level-left"
+  }, [_c('div', {
+    staticClass: "level-item"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.query.search_input),
+      expression: "query.search_input"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text",
+      "placeholder": "search"
+    },
+    domProps: {
+      "value": (_vm.query.search_input)
+    },
+    on: {
+      "keyup": function($event) {
+        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
+        _vm.fetchIndexData()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.query.search_input = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "level-item"
+  }, [_c('button', {
+    staticClass: "button is-primary",
+    on: {
+      "click": function($event) {
+        _vm.fetchIndexData()
+      }
+    }
+  }, [_vm._v("filter")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "tile is-ancestor"
+  }, [_c('div', {
+    staticClass: "tile is-12"
+  }, [_c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('article', {
+    staticClass: "tile is-child box is-info"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "level"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.priceRange[0]),
+      expression: "fetchData.priceRange[0]"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.fetchData.priceRange[0])
+    },
+    on: {
+      "keyup": function($event) {
+        _vm.fetchIndexData()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.fetchData.priceRange, 0, $event.target.value)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.priceRange[1]),
+      expression: "fetchData.priceRange[1]"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.fetchData.priceRange[1])
+    },
+    on: {
+      "keyup": function($event) {
+        _vm.fetchIndexData()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.fetchData.priceRange, 1, $event.target.value)
+      }
+    }
+  })])]), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_vm._m(1), _vm._v(" "), _c('div', {
+    staticClass: "level"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.weight[0]),
+      expression: "fetchData.weight[0]"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.fetchData.weight[0])
+    },
+    on: {
+      "keyup": function($event) {
+        _vm.fetchIndexData()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.fetchData.weight, 0, $event.target.value)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.weight[1]),
+      expression: "fetchData.weight[1]"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.fetchData.weight[1])
+    },
+    on: {
+      "keyup": function($event) {
+        _vm.fetchIndexData()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.fetchData.weight, 1, $event.target.value)
+      }
+    }
+  })])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "tile is-ancestor"
+  }, [_c('div', {
+    staticClass: "tile is-12"
+  }, [_c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('article', {
+    staticClass: "tile is-child box "
+  }, [_c('div', [_vm._v("Color")]), _vm._v(" "), _c('input', {
+    staticClass: "button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.color[0].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.color[0].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.color[0].clicked, 'color', 0)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.color[1].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.color[1].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.color[1].clicked, 'color', 1)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.color[2].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.color[2].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.color[2].clicked, 'color', 2)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.color[3].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.color[3].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.color[3].clicked, 'color', 3)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.color[4].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.color[4].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.color[4].clicked, 'color', 4)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.color[5].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.color[5].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.color[5].clicked, 'color', 5)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.color[6].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.color[6].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.color[6].clicked, 'color', 6)
+      }
+    }
+  })]), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Clarity")]), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.clarity[0].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.clarity[0].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.clarity[0].clicked, 'clarity', 0)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.clarity[1].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.clarity[1].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.clarity[1].clicked, 'clarity', 1)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.clarity[2].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.clarity[2].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.clarity[2].clicked, 'clarity', 2)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.clarity[3].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.clarity[3].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.clarity[3].clicked, 'clarity', 3)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.clarity[4].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.clarity[4].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.clarity[4].clicked, 'clarity', 4)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.clarity[5].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.clarity[5].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.clarity[5].clicked, 'clarity', 5)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.clarity[6].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.clarity[6].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.clarity[6].clicked, 'clarity', 6)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.clarity[7].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.clarity[7].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.clarity[7].clicked, 'clarity', 7)
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.query.search_conditions.clarity[8].clicked
+    },
+    attrs: {
+      "type": "button",
+      "value": _vm.query.search_conditions.clarity[8].description
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleValue(_vm.query.search_conditions.clarity[8].clicked, 'clarity', 8)
+      }
+    }
+  })])])])]), _vm._v(" "), _c('table', {
+    staticClass: "table is-fullwidth"
+  }, [_c('div', {
+    staticClass: "dv-body"
+  }, [_c('div', {
+    staticClass: "dv-table table table-hover"
+  }, [_c('thead', [_c('tr', _vm._l((_vm.columns), function(column) {
+    return _c('th', {
+      on: {
+        "click": function($event) {
+          _vm.toggleOrder(column)
+        }
+      }
+    }, [_c('span', [_vm._v(_vm._s(column))]), _vm._v(" "), (column === _vm.query.column) ? _c('span', {
+      staticClass: "dv-table-column"
+    }, [(_vm.query.direction === 'desc') ? _c('span', [_vm._v("↑")]) : _c('span', [_vm._v("↓")])]) : _vm._e()])
+  }))]), _vm._v(" "), _c('tbody', _vm._l((_vm.model.data), function(row) {
+    return _c('tr', _vm._l((row), function(value, key) {
+      return _c('td', [_vm._v(" " + _vm._s(value))])
+    }))
+  }))])]), _vm._v(" "), _c('div', {
+    staticClass: "dv-footer"
+  }, [_c('div', {
+    staticClass: "dv-footer-item"
+  }, [_c('span', [_vm._v("Displaying " + _vm._s(_vm.model.from) + "  - " + _vm._s(_vm.model.to) + " of " + _vm._s(_vm.model.total) + " rows")])]), _vm._v(" "), _c('div', {
+    staticClass: "dv-footer-item"
+  }, [_c('span', [_vm._v("Rows per page")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.query.per_page),
+      expression: "query.per_page"
+    }],
+    staticClass: "dv-footer-input",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.query.per_page)
+    },
+    on: {
+      "keyup": function($event) {
+        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
+        _vm.fetchIndexData()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.query.per_page = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "dv-footer-sub"
+  }, [_c('button', {
+    staticClass: "dv-footer-btn",
+    on: {
+      "click": function($event) {
+        _vm.prev()
+      }
+    }
+  }, [_vm._v("«")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.query.page),
+      expression: "query.page"
+    }],
+    staticClass: "dv-footer-input",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.query.page)
+    },
+    on: {
+      "keyup": function($event) {
+        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
+        _vm.fetchIndexData()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.query.page = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('button', {
+    staticClass: "dv-footer-btn",
+    on: {
+      "click": function($event) {
+        _vm.next()
+      }
+    }
+  }, [_vm._v("»")])])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('h1', {
+    staticClass: "subtitle is-6"
+  }, [_vm._v("Price")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('h1', {
+    staticClass: "subtitle is-6"
+  }, [_vm._v(" Weight ")])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-af8a79dc", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

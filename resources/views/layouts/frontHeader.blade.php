@@ -171,6 +171,7 @@
           </a>
         </div>
       </div>
+      
       <a class="navbar-item " href="http://bulma.io/expo/">
         <span class="bd-emoji">⭐️</span>
         Expo
@@ -260,7 +261,7 @@
         Ting Diamond
       </h1>
       <h2 class="subtitle">
-        Prividing the best of Brilliance
+        The Echo of love
       </h2>
     </div>
   </div>
@@ -270,7 +271,8 @@
       <nav class="tabs">
         <div class="container">
           <ul>
-            <li class="is-active"><a :href="this.$route.path.slice(0,3) + '/gia-loose-diamonds'">Diamonds</a></li>
+            <li class="is-active"><a :href="this.$route.path.slice(0,3) + '/gia-loose-diamonds'">Diamonds</a>
+            </li>
             <li><a :href="this.$route.fullPath.slice(0,3) + '/engagement-rings'">Engagement Rings</a></li>
             <li><a :href="this.$route.fullPath.slice(0,3) + '/wedding-rings'">Wedding Rings</a></li>
             <li><a :href="this.$route.fullPath.slice(0,3) + '/buying-procedure'">Buying Procedure</a></li>
@@ -278,6 +280,14 @@
             <li><a :href="this.$route.fullPath.slice(0,3) + '/customer-jewellries'">Customer Jewellries</a></li>
             <li><a :href="this.$route.fullPath.slice(0,3) + '/about-us'">About</a></li>
           </ul>
+          <div class="tabs">
+                <ul>
+                  <li class="is-active"><a>Pictures</a></li>
+                  <li><a>Music</a></li>
+                  <li><a>Videos</a></li>
+                  <li><a>Documents</a></li>
+                </ul>
+              </div>
         </div>
       </nav>
     </div>

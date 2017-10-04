@@ -8,6 +8,7 @@ use App\Invoice;
 use App\InvContent;
 use App\InvDiamond;
 use App\Jewellry;
+use App\Tag;
 use File;
 
 

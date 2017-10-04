@@ -3,15 +3,34 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Support\DataViewer;
+
 
 class Diamond extends Model
 {
+    use DataViewer;
+
+    protected $hidden = array('supplier_id');
+
     protected $fillable = [
 	'id', 'price', 'stock', 'certificate', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'lab', 'location', 'imageLink'
 	];
-   	 public static $filters = [
-    	'id', 'price', 'stock', 'certificate', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'lab', 'location', 'imageLink'
-    			];
+   	 public static $columns = [
+    	       'id',
+                'price',
+                'stock',
+                'certificate',
+                'shape',
+                'weight',
+                'color',
+                'clarity',
+                'cut',
+                'polish',
+                'symmetry',
+                'fluroscence',
+                'lab',
+                'location',
+                'imageLink'];
 
 
     	public function supplier()
