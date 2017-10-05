@@ -5,19 +5,19 @@
 			</div>
 		</div>
 
-		<div class="tile ancestor">
-			<div class="tile is-parent is-4" v-for="post in posts">
-				<div class="tile is-child box">
+
+		<div class="tile is-ancestor"v-for="pos in posts">
+			<div class="tile is-parent is-4" v-for="post in pos">
+				<div class="tile is-child box" v-if="post">
 					<article class="tile">
 						<router-link :to="$route.path +'/' + post.id" >
 							<img :src="`/images/${post.cover}`" v-if="post.cover">
-							<p class="subtitle">{{post.contents[0].content}}</p>
+							<p class="subtitle" v-if="post.contents[0]">{{post.contents[0].content}}</p>
 						</router-link>
 						
 					</article>
 				</div>
-			</div>		
-
+			</div>
 		</div>
 	</div>
 </template>

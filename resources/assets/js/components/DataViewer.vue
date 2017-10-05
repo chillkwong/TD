@@ -100,9 +100,7 @@
 
 <script>
 
-	import Vue from 'vue'
 	import { get } from '../helpers/api'
-	// import Pagination from '../components/pagination.vue'
 
 	export default {
 		props: ['source', 'thead', 'filter', 'create', 'title'],
@@ -176,7 +174,7 @@
 
 					get(this.buildURL())
 					.then((res)=>{
-						Vue.set(this.$data, 'model', res.data.model)
+						this.model = res.data.model
 					})
 					.catch(function(error){
 						console.log(error)

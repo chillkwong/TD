@@ -188,49 +188,7 @@
 		</router-link>
 		<button class="button is-danger" @click="remove" :disable="isRemoving">Delete</button>
   	</div>
-	<!-- <div class="recipe__show">
-		<div class="recipe__row">
-			<div class="recipe__image">
-				<div class="recipe__box">
-					<img :src="`/images/${recipe.image}`" v-if="recipe.image">
-				</div>
-			</div>
-			<div class="recipe__details">
-				<div class="recipe__details_inner">
-					<small>Submitted By: {{recipe.user.name}}</small>
-					<h1 class="recipe__title">{{recipe.name}}</h1>
-					<p class="recipe_description">{{recipe.description}}</p>
-					<div v-if="auth.api_token && auth.user_id ===recipe.user_id">
-						
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="recipe__row">
-			<div class="recipe__ingredients">
-				<div class="recipe__box">
-					<h3 class="recipe__sub_title">Ingredients</h3>
-					<ul>
-						<li v-for="ingredient in recipe.ingredients">
-							<span>{{ingredient.name}}</span>
-							<span>{{ingredient.qty}}</span>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="recipe__descriptions">
-				<div class="recipe_descriptions__inner">
-					<h3 class="recipe__sub_title">Direction</h3>
-					<ul>
-						<li v-for="(direction, i) in recipe.directions">
-							<strong>{{i+1}}</strong>
-							{{direction.description}}							
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div> -->
+	
 </div>
 </template>
 

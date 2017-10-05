@@ -162,312 +162,84 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
 
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
 
-var bind = __webpack_require__(8);
-var isBuffer = __webpack_require__(36);
-
-/*global toString:true*/
-
-// utils is a library of generic helper functions non-specific to axios
-
-var toString = Object.prototype.toString;
-
-/**
- * Determine if a value is an Array
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an Array, otherwise false
- */
-function isArray(val) {
-  return toString.call(val) === '[object Array]';
-}
-
-/**
- * Determine if a value is an ArrayBuffer
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an ArrayBuffer, otherwise false
- */
-function isArrayBuffer(val) {
-  return toString.call(val) === '[object ArrayBuffer]';
-}
-
-/**
- * Determine if a value is a FormData
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an FormData, otherwise false
- */
-function isFormData(val) {
-  return (typeof FormData !== 'undefined') && (val instanceof FormData);
-}
-
-/**
- * Determine if a value is a view on an ArrayBuffer
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
- */
-function isArrayBufferView(val) {
-  var result;
-  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
-    result = ArrayBuffer.isView(val);
-  } else {
-    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
-  }
-  return result;
-}
-
-/**
- * Determine if a value is a String
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a String, otherwise false
- */
-function isString(val) {
-  return typeof val === 'string';
-}
-
-/**
- * Determine if a value is a Number
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Number, otherwise false
- */
-function isNumber(val) {
-  return typeof val === 'number';
-}
-
-/**
- * Determine if a value is undefined
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if the value is undefined, otherwise false
- */
-function isUndefined(val) {
-  return typeof val === 'undefined';
-}
-
-/**
- * Determine if a value is an Object
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an Object, otherwise false
- */
-function isObject(val) {
-  return val !== null && typeof val === 'object';
-}
-
-/**
- * Determine if a value is a Date
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Date, otherwise false
- */
-function isDate(val) {
-  return toString.call(val) === '[object Date]';
-}
-
-/**
- * Determine if a value is a File
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a File, otherwise false
- */
-function isFile(val) {
-  return toString.call(val) === '[object File]';
-}
-
-/**
- * Determine if a value is a Blob
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Blob, otherwise false
- */
-function isBlob(val) {
-  return toString.call(val) === '[object Blob]';
-}
-
-/**
- * Determine if a value is a Function
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Function, otherwise false
- */
-function isFunction(val) {
-  return toString.call(val) === '[object Function]';
-}
-
-/**
- * Determine if a value is a Stream
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Stream, otherwise false
- */
-function isStream(val) {
-  return isObject(val) && isFunction(val.pipe);
-}
-
-/**
- * Determine if a value is a URLSearchParams object
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a URLSearchParams object, otherwise false
- */
-function isURLSearchParams(val) {
-  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
-}
-
-/**
- * Trim excess whitespace off the beginning and end of a string
- *
- * @param {String} str The String to trim
- * @returns {String} The String freed of excess whitespace
- */
-function trim(str) {
-  return str.replace(/^\s*/, '').replace(/\s*$/, '');
-}
-
-/**
- * Determine if we're running in a standard browser environment
- *
- * This allows axios to run in a web worker, and react-native.
- * Both environments support XMLHttpRequest, but not fully standard globals.
- *
- * web workers:
- *  typeof window -> undefined
- *  typeof document -> undefined
- *
- * react-native:
- *  navigator.product -> 'ReactNative'
- */
-function isStandardBrowserEnv() {
-  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
-    return false;
-  }
-  return (
-    typeof window !== 'undefined' &&
-    typeof document !== 'undefined'
-  );
-}
-
-/**
- * Iterate over an Array or an Object invoking a function for each item.
- *
- * If `obj` is an Array callback will be called passing
- * the value, index, and complete array for each item.
- *
- * If 'obj' is an Object callback will be called passing
- * the value, key, and complete object for each property.
- *
- * @param {Object|Array} obj The object to iterate
- * @param {Function} fn The callback to invoke for each item
- */
-function forEach(obj, fn) {
-  // Don't bother if no value provided
-  if (obj === null || typeof obj === 'undefined') {
-    return;
-  }
-
-  // Force an array if not already something iterable
-  if (typeof obj !== 'object' && !isArray(obj)) {
-    /*eslint no-param-reassign:0*/
-    obj = [obj];
-  }
-
-  if (isArray(obj)) {
-    // Iterate over array values
-    for (var i = 0, l = obj.length; i < l; i++) {
-      fn.call(null, obj[i], i, obj);
-    }
-  } else {
-    // Iterate over object keys
-    for (var key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        fn.call(null, obj[key], key, obj);
-      }
-    }
-  }
-}
-
-/**
- * Accepts varargs expecting each argument to be an object, then
- * immutably merges the properties of each object and returns result.
- *
- * When multiple objects contain the same key the later object in
- * the arguments list will take precedence.
- *
- * Example:
- *
- * ```js
- * var result = merge({foo: 123}, {foo: 456});
- * console.log(result.foo); // outputs 456
- * ```
- *
- * @param {Object} obj1 Object to merge
- * @returns {Object} Result of all merge properties
- */
-function merge(/* obj1, obj2, obj3, ... */) {
-  var result = {};
-  function assignValue(val, key) {
-    if (typeof result[key] === 'object' && typeof val === 'object') {
-      result[key] = merge(result[key], val);
-    } else {
-      result[key] = val;
-    }
-  }
-
-  for (var i = 0, l = arguments.length; i < l; i++) {
-    forEach(arguments[i], assignValue);
-  }
-  return result;
-}
-
-/**
- * Extends object a by mutably adding to it the properties of object b.
- *
- * @param {Object} a The object to be extended
- * @param {Object} b The object to copy properties from
- * @param {Object} thisArg The object to bind function to
- * @return {Object} The resulting value of object a
- */
-function extend(a, b, thisArg) {
-  forEach(b, function assignValue(val, key) {
-    if (thisArg && typeof val === 'function') {
-      a[key] = bind(val, thisArg);
-    } else {
-      a[key] = val;
-    }
-  });
-  return a;
-}
-
-module.exports = {
-  isArray: isArray,
-  isArrayBuffer: isArrayBuffer,
-  isBuffer: isBuffer,
-  isFormData: isFormData,
-  isArrayBufferView: isArrayBufferView,
-  isString: isString,
-  isNumber: isNumber,
-  isObject: isObject,
-  isUndefined: isUndefined,
-  isDate: isDate,
-  isFile: isFile,
-  isBlob: isBlob,
-  isFunction: isFunction,
-  isStream: isStream,
-  isURLSearchParams: isURLSearchParams,
-  isStandardBrowserEnv: isStandardBrowserEnv,
-  forEach: forEach,
-  merge: merge,
-  extend: extend,
-  trim: trim
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
 };
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
 
 
 /***/ }),
@@ -10715,7 +10487,7 @@ module.exports = Vue$3;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(146);
 var normalizeHeaderName = __webpack_require__(39);
 
 var DEFAULT_CONTENT_TYPE = {
@@ -10873,7 +10645,7 @@ module.exports = function bind(fn, thisArg) {
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(146);
 var settle = __webpack_require__(40);
 var buildURL = __webpack_require__(42);
 var parseHeaders = __webpack_require__(43);
@@ -11117,88 +10889,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 13 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
+/* 13 */,
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11532,7 +11223,7 @@ if(false) {
 /* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(13)(undefined);
+exports = module.exports = __webpack_require__(1)(undefined);
 // imports
 
 
@@ -15236,9 +14927,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_api__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(2);
 //
 //
 //
@@ -15342,8 +15031,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-
-// import Pagination from '../components/pagination.vue'
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: ['source', 'thead', 'filter', 'create', 'title'],
@@ -15417,8 +15104,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		fetchData: function fetchData() {
 			var _this = this;
 
-			Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["b" /* get */])(this.buildURL()).then(function (res) {
-				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(_this.$data, 'model', res.data.model);
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.buildURL()).then(function (res) {
+				_this.model = res.data.model;
 			}).catch(function (error) {
 				console.log(error);
 			});
@@ -15443,7 +15130,7 @@ module.exports = __webpack_require__(35);
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(146);
 var bind = __webpack_require__(8);
 var Axios = __webpack_require__(37);
 var defaults = __webpack_require__(6);
@@ -15530,7 +15217,7 @@ function isSlowBuffer (obj) {
 
 
 var defaults = __webpack_require__(6);
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(146);
 var InterceptorManager = __webpack_require__(47);
 var dispatchRequest = __webpack_require__(48);
 var isAbsoluteURL = __webpack_require__(50);
@@ -15812,7 +15499,7 @@ process.umask = function() { return 0; };
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(146);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -15892,7 +15579,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(146);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -15967,7 +15654,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(146);
 
 /**
  * Parse headers into an object
@@ -16011,7 +15698,7 @@ module.exports = function parseHeaders(headers) {
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(146);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -16129,7 +15816,7 @@ module.exports = btoa;
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(146);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -16189,7 +15876,7 @@ module.exports = (
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(146);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -16248,7 +15935,7 @@ module.exports = InterceptorManager;
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(146);
 var transformData = __webpack_require__(49);
 var isCancel = __webpack_require__(11);
 var defaults = __webpack_require__(6);
@@ -16334,7 +16021,7 @@ module.exports = function dispatchRequest(config) {
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(146);
 
 /**
  * Transform the data for a request or a response
@@ -17136,27 +16823,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "box"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
-    staticClass: "tile ancestor"
-  }, _vm._l((_vm.posts), function(post) {
+  }, [_vm._m(0), _vm._v(" "), _vm._l((_vm.posts), function(pos) {
     return _c('div', {
-      staticClass: "tile is-parent is-4"
-    }, [_c('div', {
-      staticClass: "tile is-child box"
-    }, [_c('article', {
-      staticClass: "tile"
-    }, [_c('router-link', {
-      attrs: {
-        "to": _vm.$route.path + '/' + post.id
-      }
-    }, [(post.cover) ? _c('img', {
-      attrs: {
-        "src": ("/images/" + (post.cover))
-      }
-    }) : _vm._e(), _vm._v(" "), _c('p', {
-      staticClass: "subtitle"
-    }, [_vm._v(_vm._s(post.contents[0].content))])])], 1)])])
-  }))])
+      staticClass: "tile is-ancestor"
+    }, _vm._l((pos), function(post) {
+      return _c('div', {
+        staticClass: "tile is-parent is-4"
+      }, [(post) ? _c('div', {
+        staticClass: "tile is-child box"
+      }, [_c('article', {
+        staticClass: "tile"
+      }, [_c('router-link', {
+        attrs: {
+          "to": _vm.$route.path + '/' + post.id
+        }
+      }, [(post.cover) ? _c('img', {
+        attrs: {
+          "src": ("/images/" + (post.cover))
+        }
+      }) : _vm._e(), _vm._v(" "), (post.contents[0]) ? _c('p', {
+        staticClass: "subtitle"
+      }, [_vm._v(_vm._s(post.contents[0].content))]) : _vm._e()])], 1)]) : _vm._e()])
+    }))
+  })], 2)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "columns"
@@ -17219,48 +16908,6 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(2);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -18100,8 +17747,8 @@ var header = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_diamondViewer_vue__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_diamondViewer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_diamondViewer_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_diamondViewer_index_vue__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_diamondViewer_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_diamondViewer_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_Auth_adm_login_vue__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_Auth_adm_login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_Auth_adm_login_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_home_vue__ = __webpack_require__(69);
@@ -18179,14 +17826,14 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 		{ path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue___default.a },
 
 		//diamonds
-		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__components_diamondViewer_vue___default.a }] }, { path: '/en', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_11__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__views_diamondViewer_index_vue___default.a }] }, { path: '/en', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_11__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
 		children: [{ path: '' },
 		// {path:'/posts/:id', component:PostIndex },
 
 		{ path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue___default.a },
 
 		//diamonds
-		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__components_diamondViewer_vue___default.a }] }, { path: '/hk', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_11__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__views_diamondViewer_index_vue___default.a }] }, { path: '/hk', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_11__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
 		children: [{ path: '' }, { path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue___default.a }] }, { path: '/cn', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_11__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
 		children: [{ path: '' }, { path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_customerJewellry_show_vue___default.a }] }]
 
@@ -18265,15 +17912,328 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 /* 140 */,
 /* 141 */,
 /* 142 */,
-/* 143 */
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var bind = __webpack_require__(8);
+var isBuffer = __webpack_require__(36);
+
+/*global toString:true*/
+
+// utils is a library of generic helper functions non-specific to axios
+
+var toString = Object.prototype.toString;
+
+/**
+ * Determine if a value is an Array
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Array, otherwise false
+ */
+function isArray(val) {
+  return toString.call(val) === '[object Array]';
+}
+
+/**
+ * Determine if a value is an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+ */
+function isArrayBuffer(val) {
+  return toString.call(val) === '[object ArrayBuffer]';
+}
+
+/**
+ * Determine if a value is a FormData
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an FormData, otherwise false
+ */
+function isFormData(val) {
+  return (typeof FormData !== 'undefined') && (val instanceof FormData);
+}
+
+/**
+ * Determine if a value is a view on an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+ */
+function isArrayBufferView(val) {
+  var result;
+  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
+    result = ArrayBuffer.isView(val);
+  } else {
+    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
+  }
+  return result;
+}
+
+/**
+ * Determine if a value is a String
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a String, otherwise false
+ */
+function isString(val) {
+  return typeof val === 'string';
+}
+
+/**
+ * Determine if a value is a Number
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Number, otherwise false
+ */
+function isNumber(val) {
+  return typeof val === 'number';
+}
+
+/**
+ * Determine if a value is undefined
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if the value is undefined, otherwise false
+ */
+function isUndefined(val) {
+  return typeof val === 'undefined';
+}
+
+/**
+ * Determine if a value is an Object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Object, otherwise false
+ */
+function isObject(val) {
+  return val !== null && typeof val === 'object';
+}
+
+/**
+ * Determine if a value is a Date
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Date, otherwise false
+ */
+function isDate(val) {
+  return toString.call(val) === '[object Date]';
+}
+
+/**
+ * Determine if a value is a File
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a File, otherwise false
+ */
+function isFile(val) {
+  return toString.call(val) === '[object File]';
+}
+
+/**
+ * Determine if a value is a Blob
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Blob, otherwise false
+ */
+function isBlob(val) {
+  return toString.call(val) === '[object Blob]';
+}
+
+/**
+ * Determine if a value is a Function
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Function, otherwise false
+ */
+function isFunction(val) {
+  return toString.call(val) === '[object Function]';
+}
+
+/**
+ * Determine if a value is a Stream
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Stream, otherwise false
+ */
+function isStream(val) {
+  return isObject(val) && isFunction(val.pipe);
+}
+
+/**
+ * Determine if a value is a URLSearchParams object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+ */
+function isURLSearchParams(val) {
+  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+}
+
+/**
+ * Trim excess whitespace off the beginning and end of a string
+ *
+ * @param {String} str The String to trim
+ * @returns {String} The String freed of excess whitespace
+ */
+function trim(str) {
+  return str.replace(/^\s*/, '').replace(/\s*$/, '');
+}
+
+/**
+ * Determine if we're running in a standard browser environment
+ *
+ * This allows axios to run in a web worker, and react-native.
+ * Both environments support XMLHttpRequest, but not fully standard globals.
+ *
+ * web workers:
+ *  typeof window -> undefined
+ *  typeof document -> undefined
+ *
+ * react-native:
+ *  navigator.product -> 'ReactNative'
+ */
+function isStandardBrowserEnv() {
+  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+    return false;
+  }
+  return (
+    typeof window !== 'undefined' &&
+    typeof document !== 'undefined'
+  );
+}
+
+/**
+ * Iterate over an Array or an Object invoking a function for each item.
+ *
+ * If `obj` is an Array callback will be called passing
+ * the value, index, and complete array for each item.
+ *
+ * If 'obj' is an Object callback will be called passing
+ * the value, key, and complete object for each property.
+ *
+ * @param {Object|Array} obj The object to iterate
+ * @param {Function} fn The callback to invoke for each item
+ */
+function forEach(obj, fn) {
+  // Don't bother if no value provided
+  if (obj === null || typeof obj === 'undefined') {
+    return;
+  }
+
+  // Force an array if not already something iterable
+  if (typeof obj !== 'object' && !isArray(obj)) {
+    /*eslint no-param-reassign:0*/
+    obj = [obj];
+  }
+
+  if (isArray(obj)) {
+    // Iterate over array values
+    for (var i = 0, l = obj.length; i < l; i++) {
+      fn.call(null, obj[i], i, obj);
+    }
+  } else {
+    // Iterate over object keys
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        fn.call(null, obj[key], key, obj);
+      }
+    }
+  }
+}
+
+/**
+ * Accepts varargs expecting each argument to be an object, then
+ * immutably merges the properties of each object and returns result.
+ *
+ * When multiple objects contain the same key the later object in
+ * the arguments list will take precedence.
+ *
+ * Example:
+ *
+ * ```js
+ * var result = merge({foo: 123}, {foo: 456});
+ * console.log(result.foo); // outputs 456
+ * ```
+ *
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
+ */
+function merge(/* obj1, obj2, obj3, ... */) {
+  var result = {};
+  function assignValue(val, key) {
+    if (typeof result[key] === 'object' && typeof val === 'object') {
+      result[key] = merge(result[key], val);
+    } else {
+      result[key] = val;
+    }
+  }
+
+  for (var i = 0, l = arguments.length; i < l; i++) {
+    forEach(arguments[i], assignValue);
+  }
+  return result;
+}
+
+/**
+ * Extends object a by mutably adding to it the properties of object b.
+ *
+ * @param {Object} a The object to be extended
+ * @param {Object} b The object to copy properties from
+ * @param {Object} thisArg The object to bind function to
+ * @return {Object} The resulting value of object a
+ */
+function extend(a, b, thisArg) {
+  forEach(b, function assignValue(val, key) {
+    if (thisArg && typeof val === 'function') {
+      a[key] = bind(val, thisArg);
+    } else {
+      a[key] = val;
+    }
+  });
+  return a;
+}
+
+module.exports = {
+  isArray: isArray,
+  isArrayBuffer: isArrayBuffer,
+  isBuffer: isBuffer,
+  isFormData: isFormData,
+  isArrayBufferView: isArrayBufferView,
+  isString: isString,
+  isNumber: isNumber,
+  isObject: isObject,
+  isUndefined: isUndefined,
+  isDate: isDate,
+  isFile: isFile,
+  isBlob: isBlob,
+  isFunction: isFunction,
+  isStream: isStream,
+  isURLSearchParams: isURLSearchParams,
+  isStandardBrowserEnv: isStandardBrowserEnv,
+  forEach: forEach,
+  merge: merge,
+  extend: extend,
+  trim: trim
+};
+
+
+/***/ }),
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(144),
+  __webpack_require__(148),
   /* template */
-  __webpack_require__(145),
+  __webpack_require__(149),
   /* styles */
   null,
   /* scopeId */
@@ -18281,9 +18241,9 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/components/diamondViewer.vue"
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/diamondViewer/index.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] diamondViewer.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -18292,9 +18252,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-af8a79dc", Component.options)
+    hotAPI.createRecord("data-v-29486373", Component.options)
   } else {
-    hotAPI.reload("data-v-af8a79dc", Component.options)
+    hotAPI.reload("data-v-29486373", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -18305,14 +18265,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 144 */
+/* 148 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_api__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(2);
 //
 //
 //
@@ -18613,7 +18571,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
+//
 
 
 
@@ -18626,15 +18584,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			source: '/api/diamonds',
 			fetchData: {
 				shape: ['rd', 'ps', 'em', 'pr', 'mq', 'cu', 'ac', 'ov', 'ht', 'ra'],
-				color: ['d', 'e', 'f', 'g', 'h', 'i', 'j', 'k'],
-				clarity: ['fl', 'if', 'vvs1', 'vvs2', 'vs1', 'vs2'],
+				color: ['d', 'e', 'f', 'g', 'h', 'i', 'j'],
+				clarity: ['fl', 'if', 'vvs1', 'vvs2', 'vs1', 'vs2', 'si1', 'si2', 'i1'],
 				cut: ['ex', 'vg', 'gd', 'fr', 'na'],
 				polish: ['ex', 'vg', 'gd', 'fr'],
 				symmetry: ['ex', 'vg', 'gd', 'fr'],
+				fluroscence: ['none', 'faint', 'medium', 'strong'],
 				priceRange: ['100', '5000000'],
 				weight: ['0.10', '20']
 			},
 			showModal: false,
+			showAdvance: false,
 			opened: [],
 			model: {},
 			columns: ['shape', 'price', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
@@ -18647,9 +18607,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				search_operator: 'like',
 				search_input: '',
 				search_conditions: {
-					shape: [{ description: 'rd', clicked: false }, { description: 'ps', clicked: false }, { description: 'em', clicked: false }, { description: 'pr', clicked: false }, { description: 'mq', clicked: false }, { description: 'cu', clicked: false }, { description: 'ac', clicked: false }, { description: 'ov', clicked: false }, { description: 'ht', clicked: false }, { description: 'ra', clicked: false }],
-					color: [{ description: 'D', clicked: false }, { description: 'E', clicked: false }, { description: 'F', clicked: false }, { description: 'G', clicked: false }, { description: 'H', clicked: false }, { description: 'I', clicked: false }, { description: 'J', clicked: false }],
-					cut: [{ description: 'EX', clicked: false }, { description: 'VG', clicked: false }, { description: 'GD', clicked: false }, { description: 'FR', clicked: false }],
+					shape: [{ description: 'rd', clicked: false, display: 'Round' }, { description: 'ps', clicked: false, display: 'Pear' }, { description: 'em', clicked: false, display: 'Emerald' }, { description: 'pr', clicked: false, display: 'Princess' }, { description: 'mq', clicked: false, display: 'Marquise' }, { description: 'cu', clicked: false, display: 'Cushion' }, { description: 'ac', clicked: false, display: 'Asscher' }, { description: 'ov', clicked: false, display: 'Oval' }, { description: 'ht', clicked: false, display: 'Heart' }, { description: 'ra', clicked: false, display: 'Radiant' }],
+					color: [{ description: 'D', clicked: false, display: 'D' }, { description: 'E', clicked: false, display: 'E' }, { description: 'F', clicked: false, display: 'F' }, { description: 'G', clicked: false, display: 'G' }, { description: 'H', clicked: false, display: 'H' }, { description: 'I', clicked: false, display: 'I' }, { description: 'J', clicked: false, display: 'J' }],
+					cut: [{ description: 'EX', clicked: false, display: 'Excellent' }, { description: 'VG', clicked: false, display: 'Very Good' }, { description: 'GD', clicked: false, display: 'Good' }],
+					polish: [{ description: 'EX', clicked: false, display: 'Excellent' }, { description: 'VG', clicked: false, display: 'Very Good' }, { description: 'GD', clicked: false, display: 'Good' }],
+					symmetry: [{ description: 'EX', clicked: false, display: 'Excellent' }, { description: 'VG', clicked: false, display: 'Very Good' }, { description: 'GD', clicked: false, display: 'Good' }],
+					fluroscence: [{ description: 'NONE', clicked: false, display: 'None' }, { description: 'FAINT', clicked: false, display: 'Faint' }, { description: 'MEDIUM', clicked: false, display: 'Medium' }, { description: 'STRONG', clicked: false, display: 'Strong' }],
 					clarity: [{ description: 'FL', clicked: false }, { description: 'IF', clicked: false }, { description: 'VVS1', clicked: false }, { description: 'VVS2', clicked: false }, { description: 'VS1', clicked: false }, { description: 'VS2', clicked: false }, { description: 'SI1', clicked: false }, { description: 'SI2', clicked: false }, { description: 'I1', clicked: false }],
 					priceRange: [{ description: 'Price' }, { description: 'minPrice' }]
 				}
@@ -18750,9 +18713,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.fetchIndexData();
 		},
 		fetchIndexData: function fetchIndexData() {
-			var vm = this;
-			Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&color=' + this.fetchData.color.toString() + '\n\t\t\t\t\t&clarity=' + this.fetchData.clarity.toString() + '\n\t\t\t\t\t&cut=' + this.fetchData.cut.toString() + '\n\t\t\t\t\t&shape=' + this.fetchData.shape.toString() + '\n\t\t\t\t\t&price=' + this.fetchData.priceRange + '\n\t\t\t\t\t&weight=' + this.fetchData.weight).then(function (response) {
-				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(vm.$data, 'model', response.data.model);
+			var _this = this;
+
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&color=' + this.fetchData.color.toString() + '\n\t\t\t\t\t&clarity=' + this.fetchData.clarity.toString() + '\n\t\t\t\t\t&cut=' + this.fetchData.cut.toString() + '\n\t\t\t\t\t&polish=' + this.fetchData.polish.toString() + '\n\t\t\t\t\t&symmetry=' + this.fetchData.symmetry.toString() + '\n\t\t\t\t\t&fluroscence=' + this.fetchData.fluroscence.toString() + '\n\t\t\t\t\t&shape=' + this.fetchData.shape.toString() + '\n\t\t\t\t\t&price=' + this.fetchData.priceRange + '\n\t\t\t\t\t&weight=' + this.fetchData.weight).then(function (response) {
+				_this.model = response.data.model;
 				// Vue.set(vm.$data, 'columns', response.data.columns)
 			}).catch(function () {
 				console.log(response);
@@ -18762,16 +18726,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 145 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
     staticClass: "level"
-  }), _vm._v(" "), _c('nav', {
-    staticClass: "navbar is-hidden-mobile"
-  }, [_c('div', {
-    staticClass: "navbar-item "
+  }), _vm._v(" "), _c('nav', [_c('div', {
+    staticClass: "navbar-item is-hidden-mobile"
   }, [_c('div', {
     staticClass: "tile is-ancestor"
   }, [_c('div', {
@@ -18975,10 +18937,81 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     })
-  })], 2)])])])])]), _vm._v(" "), _c('nav', {
-    staticClass: "navbar"
+  })], 2)])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "level is-hidden-mobile"
   }, [_c('div', {
-    staticClass: "navbar-item is-hidden-desktop"
+    staticClass: "level-item is-centered"
+  }, [_c('button', {
+    staticClass: "button is-info",
+    on: {
+      "click": function($event) {
+        _vm.showAdvance = !_vm.showAdvance
+      }
+    }
+  }, [_vm._v("More Advancce")])])]), _vm._v(" "), _c('nav', [_c('div', {
+    staticClass: "navbar-item is-hidden-mobile"
+  }, [(_vm.showAdvance) ? _c('div', {
+    staticClass: "tile is-ancestor"
+  }, [_c('div', {
+    staticClass: "tile is-12"
+  }, [_c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('article', {
+    staticClass: "tile is-child box "
+  }, [_c('div', [_vm._v("Polish")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.polish), function(value, index) {
+    return _c('input', {
+      staticClass: "button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.polish[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.polish[index].description
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.polish[index].clicked, 'polish', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Symmetry")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.symmetry), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.symmetry[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.symmetry[index].description
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.symmetry[index].clicked, 'symmetry', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Fluroscence")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.fluroscence), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.fluroscence[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.fluroscence[index].description
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.fluroscence[index].clicked, 'fluroscence', index)
+        }
+      }
+    })
+  })], 2)])])]) : _vm._e()])]), _vm._v(" "), _c('nav', [_c('div', {
+    staticClass: "navbar-item is-hidden-desktop is-hidden-tablet is-centered"
   }, [_c('div', {
     on: {
       "click": function($event) {
@@ -19204,7 +19237,74 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     })
-  })], 2)])])])]), _vm._v(" "), _vm._m(4)])])])])]), _vm._v(" "), _c('div', {
+  })], 2)])])]), _vm._v(" "), _c('button', {
+    staticClass: "button is-info",
+    on: {
+      "click": function($event) {
+        _vm.showAdvance = !_vm.showAdvance
+      }
+    }
+  }, [_vm._v("More Advancce")]), _vm._v(" "), (_vm.showAdvance) ? _c('div', {
+    staticClass: "tile is-ancestor"
+  }, [_c('div', {
+    staticClass: "tile is-12"
+  }, [_c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('article', {
+    staticClass: "tile is-child box "
+  }, [_c('div', [_vm._v("Polish")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.polish), function(value, index) {
+    return _c('input', {
+      staticClass: "button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.polish[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.polish[index].description
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.polish[index].clicked, 'polish', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Symmetry")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.symmetry), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.symmetry[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.symmetry[index].description
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.symmetry[index].clicked, 'symmetry', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Fluroscence")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.fluroscence), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.fluroscence[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.fluroscence[index].description
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.fluroscence[index].clicked, 'fluroscence', index)
+        }
+      }
+    })
+  })], 2)])])]) : _vm._e()]), _vm._v(" "), _vm._m(4)])])])])]), _vm._v(" "), _c('div', {
     staticClass: "tabs"
   }, [_c('table', {
     staticClass: "table is-striped is-narrowed is-fullwidth "
@@ -19347,8 +19447,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('footer', {
     staticClass: "modal-card-foot"
   }, [_c('button', {
-    staticClass: "button"
-  }, [_vm._v("Cancel")])])
+    staticClass: "button is-success"
+  }, [_vm._v("Submit")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('li', [_c('span', {
     staticClass: "pagination-ellipsis"
@@ -19362,7 +19462,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-af8a79dc", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-29486373", module.exports)
   }
 }
 

@@ -45,7 +45,7 @@ import CustomerJewShow from '../views/customerJewellry/show.vue'
 // import CustomerJewForm from '../views/customerJewellry/form.vue'
 
 //Diamonds
-import DiamondViewer from '../components/diamondViewer.vue'
+import DiamondViewer from '../views/diamondViewer/index.vue'
 
 // //Post
 // import PostIndex from '../views/post/index.vue'

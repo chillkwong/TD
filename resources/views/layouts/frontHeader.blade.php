@@ -4,7 +4,7 @@
    <nav  class="navbar is-transparent">
   <div class="navbar-brand">
     <a class="navbar-item" href="./">
-      <img src="/images/company/logo_PNG_sq_60x60_1.png" alt="Bulma: a modern CSS framework based on Flexbox" width="60" height="60">
+      <img src="/images/company/logo_PNG_sq_60x60_1.png" alt="Bulma: a modern CSS framework based on Flexbox" width="40" height="60">
     </a>
 
     <router-link class="navbar-item is-hidden-desktop"  :to="'/en' + this.$route.fullPath.slice(3)" >
@@ -172,14 +172,7 @@
         </div>
       </div>
       
-      <a class="navbar-item " href="http://bulma.io/expo/">
-        <span class="bd-emoji">⭐️</span>
-        Expo
-      </a>
-      <a class="navbar-item " href="http://bulma.io/love/">
-        <span class="bd-emoji">❤️</span>
-        Love
-      </a>
+     
     </div>
 
     <div class="navbar-end">
@@ -196,60 +189,42 @@
         </span>
       </a>
 
+      <div class="navbar-item has-dropdown is-hoverable">
+        <div class="navbar-link">
+          Language
+        </div>
+        <hr class="dropdown-divider">
+        <div id="moreDropdown" class="navbar-dropdown is-boxed">
+         
+             <router-link class="navbar-item " :to="'/en' + this.$route.fullPath.slice(3)" >EN</router-link>
+            <router-link class="navbar-item " :to="'/hk' + this.$route.fullPath.slice(3)" >HK</router-link>
+              <router-link class="navbar-item " :to="'/cn' + this.$route.fullPath.slice(3)" >CN</router-link>
+        </div>
+      </div>
+
+<!-- 
       <div class="dropdown is-hoverable">
     <div class="dropdown-trigger">
-      <button class="button is-info" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <a class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
         <span>Language</span>
         <span class="icon is-small">
           <i class="fa fa-angle-down" aria-hidden="true"></i>
         </span>
-      </button> 
+      </a> 
 
         </div>
 
             <div class="dropdown-menu" id="dropdown-menu4" role="menu">
               <div class="dropdown-content">
                 <div class="dropdown-item">
-                  <router-link :to="'/en' + this.$route.fullPath.slice(3)" >EN</router-link>
-                  <hr class="dropdown-divider">
-                  <router-link :to="'/hk' + this.$route.fullPath.slice(3)" >HK</router-link>
-                  <hr class="dropdown-divider">
-                  <router-link :to="'/cn' + this.$route.fullPath.slice(3)" >CN</router-link>
+                 
                 </div>
               </div>
             </div>
-        </div>
+        </div> -->
 
-      <div class="navbar-item">
-        <div class="field is-grouped">
-          <p class="control">
+      
 
-            <a class="bd-tw-button button"
-              data-social-network="Twitter"
-              data-social-action="tweet"
-              data-social-target="http://bulma.io"
-              target="_blank"
-              href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&hashtags=bulmaio&url=http://bulma.io&via=jgthms">
-              <span class="icon">
-                <i class="fa fa-twitter"></i>
-              </span>
-              <span>
-                Tweet
-               
-              </span>
-            </a>
-
-          </p>
-          <p class="control">
-            <a class="button is-primary" href="https://github.com/jgthms/bulma/archive/0.5.2.zip">
-              <span class="icon">
-                <i class="fa fa-download"></i>
-              </span>
-              <span>Download</span>
-            </a>
-          </p>
-        </div>
-      </div>
     </div>
   </div>
 </nav>
