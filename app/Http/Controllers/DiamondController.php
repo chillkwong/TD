@@ -12,12 +12,12 @@ class DiamondController extends Controller
 
   	$model = Diamond::SearchPaginateAndOrder();
         // $model = Diamond::all();
-
+      $locale = app()->getLocale();
     	$columns = Diamond::$columns;
     	return response()
     		->json([
     		'model' => $model,
-    		'columns' => $columns
+    		'columns' => $columns,
     		]);
   }
 }

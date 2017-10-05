@@ -2,7 +2,7 @@
 
 namespace App\http\Middleware;
 
-use Closure;
+use Closure, Session;
 
 class localization
 {
@@ -13,11 +13,16 @@ class localization
      * @param  \Closure  $next
      * @return mixed
      */
+    protected $languages = ['en','hk','cn'];
+
     public function handle($request, Closure $next)
     {
         $local = ($request->hasHeader('X-localization')) ? $request->header('X-localization') : 'en';
      // set laravel localization
-     app()->setLocale($local);
+        // Session::put('defaultLocale',$locale);
+        app()->setLocale($local);
+
+        // dd($_SERVER['HTTP_ACCEPT_LANGUAGE']);
     // continue request
     return $next($request);
     }

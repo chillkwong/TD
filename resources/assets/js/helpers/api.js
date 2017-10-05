@@ -18,7 +18,7 @@ import Locale from '../helpers/locale'
 // }
 
 export function get(url,lang){
-	// lang = Locale.temp.currentLocale
+	// lang = this.$route.fullPath.slice(0,3)
 	// Locale.setLastUrl(url)
 	return axios({
 		method: 'GET',

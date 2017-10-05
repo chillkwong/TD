@@ -65,7 +65,7 @@
 
 	<div class="level is-hidden-mobile">
 		<div class="level-item is-centered">
-		<button class="button is-info" @click="showAdvance=!showAdvance">More Advancce</button>
+		<button class="button is-info" @click="showAdvance=!showAdvance">More Advance</button>
 		</div>
 	</div>
 	<nav >
@@ -278,7 +278,7 @@
 
 <script>
 
-	import { get } from '../../helpers/api'
+	import { get } from '../../../helpers/api'
 
 	export default {
 
@@ -301,6 +301,7 @@
 				},
 				showModal:false,
 				showAdvance:false,
+				route: this.$route,
 				opened: [],
 				model: {},
 				columns:['shape','price','weight','color','clarity','cut','polish','symmetry','fluroscence','certificate','lab'],

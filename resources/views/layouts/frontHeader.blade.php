@@ -4,16 +4,16 @@
    <nav  class="navbar is-transparent">
   <div class="navbar-brand">
     <a class="navbar-item" href="./">
-      <img src="/images/company/logo_PNG_sq_60x60_1.png" alt="Bulma: a modern CSS framework based on Flexbox" width="40" height="60">
+      <img src="/images/company/logo_PNG_sq_60x60_1.png" alt="Bulma: a modern CSS framework based on Flexbox" width="35" height="70">
     </a>
 
     <router-link class="navbar-item is-hidden-desktop"  :to="'/en' + this.$route.fullPath.slice(3)" >
       <img src="/images/langs/en.png" width="20" height="10">
       </router-link>
-      <router-link class="navbar-item is-hidden-desktop"  :to="'/en' + this.$route.fullPath.slice(3)" >
+      <router-link class="navbar-item is-hidden-desktop"  :to="'/hk' + this.$route.fullPath.slice(3)" >
       <img src="/images/langs/hk.png" width="20" height="10">
       </router-link>
-      <router-link class="navbar-item is-hidden-desktop"  :to="'/en' + this.$route.fullPath.slice(3)" >
+      <router-link class="navbar-item is-hidden-desktop"  :to="'/cn' + this.$route.fullPath.slice(3)" >
       <img src="/images/langs/china.png" width="20" height="10">
       </router-link>
 
@@ -39,7 +39,7 @@
   <div id="navMenuTransparentExample" class="navbar-menu">
     <div class="navbar-start">
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link  is-active" href="/documentation/overview/start/">
+        <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}">
           Diamond
         </a>
         <div class="navbar-dropdown is-boxed">
@@ -190,13 +190,13 @@
 
       <div class="navbar-item has-dropdown is-hoverable">
         <div class="navbar-link">
-          Language
+          Language {{app()->getLocale(session('locale'))}}
         </div>
         <hr class="dropdown-divider">
         <div id="moreDropdown" class="navbar-dropdown is-boxed">
-         
-             <router-link class="navbar-item " :to="'/en' + this.$route.fullPath.slice(3)" ><img src="/images/langs/en.png" width="20" height="10">EN</router-link>
-            <router-link class="navbar-item " :to="'/hk' + this.$route.fullPath.slice(3)" ><img src="/images/langs/hk.png" width="20" height="10">HK</router-link>
+           
+             <router-link @click="setLocale('en')" class="navbar-item " :to="'/en' + this.$route.fullPath.slice(3)" ><img src="/images/langs/en.png" width="20" height="10">EN</router-link>
+            <router-link @click="setLocale('hk')" class="navbar-item " :to="'/hk' + this.$route.fullPath.slice(3)" ><img src="/images/langs/hk.png" width="20" height="10">HK</router-link>
               <router-link class="navbar-item " :to="'/cn' + this.$route.fullPath.slice(3)" ><img src="/images/langs/china.png" width="20" height="10">CN</router-link>
         </div>
       </div>
@@ -245,14 +245,14 @@
       <nav class="tabs ">
         <div class="container">
           <ul>
-            <li class="is-active"><a :href=" this.$route.path.slice(0,3) + '/gia-loose-diamonds'">Diamonds</a>
+            <li class="is-active"><a href=" {{url(app()->getLocale())}}/gia-loose-diamonds">Diamonds</a>
             </li>
-            <li><a :href="this.$route.fullPath.slice(0,3) + '/engagement-rings'">Engagement Rings</a></li>
-            <li><a :href="this.$route.fullPath.slice(0,3) + '/wedding-rings'">Wedding Rings</a></li>
-            <li><a :href="this.$route.fullPath.slice(0,3) + '/buying-procedure'">Buying Procedure</a></li>
-            <li><a :href="this.$route.fullPath.slice(0,3) + '/education-diamond-grading'">Education</a></li>
-            <li><a :href="this.$route.fullPath.slice(0,3) + '/customer-jewellries'">Customer Jewellries</a></li>
-            <li><a :href="this.$route.fullPath.slice(0,3) + '/about-us'">About</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/engagement-rings">Engagement Rings</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/wedding-rings">Wedding Rings</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/buying-procedure">Buying Procedure</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/education-diamond-grading">Education</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/customer-jewellries">Customer Jewellries</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/about-us'">About</a></li>
           </ul>
           <div class="tabs">
                 <ul>
@@ -274,9 +274,6 @@
 <script type="text/javascript" src="{{mix('js/app.js')}}"></script> 
 
 <script type="text/javascript">
-
-
-
 
 
   document.addEventListener('DOMContentLoaded', function () {

@@ -40,12 +40,13 @@ import JewellryShow from '../views/jewellry/show.vue'
 // import JewellryForm from '../views/jewellry/form.vue'
 
 //customer Jewellries
-import CustomerJewIndex from '../views/customerJewellry/index.vue'
-import CustomerJewShow from '../views/customerJewellry/show.vue'
+import CustomerJewIndex from '../views/frontEnd/customerJewellry/index.vue'
+import CustomerJewShow from '../views/frontEnd/customerJewellry/show.vue'
 // import CustomerJewForm from '../views/customerJewellry/form.vue'
 
 //Diamonds
-import DiamondViewer from '../views/diamondViewer/index.vue'
+import DiamondViewer from '../views/frontEnd/diamondViewer/index.vue'
+import DiamondShow from '../views/frontEnd/diamondViewer/show.vue'
 
 // //Post
 // import PostIndex from '../views/post/index.vue'
@@ -76,6 +77,7 @@ const router = new VueRouter({
 
 		//diamonds
 		{path: 'gia-loose-diamonds/', component: DiamondViewer},
+		{path: 'gia-loose-diamonds/:id', component: DiamondShow},
 	
 		]},
 
@@ -89,6 +91,7 @@ const router = new VueRouter({
 
 		//diamonds
 		{path: 'gia-loose-diamonds/', component: DiamondViewer},
+		{path: 'gia-loose-diamonds/:id', component: DiamondShow},
 	
 		]},
 
@@ -99,6 +102,9 @@ const router = new VueRouter({
 
 		{path: 'customer-jewellries', component: CustomerJewIndex},
 		{path: 'customer-jewellries/:id', component: CustomerJewShow},
+
+		//diamonds
+		{path: 'gia-loose-diamonds/', component: DiamondViewer},
 	
 		]},
 
@@ -109,6 +115,9 @@ const router = new VueRouter({
 		
 		{path: 'customer-jewellries', component: CustomerJewIndex},
 		{path: 'customer-jewellries/:id', component: CustomerJewShow},
+		
+		//diamonds
+		{path: 'gia-loose-diamonds/', component: DiamondViewer},
 	
 		]},
 
