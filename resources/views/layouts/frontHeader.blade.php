@@ -235,24 +235,25 @@
         Ting Diamond
       </h1>
       <h2 class="subtitle">
-        The Echo of love
+        <strong>The Echo of Love</strong><small> ...from your heart</small>
       </h2>
+
     </div>
   </div>
 
   <!-- Hero footer: will stick at the bottom -->
     <div class="hero-foot">
-      <nav class="tabs ">
+      <nav class="tabs is-fullwidth">
         <div class="container">
           <ul>
-            <li class="is-active"><a href=" {{url(app()->getLocale())}}/gia-loose-diamonds">Diamonds</a>
+            <li class="is-active"><a href=" {{url(app()->getLocale())}}/gia-loose-diamonds">{{trans('frontEnd.Diamonds')}}</a>
             </li>
-            <li><a href=" {{url(app()->getLocale())}}/engagement-rings">Engagement Rings</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/wedding-rings">Wedding Rings</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/buying-procedure">Buying Procedure</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/education-diamond-grading">Education</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/customer-jewellries">Customer Jewellries</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/about-us'">About</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/engagement-rings">{{trans('frontEnd.Engagement Rings')}}</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/wedding-rings">{{trans('frontEnd.Wedding Rings')}}</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/buying-procedure">{{trans('frontEnd.Buying Procedure')}}</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/education-diamond-grading">{{trans('frontEnd.Education')}}</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/customer-jewellries">{{trans('frontEnd.Customer Moments')}}</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/about-us">{{trans('frontEnd.About')}}</a></li>
           </ul>
           <div class="tabs">
                 <ul>

@@ -105,6 +105,7 @@ const router = new VueRouter({
 
 		//diamonds
 		{path: 'gia-loose-diamonds/', component: DiamondViewer},
+		{path: 'gia-loose-diamonds/:id', component: DiamondShow},
 	
 		]},
 
@@ -118,6 +119,7 @@ const router = new VueRouter({
 		
 		//diamonds
 		{path: 'gia-loose-diamonds/', component: DiamondViewer},
+		{path: 'gia-loose-diamonds/:id', component: DiamondShow},
 	
 		]},
 
