@@ -176,8 +176,7 @@
     </div>
 
     <div class="navbar-end">
-      <router-link class="navbar-item is-hidden-desktop-only"  :to="'/en' + this.$route.fullPath.slice(3)" >EN
-      </router-link>
+     
       <!-- <a href="https://github.com/jgthms/bulma" target="_blank">
         <span class="icon" style="color: #333;">
           <i class="fa fa-lg fa-github"></i>
@@ -196,9 +195,9 @@
         <hr class="dropdown-divider">
         <div id="moreDropdown" class="navbar-dropdown is-boxed">
          
-             <router-link class="navbar-item " :to="'/en' + this.$route.fullPath.slice(3)" >EN</router-link>
-            <router-link class="navbar-item " :to="'/hk' + this.$route.fullPath.slice(3)" >HK</router-link>
-              <router-link class="navbar-item " :to="'/cn' + this.$route.fullPath.slice(3)" >CN</router-link>
+             <router-link class="navbar-item " :to="'/en' + this.$route.fullPath.slice(3)" ><img src="/images/langs/en.png" width="20" height="10">EN</router-link>
+            <router-link class="navbar-item " :to="'/hk' + this.$route.fullPath.slice(3)" ><img src="/images/langs/hk.png" width="20" height="10">HK</router-link>
+              <router-link class="navbar-item " :to="'/cn' + this.$route.fullPath.slice(3)" ><img src="/images/langs/china.png" width="20" height="10">CN</router-link>
         </div>
       </div>
 
@@ -246,7 +245,7 @@
       <nav class="tabs ">
         <div class="container">
           <ul>
-            <li class="is-active"><a :href="this.$route.path.slice(0,3) + '/gia-loose-diamonds'">Diamonds</a>
+            <li class="is-active"><a :href=" this.$route.path.slice(0,3) + '/gia-loose-diamonds'">Diamonds</a>
             </li>
             <li><a :href="this.$route.fullPath.slice(0,3) + '/engagement-rings'">Engagement Rings</a></li>
             <li><a :href="this.$route.fullPath.slice(0,3) + '/wedding-rings'">Wedding Rings</a></li>
@@ -275,6 +274,11 @@
 <script type="text/javascript" src="{{mix('js/app.js')}}"></script> 
 
 <script type="text/javascript">
+
+
+
+
+
   document.addEventListener('DOMContentLoaded', function () {
 
   // Get all "navbar-burger" elements

@@ -289,7 +289,7 @@
 			return {
 				source:'/api/diamonds',
 				fetchData: {
-					shape: ['rd','ps','em','pr','mq','cu','ac','ov','ht','ra'],
+					shape: ['RD','PS','EM','PR','MQ','CU','AC','OV','HT','RA'],
 					 color: ['d','e','f','g','h','i','j'],
 					 clarity: ['fl','if','vvs1', 'vvs2', 'vs1', 'vs2','si1','si2','i1'],
 					 cut: ['ex','vg','gd','fr','na'],
@@ -314,16 +314,16 @@
 					search_input: '',
 					search_conditions:{
 						shape: [
-						{ description: 'rd', clicked: false , display: 'Round'},
-						{ description: 'ps', clicked: false , display: 'Pear'},
-						{ description: 'em', clicked: false , display: 'Emerald'},
-						{ description: 'pr', clicked: false , display: 'Princess'},
-						{ description: 'mq', clicked: false , display: 'Marquise'},
-						{ description: 'cu', clicked: false , display: 'Cushion'},
-						{ description: 'ac', clicked: false , display: 'Asscher'},
-						{ description: 'ov', clicked: false , display: 'Oval'},
-						{ description: 'ht', clicked: false , display: 'Heart'},
-						{ description: 'ra', clicked: false , display: 'Radiant'},
+						{ description: 'RD', clicked: false , display: 'Round'},
+						{ description: 'PS', clicked: false , display: 'Pear'},
+						{ description: 'EM', clicked: false , display: 'Emerald'},
+						{ description: 'PR', clicked: false , display: 'Princess'},
+						{ description: 'MQ', clicked: false , display: 'Marquise'},
+						{ description: 'CU', clicked: false , display: 'Cushion'},
+						{ description: 'AC', clicked: false , display: 'Asscher'},
+						{ description: 'OV', clicked: false , display: 'Oval'},
+						{ description: 'HT', clicked: false , display: 'Heart'},
+						{ description: 'RA', clicked: false , display: 'Radiant'},
 						],
 						color: [
 						{ description: 'D', clicked: false , display: 'D'},
