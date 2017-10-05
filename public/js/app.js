@@ -18549,29 +18549,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -19366,9 +19343,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           return val
         });
         _vm.model.per_page = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-      }, function($event) {
-        _vm.fetchIndexData()
-      }]
+      }, _vm.fetchIndexData]
     }
   }, [_c('option', [_vm._v("10")]), _vm._v(" "), _c('option', [_vm._v("25")]), _vm._v(" "), _c('option', [_vm._v("50")])])])])]), _vm._v(" "), _c('a', {
     staticClass: "pagination-next",

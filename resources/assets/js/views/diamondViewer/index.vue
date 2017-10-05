@@ -239,32 +239,9 @@
 
 						</tr>
 						
-						<!-- <tr v-for="row in model.data" v-if="opened.includes(row.id)">
-				        <td colspan="12">ON!</td>
-				     	</tr> -->
 
 					</tbody>
-				
-			<!--<div class="dv-footer">
-				<div class="dv-footer-item">
-					<span>Displaying {{ model.from }}  - {{ model.to }} of {{ model.total }} rows</span>
-				</div>
-				<div class="dv-footer-item">
-					<span>Rows per page</span>
-					<input type="text" 
-					v-model="query.per_page" 
-					class="dv-footer-input"
-					 @keyup.enter="fetchIndexData()">
-				</div>
-				<div class="dv-footer-sub">
-					<button class="dv-footer-btn"	 @click="prev()">&laquo;</button>
-					<input type="text" 
-					v-model="query.page" 
-					class="dv-footer-input"
-					 @keyup.enter="fetchIndexData()">
-					<button class="dv-footer-btn" @click="next()">&raquo;</button>
-				</div>
-			</div> -->
+			
 
 		</table>
 		</div>
@@ -275,7 +252,7 @@
  			 <div class="control">
  			 	<label>Per Page</label> 
 			  	<div class="select is-primary">
-					<select v-model="model.per_page" @change="fetchIndexData()">
+					<select v-model="model.per_page" @change="fetchIndexData">
 						<option>10</option>
 						<option>25</option>
 						<option>50</option>
