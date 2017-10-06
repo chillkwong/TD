@@ -6,16 +6,22 @@
     <a class="navbar-item" href="./">
       <img src="/images/company/logo_PNG_sq_60x60_1.png" alt="Bulma: a modern CSS framework based on Flexbox" width="35" height="70">
     </a>
-
-    <router-link class="navbar-item is-hidden-desktop"  :to="'/en' + this.$route.fullPath.slice(3)" >
+    
+      <a class="navbar-item is-hidden-desktop" :href="'/en' + this.$route.fullPath.slice(3)" >
+      <img src="/images/langs/en.png" width="20" height="10"></a>
+      <a class="navbar-item is-hidden-desktop" :href="'/hk' + this.$route.fullPath.slice(3)" >
+      <img src="/images/langs/hk.png" width="20" height="10"></a>
+      <a class="navbar-item is-hidden-desktop" :href="'/cn' + this.$route.fullPath.slice(3)" >
+      <img src="/images/langs/china.png" width="20" height="10"></a>
+    <!-- <router-link class="navbar-item is-hidden-desktop"  :to="'/en' + this.$route.fullPath.slice(3)" >
       <img src="/images/langs/en.png" width="20" height="10">
-      </router-link>
-      <router-link class="navbar-item is-hidden-desktop"  :to="'/hk' + this.$route.fullPath.slice(3)" >
+      </router-link> -->
+      <!-- <router-link class="navbar-item is-hidden-desktop"  :to="'/hk' + this.$route.fullPath.slice(3)" >
       <img src="/images/langs/hk.png" width="20" height="10">
       </router-link>
       <router-link class="navbar-item is-hidden-desktop"  :to="'/cn' + this.$route.fullPath.slice(3)" >
       <img src="/images/langs/china.png" width="20" height="10">
-      </router-link>
+      </router-link> -->
 
     <!-- <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
       <span class="icon" style="color: #333;">
@@ -38,9 +44,10 @@
 
   <div id="navMenuTransparentExample" class="navbar-menu">
     <div class="navbar-start">
+      
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}">
-          Diamond
+          {{trans('frontEnd.Diamonds')}}
         </a>
         <div class="navbar-dropdown is-boxed">
           <a class="navbar-item " href="/documentation/overview/start/">
@@ -81,6 +88,100 @@
           </div>
         </div>
       </div>
+
+
+      
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}">
+          {{trans('frontEnd.Engagement Rings')}}
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item " href="/documentation/overview/start/">
+            Loose Diamond
+          </a>
+          <a class="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
+            Modifiers
+          </a>
+          <a class="navbar-item " href="http://bulma.io/documentation/columns/basics/">
+            Columns
+          </a>
+          <a class="navbar-item " href="http://bulma.io/documentation/layout/container/">
+            Layout
+          </a>
+          <a class="navbar-item " href="http://bulma.io/documentation/form/general/">
+            Form
+          </a>
+          <a class="navbar-item " href="http://bulma.io/documentation/elements/box/">
+            Elements
+          </a>
+          
+            <a class="navbar-item is-active" href="http://bulma.io/documentation/components/breadcrumb/">
+              Components
+            </a>
+          
+          <hr class="navbar-divider">
+          <div class="navbar-item">
+            <div>
+              <p class="is-size-6-desktop">
+                <strong class="has-text-info">0.5.2</strong>
+              </p>
+              
+                <small>
+                  <a class="bd-view-all-versions" href="/versions">View all versions</a>
+                </small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}">
+          {{trans('frontEnd.Wedding Rings')}}
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item " href="/documentation/overview/start/">
+            Loose Diamond
+          </a>
+          <a class="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
+            Modifiers
+          </a>
+          <a class="navbar-item " href="http://bulma.io/documentation/columns/basics/">
+            Columns
+          </a>
+          <a class="navbar-item " href="http://bulma.io/documentation/layout/container/">
+            Layout
+          </a>
+          <a class="navbar-item " href="http://bulma.io/documentation/form/general/">
+            Form
+          </a>
+          <a class="navbar-item " href="http://bulma.io/documentation/elements/box/">
+            Elements
+          </a>
+          
+            <a class="navbar-item is-active" href="http://bulma.io/documentation/components/breadcrumb/">
+              Components
+            </a>
+          
+          <hr class="navbar-divider">
+          <div class="navbar-item">
+            <div>
+              <p class="is-size-6-desktop">
+                <strong class="has-text-info">0.5.2</strong>
+              </p>
+              
+                <small>
+                  <a class="bd-view-all-versions" href="/versions">View all versions</a>
+                </small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link " href="http://bulma.io/blog/">
           Blog
@@ -190,14 +291,17 @@
 
       <div class="navbar-item has-dropdown is-hoverable">
         <div class="navbar-link">
-          Language {{app()->getLocale(session('locale'))}}
+          Language {{trans('frontEnd.' . strToUpper(app()->getLocale(session('locale')))) }}
         </div>
         <hr class="dropdown-divider">
         <div id="moreDropdown" class="navbar-dropdown is-boxed">
-           
-             <router-link @click="setLocale('en')" class="navbar-item " :to="'/en' + this.$route.fullPath.slice(3)" ><img src="/images/langs/en.png" width="20" height="10">EN</router-link>
-            <router-link @click="setLocale('hk')" class="navbar-item " :to="'/hk' + this.$route.fullPath.slice(3)" ><img src="/images/langs/hk.png" width="20" height="10">HK</router-link>
-              <router-link class="navbar-item " :to="'/cn' + this.$route.fullPath.slice(3)" ><img src="/images/langs/china.png" width="20" height="10">CN</router-link>
+           <a class="navbar-item " :href="'/en' + this.$route.fullPath.slice(3)"><img src="/images/langs/en.png" width="20" height="10">{{trans('frontEnd.EN')}}</a>
+           <a class="navbar-item " :href="'/hk' + this.$route.fullPath.slice(3)"><img src="/images/langs/hk.png" width="20" height="10">{{trans('frontEnd.HK')}}</a>
+           <a class="navbar-item " :href="'/cn' + this.$route.fullPath.slice(3)"><img src="/images/langs/china.png" width="20" height="10">{{trans('frontEnd.CN')}}</a>
+
+            <!--  <router-link  class="navbar-item " :to="'/en' + this.$route.fullPath.slice(3)" ><img src="/images/langs/en.png" width="20" height="10">EN</router-link>
+            <router-link  class="navbar-item " :to="'/hk' + this.$route.fullPath.slice(3)" ><img src="/images/langs/hk.png" width="20" height="10">HK</router-link>
+              <router-link class="navbar-item " :to="'/cn' + this.$route.fullPath.slice(3)" ><img src="/images/langs/china.png" width="20" height="10">CN</router-link> -->
         </div>
       </div>
 

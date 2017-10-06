@@ -20,4 +20,14 @@ class DiamondController extends Controller
     		'columns' => $columns,
     		]);
   }
+
+  public function show($id)
+    {
+      $diamond  = Diamond::findOrFail($id);
+
+      return response()
+        ->json([
+          'diamond' =>$diamond,
+          ]);
+    }
 }

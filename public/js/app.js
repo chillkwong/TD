@@ -11621,22 +11621,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('router-view', {
-    staticClass: "view one",
-    attrs: {
-      "name": "header",
-      "images": _vm.images
-    }
-  }), _vm._v(" "), _c('router-view', {
     staticClass: "view two",
     attrs: {
       "name": "breadcrumb"
     }
-  }), _vm._v(" "), _c('router-view'), _vm._v(" "), _c('router-view', {
-    staticClass: "view three",
-    attrs: {
-      "name": "footer"
-    }
-  })], 1)
+  }), _vm._v(" "), _c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -18483,6 +18472,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -18509,7 +18502,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			route: this.$route,
 			opened: [],
 			model: {},
-			columns: ['shape', 'price', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
+			columns: ['shape', 'image', 'price', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
 			query: {
 				page: 1,
 				column: 'price',
@@ -18553,6 +18546,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	methods: {
+		clickedRow: function clickedRow(row, index) {
+			// row.clicked = true
+			this.$router.push(this.$route.path + '/' + row.id);
+		},
 		toggle: function toggle(id) {
 			var index = this.model.data.indexOf(id);
 			if (index > -1) {
@@ -19236,7 +19233,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('tr', {
       on: {
         "click": function($event) {
-          _vm.$router.push(_vm.$route.path + '/' + row.id)
+          _vm.clickedRow(row, index)
         }
       }
     }, [_c('td', [_c('img', {
@@ -19244,7 +19241,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "src": '/images/diamond_shapes/' + row.shape + '.png',
         "width": "20"
       }
-    })]), _vm._v(" "), _c('td', [_vm._v(" $" + _vm._s(row.price))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.weight))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.color))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.clarity))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.cut))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.polish))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.symmetry))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.fluroscence))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.certificate))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.lab))])])
+    })]), _vm._v(" "), _c('td', [(row.imageLink) ? _c('div', [_c('i', {
+      staticClass: "fa fa-picture-o",
+      attrs: {
+        "aria-hidden": "true"
+      }
+    })]) : _c('div')]), _vm._v(" "), _c('td', [_vm._v(" $" + _vm._s(row.price))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.weight))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.color))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.clarity))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.cut))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.polish))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.symmetry))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.fluroscence))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.certificate))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.lab))])])
   }))])]), _vm._v(" "), _c('nav', {
     staticClass: "pagination is-centered",
     attrs: {
@@ -19266,8 +19268,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.model.per_page),
-      expression: "model.per_page"
+      value: (_vm.query.per_page),
+      expression: "query.per_page"
     }],
     on: {
       "change": [function($event) {
@@ -19277,7 +19279,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           var val = "_value" in o ? o._value : o.value;
           return val
         });
-        _vm.model.per_page = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+        _vm.query.per_page = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
       }, _vm.fetchIndexData]
     }
   }, [_c('option', [_vm._v("10")]), _vm._v(" "), _c('option', [_vm._v("25")]), _vm._v(" "), _c('option', [_vm._v("50")])])])])]), _vm._v(" "), _c('a', {
@@ -19457,13 +19459,18 @@ if (false) {
 /* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(155)
+}
 var Component = __webpack_require__(0)(
   /* script */
-  null,
+  __webpack_require__(153),
   /* template */
-  null,
+  __webpack_require__(154),
   /* styles */
-  null,
+  injectStyle,
   /* scopeId */
   null,
   /* moduleIdentifier (server only) */
@@ -19471,8 +19478,523 @@ var Component = __webpack_require__(0)(
 )
 Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/frontEnd/diamondViewer/show.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] show.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4aed16e6", Component.options)
+  } else {
+    hotAPI.reload("data-v-4aed16e6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
 
 module.exports = Component.exports
+
+
+/***/ }),
+/* 153 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(2);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+// import Auth from '../../store/auth'
+
+// import Flash from '../../helpers/flash'
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			// auth: Auth.state,
+			isRemoving: false,
+			diamond: '',
+			post: {
+				invoice: {},
+				content: []
+			},
+			invoice: ''
+		};
+	},
+
+	watch: {
+		'$route': 'fetchData'
+	},
+	beforeMount: function beforeMount() {
+		this.fetchData();
+	},
+
+	methods: {
+		fetchData: function fetchData() {
+			var _this = this;
+
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/diamonds/' + this.$route.params.id).then(function (res) {
+				_this.diamond = res.data.diamond;
+			});
+		}
+	}
+});
+
+/***/ }),
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "level"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "tile box"
+  }, [_c('div', {
+    staticClass: "tile notification is-primary"
+  }, [_c('p', {
+    staticClass: "title"
+  }, [_vm._v(_vm._s(_vm.diamond.weight) + " carat " + _vm._s(_vm.diamond.shape) + " diamond")])])]), _vm._v(" "), _c('div', {
+    staticClass: "tile is-ancestor "
+  }, [_c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('div', {
+    staticClass: "tile is-child box"
+  }, [_c('a', {
+    attrs: {
+      "href": ("https://www.gia.edu/report-check?reportno=" + (_vm.diamond.certificate))
+    }
+  }, [_c('figure', {
+    staticClass: "image"
+  }, [('https://v360.in/DiamondView.aspx?d=S62554&cid=Sanghvi') ? _c('div', [_c('iframe', {
+    attrs: {
+      "src": 'https://v360.in/DiamondView.aspx?d=S62554&cid=Sanghvi',
+      "width": "100%",
+      "height": "500"
+    }
+  })]) : _c('div', [_c('img', {
+    attrs: {
+      "src": "/images/diamond_show/RoundDiamonds_sample.png",
+      "width": "100%",
+      "height": "500"
+    }
+  })])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "tile is-parent is-5"
+  }, [_c('div', {
+    staticClass: "tile is-child box"
+  }, [_c('div', {
+    staticClass: "tile is-child"
+  }, [_c('article', [_c('center', [_c('button', {
+    staticClass: "button is-info"
+  }, [_vm._v("Appointment")])]), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("\n\t\t\t\t\tFor more detailed information, can reach GIA website query：\n\t\t\t\t\t")]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": ("https://www.gia.edu/report-check?reportno=" + (_vm.diamond.certificate))
+    }
+  }, [_c('center', [_vm._v("GIA Certificate")]), _vm._v(" "), _vm._m(0)], 1)], 1)]), _vm._v(" "), _c('article', [_c('table', {
+    staticClass: "table is-striped is-fullwidth"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("Diamond Info(" + _vm._s(_vm.diamond.shape) + ")")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Carat Weight")]), _c('td', [_vm._v(_vm._s(_vm.diamond.weight))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Color Grade")]), _c('td', [_vm._v(_vm._s(_vm.diamond.color))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Clarity Grade")]), _c('td', [_vm._v(_vm._s(_vm.diamond.clarity))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Cut Grade")]), _c('td', [_vm._v(_vm._s(_vm.diamond.cut))])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Polish")]), _c('td', [_vm._v(_vm._s(_vm.diamond.polish))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Symmetry")]), _c('td', [_vm._v(_vm._s(_vm.diamond.symmetry))])])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Fluorescence")]), _c('td', [_vm._v(_vm._s(_vm.diamond.fluorescence))])])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('tbody', [_c('a', {
+    attrs: {
+      "href": ("https://www.gia.edu/report-check?reportno=" + (_vm.diamond.certificate))
+    }
+  }, [_c('tr', [_c('td', [_vm._v("Certificate")]), _c('td', [_vm._v(_vm._s(_vm.diamond.certificate))])])])])])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "cut-bg"
+  }, [_c('div', {
+    staticClass: "caption"
+  }, [_c('span', {
+    staticClass: "border"
+  }, [_vm._v("Cut Grade: " + _vm._s(_vm.diamond.cut))]), _vm._v(" "), _c('hr'), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('span', {
+    staticClass: "cut-text"
+  }, [_vm._v("\n\t\t\t\tA cut grade is the measure of a diamond's light performance. Cut with proper proportions, light is returned out of the top of the diamond. If it is cut too shallow, light leaks out of the bottom; too deep and it escapes out of the side.\n\t  \t\t")])])]), _vm._v(" "), _c('div', {
+    staticClass: "tile is-ancestor "
+  }, [_c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('div', {
+    staticClass: "tile is-child box"
+  }, [_c('article', [_c('div', {
+    staticClass: "columns"
+  }, [_c('div', {
+    staticClass: "column is-6"
+  }, [_c('p1', {
+    staticClass: "title is-5"
+  }, [_c('center', [_c('p1', {
+    staticClass: "title is-5"
+  }, [_vm._v("\n\t\t\t  \t\t\t\t\t\tDIAMOND SIZE: " + _vm._s(_vm.diamond.weight) + " Carat\n\t\t\t  \t\t\t\t\t")]), _vm._v(" "), _c('br')], 1)], 1)], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "columns"
+  }, [_c('div', {
+    staticClass: "column is-6"
+  }, [_c('center', [_c('p1', {
+    staticClass: "subtitle is-6"
+  }, [_vm._v("\n\t\t  \t\t\t\t\t\tThe international unit of weight used for measuring diamonds and gemstones, 1 carat is equal to 200 milligrams, or 0.2 grams. A specific measurement of a diamond's weight, carat weight alone may not accurately represent a diamond's visual size.\n\t\t  \t\t\t\t\t")])], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "column is-6"
+  }, [_c('center', [_c('p1', {
+    staticClass: "subtitle is-6"
+  }, [_vm._v("\n\t\t  \t\t\t\t\t\tWe recommend considering carat weight along with two other influential characteristics: the overall dimensions and the cut grade of the diamond.\n\t\t  \t\t\t\t\t")])], 1), _vm._v(" "), _c('center', [_c('a', [_vm._v("\n\t\t  \t\t\t\t\t\tLearn More\n\t\t  \t\t\t\t\t")])])], 1), _vm._v(" "), _c('br')]), _vm._v(" "), _c('img', {
+    attrs: {
+      "src": "/images/diamond_show/diamond_weight.jpg"
+    }
+  })]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('article', [_c('div', {
+    staticClass: "columns"
+  }, [_c('div', {
+    staticClass: "column is-6"
+  }, [_c('p1', {
+    staticClass: "title is-5"
+  }, [_c('center', [_c('p1', {
+    staticClass: "title is-5"
+  }, [_vm._v("\n\t\t\t  \t\t\t\t\t\tDiamond Color: " + _vm._s(_vm.diamond.color) + " \n\t\t\t  \t\t\t\t\t")]), _vm._v(" "), _c('br')], 1)], 1)], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "columns"
+  }, [_c('div', {
+    staticClass: "column is-6"
+  }, [_c('center', [_c('p1', {
+    staticClass: "subtitle is-6"
+  }, [_vm._v("\n\t\t  \t\t\t\t\t\tThe highest \"near-colourless\" grade. Colour may be detectable when compared to much higher \"colourless\" grades. Excellent value.\n\t\t  \t\t\t\t\t\t"), _c('center', [_vm._v("\n\t\t  \t\t\t\t\t\tWant to learn even more about colour?\n\t\t  \t\t\t\t\t\t"), _c('a', [_vm._v("\n\t\t  \t\t\t\t\t\tLearn More\n\t\t\t  \t\t\t\t\t")])])], 1)], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "column is-6"
+  }, [_c('center', [_c('p1', {
+    staticClass: "subtitle is-6"
+  }, [_c('li', [_vm._v("For the purist, look for a colourless diamond with a grade of D-F for a diamond with no discernible colour.\n\t\t  \t\t\t\t\t\t\t")])]), _vm._v(" "), _c('br'), _vm._v(" "), _c('p1', {
+    staticClass: "subtitle is-6"
+  }, [_c('li', [_vm._v("For an excellent value in a diamond with little or no noticeable colour to the unaided eye, look for a near-colourless grade of G-I\n\t\t  \t\t\t\t\t\t\t")])])], 1)], 1), _vm._v(" "), _c('br')]), _vm._v(" "), _c('img', {
+    attrs: {
+      "src": "/images/diamond_show/diamond_color.jpg"
+    }
+  })])])])]), _vm._v(" "), _c('div', {
+    staticClass: "clarity-bg"
+  }, [_c('div', {
+    staticClass: "caption"
+  }, [_c('span', {
+    staticClass: "border"
+  }, [_vm._v("Clarity: " + _vm._s(_vm.diamond.clarity))]), _vm._v(" "), _c('hr'), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7), _vm._v(" "), _vm._m(8)])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('figure', {
+    staticClass: "image"
+  }, [_c('img', {
+    attrs: {
+      "src": "https://www.gia.edu/onlineopinionV5/GIA-Logo.png"
+    }
+  })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', [_c('tr', [_c('th', [_vm._v("Finish")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', [_c('tr', [_c('th', [_vm._v("Fluorescence")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', [_c('tr', [_c('th', [_vm._v("Certificate")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', {
+    staticClass: "cut-text"
+  }, [_vm._v("Highest cut grade. Its proportions produce a beautiful balance of fire and sparkle in a diamond.\n\t  \t\t"), _c('br')])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', {
+    staticClass: "cut-text"
+  }, [_vm._v("Want to learn even more about cut? Learn More"), _c('br')])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', {
+    staticClass: "cut-text"
+  }, [_vm._v("VS1-VS2: Very slightly included. Minor inclusions ranging from difficult (VS1) to somewhat easy (VS2) to see at 10x magnification.\n\t  \t\t"), _c('br')])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', {
+    staticClass: "cut-text"
+  }, [_vm._v("\n\t  \t\t\tWant to learn even more about clarity?\n\t  \t\t\t"), _c('br'), _vm._v(" "), _c('a', [_vm._v("\n\t\t\t\t\tLearn More\n\t\t\t\t")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', {
+    staticClass: "cut-text"
+  }, [_c('li', [_vm._v("Clarity refers to a diamond's relative absence of tiny, natural characteristics known as blemishes and inclusions.\n\t\t\t\t")]), _vm._v(" "), _c('li', [_vm._v("\n\t\t\t\tMany of these characteristics are microscopic and do not affect a diamond's beauty in any discernible way.")])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-4aed16e6", module.exports)
+  }
+}
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(156);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(14)("b01d8dfe", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4aed16e6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4aed16e6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(13)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\nbody, html {\n  height: 100%;\n  margin: 0;\n  color: #777;\n}\n.cut-bg, .clarity-bg, .bgimg-3 {\n  position: relative;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.cut-bg {\n    /* The image used */\n    background-image: url(\"/images/diamond_show/diamond_cut.jpg\");\n\n    /* Full height */\n    height: 100%;\n}\n.clarity-bg {\n    /* The image used */\n    background-image: url(\"/images/diamond_show/diamond_clarity.jpg\");\n\n    /* Full height */\n    height: 100%;\n}\n.caption {\n  left: 0;\n  top: 50%;\n  width: 100%;\n  text-align: left;\n  color: #000;\n  padding: 80px;\n}\n.caption span.border {\n  color: #fff;\n  font-size: 25px;\n  border: 40px;\n}\n.caption span.cut-text {\n  font-weight: bold;\n  width: 80px;\n  text-align: left;\n  color: #fff;\n  font-size: 15px;\n  border: 40px;\n}\n", ""]);
+
+// exports
 
 
 /***/ })

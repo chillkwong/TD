@@ -11621,22 +11621,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('router-view', {
-    staticClass: "view one",
-    attrs: {
-      "name": "header",
-      "images": _vm.images
-    }
-  }), _vm._v(" "), _c('router-view', {
     staticClass: "view two",
     attrs: {
       "name": "breadcrumb"
     }
-  }), _vm._v(" "), _c('router-view'), _vm._v(" "), _c('router-view', {
-    staticClass: "view three",
-    attrs: {
-      "name": "footer"
-    }
-  })], 1)
+  }), _vm._v(" "), _c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

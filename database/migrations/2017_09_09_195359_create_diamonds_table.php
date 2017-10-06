@@ -29,7 +29,7 @@ class CreateDiamondsTable extends Migration
             $table->string('stock');
             $table->integer('supplier_id')->unsigned()->nullable();
             $table->string('location')->default('hk');
-            $table->text('iamgeLink')->nullable();
+            $table->text('imageLink')->nullable();
             $table->timestamps();
         });
     }

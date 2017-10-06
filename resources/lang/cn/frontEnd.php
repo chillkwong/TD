@@ -1,6 +1,9 @@
 <?php
 
 return [
+	'EN' => 'EN',
+	'HK' => '繁體',
+	'CN' => '简体',
 	'Diamonds' => '钻石',
 	'Engagement Rings' => '求婚戒指',
 	'Wedding Rings' => '结婚戒指',

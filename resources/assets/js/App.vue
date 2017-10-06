@@ -1,9 +1,9 @@
 <template>
 	<div>
-	<router-view class="view one" name="header" :images="images"></router-view>
+	<!-- <router-view class="view one" name="header" :images="images"></router-view> -->
 	<router-view class="view two" name="breadcrumb"></router-view>
 	<router-view></router-view>
-	<router-view class="view three" name="footer"></router-view>
+	<!-- <router-view class="view three" name="footer"></router-view> -->
 	</div>
 </template>
 

@@ -224,8 +224,12 @@
 
 					<tbody>
 						
-						<tr v-for="(row, index) in model.data" @click="$router.push($route.path + '/' +row.id)">
+						<tr v-for="(row, index) in model.data" @click="clickedRow(row,index)">
 							<td ><img :src="'/images/diamond_shapes/' +row.shape+ '.png'" width="20"></td>
+							<td > 
+								<div v-if="row.imageLink"><i class="fa fa-picture-o" aria-hidden="true"></i></div>
+								<div v-else></div>
+							</td>
 							<td > ${{ row.price }}</td>
 							<td > {{ row.weight }}</td>
 							<td > {{ row.color }}</td>
@@ -252,7 +256,7 @@
  			 <div class="control">
  			 	<label>Per Page</label> 
 			  	<div class="select is-primary">
-					<select v-model="model.per_page" @change="fetchIndexData">
+					<select v-model="query.per_page" @change="fetchIndexData">
 						<option>10</option>
 						<option>25</option>
 						<option>50</option>
@@ -304,7 +308,7 @@
 				route: this.$route,
 				opened: [],
 				model: {},
-				columns:['shape','price','weight','color','clarity','cut','polish','symmetry','fluroscence','certificate','lab'],
+				columns:['shape','image','price','weight','color','clarity','cut','polish','symmetry','fluroscence','certificate','lab'],
 				query:{
 					page:1,
 					column: 'price',
@@ -394,6 +398,10 @@
 			}
 		},
 		methods:{
+			clickedRow(row,index){
+				// row.clicked = true
+				this.$router.push(this.$route.path + '/' +row.id)
+			},
 			toggle(id) {
 		    	const index = this.model.data.indexOf(id);
 		      if (index > -1) {
