@@ -224,7 +224,7 @@
 
 					<tbody>
 						
-						<tr v-for="(row, index) in model.data" @click="clickedRow(row,index)">
+						<tr v-for="(row, index) in model.data" @click="clickRow(row,index)">
 							<td ><img :src="'/images/diamond_shapes/' +row.shape+ '.png'" width="20"></td>
 							<td > 
 								<div v-if="row.imageLink"><i class="fa fa-picture-o" aria-hidden="true"></i></div>
@@ -305,10 +305,10 @@
 				},
 				showModal:false,
 				showAdvance:false,
-				route: this.$route,
 				opened: [],
 				model: {},
-				columns:['shape','image','price','weight','color','clarity','cut','polish','symmetry','fluroscence','certificate','lab'],
+				clickedRows:[],
+				columns:['shape','imageLink','price','weight','color','clarity','cut','polish','symmetry','fluroscence','certificate','lab'],
 				query:{
 					page:1,
 					column: 'price',
@@ -398,8 +398,8 @@
 			}
 		},
 		methods:{
-			clickedRow(row,index){
-				// row.clicked = true
+			clickRow(row,index){
+				this.clickedRows.push(index)
 				this.$router.push(this.$route.path + '/' +row.id)
 			},
 			toggle(id) {

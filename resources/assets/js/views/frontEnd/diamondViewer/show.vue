@@ -17,8 +17,8 @@
   					<a :href="`https://www.gia.edu/report-check?reportno=${diamond.certificate}`">
 	  					
 	  					<figure class="image">
-	  					<div v-if="'https://v360.in/DiamondView.aspx?d=S62554&cid=Sanghvi'">
-	  						<iframe :src="'https://v360.in/DiamondView.aspx?d=S62554&cid=Sanghvi'" width="100%" height="500" ></iframe>
+	  					<div v-if="diamond.imageLink">
+	  						<iframe :src="diamond.imageLink" width="100%" height="500" ></iframe>
 	  					</div>
 	  					<div v-else>
 	  						<img src="/images/diamond_show/RoundDiamonds_sample.png" width="100%" height="500"></img>
@@ -34,7 +34,10 @@
 
   				<div class="tile is-child">
   				<article>
-  					<center><button class="button is-info">Appointment</button></center>
+  					<center>
+  						<button class="button is-info" @click="appointmentState=!appointmentState">Appointment</button>
+  						<appointment v-model="diamond" :appointActive="appointmentState"></appointment>
+  					</center>
   					<br>
   					<p>
 					For more detailed information, can reach GIA website query：
@@ -130,13 +133,12 @@
   				<article>
   					<div class="columns">
   						<div class="column is-6">
-	  					<p1 class="title is-5">
-	  						<center><p1 class="title is-5">
+	  						<center>
+	  							<p1 class="title is-5 is-info">
 			  						DIAMOND SIZE: {{diamond.weight}} Carat
 			  					</p1>
 			  					<br>
 			  				</center>
-	  					</p1>
 	  					</div>
 	  				</div>
 
@@ -167,16 +169,18 @@
 
   			<hr>
 
+
   				<article>
   					<div class="columns">
   						<div class="column is-6">
-	  					<p1 class="title is-5">
-	  						<center><p1 class="title is-5">
+	  					
+	  						<center>
+	  							<p1 class="title is-5 is-primary">
 			  						Diamond Color: {{diamond.color}} 
 			  					</p1>
 			  					<br>
 			  				</center>
-	  					</p1>
+	  					
 	  					</div>
 	  				</div>
 
@@ -248,13 +252,16 @@
 <script type="text/javascript">
 	// import Auth from '../../store/auth'
 	import { get, del } from '../../../helpers/api'
+	import Appointment from '../../../components/appointment.vue'
 	// import Flash from '../../helpers/flash'
 
 	export default {
+		components: {Appointment},
 		data(){
 			return {
 				// auth: Auth.state,
 				isRemoving: false,
+				appointmentState: false,
 				diamond:'',
 				post: {
 					invoice: {},

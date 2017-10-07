@@ -11621,6 +11621,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('router-view', {
+    staticClass: "view one",
+    attrs: {
+      "name": "header",
+      "images": _vm.images
+    }
+  }), _vm._v(" "), _c('router-view', {
     staticClass: "view two",
     attrs: {
       "name": "breadcrumb"
@@ -18499,10 +18505,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			},
 			showModal: false,
 			showAdvance: false,
-			route: this.$route,
 			opened: [],
 			model: {},
-			columns: ['shape', 'image', 'price', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
+			clickedRows: [],
+			columns: ['shape', 'imageLink', 'price', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
 			query: {
 				page: 1,
 				column: 'price',
@@ -18546,8 +18552,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	methods: {
-		clickedRow: function clickedRow(row, index) {
-			// row.clicked = true
+		clickRow: function clickRow(row, index) {
+			this.clickedRows.push(index);
 			this.$router.push(this.$route.path + '/' + row.id);
 		},
 		toggle: function toggle(id) {
@@ -19233,7 +19239,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('tr', {
       on: {
         "click": function($event) {
-          _vm.clickedRow(row, index)
+          _vm.clickRow(row, index)
         }
       }
     }, [_c('td', [_c('img', {
@@ -19506,6 +19512,12 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__);
+//
+//
+//
+//
 //
 //
 //
@@ -19756,13 +19768,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 // import Auth from '../../store/auth'
 
+
 // import Flash from '../../helpers/flash'
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+	components: { Appointment: __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue___default.a },
 	data: function data() {
 		return {
 			// auth: Auth.state,
 			isRemoving: false,
+			appointmentState: false,
 			diamond: '',
 			post: {
 				invoice: {},
@@ -19817,9 +19832,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('figure', {
     staticClass: "image"
-  }, [('https://v360.in/DiamondView.aspx?d=S62554&cid=Sanghvi') ? _c('div', [_c('iframe', {
+  }, [(_vm.diamond.imageLink) ? _c('div', [_c('iframe', {
     attrs: {
-      "src": 'https://v360.in/DiamondView.aspx?d=S62554&cid=Sanghvi',
+      "src": _vm.diamond.imageLink,
       "width": "100%",
       "height": "500"
     }
@@ -19836,8 +19851,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "tile is-child"
   }, [_c('article', [_c('center', [_c('button', {
-    staticClass: "button is-info"
-  }, [_vm._v("Appointment")])]), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("\n\t\t\t\t\tFor more detailed information, can reach GIA website query：\n\t\t\t\t\t")]), _vm._v(" "), _c('a', {
+    staticClass: "button is-info",
+    on: {
+      "click": function($event) {
+        _vm.appointmentState = !_vm.appointmentState
+      }
+    }
+  }, [_vm._v("Appointment")]), _vm._v(" "), _c('appointment', {
+    attrs: {
+      "appointActive": _vm.appointmentState
+    },
+    model: {
+      value: (_vm.diamond),
+      callback: function($$v) {
+        _vm.diamond = $$v
+      },
+      expression: "diamond"
+    }
+  })], 1), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("\n\t\t\t\t\tFor more detailed information, can reach GIA website query：\n\t\t\t\t\t")]), _vm._v(" "), _c('a', {
     attrs: {
       "href": ("https://www.gia.edu/report-check?reportno=" + (_vm.diamond.certificate))
     }
@@ -19865,11 +19896,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "columns"
   }, [_c('div', {
     staticClass: "column is-6"
-  }, [_c('p1', {
-    staticClass: "title is-5"
   }, [_c('center', [_c('p1', {
-    staticClass: "title is-5"
-  }, [_vm._v("\n\t\t\t  \t\t\t\t\t\tDIAMOND SIZE: " + _vm._s(_vm.diamond.weight) + " Carat\n\t\t\t  \t\t\t\t\t")]), _vm._v(" "), _c('br')], 1)], 1)], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "title is-5 is-info"
+  }, [_vm._v("\n\t\t\t  \t\t\t\t\t\tDIAMOND SIZE: " + _vm._s(_vm.diamond.weight) + " Carat\n\t\t\t  \t\t\t\t\t")]), _vm._v(" "), _c('br')], 1)], 1)]), _vm._v(" "), _c('div', {
     staticClass: "columns"
   }, [_c('div', {
     staticClass: "column is-6"
@@ -19887,11 +19916,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "columns"
   }, [_c('div', {
     staticClass: "column is-6"
-  }, [_c('p1', {
-    staticClass: "title is-5"
   }, [_c('center', [_c('p1', {
-    staticClass: "title is-5"
-  }, [_vm._v("\n\t\t\t  \t\t\t\t\t\tDiamond Color: " + _vm._s(_vm.diamond.color) + " \n\t\t\t  \t\t\t\t\t")]), _vm._v(" "), _c('br')], 1)], 1)], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "title is-5 is-primary"
+  }, [_vm._v("\n\t\t\t  \t\t\t\t\t\tDiamond Color: " + _vm._s(_vm.diamond.color) + " \n\t\t\t  \t\t\t\t\t")]), _vm._v(" "), _c('br')], 1)], 1)]), _vm._v(" "), _c('div', {
     staticClass: "columns"
   }, [_c('div', {
     staticClass: "column is-6"
@@ -19996,6 +20023,135 @@ exports.push([module.i, "\nbody, html {\n  height: 100%;\n  margin: 0;\n  color:
 
 // exports
 
+
+/***/ }),
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(158),
+  /* template */
+  __webpack_require__(159),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/components/appointment.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] appointment.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-613626ab", Component.options)
+  } else {
+    hotAPI.reload("data-v-613626ab", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 158 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(2);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	props: {
+		value: {
+
+			default: null
+		},
+		appointActive: ''
+	}
+
+});
+
+/***/ }),
+/* 159 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "modal",
+    class: {
+      'is-active': _vm.appointActive
+    }
+  }, [_c('div', {
+    staticClass: "modal-background"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "modal-card"
+  }, [_vm._m(0), _vm._v(" "), _c('section', {
+    staticClass: "modal-card-body"
+  }), _vm._v(" "), _c('footer', {
+    staticClass: "modal-card-foot"
+  }, [_c('button', {
+    staticClass: "button is-success"
+  }, [_vm._v("Save changes")]), _vm._v(" "), _c('button', {
+    staticClass: "button",
+    on: {
+      "click": function($event) {
+        _vm.appointActive = !_vm.appointActive
+      }
+    }
+  }, [_vm._v("Cancel")])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('header', {
+    staticClass: "modal-card-head"
+  }, [_c('p', {
+    staticClass: "modal-card-title"
+  }, [_vm._v("Modal title")]), _vm._v(" "), _c('button', {
+    staticClass: "delete",
+    attrs: {
+      "aria-label": "close"
+    }
+  })])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-613626ab", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

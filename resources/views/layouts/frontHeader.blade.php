@@ -335,9 +335,11 @@
   <!-- Hero content: will be in the middle -->
   <div class="hero-body">
     <div class="container has-text-centered">
+      <a href="./">
       <h1 class="title">
         Ting Diamond
       </h1>
+      </a>
       <h2 class="subtitle">
         <strong>The Echo of Love</strong><small> ...from your heart</small>
       </h2>

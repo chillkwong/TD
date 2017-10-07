@@ -3,43 +3,46 @@
 	  	 <div class="columns">
 	        	<div class="column is-3">
 	        		<br>
-	        		<h1 class="subtitle is-6">鑽石價格</h1>
-	        		<a href="">圓形鑽石</a><br>
-	        		<a href="">花形切割鑽石</a><br>
-	        		<a href="">彩色鑽石</a><br>
-	        		<p >TING DIAMOND 精選GIA裸鑽，以批發價出售，務求做到物超所值。</p>
-	        		
+	        		<h1 class="subtitle is-6">DIAMOND PRICES</h1>
+	        		<a href="">Round cut diamond</a><br>
+	        		<a href="">Fancy Cut Diamond</a><br>
+	        		<a href="">Fancy Color Diamond</a><br>
+	        		<p >TING DIAMOND PROVIDES BRILLIANT GIA ，WHOLESALE PRICES，FOR THE BEST PRICE</p>
+
 	        	</div>
 	        	<div class="column is-3">
 	        		<br>
-	        		<h1 class="subtitle is-6">鑽石首飾</h1>
-	        		<a href="">求婚戒指 | 單鑽石款</a><br>
-	        		<a href="">求婚戒指 | 副鑽石款</a><br>
-	        		<a href="">求婚戒指 | 包邊鑽石款</a><br>
-	        		<a href="">結婚戒指 | 女士經典款</a><br>
-	        		<a href="">結婚戒指 | 男士經典款</a>
+	        		<h1 class="subtitle is-6">DIAMOND JEWELLRY</h1>
+	        		<a href="">Setting | solitaire ring</a><br>
+	        		<a href="">Setting | Side stone ring</a><br>
+	        		<a href="">Setting | Halo ring</a><br>
+	        		<a href="">Women | Classic rings</a><br>
+	        		<a href="">Men | Classic Rings</a>
 	        		
 	        	</div>
+
 	        	<div class="column is-3">
 	        		<br>
-	        		<h1 class="subtitle is-6">鑽石知識</h1>
-	        		<a href="">如何選擇"鑽石4Cs"？</a><br>
-	        		<a href="">什麼是"鑽石螢光反應"？</a><br>
-	        		<a href="">什麼是"鑽石對稱"？</a><br>
-	        		<a href="">什麼是"鑽石比例"？</a><br>
-	        		<a href="">彩鑽 | 彩色鑽石強度</a>
+	        		<h1 class="subtitle is-6">DIAMOND EDUCATION</h1>
+	        		<a href="">How to choose diamond 4Cs？</a><br>
+	        		<a href="">what is diamond fluorescence ?</a><br>
+	        		<a href="">what is diamond symmetry ?</a><br>
+	        		<a href="">what is diamond proportion ?</a><br>
+	        		<a href="">Fancy color intensity</a>
 	        		
 	        	</div>
+
 	        	<div class="column is-3">
 	        		<br>
-	        		<h1 class="subtitle is-6">關於TING DIAMOD</h1>
-	        		<a href="">關於我們</a><br>
-	        		<a href="">訂造求婚戒指</a><br>
-	        		<a href="">戒指鑲嵌 | 戒指刻字</a><br>
-	        		<a href="">GIA-report</a><br>
+	        		<h1 class="subtitle is-6">ABOUT TING DIAMOD</h1>
+	        		<a href="">About us</a><br>
+	        		<a href="">Custom make Engagement rings</a><br>
+	        		<a href="">Diamond inlay | Engrave</a><br>
+	        		<a href="">Customer Monents</a><br>
 	        		<img src="/images/GIA/GIA-Logo.jpg" width="100px" >
 		        		
 	        	</div>
+
 	        </div>
 	    <div class="content has-text-centered">
 

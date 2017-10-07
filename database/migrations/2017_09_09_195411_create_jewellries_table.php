@@ -23,8 +23,9 @@ class CreateJewellriesTable extends Migration
             $table->string('sideStone')->default(false);
             $table->string('cover')->nullable();
             $table->string('image1')->nullable();
-            $table->string('video')->nullable();            
+            $table->string('video')->nullable();
             $table->integer('unit_price');
+            $table->boolean('publish')->default(false);
             $table->timestamps();
         });
 
