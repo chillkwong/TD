@@ -175,7 +175,7 @@
 					})
 			},
 			save(){
-				
+					this.isProcessing = true
 					const form = toMulipartedForm(this.form)
 					post(this.storeURL, form)
 					.then((response)=>{
@@ -186,7 +186,7 @@
 					.catch(function(error){
 						Vue.set(this.$data, 'errors', error.response.data)
 					})
-					
+					this.isProcessing = false
 					
 			}
 				

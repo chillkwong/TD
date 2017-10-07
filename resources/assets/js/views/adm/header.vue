@@ -2,7 +2,7 @@
 <nav class="navbar">
   <div class="navbar-brand">
     <a class="navbar-item" href="/adm">
-      <img :src="images.company.logo" alt="Bulma: a modern CSS framework based on Flexbox" width="40" height="200">
+      <img src="/front_end/company/logo_PNG_sq_60x60_1.png" alt="Bulma: a modern CSS framework based on Flexbox" width="40" height="200">
     </a>
 
     <a class="navbar-item is-hidden-desktop" href="/adm" target="_blank">

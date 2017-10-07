@@ -14697,6 +14697,8 @@ document.addEventListener('DOMContentLoaded', function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('nav', {
     staticClass: "navbar"
   }, [_c('div', {
@@ -14708,14 +14710,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('img', {
     attrs: {
-      "src": _vm.images.company.logo,
+      "src": "/front_end/company/logo_PNG_sq_60x60_1.png",
       "alt": "Bulma: a modern CSS framework based on Flexbox",
       "width": "40",
       "height": "200"
     }
-  })]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)]), _vm._v(" "), _vm._m(3)])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('a', {
+  })]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item is-hidden-desktop",
     attrs: {
       "href": "/adm",
@@ -14728,9 +14728,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('i', {
     staticClass: "fa fa-github"
-  })])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('a', {
+  })])]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item is-hidden-desktop",
     attrs: {
       "href": "/adm",
@@ -14743,16 +14741,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('i', {
     staticClass: "fa fa-twitter"
-  })])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  })])]), _vm._v(" "), _c('div', {
     staticClass: "navbar-burger burger ",
     attrs: {
       "data-target": "navMenubd-example"
     }
-  }, [_c('span'), _vm._v(" "), _c('span'), _vm._v(" "), _c('span')])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }, [_c('span'), _vm._v(" "), _c('span'), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
     staticClass: "navbar-menu",
     attrs: {
       "id": "navMenubd-example"
@@ -15131,7 +15125,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "icon"
   }, [_c('i', {
     staticClass: "fa fa-download"
-  })]), _vm._v(" "), _c('span', [_vm._v("Download")])])])])])])])
+  })]), _vm._v(" "), _c('span', [_vm._v("Download")])])])])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
