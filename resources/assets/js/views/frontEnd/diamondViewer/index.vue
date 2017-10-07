@@ -11,7 +11,7 @@
 		    	<div class="tile is-parent">
 		    		<article class="tile is-child box " >
 		            	<div>Shape</div>
-		            	<button v-for="(value, index) in query.search_conditions.shape" class="button " :class=" {'is-info active' : query.search_conditions.shape[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shape[index].clicked,'shape', index)"><img :src="'/images/diamond_shapes/'+query.search_conditions.shape[index].description + '.png'" height="20" width="20"></button>
+		            	<button v-for="(value, index) in query.search_conditions.shape" class="button " :class=" {'is-info active' : query.search_conditions.shape[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shape[index].clicked,'shape', index)"><img :src="'/front_end/diamond_shapes/'+query.search_conditions.shape[index].description + '.png'" height="20" width="20"></button>
 					</article>
 		            	<article class="tile is-child box is-info" >
 
@@ -119,7 +119,7 @@
 		    	<div class="tile is-parent">
 		    		<article class="tile is-child box " >
 		            	<div>Shape</div>
-		            	<button v-for="(value, index) in query.search_conditions.shape" class="button " :class=" {'is-info active' : query.search_conditions.shape[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shape[index].clicked,'shape', index)"><img :src="'/images/diamond_shapes/'+query.search_conditions.shape[index].description + '.png'" height="20" width="20"></button>
+		            	<button v-for="(value, index) in query.search_conditions.shape" class="button " :class=" {'is-info active' : query.search_conditions.shape[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shape[index].clicked,'shape', index)"><img :src="'/front_end/diamond_shapes/'+query.search_conditions.shape[index].description + '.png'" height="20" width="20"></button>
 					</article>
 		            	<article class="tile is-child box is-info" >
 
@@ -225,7 +225,7 @@
 					<tbody>
 						
 						<tr v-for="(row, index) in model.data" @click="clickRow(row,index)">
-							<td ><img :src="'/images/diamond_shapes/' +row.shape+ '.png'" width="20"></td>
+							<td ><img :src="'/front_end/diamond_shapes/' +row.shape+ '.png'" width="20"></td>
 							<td > 
 								<div v-if="row.imageLink"><i class="fa fa-picture-o" aria-hidden="true"></i></div>
 								<div v-else></div>

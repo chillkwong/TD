@@ -176,7 +176,7 @@
 			},
 			save(){
 				
-					const form = toMulipartedForm(this.form, this.$route.meta.mode)
+					const form = toMulipartedForm(this.form)
 					post(this.storeURL, form)
 					.then((response)=>{
 						if(response.data.saved){

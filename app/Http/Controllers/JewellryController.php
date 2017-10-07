@@ -40,8 +40,8 @@ class JewellryController extends Controller
 
         $cover ='';
          if ($request->hasFile('cover')) {
-        $cover = $this->getFileName($request->cover);
-        $request->cover->move(base_path('public/images'), $cover);
+            $cover = $this->getFileName($request->cover);
+            $request->cover->move(base_path('public/images'), $cover);
         }
 
         $image1 = '';

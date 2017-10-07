@@ -39,7 +39,7 @@
 	        		<a href="">Custom make Engagement rings</a><br>
 	        		<a href="">Diamond inlay | Engrave</a><br>
 	        		<a href="">Customer Monents</a><br>
-	        		<img src="/images/GIA/GIA-Logo.jpg" width="100px" >
+	        		<img src="/front_end/GIA/GIA-Logo.jpg" width="100px" >
 		        		
 	        	</div>
 
@@ -63,10 +63,10 @@
 	      </p>
 
 	      <p>
-	      	<img src="/images/footer/logo_eps.jpg" width="40px" >
-	      	<img src="/images/footer/logo_mastercard.jpg" width="40px" >
-	      	<img src="/images/footer/logo_unionpay.jpg" width="40px" >
-	      	<img src="/images/footer/logo_visa.jpg" width="40px" >
+	      	<img src="/front_end/footer/logo_eps.jpg" width="40px" >
+	      	<img src="/front_end/footer/logo_mastercard.jpg" width="40px" >
+	      	<img src="/front_end/footer/logo_unionpay.jpg" width="40px" >
+	      	<img src="/front_end/footer/logo_visa.jpg" width="40px" >
 	      </p>
 
 	       <p>

@@ -17994,7 +17994,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "image"
   }, [_c('img', {
     attrs: {
-      "src": ("/images/" + (_vm.post.cover))
+      "src": ("/front_end/" + (_vm.post.cover))
     }
   })])])])])]), _vm._v(" "), _c('div', {
     staticClass: "tile box"
@@ -18032,7 +18032,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "image"
   }, [_c('img', {
     attrs: {
-      "src": ("/images/" + (_vm.post.image1))
+      "src": ("/front_end/" + (_vm.post.image1))
     }
   })])])])])]), _vm._v(" "), _c('div', {
     staticClass: "tile is-ancestor notification is-primary"
@@ -18042,7 +18042,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "tile is-child is-7"
   }, [_c('article', [_c('figure', [_c('img', {
     attrs: {
-      "src": ("/images/" + (_vm.post.image2))
+      "src": ("/front_end/" + (_vm.post.image2))
     }
   })])])]), _vm._v(" "), _vm._m(4)])]), _vm._v(" "), _c('div', {
     staticClass: "tile is-ancestor"
@@ -18058,7 +18058,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "image"
   }, [_c('img', {
     attrs: {
-      "src": ("/images/" + (_vm.invoice[0].jewellries[0].cover))
+      "src": ("/front_end/" + (_vm.invoice[0].jewellries[0].cover))
     }
   })])]), _vm._v(" "), _c('router-link', {
     attrs: {
@@ -18068,7 +18068,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "image"
   }, [_c('img', {
     attrs: {
-      "src": ("/images/" + (_vm.invoice[0].jewellries[0].image1))
+      "src": ("/front_end/" + (_vm.invoice[0].jewellries[0].image1))
     }
   })])])], 1)]), _vm._v(" "), _c('div', {
     staticClass: "tile is-parent"
@@ -18131,7 +18131,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "tile is-child"
   }, [_c('article', [_c('figure', [_c('img', {
     attrs: {
-      "src": "/images/diamond/GIA-Laser-Inscription-girdle.jpg"
+      "src": "/front_end/diamond/GIA-Laser-Inscription-girdle.jpg"
     }
   })]), _vm._v(" "), _c('p', {
     staticClass: "subtitle"
@@ -18673,7 +18673,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('img', {
       attrs: {
-        "src": '/images/diamond_shapes/' + _vm.query.search_conditions.shape[index].description + '.png',
+        "src": '/front_end/diamond_shapes/' + _vm.query.search_conditions.shape[index].description + '.png',
         "height": "20",
         "width": "20"
       }
@@ -18975,7 +18975,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('img', {
       attrs: {
-        "src": '/images/diamond_shapes/' + _vm.query.search_conditions.shape[index].description + '.png',
+        "src": '/front_end/diamond_shapes/' + _vm.query.search_conditions.shape[index].description + '.png',
         "height": "20",
         "width": "20"
       }
@@ -19244,7 +19244,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('td', [_c('img', {
       attrs: {
-        "src": '/images/diamond_shapes/' + row.shape + '.png',
+        "src": '/front_end/diamond_shapes/' + row.shape + '.png',
         "width": "20"
       }
     })]), _vm._v(" "), _c('td', [(row.imageLink) ? _c('div', [_c('i', {
@@ -19840,7 +19840,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]) : _c('div', [_c('img', {
     attrs: {
-      "src": "/images/diamond_show/RoundDiamonds_sample.png",
+      "src": "/front_end/diamond_show/RoundDiamonds_sample.png",
       "width": "100%",
       "height": "500"
     }
@@ -19910,7 +19910,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "subtitle is-6"
   }, [_vm._v("\n\t\t  \t\t\t\t\t\tWe recommend considering carat weight along with two other influential characteristics: the overall dimensions and the cut grade of the diamond.\n\t\t  \t\t\t\t\t")])], 1), _vm._v(" "), _c('center', [_c('a', [_vm._v("\n\t\t  \t\t\t\t\t\tLearn More\n\t\t  \t\t\t\t\t")])])], 1), _vm._v(" "), _c('br')]), _vm._v(" "), _c('img', {
     attrs: {
-      "src": "/images/diamond_show/diamond_weight.jpg"
+      "src": "/front_end/diamond_show/diamond_weight.jpg"
     }
   })]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('article', [_c('div', {
     staticClass: "columns"
@@ -19932,7 +19932,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "subtitle is-6"
   }, [_c('li', [_vm._v("For an excellent value in a diamond with little or no noticeable colour to the unaided eye, look for a near-colourless grade of G-I\n\t\t  \t\t\t\t\t\t\t")])])], 1)], 1), _vm._v(" "), _c('br')]), _vm._v(" "), _c('img', {
     attrs: {
-      "src": "/images/diamond_show/diamond_color.jpg"
+      "src": "/front_end/diamond_show/diamond_color.jpg"
     }
   })])])])]), _vm._v(" "), _c('div', {
     staticClass: "clarity-bg"
@@ -20019,7 +20019,7 @@ exports = module.exports = __webpack_require__(13)(undefined);
 
 
 // module
-exports.push([module.i, "\nbody, html {\n  height: 100%;\n  margin: 0;\n  color: #777;\n}\n.cut-bg, .clarity-bg, .bgimg-3 {\n  position: relative;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.cut-bg {\n    /* The image used */\n    background-image: url(\"/images/diamond_show/diamond_cut.jpg\");\n\n    /* Full height */\n    height: 100%;\n}\n.clarity-bg {\n    /* The image used */\n    background-image: url(\"/images/diamond_show/diamond_clarity.jpg\");\n\n    /* Full height */\n    height: 100%;\n}\n.caption {\n  left: 0;\n  top: 50%;\n  width: 100%;\n  text-align: left;\n  color: #000;\n  padding: 80px;\n}\n.caption span.border {\n  color: #fff;\n  font-size: 25px;\n  border: 40px;\n}\n.caption span.cut-text {\n  font-weight: bold;\n  width: 80px;\n  text-align: left;\n  color: #fff;\n  font-size: 15px;\n  border: 40px;\n}\n", ""]);
+exports.push([module.i, "\nbody, html {\n  height: 100%;\n  margin: 0;\n  color: #777;\n}\n.cut-bg, .clarity-bg, .bgimg-3 {\n  position: relative;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.cut-bg {\n    /* The image used */\n    background-image: url(\"/front_end/diamond_show/diamond_cut.jpg\");\n\n    /* Full height */\n    height: 100%;\n}\n.clarity-bg {\n    /* The image used */\n    background-image: url(\"/front_end/diamond_show/diamond_clarity.jpg\");\n\n    /* Full height */\n    height: 100%;\n}\n.caption {\n  left: 0;\n  top: 50%;\n  width: 100%;\n  text-align: left;\n  color: #000;\n  padding: 80px;\n}\n.caption span.border {\n  color: #fff;\n  font-size: 25px;\n  border: 40px;\n}\n.caption span.cut-text {\n  font-weight: bold;\n  width: 80px;\n  text-align: left;\n  color: #fff;\n  font-size: 15px;\n  border: 40px;\n}\n", ""]);
 
 // exports
 

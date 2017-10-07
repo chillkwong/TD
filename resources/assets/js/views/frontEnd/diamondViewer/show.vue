@@ -21,7 +21,7 @@
 	  						<iframe :src="diamond.imageLink" width="100%" height="500" ></iframe>
 	  					</div>
 	  					<div v-else>
-	  						<img src="/images/diamond_show/RoundDiamonds_sample.png" width="100%" height="500"></img>
+	  						<img src="/front_end/diamond_show/RoundDiamonds_sample.png" width="100%" height="500"></img>
 	  					</div>
 	  					</figure>
   					</a>
@@ -163,7 +163,7 @@
   						</div>
   						<br>
   					</div>
-  					<img src="/images/diamond_show/diamond_weight.jpg">
+  					<img src="/front_end/diamond_show/diamond_weight.jpg">
   				</article>
 
 
@@ -214,7 +214,7 @@
   						</div>
   						<br>
   					</div>
-  					<img src="/images/diamond_show/diamond_color.jpg">
+  					<img src="/front_end/diamond_show/diamond_color.jpg">
   				</article>
 
   			</div>
@@ -305,7 +305,7 @@ body, html {
 }
 .cut-bg {
     /* The image used */
-    background-image: url("/images/diamond_show/diamond_cut.jpg");
+    background-image: url("/front_end/diamond_show/diamond_cut.jpg");
 
     /* Full height */
     height: 100%; 
@@ -313,7 +313,7 @@ body, html {
 }
 .clarity-bg {
     /* The image used */
-    background-image: url("/images/diamond_show/diamond_clarity.jpg");
+    background-image: url("/front_end/diamond_show/diamond_clarity.jpg");
 
     /* Full height */
     height: 100%; 

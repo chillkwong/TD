@@ -6,7 +6,7 @@
 		<article class="tile is-child box is-primary">
 			<div class="columns">
 				<div class="column">
-					<figure class="image"><img :src="`/images/${post.cover}`"></figure>
+					<figure class="image"><img :src="`/front_end/${post.cover}`"></figure>
 				</div>
 			</div>
 		</article>
@@ -93,7 +93,7 @@
   				<div class="tile is-child box">
   					<a :href="`https://www.gia.edu/report-check?reportno=${invoice[0].inv_diamonds[0].certificate}`">
 	  					<figure class="image">
-	  					<img :src="`/images/${post.image1}`">
+	  					<img :src="`/front_end/${post.image1}`">
 	  					</figure>
   					</a>
   				</div>
@@ -105,13 +105,13 @@
   		<div class="tile is-parent">
   			<div class="tile is-child is-7">
   				<article>
-  					<figure><img :src="`/images/${post.image2}`"></figure>
+  					<figure><img :src="`/front_end/${post.image2}`"></figure>
   				</article>
   				
   			</div>
   			<div class="tile is-child">
   				<article>
-  					<figure><img src="/images/diamond/GIA-Laser-Inscription-girdle.jpg"></figure>
+  					<figure><img src="/front_end/diamond/GIA-Laser-Inscription-girdle.jpg"></figure>
   					<p class="subtitle">
 					鑽石腰部編號就好像是人的身份證，用來確認鑽石它的4Cs，到底是什麼那些級別。
 					</p>
@@ -129,12 +129,12 @@
   				<div class="tile is-child box">
   					<router-link :to="'/adm/jewellries/' + invoice[0].jewellries[0].id">
 	  					<figure class="image">
-	  					<img :src="`/images/${invoice[0].jewellries[0].cover}`">
+	  					<img :src="`/front_end/${invoice[0].jewellries[0].cover}`">
 	  					</figure>
   					</router-link>
   					<router-link :to="'/adm/jewellries/' + invoice[0].jewellries[0].id">
 	  					<figure class="image">
-	  					<img :src="`/images/${invoice[0].jewellries[0].image1}`">
+	  					<img :src="`/front_end/${invoice[0].jewellries[0].image1}`">
 	  					</figure>
   					</router-link>
   				</div>

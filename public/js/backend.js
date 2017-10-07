@@ -17931,7 +17931,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel-tabs"
   }, [_c('a', {
     staticClass: "is-active"
-  }, [_vm._v("all")]), _vm._v(" "), _c('a', [_vm._v("Invoices")]), _vm._v(" "), _c('a', [_vm._v("Customers")]), _vm._v(" "), _c('a', [_vm._v("Posts")]), _vm._v(" "), _c('a', [_vm._v("Items")]), _vm._v(" "), _c('a', [_vm._v("Diamonds")]), _vm._v(" "), _c('a', [_vm._v("Jewellries")])]), _vm._v(" "), _c('a', {
+  }, [_vm._v("all")]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "./adm/invoices"
+    }
+  }, [_vm._v("Invoices")]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "./adm/customers"
+    }
+  }, [_vm._v("Customers")]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "./adm/customer-jewellries"
+    }
+  }, [_vm._v("Posts")]), _vm._v(" "), _c('a', [_vm._v("Items")]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "./adm/inv-diamonds"
+    }
+  }, [_vm._v("Diamonds")]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "./adm/jewellries"
+    }
+  }, [_vm._v("Jewellries")])]), _vm._v(" "), _c('a', {
     staticClass: "panel-block is-active"
   }, [_c('span', {
     staticClass: "panel-icon"
@@ -21715,7 +21735,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		save: function save() {
 			var _this2 = this;
 
-			var form = Object(__WEBPACK_IMPORTED_MODULE_2__helpers_form__["a" /* toMulipartedForm */])(this.form, this.$route.meta.mode);
+			var form = Object(__WEBPACK_IMPORTED_MODULE_2__helpers_form__["a" /* toMulipartedForm */])(this.form);
 			Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["c" /* post */])(this.storeURL, form).then(function (response) {
 				if (response.data.saved) {
 					_this2.$router.push(_this2.redirect);

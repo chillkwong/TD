@@ -13,12 +13,12 @@
 	  </div>
 	  <p class="panel-tabs">
 	    <a class="is-active">all</a>
-	    <a>Invoices</a>
-	    <a>Customers</a>
-	    <a>Posts</a>
+	    <a href="./adm/invoices">Invoices</a>
+	    <a href="./adm/customers">Customers</a>
+	    <a href="./adm/customer-jewellries">Posts</a>
 	    <a>Items</a>
-	    <a>Diamonds</a>
-	    <a>Jewellries</a>
+	    <a href="./adm/inv-diamonds">Diamonds</a>
+	    <a href="./adm/jewellries">Jewellries</a>
 	  </p>
 	  <a class="panel-block is-active">
 	    <span class="panel-icon">
