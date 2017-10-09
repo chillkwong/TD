@@ -19776,7 +19776,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			diamond: {
 				weight: ''
 			},
-			columns: ['price', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab', 'stock', 'location'],
+			columns: ['price', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
 
 			post: {
 				invoice: {},
@@ -20105,19 +20105,47 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	props: {
-		value: {
+  props: {
+    value: {
 
-			default: null
-		},
-		appointActive: false,
-		appTitle: '',
-		columns: ''
-	}
+      default: null
+    },
+    appointActive: false,
+    appTitle: '',
+    columns: ''
+  },
+  filters: {
+    capitalize: function capitalize(value) {
+      if (!value) return '';
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    }
+  },
+  methods: {
+    save: function save() {
+      var _this = this;
 
+      Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["c" /* post */])(this.storeURL, form).then(function (res) {
+        if (res.data.saved) {
+          Flash.setSuccess(res.data.message);
+          _this.$router.push('/en/customer-jewellries/' + res.data.id);
+        }
+      }).catch(function (err) {
+        if (err.response.status === 422) {
+          _this.error = err.response.data;
+        }
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -20153,7 +20181,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.$emit('active', null)
       }
     }
-  })]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('footer', {
+  })]), _vm._v(" "), _c('section', {
+    staticClass: "modal-card-body"
+  }, [_c('h1', {
+    staticClass: "title is-6"
+  }, [_vm._v("Details fo Appointment")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('tr', _vm._l((_vm.columns), function(column) {
+    return _c('td', [_vm._v(_vm._s(_vm._f("capitalize")(column)))])
+  })), _vm._v(" "), _c('tr', _vm._l((_vm.columns), function(column) {
+    return _c('td', [_vm._v(_vm._s(_vm.value[column]))])
+  }))])]), _vm._v(" "), _c('footer', {
     staticClass: "modal-card-foot"
   }, [_c('button', {
     staticClass: "button is-success"
@@ -20165,13 +20203,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, [_vm._v("Cancel")])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', {
-    staticClass: "modal-card-body"
-  }, [_c('table', {
-    staticClass: "table"
-  })])
-}]}
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

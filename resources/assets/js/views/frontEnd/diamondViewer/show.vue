@@ -277,9 +277,7 @@
                 'symmetry',
                 'fluroscence',
                 'certificate',
-                'lab',
-                'stock',
-                'location',
+                'lab'
                 ]
 				,
 				

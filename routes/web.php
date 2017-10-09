@@ -29,11 +29,15 @@ Route::get('/cn/{vue_capture?}', function () {
     return view('welcome1');
 })->where('vue_capture', '[\/\w\.-]*');
 
+Route::get('test', 'TestController@test');
 
 Route::get('/{vue_capture?}', function () {
 	App::setLocale('hk');
     return view('welcome1');
 })->where('vue_capture', '[\/\w\.-]*');
+
+
+
 
 
 

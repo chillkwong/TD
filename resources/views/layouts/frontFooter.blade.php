@@ -70,7 +70,7 @@
 	      </p>
 
 	       <p>
-		<strong>Ting Diamond</strong> by <a href="./">Ting Diamond</a>
+		<strong>Ting Diamond</strong> by <a href="/">Ting Diamond</a>
 	      </p>
 	    </div>
 	  </div>

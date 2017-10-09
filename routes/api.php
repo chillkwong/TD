@@ -32,7 +32,9 @@ Route::resource('invDiamonds', 'InvDiamondController');
 Route::resource('jewellries', 'JewellryController');
 Route::resource('posts', 'PostController');
 Route::resource('invPosts', 'InvPostController');
+
 Route::resource('diamonds', 'DiamondController');
+Route::get('diamonds/appointment', 'DiamondController@appointment');
 
 
 Route::resource('items', 'ItemController');

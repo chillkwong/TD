@@ -3,7 +3,7 @@
   <!-- Hero header: will stick at the top -->
    <nav  class="navbar is-transparent">
   <div class="navbar-brand">
-    <a class="navbar-item" href="./">
+    <a class="navbar-item" href="/">
       <img src="/front_end/company/logo_PNG_sq_60x60_1.png" alt="Bulma: a modern CSS framework based on Flexbox" width="35" height="70">
     </a>
     
@@ -335,7 +335,7 @@
   <!-- Hero content: will be in the middle -->
   <div class="hero-body">
     <div class="container has-text-centered">
-      <a href="./">
+      <a href="/">
       <h1 class="title">
         Ting Diamond
       </h1>
