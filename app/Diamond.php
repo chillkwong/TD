@@ -10,7 +10,7 @@ class Diamond extends Model
 {
     use DataViewer;
 
-    protected $hidden = array('supplier_id');
+    protected $hidden = array('supplier_id', 'stock');
 
     protected $fillable = [
 	'id', 'price', 'stock', 'certificate', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'lab', 'location', 'imageLink'

@@ -23,7 +23,7 @@
 		<div class="columns">
 			<div class="column">
 				
-			      <img :src="images.company.logo" alt="Bulma: a modern CSS framework based on Flexbox" width="60" height="200">
+			      <img src="/front_end/company/logo_PNG_sq_60x60_1.png" alt="Bulma: a modern CSS framework based on Flexbox" width="60" height="200">
 			   
 			</div>
 			<div class="column is-5">
@@ -73,7 +73,7 @@
 				<tbody>
 					<tr v-for="diamond in model.inv_diamonds" v-if="model.inv_diamonds">
 						<td>GIA:{{diamond.certificate}}</td>
-						<td>{{diamond.weight}},{{diamond.color}},{{diamond.clarity}},{{diamond.cut}},{{diamond.polish}},{{diamond.symmetry}},{{diamond.fluroscence}}</td>
+						<td>{{diamond.weight}}ct,{{diamond.color}} Color,{{diamond.clarity}} Clarity,{{diamond.cut}} Cut,{{diamond.polish}} Polish,{{diamond.symmetry}} Symmetry,{{diamond.fluroscence}}</td>
 						<td>1</td>
 						<td>{{diamond.price}}</td>
 					</tr>

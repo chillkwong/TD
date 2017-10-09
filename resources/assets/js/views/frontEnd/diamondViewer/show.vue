@@ -36,7 +36,7 @@
   				<article>
   					<center>
   						<button class="button is-info" @click="appointmentState=!appointmentState">Appointment</button>
-  						<appointment v-model="diamond" :appointActive="appointmentState"></appointment>
+  						<appointment v-model="diamond" :appTitle="appointmentTitle" @active="appointmentState=!appointmentState" :appointActive="appointmentState" :columns="columns"></appointment>
   					</center>
   					<br>
   					<p>
@@ -262,7 +262,27 @@
 				// auth: Auth.state,
 				isRemoving: false,
 				appointmentState: false,
-				diamond:'',
+				title: '',
+				diamond:{
+					weight:'',
+				},
+				columns:[
+				'price',
+                'shape',
+                'weight',
+                'color',
+                'clarity',
+                'cut',
+                'polish',
+                'symmetry',
+                'fluroscence',
+                'certificate',
+                'lab',
+                'stock',
+                'location',
+                ]
+				,
+				
 				post: {
 					invoice: {},
 					content: []
@@ -276,6 +296,11 @@
 		beforeMount(){
 			this.fetchData()
 			
+		},
+		computed: {
+			appointmentTitle(){
+				return this.diamond.weight + 'carat, ' + this.diamond.color + ' color diamond' 
+			}
 		},
 		methods: {
 			fetchData(){

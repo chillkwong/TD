@@ -19772,7 +19772,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			// auth: Auth.state,
 			isRemoving: false,
 			appointmentState: false,
-			diamond: '',
+			title: '',
+			diamond: {
+				weight: ''
+			},
+			columns: ['price', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab', 'stock', 'location'],
+
 			post: {
 				invoice: {},
 				content: []
@@ -19788,6 +19793,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		this.fetchData();
 	},
 
+	computed: {
+		appointmentTitle: function appointmentTitle() {
+			return this.diamond.weight + 'carat, ' + this.diamond.color + ' color diamond';
+		}
+	},
 	methods: {
 		fetchData: function fetchData() {
 			var _this = this;
@@ -19853,7 +19863,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Appointment")]), _vm._v(" "), _c('appointment', {
     attrs: {
-      "appointActive": _vm.appointmentState
+      "appTitle": _vm.appointmentTitle,
+      "appointActive": _vm.appointmentState,
+      "columns": _vm.columns
+    },
+    on: {
+      "active": function($event) {
+        _vm.appointmentState = !_vm.appointmentState
+      }
     },
     model: {
       value: (_vm.diamond),
@@ -20086,6 +20103,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -20094,7 +20113,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 			default: null
 		},
-		appointActive: ''
+		appointActive: false,
+		appTitle: '',
+		columns: ''
 	}
 
 });
@@ -20110,12 +20131,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'is-active': _vm.appointActive
     }
   }, [_c('div', {
-    staticClass: "modal-background"
+    staticClass: "modal-background",
+    on: {
+      "click": function($event) {
+        _vm.$emit('active', null)
+      }
+    }
   }), _vm._v(" "), _c('div', {
     staticClass: "modal-card"
-  }, [_vm._m(0), _vm._v(" "), _c('section', {
-    staticClass: "modal-card-body"
-  }), _vm._v(" "), _c('footer', {
+  }, [_c('header', {
+    staticClass: "modal-card-head"
+  }, [_c('p', {
+    staticClass: "modal-card-title"
+  }, [_vm._v(_vm._s(_vm.appTitle))]), _vm._v(" "), _c('button', {
+    staticClass: "delete",
+    attrs: {
+      "aria-label": "close"
+    },
+    on: {
+      "click": function($event) {
+        _vm.$emit('active', null)
+      }
+    }
+  })]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('footer', {
     staticClass: "modal-card-foot"
   }, [_c('button', {
     staticClass: "button is-success"
@@ -20123,20 +20161,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "button",
     on: {
       "click": function($event) {
-        _vm.appointActive = !_vm.appointActive
+        _vm.$emit('active', null)
       }
     }
   }, [_vm._v("Cancel")])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('header', {
-    staticClass: "modal-card-head"
-  }, [_c('p', {
-    staticClass: "modal-card-title"
-  }, [_vm._v("Modal title")]), _vm._v(" "), _c('button', {
-    staticClass: "delete",
-    attrs: {
-      "aria-label": "close"
-    }
+  return _c('section', {
+    staticClass: "modal-card-body"
+  }, [_c('table', {
+    staticClass: "table"
   })])
 }]}
 module.exports.render._withStripped = true
