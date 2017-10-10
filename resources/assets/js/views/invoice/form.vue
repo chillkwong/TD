@@ -187,7 +187,7 @@
 							</td>
 							<td>Discount</td>
 							<td>
-								<input type="text" class="input" v-model="form.discount">
+								<input type="text" class="input" v-model="form.discount" required>
 							</td>
 						</tr>
 						<tr>
@@ -195,7 +195,7 @@
 							</td>
 							<td><strong>Deposit</strong></td>
 							<td>
-								<input type="text" class="input" v-model="form.deposit">
+								<input type="text" class="input" v-model="form.deposit" required>
 							</td>
 						</tr>
 						<tr>
@@ -214,7 +214,7 @@
 						<tr>
 							<td colspan="4"></td>
 							<td><strong>notes</strong></td>
-							<td><textarea class="textarea">{{form.notes}}</textarea></td>
+							<td><textarea v-model="form.notes" class="textarea">{{form.notes}}</textarea></td>
 						</tr>
 				</tfoot>
 			</table>
@@ -279,16 +279,29 @@
 		computed: {
 			subTotal(){
 				
-			var price = 0
-			for (var i = this.form.jewellries.length - 1; i >= 0; i--) {
-				price += this.option.jewellries[this.form.jewellries.length].unit_price
-			}
+				var price = 0
+			
+				var jewellries = []
+				for (var i = this.form.jewellries.length - 1; i >= 0; i--){
+					
+					jewellries.push(this.option.jewellries
+					.filter((item)=>{
+						return item.id == this.form.jewellries[i].id
+					}).valueOf())
 
-			price += this.form.inv_diamonds.reduce((carry, item)=>{
-				return carry += parseFloat(item.price)
-			},0)
+				}
 
-			return this.form.sub_total = price
+
+				price =  jewellries.reduce((carry, item)=>{
+							return carry += parseFloat(item[0].unit_price)
+						},0)
+				
+				
+				price += this.form.inv_diamonds.reduce((carry, item)=>{
+					return carry += parseFloat(item.price)
+				},0)
+
+				return this.form.sub_total = price
 			},
 			total(){
 				return this.form.total = this.form.sub_total - this.form.discount
@@ -336,8 +349,8 @@
 							this.$router.push(this.redirect)
 						}
 					})
-					.catch(function(error){
-						Vue.set(this.$data, 'errors', error.res.data)
+					.catch((error)=>{
+						this.$data.errors = error.res.data
 					})
 
 				}else{post(this.store, this.form)

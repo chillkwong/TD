@@ -16,9 +16,11 @@ class Appointment extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    protected $appointment = [];
+
+    public function __construct($appointment)
     {
-        //
+        $this->appointment = $appointment;
     }
 
     /**
@@ -27,7 +29,9 @@ class Appointment extends Mailable
      * @return $this
      */
     public function build()
-    {
-        return $this->view('view.email.appointment');
+    {   
+        $appointments = $this->appointment;
+        
+        return $this->view('email.appointment', compact('appointments'));
     }
 }

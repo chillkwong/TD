@@ -12,5 +12,7 @@ return [
 	'Customer Moments' => 'Customer Moments',
 	'About' => 'About',
 	'Language' => 'Language',
+	'appointmentSuccess' => 'You have successfully sent appointment, we will contact you soon!
+							 Or you can also contact us Immediately' 
 	
 ];

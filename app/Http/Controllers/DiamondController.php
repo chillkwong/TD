@@ -26,23 +26,29 @@ class DiamondController extends Controller
   public function show($id)
     {
       $diamond  = Diamond::findOrFail($id);
-      $filename = base_path('public/fron_end/contact/Winnie_Kwong.vcf');
 
       return response()
         ->json([
           'diamond' =>$diamond,
-          'contact' =>File::get($filename)
           ]);
     }
 
-    public function appointment()
+    public function appointment(Request $request)
     {
-      // $diamond = $request;
-      \Mail::to('pete@tingdiamond.com')->send(new Appointment);
+      // $this->validate($request,[
+      //   'name' => 'required',
+      //   'phone' => 'required'
+      // ]);
+
+      $appointment = $request->all();
+      // dd($appointment);
+      \Mail::to('pete@tingdiamond.com')->send(new Appointment($appointment));
 
       return response()
         ->json(
-          ['sent' => true]
+          ['saved' => true,
+        'message' => trans('frontEnd.appointmentSuccess')
+        ]
         );
 
     }

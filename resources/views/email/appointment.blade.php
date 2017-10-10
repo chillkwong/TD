@@ -4,6 +4,9 @@
 	<title></title>
 </head>
 <body>
-	test
+
+	@foreach($appointments as $ap=>$v)
+	<h3>{{$ap}} :{{$v}} </h3>
+	@endforeach
 </body>
 </html>

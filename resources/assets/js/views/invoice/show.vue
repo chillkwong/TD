@@ -19,39 +19,39 @@
 
 	</div>
 
-	<div class="box">
+	<div :class="{'box': fullpath}">
 		<div class="columns">
 			<div class="column">
 				
 			      <img src="/front_end/company/logo_PNG_sq_60x60_1.png" alt="Bulma: a modern CSS framework based on Flexbox" width="60" height="200">
 			   
 			</div>
-			<div class="column is-5">
-				<h1 class="title is-1">Invoice</h1>			
-				<h1 class="title is-4">{{company.info.name}}</h1>			
-				<h1 class="subtitle is-6">{{company.info.address}}</h1>
-				<h1 class="subtitle is-6">Tel: {{company.info.contact}}</h1>
+			<div class="column is-4">
+				<h1 class="title is-3">Invoice</h1>			
+				<h1 class="subtitle is-5">{{company.info.name}}</h1>			
+				<small><small><p >{{company.info.address}}</p></small></small>
+				<small><small><p >Tel: {{company.info.contact}}</p></small></small>
 				<a href="/">{{company.info.website}}</a>
 			</div>
 		</div>
 		<hr>
 		<div class="columns">
 			<div class="column">
-				<p class="subtitle is-5">BILL TO</p>
-				<p class="title is-5">{{model.customer.name}}</p>
-				<p class="title is-6">Phone: {{model.customer.phone}}</p>
+				<p class="title is-6">BILL TO</p>
+				<p class="subtitle is-5"><small><small>{{model.customer.name}}</small></small></p>
+				<p ><small><small>Phone: {{model.customer.phone}}</small></small></p>
 			</div>
 			<div class="column is-3">
-				<p ><strong>Invoice Number: </strong></p>			
-				<p ><strong> Invoice Date: </strong></p>			
-				<p ><strong> Payment Due: </strong></p>
-				<p ><strong> Amount Due (HKD): </strong></p>
+				<p ><small><small>Invoice Number: </small></small></p>			
+				<p ><small><small> Invoice Date: </small></small></p>			
+				<p ><small><small> Payment Due: </small></small></p>
+				<p ><small><small> Amount Due (HKD): </small></small></p>
 			</div>
 			<div class="column is-2">
-				<p >{{model.id}}</p>			
-				<p >{{model.date}}</p>			
-				<p >{{model.due_date}}</p>
-				<p >${{model.total}}</p>
+				<p ><small><small>{{model.id}}</small></small></p>			
+				<p ><small><small>{{model.date}}</small></small></p>			
+				<p ><small><small>{{model.due_date}}</small></small></p>
+				<p ><small><small>${{model.total}}</small></small></p>
 			</div>
 		</div>
 
@@ -64,50 +64,53 @@
 		<table class="table is-fullwidth">
 				<thead>
 					<tr class="is-selected">
-						<th>Items</th>
-						<th>Desciption</th>
-						<th>Quantity</th>
-						<th>Price</th>
+						<th><small>Items</small></th>
+						<th><small>Desciption</small></th>
+						<th><small>Quantity</small></th>
+						<th><small>Price</small></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr v-for="diamond in model.inv_diamonds" v-if="model.inv_diamonds">
-						<td>GIA:{{diamond.certificate}}</td>
-						<td>{{diamond.weight}}ct,{{diamond.color}} Color,{{diamond.clarity}} Clarity,{{diamond.cut}} Cut,{{diamond.polish}} Polish,{{diamond.symmetry}} Symmetry,{{diamond.fluroscence}}</td>
-						<td>1</td>
-						<td>{{diamond.price}}</td>
+						<td><small><small><small>GIA:{{diamond.certificate}}</small></small></small></td>
+						<td><small><small><small>{{diamond.weight}}ct,{{diamond.color}} Color,{{diamond.clarity}} Clarity,{{diamond.cut}} Cut,{{diamond.polish}} Polish,{{diamond.symmetry}} Symmetry,{{diamond.fluroscence}}</small></small></small></td>
+						<td><small><small><small>1</small></small></small></td>
+						<td><small><small><small>{{diamond.price}}</small></small></small></td>
 					</tr>
 					<tr v-for="jewellry in model.jewellries" v-if="model.jewellries">
-						<td>{{jewellry.name}}</td>
-						<td>{{jewellry.description}}</td>
-						<td>1</td>
-						<td>{{jewellry.unit_price}}</td>						
+						<td><small><small><small>{{jewellry.name}}</small></small></small></td>
+						<td><small><small><small>{{jewellry.description}}</small></small></small></td>
+						<td><small><small><small>1</small></small></small></td>
+						<td><small><small><small>{{jewellry.unit_price}}</small></small></small></td>						
 					</tr>
 				</tbody>
 				<tfoot>
 					<tr>
 						<td colspan="2"></td>
-						<td><p class="subtitle is-6"><strong>Deposit:</strong></p></td>
-						<td>${{model.deposit}}</td>
+						<td><p class="subtitle is-6"><small><small>Deposit:</small></small></p></td>
+						<td><small><small>${{model.deposit}}</small></small></td>
 					</tr>
 					<tr>
 						<td colspan="2"></td>
-						<td><p class="subtitle is-6"><strong>Balance:</strong></p></td>
-						<td>${{model.balance}}</td>
+						<td><p class="subtitle is-6"><small><small>Balance:</small></small></p></td>
+						<td><small><small>${{model.balance}}</small></small></td>
 					</tr>
 					<tr>
 						<td colspan="2"></td>
-						<td><strong>Total:</strong></td>
-						<td>${{model.total}}</td>
+						<td><small>Total:</small></td>
+						<td><small>${{model.total}}</small></td>
 					</tr>
 				</tfoot>
 			</table>
 			<hr>
-			<div class="columns">
-				<div class="column">
-					<p class="box">Notes:
+			<div class="columns is-centered">
+				<div class="column is-11 ">
+					<small><small>
+						<p class="">Notes:
+							<br>
 						{{model.notes}}
-					</p>
+						</p>
+					</small></small>
 				</div>
 			</div>
 		</div>

@@ -74,4 +74,13 @@
 	      </p>
 	    </div>
 	  </div>
+	  <div class="content has-text-right">
+		  <i class="fa fa-arrow-circle-up is-hidden-desktop floatingRight fa-2x" aria-hidden="true" onclick="scrollWin()"></i>
+		</div>
 </footer>
+
+<script>
+function scrollWin() {
+    window.scrollTo(500, 0);
+}
+</script>

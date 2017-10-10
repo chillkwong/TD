@@ -1,10 +1,36 @@
 <template>
 	<div>
+		<div class="modal" :class="{'is-active': flash.success}">
+		  <div class="modal-background" @click="flash.success=null"></div>
+		  <div class="modal-content">
+		    <div class="notification is-info">
+			  {{flash.success}}
+			</div>
+		  </div>
+		  
+		</div>
+
+		<div class="modal" :class="{'is-active': flash.error}">
+		  <div class="modal-background" @click="flash.error=null"></div>
+		  <div class="modal-content">
+		    <div class="notification is-danger">
+			  {{flash.error}}
+			</div>
+		  </div>
+		  
+		</div>
+	
+	<div class="notification is-info" v-if="flash.error">
+	  <button class="delete"></button>
+	  {{flash.error}}
+	</div>
 	<router-view class="view one" name="header" :images="images"></router-view>
 	<router-view class="view two" name="breadcrumb"></router-view>
 	<router-view></router-view>
 	<!-- <router-view class="view three" name="footer"></router-view> -->
+	
 	</div>
+	
 </template>
 
 
@@ -28,13 +54,13 @@
 				images: Images
 			}
 		},
+
 	    // watch: {
 	    //   'changedLocales': 'updateLocale'
 	    // },
 	    // methods: {
-	    //   updateLocale(){
-	    //     Locale.setLocale(this.changedLocales)
-	    //     get()
+	    //   scollToTop(){
+	    //     window.scrollTo(0, 0);
 	    //   }
 	    // }
 	}
@@ -44,4 +70,5 @@
 	*{
 		box-sizing: border-box;
 	}
+	
 </style>

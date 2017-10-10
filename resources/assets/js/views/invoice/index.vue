@@ -41,10 +41,10 @@
 				{ title: 'Created At', key: 'created_at', sort: true}
 				],
 				filter: [
-				      	'id', 'customer_id', 'title', 'date', 'due_date', 'discount',
-        				'sub_total', 'deposit', 'balance','total', 'created_at',
-        				'customer.id', 'customer.company', 'customer.email', 'customer.name', 
-            			'customer.phone', 'customer.address', 'customer.created_at'
+				      	'id', 'customer.phone','customer.name', 
+            			'customer_id', 'title', 'date', 'due_date', 'discount',
+        				'sub_total', 'deposit', 'balance','total',
+        				
 				]
 			}
 		},

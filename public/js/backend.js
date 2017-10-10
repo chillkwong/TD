@@ -10690,7 +10690,7 @@ module.exports = Vue$3;
 		this.state.success = message;
 		setTimeout(function () {
 			_this.removeSuccess();
-		}, 3000);
+		}, 10000);
 	},
 	setError: function setError(message) {
 		var _this2 = this;
@@ -10698,7 +10698,7 @@ module.exports = Vue$3;
 		this.state.error = message;
 		setTimeout(function () {
 			_this2.removeError();
-		}, 10000);
+		}, 15000);
 	},
 	removeSuccess: function removeSuccess() {
 		this.state.success = null;
@@ -11537,7 +11537,7 @@ exports = module.exports = __webpack_require__(13)(undefined);
 
 
 // module
-exports.push([module.i, "\n*{\n\tbox-sizing: border-box;\n}\n", ""]);
+exports.push([module.i, "\n*{\n\tbox-sizing: border-box;\n}\n\n", ""]);
 
 // exports
 
@@ -11594,6 +11594,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -11620,7 +11646,43 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('router-view', {
+  return _c('div', [_c('div', {
+    staticClass: "modal",
+    class: {
+      'is-active': _vm.flash.success
+    }
+  }, [_c('div', {
+    staticClass: "modal-background",
+    on: {
+      "click": function($event) {
+        _vm.flash.success = null
+      }
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "modal-content"
+  }, [_c('div', {
+    staticClass: "notification is-info"
+  }, [_vm._v("\n\t\t  " + _vm._s(_vm.flash.success) + "\n\t\t")])])]), _vm._v(" "), _c('div', {
+    staticClass: "modal",
+    class: {
+      'is-active': _vm.flash.error
+    }
+  }, [_c('div', {
+    staticClass: "modal-background",
+    on: {
+      "click": function($event) {
+        _vm.flash.error = null
+      }
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "modal-content"
+  }, [_c('div', {
+    staticClass: "notification is-danger"
+  }, [_vm._v("\n\t\t  " + _vm._s(_vm.flash.error) + "\n\t\t")])])]), _vm._v(" "), (_vm.flash.error) ? _c('div', {
+    staticClass: "notification is-info"
+  }, [_c('button', {
+    staticClass: "delete"
+  }), _vm._v("\n  " + _vm._s(_vm.flash.error) + "\n")]) : _vm._e(), _vm._v(" "), _c('router-view', {
     staticClass: "view one",
     attrs: {
       "name": "header",
@@ -18692,7 +18754,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			create: '/adm/invoices/create',
 			userRole: __WEBPACK_IMPORTED_MODULE_1__store_auth__["a" /* default */].state.user_role,
 			thead: [{ title: 'ID', key: 'id', sort: true }, { title: 'Date', key: 'date', sort: true }, { title: 'Customer', key: 'customer', sort: false }, { title: 'title', key: 'title', sort: true }, { title: 'deposit', key: 'deposit', sort: true }, { title: 'balance', key: 'balance', sort: true }, { title: 'Amount', key: 'total', sort: true }, { title: 'Created At', key: 'created_at', sort: true }],
-			filter: ['id', 'customer_id', 'title', 'date', 'due_date', 'discount', 'sub_total', 'deposit', 'balance', 'total', 'created_at', 'customer.id', 'customer.company', 'customer.email', 'customer.name', 'customer.phone', 'customer.address', 'customer.created_at']
+			filter: ['id', 'customer.phone', 'customer.name', 'customer_id', 'title', 'date', 'due_date', 'discount', 'sub_total', 'deposit', 'balance', 'total']
 		};
 	},
 
@@ -18786,6 +18848,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_images__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_api__ = __webpack_require__(2);
+//
+//
+//
 //
 //
 //
@@ -19001,20 +19066,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.remove
     }
   }, [_vm._v("Delete")])], 1)])]) : _vm._e(), _vm._v(" "), _c('div', {
-    staticClass: "box"
+    class: {
+      'box': _vm.fullpath
+    }
   }, [_c('div', {
     staticClass: "columns"
   }, [_vm._m(0), _vm._v(" "), _c('div', {
-    staticClass: "column is-5"
+    staticClass: "column is-4"
   }, [_c('h1', {
-    staticClass: "title is-1"
+    staticClass: "title is-3"
   }, [_vm._v("Invoice")]), _vm._v(" "), _c('h1', {
-    staticClass: "title is-4"
-  }, [_vm._v(_vm._s(_vm.company.info.name))]), _vm._v(" "), _c('h1', {
-    staticClass: "subtitle is-6"
-  }, [_vm._v(_vm._s(_vm.company.info.address))]), _vm._v(" "), _c('h1', {
-    staticClass: "subtitle is-6"
-  }, [_vm._v("Tel: " + _vm._s(_vm.company.info.contact))]), _vm._v(" "), _c('a', {
+    staticClass: "subtitle is-5"
+  }, [_vm._v(_vm._s(_vm.company.info.name))]), _vm._v(" "), _c('small', [_c('small', [_c('p', [_vm._v(_vm._s(_vm.company.info.address))])])]), _vm._v(" "), _c('small', [_c('small', [_c('p', [_vm._v("Tel: " + _vm._s(_vm.company.info.contact))])])]), _vm._v(" "), _c('a', {
     attrs: {
       "href": "/"
     }
@@ -19023,40 +19086,36 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "column"
   }, [_c('p', {
-    staticClass: "subtitle is-5"
-  }, [_vm._v("BILL TO")]), _vm._v(" "), _c('p', {
-    staticClass: "title is-5"
-  }, [_vm._v(_vm._s(_vm.model.customer.name))]), _vm._v(" "), _c('p', {
     staticClass: "title is-6"
-  }, [_vm._v("Phone: " + _vm._s(_vm.model.customer.phone))])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+  }, [_vm._v("BILL TO")]), _vm._v(" "), _c('p', {
+    staticClass: "subtitle is-5"
+  }, [_c('small', [_c('small', [_vm._v(_vm._s(_vm.model.customer.name))])])]), _vm._v(" "), _c('p', [_c('small', [_c('small', [_vm._v("Phone: " + _vm._s(_vm.model.customer.phone))])])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
     staticClass: "column is-2"
-  }, [_c('p', [_vm._v(_vm._s(_vm.model.id))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.model.date))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.model.due_date))]), _vm._v(" "), _c('p', [_vm._v("$" + _vm._s(_vm.model.total))])])]), _vm._v(" "), _c('div', {
+  }, [_c('p', [_c('small', [_c('small', [_vm._v(_vm._s(_vm.model.id))])])]), _vm._v(" "), _c('p', [_c('small', [_c('small', [_vm._v(_vm._s(_vm.model.date))])])]), _vm._v(" "), _c('p', [_c('small', [_c('small', [_vm._v(_vm._s(_vm.model.due_date))])])]), _vm._v(" "), _c('p', [_c('small', [_c('small', [_vm._v("$" + _vm._s(_vm.model.total))])])])])]), _vm._v(" "), _c('div', {
     staticClass: "tile"
   }), _vm._v(" "), _c('table', {
     staticClass: "table is-fullwidth"
   }, [_vm._m(2), _vm._v(" "), _c('tbody', [_vm._l((_vm.model.inv_diamonds), function(diamond) {
-    return (_vm.model.inv_diamonds) ? _c('tr', [_c('td', [_vm._v("GIA:" + _vm._s(diamond.certificate))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(diamond.weight) + "ct," + _vm._s(diamond.color) + " Color," + _vm._s(diamond.clarity) + " Clarity," + _vm._s(diamond.cut) + " Cut," + _vm._s(diamond.polish) + " Polish," + _vm._s(diamond.symmetry) + " Symmetry," + _vm._s(diamond.fluroscence))]), _vm._v(" "), _c('td', [_vm._v("1")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(diamond.price))])]) : _vm._e()
+    return (_vm.model.inv_diamonds) ? _c('tr', [_c('td', [_c('small', [_c('small', [_c('small', [_vm._v("GIA:" + _vm._s(diamond.certificate))])])])]), _vm._v(" "), _c('td', [_c('small', [_c('small', [_c('small', [_vm._v(_vm._s(diamond.weight) + "ct," + _vm._s(diamond.color) + " Color," + _vm._s(diamond.clarity) + " Clarity," + _vm._s(diamond.cut) + " Cut," + _vm._s(diamond.polish) + " Polish," + _vm._s(diamond.symmetry) + " Symmetry," + _vm._s(diamond.fluroscence))])])])]), _vm._v(" "), _vm._m(3, true), _vm._v(" "), _c('td', [_c('small', [_c('small', [_c('small', [_vm._v(_vm._s(diamond.price))])])])])]) : _vm._e()
   }), _vm._v(" "), _vm._l((_vm.model.jewellries), function(jewellry) {
-    return (_vm.model.jewellries) ? _c('tr', [_c('td', [_vm._v(_vm._s(jewellry.name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(jewellry.description))]), _vm._v(" "), _c('td', [_vm._v("1")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(jewellry.unit_price))])]) : _vm._e()
+    return (_vm.model.jewellries) ? _c('tr', [_c('td', [_c('small', [_c('small', [_c('small', [_vm._v(_vm._s(jewellry.name))])])])]), _vm._v(" "), _c('td', [_c('small', [_c('small', [_c('small', [_vm._v(_vm._s(jewellry.description))])])])]), _vm._v(" "), _vm._m(4, true), _vm._v(" "), _c('td', [_c('small', [_c('small', [_c('small', [_vm._v(_vm._s(jewellry.unit_price))])])])])]) : _vm._e()
   })], 2), _vm._v(" "), _c('tfoot', [_c('tr', [_c('td', {
     attrs: {
       "colspan": "2"
     }
-  }), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('td', [_vm._v("$" + _vm._s(_vm.model.deposit))])]), _vm._v(" "), _c('tr', [_c('td', {
+  }), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('td', [_c('small', [_c('small', [_vm._v("$" + _vm._s(_vm.model.deposit))])])])]), _vm._v(" "), _c('tr', [_c('td', {
     attrs: {
       "colspan": "2"
     }
-  }), _vm._v(" "), _vm._m(4), _vm._v(" "), _c('td', [_vm._v("$" + _vm._s(_vm.model.balance))])]), _vm._v(" "), _c('tr', [_c('td', {
+  }), _vm._v(" "), _vm._m(6), _vm._v(" "), _c('td', [_c('small', [_c('small', [_vm._v("$" + _vm._s(_vm.model.balance))])])])]), _vm._v(" "), _c('tr', [_c('td', {
     attrs: {
       "colspan": "2"
     }
-  }), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('td', [_vm._v("$" + _vm._s(_vm.model.total))])])])]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('div', {
-    staticClass: "columns"
+  }), _vm._v(" "), _vm._m(7), _vm._v(" "), _c('td', [_c('small', [_vm._v("$" + _vm._s(_vm.model.total))])])])])]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('div', {
+    staticClass: "columns is-centered"
   }, [_c('div', {
-    staticClass: "column"
-  }, [_c('p', {
-    staticClass: "box"
-  }, [_vm._v("Notes:\n\t\t\t\t\t\t" + _vm._s(_vm.model.notes) + "\n\t\t\t\t\t")])])])])])
+    staticClass: "column is-11 "
+  }, [_c('small', [_c('small', [_c('p', {}, [_vm._v("Notes:\n\t\t\t\t\t\t\t"), _c('br'), _vm._v("\n\t\t\t\t\t\t" + _vm._s(_vm.model.notes) + "\n\t\t\t\t\t\t")])])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "column"
@@ -19071,21 +19130,25 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "column is-3"
-  }, [_c('p', [_c('strong', [_vm._v("Invoice Number: ")])]), _vm._v(" "), _c('p', [_c('strong', [_vm._v(" Invoice Date: ")])]), _vm._v(" "), _c('p', [_c('strong', [_vm._v(" Payment Due: ")])]), _vm._v(" "), _c('p', [_c('strong', [_vm._v(" Amount Due (HKD): ")])])])
+  }, [_c('p', [_c('small', [_c('small', [_vm._v("Invoice Number: ")])])]), _vm._v(" "), _c('p', [_c('small', [_c('small', [_vm._v(" Invoice Date: ")])])]), _vm._v(" "), _c('p', [_c('small', [_c('small', [_vm._v(" Payment Due: ")])])]), _vm._v(" "), _c('p', [_c('small', [_c('small', [_vm._v(" Amount Due (HKD): ")])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', [_c('tr', {
     staticClass: "is-selected"
-  }, [_c('th', [_vm._v("Items")]), _vm._v(" "), _c('th', [_vm._v("Desciption")]), _vm._v(" "), _c('th', [_vm._v("Quantity")]), _vm._v(" "), _c('th', [_vm._v("Price")])])])
+  }, [_c('th', [_c('small', [_vm._v("Items")])]), _vm._v(" "), _c('th', [_c('small', [_vm._v("Desciption")])]), _vm._v(" "), _c('th', [_c('small', [_vm._v("Quantity")])]), _vm._v(" "), _c('th', [_c('small', [_vm._v("Price")])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('td', [_c('small', [_c('small', [_c('small', [_vm._v("1")])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('td', [_c('small', [_c('small', [_c('small', [_vm._v("1")])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('td', [_c('p', {
     staticClass: "subtitle is-6"
-  }, [_c('strong', [_vm._v("Deposit:")])])])
+  }, [_c('small', [_c('small', [_vm._v("Deposit:")])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('td', [_c('p', {
     staticClass: "subtitle is-6"
-  }, [_c('strong', [_vm._v("Balance:")])])])
+  }, [_c('small', [_c('small', [_vm._v("Balance:")])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('td', [_c('strong', [_vm._v("Total:")])])
+  return _c('td', [_c('small', [_vm._v("Total:")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -19427,11 +19490,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 	computed: {
 		subTotal: function subTotal() {
+			var _this = this;
 
 			var price = 0;
+
+			var jewellries = [];
 			for (var i = this.form.jewellries.length - 1; i >= 0; i--) {
-				price += this.option.jewellries[this.form.jewellries.length].unit_price;
+
+				jewellries.push(this.option.jewellries.filter(function (item) {
+					return item.id == _this.form.jewellries[i].id;
+				}).valueOf());
 			}
+
+			price = jewellries.reduce(function (carry, item) {
+				return carry += parseFloat(item[0].unit_price);
+			}, 0);
 
 			price += this.form.inv_diamonds.reduce(function (carry, item) {
 				return carry += parseFloat(item.price);
@@ -19467,30 +19540,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			});
 		},
 		fetchData: function fetchData() {
-			var _this = this;
+			var _this2 = this;
 
 			Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["b" /* get */])(this.initialize).then(function (res) {
-				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(_this.$data, 'form', res.data.form);
-				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(_this.$data, 'option', res.data.option);
+				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(_this2.$data, 'form', res.data.form);
+				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(_this2.$data, 'option', res.data.option);
 			}).catch(function (error) {
 				console.log(error);
 			});
 		},
 		save: function save() {
-			var _this2 = this;
+			var _this3 = this;
 
 			if (this.method === 'put') {
 				Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["d" /* put */])(this.store, this.form).then(function (res) {
 					if (res.data.saved) {
-						_this2.$router.push(_this2.redirect);
+						_this3.$router.push(_this3.redirect);
 					}
 				}).catch(function (error) {
-					__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(this.$data, 'errors', error.res.data);
+					_this3.$data.errors = error.res.data;
 				});
 			} else {
 				Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["c" /* post */])(this.store, this.form).then(function (res) {
 					if (res.data.saved) {
-						_this2.$router.push(_this2.redirect);
+						_this3.$router.push(_this3.redirect);
 					}
 				}).catch(function (error) {
 					__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(this.$data, 'errors', error.res.data);
@@ -20347,7 +20420,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "input",
     attrs: {
-      "type": "text"
+      "type": "text",
+      "required": ""
     },
     domProps: {
       "value": (_vm.form.discount)
@@ -20371,7 +20445,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "input",
     attrs: {
-      "type": "text"
+      "type": "text",
+      "required": ""
     },
     domProps: {
       "value": (_vm.form.deposit)
@@ -20395,7 +20470,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "colspan": "4"
     }
   }), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('td', [_c('textarea', {
-    staticClass: "textarea"
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.form.notes),
+      expression: "form.notes"
+    }],
+    staticClass: "textarea",
+    domProps: {
+      "value": (_vm.form.notes)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.form.notes = $event.target.value
+      }
+    }
   }, [_vm._v(_vm._s(_vm.form.notes))])])])])]), _vm._v(" "), _c('div', {
     staticClass: "columns is-centered"
   }, [_c('div', {
@@ -22205,7 +22295,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "input",
     attrs: {
       "type": "video",
-      "required": "",
       "placeholder": "https://www.youtube.com/embed/"
     },
     domProps: {

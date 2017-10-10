@@ -80,7 +80,7 @@
 					<div class="control ">
 						<div class="control">
 							<label class="label">video</label>
-								<input type="video" class="input" v-model="form.video" required placeholder="https://www.youtube.com/embed/">
+								<input type="video" class="input" v-model="form.video" placeholder="https://www.youtube.com/embed/">
 								<small class="is-danger" v-if="errors.video">{{errors.video[0]}}</small>
 						</div>
 					</div>

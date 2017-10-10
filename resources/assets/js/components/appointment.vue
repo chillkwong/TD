@@ -16,11 +16,16 @@
           <td v-for="column in columns">{{value[column]}}</td>
         </tr>
       </table>
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button is-success">Save changes</button>
+      <form @submit.prevent="save">
+      <input type="text" name="name" class="input" v-model="form.name" placeholder="your name" required>
+      <input type="text" name="phone" class="input" v-model="form.phone" placeholder="your Phone No." required> 
+      <div>
+      <button class="button is-success " :class="{'is-loading': isProcessing}" @submit.stop="save" >Appointment</button>
       <button class="button" @click="$emit('active', null)">Cancel</button>
-    </footer>
+      </div>
+      </form>
+    </section>
+
   </div>
 </div>
 
@@ -28,7 +33,10 @@
 
 
 <script type="text/javascript">
+
 	import {post} from '../helpers/api'
+  import Flash from '../helpers/flash'
+
 	export default{
 		props:{
 			value: {
@@ -37,8 +45,21 @@
 			},
       appointActive: false,
       appTitle: '',
-      columns:''
+      columns:'',
+      storeURL:'',
+      isProcessing: '',
 		},
+    data(){
+      return {
+          
+          form: {
+            name: '',
+            phone: '',
+          
+        },
+
+      }
+    },
     filters: {
     capitalize: function (value) {
       if (!value) return ''
@@ -46,14 +67,20 @@
       return value.charAt(0).toUpperCase() + value.slice(1)
       }
     },
+    // computed: {
+    //   formData(){
+    //     return this.form + this.value
+    //   }
+    // },
     methods: {
       save(){
 
+        var form = Object.assign({},this.form,this.value)
         post(this.storeURL, form)
           .then((res)=>{
             if (res.data.saved) {
               Flash.setSuccess(res.data.message)
-              this.$router.push(`/en/customer-jewellries/${res.data.id}`)
+              this.$emit('active', null)
             }
           })
           .catch((err)=>{
@@ -61,6 +88,8 @@
               this.error = err.response.data
             }
           })
+          this.appointActive = false
+
       },
       
       

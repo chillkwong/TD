@@ -36,7 +36,7 @@
   				<article>
   					<center>
   						<button class="button is-info" @click="appointmentState=!appointmentState">Appointment</button>
-  						<appointment v-model="diamond" :appTitle="appointmentTitle" @active="appointmentState=!appointmentState" :appointActive="appointmentState" :columns="columns"></appointment>
+  						<appointment v-model="diamond" :appTitle="appointmentTitle" @active="appointmentState=!appointmentState" :appointActive="appointmentState" :columns="columns" :storeURL="storeURL" :isProcessing="false"></appointment>
   					</center>
   					<br>
   					<p>
@@ -280,6 +280,7 @@
                 'lab'
                 ]
 				,
+				storeURL: '/api/diamonds/appointment',
 				
 				post: {
 					invoice: {},

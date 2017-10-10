@@ -10690,7 +10690,7 @@ module.exports = Vue$3;
 		this.state.success = message;
 		setTimeout(function () {
 			_this.removeSuccess();
-		}, 3000);
+		}, 10000);
 	},
 	setError: function setError(message) {
 		var _this2 = this;
@@ -10698,7 +10698,7 @@ module.exports = Vue$3;
 		this.state.error = message;
 		setTimeout(function () {
 			_this2.removeError();
-		}, 10000);
+		}, 15000);
 	},
 	removeSuccess: function removeSuccess() {
 		this.state.success = null;
@@ -11537,7 +11537,7 @@ exports = module.exports = __webpack_require__(13)(undefined);
 
 
 // module
-exports.push([module.i, "\n*{\n\tbox-sizing: border-box;\n}\n", ""]);
+exports.push([module.i, "\n*{\n\tbox-sizing: border-box;\n}\n\n", ""]);
 
 // exports
 
@@ -11594,6 +11594,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -11620,7 +11646,43 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('router-view', {
+  return _c('div', [_c('div', {
+    staticClass: "modal",
+    class: {
+      'is-active': _vm.flash.success
+    }
+  }, [_c('div', {
+    staticClass: "modal-background",
+    on: {
+      "click": function($event) {
+        _vm.flash.success = null
+      }
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "modal-content"
+  }, [_c('div', {
+    staticClass: "notification is-info"
+  }, [_vm._v("\n\t\t  " + _vm._s(_vm.flash.success) + "\n\t\t")])])]), _vm._v(" "), _c('div', {
+    staticClass: "modal",
+    class: {
+      'is-active': _vm.flash.error
+    }
+  }, [_c('div', {
+    staticClass: "modal-background",
+    on: {
+      "click": function($event) {
+        _vm.flash.error = null
+      }
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "modal-content"
+  }, [_c('div', {
+    staticClass: "notification is-danger"
+  }, [_vm._v("\n\t\t  " + _vm._s(_vm.flash.error) + "\n\t\t")])])]), _vm._v(" "), (_vm.flash.error) ? _c('div', {
+    staticClass: "notification is-info"
+  }, [_c('button', {
+    staticClass: "delete"
+  }), _vm._v("\n  " + _vm._s(_vm.flash.error) + "\n")]) : _vm._e(), _vm._v(" "), _c('router-view', {
     staticClass: "view one",
     attrs: {
       "name": "header",
@@ -19778,6 +19840,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			},
 			columns: ['price', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
 
+			storeURL: '/api/diamonds/appointment',
+
 			post: {
 				invoice: {},
 				content: []
@@ -19865,7 +19929,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "appTitle": _vm.appointmentTitle,
       "appointActive": _vm.appointmentState,
-      "columns": _vm.columns
+      "columns": _vm.columns,
+      "storeURL": _vm.storeURL,
+      "isProcessing": false
     },
     on: {
       "active": function($event) {
@@ -20082,6 +20148,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_flash__ = __webpack_require__(5);
 //
 //
 //
@@ -20111,6 +20178,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -20121,8 +20196,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     appointActive: false,
     appTitle: '',
-    columns: ''
+    columns: '',
+    storeURL: '',
+    isProcessing: ''
   },
+  data: function data() {
+    return {
+
+      form: {
+        name: '',
+        phone: ''
+
+      }
+
+    };
+  },
+
   filters: {
     capitalize: function capitalize(value) {
       if (!value) return '';
@@ -20130,20 +20219,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return value.charAt(0).toUpperCase() + value.slice(1);
     }
   },
+  // computed: {
+  //   formData(){
+  //     return this.form + this.value
+  //   }
+  // },
   methods: {
     save: function save() {
       var _this = this;
 
+      var form = Object.assign({}, this.form, this.value);
       Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["c" /* post */])(this.storeURL, form).then(function (res) {
         if (res.data.saved) {
-          Flash.setSuccess(res.data.message);
-          _this.$router.push('/en/customer-jewellries/' + res.data.id);
+          __WEBPACK_IMPORTED_MODULE_1__helpers_flash__["a" /* default */].setSuccess(res.data.message);
+          _this.$emit('active', null);
         }
       }).catch(function (err) {
         if (err.response.status === 422) {
           _this.error = err.response.data;
         }
       });
+      this.appointActive = false;
     }
   }
 });
@@ -20191,18 +20287,78 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('td', [_vm._v(_vm._s(_vm._f("capitalize")(column)))])
   })), _vm._v(" "), _c('tr', _vm._l((_vm.columns), function(column) {
     return _c('td', [_vm._v(_vm._s(_vm.value[column]))])
-  }))])]), _vm._v(" "), _c('footer', {
-    staticClass: "modal-card-foot"
-  }, [_c('button', {
-    staticClass: "button is-success"
-  }, [_vm._v("Save changes")]), _vm._v(" "), _c('button', {
+  }))]), _vm._v(" "), _c('form', {
+    on: {
+      "submit": function($event) {
+        $event.preventDefault();
+        _vm.save($event)
+      }
+    }
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.form.name),
+      expression: "form.name"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text",
+      "name": "name",
+      "placeholder": "your name",
+      "required": ""
+    },
+    domProps: {
+      "value": (_vm.form.name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.form.name = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.form.phone),
+      expression: "form.phone"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text",
+      "name": "phone",
+      "placeholder": "your Phone No.",
+      "required": ""
+    },
+    domProps: {
+      "value": (_vm.form.phone)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.form.phone = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('div', [_c('button', {
+    staticClass: "button is-success ",
+    class: {
+      'is-loading': _vm.isProcessing
+    },
+    on: {
+      "submit": function($event) {
+        $event.stopPropagation();
+        _vm.save($event)
+      }
+    }
+  }, [_vm._v("Appointment")]), _vm._v(" "), _c('button', {
     staticClass: "button",
     on: {
       "click": function($event) {
         _vm.$emit('active', null)
       }
     }
-  }, [_vm._v("Cancel")])])])])
+  }, [_vm._v("Cancel")])])])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
