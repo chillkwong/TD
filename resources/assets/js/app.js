@@ -13,6 +13,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import ActiveTab from './helpers/session'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -31,6 +32,12 @@ const app = new Vue({
 
 const header = new Vue({
     el: '#header',
+    data(){
+    	return{
+    		activeTab: this.$route.fullPath.slice(4),
+            
+    	}
+    },
     // components: {App},
     // template: `<app></app>`,
     router

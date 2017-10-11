@@ -21,7 +21,6 @@
       <input type="text" name="phone" class="input" v-model="form.phone" placeholder="your Phone No." required> 
       <div>
       <button class="button is-success " :class="{'is-loading': isProcessing}" @submit.stop="save" >Appointment</button>
-      <button class="button" @click="$emit('active', null)">Cancel</button>
       </div>
       </form>
     </section>

@@ -352,22 +352,30 @@
       <nav class="tabs is-fullwidth">
         <div class="container">
           <ul>
-            <li class="is-active"><a href=" {{url(app()->getLocale())}}/gia-loose-diamonds">{{trans('frontEnd.Diamonds')}}</a>
+            <li class="is-active"><a href=" {{url(app()->getLocale())}}/gia-loose-diamonds">{{trans('frontHeader.Diamonds')}}</a>
             </li>
-            <li><a href=" {{url(app()->getLocale())}}/engagement-rings">{{trans('frontEnd.Engagement Rings')}}</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/wedding-rings">{{trans('frontEnd.Wedding Rings')}}</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/buying-procedure">{{trans('frontEnd.Buying Procedure')}}</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/education-diamond-grading">{{trans('frontEnd.Education')}}</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/customer-jewellries">{{trans('frontEnd.Customer Moments')}}</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/about-us">{{trans('frontEnd.About')}}</a></li>
+            <li ><a href=" {{url(app()->getLocale())}}/engagement-rings">{{trans('frontHeader.Engagement Rings')}}</a></li>
+            <li ><a href=" {{url(app()->getLocale())}}/wedding-rings">{{trans('frontHeader.Wedding Rings')}}</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/buying-procedure">{{trans('frontHeader.Buying Procedure')}}</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/education-diamond-grading">{{trans('frontHeader.Education')}}</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/customer-jewellries">{{trans('frontHeader.Customer Moments')}}</a></li>
+            <li><a href=" {{url(app()->getLocale())}}/about-us">{{trans('frontHeader.About')}}</a></li>
           </ul>
           <div class="tabs">
-                <ul>
-                  <li class="is-active"><a>Pictures</a></li>
-                  <li><a>Music</a></li>
-                  <li><a>Videos</a></li>
-                  <li><a>Documents</a></li>
+                <ul v-if="activeTab=='gia-loose-diamonds'">
+                  <li ><a>{{__('frontHeader.Round Diamonds')}}</a></li>
+                  <li ><a>{{__('frontHeader.Fancy Cut Diamonds')}}</a></li>
+                  <li ><a>{{__('frontHeader.Fancy Color Diamonds')}}</a></li>
+                
                 </ul>
+
+                  <ul v-if="activeTab=='engagement-rings'">
+                  <li ><a>{{__('frontHeader.Solitaire Ring')}}</a></li>
+                  <li ><a>{{__('frontHeader.Side-stone Ring')}}</a></li>
+                  <li ><a>{{__('frontHeader.Halo Ring')}}</a></li>
+                 
+                </ul>
+                 
               </div>
         </div>
       </nav>
