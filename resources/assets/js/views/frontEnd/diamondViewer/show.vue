@@ -20,7 +20,7 @@
 	  					<div v-if="diamond.imageLink">
 	  						<iframe :src="diamond.imageLink" width="100%" height="500" ></iframe>
 	  					</div>
-	  					<div v-else>
+	  					<div v-if="diamond.imageLink == null">
 	  						<img src="/front_end/diamond_show/RoundDiamonds_sample.png" width="100%" height="500"></img>
 	  					</div>
 	  					</figure>
@@ -244,7 +244,7 @@
 	  		</span>
 	  	</div>
 	</div>
-
+	<carousel :carouselItems="images"></carousel>
 	
 </div>
 </template>
@@ -253,10 +253,11 @@
 	// import Auth from '../../store/auth'
 	import { get, del } from '../../../helpers/api'
 	import Appointment from '../../../components/appointment.vue'
+	import Carousel from '../../../components/carousel.vue'
 	// import Flash from '../../helpers/flash'
 
 	export default {
-		components: {Appointment},
+		components: {Appointment, Carousel},
 		data(){
 			return {
 				// auth: Auth.state,
@@ -286,7 +287,27 @@
 					invoice: {},
 					content: []
 				},
-				invoice: ''
+				invoice: '',
+				images:[
+				{	thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
+					src:'/images/qKrPCgDCyA6mxwq8.jpeg',
+					type:'img'},
+				{	thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
+					src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
+					type:'video'},
+				{	thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
+					src:'/images/qKrPCgDCyA6mxwq8.jpeg',
+					type:'img'},
+				{	thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
+					src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
+					type:'video'},	
+				{	thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
+					src:'/images/qKrPCgDCyA6mxwq8.jpeg',
+					type:'img'},
+				{	thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
+					src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
+					type:'video'},
+					]
 			}
 		},
 		watch:{

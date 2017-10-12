@@ -17,16 +17,16 @@
 	    <a href="./adm/customers">Customers</a>
 	    <a href="./adm/customer-jewellries">Posts</a>
 	    <a>Items</a>
-	    <a href="./adm/inv-diamonds">Diamonds</a>
+	    <a href="./adm/inv-diamonds">Invoice Diamonds</a>
 	    <a href="./adm/jewellries">Jewellries</a>
 	  </p>
-	  <a class="panel-block is-active">
+	  <a class="panel-block is-active" href="./adm/invoices" >
 	    <span class="panel-icon">
 	      <i class="fa fa-book"></i>
 	    </span>
 	    Invoices
 	  </a>
-	  <a class="panel-block">
+	  <a class="panel-block" href="./adm/customers">
 	    <span class="panel-icon">
 	      <i class="fa fa-book"></i>
 	    </span>
@@ -38,13 +38,13 @@
 	    </span>
 	    Items
 	  </a>
-	  <a class="panel-block">
+	  <a class="panel-block" href="./adm/inv-diamonds">
 	    <span class="panel-icon">
 	      <i class="fa fa-diamond"></i>
 	    </span>
-	    Diamonds
+	    Invoice Diamonds
 	  </a>
-	  <a class="panel-block">
+	  <a class="panel-block" href="./adm/customer-jewellries">
 	    <span class="panel-icon">
 	      <i class="fa fa-code-fork"></i>
 	    </span>

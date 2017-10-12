@@ -18011,18 +18011,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "./adm/inv-diamonds"
     }
-  }, [_vm._v("Diamonds")]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Invoice Diamonds")]), _vm._v(" "), _c('a', {
     attrs: {
       "href": "./adm/jewellries"
     }
   }, [_vm._v("Jewellries")])]), _vm._v(" "), _c('a', {
-    staticClass: "panel-block is-active"
+    staticClass: "panel-block is-active",
+    attrs: {
+      "href": "./adm/invoices"
+    }
   }, [_c('span', {
     staticClass: "panel-icon"
   }, [_c('i', {
     staticClass: "fa fa-book"
   })]), _vm._v("\n\t    Invoices\n\t  ")]), _vm._v(" "), _c('a', {
-    staticClass: "panel-block"
+    staticClass: "panel-block",
+    attrs: {
+      "href": "./adm/customers"
+    }
   }, [_c('span', {
     staticClass: "panel-icon"
   }, [_c('i', {
@@ -18034,13 +18040,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('i', {
     staticClass: "fa fa-book"
   })]), _vm._v("\n\t    Items\n\t  ")]), _vm._v(" "), _c('a', {
-    staticClass: "panel-block"
+    staticClass: "panel-block",
+    attrs: {
+      "href": "./adm/inv-diamonds"
+    }
   }, [_c('span', {
     staticClass: "panel-icon"
   }, [_c('i', {
     staticClass: "fa fa-diamond"
-  })]), _vm._v("\n\t    Diamonds\n\t  ")]), _vm._v(" "), _c('a', {
-    staticClass: "panel-block"
+  })]), _vm._v("\n\t    Invoice Diamonds\n\t  ")]), _vm._v(" "), _c('a', {
+    staticClass: "panel-block",
+    attrs: {
+      "href": "./adm/customer-jewellries"
+    }
   }, [_c('span', {
     staticClass: "panel-icon"
   }, [_c('i', {

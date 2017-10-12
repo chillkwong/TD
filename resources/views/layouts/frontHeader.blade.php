@@ -362,7 +362,7 @@
             <li><a href=" {{url(app()->getLocale())}}/about-us">{{trans('frontHeader.About')}}</a></li>
           </ul>
           <div class="tabs">
-                <ul v-if="activeTab=='gia-loose-diamonds'">
+                <ul v-if="activeTab=='gia-loose-diamonds' || activeTab=='' ">
                   <li ><a>{{__('frontHeader.Round Diamonds')}}</a></li>
                   <li ><a>{{__('frontHeader.Fancy Cut Diamonds')}}</a></li>
                   <li ><a>{{__('frontHeader.Fancy Color Diamonds')}}</a></li>
