@@ -153,24 +153,29 @@
 		</div>
 
 		<div class="box" v-for="(jewellry,index) in form.jewellries">
-			<div class="columns">
+			<div class="columns" v-for="optJew in option.jewellries" v-if="optJew.id==jewellry.id">
 				<a class="delete" @click="form.jewellries.splice(index,1)"></a>
-				<div class="column is-1">
-					<label>ID</label>
-					<p class="subtitle is-5">{{option.jewellries[jewellry.id-1].id}}</p>
-				</div>
-				<div class="column is-2">
-					<label>Unit Price</label>
-					<p class="subtitle is-5">{{option.jewellries[jewellry.id-1].unit_price}}</p>
-				</div>
-				<div class="column is-3">
-					<label>Name</label>
-					<p class="subtitle is-5">{{option.jewellries[jewellry.id-1].text}}</p>
-				</div>
-				<div class="column is-6">
-					<label>Description</label>
-					<p class="subtitle is-5">{{option.jewellries[jewellry.id-1].description}}</p>
-				</div>
+
+						<div class="column is-1">
+							<label>ID</label>
+							<p class="subtitle is-5">{{optJew.id}}</p>
+						</div>
+
+						<div class="column is-2">
+							<label>Unit Price</label>
+							<p class="subtitle is-5">{{optJew.unit_price}}</p>
+						</div>
+
+						<div class="column is-3">
+							<label>Name</label>
+							<p class="subtitle is-5">{{optJew.text}}</p>
+						</div>
+
+						<div class="column is-6">
+							<label>Description</label>
+							<p class="subtitle is-5">{{optJew.description}}</p>
+						</div>
+					
 			</div>
 		</div>
 

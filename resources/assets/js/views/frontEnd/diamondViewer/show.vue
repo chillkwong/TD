@@ -18,7 +18,7 @@
 	  					
 	  					<figure class="image">
 	  					<div v-if="diamond.imageLink">
-	  						<iframe :src="diamond.imageLink" width="100%" height="500" ></iframe>
+	  						<iframe id="iframe1" :src="diamond.imageLink" width="100%" height="500" ></iframe>
 	  					</div>
 	  					<div v-if="diamond.imageLink == null">
 	  						<img src="/front_end/diamond_show/RoundDiamonds_sample.png" width="100%" height="500"></img>
@@ -250,12 +250,26 @@
 </template>
 
 <script type="text/javascript">
+
+	function setIframeSrc() {
+		  var s = "path/to/file";
+		  var iframe1 = document.getElementById('iframe1');
+		  if ( -1 == navigator.userAgent.indexOf("MSIE") ) {
+		    iframe1.src = s;
+		  }
+		  else {
+		    iframe1.location = s;
+		  }
+		}
+		setTimeout(setIframeSrc, 5);
+
 	// import Auth from '../../store/auth'
 	import { get, del } from '../../../helpers/api'
 	import Appointment from '../../../components/appointment.vue'
 	import Carousel from '../../../components/carousel.vue'
 	// import Flash from '../../helpers/flash'
 
+		
 	export default {
 		components: {Appointment, Carousel},
 		data(){

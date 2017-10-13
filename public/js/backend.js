@@ -14970,9 +14970,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('a', {
     staticClass: "navbar-link ",
     attrs: {
-      "href": "/adm/customers"
+      "href": "/adm/diamonds/create"
     }
-  }, [_vm._v("\n          Customers\n        ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n          Diamonds\n        ")]), _vm._v(" "), _c('div', {
     staticClass: "navbar-dropdown ",
     attrs: {
       "id": "blogDropdown",
@@ -14981,22 +14981,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('a', {
     staticClass: "navbar-item",
     attrs: {
-      "href": "/adm/customers"
+      "href": "/adm/diamonds"
     }
   }, [_c('div', {
     staticClass: "navbar-content"
   }, [_c('p', [_c('small', {
     staticClass: "has-text-info"
-  }, [_vm._v("Show all customers")])]), _vm._v(" "), _c('p', [_vm._v("Show")])])]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Show all Diamond")])]), _vm._v(" "), _c('p', [_vm._v("Show")])])]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item",
     attrs: {
-      "href": "/adm/customers/create"
+      "href": "/adm/diamonds/create"
     }
   }, [_c('div', {
     staticClass: "navbar-content"
   }, [_c('p', [_c('small', {
     staticClass: "has-text-info"
-  }, [_vm._v("Add new customers")])]), _vm._v(" "), _c('p', [_vm._v("Create")])])]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Import new Diamonds")])]), _vm._v(" "), _c('p', [_vm._v("Create")])])]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item",
     attrs: {
       "href": "http://bulma.io/blog/"
@@ -17632,10 +17632,12 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__views_post_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24__views_post_show_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__views_post_form_vue__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__views_post_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25__views_post_form_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__views_Auth_adm_login_vue__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__views_Auth_adm_login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26__views_Auth_adm_login_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__views_home_vue__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__views_home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_27__views_home_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__views_backEnd_diamondViewer_form_vue__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__views_backEnd_diamondViewer_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26__views_backEnd_diamondViewer_form_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__views_Auth_adm_login_vue__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__views_Auth_adm_login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_27__views_Auth_adm_login_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__views_home_vue__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__views_home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_28__views_home_vue__);
 
 
 
@@ -17687,6 +17689,9 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 
 
+//diamonds
+
+
 //Auth
 
 
@@ -17697,7 +17702,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 	mode: 'history',
-	routes: [{ path: '/', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_27__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a } }, { path: '/td-login', component: __WEBPACK_IMPORTED_MODULE_26__views_Auth_adm_login_vue___default.a }, { path: '/invoices/pdf/:id', component: __WEBPACK_IMPORTED_MODULE_12__views_invoice_show_vue___default.a }, { path: '/adm', components: { default: __WEBPACK_IMPORTED_MODULE_6__views_adm_index_vue___default.a, header: __WEBPACK_IMPORTED_MODULE_4__views_adm_header_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_5__views_adm_footer_vue___default.a },
+	routes: [{ path: '/', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_28__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a } }, { path: '/td-login', component: __WEBPACK_IMPORTED_MODULE_27__views_Auth_adm_login_vue___default.a }, { path: '/invoices/pdf/:id', component: __WEBPACK_IMPORTED_MODULE_12__views_invoice_show_vue___default.a }, { path: '/adm', components: { default: __WEBPACK_IMPORTED_MODULE_6__views_adm_index_vue___default.a, header: __WEBPACK_IMPORTED_MODULE_4__views_adm_header_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_5__views_adm_footer_vue___default.a },
 
 		children: [{ path: '', component: __WEBPACK_IMPORTED_MODULE_7__views_adm_main_vue___default.a }, { path: 'customers', component: __WEBPACK_IMPORTED_MODULE_8__views_customer_index_vue___default.a }, { path: 'customers/create', component: __WEBPACK_IMPORTED_MODULE_10__views_customer_form_vue___default.a }, { path: 'customers/:id', component: __WEBPACK_IMPORTED_MODULE_9__views_customer_show_vue___default.a }, { path: 'customers/:id/edit', component: __WEBPACK_IMPORTED_MODULE_10__views_customer_form_vue___default.a, meta: { mode: 'edit' } }, { path: 'invoices', component: __WEBPACK_IMPORTED_MODULE_11__views_invoice_index_vue___default.a }, { path: 'invoices/create', component: __WEBPACK_IMPORTED_MODULE_13__views_invoice_form_vue___default.a }, { path: 'invoices/:id', component: __WEBPACK_IMPORTED_MODULE_12__views_invoice_show_vue___default.a }, { path: 'invoices/:id/edit', component: __WEBPACK_IMPORTED_MODULE_13__views_invoice_form_vue___default.a, meta: { mode: 'edit' } },
 
@@ -17706,7 +17711,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 		// {path: 'items/:id', component: ItemShow},
 		// {path: 'items/:id/edit', component: ItemForm, meta:{mode:'edit'}},
 
-		{ path: 'inv-diamonds', component: __WEBPACK_IMPORTED_MODULE_14__views_invdiamond_index_vue___default.a }, { path: 'inv-diamonds/create', component: __WEBPACK_IMPORTED_MODULE_16__views_invdiamond_form_vue___default.a }, { path: 'inv-diamonds/:id', component: __WEBPACK_IMPORTED_MODULE_15__views_invdiamond_show_vue___default.a }, { path: 'inv-diamonds/:id/edit', component: __WEBPACK_IMPORTED_MODULE_16__views_invdiamond_form_vue___default.a, meta: { mode: 'edit' } }, { path: 'jewellries', component: __WEBPACK_IMPORTED_MODULE_17__views_jewellry_index_vue___default.a }, { path: 'jewellries/create', component: __WEBPACK_IMPORTED_MODULE_19__views_jewellry_form_vue___default.a, meta: { mode: 'create' } }, { path: 'jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_18__views_jewellry_show_vue___default.a }, { path: 'jewellries/:id/edit', component: __WEBPACK_IMPORTED_MODULE_19__views_jewellry_form_vue___default.a, meta: { mode: 'edit' } }, { path: 'posts', component: __WEBPACK_IMPORTED_MODULE_23__views_post_index_vue___default.a }, { path: 'posts/create', component: __WEBPACK_IMPORTED_MODULE_25__views_post_form_vue___default.a, meta: { mode: 'create' } }, { path: 'posts/:id/edit', component: __WEBPACK_IMPORTED_MODULE_25__views_post_form_vue___default.a, meta: { mode: 'edit' } }, { path: 'posts/:id', component: __WEBPACK_IMPORTED_MODULE_24__views_post_show_vue___default.a }, { path: 'customer-jewellries/create', component: __WEBPACK_IMPORTED_MODULE_22__views_customerJewellry_form_vue___default.a, meta: { mode: 'create' } }, { path: 'customer-jewellries/:id/create', component: __WEBPACK_IMPORTED_MODULE_22__views_customerJewellry_form_vue___default.a, meta: { mode: 'create' } }, { path: 'customer-jewellries/:id/edit', component: __WEBPACK_IMPORTED_MODULE_22__views_customerJewellry_form_vue___default.a, meta: { mode: 'edit' } }] }]
+		{ path: 'diamonds/create', component: __WEBPACK_IMPORTED_MODULE_26__views_backEnd_diamondViewer_form_vue___default.a }, { path: 'inv-diamonds', component: __WEBPACK_IMPORTED_MODULE_14__views_invdiamond_index_vue___default.a }, { path: 'inv-diamonds/create', component: __WEBPACK_IMPORTED_MODULE_16__views_invdiamond_form_vue___default.a }, { path: 'inv-diamonds/:id', component: __WEBPACK_IMPORTED_MODULE_15__views_invdiamond_show_vue___default.a }, { path: 'inv-diamonds/:id/edit', component: __WEBPACK_IMPORTED_MODULE_16__views_invdiamond_form_vue___default.a, meta: { mode: 'edit' } }, { path: 'jewellries', component: __WEBPACK_IMPORTED_MODULE_17__views_jewellry_index_vue___default.a }, { path: 'jewellries/create', component: __WEBPACK_IMPORTED_MODULE_19__views_jewellry_form_vue___default.a, meta: { mode: 'create' } }, { path: 'jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_18__views_jewellry_show_vue___default.a }, { path: 'jewellries/:id/edit', component: __WEBPACK_IMPORTED_MODULE_19__views_jewellry_form_vue___default.a, meta: { mode: 'edit' } }, { path: 'posts', component: __WEBPACK_IMPORTED_MODULE_23__views_post_index_vue___default.a }, { path: 'posts/create', component: __WEBPACK_IMPORTED_MODULE_25__views_post_form_vue___default.a, meta: { mode: 'create' } }, { path: 'posts/:id/edit', component: __WEBPACK_IMPORTED_MODULE_25__views_post_form_vue___default.a, meta: { mode: 'edit' } }, { path: 'posts/:id', component: __WEBPACK_IMPORTED_MODULE_24__views_post_show_vue___default.a }, { path: 'customer-jewellries/create', component: __WEBPACK_IMPORTED_MODULE_22__views_customerJewellry_form_vue___default.a, meta: { mode: 'create' } }, { path: 'customer-jewellries/:id/create', component: __WEBPACK_IMPORTED_MODULE_22__views_customerJewellry_form_vue___default.a, meta: { mode: 'create' } }, { path: 'customer-jewellries/:id/edit', component: __WEBPACK_IMPORTED_MODULE_22__views_customerJewellry_form_vue___default.a, meta: { mode: 'edit' } }] }]
 
 });
 /* harmony default export */ __webpack_exports__["a"] = (router);
@@ -19467,6 +19472,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -20395,32 +20405,34 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })], 1)])]), _vm._v(" "), _vm._l((_vm.form.jewellries), function(jewellry, index) {
     return _c('div', {
       staticClass: "box"
-    }, [_c('div', {
-      staticClass: "columns"
-    }, [_c('a', {
-      staticClass: "delete",
-      on: {
-        "click": function($event) {
-          _vm.form.jewellries.splice(index, 1)
+    }, _vm._l((_vm.option.jewellries), function(optJew) {
+      return (optJew.id == jewellry.id) ? _c('div', {
+        staticClass: "columns"
+      }, [_c('a', {
+        staticClass: "delete",
+        on: {
+          "click": function($event) {
+            _vm.form.jewellries.splice(index, 1)
+          }
         }
-      }
-    }), _vm._v(" "), _c('div', {
-      staticClass: "column is-1"
-    }, [_c('label', [_vm._v("ID")]), _vm._v(" "), _c('p', {
-      staticClass: "subtitle is-5"
-    }, [_vm._v(_vm._s(_vm.option.jewellries[jewellry.id - 1].id))])]), _vm._v(" "), _c('div', {
-      staticClass: "column is-2"
-    }, [_c('label', [_vm._v("Unit Price")]), _vm._v(" "), _c('p', {
-      staticClass: "subtitle is-5"
-    }, [_vm._v(_vm._s(_vm.option.jewellries[jewellry.id - 1].unit_price))])]), _vm._v(" "), _c('div', {
-      staticClass: "column is-3"
-    }, [_c('label', [_vm._v("Name")]), _vm._v(" "), _c('p', {
-      staticClass: "subtitle is-5"
-    }, [_vm._v(_vm._s(_vm.option.jewellries[jewellry.id - 1].text))])]), _vm._v(" "), _c('div', {
-      staticClass: "column is-6"
-    }, [_c('label', [_vm._v("Description")]), _vm._v(" "), _c('p', {
-      staticClass: "subtitle is-5"
-    }, [_vm._v(_vm._s(_vm.option.jewellries[jewellry.id - 1].description))])])])])
+      }), _vm._v(" "), _c('div', {
+        staticClass: "column is-1"
+      }, [_c('label', [_vm._v("ID")]), _vm._v(" "), _c('p', {
+        staticClass: "subtitle is-5"
+      }, [_vm._v(_vm._s(optJew.id))])]), _vm._v(" "), _c('div', {
+        staticClass: "column is-2"
+      }, [_c('label', [_vm._v("Unit Price")]), _vm._v(" "), _c('p', {
+        staticClass: "subtitle is-5"
+      }, [_vm._v(_vm._s(optJew.unit_price))])]), _vm._v(" "), _c('div', {
+        staticClass: "column is-3"
+      }, [_c('label', [_vm._v("Name")]), _vm._v(" "), _c('p', {
+        staticClass: "subtitle is-5"
+      }, [_vm._v(_vm._s(optJew.text))])]), _vm._v(" "), _c('div', {
+        staticClass: "column is-6"
+      }, [_c('label', [_vm._v("Description")]), _vm._v(" "), _c('p', {
+        staticClass: "subtitle is-5"
+      }, [_vm._v(_vm._s(optJew.description))])])]) : _vm._e()
+    }))
   }), _vm._v(" "), _c('table', {
     staticClass: "table is-fullwidth"
   }, [_c('tfoot', [_c('tr', [_c('td', {
@@ -23988,6 +24000,230 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
      require("vue-hot-reload-api").rerender("data-v-2091d3bd", module.exports)
+  }
+}
+
+/***/ }),
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(167),
+  /* template */
+  __webpack_require__(168),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/backEnd/diamondViewer/form.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] form.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e37209a4", Component.options)
+  } else {
+    hotAPI.reload("data-v-e37209a4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 167 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_flash__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_api__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helpers_form__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_ImageUpload_vue__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_ImageUpload_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_ImageUpload_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	components: {
+		ImageUpload: __WEBPACK_IMPORTED_MODULE_4__components_ImageUpload_vue___default.a
+	},
+	data: function data() {
+		return {
+			select: [{ title: '' }],
+			form: {
+				invoice_id: '',
+
+				images: ['', ''],
+				csv: ''
+			},
+			error: {},
+			isProcessing: false,
+			initializeURL: '/api/diamonds/create',
+			storeURL: '/api/diamonds',
+			action: 'Create'
+		};
+	},
+	created: function created() {
+		var _this = this;
+
+		if (this.$route.meta.mode === 'create') {
+			this.form.invoice_id = this.$route.params.id;
+		}
+		if (this.$route.meta.mode === 'edit') {
+			this.initializeURL = '/api/diamonds/' + this.$route.params.id + '/edit';
+			this.storeURL = '/api/diamonds/' + this.$route.params.id + '?_method=PUT';
+			this.action = 'Update';
+		}
+		Object(__WEBPACK_IMPORTED_MODULE_2__helpers_api__["b" /* get */])(this.initializeURL).then(function (res) {
+			__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(_this.$data, 'form', res.data.form);
+			__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(_this.$data, 'select', res.data.select);
+		});
+	},
+
+	methods: {
+		save: function save() {
+			var _this2 = this;
+
+			this.isProcessing = true;
+			var form = Object(__WEBPACK_IMPORTED_MODULE_3__helpers_form__["a" /* toMulipartedForm */])(this.form, this.$route.meta.mode);
+			Object(__WEBPACK_IMPORTED_MODULE_2__helpers_api__["c" /* post */])(this.storeURL, form).then(function (res) {
+				if (res.data.saved) {
+					__WEBPACK_IMPORTED_MODULE_1__helpers_flash__["a" /* default */].setSuccess(res.data.message);
+					_this2.$router.push('/en/customer-jewellries/' + res.data.id);
+				}
+			}).catch(function (err) {
+				if (err.response.status === 422) {
+					_this2.error = err.response.data;
+				}
+				_this2.isProcessing = false;
+			});
+		},
+		upload: function upload(e) {
+			var file = e.target.files;
+			if (file && file.length > 0) {
+				this.form.csv = file;
+			}
+		}
+	}
+});
+
+/***/ }),
+/* 168 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "box"
+  }, [_c('form', {
+    on: {
+      "submit": function($event) {
+        $event.preventDefault();
+        _vm.save($event)
+      }
+    }
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "columns"
+  }, [_c('div', {
+    staticClass: "column is-4"
+  }, [_c('div', {
+    staticClass: "box"
+  }, [_c('label', [_vm._v("{{}}")]), _vm._v(" "), _c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "file",
+      "accept": "files/*",
+      "name": "csv"
+    },
+    on: {
+      "change": _vm.upload
+    }
+  }), _vm._v(" "), (_vm.error.name) ? _c('small', [_vm._v(_vm._s(_vm.error.name[0]))]) : _vm._e()])])]), _vm._v(" "), _c('div', {
+    staticClass: "columns is-centered"
+  }, [_c('div', {
+    staticClass: "column"
+  }, [_c('button', {
+    staticClass: "button is-primary",
+    attrs: {
+      "disbled": _vm.isProcessing
+    },
+    on: {
+      "submit": _vm.save
+    }
+  }, [_vm._v("Save")])])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "columns"
+  }, [_c('p', {
+    staticClass: "title is-5 is-primary"
+  }, [_vm._v("Title for post")])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-e37209a4", module.exports)
   }
 }
 

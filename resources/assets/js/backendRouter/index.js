@@ -49,6 +49,9 @@ import PostIndex from '../views/post/index.vue'
 import PostShow from '../views/post/show.vue'
 import PostForm from '../views/post/form.vue'
 
+//diamonds
+import DiamondForm from '../views/backEnd/diamondViewer/form.vue'
+
 
 //Auth
 import AdmLogin from '../views/Auth/adm_login.vue'
@@ -85,6 +88,8 @@ const router = new VueRouter({
 		// {path: 'items/create', component: ItemForm},
 		// {path: 'items/:id', component: ItemShow},
 		// {path: 'items/:id/edit', component: ItemForm, meta:{mode:'edit'}},
+
+		{path: 'diamonds/create', component: DiamondForm},
 
 		{path: 'inv-diamonds', component: InvDiamondIndex},
 		{path: 'inv-diamonds/create', component: InvDiamondForm},

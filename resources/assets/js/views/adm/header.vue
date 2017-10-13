@@ -144,24 +144,24 @@
 
 
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link " href="/adm/customers">
-          Customers
+        <a class="navbar-link " href="/adm/diamonds/create">
+          Diamonds
         </a>
         <div id="blogDropdown" class="navbar-dropdown " data-style="width: 18rem;">
           
-            <a class="navbar-item" href="/adm/customers">
+            <a class="navbar-item" href="/adm/diamonds">
               <div class="navbar-content">
                 <p>
-                  <small class="has-text-info">Show all customers</small>
+                  <small class="has-text-info">Show all Diamond</small>
                 </p>
                 <p>Show</p>
               </div>
             </a>
           
-            <a class="navbar-item" href="/adm/customers/create">
+            <a class="navbar-item" href="/adm/diamonds/create">
               <div class="navbar-content">
                 <p>
-                  <small class="has-text-info">Add new customers</small>
+                  <small class="has-text-info">Import new Diamonds</small>
                 </p>
                 <p>Create</p>
               </div>

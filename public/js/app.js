@@ -14970,9 +14970,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('a', {
     staticClass: "navbar-link ",
     attrs: {
-      "href": "/adm/customers"
+      "href": "/adm/diamonds/create"
     }
-  }, [_vm._v("\n          Customers\n        ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n          Diamonds\n        ")]), _vm._v(" "), _c('div', {
     staticClass: "navbar-dropdown ",
     attrs: {
       "id": "blogDropdown",
@@ -14981,22 +14981,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('a', {
     staticClass: "navbar-item",
     attrs: {
-      "href": "/adm/customers"
+      "href": "/adm/diamonds"
     }
   }, [_c('div', {
     staticClass: "navbar-content"
   }, [_c('p', [_c('small', {
     staticClass: "has-text-info"
-  }, [_vm._v("Show all customers")])]), _vm._v(" "), _c('p', [_vm._v("Show")])])]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Show all Diamond")])]), _vm._v(" "), _c('p', [_vm._v("Show")])])]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item",
     attrs: {
-      "href": "/adm/customers/create"
+      "href": "/adm/diamonds/create"
     }
   }, [_c('div', {
     staticClass: "navbar-content"
   }, [_c('p', [_c('small', {
     staticClass: "has-text-info"
-  }, [_vm._v("Add new customers")])]), _vm._v(" "), _c('p', [_vm._v("Create")])])]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Import new Diamonds")])]), _vm._v(" "), _c('p', [_vm._v("Create")])])]), _vm._v(" "), _c('a', {
     staticClass: "navbar-item",
     attrs: {
       "href": "http://bulma.io/blog/"
@@ -19796,11 +19796,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+function setIframeSrc() {
+	var s = "path/to/file";
+	var iframe1 = document.getElementById('iframe1');
+	if (-1 == navigator.userAgent.indexOf("MSIE")) {
+		iframe1.src = s;
+	} else {
+		iframe1.location = s;
+	}
+}
+setTimeout(setIframeSrc, 5);
+
 // import Auth from '../../store/auth'
 
 
 
 // import Flash from '../../helpers/flash'
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	components: { Appointment: __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue___default.a, Carousel: __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue___default.a },
@@ -19854,7 +19867,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		fetchData: function fetchData() {
 			var _this = this;
 
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/diamonds/' + this.$route.params.id).then(function (res) {
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])("/api/diamonds/" + this.$route.params.id).then(function (res) {
 				_this.diamond = res.data.diamond;
 			});
 		}
@@ -20149,6 +20162,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "image"
   }, [(_vm.diamond.imageLink) ? _c('div', [_c('iframe', {
     attrs: {
+      "id": "iframe1",
       "src": _vm.diamond.imageLink,
       "width": "100%",
       "height": "500"

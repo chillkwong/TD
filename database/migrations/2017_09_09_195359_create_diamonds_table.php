@@ -15,7 +15,7 @@ class CreateDiamondsTable extends Migration
     {
         Schema::create('diamonds', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('price');
+            $table->bigInteger('price');
             $table->string('shape');
             $table->string('weight');
             $table->string('color');
