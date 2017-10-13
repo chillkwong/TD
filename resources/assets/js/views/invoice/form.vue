@@ -151,7 +151,7 @@
 				
 			</div>
 		</div>
-
+		<h1>Jewellries</h1>
 		<div class="box" v-for="(jewellry,index) in form.jewellries">
 			<div class="columns" v-for="optJew in option.jewellries" v-if="optJew.id==jewellry.id">
 				<a class="delete" @click="form.jewellries.splice(index,1)"></a>

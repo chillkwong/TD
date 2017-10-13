@@ -121,10 +121,14 @@ class DiamondController extends Controller
                 
                 
              
-              dd('Insert Record successfully.');
+             
              
             }
-                return;
+                return  response(
+                  json([
+                    'saved' => 'Insert Record successfully.'
+                  ])
+                );
         }
 
         protected function getFileName($file)

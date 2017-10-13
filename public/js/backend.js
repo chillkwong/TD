@@ -20402,7 +20402,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "selectedJew"
     }
-  })], 1)])]), _vm._v(" "), _vm._l((_vm.form.jewellries), function(jewellry, index) {
+  })], 1)])]), _vm._v(" "), _c('h1', [_vm._v("Jewellries")]), _vm._v(" "), _vm._l((_vm.form.jewellries), function(jewellry, index) {
     return _c('div', {
       staticClass: "box"
     }, _vm._l((_vm.option.jewellries), function(optJew) {
