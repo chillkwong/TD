@@ -83,7 +83,7 @@
 					.then((res)=>{
 						if (res.data.saved) {
 							Flash.setSuccess(res.data.message)
-							this.$router.push(`/en/customer-jewellries/${res.data.id}`)
+							this.$router.push(`/en/gia-loose-diamonds`)
 						}
 					})
 					.catch((err)=>{

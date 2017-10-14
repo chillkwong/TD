@@ -24151,7 +24151,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			Object(__WEBPACK_IMPORTED_MODULE_2__helpers_api__["c" /* post */])(this.storeURL, form).then(function (res) {
 				if (res.data.saved) {
 					__WEBPACK_IMPORTED_MODULE_1__helpers_flash__["a" /* default */].setSuccess(res.data.message);
-					_this2.$router.push('/en/customer-jewellries/' + res.data.id);
+					_this2.$router.push('/en/gia-loose-diamonds');
 				}
 			}).catch(function (err) {
 				if (err.response.status === 422) {

@@ -73,8 +73,11 @@ class DiamondController extends Controller
         unlink(base_path('public/files/').$path);
         $this->importToDatabase($results);
 
+        return  response()
+                  ->json([
+                    'saved' => 'Insert Record successfully.'
+                  ]);
 
-        return view('excels.clients', ['clients' => $results]);
     }
 
     public function importToDatabase($data)
@@ -124,11 +127,7 @@ class DiamondController extends Controller
              
              
             }
-                return  response(
-                  json([
-                    'saved' => 'Insert Record successfully.'
-                  ])
-                );
+                return  ;
         }
 
         protected function getFileName($file)
