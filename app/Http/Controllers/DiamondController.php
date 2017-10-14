@@ -7,7 +7,7 @@ use App\Diamond;
 use App\Mail\Appointment;
 use File;
 use Illuminate\Support\Facades\Input;
-use Maatwebsite\Excel\Facades\Excel;
+use Excel;
 use DB;
 
 class DiamondController extends Controller
