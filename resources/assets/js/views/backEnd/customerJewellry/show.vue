@@ -111,7 +111,7 @@
   			</div>
   			<div class="tile is-child">
   				<article>
-  					<figure><img src="/front_end/diamond/GIA-Laser-Inscription-girdle.jpg"></figure>
+  					<figure><img src="/images/diamond/GIA-Laser-Inscription-girdle.jpg"></figure>
   					<p class="subtitle">
 					鑽石腰部編號就好像是人的身份證，用來確認鑽石它的4Cs，到底是什麼那些級別。
 					</p>

@@ -6,23 +6,23 @@ import Header from '../views/layouts/header.vue'
 import Footer from '../views/layouts/footer.vue'
 
 //admin layouts
-import AdmHeader from '../views/adm/header.vue'
-import AdmFooter from '../views/adm/footer.vue'
-import Admin from '../views/adm/index.vue'
-import AdmMain from '../views/adm/main.vue'
+import AdmHeader from '../views/backEnd/adm/header.vue'
+import AdmFooter from '../views/backEnd/adm/footer.vue'
+import Admin from '../views/backEnd/adm/index.vue'
+import AdmMain from '../views/backEnd/adm/main.vue'
 
 //admin dashboard
 
 
 //Customer
-import CusomterIndex from '../views/customer/index.vue'
-import CustomerShow from '../views/customer/show.vue'
-import CustomerForm from '../views/customer/form.vue'
+import CusomterIndex from '../views/backEnd/customer/index.vue'
+import CustomerShow from '../views/backEnd/customer/show.vue'
+import CustomerForm from '../views/backEnd/customer/form.vue'
 
 //invoice
-import InvoiceIndex from '../views/invoice/index.vue'
-import InvoiceShow from '../views/invoice/show.vue'
-import InvoiceForm from '../views/invoice/form.vue'
+import InvoiceIndex from '../views/backEnd/invoice/index.vue'
+import InvoiceShow from '../views/backEnd/invoice/show.vue'
+import InvoiceForm from '../views/backEnd/invoice/form.vue'
 
 //invoice
 // import ItemIndex from '../views/item/index.vue'
@@ -30,31 +30,31 @@ import InvoiceForm from '../views/invoice/form.vue'
 // import ItemForm from '../views/item/form.vue'
 
 //invoice diamonds
-import InvDiamondIndex from '../views/invdiamond/index.vue'
-import InvDiamondShow from '../views/invdiamond/show.vue'
-import InvDiamondForm from '../views/invdiamond/form.vue'
+import InvDiamondIndex from '../views/backEnd/invdiamond/index.vue'
+import InvDiamondShow from '../views/backEnd/invdiamond/show.vue'
+import InvDiamondForm from '../views/backEnd/invdiamond/form.vue'
 
 //invoice diamonds
-import JewellryIndex from '../views/jewellry/index.vue'
-import JewellryShow from '../views/jewellry/show.vue'
-import JewellryForm from '../views/jewellry/form.vue'
+import JewellryIndex from '../views/backEnd/jewellry/index.vue'
+import JewellryShow from '../views/backEnd/jewellry/show.vue'
+import JewellryForm from '../views/backEnd/jewellry/form.vue'
 
 //customer Jewellries
-import CustomerJewIndex from '../views/customerJewellry/index.vue'
-import CustomerJewShow from '../views/customerJewellry/show.vue'
-import CustomerJewForm from '../views/customerJewellry/form.vue'
+import CustomerJewIndex from '../views/backEnd/customerJewellry/index.vue'
+import CustomerJewShow from '../views/backEnd/customerJewellry/show.vue'
+import CustomerJewForm from '../views/backEnd/customerJewellry/form.vue'
 
 //Post
-import PostIndex from '../views/post/index.vue'
-import PostShow from '../views/post/show.vue'
-import PostForm from '../views/post/form.vue'
+import PostIndex from '../views/backEnd/post/index.vue'
+import PostShow from '../views/backEnd/post/show.vue'
+import PostForm from '../views/backEnd/post/form.vue'
 
 //diamonds
 import DiamondForm from '../views/backEnd/diamondViewer/form.vue'
 
 
 //Auth
-import AdmLogin from '../views/Auth/adm_login.vue'
+import AdmLogin from '../views/backEnd/Auth/adm_login.vue'
 
 //home
 import Home from '../views/home.vue'

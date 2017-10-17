@@ -28,10 +28,13 @@ Route::Post('td-login', 'AdminController@login');
 //backend
 Route::resource('customers', 'CustomerController');
 Route::resource('invoices', 'InvoiceController');
+
+//Front
 Route::resource('invDiamonds', 'InvDiamondController');
-Route::resource('jewellries', 'JewellryController');
+Route::resource('engagementRings', 'engagementRingController');
 Route::resource('posts', 'PostController');
 Route::resource('invPosts', 'InvPostController');
+Route::resource('jewellries', 'JewellryController');
 
 Route::resource('diamonds', 'DiamondController');
 Route::post('diamonds/appointment', 'DiamondController@appointment');
@@ -41,5 +44,6 @@ Route::resource('items', 'ItemController');
 
 //front
 Route::resource('posts', 'PostController');
+
 
 

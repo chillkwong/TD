@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="box">
 	<div class="level">
 
 	</div>
@@ -303,6 +303,17 @@
 					 priceRange: ['100', '5000000'],
 					 weight: ['0.10','20']
 				},
+				preset: {
+					shape: ['RD','PS','EM','PR','MQ','CU','AC','OV','HT','RA'],
+					 color: ['d','e','f','g','h','i','j'],
+					 clarity: ['fl','if','vvs1', 'vvs2', 'vs1', 'vs2','si1','si2','i1'],
+					 cut: ['ex','vg','gd','fr','na'],
+					 polish: ['ex','vg','gd','fr'],
+					 symmetry: ['ex','vg','gd','fr'],
+					 fluroscence: ['none','faint','medium','strong'],
+					 priceRange: ['100', '5000000'],
+					 weight: ['0.10','20']
+				},
 				showModal:false,
 				showAdvance:false,
 				opened: [],
@@ -480,13 +491,27 @@
 					&search_column=${this.query.search_column}
 					&search_operator=${this.query.search_operator}
 					&search_input=${this.query.search_input}
-					&color=${this.fetchData.color.toString()}
-					&clarity=${this.fetchData.clarity.toString()}
-					&cut=${this.fetchData.cut.toString()}
-					&polish=${this.fetchData.polish.toString()}
-					&symmetry=${this.fetchData.symmetry.toString()}
-					&fluroscence=${this.fetchData.fluroscence.toString()}
-					&shape=${this.fetchData.shape.toString()}
+					&color=${
+						this.fetchData.color.toString()?this.fetchData.color.toString():this.preset.color.toString()
+					}
+					&clarity=${
+						this.fetchData.clarity.toString()?this.fetchData.clarity.toString():this.preset.clarity.toString()
+					}
+					&cut=${
+						this.fetchData.cut.toString()?this.fetchData.cut.toString():this.preset.cut.toString()
+					}
+					&polish=${
+						this.fetchData.polish.toString()?this.fetchData.polish.toString():this.preset.polish.toString()
+					}
+					&symmetry=${
+						this.fetchData.symmetry.toString()?this.fetchData.symmetry.toString():this.preset.symmetry.toString()
+					}
+					&fluroscence=${
+						this.fetchData.fluroscence.toString()?this.fetchData.fluroscence.toString():this.preset.fluroscence.toString()
+					}
+					&shape=${
+						this.fetchData.shape.toString()?this.fetchData.shape.toString():this.preset.shape.toString()
+					}
 					&price=${this.fetchData.priceRange}
 					&weight=${this.fetchData.weight}`)
 				.then((response)=>{

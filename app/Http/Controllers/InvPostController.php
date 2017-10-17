@@ -43,7 +43,7 @@ class InvPostController extends Controller
     {
         // dd($request->all());
         $this->validate($request, [
-            'video' => 'required | max:255',
+            // 'video' => 'required | max:255',
             'invoice_id' => 'required | max:255',
             'cover' => 'required | image',
             'contents' => 'required | array | min:1',

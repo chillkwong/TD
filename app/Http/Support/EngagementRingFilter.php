@@ -4,7 +4,7 @@ namespace App\Support;
 
 use Validator;
 
-trait DataViewer{
+trait EngagementRingFilter{
 
 
 	protected $operators = [
@@ -30,10 +30,10 @@ trait DataViewer{
 			'column', 'direction', 'per_page', 
 			'search_column', 'search_operator', 'search_input'
 			]), [
-			'column' => 'required | alpha_dash | in:' . implode(',' , self::$columns),
+			'column' => 'required | alpha_dash | in:' . implode(',' , $this->filter),
 			'direction' => 'required | in:asc,desc',
 			'per_page' => 'integer | min:1',
-			'search_column' =>'required | alpha_dash | in:' . implode(',' , self::$columns),
+			'search_column' =>'required | alpha_dash | in:' . implode(',' , $this->filter),
 			'search_operator' => 'required | alpha_dash | in:' . implode(',' , array_keys($this->operators)),
 			'search_input' => 'max:255'
 			]);
@@ -50,15 +50,9 @@ trait DataViewer{
 			->where(function($query){
 				$this->hasSearchInput($query);
 			})
-			->whereBetween(self::$columns[3], explode(',', request()->weight))
-			->whereBetween(self::$columns[1], explode(',', request()->price))
-			->whereIn('color', explode(',', request()->color))
-			->whereIn('clarity', explode(',', request()->clarity))
-			->whereIn('cut', explode(',', request()->cut))
-			->whereIn('polish', explode(',', request()->polish))
-			->whereIn('symmetry', explode(',', request()->symmetry))
-			->whereIn('fluroscence', explode(',', request()->fluroscence))
-			->whereIn('shape', explode(',', request()->shape))
+			->whereIn('style', explode(',', request()->style))
+			->whereIn('prong', explode(',', request()->prong))
+			->whereIn('shoulder', explode(',', request()->shoulder))
 			->paginate(request()->per_page);
 		
 		

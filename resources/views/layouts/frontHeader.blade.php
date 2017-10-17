@@ -349,17 +349,17 @@
 
   <!-- Hero footer: will stick at the bottom -->
     <div class="hero-foot">
-      <nav class="tabs is-fullwidth">
+      <nav class="tabs is-fullwidth" >
         <div class="container">
           <ul>
-            <li class="is-active"><a href=" {{url(app()->getLocale())}}/gia-loose-diamonds">{{trans('frontHeader.Diamonds')}}</a>
+            <li :class="{'is-active': activeTab=='gia-loose-diamonds' || activeTab=='' }"><a href=" {{url(app()->getLocale())}}/gia-loose-diamonds">{{trans('frontHeader.Diamonds')}}</a>
             </li>
-            <li ><a href=" {{url(app()->getLocale())}}/engagement-rings">{{trans('frontHeader.Engagement Rings')}}</a></li>
-            <li ><a href=" {{url(app()->getLocale())}}/wedding-rings">{{trans('frontHeader.Wedding Rings')}}</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/buying-procedure">{{trans('frontHeader.Buying Procedure')}}</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/education-diamond-grading">{{trans('frontHeader.Education')}}</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/customer-jewellries">{{trans('frontHeader.Customer Moments')}}</a></li>
-            <li><a href=" {{url(app()->getLocale())}}/about-us">{{trans('frontHeader.About')}}</a></li>
+            <li :class="{'is-active': activeTab=='engagement-rings'}"><a href=" {{url(app()->getLocale())}}/engagement-rings">{{trans('frontHeader.Engagement Rings')}}</a></li>
+            <li :class="{'is-active': activeTab=='wedding-rings'}"><a href=" {{url(app()->getLocale())}}/wedding-rings">{{trans('frontHeader.Wedding Rings')}}</a></li>
+            <li :class="{'is-active': activeTab=='buying-procedure'}"><a href=" {{url(app()->getLocale())}}/buying-procedure">{{trans('frontHeader.Buying Procedure')}}</a></li>
+            <li :class="{'is-active': activeTab=='education-diamond-grading'}"><a href=" {{url(app()->getLocale())}}/education-diamond-grading">{{trans('frontHeader.Education')}}</a></li>
+            <li :class="{'is-active': activeTab=='customer-jewellries'}"><a href=" {{url(app()->getLocale())}}/customer-jewellries">{{trans('frontHeader.Customer Moments')}}</a></li>
+            <li :class="{'is-active': activeTab=='about-us'}"><a href=" {{url(app()->getLocale())}}/about-us">{{trans('frontHeader.About')}}</a></li>
           </ul>
           <div class="tabs">
                 <ul v-if="activeTab=='gia-loose-diamonds' || activeTab=='' ">
@@ -369,10 +369,17 @@
                 
                 </ul>
 
-                  <ul v-if="activeTab=='engagement-rings'">
+                <ul v-if="activeTab=='engagement-rings'">
                   <li ><a>{{__('frontHeader.Solitaire Ring')}}</a></li>
                   <li ><a>{{__('frontHeader.Side-stone Ring')}}</a></li>
                   <li ><a>{{__('frontHeader.Halo Ring')}}</a></li>
+                 
+                </ul>
+
+                <ul v-if="activeTab=='customer-jewellries'">
+                  <li ><a>{{__('frontHeader.Customer Jewellires')}}</a></li>
+                  <li ><a>{{__('frontHeader.Customer Moments')}}</a></li>
+                  <li ><a>{{__('frontHeader.Engagement Tips')}}</a></li>
                  
                 </ul>
                  
