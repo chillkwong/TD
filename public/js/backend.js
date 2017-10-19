@@ -19008,6 +19008,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -19144,15 +19149,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "colspan": "2"
     }
-  }), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('td', [_c('small', [_c('small', [_vm._v("$" + _vm._s(_vm.model.deposit))])])])]), _vm._v(" "), _c('tr', [_c('td', {
+  }), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('td', [_c('small', [_c('small', [_vm._v("$" + _vm._s(_vm.model.discount))])])])]), _vm._v(" "), _c('tr', [_c('td', {
     attrs: {
       "colspan": "2"
     }
-  }), _vm._v(" "), _vm._m(6), _vm._v(" "), _c('td', [_c('small', [_c('small', [_vm._v("$" + _vm._s(_vm.model.balance))])])])]), _vm._v(" "), _c('tr', [_c('td', {
+  }), _vm._v(" "), _vm._m(6), _vm._v(" "), _c('td', [_c('small', [_c('small', [_vm._v("$" + _vm._s(_vm.model.deposit))])])])]), _vm._v(" "), _c('tr', [_c('td', {
     attrs: {
       "colspan": "2"
     }
-  }), _vm._v(" "), _vm._m(7), _vm._v(" "), _c('td', [_c('small', [_vm._v("$" + _vm._s(_vm.model.total))])])])])]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), _vm._m(7), _vm._v(" "), _c('td', [_c('small', [_c('small', [_vm._v("$" + _vm._s(_vm.model.balance))])])])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }), _vm._v(" "), _vm._m(8), _vm._v(" "), _c('td', [_c('small', [_vm._v("$" + _vm._s(_vm.model.total))])])])])]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('div', {
     staticClass: "columns is-centered"
   }, [_c('div', {
     staticClass: "column is-11 "
@@ -19180,6 +19189,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('td', [_c('small', [_c('small', [_c('small', [_vm._v("1")])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('td', [_c('small', [_c('small', [_c('small', [_vm._v("1")])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('td', [_c('p', {
+    staticClass: "subtitle is-6"
+  }, [_c('small', [_c('small', [_vm._v("Balance:")])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('td', [_c('p', {
     staticClass: "subtitle is-6"

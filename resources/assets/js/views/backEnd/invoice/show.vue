@@ -87,6 +87,11 @@
 				<tfoot>
 					<tr>
 						<td colspan="2"></td>
+						<td><p class="subtitle is-6"><small><small>Balance:</small></small></p></td>
+						<td><small><small>${{model.discount}}</small></small></td>
+					</tr>
+					<tr>
+						<td colspan="2"></td>
 						<td><p class="subtitle is-6"><small><small>Deposit:</small></small></p></td>
 						<td><small><small>${{model.deposit}}</small></small></td>
 					</tr>

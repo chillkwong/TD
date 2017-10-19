@@ -23,21 +23,27 @@
 		<div class="tile is-ancestor">
 			<div class="tile is-12">
 	    		<div class="tile is-parent">
-		        	<article class="tile is-child box " >
+		        	<article class="tile is-child box is-4" >
 		            	<div>Style</div>
 		            	<input v-for="(value, index) in query.search_conditions.style" class="button " :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)" :value="query.search_conditions.style[index].display"> 
 					</article>
 
-					<article class="tile is-child box" >
+					<article class="tile is-child box is-4" >
 						<div>Metal</div>
 						<input v-for="(value, index) in query.search_conditions.metal " class=" button " :class=" {'is-info active' : query.search_conditions.metal[index].clicked} " type="button" @click="toggleValue(query.search_conditions.metal[index].clicked,'metal', index)" :value="query.search_conditions.metal[index].display"> 
 					</article>
 
+					<article class="tile is-child box is-2" >
+						<div>Side-stone</div>
+						<input v-model="fetchData.sideStone " class=" button " :class=" {'is-info active' : fetchData.sideStone} " type="button" @click="toggleSideStone()"> 
+					</article>
 
-					<article class="tile is-child box" >
+					<article class="tile is-child box is-2" >
 						<div>Custom-make</div>
 						<input v-model="fetchData.customized " class=" button " :class=" {'is-info active' : fetchData.customized} " type="button" @click="toggleCustomized()"> 
 					</article>
+
+					
 				</div>
 			</div>
 		</div>
@@ -51,7 +57,7 @@
 <div class="navbar-item is-hidden-desktop is-hidden-tablet is-centered">
 
 <div @click="showModal=!showModal">
-	
+
 <center>
 <button class="button is-info ">wedding Rings</button>
 </center>
@@ -80,6 +86,10 @@
 						<input v-for="(value, index) in query.search_conditions.metal " class=" button " :class=" {'is-info active' : query.search_conditions.metal[index].clicked} " type="button" @click="toggleValue(query.search_conditions.metal[index].clicked,'metal', index)" :value="query.search_conditions.metal[index].display"> 
 					</article>
 
+					<article class="tile is-child box" >
+						<div>Side-stone</div>
+						<input v-model="fetchData.sideStone " class=" button " :class=" {'is-info active' : fetchData.sideStone} " type="button" @click="toggleSideStone()"> 
+					</article>
 
 					<article class="tile is-child box" >
 						<div>Custom-make</div>
@@ -163,12 +173,14 @@
 				fetchData: {
 					 style: ['Japanese','Vintage','1'],
 					 metal: ['18KW','18KR','PT','Mixed'],
-					 customized: false
-					 
+					 customized: false,
+					 sideStone: false,
 				},
 				preset: {
 					 style: ['Japanese','Vintage','1'],
 					 metal: ['18KW','18KR','PT','Mixed'],
+					 customized: [false,true], 
+					 sideStone: [false,true],
 					 
 				},
 				showModal:false,
@@ -223,6 +235,10 @@
 		methods:{
 			toggleCustomized(){
 				this.fetchData.customized = !this.fetchData.customized
+				this.fetchIndexData()
+			},
+			toggleSideStone(){
+				this.fetchData.sideStone = !this.fetchData.sideStone
 				this.fetchIndexData()
 			},
 			clickRow(row,index){
@@ -325,7 +341,7 @@
 					&search_column=${this.query.search_column}
 					&search_operator=${this.query.search_operator}
 					&search_input=${this.query.search_input}
-					&customized=${this.fetchData.customized}
+					&customized=${this.preset.customized}
 					&style=${
 						this.fetchData.style.toString()?this.fetchData.style.toString():this.preset.style.toString()
 					}

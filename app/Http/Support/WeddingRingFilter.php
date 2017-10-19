@@ -50,7 +50,7 @@ trait WeddingRingFilter{
 			->where(function($query){
 				$this->hasSearchInput($query);
 			})
-			->where('customized', request()->customized=='true'?true:false)
+			->whereIn('customized', explode(',',request()->customized))
 			->whereIn('style', explode(',', request()->style))
 			->whereIn('metal', explode(',', request()->metal))
 			->paginate(request()->per_page);

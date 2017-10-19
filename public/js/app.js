@@ -21589,6 +21589,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -21602,12 +21612,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			fetchData: {
 				style: ['Japanese', 'Vintage', '1'],
 				metal: ['18KW', '18KR', 'PT', 'Mixed'],
-				customized: false
-
+				customized: false,
+				sideStone: false
 			},
 			preset: {
 				style: ['Japanese', 'Vintage', '1'],
-				metal: ['18KW', '18KR', 'PT', 'Mixed']
+				metal: ['18KW', '18KR', 'PT', 'Mixed'],
+				customized: [false, true],
+				sideStone: [false, true]
 
 			},
 			showModal: false,
@@ -21657,6 +21669,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	methods: {
 		toggleCustomized: function toggleCustomized() {
 			this.fetchData.customized = !this.fetchData.customized;
+			this.fetchIndexData();
+		},
+		toggleSideStone: function toggleSideStone() {
+			this.fetchData.sideStone = !this.fetchData.sideStone;
 			this.fetchIndexData();
 		},
 		clickRow: function clickRow(row, index) {
@@ -21755,7 +21771,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		fetchIndexData: function fetchIndexData() {
 			var _this = this;
 
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&customized=' + this.fetchData.customized + '\n\t\t\t\t\t&style=' + (this.fetchData.style.toString() ? this.fetchData.style.toString() : this.preset.style.toString()) + '\n\t\t\t\t\t&metal=' + (this.fetchData.metal.toString() ? this.fetchData.metal.toString() : this.preset.metal.toString()) + '\n\t\t\t\t\t').then(function (response) {
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&customized=' + this.preset.customized + '\n\t\t\t\t\t&style=' + (this.fetchData.style.toString() ? this.fetchData.style.toString() : this.preset.style.toString()) + '\n\t\t\t\t\t&metal=' + (this.fetchData.metal.toString() ? this.fetchData.metal.toString() : this.preset.metal.toString()) + '\n\t\t\t\t\t').then(function (response) {
 				_this.model = response.data.model;
 				// Vue.set(vm.$data, 'columns', response.data.columns)
 				_this.chunkItems();
@@ -21792,7 +21808,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "tile is-parent"
   }, [_c('article', {
-    staticClass: "tile is-child box "
+    staticClass: "tile is-child box is-4"
   }, [_c('div', [_vm._v("Style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
     return _c('input', {
       staticClass: "button ",
@@ -21810,7 +21826,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     })
   })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
+    staticClass: "tile is-child box is-4"
   }, [_c('div', [_vm._v("Metal")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.metal), function(value, index) {
     return _c('input', {
       staticClass: " button ",
@@ -21828,7 +21844,35 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     })
   })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
+    staticClass: "tile is-child box is-2"
+  }, [_c('div', [_vm._v("Side-stone")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.sideStone),
+      expression: "fetchData.sideStone "
+    }],
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.fetchData.sideStone
+    },
+    attrs: {
+      "type": "button"
+    },
+    domProps: {
+      "value": (_vm.fetchData.sideStone)
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleSideStone()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.fetchData.sideStone = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box is-2"
   }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
@@ -21924,6 +21968,34 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     })
   })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Side-stone")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.sideStone),
+      expression: "fetchData.sideStone "
+    }],
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.fetchData.sideStone
+    },
+    attrs: {
+      "type": "button"
+    },
+    domProps: {
+      "value": (_vm.fetchData.sideStone)
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleSideStone()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.fetchData.sideStone = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('article', {
     staticClass: "tile is-child box"
   }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _c('input', {
     directives: [{
