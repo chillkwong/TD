@@ -20,10 +20,12 @@ class CreateWeddingRingsTable extends Migration
             $table->string('description');
             $table->string('metal')->default('18k');
             $table->string('style')->default('1');
+            $table->boolean('sideStone')->default(false);
             $table->string('cover')->nullable();
             $table->string('image1')->nullable();
             $table->string('video')->nullable();
             $table->integer('unit_price');
+            $table->integer('unit_price1');
             $table->boolean('published')->default(false);
             $table->boolean('customized')->default(false);
             $table->integer('page_id')->unsigned()->nullable();

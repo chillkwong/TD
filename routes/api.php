@@ -31,8 +31,8 @@ Route::resource('invoices', 'InvoiceController');
 
 //Front
 Route::resource('invDiamonds', 'InvDiamondController');
-Route::resource('engagementRings', 'engagementRingController');
-Route::resource('weddingRings', 'weddingRingController');
+Route::resource('engagementRings', 'EngagementRingController');
+Route::resource('weddingRings', 'EeddingRingController');
 
 Route::resource('posts', 'PostController');
 Route::resource('invPosts', 'InvPostController');
