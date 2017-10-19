@@ -4,7 +4,7 @@ namespace App\Support;
 
 use Validator;
 
-trait EngagementRingFilter{
+trait WeddingRingFilter{
 
 
 	protected $operators = [
@@ -52,8 +52,7 @@ trait EngagementRingFilter{
 			})
 			->where('customized', request()->customized=='true'?true:false)
 			->whereIn('style', explode(',', request()->style))
-			->whereIn('prong', explode(',', request()->prong))
-			->whereIn('shoulder', explode(',', request()->shoulder))
+			->whereIn('metal', explode(',', request()->metal))
 			->paginate(request()->per_page);
 		
 		

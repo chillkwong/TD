@@ -101,7 +101,9 @@
 
 <div @click="showModal=!showModal">
 
+<center>
 <button class="button is-info ">Search Diamonds</button>
+</center>
 
 <div class="modal" :class="{ 'is-active':showModal}">
   <div class="modal-background"></div>

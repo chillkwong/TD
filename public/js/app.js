@@ -14344,7 +14344,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/adm/header.vue"
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/backEnd/adm/header.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] header.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -14355,9 +14355,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-595f5198", Component.options)
+    hotAPI.createRecord("data-v-1aacc093", Component.options)
   } else {
-    hotAPI.reload("data-v-595f5198", Component.options)
+    hotAPI.reload("data-v-1aacc093", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -15195,7 +15195,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-595f5198", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-1aacc093", module.exports)
   }
 }
 
@@ -15216,7 +15216,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/jewellry/index.vue"
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/backEnd/jewellry/index.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -15227,9 +15227,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3c17d519", Component.options)
+    hotAPI.createRecord("data-v-aa6162d8", Component.options)
   } else {
-    hotAPI.reload("data-v-3c17d519", Component.options)
+    hotAPI.reload("data-v-aa6162d8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -16866,7 +16866,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3c17d519", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-aa6162d8", module.exports)
   }
 }
 
@@ -16887,7 +16887,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/jewellry/show.vue"
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/backEnd/jewellry/show.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] show.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -16898,9 +16898,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-29098286", Component.options)
+    hotAPI.createRecord("data-v-09e124aa", Component.options)
   } else {
-    hotAPI.reload("data-v-29098286", Component.options)
+    hotAPI.reload("data-v-09e124aa", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -17074,7 +17074,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-29098286", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-09e124aa", module.exports)
   }
 }
 
@@ -17095,7 +17095,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/Auth/adm_login.vue"
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/backEnd/Auth/adm_login.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] adm_login.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -17106,9 +17106,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-53b83d93", Component.options)
+    hotAPI.createRecord("data-v-7b2091e4", Component.options)
   } else {
-    hotAPI.reload("data-v-53b83d93", Component.options)
+    hotAPI.reload("data-v-7b2091e4", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -17298,7 +17298,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-53b83d93", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-7b2091e4", module.exports)
   }
 }
 
@@ -17415,7 +17415,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(69);
-module.exports = __webpack_require__(94);
+module.exports = __webpack_require__(104);
 
 
 /***/ }),
@@ -17429,7 +17429,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helpers_session__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helpers_session__ = __webpack_require__(103);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -17492,12 +17492,12 @@ var header = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_adm_header_vue__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_adm_header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_adm_header_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_jewellry_index_vue__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_jewellry_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_jewellry_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_jewellry_show_vue__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_jewellry_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_jewellry_show_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_backEnd_adm_header_vue__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_backEnd_adm_header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_backEnd_adm_header_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_backEnd_jewellry_index_vue__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_backEnd_jewellry_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_backEnd_jewellry_index_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_backEnd_jewellry_show_vue__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_backEnd_jewellry_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_backEnd_jewellry_show_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue__ = __webpack_require__(74);
@@ -17506,14 +17506,18 @@ var header = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_diamondViewer_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_frontEnd_diamondViewer_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_Auth_adm_login_vue__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_Auth_adm_login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__views_Auth_adm_login_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_home_vue__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__views_home_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_frontEnd_weddingRing_index_vue__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_frontEnd_weddingRing_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__views_frontEnd_weddingRing_index_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_frontEnd_weddingRing_show_vue__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_frontEnd_weddingRing_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__views_frontEnd_weddingRing_show_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_backEnd_Auth_adm_login_vue__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_backEnd_Auth_adm_login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__views_backEnd_Auth_adm_login_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_home_vue__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__views_home_vue__);
 
 
 
@@ -17570,6 +17574,12 @@ var header = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 // import CustomerJewForm from '../views/customerJewellry/form.vue'
 
 
+//Wedding Rings
+
+
+// import CustomerJewForm from '../views/customerJewellry/form.vue'
+
+
 // //Post
 // import PostIndex from '../views/post/index.vue'
 // import PostShow from '../views/post/show.vue'
@@ -17586,7 +17596,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 	mode: 'history',
-	routes: [{ path: '/', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_14__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+	routes: [{ path: '/', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_16__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
 
 		children: [{ path: '' },
 		// {path:'/posts/:id', component:PostIndex },
@@ -17594,7 +17604,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 		{ path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue___default.a },
 
 		//diamonds
-		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_diamondViewer_index_vue___default.a }, { path: 'gia-loose-diamonds/:id', component: __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue___default.a }] }, { path: '/en', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_14__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_diamondViewer_index_vue___default.a }, { path: 'gia-loose-diamonds/:id', component: __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue___default.a }] }, { path: '/en', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_16__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
 		children: [{ path: '' },
 		// {path:'/posts/:id', component:PostIndex },
 
@@ -17604,14 +17614,17 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_diamondViewer_index_vue___default.a }, { path: 'gia-loose-diamonds/:id', component: __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue___default.a },
 
 		//engagement rings
-		{ path: 'engagement-rings/', component: __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue___default.a }, { path: 'engagement-rings/:id', component: __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue___default.a }] }, { path: '/hk', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_14__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+		{ path: 'engagement-rings/', component: __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue___default.a }, { path: 'engagement-rings/:id', component: __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue___default.a },
+
+		//Wedding rings
+		{ path: 'wedding-rings/', component: __WEBPACK_IMPORTED_MODULE_13__views_frontEnd_weddingRing_index_vue___default.a }, { path: 'wedding-rings/:id', component: __WEBPACK_IMPORTED_MODULE_14__views_frontEnd_weddingRing_show_vue___default.a }] }, { path: '/hk', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_16__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
 		children: [{ path: '' }, { path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue___default.a },
 
 		//diamonds
 		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_diamondViewer_index_vue___default.a }, { path: 'gia-loose-diamonds/:id', component: __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue___default.a },
 
 		//engagement rings
-		{ path: 'engagement-rings/', component: __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue___default.a }, { path: 'engagement-rings/:id', component: __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue___default.a }] }, { path: '/cn', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_14__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+		{ path: 'engagement-rings/', component: __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue___default.a }, { path: 'engagement-rings/:id', component: __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue___default.a }] }, { path: '/cn', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_16__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
 		children: [{ path: '' }, { path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue___default.a },
 
 		//diamonds
@@ -18598,6 +18611,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -19062,9 +19077,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.showModal = !_vm.showModal
       }
     }
-  }, [_c('button', {
+  }, [_c('center', [_c('button', {
     staticClass: "button is-info "
-  }, [_vm._v("Search Diamonds")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Search Diamonds")])]), _vm._v(" "), _c('div', {
     staticClass: "modal",
     class: {
       'is-active': _vm.showModal
@@ -19348,7 +19363,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     })
-  })], 2)])])]) : _vm._e()]), _vm._v(" "), _vm._m(4)])])])])]), _vm._v(" "), _c('div', {
+  })], 2)])])]) : _vm._e()]), _vm._v(" "), _vm._m(4)])])], 1)])]), _vm._v(" "), _c('div', {
     staticClass: "tabs"
   }, [_c('table', {
     staticClass: "table is-striped is-narrowed is-fullwidth "
@@ -20658,180 +20673,14 @@ if (false) {
 
 /***/ }),
 /* 93 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony default export */ var _unused_webpack_default_export = ({
-	activeTab: 'diamond',
-
-	setSession: function setSession(session) {
-		this.activeTab = session;
-	}
-});
-
-/***/ }),
-/* 94 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(246),
+  __webpack_require__(94),
   /* template */
-  __webpack_require__(243),
+  __webpack_require__(95),
   /* styles */
   null,
   /* scopeId */
@@ -20863,270 +20712,45 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 243 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "box"
-  }, [_c('div', {
-    staticClass: "level"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "tile is-ancestor"
-  }, [_c('div', {
-    staticClass: "tile is-parent "
-  }, [_c('div', {
-    staticClass: "tile is-child notification is-primary"
-  }, [_c('center', [_c('h1', {
-    staticClass: "title is-5"
-  }, [_vm._v("Customer moments - Customer Jewelrries")]), _vm._v(" "), _c('h1', [_vm._v("\n\t\t\t\t\t\tThank you for customers support, so that we could share their precious moments.\n\t\t\t\t\t\t")])])], 1)])]), _vm._v(" "), _c('nav', [_c('div', {
-    staticClass: "navbar-item is-hidden-mobile"
-  }, [_c('div', {
-    staticClass: "tile is-ancestor"
-  }, [_c('div', {
-    staticClass: "tile is-12"
-  }, [_c('div', {
-    staticClass: "tile is-parent"
-  }, [_c('article', {
-    staticClass: "tile is-child box "
-  }, [_c('div', [_vm._v("Style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
-    return _c('input', {
-      staticClass: "button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.style[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.style[index].description
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.style[index].clicked, 'style', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Shoulder")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.shoulder), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.shoulder[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.shoulder[index].description
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.shoulder[index].clicked, 'shoulder', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Claw Prong")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.prong), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.prong[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.prong[index].description
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.prong[index].clicked, 'prong', index)
-        }
-      }
-    })
-  })], 2)])])])])]), _vm._v(" "), _c('nav', [_c('div', {
-    staticClass: "navbar-item is-hidden-desktop is-hidden-tablet is-centered"
-  }, [_c('div', {
-    on: {
-      "click": function($event) {
-        _vm.showModal = !_vm.showModal
-      }
-    }
-  }, [_c('button', {
-    staticClass: "button is-info "
-  }, [_vm._v("Engagement Rings")]), _vm._v(" "), _c('div', {
-    staticClass: "modal",
-    class: {
-      'is-active': _vm.showModal
-    }
-  }, [_c('div', {
-    staticClass: "modal-background"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "modal-card"
-  }, [_c('section', {
-    staticClass: "modal-card-body",
-    on: {
-      "click": function($event) {
-        _vm.showModal = !_vm.showModal
-      }
-    }
-  }, [_c('div', {
-    staticClass: "tile is-ancestor"
-  }, [_c('div', {
-    staticClass: "tile is-12"
-  }, [_c('div', {
-    staticClass: "tile is-parent"
-  }, [_c('article', {
-    staticClass: "tile is-child box "
-  }, [_c('div', [_vm._v("style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
-    return _c('input', {
-      staticClass: "button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.style[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.style[index].description
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.style[index].clicked, 'style', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("shoulder")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.shoulder), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.shoulder[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.shoulder[index].description
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.shoulder[index].clicked, 'shoulder', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("prong")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.prong), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.prong[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.prong[index].description
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.prong[index].clicked, 'prong', index)
-        }
-      }
-    })
-  })], 2)])])])]), _vm._v(" "), _vm._m(0)])])])])]), _vm._v(" "), _vm._l((_vm.model), function(rings) {
-    return _c('div', {
-      staticClass: "tile is-ancestor"
-    }, _vm._l((rings), function(ring) {
-      return _c('div', {
-        staticClass: "tile is-parent is-3"
-      }, [(ring) ? _c('div', {
-        staticClass: "tile is-child"
-      }, [_c('article', {
-        staticClass: "tile"
-      }, [_c('router-link', {
-        attrs: {
-          "to": _vm.$route.path + '/' + ring.id
-        }
-      }, [(ring.cover) ? _c('img', {
-        attrs: {
-          "src": ("/images/" + (ring.cover))
-        }
-      }) : _vm._e(), _vm._v(" "), _c('center', [(ring.description) ? _c('p', {
-        staticClass: "subtitle"
-      }, [_vm._v(_vm._s(ring.description))]) : _vm._e()])], 1)], 1)]) : _vm._e()])
-    }))
-  })], 2)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('footer', {
-    staticClass: "modal-card-foot"
-  }, [_c('button', {
-    staticClass: "button is-success"
-  }, [_vm._v("Submit")])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-758c5db9", module.exports)
-  }
-}
-
-/***/ }),
-/* 244 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var Component = __webpack_require__(0)(
-  /* script */
-  null,
-  /* template */
-  __webpack_require__(245),
-  /* styles */
-  null,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/frontEnd/engagementRing/show.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] show.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3edd3434", Component.options)
-  } else {
-    hotAPI.reload("data-v-3edd3434", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 245 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c("div")
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3edd3434", module.exports)
-  }
-}
-
-/***/ }),
-/* 246 */
+/* 94 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -21263,7 +20887,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			fetchData: {
 				style: ['Solitaire', 'Side-stone', 'Halo'],
 				prong: ['4-prong', '6-prong'],
-				shoulder: ['Tapering', 'Parallel', 'Twisted']
+				shoulder: ['Tapering', 'Parallel', 'Twisted'],
+				customized: false
 
 			},
 			preset: {
@@ -21276,6 +20901,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			showAdvance: false,
 			opened: [],
 			model: {},
+			chunkedItemsDesktop: [],
+			chunkedItemsMobile: [],
 			clickedRows: [],
 			columns: ['style', 'shoulder', 'prong'],
 			query: {
@@ -21288,7 +20915,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				search_input: '',
 				search_conditions: {
 					style: [{ description: 'Solitaire', clicked: false, display: 'Solitaire' }, { description: 'Side-stone', clicked: false, display: 'Side-stone' }, { description: 'Halo', clicked: false, display: 'Halo' }],
-					prong: [{ description: '4-claw prong', clicked: false, display: '4-claw prong' }, { description: '6-claw prong', clicked: false, display: '6-claw prong' }],
+					prong: [{ description: '4-prong', clicked: false, display: '4-claw prong' }, { description: '6-prong', clicked: false, display: '6-claw prong' }],
 					shoulder: [{ description: 'Tapering', clicked: false, display: 'Tapering' }, { description: 'Parallel', clicked: false, display: 'Parallel' }, { description: 'Twisted', clicked: false, display: 'Twisted' }]
 				}
 			},
@@ -21316,6 +20943,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	methods: {
+		toggleCustomized: function toggleCustomized() {
+			this.fetchData.customized = !this.fetchData.customized;
+			this.fetchIndexData();
+		},
 		clickRow: function clickRow(row, index) {
 			this.clickedRows.push(index);
 			this.$router.push(this.$route.path + '/' + row.id);
@@ -21391,18 +21022,1070 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}
 			this.fetchIndexData();
 		},
+		chunkItems: function chunkItems() {
+			var chunk1 = [];
+			var chunk2 = [];
+
+			for (var i = 0; this.model.data.length - 1 >= i;) {
+				chunk1.push(this.model.data.slice(i, i + 4));
+				i += 4;
+			}
+			this.chunkedItemsDesktop = chunk1;
+
+			for (var i = 0; this.model.data.length - 1 >= i;) {
+				chunk2.push(this.model.data.slice(i, i + 2));
+				i += 2;
+			}
+			this.chunkedItemsMobile = chunk2;
+
+			return;
+		},
 		fetchIndexData: function fetchIndexData() {
 			var _this = this;
 
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&style=' + (this.fetchData.style.toString() ? this.fetchData.style.toString() : this.preset.style.toString()) + '\n\t\t\t\t\t&shoulder=' + (this.fetchData.shoulder.toString() ? this.fetchData.shoulder.toString() : this.preset.shoulder.toString()) + '\n\t\t\t\t\t&prong=' + (this.fetchData.prong.toString() ? this.fetchData.prong.toString() : this.preset.prong.toString())).then(function (response) {
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&customized=' + this.fetchData.customized + '\n\t\t\t\t\t&style=' + (this.fetchData.style.toString() ? this.fetchData.style.toString() : this.preset.style.toString()) + '\n\t\t\t\t\t&shoulder=' + (this.fetchData.shoulder.toString() ? this.fetchData.shoulder.toString() : this.preset.shoulder.toString()) + '\n\t\t\t\t\t&prong=' + (this.fetchData.prong.toString() ? this.fetchData.prong.toString() : this.preset.prong.toString())).then(function (response) {
 				_this.model = response.data.model;
 				// Vue.set(vm.$data, 'columns', response.data.columns)
+				_this.chunkItems();
 			}).catch(function () {
 				console.log(response);
 			});
 		}
 	}
 });
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "box"
+  }, [_c('div', {
+    staticClass: "level"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "tile is-ancestor"
+  }, [_c('div', {
+    staticClass: "tile is-parent "
+  }, [_c('div', {
+    staticClass: "tile is-child notification is-primary"
+  }, [_c('center', [_c('h1', {
+    staticClass: "title is-5"
+  }, [_vm._v("Engagement Rings - Solitaire")]), _vm._v(" "), _c('h1', [_vm._v("\n\t\t\t\t\t\tThank you for customers support, so that we could share their precious moments.\n\t\t\t\t\t\t")])])], 1)])]), _vm._v(" "), _c('nav', [_c('div', {
+    staticClass: "navbar-item is-hidden-mobile"
+  }, [_c('div', {
+    staticClass: "tile is-ancestor"
+  }, [_c('div', {
+    staticClass: "tile is-12"
+  }, [_c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('article', {
+    staticClass: "tile is-child box is-4"
+  }, [_c('div', [_vm._v("Style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
+    return _c('input', {
+      staticClass: "button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.style[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.style[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.style[index].clicked, 'style', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box is-3"
+  }, [_c('div', [_vm._v("Shoulder")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.shoulder), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.shoulder[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.shoulder[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.shoulder[index].clicked, 'shoulder', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box is-3"
+  }, [_c('div', [_vm._v("Claw Prong")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.prong), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.prong[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.prong[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.prong[index].clicked, 'prong', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box is-2"
+  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.customized),
+      expression: "fetchData.customized "
+    }],
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.fetchData.customized
+    },
+    attrs: {
+      "type": "button"
+    },
+    domProps: {
+      "value": (_vm.fetchData.customized)
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleCustomized()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.fetchData.customized = $event.target.value
+      }
+    }
+  })])])])])])]), _vm._v(" "), _c('nav', [_c('div', {
+    staticClass: "navbar-item is-hidden-desktop is-hidden-tablet is-centered"
+  }, [_c('div', {
+    on: {
+      "click": function($event) {
+        _vm.showModal = !_vm.showModal
+      }
+    }
+  }, [_c('center', [_c('button', {
+    staticClass: "button is-info "
+  }, [_vm._v("Engagement Rings")])]), _vm._v(" "), _c('div', {
+    staticClass: "modal",
+    class: {
+      'is-active': _vm.showModal
+    }
+  }, [_c('div', {
+    staticClass: "modal-background"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "modal-card"
+  }, [_c('section', {
+    staticClass: "modal-card-body",
+    on: {
+      "click": function($event) {
+        _vm.showModal = !_vm.showModal
+      }
+    }
+  }, [_c('div', {
+    staticClass: "tile is-ancestor"
+  }, [_c('div', {
+    staticClass: "tile is-12"
+  }, [_c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
+    return _c('input', {
+      staticClass: "button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.style[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.style[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.style[index].clicked, 'style', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Shoulder")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.shoulder), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.shoulder[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.shoulder[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.shoulder[index].clicked, 'shoulder', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Claw Prong")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.prong), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.prong[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.prong[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.prong[index].clicked, 'prong', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.customized),
+      expression: "fetchData.customized "
+    }],
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.fetchData.customized
+    },
+    attrs: {
+      "type": "button"
+    },
+    domProps: {
+      "value": (_vm.fetchData.customized)
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleCustomized()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.fetchData.customized = $event.target.value
+      }
+    }
+  })])])])])]), _vm._v(" "), _vm._m(0)])])], 1)])]), _vm._v(" "), _c('div', {
+    staticClass: "is-hidden-mobile"
+  }, _vm._l((_vm.chunkedItemsDesktop), function(rings, idnex) {
+    return _c('div', {
+      staticClass: "tile is-ancestor"
+    }, _vm._l((rings), function(ring) {
+      return _c('div', {
+        staticClass: "tile is-parent is-3"
+      }, [(ring) ? _c('div', {
+        staticClass: "tile is-child"
+      }, [_c('article', {
+        staticClass: "tile"
+      }, [_c('router-link', {
+        attrs: {
+          "to": _vm.$route.path + '/' + ring.id
+        }
+      }, [(ring.cover) ? _c('img', {
+        attrs: {
+          "src": ("/images/" + (ring.cover))
+        }
+      }) : _vm._e(), _vm._v(" "), _c('center', [(ring.description) ? _c('p', {
+        staticClass: "subtitle"
+      }, [_vm._v("$" + _vm._s(ring.unit_price))]) : _vm._e(), _vm._v(" "), (ring.description) ? _c('p', [_vm._v(_vm._s(ring.description))]) : _vm._e()])], 1)], 1)]) : _vm._e()])
+    }))
+  })), _vm._v(" "), _c('div', {
+    staticClass: "is-hidden-desktop is-hidden-tablet is-centered box"
+  }, _vm._l((_vm.chunkedItemsMobile), function(rings, idnex) {
+    return _c('div', {
+      staticClass: "level is-mobile"
+    }, _vm._l((rings), function(ring) {
+      return _c('div', {
+        staticClass: "level-item"
+      }, [(ring) ? _c('div', [_c('router-link', {
+        attrs: {
+          "to": _vm.$route.path + '/' + ring.id
+        }
+      }, [(ring.cover) ? _c('img', {
+        attrs: {
+          "width": "128",
+          "height": "96",
+          "src": ("/images/" + (ring.cover))
+        }
+      }) : _vm._e(), _vm._v(" "), _c('center', [(ring.description) ? _c('p', {
+        staticClass: "subtitle"
+      }, [_vm._v("$" + _vm._s(ring.unit_price))]) : _vm._e(), _vm._v(" "), (ring.description) ? _c('p', [_vm._v(_vm._s(ring.description))]) : _vm._e()])], 1)], 1) : _vm._e()])
+    }))
+  }))])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('footer', {
+    staticClass: "modal-card-foot"
+  }, [_c('button', {
+    staticClass: "button is-success"
+  }, [_vm._v("Submit")])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-758c5db9", module.exports)
+  }
+}
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(0)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(97),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/frontEnd/engagementRing/show.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] show.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3edd3434", Component.options)
+  } else {
+    hotAPI.reload("data-v-3edd3434", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c("div")
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-3edd3434", module.exports)
+  }
+}
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(99),
+  /* template */
+  __webpack_require__(100),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/frontEnd/weddingRing/index.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7feef7d0", Component.options)
+  } else {
+    hotAPI.reload("data-v-7feef7d0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 99 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+	props: ['title'],
+	data: function data() {
+		return {
+			source: '/api/weddingRings',
+			fetchData: {
+				style: ['Japanese', 'Vintage', '1'],
+				metal: ['18KW', '18KR', 'PT', 'Mixed'],
+				customized: false
+
+			},
+			preset: {
+				style: ['Japanese', 'Vintage', '1'],
+				metal: ['18KW', '18KR', 'PT', 'Mixed']
+
+			},
+			showModal: false,
+			showAdvance: false,
+			opened: [],
+			model: {},
+			chunkedItemsDesktop: [],
+			chunkedItemsMobile: [],
+			clickedRows: [],
+			columns: ['style', 'shoulder', 'prong'],
+			query: {
+				page: 1,
+				column: 'style',
+				direction: 'asc',
+				per_page: '10',
+				search_column: 'id',
+				search_operator: 'like',
+				search_input: '',
+				search_conditions: {
+					style: [{ description: 'Japanese', clicked: false, display: 'Japanese' }, { description: 'Vintage', clicked: false, display: 'Vintage' }],
+					metal: [{ description: '18KW', clicked: false, display: '18K White' }, { description: '18KR', clicked: false, display: '18K Rose Gold' }, { description: 'PT', clicked: false, display: 'PT950/900' }, { description: 'Mixed', clicked: false, display: 'Mixed' }]
+				}
+			},
+			operators: {
+				equal: '=',
+				not_equal: '<>',
+				less_than: '<',
+				greater_than: '>',
+				less_than_or_equal_to: '<=',
+				greater_than_or_equal_to: '>=',
+				in: 'IN',
+				like: 'LIKE'
+			}
+		};
+	},
+	created: function created() {
+		this.fetchIndexData();
+	},
+
+	computed: {
+		styleClicked: function styleClicked() {
+			return this.query.search_conditions.style.filter(function (style) {
+				return style.clicked;
+			});
+		}
+	},
+	methods: {
+		toggleCustomized: function toggleCustomized() {
+			this.fetchData.customized = !this.fetchData.customized;
+			this.fetchIndexData();
+		},
+		clickRow: function clickRow(row, index) {
+			this.clickedRows.push(index);
+			this.$router.push(this.$route.path + '/' + row.id);
+		},
+		toggle: function toggle(id) {
+			var index = this.model.data.indexOf(id);
+			if (index > -1) {
+				this.model.data.splice(index, 1);
+			} else {
+				this.model.data.push(id);
+			}
+		},
+		moveTo: function moveTo(page) {
+			if (this.query.page + page > 0) {
+				this.query.page = this.query.page + page;
+				this.fetchIndexData();
+			}
+		},
+		filterFalse: function filterFalse(condition) {
+			var checked = this.query.search_conditions[condition].filter(function (condition) {
+				return condition.clicked;
+			});
+			this.filterDescriptions(checked);
+			this.fetchData[condition] = checked;
+
+			this.fetchIndexData();
+		},
+		filterDescriptions: function filterDescriptions(checked) {
+			for (var i = checked.length - 1; i >= 0; i--) {
+				checked[i] = checked[i].description;
+			}
+		},
+		toggleValue: function toggleValue(query, condition, number) {
+			var search_conditions = this.query.search_conditions[condition];
+
+			if (query === false) {
+				search_conditions[number].clicked = true;
+			} else {
+				search_conditions[number].clicked = false;
+			}
+
+			this.filterFalse(condition);
+		},
+
+		// toggleValueToFalseOnce(condition){
+		// 	var search_conditions = this.query.search_conditions[condition]
+		// 	for (var i = search_conditions.length - 1; i >= 0; i--) {
+		// 			search_conditions[i].clicked = false;
+		// 		}
+		// },
+		next: function next() {
+			if (this.model.next_page_url) {
+				this.query.page++;
+				this.fetchIndexData();
+			}
+		},
+		prev: function prev() {
+			if (this.model.prev_page_url) {
+				this.query.page--;
+				this.fetchIndexData();
+			}
+		},
+		toggleOrder: function toggleOrder(column) {
+			if (column === this.query.column) {
+				if (this.query.direction === 'desc') {
+					this.query.direction = 'asc';
+				} else {
+					this.query.direction = 'desc';
+				}
+			} else {
+				this.query.column = column;
+				this.direction = 'asc';
+			}
+			this.fetchIndexData();
+		},
+		chunkItems: function chunkItems() {
+			var chunk1 = [];
+			var chunk2 = [];
+
+			for (var i = 0; this.model.data.length - 1 >= i;) {
+				chunk1.push(this.model.data.slice(i, i + 4));
+				i += 4;
+			}
+			this.chunkedItemsDesktop = chunk1;
+
+			for (var i = 0; this.model.data.length - 1 >= i;) {
+				chunk2.push(this.model.data.slice(i, i + 2));
+				i += 2;
+			}
+			this.chunkedItemsMobile = chunk2;
+
+			return;
+		},
+		fetchIndexData: function fetchIndexData() {
+			var _this = this;
+
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&customized=' + this.fetchData.customized + '\n\t\t\t\t\t&style=' + (this.fetchData.style.toString() ? this.fetchData.style.toString() : this.preset.style.toString()) + '\n\t\t\t\t\t&metal=' + (this.fetchData.metal.toString() ? this.fetchData.metal.toString() : this.preset.metal.toString()) + '\n\t\t\t\t\t').then(function (response) {
+				_this.model = response.data.model;
+				// Vue.set(vm.$data, 'columns', response.data.columns)
+				_this.chunkItems();
+			}).catch(function () {
+				console.log(response);
+			});
+		}
+	}
+});
+
+/***/ }),
+/* 100 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "box"
+  }, [_c('div', {
+    staticClass: "level"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "tile is-ancestor"
+  }, [_c('div', {
+    staticClass: "tile is-parent "
+  }, [_c('div', {
+    staticClass: "tile is-child notification is-primary"
+  }, [_c('center', [_c('h1', {
+    staticClass: "title is-5"
+  }, [_vm._v("Wedding Rings")]), _vm._v(" "), _c('h1', [_vm._v("\n\t\t\t\t\t\tThank you for customers support, so that we could share their precious moments.\n\t\t\t\t\t\t")])])], 1)])]), _vm._v(" "), _c('nav', [_c('div', {
+    staticClass: "navbar-item is-hidden-mobile"
+  }, [_c('div', {
+    staticClass: "tile is-ancestor"
+  }, [_c('div', {
+    staticClass: "tile is-12"
+  }, [_c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('article', {
+    staticClass: "tile is-child box "
+  }, [_c('div', [_vm._v("Style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
+    return _c('input', {
+      staticClass: "button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.style[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.style[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.style[index].clicked, 'style', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Metal")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.metal), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.metal[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.metal[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.metal[index].clicked, 'metal', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.customized),
+      expression: "fetchData.customized "
+    }],
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.fetchData.customized
+    },
+    attrs: {
+      "type": "button"
+    },
+    domProps: {
+      "value": (_vm.fetchData.customized)
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleCustomized()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.fetchData.customized = $event.target.value
+      }
+    }
+  })])])])])])]), _vm._v(" "), _c('nav', [_c('div', {
+    staticClass: "navbar-item is-hidden-desktop is-hidden-tablet is-centered"
+  }, [_c('div', {
+    on: {
+      "click": function($event) {
+        _vm.showModal = !_vm.showModal
+      }
+    }
+  }, [_c('center', [_c('button', {
+    staticClass: "button is-info "
+  }, [_vm._v("wedding Rings")])]), _vm._v(" "), _c('div', {
+    staticClass: "modal",
+    class: {
+      'is-active': _vm.showModal
+    }
+  }, [_c('div', {
+    staticClass: "modal-background"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "modal-card"
+  }, [_c('section', {
+    staticClass: "modal-card-body",
+    on: {
+      "click": function($event) {
+        _vm.showModal = !_vm.showModal
+      }
+    }
+  }, [_c('div', {
+    staticClass: "tile is-ancestor"
+  }, [_c('div', {
+    staticClass: "tile is-12"
+  }, [_c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('article', {
+    staticClass: "tile is-child box "
+  }, [_c('div', [_vm._v("Style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
+    return _c('input', {
+      staticClass: "button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.style[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.style[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.style[index].clicked, 'style', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Metal")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.metal), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.metal[index].clicked
+      },
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.metal[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.metal[index].clicked, 'metal', index)
+        }
+      }
+    })
+  })], 2), _vm._v(" "), _c('article', {
+    staticClass: "tile is-child box"
+  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fetchData.customized),
+      expression: "fetchData.customized "
+    }],
+    staticClass: " button ",
+    class: {
+      'is-info active': _vm.fetchData.customized
+    },
+    attrs: {
+      "type": "button"
+    },
+    domProps: {
+      "value": (_vm.fetchData.customized)
+    },
+    on: {
+      "click": function($event) {
+        _vm.toggleCustomized()
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.fetchData.customized = $event.target.value
+      }
+    }
+  })])])])])]), _vm._v(" "), _vm._m(0)])])], 1)])]), _vm._v(" "), _c('div', {
+    staticClass: "is-hidden-mobile"
+  }, _vm._l((_vm.chunkedItemsDesktop), function(rings, idnex) {
+    return _c('div', {
+      staticClass: "tile is-ancestor"
+    }, _vm._l((rings), function(ring) {
+      return _c('div', {
+        staticClass: "tile is-parent is-3"
+      }, [(ring) ? _c('div', {
+        staticClass: "tile is-child"
+      }, [_c('article', {
+        staticClass: "tile"
+      }, [_c('router-link', {
+        attrs: {
+          "to": _vm.$route.path + '/' + ring.id
+        }
+      }, [(ring.cover) ? _c('img', {
+        attrs: {
+          "src": ("/images/" + (ring.cover))
+        }
+      }) : _vm._e(), _vm._v(" "), _c('center', [(ring.description) ? _c('p', {
+        staticClass: "subtitle"
+      }, [_vm._v("$" + _vm._s(ring.unit_price))]) : _vm._e(), _vm._v(" "), (ring.description) ? _c('p', [_vm._v(_vm._s(ring.description))]) : _vm._e()])], 1)], 1)]) : _vm._e()])
+    }))
+  })), _vm._v(" "), _c('div', {
+    staticClass: "is-hidden-desktop is-hidden-tablet is-centered box"
+  }, _vm._l((_vm.chunkedItemsMobile), function(rings, idnex) {
+    return _c('div', {
+      staticClass: "level is-mobile"
+    }, _vm._l((rings), function(ring) {
+      return _c('div', {
+        staticClass: "level-item"
+      }, [(ring) ? _c('div', [_c('router-link', {
+        attrs: {
+          "to": _vm.$route.path + '/' + ring.id
+        }
+      }, [(ring.cover) ? _c('img', {
+        attrs: {
+          "width": "128",
+          "height": "96",
+          "src": ("/images/" + (ring.cover))
+        }
+      }) : _vm._e(), _vm._v(" "), _c('center', [(ring.description) ? _c('p', {
+        staticClass: "subtitle"
+      }, [_vm._v("$" + _vm._s(ring.unit_price))]) : _vm._e(), _vm._v(" "), (ring.description) ? _c('p', [_vm._v(_vm._s(ring.description))]) : _vm._e()])], 1)], 1) : _vm._e()])
+    }))
+  }))])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('footer', {
+    staticClass: "modal-card-foot"
+  }, [_c('button', {
+    staticClass: "button is-success"
+  }, [_vm._v("Submit")])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-7feef7d0", module.exports)
+  }
+}
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(0)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(102),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/frontEnd/weddingRing/show.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] show.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-22f7acef", Component.options)
+  } else {
+    hotAPI.reload("data-v-22f7acef", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c("div")
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-22f7acef", module.exports)
+  }
+}
+
+/***/ }),
+/* 103 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = ({
+	activeTab: 'diamond',
+
+	setSession: function setSession(session) {
+		this.activeTab = session;
+	}
+});
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

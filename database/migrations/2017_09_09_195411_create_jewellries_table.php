@@ -25,7 +25,7 @@ class CreateJewellriesTable extends Migration
             $table->string('image1')->nullable();
             $table->string('video')->nullable();
             $table->integer('unit_price');
-            $table->boolean('publish')->default(false);
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
 

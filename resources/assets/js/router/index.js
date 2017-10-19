@@ -6,7 +6,7 @@ import Header from '../views/layouts/header.vue'
 import Footer from '../views/layouts/footer.vue'
 
 //admin layouts
-import AdmHeader from '../views/adm/header.vue'
+import AdmHeader from '../views/backEnd/adm/header.vue'
 // import AdmFooter from '../views/adm/footer.vue'
 // import Admin from '../views/adm/index.vue'
 // import AdmMain from '../views/adm/main.vue'
@@ -35,8 +35,8 @@ import AdmHeader from '../views/adm/header.vue'
 // import InvDiamondForm from '../views/invdiamond/form.vue'
 
 //invoice diamonds
-import JewellryIndex from '../views/jewellry/index.vue'
-import JewellryShow from '../views/jewellry/show.vue'
+import JewellryIndex from '../views/backEnd/jewellry/index.vue'
+import JewellryShow from '../views/backEnd/jewellry/show.vue'
 // import JewellryForm from '../views/jewellry/form.vue'
 
 //customer Jewellries
@@ -55,6 +55,12 @@ import EngagementRingShow from '../views/frontEnd/engagementRing/show.vue'
 // import CustomerJewForm from '../views/customerJewellry/form.vue'
 
 
+//Wedding Rings
+import WeddingRingIndex from '../views/frontEnd/weddingRing/index.vue'
+import WeddingRingShow from '../views/frontEnd/weddingRing/show.vue'
+// import CustomerJewForm from '../views/customerJewellry/form.vue'
+
+
 // //Post
 // import PostIndex from '../views/post/index.vue'
 // import PostShow from '../views/post/show.vue'
@@ -62,7 +68,7 @@ import EngagementRingShow from '../views/frontEnd/engagementRing/show.vue'
 
 
 //Auth
-import AdmLogin from '../views/Auth/adm_login.vue'
+import AdmLogin from '../views/backEnd/Auth/adm_login.vue'
 
 //home
 import Home from '../views/home.vue'
@@ -103,7 +109,11 @@ const router = new VueRouter({
 		//engagement rings
 		{path: 'engagement-rings/', component: EngagementRingIndex},
 		{path: 'engagement-rings/:id', component: EngagementRingShow},
-	
+
+		//Wedding rings
+		{path: 'wedding-rings/', component: WeddingRingIndex},
+		{path: 'wedding-rings/:id', component: WeddingRingShow},
+
 		]},
 
 

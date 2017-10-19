@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use File;
 use Illuminate\Http\Request;
-use App\Support\EngagementRingFilter;
-use App\EngagementRing;
+use App\Support\WeddingRingFilter;
+use App\WeddingRing;
 
-class EngagementRingController extends Controller
+class WeddingRingController extends Controller
 {
-	public function index()
+    public function index()
     {
     	return response()
     		->json([
-    			'model' =>EngagementRing::SearchPaginateAndOrder()
+    			'model' =>WeddingRing::SearchPaginateAndOrder()
     			]);
     }
 
@@ -21,8 +21,8 @@ class EngagementRingController extends Controller
     {
     	return response()
     		->json([
-    			'form' =>EngagementRing::form(),
-    			'option' =>EngagementRing::orderBy('id', 'desc')->first(['id'])
+    			'form' =>WeddingRing::form(),
+    			'option' =>WeddingRing::orderBy('id', 'desc')->first(['id'])
     		]);	
     }
 
@@ -36,7 +36,7 @@ class EngagementRingController extends Controller
     		]);
     	
 
-        $engagementRing = EngagementRing::create($request->all());
+        $WeddingRing = WeddingRing::create($request->all());
 
         $cover ='';
          if ($request->hasFile('cover')) {
@@ -51,10 +51,10 @@ class EngagementRingController extends Controller
         }
 
         
-        $engagementRing->cover = $cover;
-        $engagementRing->image1 = $image1;
+        $WeddingRing->cover = $cover;
+        $WeddingRing->image1 = $image1;
 
-        $engagementRing->save();
+        $WeddingRing->save();
         
 
     	return response()
@@ -70,21 +70,21 @@ class EngagementRingController extends Controller
 
     public function show($id)
     {
-    	$engagementRing = EngagementRing::findOrFail($id);
+    	$WeddingRing = WeddingRing::findOrFail($id);
 
     	return response()
     		->json([
-    			'model' => $engagementRing
+    			'model' => $WeddingRing
     			]);
     }
 
     public function edit($id)
     {
-    	$engagementRing = EngagementRing::findOrFail($id);
+    	$WeddingRing = WeddingRing::findOrFail($id);
 
     	return response()
     		->json([
-    			'form' =>$engagementRing,
+    			'form' =>$WeddingRing,
     			'option' => []
     			]);
     }
@@ -97,15 +97,15 @@ class EngagementRingController extends Controller
             'description' => 'required',
             'unit_price' => 'required | numeric |min:0',
     		]);
-    	$engagementRing = EngagementRing::findOrFail($id);
+    	$WeddingRing = WeddingRing::findOrFail($id);
 
         // dd($request->all());
         $cover ='';
          if ($request->hasFile('cover')) {
             $cover = $this->getFileName($request->cover);
             $request->cover->move(base_path('public/images'), $cover);
-            File::delete(base_path('public/images/'. $engagementRing->cover));
-            $engagementRing->cover = $cover;
+            File::delete(base_path('public/images/'. $WeddingRing->cover));
+            $WeddingRing->cover = $cover;
         }
         
 
@@ -113,12 +113,12 @@ class EngagementRingController extends Controller
         if ($request->hasFile('image1')) {
             $image1 = $this->getFileName($request->image1);
             $request->image1->move(base_path('public/images'), $image1);
-            File::delete(base_path('public/images/'. $engagementRing->image1));
-            $engagementRing->image1 = $image1;
+            File::delete(base_path('public/images/'. $WeddingRing->image1));
+            $WeddingRing->image1 = $image1;
         }
         
         
-    	$engagementRing->update($request->except(['cover','image1']));
+    	$WeddingRing->update($request->except(['cover','image1']));
 
     	return response()
     		->json([
@@ -128,12 +128,12 @@ class EngagementRingController extends Controller
 
     public function destroy($id)
     {
-    	$engagementRing = EngagementRing::findOrFail($id);
+    	$WeddingRing = WeddingRing::findOrFail($id);
 
-        File::delete(base_path('public/images/'. $engagementRing->cover));
-        File::delete(base_path('public/images/'. $engagementRing->image1));
+        File::delete(base_path('public/images/'. $WeddingRing->cover));
+        File::delete(base_path('public/images/'. $WeddingRing->image1));
         
-    	$engagementRing->delete();
+    	$WeddingRing->delete();
 
     	return response()
     		->json([

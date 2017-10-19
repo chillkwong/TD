@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEngagementRingsTable extends Migration
+class CreateWeddingRingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateEngagementRingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('engagement_rings', function (Blueprint $table) {
+        Schema::create('wedding_rings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('stock');
             $table->string('name');
             $table->string('description');
-            $table->string('prong')->default('4-prong');
-            $table->string('shoulder')->default('tapering');
-            $table->string('style')->default('solitaire');
+            $table->string('metal')->default('18k');
+            $table->string('style')->default('1');
             $table->string('cover')->nullable();
             $table->string('image1')->nullable();
             $table->string('video')->nullable();
@@ -30,11 +29,10 @@ class CreateEngagementRingsTable extends Migration
             $table->integer('page_id')->unsigned()->nullable();
         });
 
-
-        Schema::create('invoice_engagement_ring', function (Blueprint $table) {
+        Schema::create('invoice_wedding_ring', function (Blueprint $table) {
             $table->integer('invoice_id');
-            $table->integer('engagement_ring_id');            
-            $table->primary(['invoice_id','engagement_ring_id']);
+            $table->integer('wedding_ring_id');            
+            $table->primary(['invoice_id','wedding_ring_id']);
         });
     }
 
@@ -45,7 +43,7 @@ class CreateEngagementRingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('engagement_rings');
-        Schema::dropIfExists('invoice_engagement_ring');
+        Schema::dropIfExists('wedding_rings');
+        Schema::dropIfExists('invoice_wedding_ring');
     }
 }
