@@ -87,7 +87,7 @@
 				<tfoot>
 					<tr>
 						<td colspan="2"></td>
-						<td><p class="subtitle is-6"><small><small>Balance:</small></small></p></td>
+						<td><p class="subtitle is-6"><small><small>Discount:</small></small></p></td>
 						<td><small><small>${{model.discount}}</small></small></td>
 					</tr>
 					<tr>

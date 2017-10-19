@@ -19192,7 +19192,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('td', [_c('p', {
     staticClass: "subtitle is-6"
-  }, [_c('small', [_c('small', [_vm._v("Balance:")])])])])
+  }, [_c('small', [_c('small', [_vm._v("Discount:")])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('td', [_c('p', {
     staticClass: "subtitle is-6"
