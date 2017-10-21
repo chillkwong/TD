@@ -12,7 +12,18 @@ class WeddingRingPairController extends Controller
     {
     	return response()
     		->json([
-    			'model' =>WeddingRing::SearchPaginateAndOrder()
-    			]);
+                'model' =>WeddingRingPair::orderBy('created_at','desc')->with(['weddingRings'=>function($query){
+
+                            $query
+                                ->orderBy(request()->column, request()->direction)
+                                ->whereIn('customized', explode(',',request()->customized))
+                                ->whereIn('sideStone', explode(',',request()->sideStone))
+                                ->whereIn('gender', explode(',',request()->gender))
+                                ->whereIn('style', explode(',', request()->style))
+                                ->whereIn('metal', explode(',', request()->metal))
+                                ;}
+
+                        ])->paginate(request()->per_page)
+                ]);
     }
 }
