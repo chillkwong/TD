@@ -50,7 +50,7 @@ trait EngagementRingFilter{
 			->where(function($query){
 				$this->hasSearchInput($query);
 			})
-			->where('customized', request()->customized=='true'?true:false)
+			->whereIn('customized', explode(',',request()->customized))
 			->whereIn('style', explode(',', request()->style))
 			->whereIn('prong', explode(',', request()->prong))
 			->whereIn('shoulder', explode(',', request()->shoulder))

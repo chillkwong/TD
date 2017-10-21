@@ -43,7 +43,7 @@ trait WeddingRingFilter{
 		}
 
 
-		// dd(request());
+		// dd(request()->customized);
 
 		return  $query
 			->orderBy(request()->column, request()->direction)
@@ -51,6 +51,8 @@ trait WeddingRingFilter{
 				$this->hasSearchInput($query);
 			})
 			->whereIn('customized', explode(',',request()->customized))
+			->whereIn('sideStone', explode(',',request()->sideStone))
+			->whereIn('gender', explode(',',request()->gender))
 			->whereIn('style', explode(',', request()->style))
 			->whereIn('metal', explode(',', request()->metal))
 			->paginate(request()->per_page);

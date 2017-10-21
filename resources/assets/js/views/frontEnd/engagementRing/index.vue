@@ -40,7 +40,7 @@
 
 					<article class="tile is-child box is-2" >
 						<div>Custom-make</div>
-						<input v-model="fetchData.customized " class=" button " :class=" {'is-info active' : fetchData.customized} " type="button" @click="toggleCustomized()"> 
+						<input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display"> 
 					</article>
 				</div>
 			</div>
@@ -91,7 +91,7 @@
 
 					<article class="tile is-child box" >
 						<div>Custom-make</div>
-						<input v-model="fetchData.customized " class=" button " :class=" {'is-info active' : fetchData.customized} " type="button" @click="toggleCustomized()"> 
+						<input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display"> 
 					</article>
 				</div>
 			</div>
@@ -170,13 +170,14 @@
 					 style: ['Solitaire','Side-stone','Halo'],
 					 prong: ['4-prong','6-prong'],
 					 shoulder: ['Tapering','Parallel','Twisted'],
-					 customized: false
+					 customized: [1,0], 
 					 
 				},
 				preset: {
 					 style: ['Solitaire','Side-stone','Halo'],
 					 prong: ['4-prong','6-prong'],
 					 shoulder: ['Tapering','Parallel','Twisted'],
+					 customized: [1,0], 
 					 
 				},
 				showModal:false,
@@ -209,6 +210,10 @@
 						{ description: 'Tapering', clicked: false , display: 'Tapering'},
 						{ description: 'Parallel', clicked: false , display: 'Parallel'},
 						{ description: 'Twisted', clicked: false , display: 'Twisted'},
+						],
+						customized: [
+						{ description: 1, clicked: false , display: 'True'},
+						{ description: 0, clicked: false , display: 'False'},
 						],
 					}
 				},
@@ -337,7 +342,7 @@
 					&search_column=${this.query.search_column}
 					&search_operator=${this.query.search_operator}
 					&search_input=${this.query.search_input}
-					&customized=${this.fetchData.customized}
+					&customized=${this.fetchData.customized.toString()?this.fetchData.customized:this.preset.customized.toString()}
 					&style=${
 						this.fetchData.style.toString()?this.fetchData.style.toString():this.preset.style.toString()
 					}

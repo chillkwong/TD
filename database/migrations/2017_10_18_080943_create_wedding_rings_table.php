@@ -28,7 +28,9 @@ class CreateWeddingRingsTable extends Migration
             $table->integer('unit_price1');
             $table->boolean('published')->default(false);
             $table->boolean('customized')->default(false);
+            $table->string('gender')->default(true);
             $table->integer('page_id')->unsigned()->nullable();
+            $table->integer('wedding_ring_pair_id')->unsigned()->nullable();
         });
 
         Schema::create('invoice_wedding_ring', function (Blueprint $table) {

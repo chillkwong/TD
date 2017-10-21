@@ -20888,13 +20888,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				style: ['Solitaire', 'Side-stone', 'Halo'],
 				prong: ['4-prong', '6-prong'],
 				shoulder: ['Tapering', 'Parallel', 'Twisted'],
-				customized: false
+				customized: [1, 0]
 
 			},
 			preset: {
 				style: ['Solitaire', 'Side-stone', 'Halo'],
 				prong: ['4-prong', '6-prong'],
-				shoulder: ['Tapering', 'Parallel', 'Twisted']
+				shoulder: ['Tapering', 'Parallel', 'Twisted'],
+				customized: [1, 0]
 
 			},
 			showModal: false,
@@ -20916,7 +20917,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				search_conditions: {
 					style: [{ description: 'Solitaire', clicked: false, display: 'Solitaire' }, { description: 'Side-stone', clicked: false, display: 'Side-stone' }, { description: 'Halo', clicked: false, display: 'Halo' }],
 					prong: [{ description: '4-prong', clicked: false, display: '4-claw prong' }, { description: '6-prong', clicked: false, display: '6-claw prong' }],
-					shoulder: [{ description: 'Tapering', clicked: false, display: 'Tapering' }, { description: 'Parallel', clicked: false, display: 'Parallel' }, { description: 'Twisted', clicked: false, display: 'Twisted' }]
+					shoulder: [{ description: 'Tapering', clicked: false, display: 'Tapering' }, { description: 'Parallel', clicked: false, display: 'Parallel' }, { description: 'Twisted', clicked: false, display: 'Twisted' }],
+					customized: [{ description: 1, clicked: false, display: 'True' }, { description: 0, clicked: false, display: 'False' }]
 				}
 			},
 			operators: {
@@ -21043,7 +21045,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		fetchIndexData: function fetchIndexData() {
 			var _this = this;
 
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&customized=' + this.fetchData.customized + '\n\t\t\t\t\t&style=' + (this.fetchData.style.toString() ? this.fetchData.style.toString() : this.preset.style.toString()) + '\n\t\t\t\t\t&shoulder=' + (this.fetchData.shoulder.toString() ? this.fetchData.shoulder.toString() : this.preset.shoulder.toString()) + '\n\t\t\t\t\t&prong=' + (this.fetchData.prong.toString() ? this.fetchData.prong.toString() : this.preset.prong.toString())).then(function (response) {
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&customized=' + (this.fetchData.customized.toString() ? this.fetchData.customized : this.preset.customized.toString()) + '\n\t\t\t\t\t&style=' + (this.fetchData.style.toString() ? this.fetchData.style.toString() : this.preset.style.toString()) + '\n\t\t\t\t\t&shoulder=' + (this.fetchData.shoulder.toString() ? this.fetchData.shoulder.toString() : this.preset.shoulder.toString()) + '\n\t\t\t\t\t&prong=' + (this.fetchData.prong.toString() ? this.fetchData.prong.toString() : this.preset.prong.toString())).then(function (response) {
 				_this.model = response.data.model;
 				// Vue.set(vm.$data, 'columns', response.data.columns)
 				_this.chunkItems();
@@ -21135,33 +21137,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })
   })], 2), _vm._v(" "), _c('article', {
     staticClass: "tile is-child box is-2"
-  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.customized),
-      expression: "fetchData.customized "
-    }],
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.fetchData.customized
-    },
-    attrs: {
-      "type": "button"
-    },
-    domProps: {
-      "value": (_vm.fetchData.customized)
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleCustomized()
+  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.customized), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.customized[index].clicked
       },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.fetchData.customized = $event.target.value
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.customized[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.customized[index].clicked, 'customized', index)
+        }
       }
-    }
-  })])])])])])]), _vm._v(" "), _c('nav', [_c('div', {
+    })
+  })], 2)])])])])]), _vm._v(" "), _c('nav', [_c('div', {
     staticClass: "navbar-item is-hidden-desktop is-hidden-tablet is-centered"
   }, [_c('div', {
     on: {
@@ -21249,33 +21241,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })
   })], 2), _vm._v(" "), _c('article', {
     staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.customized),
-      expression: "fetchData.customized "
-    }],
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.fetchData.customized
-    },
-    attrs: {
-      "type": "button"
-    },
-    domProps: {
-      "value": (_vm.fetchData.customized)
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleCustomized()
+  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.customized), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.customized[index].clicked
       },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.fetchData.customized = $event.target.value
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.customized[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.customized[index].clicked, 'customized', index)
+        }
       }
-    }
-  })])])])])]), _vm._v(" "), _vm._m(0)])])], 1)])]), _vm._v(" "), _c('div', {
+    })
+  })], 2)])])])]), _vm._v(" "), _vm._m(0)])])], 1)])]), _vm._v(" "), _c('div', {
     staticClass: "is-hidden-mobile"
   }, _vm._l((_vm.chunkedItemsDesktop), function(rings, idnex) {
     return _c('div', {
@@ -21599,6 +21581,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -21612,15 +21595,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			fetchData: {
 				style: ['Japanese', 'Vintage', '1'],
 				metal: ['18KW', '18KR', 'PT', 'Mixed'],
-				customized: false,
-				sideStone: false
+				customized: [1, 0],
+				sideStone: [1, 0],
+				gender: ['f', 'm', 1]
 			},
 			preset: {
 				style: ['Japanese', 'Vintage', '1'],
 				metal: ['18KW', '18KR', 'PT', 'Mixed'],
-				customized: [false, true],
-				sideStone: [false, true]
-
+				customized: [1, 0],
+				sideStone: [1, 0],
+				gender: ['f', 'm', 1]
 			},
 			showModal: false,
 			showAdvance: false,
@@ -21628,6 +21612,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			model: {},
 			chunkedItemsDesktop: [],
 			chunkedItemsMobile: [],
+			sameStock: [],
 			clickedRows: [],
 			columns: ['style', 'shoulder', 'prong'],
 			query: {
@@ -21640,7 +21625,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				search_input: '',
 				search_conditions: {
 					style: [{ description: 'Japanese', clicked: false, display: 'Japanese' }, { description: 'Vintage', clicked: false, display: 'Vintage' }],
-					metal: [{ description: '18KW', clicked: false, display: '18K White' }, { description: '18KR', clicked: false, display: '18K Rose Gold' }, { description: 'PT', clicked: false, display: 'PT950/900' }, { description: 'Mixed', clicked: false, display: 'Mixed' }]
+					metal: [{ description: '18KW', clicked: false, display: '18K White' }, { description: '18KR', clicked: false, display: '18K Rose Gold' }, { description: 'PT', clicked: false, display: 'PT950/900' }, { description: 'Mixed', clicked: false, display: 'Mixed' }],
+					sideStone: [{ description: 1, clicked: false, display: 'True' }, { description: 0, clicked: false, display: 'False' }],
+					customized: [{ description: 1, clicked: false, display: 'True' }, { description: 0, clicked: false, display: 'False' }],
+					gender: [{ description: 1, clicked: false, display: 'Men' }, { description: 0, clicked: false, display: 'Female' }]
 				}
 			},
 			operators: {
@@ -21667,6 +21655,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	methods: {
+		pairUp: function pairUp() {
+			var same = [];
+			for (var i = this.model.data.length - 1; i >= 0; i--) {
+				same.push(this.model.data[i].filter(function (data) {
+					data.customized == 1;
+				}));
+			}
+			return this.sameStock = same;
+		},
 		toggleCustomized: function toggleCustomized() {
 			this.fetchData.customized = !this.fetchData.customized;
 			this.fetchIndexData();
@@ -21771,10 +21768,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		fetchIndexData: function fetchIndexData() {
 			var _this = this;
 
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&customized=' + this.preset.customized + '\n\t\t\t\t\t&style=' + (this.fetchData.style.toString() ? this.fetchData.style.toString() : this.preset.style.toString()) + '\n\t\t\t\t\t&metal=' + (this.fetchData.metal.toString() ? this.fetchData.metal.toString() : this.preset.metal.toString()) + '\n\t\t\t\t\t').then(function (response) {
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&customized=' + (this.fetchData.customized.toString() ? this.fetchData.customized : this.preset.customized.toString()) + '\n\t\t\t\t\t&sideStone=' + (this.fetchData.sideStone.toString() ? this.fetchData.sideStone : this.preset.sideStone.toString()) + '\n\t\t\t\t\t&gender=' + (this.fetchData.gender.toString() ? this.fetchData.gender : this.preset.gender.toString()) + '\n\t\t\t\t\t&style=' + (this.fetchData.style.toString() ? this.fetchData.style.toString() : this.preset.style.toString()) + '\n\t\t\t\t\t&metal=' + (this.fetchData.metal.toString() ? this.fetchData.metal.toString() : this.preset.metal.toString()) + '\n\t\t\t\t\t').then(function (response) {
 				_this.model = response.data.model;
 				// Vue.set(vm.$data, 'columns', response.data.columns)
 				_this.chunkItems();
+				_this.pairUp();
 			}).catch(function () {
 				console.log(response);
 			});
@@ -21845,61 +21843,41 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })
   })], 2), _vm._v(" "), _c('article', {
     staticClass: "tile is-child box is-2"
-  }, [_c('div', [_vm._v("Side-stone")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.sideStone),
-      expression: "fetchData.sideStone "
-    }],
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.fetchData.sideStone
-    },
-    attrs: {
-      "type": "button"
-    },
-    domProps: {
-      "value": (_vm.fetchData.sideStone)
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleSideStone()
+  }, [_c('div', [_vm._v("Side stone")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.sideStone), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.sideStone[index].clicked
       },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.fetchData.sideStone = $event.target.value
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.sideStone[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.sideStone[index].clicked, 'sideStone', index)
+        }
       }
-    }
-  })]), _vm._v(" "), _c('article', {
+    })
+  })], 2), _vm._v(" "), _c('article', {
     staticClass: "tile is-child box is-2"
-  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.customized),
-      expression: "fetchData.customized "
-    }],
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.fetchData.customized
-    },
-    attrs: {
-      "type": "button"
-    },
-    domProps: {
-      "value": (_vm.fetchData.customized)
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleCustomized()
+  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.customized), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.customized[index].clicked
       },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.fetchData.customized = $event.target.value
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.customized[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.customized[index].clicked, 'customized', index)
+        }
       }
-    }
-  })])])])])])]), _vm._v(" "), _c('nav', [_c('div', {
+    })
+  })], 2)])])])])]), _vm._v(" "), _c('nav', [_c('div', {
     staticClass: "navbar-item is-hidden-desktop is-hidden-tablet is-centered"
   }, [_c('div', {
     on: {
@@ -21932,7 +21910,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "tile is-parent"
   }, [_c('article', {
-    staticClass: "tile is-child box "
+    staticClass: "tile is-child box"
   }, [_c('div', [_vm._v("Style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
     return _c('input', {
       staticClass: "button ",
@@ -21969,61 +21947,41 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })
   })], 2), _vm._v(" "), _c('article', {
     staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Side-stone")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.sideStone),
-      expression: "fetchData.sideStone "
-    }],
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.fetchData.sideStone
-    },
-    attrs: {
-      "type": "button"
-    },
-    domProps: {
-      "value": (_vm.fetchData.sideStone)
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleSideStone()
+  }, [_c('div', [_vm._v("Side stone")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.sideStone), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.sideStone[index].clicked
       },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.fetchData.sideStone = $event.target.value
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.sideStone[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.sideStone[index].clicked, 'sideStone', index)
+        }
       }
-    }
-  })]), _vm._v(" "), _c('article', {
+    })
+  })], 2), _vm._v(" "), _c('article', {
     staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.customized),
-      expression: "fetchData.customized "
-    }],
-    staticClass: " button ",
-    class: {
-      'is-info active': _vm.fetchData.customized
-    },
-    attrs: {
-      "type": "button"
-    },
-    domProps: {
-      "value": (_vm.fetchData.customized)
-    },
-    on: {
-      "click": function($event) {
-        _vm.toggleCustomized()
+  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.customized), function(value, index) {
+    return _c('input', {
+      staticClass: " button ",
+      class: {
+        'is-info active': _vm.query.search_conditions.customized[index].clicked
       },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.fetchData.customized = $event.target.value
+      attrs: {
+        "type": "button",
+        "value": _vm.query.search_conditions.customized[index].display
+      },
+      on: {
+        "click": function($event) {
+          _vm.toggleValue(_vm.query.search_conditions.customized[index].clicked, 'customized', index)
+        }
       }
-    }
-  })])])])])]), _vm._v(" "), _vm._m(0)])])], 1)])]), _vm._v(" "), _c('div', {
+    })
+  })], 2)])])])]), _vm._v(" "), _vm._m(0)])])], 1)])]), _vm._v(" "), _c('div', {
     staticClass: "is-hidden-mobile"
   }, _vm._l((_vm.chunkedItemsDesktop), function(rings, idnex) {
     return _c('div', {

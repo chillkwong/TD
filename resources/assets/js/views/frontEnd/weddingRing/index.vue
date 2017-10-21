@@ -34,13 +34,13 @@
 					</article>
 
 					<article class="tile is-child box is-2" >
-						<div>Side-stone</div>
-						<input v-model="fetchData.sideStone " class=" button " :class=" {'is-info active' : fetchData.sideStone} " type="button" @click="toggleSideStone()"> 
+						<div>Side stone</div>
+						<input v-for="(value, index) in query.search_conditions.sideStone " class=" button " :class=" {'is-info active' : query.search_conditions.sideStone[index].clicked} " type="button" @click="toggleValue(query.search_conditions.sideStone[index].clicked,'sideStone', index)" :value="query.search_conditions.sideStone[index].display"> 
 					</article>
 
 					<article class="tile is-child box is-2" >
 						<div>Custom-make</div>
-						<input v-model="fetchData.customized " class=" button " :class=" {'is-info active' : fetchData.customized} " type="button" @click="toggleCustomized()"> 
+						<input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display"> 
 					</article>
 
 					
@@ -76,7 +76,7 @@
 		<div class="tile is-ancestor">
 			<div class="tile is-12">
 	    		<div class="tile is-parent">
-		        	<article class="tile is-child box " >
+		        	<article class="tile is-child box" >
 		            	<div>Style</div>
 		            	<input v-for="(value, index) in query.search_conditions.style" class="button " :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)" :value="query.search_conditions.style[index].display"> 
 					</article>
@@ -87,14 +87,15 @@
 					</article>
 
 					<article class="tile is-child box" >
-						<div>Side-stone</div>
-						<input v-model="fetchData.sideStone " class=" button " :class=" {'is-info active' : fetchData.sideStone} " type="button" @click="toggleSideStone()"> 
+						<div>Side stone</div>
+						<input v-for="(value, index) in query.search_conditions.sideStone " class=" button " :class=" {'is-info active' : query.search_conditions.sideStone[index].clicked} " type="button" @click="toggleValue(query.search_conditions.sideStone[index].clicked,'sideStone', index)" :value="query.search_conditions.sideStone[index].display"> 
 					</article>
 
 					<article class="tile is-child box" >
 						<div>Custom-make</div>
-						<input v-model="fetchData.customized " class=" button " :class=" {'is-info active' : fetchData.customized} " type="button" @click="toggleCustomized()"> 
+						<input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display"> 
 					</article>
+
 				</div>
 			</div>
 		</div>
@@ -173,15 +174,16 @@
 				fetchData: {
 					 style: ['Japanese','Vintage','1'],
 					 metal: ['18KW','18KR','PT','Mixed'],
-					 customized: false,
-					 sideStone: false,
+					 customized: [1,0], 
+					 sideStone: [1,0], 
+					 gender: ['f','m',1], 
 				},
 				preset: {
 					 style: ['Japanese','Vintage','1'],
 					 metal: ['18KW','18KR','PT','Mixed'],
-					 customized: [false,true], 
-					 sideStone: [false,true],
-					 
+					 customized: [1,0], 
+					 sideStone: [1,0],
+					 gender: ['f','m',1], 					 
 				},
 				showModal:false,
 				showAdvance:false,
@@ -189,6 +191,7 @@
 				model: {},
 				chunkedItemsDesktop: [],
 				chunkedItemsMobile: [],
+				sameStock: [],
 				clickedRows:[],
 				columns:['style','shoulder','prong'],
 				query:{
@@ -209,6 +212,18 @@
 						{ description: '18KR', clicked: false , display: '18K Rose Gold'},
 						{ description: 'PT', clicked: false , display: 'PT950/900'},
 						{ description: 'Mixed', clicked: false , display: 'Mixed'},
+						],
+						sideStone: [
+						{ description: 1, clicked: false , display: 'True'},
+						{ description: 0, clicked: false , display: 'False'},
+						],
+						customized: [
+						{ description: 1, clicked: false , display: 'True'},
+						{ description: 0, clicked: false , display: 'False'},
+						],
+						gender: [
+						{ description: 1, clicked: false , display: 'Men'},
+						{ description: 0, clicked: false , display: 'Female'},
 						],
 					}
 				},
@@ -233,6 +248,16 @@
 			}
 		},
 		methods:{
+			pairUp(){
+				var same = []
+				for (var i = this.model.data.length - 1; i >= 0; i--) {
+					same.push(this.model.data[i].filter(
+						(data)=>{data.customized==1}
+						)
+					)
+				}
+				return this.sameStock=same
+			},
 			toggleCustomized(){
 				this.fetchData.customized = !this.fetchData.customized
 				this.fetchIndexData()
@@ -341,7 +366,9 @@
 					&search_column=${this.query.search_column}
 					&search_operator=${this.query.search_operator}
 					&search_input=${this.query.search_input}
-					&customized=${this.preset.customized}
+					&customized=${this.fetchData.customized.toString()?this.fetchData.customized:this.preset.customized.toString()}
+					&sideStone=${this.fetchData.sideStone.toString()?this.fetchData.sideStone:this.preset.sideStone.toString()}
+					&gender=${this.fetchData.gender.toString()?this.fetchData.gender:this.preset.gender.toString()}
 					&style=${
 						this.fetchData.style.toString()?this.fetchData.style.toString():this.preset.style.toString()
 					}
@@ -353,6 +380,7 @@
 					this.model= response.data.model
 					// Vue.set(vm.$data, 'columns', response.data.columns)
 					this.chunkItems()
+					this.pairUp()
 
 				}).catch(function(){
 					console.log(response)
