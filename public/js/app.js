@@ -21700,6 +21700,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -21773,15 +21789,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	methods: {
-		pairUp: function pairUp() {
-			var same = [];
-			for (var i = this.model.data.length - 1; i >= 0; i--) {
-				same.push(this.model.data[i].filter(function (data) {
-					data.customized == 1;
-				}));
-			}
-			return this.sameStock = same;
-		},
 		toggleCustomized: function toggleCustomized() {
 			this.fetchData.customized = !this.fetchData.customized;
 			this.fetchIndexData();
@@ -21866,17 +21873,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.fetchIndexData();
 		},
 		chunkItems: function chunkItems() {
+			var filtered = [];
 			var chunk1 = [];
 			var chunk2 = [];
 
-			for (var i = 0; this.model.data.length - 1 >= i;) {
-				chunk1.push(this.model.data.slice(i, i + 4));
+			filtered = this.model.data.filter(function (data) {
+				return data.wedding_rings.length > 0;
+			});
+			for (var i = 0; filtered.length - 1 >= i;) {
+				chunk1.push(filtered.slice(i, i + 4));
 				i += 4;
 			}
 			this.chunkedItemsDesktop = chunk1;
 
-			for (var i = 0; this.model.data.length - 1 >= i;) {
-				chunk2.push(this.model.data.slice(i, i + 2));
+			for (var i = 0; filtered.length - 1 >= i;) {
+				chunk2.push(filtered.slice(i, i + 2));
 				i += 2;
 			}
 			this.chunkedItemsMobile = chunk2;
@@ -22107,21 +22118,35 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, _vm._l((rings), function(ring) {
       return _c('div', {
         staticClass: "tile is-parent is-3"
-      }, [(ring) ? _c('div', {
+      }, [(ring.wedding_rings[0]) ? _c('div', {
         staticClass: "tile is-child"
       }, [_c('article', {
         staticClass: "tile"
       }, [_c('router-link', {
         attrs: {
-          "to": _vm.$route.path + '/' + ring.id
+          "to": _vm.$route.path + '/' + ring.wedding_rings[0].id
         }
-      }, [(ring.cover) ? _c('img', {
+      }, [(ring.wedding_rings[0].cover) ? _c('img', {
         attrs: {
-          "src": ("/images/" + (ring.cover))
+          "src": ("/images/" + (ring.wedding_rings[0].cover))
         }
-      }) : _vm._e(), _vm._v(" "), _c('center', [(ring.description) ? _c('p', {
+      }) : _vm._e(), _vm._v(" "), _c('center', [_c('div', {
+        staticClass: "level"
+      }, [_c('div', {
+        staticClass: "level-item is-left"
+      }, [(ring.wedding_rings[0].unit_price) ? _c('p', {
         staticClass: "subtitle"
-      }, [_vm._v("$" + _vm._s(ring.unit_price))]) : _vm._e(), _vm._v(" "), (ring.description) ? _c('p', [_vm._v(_vm._s(ring.description))]) : _vm._e()])], 1)], 1)]) : _vm._e()])
+      }, [_vm._v("$" + _vm._s(ring.wedding_rings[0].unit_price))]) : _vm._e()]), _vm._v(" "), (ring.wedding_rings[1]) ? _c('div', {
+        staticClass: "level-item is-right"
+      }, [(ring.wedding_rings[1].unit_price) ? _c('p', {
+        staticClass: "subtitle"
+      }, [_vm._v("$" + _vm._s(ring.wedding_rings[1].unit_price))]) : _vm._e()]) : _vm._e()]), _vm._v(" "), _c('div', {
+        staticClass: "level"
+      }, [_c('div', {
+        staticClass: "level-item is-left"
+      }, [(ring.wedding_rings[0].description) ? _c('p', [_vm._v("$" + _vm._s(ring.wedding_rings[0].description))]) : _vm._e()]), _vm._v(" "), (ring.wedding_rings[1]) ? _c('div', {
+        staticClass: "level-item is-right"
+      }, [(ring.wedding_rings[1].description) ? _c('p', [_vm._v("$" + _vm._s(ring.wedding_rings[1].description))]) : _vm._e()]) : _vm._e()])])], 1)], 1)]) : _vm._e()])
     }))
   })), _vm._v(" "), _c('div', {
     staticClass: "is-hidden-desktop is-hidden-tablet is-centered box"
@@ -22131,19 +22156,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, _vm._l((rings), function(ring) {
       return _c('div', {
         staticClass: "level-item"
-      }, [(ring) ? _c('div', [_c('router-link', {
+      }, [(ring.wedding_rings[0]) ? _c('div', [_c('router-link', {
         attrs: {
-          "to": _vm.$route.path + '/' + ring.id
+          "to": _vm.$route.path + '/' + ring.wedding_rings[0].id
         }
-      }, [(ring.cover) ? _c('img', {
+      }, [(ring.wedding_rings[0].cover) ? _c('img', {
         attrs: {
           "width": "128",
           "height": "96",
-          "src": ("/images/" + (ring.cover))
+          "src": ("/images/" + (ring.wedding_rings[0].cover))
         }
-      }) : _vm._e(), _vm._v(" "), _c('center', [(ring.description) ? _c('p', {
+      }) : _vm._e(), _vm._v(" "), _c('center', [(ring.wedding_rings[0].description) ? _c('p', {
         staticClass: "subtitle"
-      }, [_vm._v("$" + _vm._s(ring.unit_price))]) : _vm._e(), _vm._v(" "), (ring.description) ? _c('p', [_vm._v(_vm._s(ring.description))]) : _vm._e()])], 1)], 1) : _vm._e()])
+      }, [_vm._v("$" + _vm._s(ring.wedding_rings[0].unit_price))]) : _vm._e(), _vm._v(" "), (ring.wedding_rings[0].description) ? _c('p', [_vm._v(_vm._s(ring.wedding_rings[0].description))]) : _vm._e()])], 1)], 1) : _vm._e()])
     }))
   }))])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

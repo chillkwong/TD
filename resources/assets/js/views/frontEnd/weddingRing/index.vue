@@ -118,13 +118,29 @@
 		<div class="is-hidden-mobile">		
 			<div class="tile is-ancestor" v-for="(rings,idnex) in chunkedItemsDesktop">
 				<div class="tile is-parent is-3" v-for="ring in rings">
-					<div class="tile is-child" v-if="ring">
+					<div class="tile is-child" v-if="ring.wedding_rings[0]">
 						<article class="tile">
-							<router-link :to="$route.path +'/' + ring.id" >
-								<img :src="`/images/${ring.cover}`" v-if="ring.cover">
+							<router-link :to="$route.path +'/' + ring.wedding_rings[0].id" >
+								<img :src="`/images/${ring.wedding_rings[0].cover}`" v-if="ring.wedding_rings[0].cover">
 							<center>
-								<p  class="subtitle" v-if="ring.description">${{ring.unit_price}}</p>
-								<p v-if="ring.description">{{ring.description}}</p>
+								<div class="level">
+									<div class="level-item is-left">
+										<p  class="subtitle" v-if="ring.wedding_rings[0].unit_price">${{ring.wedding_rings[0].unit_price}}</p>
+									</div>
+									<div class="level-item is-right" v-if="ring.wedding_rings[1]">
+										<p  class="subtitle" v-if="ring.wedding_rings[1].unit_price">${{ring.wedding_rings[1].unit_price}}</p>
+									</div>
+								</div>
+
+								<div class="level">
+									<div class="level-item is-left">
+										<p  v-if="ring.wedding_rings[0].description">${{ring.wedding_rings[0].description}}</p>
+									</div>
+									<div class="level-item is-right" v-if="ring.wedding_rings[1]">
+										<p  v-if="ring.wedding_rings[1].description">${{ring.wedding_rings[1].description}}</p>
+									</div>
+								</div>
+
 							</center>
 							</router-link>
 							
@@ -139,12 +155,12 @@
 		<div class="is-hidden-desktop is-hidden-tablet is-centered box" >		
 			<div class="level is-mobile" v-for="(rings,idnex) in chunkedItemsMobile">
 				<div class="level-item" v-for="ring in rings">
-					<div v-if="ring">
-							<router-link :to="$route.path +'/' + ring.id" >
-								<img width="128" height="96" :src="`/images/${ring.cover}`" v-if="ring.cover">
+					<div v-if="ring.wedding_rings[0]">
+							<router-link :to="$route.path +'/' + ring.wedding_rings[0].id" >
+								<img width="128" height="96" :src="`/images/${ring.wedding_rings[0].cover}`" v-if="ring.wedding_rings[0].cover">
 							<center>
-								<p  class="subtitle" v-if="ring.description">${{ring.unit_price}}</p>
-								<p v-if="ring.description">{{ring.description}}</p>
+								<p  class="subtitle" v-if="ring.wedding_rings[0].description">${{ring.wedding_rings[0].unit_price}}</p>
+								<p v-if="ring.wedding_rings[0].description">{{ring.wedding_rings[0].description}}</p>
 							</center>
 							</router-link>
 					</div>
@@ -248,16 +264,6 @@
 			}
 		},
 		methods:{
-			pairUp(){
-				var same = []
-				for (var i = this.model.data.length - 1; i >= 0; i--) {
-					same.push(this.model.data[i].filter(
-						(data)=>{data.customized==1}
-						)
-					)
-				}
-				return this.sameStock=same
-			},
 			toggleCustomized(){
 				this.fetchData.customized = !this.fetchData.customized
 				this.fetchIndexData()
@@ -340,17 +346,19 @@
 				this.fetchIndexData()
 			},
 			chunkItems(){
+				var filtered= []
 				var chunk1 = []
 				var chunk2 = []
 				
-				for (var i = 0; this.model.data.length - 1 >= i ; ) {
-					chunk1.push(this.model.data.slice(i,i+4))
+				filtered = this.model.data.filter(data=>data.wedding_rings.length>0)
+				for (var i = 0; filtered.length - 1 >= i ; ) {
+					chunk1.push(filtered.slice(i,i+4))
 					i += 4
 				}
 				this.chunkedItemsDesktop = chunk1
 
-				for (var i = 0; this.model.data.length - 1 >= i ; ) {
-					chunk2.push(this.model.data.slice(i,i+2))
+				for (var i = 0; filtered.length - 1 >= i ; ) {
+					chunk2.push(filtered.slice(i,i+2))
 					i += 2
 				}
 				this.chunkedItemsMobile = chunk2
