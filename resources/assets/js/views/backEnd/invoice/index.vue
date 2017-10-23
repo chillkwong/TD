@@ -1,7 +1,9 @@
 <template>
 	<data-viewer :source = "source" :thead="thead" :filter="filter" :create="create" :title="title">
 		<template scope="props">
-			<tr @click="$router.push('/adm/invoices/' + props.item.id)" v-if="userRole=='admin' || props.item.count">
+			<!-- <tr @click="$router.push('/adm/invoices/' + props.item.id)" v-if="userRole=='admin' || props.item.count"> -->
+			<tr @click="$router.push('/adm/invoices/' + props.item.id)" >
+
 				<td>{{props.item.id}}</td>
 <!-- 				<td>{{props.item.inv_posts[0].id}}</td>
  -->				<td>{{props.item.date}}</td>

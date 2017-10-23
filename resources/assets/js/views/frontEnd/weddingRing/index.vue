@@ -159,8 +159,23 @@
 							<router-link :to="$route.path +'/' + ring.wedding_rings[0].id" >
 								<img width="128" height="96" :src="`/images/${ring.wedding_rings[0].cover}`" v-if="ring.wedding_rings[0].cover">
 							<center>
-								<p  class="subtitle" v-if="ring.wedding_rings[0].description">${{ring.wedding_rings[0].unit_price}}</p>
-								<p v-if="ring.wedding_rings[0].description">{{ring.wedding_rings[0].description}}</p>
+								<div class="level">
+									<div class="level-item is-left">
+										<p  class="subtitle" v-if="ring.wedding_rings[0].unit_price">${{ring.wedding_rings[0].unit_price}}</p>
+									</div>
+									<div class="level-item is-right" v-if="ring.wedding_rings[1]">
+										<p  class="subtitle" v-if="ring.wedding_rings[1].unit_price">${{ring.wedding_rings[1].unit_price}}</p>
+									</div>
+								</div>
+
+								<div class="level">
+									<div class="level-item is-left">
+										<p  v-if="ring.wedding_rings[0].description">${{ring.wedding_rings[0].description}}</p>
+									</div>
+									<div class="level-item is-right" v-if="ring.wedding_rings[1]">
+										<p  v-if="ring.wedding_rings[1].description">${{ring.wedding_rings[1].description}}</p>
+									</div>
+								</div>
 							</center>
 							</router-link>
 					</div>

@@ -25,7 +25,6 @@ class CreateWeddingRingsTable extends Migration
             $table->string('image1')->nullable();
             $table->string('video')->nullable();
             $table->integer('unit_price');
-            $table->integer('unit_price1');
             $table->boolean('published')->default(false);
             $table->boolean('customized')->default(false);
             $table->string('gender')->default(true);

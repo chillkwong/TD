@@ -53,6 +53,24 @@
 
     });
     </script>
+
+    <script>
+    (function(d){
+      var iframe = d.body.appendChild(d.createElement('iframe')),
+      doc = iframe.contentWindow.document;
+
+      // style the iframe with some CSS
+      iframe.style.cssText = "position:absolute;width:200px;height:100px;left:0px;";
+      
+      doc.open().write('<body onload="' + 
+      'var d = document;d.getElementsByTagName(\'head\')[0].' + 
+      'appendChild(d.createElement(\'script\')).src' + 
+      '=\'\/path\/to\/file\'">');
+      
+      doc.close(); //iframe onload event happens
+
+      })(document);
+    </script>
      <script type="text/javascript" src="{{mix('js/app.js')}}"></script> 
      <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
