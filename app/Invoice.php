@@ -37,6 +37,10 @@ class Invoice extends Model
         return $this->belongsToMany(Jewellry::class);
     }
 
+    public function engagementRings(){
+        return $this->belongsToMany(EngagementRing::class);
+    }
+
     public function invPosts()
     {
         return $this->hasMany(InvPost::class);

@@ -2,9 +2,10 @@
 
         <div class="box">
 
-          <!--   <nav class="pagination">
+           <!--  <nav class="pagination">
                 <a class="button" @click="prevItem">Previous</a>
                 <a class="button" @click="nextItem">Next</a>
+
                 <ul>
                     <li v-for="(item, index) in carouselItems">
                         <a class="button" @click="showAtIndex(index)" :class="{ 'is-primary' : currentIndex == index }">{{ index+1 }}</a>
@@ -12,31 +13,77 @@
                 </ul>
             </nav> -->
 
-            <div class="">
-                <figure class="image">
-                    <img :src="currentItem.src" v-if="currentItem.type=='img'">
-                    <iframe id="iframe1" :src="currentItem.src" :width="width" :height="height" v-if="currentItem.type=='video'"></iframe>
-                    <figcaption class="has-text-centered">
-                        <p class="title is-3">{{ currentItem.title }}</p>
-                        <p class="subtitle is-5"> {{ currentItem.desc }} </p>
-                        <span v-html="currentItem.other"></span>
-                    </figcaption>
-                </figure>
-            </div>
+                <div class="level is-mobile" @click="$emit('active', null)">
+                           <div class="level-item">
+                                <div :class="{'box':currentIndex == index}" v-for="(img, index) in carouselUpperItemsToArray" 
+                                @click="currentSelectedItem(index,'upper')" v-if="img.thumb">
+                                    <div class="level-item has-text-centered" >
+                                        <a @click="onClick($event)">
+                                        <figure class="image is-96x96">
+                                            <img :src="images+img.thumb" ></img>
+                                        </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-           
-                <div class="level is-mobile">
-                    <div :class="{'box':currentIndex == index}" v-for="(img, index) in carouselItems" 
-                    @click="currentIndex=index">
-                        <div class="level-item has-text-centered" >
-                            <a @click="onClick($event)">
-                            <figure class="image is-96x96">
-                                <img :src="img.thumb" ></img>
-                            </figure>
-                            </a>
+                <div class="">
+                    <figure class="image">
+                        <img :src="images+currentItem.src" v-if="currentItem.type=='img'">
+                        <iframe id="iframe1" :src="youtube+currentItem.src" :width="width" :height="height" v-if="currentItem.type=='video'"></iframe>
+                        <figcaption class="has-text-centered">
+                            <p class="title is-3">{{ currentItem.title }}</p>
+                            <p class="subtitle is-5"> {{ currentItem.desc }} </p>
+                            <span v-html="currentItem.other"></span>
+                        </figcaption>
+
+                    </figure>
+                </div>
+
+               
+                    <div class="is-hidden-mobile">
+                        <div class="level is-mobile" >
+                           <div class="level-item">
+                                <div :class="{'box':currentIndex == index}" v-for="(img, index) in chunkedItemsDesktop" 
+                                @click="currentSelectedItem(index,'lower')" v-if="img.thumb">
+                                    <div class="level-item has-text-centered" >
+                                        <a @click="onClick($event)">
+                                        <figure class="image is-96x96">
+                                            <img :src="img.thumb"></img>
+                                        </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="level-item">
+                        <a v-for="(item, index) in carouselItems">
+                            <a class="button" @click="showAtIndex(index)" :class="{ 'is-primary' : currentIndex == index }">{{ index+1 }}</a>
+                        </a>
                         </div>
                     </div>
-                </div> 
+
+                 <div class="is-hidden-desktop is-hidden-tablet is-centered">
+                    <div class="level is-mobile" >
+                        <div :class="{'box':currentIndex == index}" v-for="(img, index) in chunkedItemsMobile" 
+                        @click="currentSelectedItem(index,'lower')" v-if="img.thumb">
+                            <div class="level-item has-text-centered" >
+                                <a @click="onClick($event)">
+                                <figure class="image is-96x96">
+                                    <img :src="img.thumb"></img>
+                                </figure>
+                                </a>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="level-item">
+                    <a v-for="(item, index) in carouselItems">
+                        <a class="button" @click="showAtIndex(index)" :class="{ 'is-primary' : currentIndex == index }">{{ index+1 }}</a>
+                    </a>
+                    </div>
+                </div>
+
 
 
 
@@ -62,10 +109,11 @@
                 </figure>
             </div>
 
-           
-                <div class="level is-mobile">
-                    <div :class="{'box':currentIndex == index}" v-for="(img, index) in carouselItems" 
-                    @click="currentIndex=index">
+            
+            <div class="is-hidden-mobile">
+                <div class="level is-mobile" >
+                    <div :class="{'box':currentIndex == index}" v-for="(img, index) in chunkedItemsDesktop" 
+                    @click="currentSelectedItem(index,'lower')" v-if="img.thumb">
                         <div class="level-item has-text-centered" >
                             <a @click="onClick($event)">
                             <figure class="image is-96x96">
@@ -75,6 +123,35 @@
                         </div>
                     </div>
                 </div> 
+                <div class="level-item">
+                    <a v-for="(item, index) in carouselItems">
+                        <a class="button" @click="showAtIndex(index)" :class="{ 'is-primary' : currentIndex == index }">{{ index+1 }}</a>
+                    </a>
+                    </div>
+            </div>
+
+            <div class="level is-hidden-desktop is-hidden-tablet is-centered">
+                    <div class="level is-mobile" >
+                        
+                        <div :class="{'box':currentIndex == index}" v-for="(img, index) in chunkedItemsMobile" 
+                        @click="currentSelectedItem(index,'lower')" v-if="img.thumb">
+                            <div class="level-item has-text-centered" >
+                                <a @click="onClick($event)">
+                                <figure class="image is-96x96">
+                                    <img :src="img.thumb"></img>
+                                </figure>
+                                </a>
+                            </div>
+                        </div>
+                    
+                    </div> 
+
+                    <div class="level-item">
+                    <a v-for="(item, index) in carouselItems">
+                        <a class="button" @click="showAtIndex(index)" :class="{ 'is-primary' : currentIndex == index }">{{ index+1 }}</a>
+                    </a>
+                    </div>
+                </div>
 
 
                     </section>
@@ -91,7 +168,7 @@
 <script>
 
 function setIframeSrc() {
-  var s = "path/to/file";
+  var s = "/images";
   var iframe1 = document.getElementById('iframe1');
   if ( -1 == navigator.userAgent.indexOf("MSIE") ) {
     iframe1.src = s;
@@ -113,6 +190,8 @@ export default {
         height:'',
         items:'',
         carouselActive:'',
+        carouselUpperItems:'',
+        
         
     },
     created () {
@@ -121,8 +200,9 @@ export default {
     data () {
         return {
             currentIndex : 0,
-            // chunkedItemsDeskto: '',
-            // chunkedItemsMobile: '',
+            showUpper: true,
+            youtube:'http://www.youtube.com/embed/',
+            images: '/images/',
         }
     },
     methods : {
@@ -151,35 +231,81 @@ export default {
         },
         showAtIndex(index){
             this.currentIndex = index;
-        }
+        },
+        currentSelectedItem(index,upper){
+            if (upper == 'upper') {
+                this.currentIndex = index
+                return this.showUpper = true
+            }
+            this.showUpper = false
+            this.currentIndex = index
+            
+        },
     },
     computed: {
         currentItem(){
+            if (this.showUpper) {
+            return this.carouselUpperItemsToArray[this.currentIndex];                
+            }
             return this.carouselItems[this.currentIndex];
         },
-        chunkedItemsMobile(){
-                
-                var chunk2 = []
-                
-                // filtered = this.carouselItems.filter(data=>data.wedding_rings.length>0)
-                for (var i = 0; this.carouselItems.length - 1 >= i ; ) {
-                    chunk2.push(this.carouselItems.slice(i,i+2))
-                    i += 2
-                }
-                return chunk2
-            },
+        carouselUpperItemsToArray(){
+                    var arr = []
+
+                    if (this.carouselUpperItems.cover) {
+                        arr.push({src:this.carouselUpperItems.cover, type:"img", thumb:this.carouselUpperItems.cover})
+                    }
+                    if (this.carouselUpperItems.image1) {
+                        arr.push({src:this.carouselUpperItems.image1, type:"img", thumb:this.carouselUpperItems.image1})
+                    }
+                    if (this.carouselUpperItems.image2) {
+                        arr.push({src:this.carouselUpperItems.image2, type:"img", thumb:this.carouselUpperItems.image2})
+                    }
+                    if (this.carouselUpperItems.video) {
+                        arr.push({src:this.carouselUpperItems.video, type:"video", thumb:this.carouselUpperItems.cover})
+                    }
+                    
+                    return arr;
+                },
 
         chunkedItemsDesktop(){
               
                 var chunk1 = []
-                
-                // this.carouselItems = this.carouselItems.filter(data=>data.wedding_rings.length>0)
-                for (var i = 0; this.carouselItems.length - 1 >= i ; ) {
-                    chunk1.push(this.carouselItems.slice(i,i+4))
-                    i += 4
+                var chunk2 = []
+                var chunk3 = []
+
+                if (this.currentIndex<=2) {
+                 chunk1 = this.carouselItems.slice(0,4)
+                 chunk2 = this.carouselItems.slice(4,this.carouselItems.length).fill('')
+                 return chunk1.concat(chunk2)
                 }
-                return chunk1
+
+                chunk1 = this.carouselItems.slice(0,this.currentIndex-2).fill('')
+                chunk2 = this.carouselItems.slice(this.currentIndex-2,this.currentIndex+2)
+                chunk3 = this.carouselItems.slice(this.currentIndex+2,this.carouselItems.length).fill('')
+                
+                return chunk1.concat(chunk2,chunk3)
             },
+
+        chunkedItemsMobile(){
+                
+                var chunk1 = []
+                var chunk2 = []
+                var chunk3 = []
+
+                if (this.currentIndex<=1) {
+                 chunk1 = this.carouselItems.slice(0,3)
+                 chunk2 = this.carouselItems.slice(3,this.carouselItems.length).fill('')
+                 return chunk1.concat(chunk2)
+                }
+
+                chunk1 = this.carouselItems.slice(0,this.currentIndex-1).fill('')
+                chunk2 = this.carouselItems.slice(this.currentIndex-1,this.currentIndex+2)
+                chunk3 = this.carouselItems.slice(this.currentIndex+2,this.carouselItems.length).fill('')
+                
+                return chunk1.concat(chunk2,chunk3)
+            },
+
 
         
     }

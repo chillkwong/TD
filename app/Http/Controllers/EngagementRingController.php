@@ -71,10 +71,12 @@ class EngagementRingController extends Controller
     public function show($id)
     {
     	$engagementRing = EngagementRing::findOrFail($id);
+        $posts = EngagementRing::findOrFail($id)->invoices()->orderBy('id')->get();
 
     	return response()
     		->json([
-    			'model' => $engagementRing
+    			'model' => $engagementRing,
+                'posts' => $posts,
     			]);
     }
 

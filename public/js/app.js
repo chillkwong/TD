@@ -20478,10 +20478,87 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 function setIframeSrc() {
-    var s = "path/to/file";
+    var s = "/images";
     var iframe1 = document.getElementById('iframe1');
     if (-1 == navigator.userAgent.indexOf("MSIE")) {
         iframe1.src = s;
@@ -20501,7 +20578,8 @@ setTimeout(setIframeSrc, 5);
         width: '',
         height: '',
         items: '',
-        carouselActive: ''
+        carouselActive: '',
+        carouselUpperItems: ''
 
     },
     created: function created() {
@@ -20509,9 +20587,10 @@ setTimeout(setIframeSrc, 5);
     },
     data: function data() {
         return {
-            currentIndex: 0
-            // chunkedItemsDeskto: '',
-            // chunkedItemsMobile: '',
+            currentIndex: 0,
+            showUpper: true,
+            youtube: 'http://www.youtube.com/embed/',
+            images: '/images/'
         };
     },
 
@@ -20539,33 +20618,76 @@ setTimeout(setIframeSrc, 5);
         },
         showAtIndex: function showAtIndex(index) {
             this.currentIndex = index;
+        },
+        currentSelectedItem: function currentSelectedItem(index, upper) {
+            if (upper == 'upper') {
+                this.currentIndex = index;
+                return this.showUpper = true;
+            }
+            this.showUpper = false;
+            this.currentIndex = index;
         }
     },
     computed: {
         currentItem: function currentItem() {
+            if (this.showUpper) {
+                return this.carouselUpperItemsToArray[this.currentIndex];
+            }
             return this.carouselItems[this.currentIndex];
         },
-        chunkedItemsMobile: function chunkedItemsMobile() {
+        carouselUpperItemsToArray: function carouselUpperItemsToArray() {
+            var arr = [];
 
-            var chunk2 = [];
-
-            // filtered = this.carouselItems.filter(data=>data.wedding_rings.length>0)
-            for (var i = 0; this.carouselItems.length - 1 >= i;) {
-                chunk2.push(this.carouselItems.slice(i, i + 2));
-                i += 2;
+            if (this.carouselUpperItems.cover) {
+                arr.push({ src: this.carouselUpperItems.cover, type: "img", thumb: this.carouselUpperItems.cover });
             }
-            return chunk2;
+            if (this.carouselUpperItems.image1) {
+                arr.push({ src: this.carouselUpperItems.image1, type: "img", thumb: this.carouselUpperItems.image1 });
+            }
+            if (this.carouselUpperItems.image2) {
+                arr.push({ src: this.carouselUpperItems.image2, type: "img", thumb: this.carouselUpperItems.image2 });
+            }
+            if (this.carouselUpperItems.video) {
+                arr.push({ src: this.carouselUpperItems.video, type: "video", thumb: this.carouselUpperItems.cover });
+            }
+
+            return arr;
         },
         chunkedItemsDesktop: function chunkedItemsDesktop() {
 
             var chunk1 = [];
+            var chunk2 = [];
+            var chunk3 = [];
 
-            // this.carouselItems = this.carouselItems.filter(data=>data.wedding_rings.length>0)
-            for (var i = 0; this.carouselItems.length - 1 >= i;) {
-                chunk1.push(this.carouselItems.slice(i, i + 4));
-                i += 4;
+            if (this.currentIndex <= 2) {
+                chunk1 = this.carouselItems.slice(0, 4);
+                chunk2 = this.carouselItems.slice(4, this.carouselItems.length).fill('');
+                return chunk1.concat(chunk2);
             }
-            return chunk1;
+
+            chunk1 = this.carouselItems.slice(0, this.currentIndex - 2).fill('');
+            chunk2 = this.carouselItems.slice(this.currentIndex - 2, this.currentIndex + 2);
+            chunk3 = this.carouselItems.slice(this.currentIndex + 2, this.carouselItems.length).fill('');
+
+            return chunk1.concat(chunk2, chunk3);
+        },
+        chunkedItemsMobile: function chunkedItemsMobile() {
+
+            var chunk1 = [];
+            var chunk2 = [];
+            var chunk3 = [];
+
+            if (this.currentIndex <= 1) {
+                chunk1 = this.carouselItems.slice(0, 3);
+                chunk2 = this.carouselItems.slice(3, this.carouselItems.length).fill('');
+                return chunk1.concat(chunk2);
+            }
+
+            chunk1 = this.carouselItems.slice(0, this.currentIndex - 1).fill('');
+            chunk2 = this.carouselItems.slice(this.currentIndex - 1, this.currentIndex + 2);
+            chunk3 = this.carouselItems.slice(this.currentIndex + 2, this.carouselItems.length).fill('');
+
+            return chunk1.concat(chunk2, chunk3);
         }
     }
 });
@@ -20577,16 +20699,50 @@ setTimeout(setIframeSrc, 5);
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "box"
-  }, [_c('div', {}, [_c('figure', {
+  }, [_c('div', {
+    staticClass: "level is-mobile",
+    on: {
+      "click": function($event) {
+        _vm.$emit('active', null)
+      }
+    }
+  }, [_c('div', {
+    staticClass: "level-item"
+  }, _vm._l((_vm.carouselUpperItemsToArray), function(img, index) {
+    return (img.thumb) ? _c('div', {
+      class: {
+        'box': _vm.currentIndex == index
+      },
+      on: {
+        "click": function($event) {
+          _vm.currentSelectedItem(index, 'upper')
+        }
+      }
+    }, [_c('div', {
+      staticClass: "level-item has-text-centered"
+    }, [_c('a', {
+      on: {
+        "click": function($event) {
+          _vm.onClick($event)
+        }
+      }
+    }, [_c('figure', {
+      staticClass: "image is-96x96"
+    }, [_c('img', {
+      attrs: {
+        "src": _vm.images + img.thumb
+      }
+    })])])])]) : _vm._e()
+  }))]), _vm._v(" "), _c('div', {}, [_c('figure', {
     staticClass: "image"
   }, [(_vm.currentItem.type == 'img') ? _c('img', {
     attrs: {
-      "src": _vm.currentItem.src
+      "src": _vm.images + _vm.currentItem.src
     }
   }) : _vm._e(), _vm._v(" "), (_vm.currentItem.type == 'video') ? _c('iframe', {
     attrs: {
       "id": "iframe1",
-      "src": _vm.currentItem.src,
+      "src": _vm.youtube + _vm.currentItem.src,
       "width": _vm.width,
       "height": _vm.height
     }
@@ -20601,15 +20757,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "innerHTML": _vm._s(_vm.currentItem.other)
     }
   })])])]), _vm._v(" "), _c('div', {
+    staticClass: "is-hidden-mobile"
+  }, [_c('div', {
     staticClass: "level is-mobile"
-  }, _vm._l((_vm.carouselItems), function(img, index) {
-    return _c('div', {
+  }, [_c('div', {
+    staticClass: "level-item"
+  }, _vm._l((_vm.chunkedItemsDesktop), function(img, index) {
+    return (img.thumb) ? _c('div', {
       class: {
         'box': _vm.currentIndex == index
       },
       on: {
         "click": function($event) {
-          _vm.currentIndex = index
+          _vm.currentSelectedItem(index, 'lower')
         }
       }
     }, [_c('div', {
@@ -20626,8 +20786,65 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "src": img.thumb
       }
-    })])])])])
+    })])])])]) : _vm._e()
+  }))]), _vm._v(" "), _c('div', {
+    staticClass: "level-item"
+  }, _vm._l((_vm.carouselItems), function(item, index) {
+    return _c('a', [_c('a', {
+      staticClass: "button",
+      class: {
+        'is-primary': _vm.currentIndex == index
+      },
+      on: {
+        "click": function($event) {
+          _vm.showAtIndex(index)
+        }
+      }
+    }, [_vm._v(_vm._s(index + 1))])])
+  }))]), _vm._v(" "), _c('div', {
+    staticClass: "is-hidden-desktop is-hidden-tablet is-centered"
+  }, [_c('div', {
+    staticClass: "level is-mobile"
+  }, _vm._l((_vm.chunkedItemsMobile), function(img, index) {
+    return (img.thumb) ? _c('div', {
+      class: {
+        'box': _vm.currentIndex == index
+      },
+      on: {
+        "click": function($event) {
+          _vm.currentSelectedItem(index, 'lower')
+        }
+      }
+    }, [_c('div', {
+      staticClass: "level-item has-text-centered"
+    }, [_c('a', {
+      on: {
+        "click": function($event) {
+          _vm.onClick($event)
+        }
+      }
+    }, [_c('figure', {
+      staticClass: "image is-96x96"
+    }, [_c('img', {
+      attrs: {
+        "src": img.thumb
+      }
+    })])])])]) : _vm._e()
   })), _vm._v(" "), _c('div', {
+    staticClass: "level-item"
+  }, _vm._l((_vm.carouselItems), function(item, index) {
+    return _c('a', [_c('a', {
+      staticClass: "button",
+      class: {
+        'is-primary': _vm.currentIndex == index
+      },
+      on: {
+        "click": function($event) {
+          _vm.showAtIndex(index)
+        }
+      }
+    }, [_vm._v(_vm._s(index + 1))])])
+  }))]), _vm._v(" "), _c('div', {
     staticClass: "modal",
     class: {
       'is-active': _vm.carouselActive
@@ -20667,15 +20884,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "innerHTML": _vm._s(_vm.currentItem.other)
     }
   })])])]), _vm._v(" "), _c('div', {
+    staticClass: "is-hidden-mobile"
+  }, [_c('div', {
     staticClass: "level is-mobile"
-  }, _vm._l((_vm.carouselItems), function(img, index) {
-    return _c('div', {
+  }, _vm._l((_vm.chunkedItemsDesktop), function(img, index) {
+    return (img.thumb) ? _c('div', {
       class: {
         'box': _vm.currentIndex == index
       },
       on: {
         "click": function($event) {
-          _vm.currentIndex = index
+          _vm.currentSelectedItem(index, 'lower')
         }
       }
     }, [_c('div', {
@@ -20692,8 +20911,65 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "src": img.thumb
       }
-    })])])])])
-  }))])])])])
+    })])])])]) : _vm._e()
+  })), _vm._v(" "), _c('div', {
+    staticClass: "level-item"
+  }, _vm._l((_vm.carouselItems), function(item, index) {
+    return _c('a', [_c('a', {
+      staticClass: "button",
+      class: {
+        'is-primary': _vm.currentIndex == index
+      },
+      on: {
+        "click": function($event) {
+          _vm.showAtIndex(index)
+        }
+      }
+    }, [_vm._v(_vm._s(index + 1))])])
+  }))]), _vm._v(" "), _c('div', {
+    staticClass: "level is-hidden-desktop is-hidden-tablet is-centered"
+  }, [_c('div', {
+    staticClass: "level is-mobile"
+  }, _vm._l((_vm.chunkedItemsMobile), function(img, index) {
+    return (img.thumb) ? _c('div', {
+      class: {
+        'box': _vm.currentIndex == index
+      },
+      on: {
+        "click": function($event) {
+          _vm.currentSelectedItem(index, 'lower')
+        }
+      }
+    }, [_c('div', {
+      staticClass: "level-item has-text-centered"
+    }, [_c('a', {
+      on: {
+        "click": function($event) {
+          _vm.onClick($event)
+        }
+      }
+    }, [_c('figure', {
+      staticClass: "image is-96x96"
+    }, [_c('img', {
+      attrs: {
+        "src": img.thumb
+      }
+    })])])])]) : _vm._e()
+  })), _vm._v(" "), _c('div', {
+    staticClass: "level-item"
+  }, _vm._l((_vm.carouselItems), function(item, index) {
+    return _c('a', [_c('a', {
+      staticClass: "button",
+      class: {
+        'is-primary': _vm.currentIndex == index
+      },
+      on: {
+        "click": function($event) {
+          _vm.showAtIndex(index)
+        }
+      }
+    }, [_vm._v(_vm._s(index + 1))])])
+  }))])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('header', {
     staticClass: "modal-card-head"
@@ -21732,57 +22008,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
-
-function setIframeSrc() {
-	var s = "/images";
-	var iframe1 = document.getElementById('iframe1');
-	if (-1 == navigator.userAgent.indexOf("MSIE")) {
-		iframe1.src = s;
-	} else {
-		iframe1.location = s;
-	}
-}
-setTimeout(setIframeSrc, 5);
-
-(function (d) {
-	var iframe = d.body.appendChild(d.createElement('iframe')),
-	    doc = iframe.contentWindow.document;
-
-	// style the iframe with some CSS
-	iframe.style.cssText = "position:absolute;width:200px;height:100px;left:0px;";
-
-	doc.open().write('<body onload="' + 'var d = document;d.getElementsByTagName(\'head\')[0].' + 'appendChild(d.createElement(\'script\')).src' + '=\'\/path\/to\/file\'">');
-
-	doc.close(); //iframe onload event happens
-})(document);
 
 // import Auth from '../../store/auth'
 
@@ -21800,12 +22026,10 @@ setTimeout(setIframeSrc, 5);
 			carouselState: false,
 			appointmentState: false,
 			title: '',
-			diamond: {
-				weight: ''
-			},
-			columns: ['price', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
+			engagementRing: '',
+			columns: ['Unit Price', 'Shoulder', 'Prong', 'Side Stone', 'Stock', 'Name', 'Description'],
 
-			storeURL: '/api/diamonds/appointment',
+			storeURL: '/api/engagementRings/appointment',
 
 			post: {
 				invoice: {},
@@ -21814,13 +22038,21 @@ setTimeout(setIframeSrc, 5);
 			invoice: '',
 			images: [{ thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
 				src: '/images/qKrPCgDCyA6mxwq8.jpeg',
-				type: 'img' }, { thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
+				type: 'img', id: '1' }, { thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
 				src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
-				type: 'video' }, { thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
+				type: 'video', id: '2' }, { thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
 				src: '/images/qKrPCgDCyA6mxwq8.jpeg',
-				type: 'img' }, { thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
+				type: 'img', id: '3' }, { thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
 				src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
-				type: 'video' }]
+				type: 'video', id: '4' }, { thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
+				src: '/images/qKrPCgDCyA6mxwq8.jpeg',
+				type: 'img', id: '5' }, { thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
+				src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
+				type: 'video', id: '6' }, { thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
+				src: '/images/qKrPCgDCyA6mxwq8.jpeg',
+				type: 'img', id: '7' }, { thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
+				src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
+				type: 'video', id: '8' }]
 		};
 	},
 
@@ -21833,15 +22065,15 @@ setTimeout(setIframeSrc, 5);
 
 	computed: {
 		appointmentTitle: function appointmentTitle() {
-			return this.diamond.weight + 'carat, ' + this.diamond.color + ' color diamond';
+			return this.engagementRing.shoulder + ' shoulder, ' + this.engagementRing.prong + '  engagementRing';
 		}
 	},
 	methods: {
 		fetchData: function fetchData() {
 			var _this = this;
 
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])("/api/diamonds/" + this.$route.params.id).then(function (res) {
-				_this.diamond = res.data.diamond;
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/engagementRings/' + this.$route.params.id).then(function (res) {
+				_this.engagementRing = res.data.model;
 			});
 		}
 	}
@@ -21862,7 +22094,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "tile notification is-primary"
   }, [_c('p', {
     staticClass: "title"
-  }, [_vm._v(_vm._s(_vm.diamond.weight) + " carat " + _vm._s(_vm.diamond.shape) + " diamond")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v(" $" + _vm._s(_vm.engagementRing.unit_price) + " " + _vm._s(_vm.engagementRing.prong))])])]), _vm._v(" "), _c('div', {
     staticClass: "tile is-ancestor "
   }, [_c('div', {
     staticClass: "tile is-parent is-7"
@@ -21881,6 +22113,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "items": 4,
       "height": '500',
       "width": '100%',
+      "carouselUpperItems": _vm.engagementRing,
       "carouselItems": _vm.images
     },
     on: {
@@ -21915,37 +22148,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     },
     model: {
-      value: (_vm.diamond),
+      value: (_vm.engagementRing),
       callback: function($$v) {
-        _vm.diamond = $$v
+        _vm.engagementRing = $$v
       },
-      expression: "diamond"
+      expression: "engagementRing"
     }
-  })], 1), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("\n\t\t\t\t\tFor more detailed information, can reach GIA website query：\n\t\t\t\t\t")]), _vm._v(" "), _c('a', {
-    attrs: {
-      "href": ("https://www.gia.edu/report-check?reportno=" + (_vm.diamond.certificate))
-    }
-  }, [_c('center', [_vm._v("GIA Certificate")]), _vm._v(" "), _vm._m(0)], 1)], 1)]), _vm._v(" "), _c('article', [_c('table', {
+  })], 1), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("\n\t\t\t\t\tFor more detailed information, can reach GIA website query：\n\t\t\t\t\t")])], 1)]), _vm._v(" "), _c('article', [_c('table', {
     staticClass: "table is-striped is-fullwidth"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("Diamond Info(" + _vm._s(_vm.diamond.shape) + ")")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Carat Weight")]), _c('td', [_vm._v(_vm._s(_vm.diamond.weight))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Color Grade")]), _c('td', [_vm._v(_vm._s(_vm.diamond.color))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Clarity Grade")]), _c('td', [_vm._v(_vm._s(_vm.diamond.clarity))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Cut Grade")]), _c('td', [_vm._v(_vm._s(_vm.diamond.cut))])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Polish")]), _c('td', [_vm._v(_vm._s(_vm.diamond.polish))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Symmetry")]), _c('td', [_vm._v(_vm._s(_vm.diamond.symmetry))])])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Fluorescence")]), _c('td', [_vm._v(_vm._s(_vm.diamond.fluorescence))])])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('tbody', [_c('a', {
-    attrs: {
-      "href": ("https://www.gia.edu/report-check?reportno=" + (_vm.diamond.certificate))
-    }
-  }, [_c('tr', [_c('td', [_vm._v("Certificate")]), _c('td', [_vm._v(_vm._s(_vm.diamond.certificate))])])])])])])])])])])
+  }, [_vm._m(0), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Unit Price")]), _c('td', [_vm._v("$" + _vm._s(_vm.engagementRing.unit_price))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Shoulder")]), _c('td', [_vm._v(_vm._s(_vm.engagementRing.shoulder))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Prong")]), _c('td', [_vm._v(_vm._s(_vm.engagementRing.prong))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Side Stone")]), _c('td', [_vm._v(_vm._s(_vm.engagementRing.sideStone))])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Stock")]), _c('td', [_vm._v(_vm._s(_vm.engagementRing.stock))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Name")]), _c('td', [_vm._v(_vm._s(_vm.engagementRing.name))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Description")]), _c('td', [_vm._v(_vm._s(_vm.engagementRing.description))])])])])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('figure', {
-    staticClass: "image"
-  }, [_c('img', {
-    attrs: {
-      "src": "https://www.gia.edu/onlineopinionV5/GIA-Logo.png"
-    }
-  })])
+  return _c('thead', [_c('tr', [_c('th', [_vm._v("Engagement Ring Info")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th', [_vm._v("Finish")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th', [_vm._v("Fluorescence")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th', [_vm._v("Certificate")])])])
+  return _c('thead', [_c('tr', [_c('th', [_vm._v("More Details")])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
