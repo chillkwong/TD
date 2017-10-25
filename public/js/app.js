@@ -20633,7 +20633,7 @@ setTimeout(setIframeSrc, 5);
             if (this.showUpper) {
                 return this.carouselUpperItemsToArray[this.currentIndex];
             }
-            return this.carouselItems[this.currentIndex];
+            return this.carouselItemsToArray[this.currentIndex];
         },
         carouselUpperItemsToArray: function carouselUpperItemsToArray() {
             var arr = [];
@@ -20653,6 +20653,19 @@ setTimeout(setIframeSrc, 5);
 
             return arr;
         },
+        carouselItemsToArray: function carouselItemsToArray() {
+            var arr = [];
+
+            for (var i = this.carouselItems.length - 1; i >= 0; i--) {
+                if (this.carouselItems[i].cover && this.carouselItems[i].video) {
+                    arr.push({ src: this.carouselItems[i].video, type: "video", thumb: this.carouselItems[i].cover });
+                } else {
+                    arr.push({ src: this.carouselItems[i].cover, type: "img", thumb: this.carouselItems[i].cover });
+                }
+            }
+
+            return arr;
+        },
         chunkedItemsDesktop: function chunkedItemsDesktop() {
 
             var chunk1 = [];
@@ -20660,14 +20673,14 @@ setTimeout(setIframeSrc, 5);
             var chunk3 = [];
 
             if (this.currentIndex <= 2) {
-                chunk1 = this.carouselItems.slice(0, 4);
-                chunk2 = this.carouselItems.slice(4, this.carouselItems.length).fill('');
+                chunk1 = this.carouselItemsToArray.slice(0, 4);
+                chunk2 = this.carouselItemsToArray.slice(4, this.carouselItemsToArray.length).fill('');
                 return chunk1.concat(chunk2);
             }
 
-            chunk1 = this.carouselItems.slice(0, this.currentIndex - 2).fill('');
-            chunk2 = this.carouselItems.slice(this.currentIndex - 2, this.currentIndex + 2);
-            chunk3 = this.carouselItems.slice(this.currentIndex + 2, this.carouselItems.length).fill('');
+            chunk1 = this.carouselItemsToArray.slice(0, this.currentIndex - 2).fill('');
+            chunk2 = this.carouselItemsToArray.slice(this.currentIndex - 2, this.currentIndex + 2);
+            chunk3 = this.carouselItemsToArray.slice(this.currentIndex + 2, this.carouselItemsToArray.length).fill('');
 
             return chunk1.concat(chunk2, chunk3);
         },
@@ -20678,14 +20691,14 @@ setTimeout(setIframeSrc, 5);
             var chunk3 = [];
 
             if (this.currentIndex <= 1) {
-                chunk1 = this.carouselItems.slice(0, 3);
-                chunk2 = this.carouselItems.slice(3, this.carouselItems.length).fill('');
+                chunk1 = this.carouselItemsToArray.slice(0, 3);
+                chunk2 = this.carouselItemsToArray.slice(3, this.carouselItemsToArray.length).fill('');
                 return chunk1.concat(chunk2);
             }
 
-            chunk1 = this.carouselItems.slice(0, this.currentIndex - 1).fill('');
-            chunk2 = this.carouselItems.slice(this.currentIndex - 1, this.currentIndex + 2);
-            chunk3 = this.carouselItems.slice(this.currentIndex + 2, this.carouselItems.length).fill('');
+            chunk1 = this.carouselItemsToArray.slice(0, this.currentIndex - 1).fill('');
+            chunk2 = this.carouselItemsToArray.slice(this.currentIndex - 1, this.currentIndex + 2);
+            chunk3 = this.carouselItemsToArray.slice(this.currentIndex + 2, this.carouselItemsToArray.length).fill('');
 
             return chunk1.concat(chunk2, chunk3);
         }
@@ -20733,7 +20746,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "src": _vm.images + img.thumb
       }
     })])])])]) : _vm._e()
-  }))]), _vm._v(" "), _c('div', {}, [_c('figure', {
+  }))]), _vm._v(" "), _c('div', {
+    on: {
+      "click": function($event) {
+        _vm.$emit('active', null)
+      }
+    }
+  }, [_c('figure', {
     staticClass: "image"
   }, [(_vm.currentItem.type == 'img') ? _c('img', {
     attrs: {
@@ -20784,7 +20803,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "image is-96x96"
     }, [_c('img', {
       attrs: {
-        "src": img.thumb
+        "src": _vm.images + img.thumb
       }
     })])])])]) : _vm._e()
   }))]), _vm._v(" "), _c('div', {
@@ -20802,7 +20821,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v(_vm._s(index + 1))])])
   }))]), _vm._v(" "), _c('div', {
-    staticClass: "is-hidden-desktop is-hidden-tablet is-centered"
+    staticClass: "level is-hidden-desktop is-hidden-tablet is-centered"
   }, [_c('div', {
     staticClass: "level is-mobile"
   }, _vm._l((_vm.chunkedItemsMobile), function(img, index) {
@@ -20827,7 +20846,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "image is-96x96"
     }, [_c('img', {
       attrs: {
-        "src": img.thumb
+        "src": _vm.images + img.thumb
       }
     })])])])]) : _vm._e()
   })), _vm._v(" "), _c('div', {
@@ -20869,7 +20888,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }) : _vm._e(), _vm._v(" "), (_vm.currentItem.type == 'video') ? _c('iframe', {
     attrs: {
       "id": "iframe1",
-      "src": _vm.currentItem.src,
+      "src": _vm.youtube + _vm.currentItem.src,
       "width": _vm.width,
       "height": _vm.height
     }
@@ -20909,7 +20928,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "image is-96x96"
     }, [_c('img', {
       attrs: {
-        "src": img.thumb
+        "src": _vm.images + img.thumb
       }
     })])])])]) : _vm._e()
   })), _vm._v(" "), _c('div', {
@@ -20952,7 +20971,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "image is-96x96"
     }, [_c('img', {
       attrs: {
-        "src": img.thumb
+        "src": _vm.images + img.thumb
       }
     })])])])]) : _vm._e()
   })), _vm._v(" "), _c('div', {
@@ -22031,28 +22050,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 			storeURL: '/api/engagementRings/appointment',
 
-			post: {
-				invoice: {},
-				content: []
-			},
-			invoice: '',
-			images: [{ thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
-				src: '/images/qKrPCgDCyA6mxwq8.jpeg',
-				type: 'img', id: '1' }, { thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
-				src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
-				type: 'video', id: '2' }, { thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
-				src: '/images/qKrPCgDCyA6mxwq8.jpeg',
-				type: 'img', id: '3' }, { thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
-				src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
-				type: 'video', id: '4' }, { thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
-				src: '/images/qKrPCgDCyA6mxwq8.jpeg',
-				type: 'img', id: '5' }, { thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
-				src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
-				type: 'video', id: '6' }, { thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
-				src: '/images/qKrPCgDCyA6mxwq8.jpeg',
-				type: 'img', id: '7' }, { thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
-				src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
-				type: 'video', id: '8' }]
+			customerItems: ''
 		};
 	},
 
@@ -22074,6 +22072,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/engagementRings/' + this.$route.params.id).then(function (res) {
 				_this.engagementRing = res.data.model;
+				_this.customerItems = res.data.posts.invPosts;
 			});
 		}
 	}
@@ -22114,7 +22113,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "height": '500',
       "width": '100%',
       "carouselUpperItems": _vm.engagementRing,
-      "carouselItems": _vm.images
+      "carouselItems": _vm.customerItems
     },
     on: {
       "active": function($event) {

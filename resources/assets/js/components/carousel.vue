@@ -28,7 +28,7 @@
                             </div>
                         </div>
 
-                <div class="">
+                <div class="" @click="$emit('active', null)">
                     <figure class="image">
                         <img :src="images+currentItem.src" v-if="currentItem.type=='img'">
                         <iframe id="iframe1" :src="youtube+currentItem.src" :width="width" :height="height" v-if="currentItem.type=='video'"></iframe>
@@ -50,7 +50,7 @@
                                     <div class="level-item has-text-centered" >
                                         <a @click="onClick($event)">
                                         <figure class="image is-96x96">
-                                            <img :src="img.thumb"></img>
+                                            <img :src="images+img.thumb"></img>
                                         </figure>
                                         </a>
                                     </div>
@@ -64,14 +64,14 @@
                         </div>
                     </div>
 
-                 <div class="is-hidden-desktop is-hidden-tablet is-centered">
+                 <div class="level is-hidden-desktop is-hidden-tablet is-centered">
                     <div class="level is-mobile" >
                         <div :class="{'box':currentIndex == index}" v-for="(img, index) in chunkedItemsMobile" 
                         @click="currentSelectedItem(index,'lower')" v-if="img.thumb">
                             <div class="level-item has-text-centered" >
                                 <a @click="onClick($event)">
                                 <figure class="image is-96x96">
-                                    <img :src="img.thumb"></img>
+                                    <img :src="images+img.thumb"></img>
                                 </figure>
                                 </a>
                             </div>
@@ -100,7 +100,7 @@
                       <div class="">
                 <figure class="image">
                     <img :src="currentItem.src" v-if="currentItem.type=='img'">
-                    <iframe id="iframe1" :src="currentItem.src" :width="width" :height="height" v-if="currentItem.type=='video'"></iframe>
+                    <iframe id="iframe1" :src="youtube+currentItem.src" :width="width" :height="height" v-if="currentItem.type=='video'"></iframe>
                     <figcaption class="has-text-centered">
                         <p class="title is-3">{{ currentItem.title }}</p>
                         <p class="subtitle is-5"> {{ currentItem.desc }} </p>
@@ -117,7 +117,7 @@
                         <div class="level-item has-text-centered" >
                             <a @click="onClick($event)">
                             <figure class="image is-96x96">
-                                <img :src="img.thumb" ></img>
+                                <img :src="images+img.thumb" ></img>
                             </figure>
                             </a>
                         </div>
@@ -138,7 +138,7 @@
                             <div class="level-item has-text-centered" >
                                 <a @click="onClick($event)">
                                 <figure class="image is-96x96">
-                                    <img :src="img.thumb"></img>
+                                    <img :src="images+img.thumb"></img>
                                 </figure>
                                 </a>
                             </div>
@@ -191,6 +191,7 @@ export default {
         items:'',
         carouselActive:'',
         carouselUpperItems:'',
+
         
         
     },
@@ -247,7 +248,7 @@ export default {
             if (this.showUpper) {
             return this.carouselUpperItemsToArray[this.currentIndex];                
             }
-            return this.carouselItems[this.currentIndex];
+            return this.carouselItemsToArray[this.currentIndex];
         },
         carouselUpperItemsToArray(){
                     var arr = []
@@ -268,6 +269,24 @@ export default {
                     return arr;
                 },
 
+        carouselItemsToArray(){
+                    var arr = []
+
+                    
+                for (var i = this.carouselItems.length - 1; i >= 0; i--) {
+                    if (this.carouselItems[i].cover&&this.carouselItems[i].video) {
+                        arr.push({src:this.carouselItems[i].video, type:"video", thumb:this.carouselItems[i].cover})
+                    }else
+                    {
+                        arr.push({src:this.carouselItems[i].cover, type:"img", thumb:this.carouselItems[i].cover})
+                    }
+                    
+                }
+                    
+                    
+                    return arr;
+                },
+
         chunkedItemsDesktop(){
               
                 var chunk1 = []
@@ -275,14 +294,14 @@ export default {
                 var chunk3 = []
 
                 if (this.currentIndex<=2) {
-                 chunk1 = this.carouselItems.slice(0,4)
-                 chunk2 = this.carouselItems.slice(4,this.carouselItems.length).fill('')
+                 chunk1 = this.carouselItemsToArray.slice(0,4)
+                 chunk2 = this.carouselItemsToArray.slice(4,this.carouselItemsToArray.length).fill('')
                  return chunk1.concat(chunk2)
                 }
 
-                chunk1 = this.carouselItems.slice(0,this.currentIndex-2).fill('')
-                chunk2 = this.carouselItems.slice(this.currentIndex-2,this.currentIndex+2)
-                chunk3 = this.carouselItems.slice(this.currentIndex+2,this.carouselItems.length).fill('')
+                chunk1 = this.carouselItemsToArray.slice(0,this.currentIndex-2).fill('')
+                chunk2 = this.carouselItemsToArray.slice(this.currentIndex-2,this.currentIndex+2)
+                chunk3 = this.carouselItemsToArray.slice(this.currentIndex+2,this.carouselItemsToArray.length).fill('')
                 
                 return chunk1.concat(chunk2,chunk3)
             },
@@ -294,14 +313,14 @@ export default {
                 var chunk3 = []
 
                 if (this.currentIndex<=1) {
-                 chunk1 = this.carouselItems.slice(0,3)
-                 chunk2 = this.carouselItems.slice(3,this.carouselItems.length).fill('')
+                 chunk1 = this.carouselItemsToArray.slice(0,3)
+                 chunk2 = this.carouselItemsToArray.slice(3,this.carouselItemsToArray.length).fill('')
                  return chunk1.concat(chunk2)
                 }
 
-                chunk1 = this.carouselItems.slice(0,this.currentIndex-1).fill('')
-                chunk2 = this.carouselItems.slice(this.currentIndex-1,this.currentIndex+2)
-                chunk3 = this.carouselItems.slice(this.currentIndex+2,this.carouselItems.length).fill('')
+                chunk1 = this.carouselItemsToArray.slice(0,this.currentIndex-1).fill('')
+                chunk2 = this.carouselItemsToArray.slice(this.currentIndex-1,this.currentIndex+2)
+                chunk3 = this.carouselItemsToArray.slice(this.currentIndex+2,this.carouselItemsToArray.length).fill('')
                 
                 return chunk1.concat(chunk2,chunk3)
             },

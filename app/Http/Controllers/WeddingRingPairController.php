@@ -23,7 +23,9 @@ class WeddingRingPairController extends Controller
                                 ->whereIn('metal', explode(',', request()->metal))
                                 ;}
 
-                        ])->paginate(request()->per_page)
+                        ])
+                ->has('weddingRings', '>=', 1)
+                ->paginate(request()->per_page)
                 ]);
     }
 }

@@ -32,18 +32,12 @@ class CreateEngagementRingsTable extends Migration
         });
 
 
-        Schema::create('invoice_engagement_ring', function (Blueprint $table) {
-            $table->integer('invoice_id');
-            $table->integer('engagement_ring_id');            
-            $table->primary(['invoice_id','engagement_ring_id']);
-        });
-
-
         Schema::create('engagement_ring_invoice', function (Blueprint $table) {
             $table->integer('invoice_id');
             $table->integer('engagement_ring_id');            
             $table->primary(['invoice_id','engagement_ring_id']);
         });
+
     }
 
     /**
@@ -54,7 +48,6 @@ class CreateEngagementRingsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('engagement_rings');
-        Schema::dropIfExists('invoice_engagement_ring');
         Schema::dropIfExists('engagement_ring_invoice');
     }
 }

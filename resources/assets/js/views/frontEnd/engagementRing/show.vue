@@ -15,7 +15,7 @@
   		<div class="tile is-parent is-7">
   				<div class="tile is-child box">
 	  					<figure class="image" @click="carouselState=!carouselState">
-	  					<carousel @active="carouselState=!carouselState" :carouselActive="carouselState" :items="4" :height="'500'" :width="'100%'" :carouselUpperItems="engagementRing" :carouselItems="images"></carousel>
+	  					<carousel @active="carouselState=!carouselState" :carouselActive="carouselState" :items="4" :height="'500'" :width="'100%'" :carouselUpperItems="engagementRing" :carouselItems="customerItems"></carousel>
 	  					</figure>
   				</div>
   			</div>
@@ -112,37 +112,7 @@
 				,
 				storeURL: '/api/engagementRings/appointment',
 				
-				post: {
-					invoice: {},
-					content: []
-				},
-				invoice: '',
-				images:[
-				{	thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
-					src:'/images/qKrPCgDCyA6mxwq8.jpeg',
-					type:'img', id:'1',},
-				{	thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
-					src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
-					type:'video', id:'2',},
-				{	thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
-					src:'/images/qKrPCgDCyA6mxwq8.jpeg',
-					type:'img', id:'3',},
-				{	thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
-					src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
-					type:'video', id:'4',},
-				{	thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
-					src:'/images/qKrPCgDCyA6mxwq8.jpeg',
-					type:'img', id:'5',},
-				{	thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
-					src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
-					type:'video', id:'6',},
-				{	thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
-					src:'/images/qKrPCgDCyA6mxwq8.jpeg',
-					type:'img', id:'7',},
-				{	thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
-					src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
-					type:'video', id:'8',},								
-					]
+				customerItems: '',
 			}
 		},
 		watch:{
@@ -162,6 +132,7 @@
 				get(`/api/engagementRings/${this.$route.params.id}`)
 				.then((res)=>{
 					this.engagementRing = res.data.model
+					this.customerItems = res.data.posts.invPosts
 				})
 			},
 			
