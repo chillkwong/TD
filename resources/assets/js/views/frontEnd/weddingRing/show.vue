@@ -5,7 +5,7 @@
 
 	<div class="tile box">
 		<div class="tile notification is-primary">
-				<p class="title">{{weddingRing.shoulder}} Shoulder {{weddingRing.prong}} Engagement Ring</p>
+				<p class="title">{{weddingRing.wedding_rings[0].description}} Wedding Rings</p>
 		</div>       
   	</div>
 
@@ -28,7 +28,7 @@
   				<article>
   					<center>
   						<button class="button is-info" @click="appointmentState=!appointmentState">Appointment</button>
-  						<appointment v-model="weddingRing" :appTitle="appointmentTitle" @active="appointmentState=!appointmentState" :appointActive="appointmentState" :columns="columns"  :isProcessing="false"></appointment>
+  						<appointment v-model="weddingRing.wedding_rings[0]" :appTitle="appointmentTitle" @active="appointmentState=!appointmentState" :appointActive="appointmentState" :columns="columns"  :isProcessing="false"></appointment>
   					</center>
   					<br>
   					<p>
@@ -40,27 +40,26 @@
   					<table class="table is-striped is-fullwidth">
 					<thead>
 						<tr>
-							<th>Engagement Ring Info</th>
+							<th>Wedding Rings Info</th><th>Men</th><th>Female</th>
 						</tr>
 					</thead>
   						
 					<tbody>
-						<tr><td>Unit Price</td><td>${{weddingRing.unit_price}}</td></tr>
-						<tr><td>Shoulder</td><td>{{weddingRing.shoulder}}</td></tr>
-						<tr><td>Prong</td><td>{{weddingRing.prong}}</td></tr>
-						<tr><td>Side Stone</td><td>{{weddingRing.sideStone}}</td></tr>
+						<tr><td>Unit Price</td><td>${{weddingRing.wedding_rings[0].unit_price}}</td><td>${{weddingRing.wedding_rings[1].unit_price}}</td></tr>
+						<tr><td>Metal</td><td>{{weddingRing.wedding_rings[0].metal}}</td><td>{{weddingRing.wedding_rings[1].metal}}</td></tr>
+						<tr><td>Side Stone</td><td>{{weddingRing.wedding_rings[0].sideStone}}</td><td>{{weddingRing.wedding_rings[1].sideStone}}</td></tr>
 					</tbody>
 
 					<thead>
 						<tr>
-							<th>More Details</th>
+							<th colspan="3">More Details</th>
 						</tr>
 					</thead>
   						
 					<tbody>
-						<tr><td>Stock</td><td>{{weddingRing.stock}}</td></tr>
-						<tr><td>Name</td><td>{{weddingRing.name}}</td></tr>
-						<tr><td>Description</td><td>{{weddingRing.description}}</td></tr>
+						<tr><td>Stock</td><td>{{weddingRing.wedding_rings[0].stock}}</td><td>{{weddingRing.wedding_rings[1].stock}}</td></tr>
+						<tr><td>Name</td><td>{{weddingRing.wedding_rings[0].name}}</td><td>{{weddingRing.wedding_rings[1].name}}</td></tr>
+						<tr><td>Description</td><td>{{weddingRing.wedding_rings[0].description}}</td><td>{{weddingRing.wedding_rings[1].description}}</td></tr>
 					</tbody>
 
   					</table>
@@ -102,8 +101,7 @@
 				weddingRing:'',
 				columns:[
 				'unit_price',
-                'shoulder',
-                'prong',
+                'metal',
                 'sideStone',
                 'stock',
                 'name',
@@ -128,7 +126,7 @@
 			combinedWeddingRings(){ 
 				var obj = []
 				obj.push(this.weddingRing.wedding_rings[0])
-				
+
 				if (this.weddingRing.wedding_rings[1]) {
 					obj.push(this.weddingRing.wedding_rings[1])
 					}

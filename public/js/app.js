@@ -23009,7 +23009,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "tile notification is-primary"
   }, [_c('p', {
     staticClass: "title"
-  }, [_vm._v(_vm._s(_vm.weddingRing.shoulder) + " Shoulder " + _vm._s(_vm.weddingRing.prong) + " Engagement Ring")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].description) + " Wedding Rings")])])]), _vm._v(" "), _c('div', {
     staticClass: "tile is-ancestor "
   }, [_c('div', {
     staticClass: "tile is-parent is-7"
@@ -23063,19 +23063,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     },
     model: {
-      value: (_vm.weddingRing),
+      value: (_vm.weddingRing.wedding_rings[0]),
       callback: function($$v) {
-        _vm.weddingRing = $$v
+        _vm.$set(_vm.weddingRing.wedding_rings, 0, $$v)
       },
-      expression: "weddingRing"
+      expression: "weddingRing.wedding_rings[0]"
     }
   })], 1), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("\n\t\t\t\t\tFor more detailed information, can reach GIA website query：\n\t\t\t\t\t")])], 1)]), _vm._v(" "), _c('article', [_c('table', {
     staticClass: "table is-striped is-fullwidth"
-  }, [_vm._m(0), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Unit Price")]), _c('td', [_vm._v("$" + _vm._s(_vm.weddingRing.unit_price))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Shoulder")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.shoulder))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Prong")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.prong))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Side Stone")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.sideStone))])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Stock")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.stock))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Name")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.name))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Description")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.description))])])])])])])])])])
+  }, [_vm._m(0), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Unit Price")]), _c('td', [_vm._v("$" + _vm._s(_vm.weddingRing.wedding_rings[0].unit_price))]), _c('td', [_vm._v("$" + _vm._s(_vm.weddingRing.wedding_rings[1].unit_price))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Metal")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].metal))]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].metal))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Side Stone")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].sideStone))]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].sideStone))])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Stock")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].stock))]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].stock))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Name")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].name))]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].name))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Description")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].description))]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].description))])])])])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th', [_vm._v("Engagement Ring Info")])])])
+  return _c('thead', [_c('tr', [_c('th', [_vm._v("Wedding Rings Info")]), _c('th', [_vm._v("Men")]), _c('th', [_vm._v("Female")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th', [_vm._v("More Details")])])])
+  return _c('thead', [_c('tr', [_c('th', {
+    attrs: {
+      "colspan": "3"
+    }
+  }, [_vm._v("More Details")])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -23310,7 +23314,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 // import Auth from '../../store/auth'
@@ -23330,7 +23333,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			appointmentState: false,
 			title: '',
 			weddingRing: '',
-			columns: ['unit_price', 'shoulder', 'prong', 'sideStone', 'stock', 'name', 'description'],
+			columns: ['unit_price', 'metal', 'sideStone', 'stock', 'name', 'description'],
 
 			storeURL: '',
 			customerItems: ''
