@@ -38,25 +38,6 @@ class DiamondController extends Controller
           ]);
     }
 
-    public function appointment(Request $request)
-    {
-      // $this->validate($request,[
-      //   'name' => 'required',
-      //   'phone' => 'required'
-      // ]);
-
-      $appointment = $request->all();
-      // dd($appointment);
-      \Mail::to('pete@tingdiamond.com')->send(new Appointment($appointment));
-
-      return response()
-        ->json(
-          ['saved' => true,
-        'message' => trans('frontEnd.appointmentSuccess')
-        ]
-        );
-
-    }
 
     public function store(Request $request){
 

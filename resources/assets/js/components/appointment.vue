@@ -45,7 +45,6 @@
       appointActive: false,
       appTitle: '',
       columns:'',
-      storeURL:'',
       isProcessing: '',
 		},
     data(){
@@ -54,6 +53,7 @@
           form: {
             name: '',
             phone: '',
+            storeURL:'wwww.tingdiamond.com'+this.$route.fullPath,
           
         },
 
@@ -74,8 +74,8 @@
     methods: {
       save(){
 
-        var form = Object.assign({},this.form,this.value)
-        post(this.storeURL, form)
+        var form = Object.assign({},this.form,this.value,this.storeURL)
+        post('/api/appointment', form)
           .then((res)=>{
             if (res.data.saved) {
               Flash.setSuccess(res.data.message)

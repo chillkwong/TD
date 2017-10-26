@@ -29,6 +29,7 @@ class CreateEngagementRingsTable extends Migration
             $table->boolean('published')->default(false);
             $table->boolean('customized')->default(false);
             $table->integer('page_id')->unsigned()->nullable();
+            $table->timestamps();
         });
 
 

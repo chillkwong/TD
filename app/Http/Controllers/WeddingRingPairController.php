@@ -28,4 +28,39 @@ class WeddingRingPairController extends Controller
                 ->paginate(request()->per_page)
                 ]);
     }
+
+    public function show($id)
+    {
+        $weddingRingPairs = WeddingRingPair::with('weddingRings')->findOrFail($id);
+
+        $invPosts = [];
+
+        if (count($weddingRingPairs->weddingRings)>0) {
+            
+            $post1 = WeddingRing::findOrFail($weddingRingPairs->weddingRings[0]->id)->invoices()->with('invPosts')->get();
+
+            foreach ($post1 as $p ) {
+                $invPosts['invPosts'][] = $p->invPosts[0];
+            }
+
+        }
+
+
+        if (count($weddingRingPairs->weddingRings)>1) {
+            
+            $post2 = WeddingRing::findOrFail($weddingRingPairs->weddingRings[1]->id)->invoices()->with('invPosts')->get();
+
+            foreach ($post2 as $p ) {
+                $invPosts['invPosts'][] = $p->invPosts[0];
+            }
+
+        }
+        
+        
+        return response()
+            ->json([
+                'model' => $weddingRingPairs,
+                'posts' => $invPosts,
+            ]);
+    }
 }

@@ -20218,7 +20218,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     appointActive: false,
     appTitle: '',
     columns: '',
-    storeURL: '',
     isProcessing: ''
   },
   data: function data() {
@@ -20226,7 +20225,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       form: {
         name: '',
-        phone: ''
+        phone: '',
+        storeURL: 'wwww.tingdiamond.com' + this.$route.fullPath
 
       }
 
@@ -20249,8 +20249,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     save: function save() {
       var _this = this;
 
-      var form = Object.assign({}, this.form, this.value);
-      Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["c" /* post */])(this.storeURL, form).then(function (res) {
+      var form = Object.assign({}, this.form, this.value, this.storeURL);
+      Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["c" /* post */])('/api/appointment', form).then(function (res) {
         if (res.data.saved) {
           __WEBPACK_IMPORTED_MODULE_1__helpers_flash__["a" /* default */].setSuccess(res.data.message);
           _this.$emit('active', null);
@@ -20555,6 +20555,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 function setIframeSrc() {
@@ -20572,14 +20604,14 @@ setTimeout(setIframeSrc, 5);
     name: 'carousel',
     props: {
         carouselItems: {
-            Type: Array,
-            required: true
+            Type: Array
         },
         width: '',
         height: '',
         items: '',
         carouselActive: '',
-        carouselUpperItems: ''
+        carouselUpperItems: '',
+        carouselTitle: ''
 
     },
     created: function created() {
@@ -20590,18 +20622,21 @@ setTimeout(setIframeSrc, 5);
             currentIndex: 0,
             showUpper: true,
             youtube: 'http://www.youtube.com/embed/',
+            rel: '?rel=0',
             images: '/images/'
         };
     },
 
     methods: {
 
-        onClick: function onClick(event) {
-            if (event.target.className == 'disabled') {
-                return;
-            }
-            event.target.className = 'disabled';
-        },
+        // onClick:function(event)
+        // {
+        //     if(event.target.className == 'disabled')
+        //     {
+        //         return;
+        //     }
+        //     event.target.className = 'disabled';
+        // },
         nextItem: function nextItem() {
             if (this.currentIndex == this.carouselItems.length - 1) {
                 this.currentIndex = 0;
@@ -20638,6 +20673,26 @@ setTimeout(setIframeSrc, 5);
         carouselUpperItemsToArray: function carouselUpperItemsToArray() {
             var arr = [];
 
+            if (this.carouselUpperItems.length > 0) {
+                for (var i = this.carouselUpperItems.length - 1; i >= 0; i--) {
+
+                    if (this.carouselUpperItems[i].cover) {
+                        arr.push({ src: this.carouselUpperItems[i].cover, type: "img", thumb: this.carouselUpperItems[i].cover });
+                    }
+                    if (this.carouselUpperItems[i].image1) {
+                        arr.push({ src: this.carouselUpperItems[i].image1, type: "img", thumb: this.carouselUpperItems[i].image1 });
+                    }
+                    if (this.carouselUpperItems[i].image2) {
+                        arr.push({ src: this.carouselUpperItems[i].image2, type: "img", thumb: this.carouselUpperItems[i].image2 });
+                    }
+                    if (this.carouselUpperItems[i].video) {
+                        arr.push({ src: this.carouselUpperItems[i].video, type: "video", thumb: this.carouselUpperItems[i].cover });
+                    }
+                }
+
+                return arr;
+            }
+
             if (this.carouselUpperItems.cover) {
                 arr.push({ src: this.carouselUpperItems.cover, type: "img", thumb: this.carouselUpperItems.cover });
             }
@@ -20654,7 +20709,11 @@ setTimeout(setIframeSrc, 5);
             return arr;
         },
         carouselItemsToArray: function carouselItemsToArray() {
+
             var arr = [];
+            if (!this.carouselItems) {
+                return arr.push({ src: '', type: '', thumb: '' });
+            }
 
             for (var i = this.carouselItems.length - 1; i >= 0; i--) {
                 if (this.carouselItems[i].cover && this.carouselItems[i].video) {
@@ -20666,12 +20725,35 @@ setTimeout(setIframeSrc, 5);
 
             return arr;
         },
-        chunkedItemsDesktop: function chunkedItemsDesktop() {
+        chunkedUpperItems: function chunkedUpperItems() {
 
             var chunk1 = [];
             var chunk2 = [];
             var chunk3 = [];
 
+            if (!this.carouselUpperItemsToArray) {
+                return chunk1;
+            }
+            if (this.currentIndex <= 1) {
+                chunk1 = this.carouselUpperItemsToArray.slice(0, 3);
+                chunk2 = this.carouselUpperItemsToArray.slice(3, this.carouselUpperItemsToArray.length).fill('');
+                return chunk1.concat(chunk2);
+            }
+
+            chunk1 = this.carouselUpperItemsToArray.slice(0, this.currentIndex - 1).fill('');
+            chunk2 = this.carouselUpperItemsToArray.slice(this.currentIndex - 1, this.currentIndex + 2);
+            chunk3 = this.carouselUpperItemsToArray.slice(this.currentIndex + 2, this.carouselUpperItemsToArray.length).fill('');
+
+            return chunk1.concat(chunk2, chunk3);
+        },
+        chunkedItemsDesktop: function chunkedItemsDesktop() {
+
+            var chunk1 = [];
+            var chunk2 = [];
+            var chunk3 = [];
+            if (!this.carouselItems) {
+                return chunk1;
+            }
             if (this.currentIndex <= 2) {
                 chunk1 = this.carouselItemsToArray.slice(0, 4);
                 chunk2 = this.carouselItemsToArray.slice(4, this.carouselItemsToArray.length).fill('');
@@ -20690,6 +20772,9 @@ setTimeout(setIframeSrc, 5);
             var chunk2 = [];
             var chunk3 = [];
 
+            if (!this.carouselItems) {
+                return chunk1;
+            }
             if (this.currentIndex <= 1) {
                 chunk1 = this.carouselItemsToArray.slice(0, 3);
                 chunk2 = this.carouselItemsToArray.slice(3, this.carouselItemsToArray.length).fill('');
@@ -20713,6 +20798,25 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "box"
   }, [_c('div', {
+    staticClass: "level-item",
+    on: {
+      "click": function($event) {
+        _vm.$emit('active', null)
+      }
+    }
+  }, _vm._l((_vm.chunkedUpperItems), function(item, index) {
+    return _c('a', [_c('a', {
+      staticClass: "button",
+      class: {
+        'is-primary': _vm.currentIndex == index
+      },
+      on: {
+        "click": function($event) {
+          _vm.currentSelectedItem(index, 'upper')
+        }
+      }
+    }, [_vm._v(_vm._s(index + 1))])])
+  })), _vm._v(" "), _c('div', {
     staticClass: "level is-mobile",
     on: {
       "click": function($event) {
@@ -20721,7 +20825,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('div', {
     staticClass: "level-item"
-  }, _vm._l((_vm.carouselUpperItemsToArray), function(img, index) {
+  }, _vm._l((_vm.chunkedUpperItems), function(img, index) {
     return (img.thumb) ? _c('div', {
       class: {
         'box': _vm.currentIndex == index
@@ -20733,19 +20837,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('div', {
       staticClass: "level-item has-text-centered"
-    }, [_c('a', {
-      on: {
-        "click": function($event) {
-          _vm.onClick($event)
-        }
-      }
-    }, [_c('figure', {
+    }, [_c('a', [_c('figure', {
       staticClass: "image is-96x96"
     }, [_c('img', {
       attrs: {
         "src": _vm.images + img.thumb
       }
-    })])])])]) : _vm._e()
+    }), _vm._v(" "), (img.type == 'video') ? _c('i', {
+      staticClass: "fa fa-play",
+      attrs: {
+        "aria-hidden": "true"
+      }
+    }) : _vm._e()])])])]) : _vm._e()
   }))]), _vm._v(" "), _c('div', {
     on: {
       "click": function($event) {
@@ -20761,7 +20864,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }) : _vm._e(), _vm._v(" "), (_vm.currentItem.type == 'video') ? _c('iframe', {
     attrs: {
       "id": "iframe1",
-      "src": _vm.youtube + _vm.currentItem.src,
+      "src": _vm.youtube + _vm.currentItem.src + _vm.rel,
       "width": _vm.width,
       "height": _vm.height
     }
@@ -20777,12 +20880,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })])])]), _vm._v(" "), _c('div', {
     staticClass: "is-hidden-mobile"
-  }, [_c('div', {
+  }, [_c('center', [_c('p', [_vm._v("Customer Jewellires")])]), _vm._v(" "), _c('div', {
     staticClass: "level is-mobile"
   }, [_c('div', {
     staticClass: "level-item"
   }, _vm._l((_vm.chunkedItemsDesktop), function(img, index) {
-    return (img.thumb) ? _c('div', {
+    return (_vm.chunkedItemsDesktop) ? _c('div', {
       class: {
         'box': _vm.currentIndex == index
       },
@@ -20793,19 +20896,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('div', {
       staticClass: "level-item has-text-centered"
-    }, [_c('a', {
-      on: {
-        "click": function($event) {
-          _vm.onClick($event)
-        }
-      }
-    }, [_c('figure', {
+    }, [_c('a', [_c('figure', {
       staticClass: "image is-96x96"
     }, [_c('img', {
       attrs: {
         "src": _vm.images + img.thumb
       }
-    })])])])]) : _vm._e()
+    }), _vm._v(" "), (img.type == 'video') ? _c('i', {
+      staticClass: "fa fa-play",
+      attrs: {
+        "aria-hidden": "true"
+      }
+    }) : _vm._e()])])])]) : _vm._e()
   }))]), _vm._v(" "), _c('div', {
     staticClass: "level-item"
   }, _vm._l((_vm.carouselItems), function(item, index) {
@@ -20816,16 +20918,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       on: {
         "click": function($event) {
-          _vm.showAtIndex(index)
+          _vm.currentSelectedItem(index, 'lower')
         }
       }
     }, [_vm._v(_vm._s(index + 1))])])
-  }))]), _vm._v(" "), _c('div', {
+  }))], 1), _vm._v(" "), _c('div', {
     staticClass: "level is-hidden-desktop is-hidden-tablet is-centered"
-  }, [_c('div', {
+  }, [_c('center', [_c('p', [_vm._v("Customer Jewellires")])]), _vm._v(" "), _c('div', {
     staticClass: "level is-mobile"
+  }, [_c('div', {
+    staticClass: "level-item"
   }, _vm._l((_vm.chunkedItemsMobile), function(img, index) {
-    return (img.thumb) ? _c('div', {
+    return (_vm.chunkedItemsMobile) ? _c('div', {
       class: {
         'box': _vm.currentIndex == index
       },
@@ -20836,20 +20940,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('div', {
       staticClass: "level-item has-text-centered"
-    }, [_c('a', {
-      on: {
-        "click": function($event) {
-          _vm.onClick($event)
-        }
-      }
-    }, [_c('figure', {
+    }, [_c('a', [_c('figure', {
       staticClass: "image is-96x96"
     }, [_c('img', {
       attrs: {
         "src": _vm.images + img.thumb
       }
-    })])])])]) : _vm._e()
-  })), _vm._v(" "), _c('div', {
+    }), _vm._v(" "), (img.type == 'video') ? _c('i', {
+      staticClass: "fa fa-play",
+      attrs: {
+        "aria-hidden": "true"
+      }
+    }) : _vm._e()])])])]) : _vm._e()
+  }))]), _vm._v(" "), _c('div', {
     staticClass: "level-item"
   }, _vm._l((_vm.carouselItems), function(item, index) {
     return _c('a', [_c('a', {
@@ -20859,11 +20962,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       on: {
         "click": function($event) {
-          _vm.showAtIndex(index)
+          _vm.currentSelectedItem(index, 'lower')
         }
       }
     }, [_vm._v(_vm._s(index + 1))])])
-  }))]), _vm._v(" "), _c('div', {
+  }))], 1), _vm._v(" "), _c('div', {
     staticClass: "modal",
     class: {
       'is-active': _vm.carouselActive
@@ -20872,7 +20975,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "modal-background"
   }), _vm._v(" "), _c('div', {
     staticClass: "modal-card"
-  }, [_vm._m(0), _vm._v(" "), _c('section', {
+  }, [_c('header', {
+    staticClass: "modal-card-head"
+  }, [_c('p', {
+    staticClass: "modal-card-title"
+  }, [_vm._v(_vm._s(_vm.carouselTitle))]), _vm._v(" "), _c('button', {
+    staticClass: "delete",
+    attrs: {
+      "aria-label": "close"
+    }
+  })]), _vm._v(" "), _c('section', {
     staticClass: "modal-card-body",
     on: {
       "click": function($event) {
@@ -20888,7 +21000,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }) : _vm._e(), _vm._v(" "), (_vm.currentItem.type == 'video') ? _c('iframe', {
     attrs: {
       "id": "iframe1",
-      "src": _vm.youtube + _vm.currentItem.src,
+      "src": _vm.youtube + _vm.currentItem.src + _vm.rel,
       "width": _vm.width,
       "height": _vm.height
     }
@@ -20904,10 +21016,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })])])]), _vm._v(" "), _c('div', {
     staticClass: "is-hidden-mobile"
-  }, [_c('div', {
+  }, [_c('center', [_c('p', [_vm._v("Customer Jewellires")])]), _vm._v(" "), _c('div', {
     staticClass: "level is-mobile"
+  }, [_c('div', {
+    staticClass: "level-item"
   }, _vm._l((_vm.chunkedItemsDesktop), function(img, index) {
-    return (img.thumb) ? _c('div', {
+    return (_vm.chunkedItemsDesktop) ? _c('div', {
       class: {
         'box': _vm.currentIndex == index
       },
@@ -20918,39 +21032,40 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('div', {
       staticClass: "level-item has-text-centered"
-    }, [_c('a', {
-      on: {
-        "click": function($event) {
-          _vm.onClick($event)
-        }
-      }
-    }, [_c('figure', {
+    }, [_c('a', [_c('figure', {
       staticClass: "image is-96x96"
     }, [_c('img', {
       attrs: {
         "src": _vm.images + img.thumb
       }
-    })])])])]) : _vm._e()
-  })), _vm._v(" "), _c('div', {
-    staticClass: "level-item"
-  }, _vm._l((_vm.carouselItems), function(item, index) {
-    return _c('a', [_c('a', {
-      staticClass: "button",
-      class: {
-        'is-primary': _vm.currentIndex == index
-      },
-      on: {
-        "click": function($event) {
-          _vm.showAtIndex(index)
-        }
+    }), _vm._v(" "), (img.type == 'video') ? _c('i', {
+      staticClass: "fa fa-play",
+      attrs: {
+        "aria-hidden": "true"
       }
-    }, [_vm._v(_vm._s(index + 1))])])
+    }) : _vm._e()])])])]) : _vm._e()
   }))]), _vm._v(" "), _c('div', {
+    staticClass: "level-item"
+  }, _vm._l((_vm.carouselItems), function(item, index) {
+    return _c('a', [_c('a', {
+      staticClass: "button",
+      class: {
+        'is-primary': _vm.currentIndex == index
+      },
+      on: {
+        "click": function($event) {
+          _vm.currentSelectedItem(index, 'lower')
+        }
+      }
+    }, [_vm._v(_vm._s(index + 1))])])
+  }))], 1), _vm._v(" "), _c('div', {
     staticClass: "level is-hidden-desktop is-hidden-tablet is-centered"
-  }, [_c('div', {
+  }, [_c('center', [_c('p', [_vm._v("Customer Jewellires")])]), _vm._v(" "), _c('div', {
     staticClass: "level is-mobile"
+  }, [_c('div', {
+    staticClass: "level-item"
   }, _vm._l((_vm.chunkedItemsMobile), function(img, index) {
-    return (img.thumb) ? _c('div', {
+    return (_vm.chunkedItemsMobile) ? _c('div', {
       class: {
         'box': _vm.currentIndex == index
       },
@@ -20961,20 +21076,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('div', {
       staticClass: "level-item has-text-centered"
-    }, [_c('a', {
-      on: {
-        "click": function($event) {
-          _vm.onClick($event)
-        }
-      }
-    }, [_c('figure', {
+    }, [_c('a', [_c('figure', {
       staticClass: "image is-96x96"
     }, [_c('img', {
       attrs: {
         "src": _vm.images + img.thumb
       }
-    })])])])]) : _vm._e()
-  })), _vm._v(" "), _c('div', {
+    }), _vm._v(" "), (img.type == 'video') ? _c('i', {
+      staticClass: "fa fa-play",
+      attrs: {
+        "aria-hidden": "true"
+      }
+    }) : _vm._e()])])])]) : _vm._e()
+  }))]), _vm._v(" "), _c('div', {
     staticClass: "level-item"
   }, _vm._l((_vm.carouselItems), function(item, index) {
     return _c('a', [_c('a', {
@@ -20984,23 +21098,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       on: {
         "click": function($event) {
-          _vm.showAtIndex(index)
+          _vm.currentSelectedItem(index, 'lower')
         }
       }
     }, [_vm._v(_vm._s(index + 1))])])
-  }))])])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('header', {
-    staticClass: "modal-card-head"
-  }, [_c('p', {
-    staticClass: "modal-card-title"
-  }, [_vm._v("Modal title")]), _vm._v(" "), _c('button', {
-    staticClass: "delete",
-    attrs: {
-      "aria-label": "close"
-    }
-  })])
-}]}
+  }))], 1)])])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -21067,7 +21170,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "appTitle": _vm.appointmentTitle,
       "appointActive": _vm.appointmentState,
       "columns": _vm.columns,
-      "storeURL": _vm.storeURL,
       "isProcessing": false
     },
     on: {
@@ -21855,17 +21957,13 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(95)
-}
 var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(97),
   /* template */
   __webpack_require__(98),
   /* styles */
-  injectStyle,
+  null,
   /* scopeId */
   null,
   /* moduleIdentifier (server only) */
@@ -21895,46 +21993,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 95 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(96);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(8)("73818a0f", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3edd3434\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3edd3434\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 96 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\nbody, html {\n  height: 100%;\n  margin: 0;\n  color: #777;\n}\n.cut-bg, .clarity-bg, .bgimg-3 {\n  position: relative;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.cut-bg {\n    /* The image used */\n    background-image: url(\"/front_end/diamond_show/diamond_cut.jpg\");\n\n    /* Full height */\n    height: 100%;\n}\n.clarity-bg {\n    /* The image used */\n    background-image: url(\"/front_end/diamond_show/diamond_clarity.jpg\");\n\n    /* Full height */\n    height: 100%;\n}\n.caption {\n  left: 0;\n  top: 50%;\n  width: 100%;\n  text-align: left;\n  color: #000;\n  padding: 80px;\n}\n.caption span.border {\n  color: #fff;\n  font-size: 25px;\n  border: 40px;\n}\n.caption span.cut-text {\n  font-weight: bold;\n  width: 80px;\n  text-align: left;\n  color: #fff;\n  font-size: 15px;\n  border: 40px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 95 */,
+/* 96 */,
 /* 97 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -22046,9 +22106,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			appointmentState: false,
 			title: '',
 			engagementRing: '',
-			columns: ['Unit Price', 'Shoulder', 'Prong', 'Side Stone', 'Stock', 'Name', 'Description'],
+			columns: ['unit_price', 'shoulder', 'prong', 'sideStone', 'stock', 'name', 'description'],
 
-			storeURL: '/api/engagementRings/appointment',
+			storeURL: '',
 
 			customerItems: ''
 		};
@@ -22093,7 +22153,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "tile notification is-primary"
   }, [_c('p', {
     staticClass: "title"
-  }, [_vm._v(" $" + _vm._s(_vm.engagementRing.unit_price) + " " + _vm._s(_vm.engagementRing.prong))])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.engagementRing.shoulder) + " Shoulder " + _vm._s(_vm.engagementRing.prong) + " Engagement Ring")])])]), _vm._v(" "), _c('div', {
     staticClass: "tile is-ancestor "
   }, [_c('div', {
     staticClass: "tile is-parent is-7"
@@ -22113,7 +22173,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "height": '500',
       "width": '100%',
       "carouselUpperItems": _vm.engagementRing,
-      "carouselItems": _vm.customerItems
+      "carouselItems": _vm.customerItems,
+      "carouselTitle": "customer jewellries"
     },
     on: {
       "active": function($event) {
@@ -22138,7 +22199,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "appTitle": _vm.appointmentTitle,
       "appointActive": _vm.appointmentState,
       "columns": _vm.columns,
-      "storeURL": _vm.storeURL,
       "isProcessing": false
     },
     on: {
@@ -22816,7 +22876,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "tile"
       }, [_c('router-link', {
         attrs: {
-          "to": _vm.$route.path + '/' + ring.wedding_rings[0].id
+          "to": _vm.$route.path + '/' + ring.id
         }
       }, [(ring.wedding_rings[0].cover) ? _c('img', {
         attrs: {
@@ -22836,9 +22896,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "level"
       }, [_c('div', {
         staticClass: "level-item is-left"
-      }, [(ring.wedding_rings[0].description) ? _c('p', [_vm._v("$" + _vm._s(ring.wedding_rings[0].description))]) : _vm._e()]), _vm._v(" "), (ring.wedding_rings[1]) ? _c('div', {
-        staticClass: "level-item is-right"
-      }, [(ring.wedding_rings[1].description) ? _c('p', [_vm._v("$" + _vm._s(ring.wedding_rings[1].description))]) : _vm._e()]) : _vm._e()])])], 1)], 1)]) : _vm._e()])
+      }, [(ring.wedding_rings[0].description) ? _c('p', [_vm._v(_vm._s(ring.wedding_rings[0].description))]) : _vm._e()])])])], 1)], 1)]) : _vm._e()])
     }))
   })), _vm._v(" "), _c('div', {
     staticClass: "is-hidden-desktop is-hidden-tablet is-centered box"
@@ -22850,7 +22908,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "level-item"
       }, [(ring.wedding_rings[0]) ? _c('div', [_c('router-link', {
         attrs: {
-          "to": _vm.$route.path + '/' + ring.wedding_rings[0].id
+          "to": _vm.$route.path + '/' + ring.id
         }
       }, [(ring.wedding_rings[0].cover) ? _c('img', {
         attrs: {
@@ -22897,13 +22955,17 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(180)
+}
 var Component = __webpack_require__(0)(
   /* script */
-  null,
+  __webpack_require__(182),
   /* template */
   __webpack_require__(103),
   /* styles */
-  null,
+  injectStyle,
   /* scopeId */
   null,
   /* moduleIdentifier (server only) */
@@ -22937,8 +22999,84 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c("div")
-},staticRenderFns: []}
+  return _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "level"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "tile box"
+  }, [_c('div', {
+    staticClass: "tile notification is-primary"
+  }, [_c('p', {
+    staticClass: "title"
+  }, [_vm._v(_vm._s(_vm.weddingRing.shoulder) + " Shoulder " + _vm._s(_vm.weddingRing.prong) + " Engagement Ring")])])]), _vm._v(" "), _c('div', {
+    staticClass: "tile is-ancestor "
+  }, [_c('div', {
+    staticClass: "tile is-parent is-7"
+  }, [_c('div', {
+    staticClass: "tile is-child box"
+  }, [_c('figure', {
+    staticClass: "image",
+    on: {
+      "click": function($event) {
+        _vm.carouselState = !_vm.carouselState
+      }
+    }
+  }, [_c('carousel', {
+    attrs: {
+      "carouselActive": _vm.carouselState,
+      "items": 4,
+      "height": '500',
+      "width": '100%',
+      "carouselUpperItems": _vm.combinedWeddingRings,
+      "carouselItems": _vm.customerItems,
+      "carouselTitle": "customer jewellries"
+    },
+    on: {
+      "active": function($event) {
+        _vm.carouselState = !_vm.carouselState
+      }
+    }
+  })], 1)])]), _vm._v(" "), _c('div', {
+    staticClass: "tile is-parent is-5"
+  }, [_c('div', {
+    staticClass: "tile is-child box"
+  }, [_c('div', {
+    staticClass: "tile is-child"
+  }, [_c('article', [_c('center', [_c('button', {
+    staticClass: "button is-info",
+    on: {
+      "click": function($event) {
+        _vm.appointmentState = !_vm.appointmentState
+      }
+    }
+  }, [_vm._v("Appointment")]), _vm._v(" "), _c('appointment', {
+    attrs: {
+      "appTitle": _vm.appointmentTitle,
+      "appointActive": _vm.appointmentState,
+      "columns": _vm.columns,
+      "isProcessing": false
+    },
+    on: {
+      "active": function($event) {
+        _vm.appointmentState = !_vm.appointmentState
+      }
+    },
+    model: {
+      value: (_vm.weddingRing),
+      callback: function($$v) {
+        _vm.weddingRing = $$v
+      },
+      expression: "weddingRing"
+    }
+  })], 1), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("\n\t\t\t\t\tFor more detailed information, can reach GIA website query：\n\t\t\t\t\t")])], 1)]), _vm._v(" "), _c('article', [_c('table', {
+    staticClass: "table is-striped is-fullwidth"
+  }, [_vm._m(0), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Unit Price")]), _c('td', [_vm._v("$" + _vm._s(_vm.weddingRing.unit_price))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Shoulder")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.shoulder))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Prong")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.prong))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Side Stone")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.sideStone))])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Stock")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.stock))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Name")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.name))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Description")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.description))])])])])])])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', [_c('tr', [_c('th', [_vm._v("Engagement Ring Info")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', [_c('tr', [_c('th', [_vm._v("More Details")])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -22965,6 +23103,272 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(181);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(8)("001174e2", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-22f7acef\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-22f7acef\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 181 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\nbody, html {\n  height: 100%;\n  margin: 0;\n  color: #777;\n}\n.cut-bg, .clarity-bg, .bgimg-3 {\n  position: relative;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.cut-bg {\n    /* The image used */\n    background-image: url(\"/front_end/diamond_show/diamond_cut.jpg\");\n\n    /* Full height */\n    height: 100%;\n}\n.clarity-bg {\n    /* The image used */\n    background-image: url(\"/front_end/diamond_show/diamond_clarity.jpg\");\n\n    /* Full height */\n    height: 100%;\n}\n.caption {\n  left: 0;\n  top: 50%;\n  width: 100%;\n  text-align: left;\n  color: #000;\n  padding: 80px;\n}\n.caption span.border {\n  color: #fff;\n  font-size: 25px;\n  border: 40px;\n}\n.caption span.cut-text {\n  font-weight: bold;\n  width: 80px;\n  text-align: left;\n  color: #fff;\n  font-size: 15px;\n  border: 40px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 182 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+// import Auth from '../../store/auth'
+
+
+
+// import Flash from '../../helpers/flash'
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	components: { Appointment: __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue___default.a, Carousel: __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue___default.a },
+	data: function data() {
+		return {
+			// auth: Auth.state,
+			isRemoving: false,
+			carouselState: false,
+			appointmentState: false,
+			title: '',
+			weddingRing: '',
+			columns: ['unit_price', 'shoulder', 'prong', 'sideStone', 'stock', 'name', 'description'],
+
+			storeURL: '',
+			customerItems: ''
+		};
+	},
+
+	watch: {
+		'$route': 'fetchData'
+	},
+	beforeMount: function beforeMount() {
+		this.fetchData();
+	},
+
+	computed: {
+		appointmentTitle: function appointmentTitle() {
+			return this.weddingRing.shoulder + ' shoulder, ' + this.weddingRing.prong + '  weddingRing';
+		},
+		combinedWeddingRings: function combinedWeddingRings() {
+			var obj = [];
+			obj.push(this.weddingRing.wedding_rings[0]);
+
+			if (this.weddingRing.wedding_rings[1]) {
+				obj.push(this.weddingRing.wedding_rings[1]);
+			}
+			return obj;
+		}
+	},
+	methods: {
+		fetchData: function fetchData() {
+			var _this = this;
+
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/weddingRings/' + this.$route.params.id).then(function (res) {
+				_this.weddingRing = res.data.model;
+				_this.customerItems = res.data.posts.invPosts;
+			});
+		}
+	}
+});
 
 /***/ })
 /******/ ]);

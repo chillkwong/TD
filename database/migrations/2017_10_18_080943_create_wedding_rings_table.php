@@ -23,6 +23,7 @@ class CreateWeddingRingsTable extends Migration
             $table->boolean('sideStone')->default(false);
             $table->string('cover')->nullable();
             $table->string('image1')->nullable();
+            $table->string('image2')->nullable();
             $table->string('video')->nullable();
             $table->integer('unit_price');
             $table->boolean('published')->default(false);
@@ -30,6 +31,7 @@ class CreateWeddingRingsTable extends Migration
             $table->string('gender')->default(true);
             $table->integer('page_id')->unsigned()->nullable();
             $table->integer('wedding_ring_pair_id')->unsigned()->nullable();
+            $table->timestamps();
         });
 
         Schema::create('invoice_wedding_ring', function (Blueprint $table) {

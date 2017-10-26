@@ -40,7 +40,7 @@ Route::resource('invPosts', 'InvPostController');
 Route::resource('jewellries', 'JewellryController');
 
 Route::resource('diamonds', 'DiamondController');
-Route::post('diamonds/appointment', 'DiamondController@appointment');
+Route::post('appointment', 'AppointmentController@appointment');
 
 
 Route::resource('items', 'ItemController');

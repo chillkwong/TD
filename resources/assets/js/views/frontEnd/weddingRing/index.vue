@@ -120,7 +120,7 @@
 				<div class="tile is-parent is-3" v-for="ring in rings">
 					<div class="tile is-child" v-if="ring.wedding_rings[0]">
 						<article class="tile">
-							<router-link :to="$route.path +'/' + ring.wedding_rings[0].id" >
+							<router-link :to="$route.path +'/' + ring.id" >
 								<img :src="`/images/${ring.wedding_rings[0].cover}`" v-if="ring.wedding_rings[0].cover">
 							<center>
 								<div class="level">
@@ -134,11 +134,11 @@
 
 								<div class="level">
 									<div class="level-item is-left">
-										<p  v-if="ring.wedding_rings[0].description">${{ring.wedding_rings[0].description}}</p>
+										<p  v-if="ring.wedding_rings[0].description">{{ring.wedding_rings[0].description}}</p>
 									</div>
-									<div class="level-item is-right" v-if="ring.wedding_rings[1]">
+									<!-- <div class="level-item is-right" v-if="ring.wedding_rings[1]">
 										<p  v-if="ring.wedding_rings[1].description">${{ring.wedding_rings[1].description}}</p>
-									</div>
+									</div> -->
 								</div>
 
 							</center>
@@ -156,7 +156,7 @@
 			<div class="level is-mobile" v-for="(rings,idnex) in chunkedItemsMobile">
 				<div class="level-item" v-for="ring in rings">
 					<div v-if="ring.wedding_rings[0]">
-							<router-link :to="$route.path +'/' + ring.wedding_rings[0].id" >
+							<router-link :to="$route.path +'/' + ring.id" >
 								<img width="128" height="96" :src="`/images/${ring.wedding_rings[0].cover}`" v-if="ring.wedding_rings[0].cover">
 							<center>
 								<div class="level">

@@ -5,7 +5,7 @@
 
 	<div class="tile box">
 		<div class="tile notification is-primary">
-				<p class="title"> ${{engagementRing.unit_price}} {{engagementRing.prong}}</p>
+				<p class="title">{{engagementRing.shoulder}} Shoulder {{engagementRing.prong}} Engagement Ring</p>
 		</div>       
   	</div>
 
@@ -15,7 +15,7 @@
   		<div class="tile is-parent is-7">
   				<div class="tile is-child box">
 	  					<figure class="image" @click="carouselState=!carouselState">
-	  					<carousel @active="carouselState=!carouselState" :carouselActive="carouselState" :items="4" :height="'500'" :width="'100%'" :carouselUpperItems="engagementRing" :carouselItems="customerItems"></carousel>
+	  					<carousel @active="carouselState=!carouselState" :carouselActive="carouselState" :items="4" :height="'500'" :width="'100%'" :carouselUpperItems="engagementRing" :carouselItems="customerItems" carouselTitle="customer jewellries"></carousel>
 	  					</figure>
   				</div>
   			</div>
@@ -28,7 +28,7 @@
   				<article>
   					<center>
   						<button class="button is-info" @click="appointmentState=!appointmentState">Appointment</button>
-  						<appointment v-model="engagementRing" :appTitle="appointmentTitle" @active="appointmentState=!appointmentState" :appointActive="appointmentState" :columns="columns" :storeURL="storeURL" :isProcessing="false"></appointment>
+  						<appointment v-model="engagementRing" :appTitle="appointmentTitle" @active="appointmentState=!appointmentState" :appointActive="appointmentState" :columns="columns"  :isProcessing="false"></appointment>
   					</center>
   					<br>
   					<p>
@@ -101,16 +101,16 @@
 				title: '',
 				engagementRing:'',
 				columns:[
-				'Unit Price',
-                'Shoulder',
-                'Prong',
-                'Side Stone',
-                'Stock',
-                'Name',
-                'Description',
+				'unit_price',
+                'shoulder',
+                'prong',
+                'sideStone',
+                'stock',
+                'name',
+                'description',
                 ]
 				,
-				storeURL: '/api/engagementRings/appointment',
+				storeURL: '',
 				
 				customerItems: '',
 			}
@@ -140,57 +140,3 @@
 	}
 </script>
 
-
-<style>
-body, html {
-  height: 100%;
-  margin: 0;
-  color: #777;
-}
-.cut-bg, .clarity-bg, .bgimg-3 {
-  position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-}
-.cut-bg {
-    /* The image used */
-    background-image: url("/front_end/diamond_show/diamond_cut.jpg");
-
-    /* Full height */
-    height: 100%; 
-
-}
-.clarity-bg {
-    /* The image used */
-    background-image: url("/front_end/diamond_show/diamond_clarity.jpg");
-
-    /* Full height */
-    height: 100%; 
-
-}
-.caption {
-  left: 0;
-  top: 50%;
-  width: 100%;
-  text-align: left;
-  color: #000;
-  padding: 80px;
-}
-
-.caption span.border {
-  color: #fff;
-  font-size: 25px;
-  border: 40px;
-}
-
-.caption span.cut-text {
-  font-weight: bold;
-  width: 80px;
-  text-align: left;
-  color: #fff;
-  font-size: 15px;
-  border: 40px;
-}
-</style>
