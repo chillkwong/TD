@@ -33,6 +33,10 @@ Route::resource('invoices', 'InvoiceController');
 Route::resource('invDiamonds', 'InvDiamondController');
 Route::resource('engagementRings', 'EngagementRingController');
 Route::resource('weddingRings', 'WeddingRingPairController');
+
+//page
+Route::get('buyingProcedure', 'BuyingProcedure@appointment');
+
 // Route::resource('weddingRings', 'WeddingRingController');
 
 Route::resource('posts', 'PostController');

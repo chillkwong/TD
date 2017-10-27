@@ -84,8 +84,8 @@
 					</article>
 
 					<article class="tile is-child box" >
-						<div>Fluroscence</div>
-						<input v-for="(value, index) in query.search_conditions.fluroscence " class=" button " :class=" {'is-info active' : query.search_conditions.fluroscence[index].clicked} " type="button" @click="toggleValue(query.search_conditions.fluroscence[index].clicked,'fluroscence', index)" :value="query.search_conditions.fluroscence[index].description"> 
+						<div>Fluorescence</div>
+						<input v-for="(value, index) in query.search_conditions.fluorescence " class=" button " :class=" {'is-info active' : query.search_conditions.fluorescence[index].clicked} " type="button" @click="toggleValue(query.search_conditions.fluorescence[index].clicked,'fluorescence', index)" :value="query.search_conditions.fluorescence[index].description"> 
 					</article>
 				</div>
 			</div>
@@ -188,8 +188,8 @@
 					</article>
 
 					<article class="tile is-child box" >
-						<div>Fluroscence</div>
-						<input v-for="(value, index) in query.search_conditions.fluroscence " class=" button " :class=" {'is-info active' : query.search_conditions.fluroscence[index].clicked} " type="button" @click="toggleValue(query.search_conditions.fluroscence[index].clicked,'fluroscence', index)" :value="query.search_conditions.fluroscence[index].description"> 
+						<div>Fluorescence</div>
+						<input v-for="(value, index) in query.search_conditions.fluorescence " class=" button " :class=" {'is-info active' : query.search_conditions.fluorescence[index].clicked} " type="button" @click="toggleValue(query.search_conditions.fluorescence[index].clicked,'fluorescence', index)" :value="query.search_conditions.fluorescence[index].description"> 
 					</article>
 				</div>
 			</div>
@@ -207,8 +207,16 @@
 </div>
 	</nav>
 
-
-	
+		<article class="message is-info">
+		  <div class="message-body">
+		  	<center>
+		    If you could not find diamonds as your inquiry,
+		    <strong><br>
+			PLEASE（Whatsapp: Winnie－5484 4533， for the latest diamond Stock）</strong>
+			</center>
+		  </div>
+		</article>
+		
 
 		<div class="tabs">
 		<table class="table is-striped is-narrowed is-fullwidth ">
@@ -239,7 +247,7 @@
 							<td > {{ row.cut }}</td>
 							<td > {{ row.polish }}</td>
 							<td > {{ row.symmetry }}</td>
-							<td > {{ row.fluroscence }}</td>
+							<td > {{ row.fluorescence }}</td>
 							<td > {{ row.certificate }}</td>
 							<td > {{ row.lab }}</td>
 
@@ -301,7 +309,7 @@
 					 cut: ['ex','vg','gd','fr','na'],
 					 polish: ['ex','vg','gd','fr'],
 					 symmetry: ['ex','vg','gd','fr'],
-					 fluroscence: ['none','faint','medium','strong'],
+					 fluorescence: ['none','faint','medium','strong'],
 					 priceRange: ['100', '5000000'],
 					 weight: ['0.10','20']
 				},
@@ -312,7 +320,7 @@
 					 cut: ['ex','vg','gd','fr','na'],
 					 polish: ['ex','vg','gd','fr'],
 					 symmetry: ['ex','vg','gd','fr'],
-					 fluroscence: ['none','faint','medium','strong'],
+					 fluorescence: ['none','faint','medium','strong'],
 					 priceRange: ['100', '5000000'],
 					 weight: ['0.10','20']
 				},
@@ -321,7 +329,7 @@
 				opened: [],
 				model: {},
 				clickedRows:[],
-				columns:['shape','imageLink','price','weight','color','clarity','cut','polish','symmetry','fluroscence','certificate','lab'],
+				columns:['shape','imageLink','price','weight','color','clarity','cut','polish','symmetry','fluorescence','certificate','lab'],
 				query:{
 					page:1,
 					column: 'price',
@@ -367,7 +375,7 @@
 						{ description: 'VG', clicked: false , display: 'Very Good'},
 						{ description: 'GD', clicked: false , display: 'Good'},
 						],
-						fluroscence: [
+						fluorescence: [
 						{ description: 'NONE', clicked: false , display: 'None'},
 						{ description: 'FAINT', clicked: false , display: 'Faint'},
 						{ description: 'MEDIUM', clicked: false , display: 'Medium'},
@@ -508,8 +516,8 @@
 					&symmetry=${
 						this.fetchData.symmetry.toString()?this.fetchData.symmetry.toString():this.preset.symmetry.toString()
 					}
-					&fluroscence=${
-						this.fetchData.fluroscence.toString()?this.fetchData.fluroscence.toString():this.preset.fluroscence.toString()
+					&fluorescence=${
+						this.fetchData.fluorescence.toString()?this.fetchData.fluorescence.toString():this.preset.fluorescence.toString()
 					}
 					&shape=${
 						this.fetchData.shape.toString()?this.fetchData.shape.toString():this.preset.shape.toString()

@@ -13,7 +13,7 @@ class Diamond extends Model
     protected $hidden = array('supplier_id', 'stock');
 
     protected $fillable = [
-	'id', 'price', 'stock', 'certificate', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'lab', 'location', 'imageLink'
+	'id', 'price', 'stock', 'certificate', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluorescence', 'lab', 'location', 'imageLink'
 	];
    	 public static $columns = [
     	       'id',
@@ -25,7 +25,7 @@ class Diamond extends Model
                 'cut',
                 'polish',
                 'symmetry',
-                'fluroscence',
+                'fluorescence',
                 'certificate',
                 'lab',
                 'stock',
@@ -52,7 +52,7 @@ class Diamond extends Model
     		'cut' => '', 
     		'polish' => '', 
     		'symmetry' => '', 
-    		'fluroscence' => '', 
+    		'fluorescence' => '', 
     		'lab' => '', 
     		'location' => '', 
     		'imageLink'

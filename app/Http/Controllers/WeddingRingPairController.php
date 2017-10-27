@@ -44,7 +44,7 @@ class WeddingRingPairController extends Controller
             }
 
         }
-
+ 
 
         if (count($weddingRingPairs->weddingRings)>1) {
             

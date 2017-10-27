@@ -376,6 +376,13 @@
                  
                 </ul>
 
+                <ul v-if="activeTab=='wedding-rings'">
+                  <li ><a>{{__('frontHeader.Classic Ring')}}</a></li>
+                  <li ><a>{{__('frontHeader.Japanese Ring')}}</a></li>
+                  <li ><a>{{__('frontHeader.Vintage Ring')}}</a></li>
+                 
+                </ul>
+
                 <ul v-if="activeTab=='customer-jewellries'">
                   <li ><a>{{__('frontHeader.Customer Jewellires')}}</a></li>
                   <li ><a>{{__('frontHeader.Customer Moments')}}</a></li>

@@ -89,9 +89,9 @@
 				<div class="column is-3">
 					<div class="control ">
 						<div class="control">
-							<label class="label">Fluroscence</label>
-								<input type="fluroscence" class="input" v-model="form.fluroscence" required>
-								<small class="is-danger" v-if="errors.fluroscence">{{errors.fluroscence[0]}}</small>
+							<label class="label">Fluorescence</label>
+								<input type="fluorescence" class="input" v-model="form.fluorescence" required>
+								<small class="is-danger" v-if="errors.fluorescence">{{errors.fluorescence[0]}}</small>
 						</div>
 					</div>
 				</div>

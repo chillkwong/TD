@@ -25,7 +25,7 @@ class CreateInvDiamondsTable extends Migration
             $table->string('cut')->nullable();
             $table->string('polish');
             $table->string('symmetry');
-            $table->string('fluroscence');
+            $table->string('fluorescence');
             $table->integer('price');
             $table->string('lab')->default('gia');
             $table->timestamps();

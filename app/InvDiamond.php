@@ -12,10 +12,10 @@ class InvDiamond extends Model
     use FilterPaginateOrder;
 
     protected $fillable = [
-	'id', 'price', 'stock', 'certificate', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'lab'
+	'id', 'price', 'stock', 'certificate', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluorescence', 'lab'
 	];
    	 protected $filter = [
-    	'id', 'price', 'stock', 'certificate', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'lab'
+    	'id', 'price', 'stock', 'certificate', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluorescence', 'lab'
     			];
 
 
@@ -38,7 +38,7 @@ class InvDiamond extends Model
     		'cut' => 'EX', 
     		'polish' => 'EX', 
     		'symmetry' => 'EX', 
-    		'fluroscence' => 'NON', 
+    		'fluorescence' => 'NON', 
     		'lab' => 'GIA'
     		];
     	}

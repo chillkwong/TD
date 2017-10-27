@@ -232,7 +232,7 @@
 							<td > {{ row.cut }}</td>
 							<td > {{ row.polish }}</td>
 							<td > {{ row.symmetry }}</td>
-							<td > {{ row.fluroscence }}</td>
+							<td > {{ row.fluorescence }}</td>
 							<td > {{ row.certificate }}</td>
 							<td > {{ row.lab }}</td>
 
@@ -324,7 +324,7 @@
 				showModal:false,
 				opened: [],
 				model: {},
-				columns:['shape','price','weight','color','clarity','cut','polish','symmetry','fluroscence','certificate','lab'],
+				columns:['shape','price','weight','color','clarity','cut','polish','symmetry','fluorescence','certificate','lab'],
 				query:{
 					page:1,
 					column: 'price',

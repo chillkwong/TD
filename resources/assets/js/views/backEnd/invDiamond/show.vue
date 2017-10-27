@@ -51,8 +51,8 @@
 				<p class="subtitle is-5">{{model.symmetry}}</p>
 			</div>
 			<div class="column is-3">
-				<label>Fluroscence</label>
-				<p class="subtitle is-5">{{model.fluroscence}}</p>
+				<label>Fluorescence</label>
+				<p class="subtitle is-5">{{model.fluorescence}}</p>
 			</div>
 			<div class="column is-3">
 				<label>certificate</label>

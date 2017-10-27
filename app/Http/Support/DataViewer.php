@@ -57,7 +57,7 @@ trait DataViewer{
 			->whereIn('cut', explode(',', request()->cut))
 			->whereIn('polish', explode(',', request()->polish))
 			->whereIn('symmetry', explode(',', request()->symmetry))
-			->whereIn('fluroscence', explode(',', request()->fluroscence))
+			->whereIn('fluorescence', explode(',', request()->fluorescence))
 			->whereIn('shape', explode(',', request()->shape))
 			->paginate(request()->per_page);
 		

@@ -40,14 +40,14 @@
   					<table class="table is-striped is-fullwidth">
 					<thead>
 						<tr>
-							<th>Wedding Rings Info</th><th>Men</th><th>Female</th>
+							<th>Wedding Rings Info</th><th v-if="weddingRing.wedding_rings[1]">Men</th><th v-if="weddingRing.wedding_rings[1]">Female</th>
 						</tr>
 					</thead>
   						
 					<tbody>
-						<tr><td>Unit Price</td><td>${{weddingRing.wedding_rings[0].unit_price}}</td><td>${{weddingRing.wedding_rings[1].unit_price}}</td></tr>
-						<tr><td>Metal</td><td>{{weddingRing.wedding_rings[0].metal}}</td><td>{{weddingRing.wedding_rings[1].metal}}</td></tr>
-						<tr><td>Side Stone</td><td>{{weddingRing.wedding_rings[0].sideStone}}</td><td>{{weddingRing.wedding_rings[1].sideStone}}</td></tr>
+						<tr><td>Unit Price</td><td>${{weddingRing.wedding_rings[0].unit_price}}</td><td v-if="weddingRing.wedding_rings[1]">${{weddingRing.wedding_rings[1].unit_price}}</td></tr>
+						<tr><td>Metal</td><td>{{weddingRing.wedding_rings[0].metal}}</td><td v-if="weddingRing.wedding_rings[1]">{{weddingRing.wedding_rings[1].metal}}</td></tr>
+						<tr><td>Side Stone</td><td>{{weddingRing.wedding_rings[0].sideStone}}</td><td v-if="weddingRing.wedding_rings[1]">{{weddingRing.wedding_rings[1].sideStone}}</td></tr>
 					</tbody>
 
 					<thead>
@@ -57,9 +57,9 @@
 					</thead>
   						
 					<tbody>
-						<tr><td>Stock</td><td>{{weddingRing.wedding_rings[0].stock}}</td><td>{{weddingRing.wedding_rings[1].stock}}</td></tr>
-						<tr><td>Name</td><td>{{weddingRing.wedding_rings[0].name}}</td><td>{{weddingRing.wedding_rings[1].name}}</td></tr>
-						<tr><td>Description</td><td>{{weddingRing.wedding_rings[0].description}}</td><td>{{weddingRing.wedding_rings[1].description}}</td></tr>
+						<tr><td>Stock</td><td>{{weddingRing.wedding_rings[0].stock}}</td><td v-if="weddingRing.wedding_rings[1]">{{weddingRing.wedding_rings[1].stock}}</td></tr>
+						<tr><td>Name</td><td>{{weddingRing.wedding_rings[0].name}}</td><td v-if="weddingRing.wedding_rings[1]">{{weddingRing.wedding_rings[1].name}}</td></tr>
+						<tr><td>Description</td><td>{{weddingRing.wedding_rings[0].description}}</td><td v-if="weddingRing.wedding_rings[1]">{{weddingRing.wedding_rings[1].description}}</td></tr>
 					</tbody>
 
   					</table>

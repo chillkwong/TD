@@ -10,7 +10,7 @@
 				<td>{{props.item.cut}}</td>
 				<td>{{props.item.polish}}</td>
 				<td>{{props.item.symmetry}}</td>
-				<td>{{props.item.fluroscence}}</td>
+				<td>{{props.item.fluorescence}}</td>
 				<td>{{props.item.certificate}}</td>
 				<td>{{props.item.stock}}</td>
 				<td>{{props.item.shape}}</td>
@@ -41,7 +41,7 @@
 				{ title: 'Cut', key: 'cut', sort: true},
 				{ title: 'Polish', key: 'polish', sort: true},
 				{ title: 'Symmetry', key: 'symmetry', sort: true},
-				{ title: 'Fluroscence', key: 'fluroscence', sort: true},
+				{ title: 'Fluorescence', key: 'fluorescence', sort: true},
 				{ title: 'Certificate', key: 'certificate', sort: true},
 				{ title: 'Stock', key: 'stock', sort: true},
 				{ title: 'Shape', key: 'shape', sort: true},
@@ -49,7 +49,7 @@
 				{ title: 'Created At', key: 'created_at', sort: true}
 				],
 				filter: [
-				'id', 'price', 'weight', 'color', 'clarity', 'fluroscence', 'certificate', 'stock', 'cut', 'polish', 'symmetry', 'shape', 'lab'
+				'id', 'price', 'weight', 'color', 'clarity', 'fluorescence', 'certificate', 'stock', 'cut', 'polish', 'symmetry', 'shape', 'lab'
 				]
 			}
 		},

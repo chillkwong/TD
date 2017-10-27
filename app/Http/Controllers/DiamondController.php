@@ -92,7 +92,7 @@ class DiamondController extends Controller
                   $d->cut = $value->cut;
                   $d->polish = $value->polish; 
                   $d->symmetry = $value->symmetry;
-                  $d->fluroscence = $value->fluroscence; 
+                  $d->fluorescence = $value->fluorescence; 
                   $d->lab = $value->lab;
                   $d->location = $value->location; 
                   $d->imageLink = $value->imagelink;

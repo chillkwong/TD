@@ -287,7 +287,7 @@ export default {
                     var arr = []
 
                 if (this.carouselUpperItems.length>0) {
-                    for (var i = this.carouselUpperItems.length - 1; i >= 0; i--) {
+                    for (var i = 0; this.carouselUpperItems.length - 1 >= i; i++) {
                         
                         if (this.carouselUpperItems[i].cover) {
                             arr.push({src:this.carouselUpperItems[i].cover, type:"img", thumb:this.carouselUpperItems[i].cover})

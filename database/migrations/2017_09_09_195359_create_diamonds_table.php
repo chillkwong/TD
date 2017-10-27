@@ -23,7 +23,7 @@ class CreateDiamondsTable extends Migration
             $table->string('cut')->nullable();
             $table->string('polish');
             $table->string('symmetry');
-            $table->string('fluroscence');
+            $table->string('fluorescence');
             $table->bigInteger('certificate'); 
             $table->string('lab')->defult('gia');           
             $table->string('stock');
