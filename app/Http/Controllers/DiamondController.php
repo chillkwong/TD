@@ -14,12 +14,29 @@ class DiamondController extends Controller
 {
   
   
+  public function bladeIndex($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.index', compact(''));
+ 
+    }
+
+
+    public function bladeShow($locale, $id)
+    {
+      App()->setLocale($locale);
+
+      return view('diamond.show', compact('diamond'));
+ 
+    }
 
   public function index(){
 
   	$model = Diamond::SearchPaginateAndOrder();
         // $model = Diamond::all();
-      $locale = app()->getLocale();
+   
     	$columns = Diamond::$columns;
     	return response()
     		->json([

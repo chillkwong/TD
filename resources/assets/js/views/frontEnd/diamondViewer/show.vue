@@ -320,26 +320,7 @@
 					content: []
 				},
 				invoice: '',
-				images:[
-				{	thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
-					src:'/images/qKrPCgDCyA6mxwq8.jpeg',
-					type:'img'},
-				{	thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
-					src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
-					type:'video'},
-				{	thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
-					src:'/images/qKrPCgDCyA6mxwq8.jpeg',
-					type:'img'},
-				{	thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
-					src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
-					type:'video'},	
-				{	thumb: '/images/3jN5QkTg9IJUyVjm.jpeg',
-					src:'/images/qKrPCgDCyA6mxwq8.jpeg',
-					type:'img'},
-				{	thumb: '/images/5JzYsN9QpvnUqlxT.jpeg',
-					src: 'http://www.youtube.com/embed/WsFWhL4Y84Y',
-					type:'video'},
-					]
+				
 			}
 		},
 		watch:{

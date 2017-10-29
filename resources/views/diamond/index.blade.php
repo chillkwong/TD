@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Buying Procedure</title>
+        <title>Search Diamonds</title>
 
         <!-- Fonts -->
        
@@ -17,16 +17,13 @@
     @include('layouts.frontHeader')
     <body>
         <div id="root">
-        	<p>test</p>
+        	
         </div>
 
 
     @include('layouts.frontFooter')
 
-
-
-    
-
+  
 
 </body>
 

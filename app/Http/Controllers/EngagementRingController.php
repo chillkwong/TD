@@ -9,6 +9,26 @@ use App\EngagementRing;
 
 class EngagementRingController extends Controller
 {
+
+
+    public function bladeIndex($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('engagementRing.index', compact(''));
+ 
+    }
+
+
+    public function bladeShow($locale, $id)
+    {
+      App()->setLocale($locale);
+
+      return view('engagementRing.show', compact(''));
+ 
+    }
+
 	public function index()
     {
     	return response()

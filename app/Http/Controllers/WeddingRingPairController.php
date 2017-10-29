@@ -8,6 +8,25 @@ use App\WeddingRing;
 
 class WeddingRingPairController extends Controller
 {
+
+    public function bladeIndex($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('weddingRing.index', compact(''));
+ 
+    }
+
+
+    public function bladeShow($locale, $id)
+    {
+      App()->setLocale($locale);
+
+      return view('weddingRing.show', compact(''));
+ 
+    }
+
     public function index()
     {
     	return response()

@@ -4,7 +4,7 @@
 
 	</div>
 
-		<div class="tile is-ancestor" >
+		<!-- <div class="tile is-ancestor" >
 			<div class="tile is-parent ">
 				<div class="tile is-child notification is-primary" >
 					<center><h1 class="title is-5">Wedding Rings</h1>
@@ -16,7 +16,7 @@
 				</div>
 				
 			</div>
-		</div>
+		</div> -->
 
 	<nav >
 		<div class="navbar-item is-hidden-mobile">

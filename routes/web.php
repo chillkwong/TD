@@ -18,7 +18,24 @@ Route::get('/adm/{vue_capture?}', function () {
 
 
 //page
-Route::get('/{locale}/buying-procedure', 'BuyingProcedure@index');
+
+//diamond 
+Route::get('/{locale}/gia-loose-diamonds/', 'DiamondController@bladeIndex');
+Route::get('/{locale}/gia-loose-diamonds/{id}', 'DiamondController@bladeShow');
+
+//engagementRing 
+Route::get('/{locale}/engagement-rings/', 'EngagementRingController@bladeIndex');
+Route::get('/{locale}/engagement-rings/{id}', 'EngagementRingController@bladeShow');
+
+//weddingRingPair 
+Route::get('/{locale}/wedding-rings/', 'weddingRingPairController@bladeIndex');
+Route::get('/{locale}/wedding-rings/{id}', 'weddingRingPairController@bladeShow');
+
+//CustomerJewellry 
+Route::get('/{locale}/customer-jewellries/', 'InvPostController@bladeIndex');
+Route::get('/{locale}/customer-jewellries/{id}', 'InvPostController@bladeShow');
+
+Route::get('/{locale}/buying-procedure', 'BuyingProcedureController@index');
 
 
 Route::get('/{locale}/{vue_capture?}', function ($locale) {
@@ -29,10 +46,10 @@ Route::get('/{locale}/{vue_capture?}', function ($locale) {
 
 // Route::get('test', 'TestController@test');
 
-// Route::get('/{vue_capture?}', function () {
-// 	App::setLocale('hk');
-//     return view('welcome1');
-// })->where('vue_capture', '[\/\w\.-]*');
+Route::get('/{vue_capture?}', function () {
+	App::setLocale('hk');
+    return view('welcome1');
+})->where('vue_capture', '[\/\w\.-]*');
 
 
 

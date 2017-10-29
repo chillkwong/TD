@@ -14,6 +14,26 @@ use File;
 
 class InvPostController extends Controller
 {
+
+
+    public function bladeIndex($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('customerJewellry.index', compact(''));
+ 
+    }
+
+
+    public function bladeShow($locale, $id)
+    {
+      App()->setLocale($locale);
+
+      return view('customerJewellry.show', compact(''));
+ 
+    }
+
     public function create()
     {
         $form = InvPost::form();
