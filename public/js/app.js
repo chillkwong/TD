@@ -17663,8 +17663,8 @@ var header = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#header',
   data: function data() {
     return {
-      activeTab: this.$route.fullPath.slice(4)
-
+      activeTab: this.$route.fullPath.slice(4),
+      partialUrl: this.$route.fullPath.slice(3)
     };
   },
 

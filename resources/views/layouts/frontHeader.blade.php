@@ -7,33 +7,13 @@
       <img src="/front_end/company/logo_PNG_sq_60x60_1.png" alt="Bulma: a modern CSS framework based on Flexbox" width="35" height="70">
     </a>
     
-      <a class="navbar-item is-hidden-desktop" :href="'/en' + this.$route.fullPath.slice(3)" >
+      <a class="navbar-item is-hidden-desktop" :href="'/en' + partialUrl" >
       <img src="/front_end/langs/en.png" width="20" height="10"></a>
-      <a class="navbar-item is-hidden-desktop" :href="'/hk' + this.$route.fullPath.slice(3)" >
+      <a class="navbar-item is-hidden-desktop" :href="'/hk' + partialUrl" >
       <img src="/front_end/langs/hk.png" width="20" height="10"></a>
-      <a class="navbar-item is-hidden-desktop" :href="'/cn' + this.$route.fullPath.slice(3)" >
+      <a class="navbar-item is-hidden-desktop" :href="'/cn' + partialUrl" >
       <img src="/front_end/langs/china.png" width="20" height="10"></a>
-    <!-- <router-link class="navbar-item is-hidden-desktop"  :to="'/en' + this.$route.fullPath.slice(3)" >
-      <img src="/front_end/langs/en.png" width="20" height="10">
-      </router-link> -->
-      <!-- <router-link class="navbar-item is-hidden-desktop"  :to="'/hk' + this.$route.fullPath.slice(3)" >
-      <img src="/front_end/langs/hk.png" width="20" height="10">
-      </router-link>
-      <router-link class="navbar-item is-hidden-desktop"  :to="'/cn' + this.$route.fullPath.slice(3)" >
-      <img src="/front_end/langs/china.png" width="20" height="10">
-      </router-link> -->
-
-    <!-- <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
-      <span class="icon" style="color: #333;">
-        <i class="fa fa-lg fa-github"></i>
-      </span>
-    </a>
-
-    <a class="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
-      <span class="icon" style="color: #55acee;">
-        <i class="fa fa-lg fa-twitter"></i>
-      </span>
-    </a> -->
+   
 
     <div class="navbar-burger burger" data-target="navMenuTransparentExample">
       <span></span>
@@ -295,14 +275,11 @@
         </div>
         <hr class="dropdown-divider">
         <div id="moreDropdown" class="navbar-dropdown is-boxed">
-           <a class="navbar-item " :href="'/en' + this.$route.fullPath.slice(3)"><img src="/front_end/langs/en.png" width="20" height="10">{{trans('frontEnd.EN')}}</a>
-           <a class="navbar-item " :href="'/hk' + this.$route.fullPath.slice(3)"><img src="/front_end/langs/hk.png" width="20" height="10">{{trans('frontEnd.HK')}}</a>
-           <a class="navbar-item " :href="'/cn' + this.$route.fullPath.slice(3)"><img src="/front_end/langs/china.png" width="20" height="10">{{trans('frontEnd.CN')}}</a>
+           <a class="navbar-item " :href="'/en' + partialUrl"><img src="/front_end/langs/en.png" width="20" height="10">{{trans('frontEnd.EN')}}</a>
+           <a class="navbar-item " :href="'/hk' + partialUrl"><img src="/front_end/langs/hk.png" width="20" height="10">{{trans('frontEnd.HK')}}</a>
+           <a class="navbar-item " :href="'/cn' + partialUrl"><img src="/front_end/langs/china.png" width="20" height="10">{{trans('frontEnd.CN')}}</a>
 
-            <!--  <router-link  class="navbar-item " :to="'/en' + this.$route.fullPath.slice(3)" ><img src="/front_end/langs/en.png" width="20" height="10">EN</router-link>
-            <router-link  class="navbar-item " :to="'/hk' + this.$route.fullPath.slice(3)" ><img src="/front_end/langs/hk.png" width="20" height="10">HK</router-link>
-              <router-link class="navbar-item " :to="'/cn' + this.$route.fullPath.slice(3)" ><img src="/front_end/langs/china.png" width="20" height="10">CN</router-link> -->
-        </div>
+
       </div>
 
 <!-- 

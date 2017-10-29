@@ -35,7 +35,7 @@ const header = new Vue({
     data(){
     	return{
     		activeTab: this.$route.fullPath.slice(4),
-            
+            partialUrl: this.$route.fullPath.slice(3),            
     	}
     },
     // components: {App},
