@@ -35,7 +35,7 @@ Route::resource('engagementRings', 'EngagementRingController');
 Route::resource('weddingRings', 'WeddingRingPairController');
 
 //page
-Route::get('buyingProcedure', 'BuyingProcedure@appointment');
+Route::get('buyingProcedure', 'BuyingProcedureController@index');
 
 // Route::resource('weddingRings', 'WeddingRingController');
 

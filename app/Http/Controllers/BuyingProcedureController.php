@@ -8,10 +8,18 @@ class BuyingProcedureController extends Controller
 {
 
 
-	public function index ($locale) {
+	public function BladeIndex ($locale) {
 		App()->setLocale($locale);
 	    return view('buyingProcedure.index');
 	}
+
+    public function index(){
+        $trans = trans('buyingProcedure');
+        return response()
+            ->json([
+                'trans' => $trans
+            ]);
+    }
 
     public function appointment(){
 

@@ -15,6 +15,8 @@ import App from './App.vue'
 import router from './router'
 import ActiveTab from './helpers/session'
 
+import BuyingProcedure from './views/frontEnd/buyingProcedure/index'
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -42,6 +44,8 @@ const header = new Vue({
     // template: `<app></app>`,
     router
 });
+
+const buyingProcedure =  new Vue(BuyingProcedure);
 
 // const diamondViewer = new Vue({
 //     el: '#diamondViewer'

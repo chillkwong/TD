@@ -35,7 +35,7 @@ Route::get('/{locale}/wedding-rings/{id}', 'weddingRingPairController@bladeShow'
 Route::get('/{locale}/customer-jewellries/', 'InvPostController@bladeIndex');
 Route::get('/{locale}/customer-jewellries/{id}', 'InvPostController@bladeShow');
 
-Route::get('/{locale}/buying-procedure', 'BuyingProcedureController@index');
+Route::get('/{locale}/buying-procedure', 'BuyingProcedureController@bladeIndex');
 
 
 Route::get('/{locale}/{vue_capture?}', function ($locale) {
