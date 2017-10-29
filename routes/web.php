@@ -28,8 +28,8 @@ Route::get('/{locale}/engagement-rings/', 'EngagementRingController@bladeIndex')
 Route::get('/{locale}/engagement-rings/{id}', 'EngagementRingController@bladeShow');
 
 //weddingRingPair 
-Route::get('/{locale}/wedding-rings/', 'weddingRingPairController@bladeIndex');
-Route::get('/{locale}/wedding-rings/{id}', 'weddingRingPairController@bladeShow');
+Route::get('/{locale}/wedding-rings/', 'WeddingRingPairController@bladeIndex');
+Route::get('/{locale}/wedding-rings/{id}', 'WeddingRingPairController@bladeShow');
 
 //CustomerJewellry 
 Route::get('/{locale}/customer-jewellries/', 'InvPostController@bladeIndex');
