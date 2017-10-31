@@ -10,7 +10,7 @@ return [
 	'Buying Procedure' => '買鑽石流程',
 	'Education' => '鑽石智識',
 	'Customer Moments' => '客人分享',
-	'About' => '關於我們',
+	'About Us' => '關於我們',
 
 	'Round Diamonds' => '圓形鑽石',
 	'Fancy Cut Diamonds' =>'雜形鑽石',

@@ -15,7 +15,6 @@ class AdminController extends Controller
 	    		->only('logout');
 	    }   
 
-re
 		  public function login(Request $request)
 		  {
 		  	$this->validate($request, [

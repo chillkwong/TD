@@ -19,6 +19,11 @@ class EngagementRing extends Model
 	    'id','stock' ,'name' , 'description','mounting','style','cover','image1','video','unit_price',
 	    ];
 		
+		public function pages()
+	    {
+	        return $this->morphMany('App\Page', 'paginable');
+	    }
+    
 	    public function invoices(){
 	    	return $this->belongsToMany(Invoice::class);
 	    }

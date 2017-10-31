@@ -13,7 +13,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import ActiveTab from './helpers/session'
+// import ActiveTab from './helpers/session'
 
 import BuyingProcedure from './views/frontEnd/buyingProcedure/index'
 

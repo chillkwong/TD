@@ -3,42 +3,42 @@
 	  	 <div class="columns">
 	        	<div class="column is-3">
 	        		<br>
-	        		<h1 class="subtitle is-6">DIAMOND PRICES</h1>
-	        		<a href="">Round cut diamond</a><br>
-	        		<a href="">Fancy Cut Diamond</a><br>
-	        		<a href="">Fancy Color Diamond</a><br>
-	        		<p >TING DIAMOND PROVIDES BRILLIANT GIA ，WHOLESALE PRICES，FOR THE BEST PRICE</p>
+	        		<h1 class="subtitle is-6">{{trans('frontFooter.DIAMOND PRICES')}}</h1>
+	        		<a href="">{{trans('frontFooter.Round cut diamond')}}</a><br>
+	        		<a href="">{{trans('frontFooter.Fancy Cut Diamond')}}</a><br>
+	        		<a href="">{{trans('frontFooter.Fancy Color Diamond')}}</a><br>
+	        		<p >{{trans('frontFooter.TING DIAMOND PROVIDES BRILLIANT GIA')}}</p>
 
 	        	</div>
 	        	<div class="column is-3">
 	        		<br>
-	        		<h1 class="subtitle is-6">DIAMOND JEWELLRY</h1>
-	        		<a href="">Setting | solitaire ring</a><br>
-	        		<a href="">Setting | Side stone ring</a><br>
-	        		<a href="">Setting | Halo ring</a><br>
-	        		<a href="">Women | Classic rings</a><br>
-	        		<a href="">Men | Classic Rings</a>
+	        		<h1 class="subtitle is-6">{{trans('frontFooter.DIAMOND JEWELLRY')}}</h1>
+	        		<a href="">{{trans('frontFooter.Setting')}} | {{trans('frontFooter.solitaire ring')}}</a><br>
+	        		<a href="">{{trans('frontFooter.Setting')}} | {{trans('frontFooter.Side stone ring')}}</a><br>
+	        		<a href="">{{trans('frontFooter.Setting')}} | {{trans('frontFooter.Halo ring')}}</a><br>
+	        		<a href="">{{trans('frontFooter.Women')}} | {{trans('frontFooter.Classic rings')}}</a><br>
+	        		<a href="">{{trans('frontFooter.Men')}} | {{trans('frontFooter.Classic Rings')}}</a>
 	        		
 	        	</div>
 
 	        	<div class="column is-3">
 	        		<br>
-	        		<h1 class="subtitle is-6">DIAMOND EDUCATION</h1>
-	        		<a href="">How to choose diamond 4Cs？</a><br>
-	        		<a href="">what is diamond fluorescence ?</a><br>
-	        		<a href="">what is diamond symmetry ?</a><br>
-	        		<a href="">what is diamond proportion ?</a><br>
-	        		<a href="">Fancy color intensity</a>
+	        		<h1 class="subtitle is-6">{{trans('frontFooter.DIAMOND EDUCATION')}}</h1>
+	        		<a href="">{{trans('frontFooter.How to choose diamond 4Cs')}}？</a><br>
+	        		<a href="">{{trans('frontFooter.what is diamond fluorescence')}} ?</a><br>
+	        		<a href="">{{trans('frontFooter.what is diamond symmetry')}} ?</a><br>
+	        		<a href="">{{trans('frontFooter.what is diamond proportion')}} ?</a><br>
+	        		<a href="">{{trans('frontFooter.Fancy color intensity')}}</a>
 	        		
 	        	</div>
 
 	        	<div class="column is-3">
 	        		<br>
-	        		<h1 class="subtitle is-6">ABOUT TING DIAMOD</h1>
-	        		<a href="">About us</a><br>
-	        		<a href="">Custom make Engagement rings</a><br>
-	        		<a href="">Diamond inlay | Engrave</a><br>
-	        		<a href="">Customer Monents</a><br>
+	        		<h1 class="subtitle is-6">{{trans('frontFooter.ABOUT TING DIAMOD')}}</h1>
+	        		<a href="">{{trans('frontFooter.About us')}}</a><br>
+	        		<a href="">{{trans('frontFooter.Custom make Engagement rings')}}</a><br>
+	        		<a href="">{{trans('frontFooter.Diamond inlay')}} | {{trans('frontFooter.Engrave')}}</a><br>
+	        		<a href="">{{trans('frontFooter.Customer Monents')}}</a><br>
 	        		<img src="/front_end/GIA/GIA-Logo.jpg" width="100px" >
 		        		
 	        	</div>

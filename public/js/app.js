@@ -17626,8 +17626,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helpers_session__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_frontEnd_buyingProcedure_index__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_frontEnd_buyingProcedure_index__ = __webpack_require__(183);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -17643,7 +17642,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-
+// import ActiveTab from './helpers/session'
 
 
 
@@ -17676,7 +17675,7 @@ var header = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   router: __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */]
 });
 
-var buyingProcedure = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_4__views_frontEnd_buyingProcedure_index__["a" /* default */]);
+var buyingProcedure = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_3__views_frontEnd_buyingProcedure_index__["a" /* default */]);
 
 // const diamondViewer = new Vue({
 //     el: '#diamondViewer'
@@ -23240,19 +23239,7 @@ if (false) {
 }
 
 /***/ }),
-/* 105 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony default export */ var _unused_webpack_default_export = ({
-	activeTab: 'diamond',
-
-	setSession: function setSession(session) {
-		this.activeTab = session;
-	}
-});
-
-/***/ }),
+/* 105 */,
 /* 106 */
 /***/ (function(module, exports) {
 

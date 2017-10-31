@@ -24,10 +24,6 @@
     @include('layouts.frontFooter')
 
 
-    <script type="text/javascript" src="{{mix('js/burgers.js')}}"></script>
-     <script type="text/javascript" src="{{mix('js/app.js')}}"></script> 
-     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </body>
 
 

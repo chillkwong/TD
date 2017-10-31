@@ -10,5 +10,5 @@ return [
 	'Buying Procedure' => '买钻石流程',
 	'Education' => '钻石智识',
 	'Customer Moments' => '客人分享',
-	'About' => '关于我们'
+	'About Us' => '关于我们'
 ];

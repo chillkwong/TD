@@ -30,22 +30,58 @@
                 
             </div>
         </div>
+        
         <div id="buyingProcedure">
         	<div class="tabs is-centered">
               <ul>
-                <li class="is-active"><a>APPOINTMENT FIRST</a></li>
-                <li><a>FROM OUR SHOP OR GIA LAB</a></li>
-                <li><a>CHOOSE RING SETTING</a></li>
-                <li><a>RING INLAY | ENGRAVE</a></li>
-                <li><a>PAY WITH FULL SATISFACTION</a></li>
+                <li class="is-active"><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
               </ul>
             </div>
         </div>
 
+       
+        <div class="tabs is-centered">
+          <ul>
+            <li class="is-active"><a>Appointment First</a></li>
+            <li><a>Shop Or GIA Lab </a></li>
+            <li><a>Videos</a></li>
+            <li><a>Documents</a></li>
+          </ul>
+        </div>
+
         <article class="message is-info">
-          <div class="message-body">
-            {{trans('buyingProcedure.FIRST TO CHOOSE DIAMONDS')}}
+          <div class="level is-centered">
+            <div class="message-body">
+            <center>
+            <p class="title is-6">{{trans('buyingProcedure.FIRST TO CHOOSE DIAMONDS')}}：</p>
+            <p class="title is-6">{{trans('buyingProcedure.＊P.S.＊ choose few more diamonds that are in the similar price range, compare them at the same time.')}}</p>
+            <p class="title is-6">Whatsapp： 5484 4533 ( Winnie) / 5486 9451(Pete)</p>
+            <p class="title is-6">{{trans('buyingProcedure.Security issues，please make an appointment to shop in advance.')}}</p>
+            </center>
           </div>
+             <a href="/front_end/buyingProcedure/Winnie_Kwong.vcf">
+            <center>  
+            <figure class="image is-128x128">
+              <p>Winnie</p>
+                <img src="/front_end/buyingProcedure/ting.png">
+            </figure>
+            </center>
+              </a>
+
+              <a href="/front_end/buyingProcedure/Pete_Kwong.vcf">
+            <center>
+            <figure class="image is-128x128">
+              <p>Pete</p>
+                <img src="/front_end/buyingProcedure/pete.png">
+            </figure>
+            </center>
+              </a>
+          </div>
+          
         </article>
 
 
