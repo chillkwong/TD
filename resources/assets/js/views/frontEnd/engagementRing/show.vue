@@ -28,7 +28,7 @@
   				<article>
   					<center>
   						<button class="button is-info" @click="appointmentState=!appointmentState">Appointment</button>
-  						<appointment v-model="engagementRing" :appTitle="appointmentTitle" @active="appointmentState=!appointmentState" :appointActive="appointmentState" :columns="columns"  :isProcessing="false"></appointment>
+  						<appointment v-model="engagementRing" :title="appointmentTitle" @active="appointmentState=!appointmentState" :active="appointmentState" :columns="columns"  :processing="false"></appointment>
   					</center>
   					<br>
   					<p>

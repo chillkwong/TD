@@ -27,7 +27,8 @@ class DiamondController extends Controller
     public function bladeShow($locale, $id)
     {
       App()->setLocale($locale);
-
+      
+      $diamond  = Diamond::findOrFail($id);
       return view('diamond.show', compact('diamond'));
  
     }

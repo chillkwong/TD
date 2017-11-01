@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 70);
+/******/ 	return __webpack_require__(__webpack_require__.s = 71);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -169,10 +169,10 @@ module.exports = function normalizeComponent (
 /* harmony export (immutable) */ __webpack_exports__["c"] = post;
 /* harmony export (immutable) */ __webpack_exports__["d"] = put;
 /* harmony export (immutable) */ __webpack_exports__["a"] = del;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_auth__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_locale__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_locale__ = __webpack_require__(57);
 
 
 
@@ -245,8 +245,8 @@ function del(url) {
 "use strict";
 
 
-var bind = __webpack_require__(10);
-var isBuffer = __webpack_require__(38);
+var bind = __webpack_require__(11);
+var isBuffer = __webpack_require__(39);
 
 /*global toString:true*/
 
@@ -10641,7 +10641,7 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
 
 /***/ }),
 /* 4 */
@@ -10716,7 +10716,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(2);
-var normalizeHeaderName = __webpack_require__(41);
+var normalizeHeaderName = __webpack_require__(42);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -10732,10 +10732,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(11);
+    adapter = __webpack_require__(12);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(11);
+    adapter = __webpack_require__(12);
   }
   return adapter;
 }
@@ -10806,10 +10806,50 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(40)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(41)))
 
 /***/ }),
 /* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(36),
+  /* template */
+  __webpack_require__(58),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/components/DataViewer.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] DataViewer.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7a7d48a0", Component.options)
+  } else {
+    hotAPI.reload("data-v-7a7d48a0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports) {
 
 /*
@@ -10891,7 +10931,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -10910,7 +10950,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(22)
+var listToStyles = __webpack_require__(23)
 
 /*
 type StyleObject = {
@@ -11112,47 +11152,150 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var disposed = false
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(35),
-  /* template */
-  __webpack_require__(57),
-  /* styles */
-  null,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/components/DataViewer.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] DataViewer.vue: functional components are not supported with templates, they should use render functions.")}
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_backEnd_adm_header_vue__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_backEnd_adm_header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_backEnd_adm_header_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_backEnd_jewellry_index_vue__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_backEnd_jewellry_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_backEnd_jewellry_index_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_backEnd_jewellry_show_vue__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_backEnd_jewellry_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_backEnd_jewellry_show_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_weddingRing_index_vue__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_weddingRing_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_frontEnd_weddingRing_index_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_weddingRing_show_vue__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_weddingRing_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_frontEnd_weddingRing_show_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_backEnd_Auth_adm_login_vue__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_backEnd_Auth_adm_login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_backEnd_Auth_adm_login_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_home_vue__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__views_home_vue__);
 
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7a7d48a0", Component.options)
-  } else {
-    hotAPI.reload("data-v-7a7d48a0", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
 
-module.exports = Component.exports
 
+//layouts
+
+
+
+//admin layouts
+
+// import AdmFooter from '../views/adm/footer.vue'
+// import Admin from '../views/adm/index.vue'
+// import AdmMain from '../views/adm/main.vue'
+
+//admin dashboard
+
+
+// //Customer
+// import CusomterIndex from '../views/customer/index.vue'
+// import CustomerShow from '../views/customer/show.vue'
+// import CustomerForm from '../views/customer/form.vue'
+
+// //invoice
+// import InvoiceIndex from '../views/invoice/index.vue'
+// import InvoiceShow from '../views/invoice/show.vue'
+// import InvoiceForm from '../views/invoice/form.vue'
+
+//invoice
+// import ItemIndex from '../views/item/index.vue'
+// import ItemShow from '../views/item/show.vue'
+// import ItemForm from '../views/item/form.vue'
+
+// //invoice diamonds
+// import InvDiamondIndex from '../views/invdiamond/index.vue'
+// import InvDiamondShow from '../views/invdiamond/show.vue'
+// import InvDiamondForm from '../views/invdiamond/form.vue'
+
+//invoice diamonds
+
+
+// import JewellryForm from '../views/jewellry/form.vue'
+
+//customer Jewellries
+
+
+// import CustomerJewForm from '../views/customerJewellry/form.vue'
+
+//Diamonds
+// import DiamondViewer from '../views/frontEnd/diamondViewer/index.vue'
+// import DiamondShow from '../views/frontEnd/diamondViewer/show.vue'
+
+
+//Engagement Rings
+// import EngagementRingIndex from '../views/frontEnd/engagementRing/index.vue'
+// import EngagementRingShow from '../views/frontEnd/engagementRing/show.vue'
+// import CustomerJewForm from '../views/customerJewellry/form.vue'
+
+
+//Wedding Rings
+
+
+// import CustomerJewForm from '../views/customerJewellry/form.vue'
+
+//Page
+//buying procedure
+// import BuyingProcedure from '../views/frontEnd/buyingProcedure/index.vue'
+
+// //Post
+// import PostIndex from '../views/post/index.vue'
+// import PostShow from '../views/post/show.vue'
+// import PostForm from '../views/post/form.vue'
+
+
+//Auth
+
+
+//home
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
+
+var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
+	mode: 'history',
+	routes: [{ path: '/', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_12__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+
+		children: [{ path: '' },
+		// {path:'/posts/:id', component:PostIndex },
+
+		// {path: 'customer-jewellries', component: CustomerJewIndex},
+		{ path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue___default.a }] }, { path: '/en', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_12__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+		children: [{ path: '' },
+		// {path:'/posts/:id', component:PostIndex },
+
+		{ path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue___default.a },
+
+		//diamonds
+		// {path: 'gia-loose-diamonds/', component: DiamondViewer},
+		// {path: 'gia-loose-diamonds/:id', component: DiamondShow},
+
+		//engagement rings
+		// {path: 'engagement-rings/', component: EngagementRingIndex},
+		// {path: 'engagement-rings/:id', component: EngagementRingShow},
+
+		//Wedding rings
+		{ path: 'wedding-rings/', component: __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_weddingRing_index_vue___default.a }, { path: 'wedding-rings/:id', component: __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_weddingRing_show_vue___default.a }] }, { path: '/hk', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_12__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+		children: [{ path: '' }, { path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue___default.a }] }, { path: '/cn', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_12__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
+		children: [{ path: '' },
+
+		// {path: 'customer-jewellries', component: CustomerJewIndex},
+		{ path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue___default.a }] }]
+
+});
+/* harmony default export */ __webpack_exports__["a"] = (router);
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11170,19 +11313,19 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(2);
-var settle = __webpack_require__(42);
-var buildURL = __webpack_require__(44);
-var parseHeaders = __webpack_require__(45);
-var isURLSameOrigin = __webpack_require__(46);
-var createError = __webpack_require__(12);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(47);
+var settle = __webpack_require__(43);
+var buildURL = __webpack_require__(45);
+var parseHeaders = __webpack_require__(46);
+var isURLSameOrigin = __webpack_require__(47);
+var createError = __webpack_require__(13);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(48);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -11279,7 +11422,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(48);
+      var cookies = __webpack_require__(49);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -11357,13 +11500,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(43);
+var enhanceError = __webpack_require__(44);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -11382,7 +11525,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11394,7 +11537,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11420,7 +11563,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11432,9 +11575,9 @@ module.exports = Cancel;
 });
 
 /***/ }),
-/* 16 */,
 /* 17 */,
-/* 18 */
+/* 18 */,
+/* 19 */
 /***/ (function(module, exports) {
 
 var g;
@@ -11461,19 +11604,19 @@ module.exports = g;
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(20)
+  __webpack_require__(21)
 }
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(23),
-  /* template */
   __webpack_require__(24),
+  /* template */
+  __webpack_require__(25),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -11505,17 +11648,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(21);
+var content = __webpack_require__(22);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(8)("7bd161e9", content, false);
+var update = __webpack_require__(9)("7bd161e9", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -11531,10 +11674,10 @@ if(false) {
 }
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(7)(undefined);
+exports = module.exports = __webpack_require__(8)(undefined);
 // imports
 
 
@@ -11545,7 +11688,7 @@ exports.push([module.i, "\n*{\n\tbox-sizing: border-box;\n}\n\n", ""]);
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports) {
 
 /**
@@ -11578,14 +11721,14 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_flash__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_auth__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_images__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_images__ = __webpack_require__(16);
 //
 //
 //
@@ -11644,7 +11787,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11705,7 +11848,7 @@ if (false) {
 }
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14335,7 +14478,7 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -14343,7 +14486,7 @@ var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(27),
+  __webpack_require__(28),
   /* styles */
   null,
   /* scopeId */
@@ -14375,7 +14518,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -14390,7 +14533,7 @@ if (false) {
 }
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -14398,7 +14541,7 @@ var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(29),
+  __webpack_require__(30),
   /* styles */
   null,
   /* scopeId */
@@ -14430,7 +14573,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -14445,15 +14588,15 @@ if (false) {
 }
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(31),
-  /* template */
   __webpack_require__(32),
+  /* template */
+  __webpack_require__(33),
   /* styles */
   null,
   /* scopeId */
@@ -14485,7 +14628,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14874,7 +15017,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -15317,15 +15460,15 @@ if (false) {
 }
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(34),
+  __webpack_require__(35),
   /* template */
-  __webpack_require__(58),
+  __webpack_require__(59),
   /* styles */
   null,
   /* scopeId */
@@ -15357,12 +15500,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_DataViewer_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_DataViewer_vue__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_DataViewer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_DataViewer_vue__);
 //
 //
@@ -15401,7 +15544,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15597,21 +15740,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(37);
+module.exports = __webpack_require__(38);
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(2);
-var bind = __webpack_require__(10);
-var Axios = __webpack_require__(39);
+var bind = __webpack_require__(11);
+var Axios = __webpack_require__(40);
 var defaults = __webpack_require__(6);
 
 /**
@@ -15645,15 +15788,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(14);
-axios.CancelToken = __webpack_require__(54);
-axios.isCancel = __webpack_require__(13);
+axios.Cancel = __webpack_require__(15);
+axios.CancelToken = __webpack_require__(55);
+axios.isCancel = __webpack_require__(14);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(55);
+axios.spread = __webpack_require__(56);
 
 module.exports = axios;
 
@@ -15662,7 +15805,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports) {
 
 /*!
@@ -15689,7 +15832,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15697,10 +15840,10 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(6);
 var utils = __webpack_require__(2);
-var InterceptorManager = __webpack_require__(49);
-var dispatchRequest = __webpack_require__(50);
-var isAbsoluteURL = __webpack_require__(52);
-var combineURLs = __webpack_require__(53);
+var InterceptorManager = __webpack_require__(50);
+var dispatchRequest = __webpack_require__(51);
+var isAbsoluteURL = __webpack_require__(53);
+var combineURLs = __webpack_require__(54);
 
 /**
  * Create a new instance of Axios
@@ -15782,7 +15925,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -15972,7 +16115,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15991,13 +16134,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(12);
+var createError = __webpack_require__(13);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -16024,7 +16167,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16052,7 +16195,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16127,7 +16270,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16171,7 +16314,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16246,7 +16389,7 @@ module.exports = (
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16289,7 +16432,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16349,7 +16492,7 @@ module.exports = (
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16408,15 +16551,15 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(2);
-var transformData = __webpack_require__(51);
-var isCancel = __webpack_require__(13);
+var transformData = __webpack_require__(52);
+var isCancel = __webpack_require__(14);
 var defaults = __webpack_require__(6);
 
 /**
@@ -16494,7 +16637,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16521,7 +16664,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16542,7 +16685,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16563,13 +16706,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(14);
+var Cancel = __webpack_require__(15);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -16627,7 +16770,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16661,7 +16804,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16679,7 +16822,7 @@ module.exports = function spread(callback) {
 });
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -16953,7 +17096,7 @@ if (false) {
 }
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -16988,15 +17131,15 @@ if (false) {
 }
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(60),
-  /* template */
   __webpack_require__(61),
+  /* template */
+  __webpack_require__(62),
   /* styles */
   null,
   /* scopeId */
@@ -17028,7 +17171,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17131,7 +17274,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17196,7 +17339,7 @@ if (false) {
 }
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -17236,7 +17379,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -17276,15 +17419,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(65),
-  /* template */
   __webpack_require__(66),
+  /* template */
+  __webpack_require__(67),
   /* styles */
   null,
   /* scopeId */
@@ -17316,7 +17459,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17401,7 +17544,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17500,15 +17643,15 @@ if (false) {
 }
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(68),
-  /* template */
   __webpack_require__(69),
+  /* template */
+  __webpack_require__(70),
   /* styles */
   null,
   /* scopeId */
@@ -17540,7 +17683,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17593,7 +17736,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17608,25 +17751,29 @@ if (false) {
 }
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(71);
-module.exports = __webpack_require__(106);
+__webpack_require__(72);
+module.exports = __webpack_require__(96);
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_frontEnd_buyingProcedure_index__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_frontEnd_diamondViewer_index__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_frontEnd_diamondViewer_show__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_frontEnd_engagementRing_index__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_frontEnd_engagementRing_show__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_buyingProcedure_index__ = __webpack_require__(95);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -17644,6 +17791,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 // import ActiveTab from './helpers/session'
 
+//diamond
+
+
+
+//Engagement Ring
+
+
+
 
 
 /**
@@ -17655,190 +17810,50 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // Vue.component('example', require('./components/Example.vue'));
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-  el: '#root',
-  components: { App: __WEBPACK_IMPORTED_MODULE_1__App_vue___default.a },
-  template: '<app></app>',
-  router: __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */]
+    el: '#root',
+    components: { App: __WEBPACK_IMPORTED_MODULE_1__App_vue___default.a },
+    template: '<app></app>',
+    router: __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */]
 });
 
 var header = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-  el: '#header',
-  data: function data() {
-    return {
-      activeTab: this.$route.fullPath.slice(4),
-      partialUrl: this.$route.fullPath.slice(3)
-    };
-  },
+    el: '#header',
+    data: function data() {
+        return {
+            activeTab: this.$route.fullPath.slice(4),
+            partialUrl: this.$route.fullPath.slice(3)
+        };
+    },
 
-  // components: {App},
-  // template: `<app></app>`,
-  router: __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */]
+    router: __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */]
 });
 
-var buyingProcedure = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_3__views_frontEnd_buyingProcedure_index__["a" /* default */]);
+console.log(window.location.pathname.slice(4, 23));
+//diamond
+if (window.location.pathname.slice(4) == 'gia-loose-diamonds') {
+    var diamondViewerIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_3__views_frontEnd_diamondViewer_index__["a" /* default */]);
+}
+if (window.location.pathname.slice(4, 23) == 'gia-loose-diamonds/') {
+    var diamondViewerShow = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_4__views_frontEnd_diamondViewer_show__["a" /* default */]);
+}
+
+//engagement rings
+if (window.location.pathname.slice(4) == 'engagement-rings') {
+    var engagementRingIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_5__views_frontEnd_engagementRing_index__["a" /* default */]);
+}
+
+if (window.location.pathname.slice(4, 21) == 'engagement-rings/') {
+    var engagementRingShow = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_6__views_frontEnd_engagementRing_show__["a" /* default */]);
+}
+
+//buying procedure
+if (window.location.pathname.slice(4) == 'buying-procedure') {
+    var buyingProcedure = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_7__views_frontEnd_buyingProcedure_index__["a" /* default */]);
+}
 
 // const diamondViewer = new Vue({
 //     el: '#diamondViewer'
 // });
-
-/***/ }),
-/* 72 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_backEnd_adm_header_vue__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_backEnd_adm_header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_backEnd_adm_header_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_backEnd_jewellry_index_vue__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_backEnd_jewellry_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_backEnd_jewellry_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_backEnd_jewellry_show_vue__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_backEnd_jewellry_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_backEnd_jewellry_show_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_diamondViewer_index_vue__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_diamondViewer_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_frontEnd_diamondViewer_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_frontEnd_weddingRing_index_vue__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_frontEnd_weddingRing_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__views_frontEnd_weddingRing_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_frontEnd_weddingRing_show_vue__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_frontEnd_weddingRing_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__views_frontEnd_weddingRing_show_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_backEnd_Auth_adm_login_vue__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_backEnd_Auth_adm_login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__views_backEnd_Auth_adm_login_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_home_vue__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__views_home_vue__);
-
-
-
-//layouts
-
-
-
-//admin layouts
-
-// import AdmFooter from '../views/adm/footer.vue'
-// import Admin from '../views/adm/index.vue'
-// import AdmMain from '../views/adm/main.vue'
-
-//admin dashboard
-
-
-// //Customer
-// import CusomterIndex from '../views/customer/index.vue'
-// import CustomerShow from '../views/customer/show.vue'
-// import CustomerForm from '../views/customer/form.vue'
-
-// //invoice
-// import InvoiceIndex from '../views/invoice/index.vue'
-// import InvoiceShow from '../views/invoice/show.vue'
-// import InvoiceForm from '../views/invoice/form.vue'
-
-//invoice
-// import ItemIndex from '../views/item/index.vue'
-// import ItemShow from '../views/item/show.vue'
-// import ItemForm from '../views/item/form.vue'
-
-// //invoice diamonds
-// import InvDiamondIndex from '../views/invdiamond/index.vue'
-// import InvDiamondShow from '../views/invdiamond/show.vue'
-// import InvDiamondForm from '../views/invdiamond/form.vue'
-
-//invoice diamonds
-
-
-// import JewellryForm from '../views/jewellry/form.vue'
-
-//customer Jewellries
-
-
-// import CustomerJewForm from '../views/customerJewellry/form.vue'
-
-//Diamonds
-
-
-
-//Engagement Rings
-
-
-// import CustomerJewForm from '../views/customerJewellry/form.vue'
-
-
-//Wedding Rings
-
-
-// import CustomerJewForm from '../views/customerJewellry/form.vue'
-
-//Page
-//buying procedure
-// import BuyingProcedure from '../views/frontEnd/buyingProcedure/index.vue'
-
-// //Post
-// import PostIndex from '../views/post/index.vue'
-// import PostShow from '../views/post/show.vue'
-// import PostForm from '../views/post/form.vue'
-
-
-//Auth
-
-
-//home
-
-
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
-
-var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-	mode: 'history',
-	routes: [{ path: '/', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_16__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
-
-		children: [{ path: '' },
-		// {path:'/posts/:id', component:PostIndex },
-
-		{ path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue___default.a },
-
-		//diamonds
-		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_diamondViewer_index_vue___default.a }, { path: 'gia-loose-diamonds/:id', component: __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue___default.a }] }, { path: '/en', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_16__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
-		children: [{ path: '' },
-		// {path:'/posts/:id', component:PostIndex },
-
-		{ path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue___default.a },
-
-		//diamonds
-		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_diamondViewer_index_vue___default.a }, { path: 'gia-loose-diamonds/:id', component: __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue___default.a },
-
-		//engagement rings
-		{ path: 'engagement-rings/', component: __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue___default.a }, { path: 'engagement-rings/:id', component: __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue___default.a },
-
-		//Wedding rings
-		{ path: 'wedding-rings/', component: __WEBPACK_IMPORTED_MODULE_13__views_frontEnd_weddingRing_index_vue___default.a }, { path: 'wedding-rings/:id', component: __WEBPACK_IMPORTED_MODULE_14__views_frontEnd_weddingRing_show_vue___default.a }] }, { path: '/hk', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_16__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
-		children: [{ path: '' }, { path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue___default.a },
-
-		//diamonds
-		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_diamondViewer_index_vue___default.a }, { path: 'gia-loose-diamonds/:id', component: __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue___default.a },
-
-		//engagement rings
-		{ path: 'engagement-rings/', component: __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue___default.a }, { path: 'engagement-rings/:id', component: __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue___default.a }] }, { path: '/cn', components: { header: __WEBPACK_IMPORTED_MODULE_2__views_layouts_header_vue___default.a, default: __WEBPACK_IMPORTED_MODULE_16__views_home_vue___default.a, footer: __WEBPACK_IMPORTED_MODULE_3__views_layouts_footer_vue___default.a },
-		children: [{ path: '' }, { path: 'customer-jewellries', component: __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_customerJewellry_index_vue___default.a }, { path: 'customer-jewellries/:id', component: __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_customerJewellry_show_vue___default.a },
-
-		//diamonds
-		{ path: 'gia-loose-diamonds/', component: __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_diamondViewer_index_vue___default.a }, { path: 'gia-loose-diamonds/:id', component: __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_diamondViewer_show_vue___default.a },
-
-		//engagement rings
-		{ path: 'engagement-rings/', component: __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_engagementRing_index_vue___default.a }, { path: 'engagement-rings/:id', component: __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_engagementRing_show_vue___default.a }] }]
-
-});
-/* harmony default export */ __webpack_exports__["a"] = (router);
 
 /***/ }),
 /* 73 */
@@ -18475,7 +18490,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/frontEnd/diamondViewer/index.vue"
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/frontEnd/weddingRing/index.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -18486,9 +18501,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-8ad3b81c", Component.options)
+    hotAPI.createRecord("data-v-7feef7d0", Component.options)
   } else {
-    hotAPI.reload("data-v-8ad3b81c", Component.options)
+    hotAPI.reload("data-v-7feef7d0", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -18697,106 +18712,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -18806,52 +18721,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	props: ['title'],
 	data: function data() {
 		return {
-			source: '/api/diamonds',
+			source: '/api/weddingRings',
 			fetchData: {
-				shape: ['RD', 'PS', 'EM', 'PR', 'MQ', 'CU', 'AC', 'OV', 'HT', 'RA'],
-				color: ['d', 'e', 'f', 'g', 'h', 'i', 'j'],
-				clarity: ['fl', 'if', 'vvs1', 'vvs2', 'vs1', 'vs2', 'si1', 'si2', 'i1'],
-				cut: ['ex', 'vg', 'gd', 'fr', 'na'],
-				polish: ['ex', 'vg', 'gd', 'fr'],
-				symmetry: ['ex', 'vg', 'gd', 'fr'],
-				fluorescence: ['none', 'faint', 'medium', 'strong'],
-				priceRange: ['100', '5000000'],
-				weight: ['0.10', '20']
+				style: ['Japanese', 'Vintage', '1'],
+				metal: ['18KW', '18KR', 'PT', 'Mixed'],
+				customized: [1, 0],
+				sideStone: [1, 0],
+				gender: ['f', 'm', 1]
 			},
 			preset: {
-				shape: ['RD', 'PS', 'EM', 'PR', 'MQ', 'CU', 'AC', 'OV', 'HT', 'RA'],
-				color: ['d', 'e', 'f', 'g', 'h', 'i', 'j'],
-				clarity: ['fl', 'if', 'vvs1', 'vvs2', 'vs1', 'vs2', 'si1', 'si2', 'i1'],
-				cut: ['ex', 'vg', 'gd', 'fr', 'na'],
-				polish: ['ex', 'vg', 'gd', 'fr'],
-				symmetry: ['ex', 'vg', 'gd', 'fr'],
-				fluorescence: ['none', 'faint', 'medium', 'strong'],
-				priceRange: ['100', '5000000'],
-				weight: ['0.10', '20']
+				style: ['Japanese', 'Vintage', '1'],
+				metal: ['18KW', '18KR', 'PT', 'Mixed'],
+				customized: [1, 0],
+				sideStone: [1, 0],
+				gender: ['f', 'm', 1]
 			},
 			showModal: false,
 			showAdvance: false,
 			opened: [],
 			model: {},
+			chunkedItemsDesktop: [],
+			chunkedItemsMobile: [],
+			sameStock: [],
 			clickedRows: [],
-			columns: ['shape', 'imageLink', 'price', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluorescence', 'certificate', 'lab'],
+			columns: ['style', 'shoulder', 'prong'],
 			query: {
 				page: 1,
-				column: 'price',
+				column: 'style',
 				direction: 'asc',
-				per_page: 10,
+				per_page: '10',
 				search_column: 'id',
 				search_operator: 'like',
 				search_input: '',
 				search_conditions: {
-					shape: [{ description: 'RD', clicked: false, display: 'Round' }, { description: 'PS', clicked: false, display: 'Pear' }, { description: 'EM', clicked: false, display: 'Emerald' }, { description: 'PR', clicked: false, display: 'Princess' }, { description: 'MQ', clicked: false, display: 'Marquise' }, { description: 'CU', clicked: false, display: 'Cushion' }, { description: 'AC', clicked: false, display: 'Asscher' }, { description: 'OV', clicked: false, display: 'Oval' }, { description: 'HT', clicked: false, display: 'Heart' }, { description: 'RA', clicked: false, display: 'Radiant' }],
-					color: [{ description: 'D', clicked: false, display: 'D' }, { description: 'E', clicked: false, display: 'E' }, { description: 'F', clicked: false, display: 'F' }, { description: 'G', clicked: false, display: 'G' }, { description: 'H', clicked: false, display: 'H' }, { description: 'I', clicked: false, display: 'I' }, { description: 'J', clicked: false, display: 'J' }],
-					cut: [{ description: 'EX', clicked: false, display: 'Excellent' }, { description: 'VG', clicked: false, display: 'Very Good' }, { description: 'GD', clicked: false, display: 'Good' }],
-					polish: [{ description: 'EX', clicked: false, display: 'Excellent' }, { description: 'VG', clicked: false, display: 'Very Good' }, { description: 'GD', clicked: false, display: 'Good' }],
-					symmetry: [{ description: 'EX', clicked: false, display: 'Excellent' }, { description: 'VG', clicked: false, display: 'Very Good' }, { description: 'GD', clicked: false, display: 'Good' }],
-					fluorescence: [{ description: 'NONE', clicked: false, display: 'None' }, { description: 'FAINT', clicked: false, display: 'Faint' }, { description: 'MEDIUM', clicked: false, display: 'Medium' }, { description: 'STRONG', clicked: false, display: 'Strong' }],
-					clarity: [{ description: 'FL', clicked: false }, { description: 'IF', clicked: false }, { description: 'VVS1', clicked: false }, { description: 'VVS2', clicked: false }, { description: 'VS1', clicked: false }, { description: 'VS2', clicked: false }, { description: 'SI1', clicked: false }, { description: 'SI2', clicked: false }, { description: 'I1', clicked: false }],
-					priceRange: [{ description: 'Price' }, { description: 'minPrice' }]
+					style: [{ description: 'Japanese', clicked: false, display: 'Japanese' }, { description: 'Vintage', clicked: false, display: 'Vintage' }],
+					metal: [{ description: '18KW', clicked: false, display: '18K White' }, { description: '18KR', clicked: false, display: '18K Rose Gold' }, { description: 'PT', clicked: false, display: 'PT950/900' }, { description: 'Mixed', clicked: false, display: 'Mixed' }],
+					sideStone: [{ description: 1, clicked: false, display: 'True' }, { description: 0, clicked: false, display: 'False' }],
+					customized: [{ description: 1, clicked: false, display: 'True' }, { description: 0, clicked: false, display: 'False' }],
+					gender: [{ description: 1, clicked: false, display: 'Men' }, { description: 0, clicked: false, display: 'Female' }]
 				}
 			},
 			operators: {
@@ -18871,13 +18778,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 
 	computed: {
-		colorClicked: function colorClicked() {
-			return this.query.search_conditions.color.filter(function (color) {
-				return color.clicked;
+		styleClicked: function styleClicked() {
+			return this.query.search_conditions.style.filter(function (style) {
+				return style.clicked;
 			});
 		}
 	},
 	methods: {
+		toggleCustomized: function toggleCustomized() {
+			this.fetchData.customized = !this.fetchData.customized;
+			this.fetchIndexData();
+		},
+		toggleSideStone: function toggleSideStone() {
+			this.fetchData.sideStone = !this.fetchData.sideStone;
+			this.fetchIndexData();
+		},
 		clickRow: function clickRow(row, index) {
 			this.clickedRows.push(index);
 			this.$router.push(this.$route.path + '/' + row.id);
@@ -18953,12 +18868,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}
 			this.fetchIndexData();
 		},
+		chunkItems: function chunkItems() {
+			var filtered = [];
+			var chunk1 = [];
+			var chunk2 = [];
+
+			filtered = this.model.data.filter(function (data) {
+				return data.wedding_rings.length > 0;
+			});
+			for (var i = 0; filtered.length - 1 >= i;) {
+				chunk1.push(filtered.slice(i, i + 4));
+				i += 4;
+			}
+			this.chunkedItemsDesktop = chunk1;
+
+			for (var i = 0; filtered.length - 1 >= i;) {
+				chunk2.push(filtered.slice(i, i + 2));
+				i += 2;
+			}
+			this.chunkedItemsMobile = chunk2;
+
+			return;
+		},
 		fetchIndexData: function fetchIndexData() {
 			var _this = this;
 
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&color=' + (this.fetchData.color.toString() ? this.fetchData.color.toString() : this.preset.color.toString()) + '\n\t\t\t\t\t&clarity=' + (this.fetchData.clarity.toString() ? this.fetchData.clarity.toString() : this.preset.clarity.toString()) + '\n\t\t\t\t\t&cut=' + (this.fetchData.cut.toString() ? this.fetchData.cut.toString() : this.preset.cut.toString()) + '\n\t\t\t\t\t&polish=' + (this.fetchData.polish.toString() ? this.fetchData.polish.toString() : this.preset.polish.toString()) + '\n\t\t\t\t\t&symmetry=' + (this.fetchData.symmetry.toString() ? this.fetchData.symmetry.toString() : this.preset.symmetry.toString()) + '\n\t\t\t\t\t&fluorescence=' + (this.fetchData.fluorescence.toString() ? this.fetchData.fluorescence.toString() : this.preset.fluorescence.toString()) + '\n\t\t\t\t\t&shape=' + (this.fetchData.shape.toString() ? this.fetchData.shape.toString() : this.preset.shape.toString()) + '\n\t\t\t\t\t&price=' + this.fetchData.priceRange + '\n\t\t\t\t\t&weight=' + this.fetchData.weight).then(function (response) {
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&customized=' + (this.fetchData.customized.toString() ? this.fetchData.customized : this.preset.customized.toString()) + '\n\t\t\t\t\t&sideStone=' + (this.fetchData.sideStone.toString() ? this.fetchData.sideStone : this.preset.sideStone.toString()) + '\n\t\t\t\t\t&gender=' + (this.fetchData.gender.toString() ? this.fetchData.gender : this.preset.gender.toString()) + '\n\t\t\t\t\t&style=' + (this.fetchData.style.toString() ? this.fetchData.style.toString() : this.preset.style.toString()) + '\n\t\t\t\t\t&metal=' + (this.fetchData.metal.toString() ? this.fetchData.metal.toString() : this.preset.metal.toString()) + '\n\t\t\t\t\t').then(function (response) {
 				_this.model = response.data.model;
 				// Vue.set(vm.$data, 'columns', response.data.columns)
+				_this.chunkItems();
+				_this.pairUp();
 			}).catch(function () {
 				console.log(response);
 			});
@@ -18984,276 +18923,78 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "tile is-parent"
   }, [_c('article', {
-    staticClass: "tile is-child box "
-  }, [_c('div', [_vm._v("Shape")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.shape), function(value, index) {
-    return _c('button', {
-      staticClass: "button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.shape[index].clicked
-      },
-      attrs: {
-        "type": "button"
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.shape[index].clicked, 'shape', index)
-        }
-      }
-    }, [_c('img', {
-      attrs: {
-        "src": '/front_end/diamond_shapes/' + _vm.query.search_conditions.shape[index].description + '.png',
-        "height": "20",
-        "width": "20"
-      }
-    })])
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box is-info"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
-    staticClass: "level"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.priceRange[0]),
-      expression: "fetchData.priceRange[0]"
-    }],
-    staticClass: "input",
-    attrs: {
-      "type": "text"
-    },
-    domProps: {
-      "value": (_vm.fetchData.priceRange[0])
-    },
-    on: {
-      "keyup": function($event) {
-        _vm.fetchIndexData()
-      },
-      "focus": function($event) {
-        $event.target.select()
-      },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.fetchData.priceRange, 0, $event.target.value)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.priceRange[1]),
-      expression: "fetchData.priceRange[1]"
-    }],
-    staticClass: "input",
-    attrs: {
-      "type": "text"
-    },
-    domProps: {
-      "value": (_vm.fetchData.priceRange[1])
-    },
-    on: {
-      "keyup": function($event) {
-        _vm.fetchIndexData()
-      },
-      "focus": function($event) {
-        $event.target.select()
-      },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.fetchData.priceRange, 1, $event.target.value)
-      }
-    }
-  })])]), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_vm._m(1), _vm._v(" "), _c('div', {
-    staticClass: "level"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.weight[0]),
-      expression: "fetchData.weight[0]"
-    }],
-    staticClass: "input",
-    attrs: {
-      "type": "text"
-    },
-    domProps: {
-      "value": (_vm.fetchData.weight[0])
-    },
-    on: {
-      "keyup": function($event) {
-        _vm.fetchIndexData()
-      },
-      "focus": function($event) {
-        $event.target.select()
-      },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.fetchData.weight, 0, $event.target.value)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.weight[1]),
-      expression: "fetchData.weight[1]"
-    }],
-    staticClass: "input",
-    attrs: {
-      "type": "text"
-    },
-    domProps: {
-      "value": (_vm.fetchData.weight[1])
-    },
-    on: {
-      "keyup": function($event) {
-        _vm.fetchIndexData()
-      },
-      "focus": function($event) {
-        $event.target.select()
-      },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.fetchData.weight, 1, $event.target.value)
-      }
-    }
-  })])])])])])])]), _vm._v(" "), _c('nav', [_c('div', {
-    staticClass: "navbar-item is-hidden-mobile"
-  }, [_c('div', {
-    staticClass: "tile is-ancestor"
-  }, [_c('div', {
-    staticClass: "tile is-12"
-  }, [_c('div', {
-    staticClass: "tile is-parent"
-  }, [_c('article', {
-    staticClass: "tile is-child box "
-  }, [_c('div', [_vm._v("Color")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.color), function(value, index) {
+    staticClass: "tile is-child box is-4"
+  }, [_c('div', [_vm._v("Style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
     return _c('input', {
       staticClass: "button ",
       class: {
-        'is-info active': _vm.query.search_conditions.color[index].clicked
+        'is-info active': _vm.query.search_conditions.style[index].clicked
       },
       attrs: {
         "type": "button",
-        "value": _vm.query.search_conditions.color[index].description
+        "value": _vm.query.search_conditions.style[index].display
       },
       on: {
         "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.color[index].clicked, 'color', index)
+          _vm.toggleValue(_vm.query.search_conditions.style[index].clicked, 'style', index)
         }
       }
     })
   })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Clarity")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.clarity), function(value, index) {
+    staticClass: "tile is-child box is-4"
+  }, [_c('div', [_vm._v("Metal")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.metal), function(value, index) {
     return _c('input', {
       staticClass: " button ",
       class: {
-        'is-info active': _vm.query.search_conditions.clarity[index].clicked
+        'is-info active': _vm.query.search_conditions.metal[index].clicked
       },
       attrs: {
         "type": "button",
-        "value": _vm.query.search_conditions.clarity[index].description
+        "value": _vm.query.search_conditions.metal[index].display
       },
       on: {
         "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.clarity[index].clicked, 'clarity', index)
+          _vm.toggleValue(_vm.query.search_conditions.metal[index].clicked, 'metal', index)
         }
       }
     })
   })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Cut")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.cut), function(value, index) {
+    staticClass: "tile is-child box is-2"
+  }, [_c('div', [_vm._v("Side stone")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.sideStone), function(value, index) {
     return _c('input', {
       staticClass: " button ",
       class: {
-        'is-info active': _vm.query.search_conditions.cut[index].clicked
+        'is-info active': _vm.query.search_conditions.sideStone[index].clicked
       },
       attrs: {
         "type": "button",
-        "value": _vm.query.search_conditions.cut[index].description
+        "value": _vm.query.search_conditions.sideStone[index].display
       },
       on: {
         "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.cut[index].clicked, 'cut', index)
-        }
-      }
-    })
-  })], 2)])])])])]), _vm._v(" "), _c('div', {
-    staticClass: "level is-hidden-mobile"
-  }, [_c('div', {
-    staticClass: "level-item is-centered"
-  }, [_c('button', {
-    staticClass: "button is-info",
-    on: {
-      "click": function($event) {
-        _vm.showAdvance = !_vm.showAdvance
-      }
-    }
-  }, [_vm._v("More Advance")])])]), _vm._v(" "), _c('nav', [_c('div', {
-    staticClass: "navbar-item is-hidden-mobile"
-  }, [(_vm.showAdvance) ? _c('div', {
-    staticClass: "tile is-ancestor"
-  }, [_c('div', {
-    staticClass: "tile is-12"
-  }, [_c('div', {
-    staticClass: "tile is-parent"
-  }, [_c('article', {
-    staticClass: "tile is-child box "
-  }, [_c('div', [_vm._v("Polish")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.polish), function(value, index) {
-    return _c('input', {
-      staticClass: "button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.polish[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.polish[index].description
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.polish[index].clicked, 'polish', index)
+          _vm.toggleValue(_vm.query.search_conditions.sideStone[index].clicked, 'sideStone', index)
         }
       }
     })
   })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Symmetry")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.symmetry), function(value, index) {
+    staticClass: "tile is-child box is-2"
+  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.customized), function(value, index) {
     return _c('input', {
       staticClass: " button ",
       class: {
-        'is-info active': _vm.query.search_conditions.symmetry[index].clicked
+        'is-info active': _vm.query.search_conditions.customized[index].clicked
       },
       attrs: {
         "type": "button",
-        "value": _vm.query.search_conditions.symmetry[index].description
+        "value": _vm.query.search_conditions.customized[index].display
       },
       on: {
         "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.symmetry[index].clicked, 'symmetry', index)
+          _vm.toggleValue(_vm.query.search_conditions.customized[index].clicked, 'customized', index)
         }
       }
     })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Fluorescence")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.fluorescence), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.fluorescence[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.fluorescence[index].description
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.fluorescence[index].clicked, 'fluorescence', index)
-        }
-      }
-    })
-  })], 2)])])]) : _vm._e()])]), _vm._v(" "), _c('nav', [_c('div', {
+  })], 2)])])])])]), _vm._v(" "), _c('nav', [_c('div', {
     staticClass: "navbar-item is-hidden-desktop is-hidden-tablet is-centered"
   }, [_c('div', {
     on: {
@@ -19263,7 +19004,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('center', [_c('button', {
     staticClass: "button is-info "
-  }, [_vm._v("Search Diamonds")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("wedding Rings")])]), _vm._v(" "), _c('div', {
     staticClass: "modal",
     class: {
       'is-active': _vm.showModal
@@ -19286,433 +19027,162 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "tile is-parent"
   }, [_c('article', {
-    staticClass: "tile is-child box "
-  }, [_c('div', [_vm._v("Shape")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.shape), function(value, index) {
-    return _c('button', {
-      staticClass: "button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.shape[index].clicked
-      },
-      attrs: {
-        "type": "button"
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.shape[index].clicked, 'shape', index)
-        }
-      }
-    }, [_c('img', {
-      attrs: {
-        "src": '/front_end/diamond_shapes/' + _vm.query.search_conditions.shape[index].description + '.png',
-        "height": "20",
-        "width": "20"
-      }
-    })])
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box is-info"
-  }, [_vm._m(2), _vm._v(" "), _c('div', {
-    staticClass: "level"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.priceRange[0]),
-      expression: "fetchData.priceRange[0]"
-    }],
-    staticClass: "input",
-    attrs: {
-      "type": "text"
-    },
-    domProps: {
-      "value": (_vm.fetchData.priceRange[0])
-    },
-    on: {
-      "keyup": function($event) {
-        _vm.fetchIndexData()
-      },
-      "focus": function($event) {
-        $event.target.select()
-      },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.fetchData.priceRange, 0, $event.target.value)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.priceRange[1]),
-      expression: "fetchData.priceRange[1]"
-    }],
-    staticClass: "input",
-    attrs: {
-      "type": "text"
-    },
-    domProps: {
-      "value": (_vm.fetchData.priceRange[1])
-    },
-    on: {
-      "keyup": function($event) {
-        _vm.fetchIndexData()
-      },
-      "focus": function($event) {
-        $event.target.select()
-      },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.fetchData.priceRange, 1, $event.target.value)
-      }
-    }
-  })])]), _vm._v(" "), _c('article', {
     staticClass: "tile is-child box"
-  }, [_vm._m(3), _vm._v(" "), _c('div', {
-    staticClass: "level"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.weight[0]),
-      expression: "fetchData.weight[0]"
-    }],
-    staticClass: "input",
-    attrs: {
-      "type": "text"
-    },
-    domProps: {
-      "value": (_vm.fetchData.weight[0])
-    },
-    on: {
-      "keyup": function($event) {
-        _vm.fetchIndexData()
-      },
-      "focus": function($event) {
-        $event.target.select()
-      },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.fetchData.weight, 0, $event.target.value)
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fetchData.weight[1]),
-      expression: "fetchData.weight[1]"
-    }],
-    staticClass: "input",
-    attrs: {
-      "type": "text"
-    },
-    domProps: {
-      "value": (_vm.fetchData.weight[1])
-    },
-    on: {
-      "keyup": function($event) {
-        _vm.fetchIndexData()
-      },
-      "focus": function($event) {
-        $event.target.select()
-      },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.fetchData.weight, 1, $event.target.value)
-      }
-    }
-  })])])])])]), _vm._v(" "), _c('div', {
-    staticClass: "tile is-ancestor"
-  }, [_c('div', {
-    staticClass: "tile is-12"
-  }, [_c('div', {
-    staticClass: "tile is-parent"
-  }, [_c('article', {
-    staticClass: "tile is-child box "
-  }, [_c('div', [_vm._v("Color")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.color), function(value, index) {
+  }, [_c('div', [_vm._v("Style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
     return _c('input', {
       staticClass: "button ",
       class: {
-        'is-info active': _vm.query.search_conditions.color[index].clicked
+        'is-info active': _vm.query.search_conditions.style[index].clicked
       },
       attrs: {
         "type": "button",
-        "value": _vm.query.search_conditions.color[index].description
+        "value": _vm.query.search_conditions.style[index].display
       },
       on: {
         "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.color[index].clicked, 'color', index)
+          _vm.toggleValue(_vm.query.search_conditions.style[index].clicked, 'style', index)
         }
       }
     })
   })], 2), _vm._v(" "), _c('article', {
     staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Clarity")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.clarity), function(value, index) {
+  }, [_c('div', [_vm._v("Metal")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.metal), function(value, index) {
     return _c('input', {
       staticClass: " button ",
       class: {
-        'is-info active': _vm.query.search_conditions.clarity[index].clicked
+        'is-info active': _vm.query.search_conditions.metal[index].clicked
       },
       attrs: {
         "type": "button",
-        "value": _vm.query.search_conditions.clarity[index].description
+        "value": _vm.query.search_conditions.metal[index].display
       },
       on: {
         "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.clarity[index].clicked, 'clarity', index)
+          _vm.toggleValue(_vm.query.search_conditions.metal[index].clicked, 'metal', index)
         }
       }
     })
   })], 2), _vm._v(" "), _c('article', {
     staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Cut")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.cut), function(value, index) {
+  }, [_c('div', [_vm._v("Side stone")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.sideStone), function(value, index) {
     return _c('input', {
       staticClass: " button ",
       class: {
-        'is-info active': _vm.query.search_conditions.cut[index].clicked
+        'is-info active': _vm.query.search_conditions.sideStone[index].clicked
       },
       attrs: {
         "type": "button",
-        "value": _vm.query.search_conditions.cut[index].description
+        "value": _vm.query.search_conditions.sideStone[index].display
       },
       on: {
         "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.cut[index].clicked, 'cut', index)
-        }
-      }
-    })
-  })], 2)])])]), _vm._v(" "), _c('button', {
-    staticClass: "button is-info",
-    on: {
-      "click": function($event) {
-        _vm.showAdvance = !_vm.showAdvance
-      }
-    }
-  }, [_vm._v("More Advancce")]), _vm._v(" "), (_vm.showAdvance) ? _c('div', {
-    staticClass: "tile is-ancestor"
-  }, [_c('div', {
-    staticClass: "tile is-12"
-  }, [_c('div', {
-    staticClass: "tile is-parent"
-  }, [_c('article', {
-    staticClass: "tile is-child box "
-  }, [_c('div', [_vm._v("Polish")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.polish), function(value, index) {
-    return _c('input', {
-      staticClass: "button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.polish[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.polish[index].description
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.polish[index].clicked, 'polish', index)
+          _vm.toggleValue(_vm.query.search_conditions.sideStone[index].clicked, 'sideStone', index)
         }
       }
     })
   })], 2), _vm._v(" "), _c('article', {
     staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Symmetry")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.symmetry), function(value, index) {
+  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.customized), function(value, index) {
     return _c('input', {
       staticClass: " button ",
       class: {
-        'is-info active': _vm.query.search_conditions.symmetry[index].clicked
+        'is-info active': _vm.query.search_conditions.customized[index].clicked
       },
       attrs: {
         "type": "button",
-        "value": _vm.query.search_conditions.symmetry[index].description
+        "value": _vm.query.search_conditions.customized[index].display
       },
       on: {
         "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.symmetry[index].clicked, 'symmetry', index)
+          _vm.toggleValue(_vm.query.search_conditions.customized[index].clicked, 'customized', index)
         }
       }
     })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Fluorescence")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.fluorescence), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.fluorescence[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.fluorescence[index].description
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.fluorescence[index].clicked, 'fluorescence', index)
+  })], 2)])])])]), _vm._v(" "), _vm._m(0)])])], 1)])]), _vm._v(" "), _c('div', {
+    staticClass: "is-hidden-mobile"
+  }, _vm._l((_vm.chunkedItemsDesktop), function(rings, idnex) {
+    return _c('div', {
+      staticClass: "tile is-ancestor"
+    }, _vm._l((rings), function(ring) {
+      return _c('div', {
+        staticClass: "tile is-parent is-3"
+      }, [(ring.wedding_rings[0]) ? _c('div', {
+        staticClass: "tile is-child"
+      }, [_c('article', {
+        staticClass: "tile"
+      }, [_c('router-link', {
+        attrs: {
+          "to": _vm.$route.path + '/' + ring.id
         }
-      }
-    })
-  })], 2)])])]) : _vm._e()]), _vm._v(" "), _vm._m(4)])])], 1)])]), _vm._v(" "), _c('article', {
-    staticClass: "message is-info"
-  }, [_c('div', {
-    staticClass: "message-body"
-  }, [_c('center', [_vm._v("\n\t\t    If you could not find diamonds as your inquiry,\n\t\t    "), _c('strong', [_c('br'), _vm._v("\n\t\t\tPLEASE（Whatsapp: Winnie－5484 4533， for the latest diamond Stock）")])])], 1)]), _vm._v(" "), _c('div', {
-    staticClass: "tabs"
-  }, [_c('table', {
-    staticClass: "table is-striped is-narrowed is-fullwidth "
-  }, [_c('thead', [_c('tr', {
-    staticClass: "is-selected "
-  }, _vm._l((_vm.columns), function(column) {
-    return _c('th', {
-      on: {
-        "click": function($event) {
-          _vm.toggleOrder(column)
+      }, [(ring.wedding_rings[0].cover) ? _c('img', {
+        attrs: {
+          "src": ("/images/" + (ring.wedding_rings[0].cover))
         }
-      }
-    }, [_c('span', [_vm._v(_vm._s(column))]), _vm._v(" "), (column === _vm.query.column) ? _c('span', {
-      staticClass: "dv-table-column"
-    }, [(_vm.query.direction === 'desc') ? _c('span', [_vm._v("▼")]) : _c('span', [_vm._v("▲")])]) : _vm._e()])
-  }))]), _vm._v(" "), _c('tbody', _vm._l((_vm.model.data), function(row, index) {
-    return _c('tr', {
-      on: {
-        "click": function($event) {
-          _vm.clickRow(row, index)
+      }) : _vm._e(), _vm._v(" "), _c('center', [_c('div', {
+        staticClass: "level"
+      }, [_c('div', {
+        staticClass: "level-item is-left"
+      }, [(ring.wedding_rings[0].unit_price) ? _c('p', {
+        staticClass: "subtitle"
+      }, [_vm._v("$" + _vm._s(ring.wedding_rings[0].unit_price))]) : _vm._e()]), _vm._v(" "), (ring.wedding_rings[1]) ? _c('div', {
+        staticClass: "level-item is-right"
+      }, [(ring.wedding_rings[1].unit_price) ? _c('p', {
+        staticClass: "subtitle"
+      }, [_vm._v("$" + _vm._s(ring.wedding_rings[1].unit_price))]) : _vm._e()]) : _vm._e()]), _vm._v(" "), _c('div', {
+        staticClass: "level"
+      }, [_c('div', {
+        staticClass: "level-item is-left"
+      }, [(ring.wedding_rings[0].description) ? _c('p', [_vm._v(_vm._s(ring.wedding_rings[0].description))]) : _vm._e()])])])], 1)], 1)]) : _vm._e()])
+    }))
+  })), _vm._v(" "), _c('div', {
+    staticClass: "is-hidden-desktop is-hidden-tablet is-centered box"
+  }, _vm._l((_vm.chunkedItemsMobile), function(rings, idnex) {
+    return _c('div', {
+      staticClass: "level is-mobile"
+    }, _vm._l((rings), function(ring) {
+      return _c('div', {
+        staticClass: "level-item"
+      }, [(ring.wedding_rings[0]) ? _c('div', [_c('router-link', {
+        attrs: {
+          "to": _vm.$route.path + '/' + ring.id
         }
-      }
-    }, [_c('td', [_c('img', {
-      attrs: {
-        "src": '/front_end/diamond_shapes/' + row.shape + '.png',
-        "width": "20"
-      }
-    })]), _vm._v(" "), _c('td', [(row.imageLink) ? _c('div', [_c('i', {
-      staticClass: "fa fa-picture-o",
-      attrs: {
-        "aria-hidden": "true"
-      }
-    })]) : _c('div')]), _vm._v(" "), _c('td', [_vm._v(" $" + _vm._s(row.price))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.weight))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.color))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.clarity))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.cut))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.polish))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.symmetry))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.fluorescence))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.certificate))]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(row.lab))])])
-  }))])]), _vm._v(" "), _c('nav', {
-    staticClass: "pagination is-centered",
-    attrs: {
-      "role": "navigation",
-      "aria-label": "pagination"
-    }
-  }, [_c('a', {
-    staticClass: "pagination-previous",
-    on: {
-      "click": _vm.prev
-    }
-  }, [_vm._v("Previous")]), _vm._v(" "), _c('div', {
-    staticClass: "field"
-  }, [_c('div', {
-    staticClass: "control"
-  }, [_c('label', [_vm._v("Per Page")]), _vm._v(" "), _c('div', {
-    staticClass: "select is-primary"
-  }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.query.per_page),
-      expression: "query.per_page"
-    }],
-    on: {
-      "change": [function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.query.per_page = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-      }, _vm.fetchIndexData]
-    }
-  }, [_c('option', [_vm._v("10")]), _vm._v(" "), _c('option', [_vm._v("25")]), _vm._v(" "), _c('option', [_vm._v("50")])])])])]), _vm._v(" "), _c('a', {
-    staticClass: "pagination-next",
-    on: {
-      "click": _vm.next
-    }
-  }, [_vm._v("Next")]), _vm._v(" "), _c('ul', {
-    staticClass: "pagination-list"
-  }, [_c('li', [_c('a', {
-    staticClass: "button",
-    attrs: {
-      "aria-label": "Goto page 1",
-      "disabled": _vm.model.current_page < 5
-    },
-    on: {
-      "click": function($event) {
-        _vm.moveTo(-5)
-      }
-    }
-  }, [_vm._v(_vm._s(_vm.model.current_page < 5 ? 0 : _vm.model.current_page - 5))])]), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('li', [_c('a', {
-    staticClass: "pagination-link",
-    attrs: {
-      "aria-label": "Goto page 86",
-      "diable": _vm.model.current_page
-    },
-    on: {
-      "click": function($event) {
-        _vm.moveTo(-1)
-      }
-    }
-  }, [_vm._v(_vm._s(_vm.model.current_page - 1))])]), _vm._v(" "), _c('li', [_c('a', {
-    staticClass: "pagination-link is-current",
-    attrs: {
-      "aria-label": "Page 46",
-      "aria-current": "page"
-    }
-  }, [_vm._v(_vm._s(_vm.model.current_page))])]), _vm._v(" "), _c('li', [_c('a', {
-    staticClass: "pagination-link",
-    attrs: {
-      "aria-label": "Goto page 86",
-      "diable": _vm.model.current_page > _vm.model.last_page
-    },
-    on: {
-      "click": function($event) {
-        _vm.moveTo(1)
-      }
-    }
-  }, [_vm._v(_vm._s(_vm.model.current_page + 1))])]), _vm._v(" "), _vm._m(6), _vm._v(" "), _c('li', [_c('a', {
-    staticClass: "pagination-link",
-    attrs: {
-      "aria-label": "Goto page 86"
-    },
-    on: {
-      "click": function($event) {
-        _vm.moveTo(5)
-      }
-    }
-  }, [_vm._v(_vm._s(5 + _vm.model.current_page))])])])])])
+      }, [(ring.wedding_rings[0].cover) ? _c('img', {
+        attrs: {
+          "width": "128",
+          "height": "96",
+          "src": ("/images/" + (ring.wedding_rings[0].cover))
+        }
+      }) : _vm._e(), _vm._v(" "), _c('center', [_c('div', {
+        staticClass: "level"
+      }, [_c('div', {
+        staticClass: "level-item is-left"
+      }, [(ring.wedding_rings[0].unit_price) ? _c('p', {
+        staticClass: "subtitle"
+      }, [_vm._v("$" + _vm._s(ring.wedding_rings[0].unit_price))]) : _vm._e()]), _vm._v(" "), (ring.wedding_rings[1]) ? _c('div', {
+        staticClass: "level-item is-right"
+      }, [(ring.wedding_rings[1].unit_price) ? _c('p', {
+        staticClass: "subtitle"
+      }, [_vm._v("$" + _vm._s(ring.wedding_rings[1].unit_price))]) : _vm._e()]) : _vm._e()]), _vm._v(" "), _c('div', {
+        staticClass: "level"
+      }, [_c('div', {
+        staticClass: "level-item is-left"
+      }, [(ring.wedding_rings[0].description) ? _c('p', [_vm._v("$" + _vm._s(ring.wedding_rings[0].description))]) : _vm._e()]), _vm._v(" "), (ring.wedding_rings[1]) ? _c('div', {
+        staticClass: "level-item is-right"
+      }, [(ring.wedding_rings[1].description) ? _c('p', [_vm._v("$" + _vm._s(ring.wedding_rings[1].description))]) : _vm._e()]) : _vm._e()])])], 1)], 1) : _vm._e()])
+    }))
+  }))])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', {
-    staticClass: "subtitle is-6"
-  }, [_vm._v("Price")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', {
-    staticClass: "subtitle is-6"
-  }, [_vm._v(" Weight ")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', {
-    staticClass: "subtitle is-6"
-  }, [_vm._v("Price")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', {
-    staticClass: "subtitle is-6"
-  }, [_vm._v(" Weight ")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('footer', {
     staticClass: "modal-card-foot"
   }, [_c('button', {
     staticClass: "button is-success"
   }, [_vm._v("Submit")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('li', [_c('span', {
-    staticClass: "pagination-ellipsis"
-  }, [_vm._v("…")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('li', [_c('span', {
-    staticClass: "pagination-ellipsis"
-  }, [_vm._v("…")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-8ad3b81c", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-7feef7d0", module.exports)
   }
 }
 
@@ -19737,7 +19207,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/frontEnd/diamondViewer/show.vue"
+Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/frontEnd/weddingRing/show.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] show.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -19748,9 +19218,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4aed16e6", Component.options)
+    hotAPI.createRecord("data-v-22f7acef", Component.options)
   } else {
-    hotAPI.reload("data-v-4aed16e6", Component.options)
+    hotAPI.reload("data-v-22f7acef", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -19771,13 +19241,13 @@ var content = __webpack_require__(84);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(8)("b01d8dfe", content, false);
+var update = __webpack_require__(9)("001174e2", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4aed16e6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4aed16e6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-22f7acef\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-22f7acef\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -19790,7 +19260,7 @@ if(false) {
 /* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(7)(undefined);
+exports = module.exports = __webpack_require__(8)(undefined);
 // imports
 
 
@@ -19807,9 +19277,9 @@ exports.push([module.i, "\nbody, html {\n  height: 100%;\n  margin: 0;\n  color:
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__);
 //
 //
@@ -19892,200 +19362,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
-
-function setIframeSrc() {
-	var s = "/images";
-	var iframe1 = document.getElementById('iframe1');
-	if (-1 == navigator.userAgent.indexOf("MSIE")) {
-		iframe1.src = s;
-	} else {
-		iframe1.location = s;
-	}
-}
-setTimeout(setIframeSrc, 5);
-
-(function (d) {
-	var iframe = d.body.appendChild(d.createElement('iframe')),
-	    doc = iframe.contentWindow.document;
-
-	// style the iframe with some CSS
-	iframe.style.cssText = "position:absolute;width:200px;height:100px;left:0px;";
-
-	doc.open().write('<body onload="' + 'var d = document;d.getElementsByTagName(\'head\')[0].' + 'appendChild(d.createElement(\'script\')).src' + '=\'\/path\/to\/file\'">');
-
-	doc.close(); //iframe onload event happens
-})(document);
 
 // import Auth from '../../store/auth'
 
@@ -20100,21 +19377,14 @@ setTimeout(setIframeSrc, 5);
 		return {
 			// auth: Auth.state,
 			isRemoving: false,
+			carouselState: false,
 			appointmentState: false,
 			title: '',
-			diamond: {
-				weight: ''
-			},
-			columns: ['price', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
+			weddingRing: '',
+			columns: ['unit_price', 'metal', 'sideStone', 'stock', 'name', 'description'],
 
-			storeURL: '/api/diamonds/appointment',
-
-			post: {
-				invoice: {},
-				content: []
-			},
-			invoice: ''
-
+			storeURL: '',
+			customerItems: ''
 		};
 	},
 
@@ -20127,15 +19397,25 @@ setTimeout(setIframeSrc, 5);
 
 	computed: {
 		appointmentTitle: function appointmentTitle() {
-			return this.diamond.weight + 'carat, ' + this.diamond.color + ' color diamond';
+			return this.weddingRing.shoulder + ' shoulder, ' + this.weddingRing.prong + '  weddingRing';
+		},
+		combinedWeddingRings: function combinedWeddingRings() {
+			var obj = [];
+			obj.push(this.weddingRing.wedding_rings[0]);
+
+			if (this.weddingRing.wedding_rings[1]) {
+				obj.push(this.weddingRing.wedding_rings[1]);
+			}
+			return obj;
 		}
 	},
 	methods: {
 		fetchData: function fetchData() {
 			var _this = this;
 
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])("/api/diamonds/" + this.$route.params.id).then(function (res) {
-				_this.diamond = res.data.diamond;
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/weddingRings/' + this.$route.params.id).then(function (res) {
+				_this.weddingRing = res.data.model;
+				_this.customerItems = res.data.posts.invPosts;
 			});
 		}
 	}
@@ -20182,6 +19462,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -20193,10 +19474,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       default: null
     },
-    appointActive: false,
-    appTitle: '',
+    active: false,
+    title: '',
     columns: '',
-    isProcessing: ''
+    processing: ''
+
   },
   data: function data() {
     return {
@@ -20206,7 +19488,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         phone: '',
         storeURL: 'wwww.tingdiamond.com' + this.$route.fullPath
 
-      }
+      },
+      locale: this.$route.fullPath.slice(0, 3)
 
     };
   },
@@ -20238,7 +19521,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           _this.error = err.response.data;
         }
       });
-      this.appointActive = false;
+      this.active = false;
     }
   }
 });
@@ -20251,7 +19534,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "modal",
     class: {
-      'is-active': _vm.appointActive
+      'is-active': _vm.active
     }
   }, [_c('div', {
     staticClass: "modal-background",
@@ -20266,7 +19549,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "modal-card-head"
   }, [_c('p', {
     staticClass: "modal-card-title"
-  }, [_vm._v(_vm._s(_vm.appTitle))]), _vm._v(" "), _c('button', {
+  }, [_vm._v(_vm._s(_vm.title))]), _vm._v(" "), _c('button', {
     staticClass: "delete",
     attrs: {
       "aria-label": "close"
@@ -20339,10 +19622,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.form.phone = $event.target.value
       }
     }
-  }), _vm._v(" "), _c('div', [_c('button', {
+  }), _vm._v(" "), _c('div', [_c('a', {
+    staticClass: "button",
+    attrs: {
+      "href": _vm.locale + '/about-us'
+    }
+  }, [_vm._v("Contact Us")]), _vm._v(" "), _c('button', {
     staticClass: "button is-success ",
     class: {
-      'is-loading': _vm.isProcessing
+      'is-loading': _vm.processing
     },
     on: {
       "submit": function($event) {
@@ -20567,16 +19855,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-function setIframeSrc() {
-    var s = "/images";
-    var iframe1 = document.getElementById('iframe1');
-    if (-1 == navigator.userAgent.indexOf("MSIE")) {
-        iframe1.src = s;
-    } else {
-        iframe1.location = s;
-    }
-}
-setTimeout(setIframeSrc, 5);
+// function setIframeSrc() {
+//   var s = "/images";
+//   var iframe1 = document.getElementById('iframe1');
+//   if ( -1 == navigator.userAgent.indexOf("MSIE") ) {
+//     iframe1.src = s;
+//   }
+//   else {
+//     iframe1.location = s;
+//   }
+// }
+// setTimeout(setIframeSrc, 5);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'carousel',
@@ -21105,32 +20394,35 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "tile notification is-primary"
   }, [_c('p', {
     staticClass: "title"
-  }, [_vm._v(_vm._s(_vm.diamond.weight) + " carat " + _vm._s(_vm.diamond.shape) + " diamond")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].description) + " Wedding Rings")])])]), _vm._v(" "), _c('div', {
     staticClass: "tile is-ancestor "
   }, [_c('div', {
-    staticClass: "tile is-parent"
+    staticClass: "tile is-parent is-7"
   }, [_c('div', {
     staticClass: "tile is-child box"
-  }, [_c('a', {
-    attrs: {
-      "href": ("https://www.gia.edu/report-check?reportno=" + (_vm.diamond.certificate))
-    }
   }, [_c('figure', {
-    staticClass: "image"
-  }, [(_vm.diamond.imageLink) ? _c('div', [_c('iframe', {
-    attrs: {
-      "id": "iframe1",
-      "src": _vm.diamond.imageLink,
-      "width": "100%",
-      "height": "500"
+    staticClass: "image",
+    on: {
+      "click": function($event) {
+        _vm.carouselState = !_vm.carouselState
+      }
     }
-  })]) : _vm._e(), _vm._v(" "), (_vm.diamond.imageLink == null) ? _c('div', [_c('img', {
+  }, [_c('carousel', {
     attrs: {
-      "src": "/front_end/diamond_show/RoundDiamonds_sample.png",
-      "width": "100%",
-      "height": "500"
+      "carouselActive": _vm.carouselState,
+      "items": 4,
+      "height": '500',
+      "width": '100%',
+      "carouselUpperItems": _vm.combinedWeddingRings,
+      "carouselItems": _vm.customerItems,
+      "carouselTitle": "customer jewellries"
+    },
+    on: {
+      "active": function($event) {
+        _vm.carouselState = !_vm.carouselState
+      }
     }
-  })]) : _vm._e()])])])]), _vm._v(" "), _c('div', {
+  })], 1)])]), _vm._v(" "), _c('div', {
     staticClass: "tile is-parent is-5"
   }, [_c('div', {
     staticClass: "tile is-child box"
@@ -21145,10 +20437,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Appointment")]), _vm._v(" "), _c('appointment', {
     attrs: {
-      "appTitle": _vm.appointmentTitle,
-      "appointActive": _vm.appointmentState,
+      "title": _vm.appointmentTitle,
+      "active": _vm.appointmentState,
       "columns": _vm.columns,
-      "isProcessing": false
+      "processing": false
     },
     on: {
       "active": function($event) {
@@ -21156,341 +20448,293 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     },
     model: {
-      value: (_vm.diamond),
+      value: (_vm.weddingRing.wedding_rings[0]),
       callback: function($$v) {
-        _vm.diamond = $$v
+        _vm.$set(_vm.weddingRing.wedding_rings, 0, $$v)
       },
-      expression: "diamond"
+      expression: "weddingRing.wedding_rings[0]"
     }
-  })], 1), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("\n\t\t\t\t\tFor more detailed information, can reach GIA website query：\n\t\t\t\t\t")]), _vm._v(" "), _c('a', {
-    attrs: {
-      "href": ("https://www.gia.edu/report-check?reportno=" + (_vm.diamond.certificate))
-    }
-  }, [_c('center', [_vm._v("GIA Certificate")]), _vm._v(" "), _vm._m(0)], 1)], 1)]), _vm._v(" "), _c('article', [_c('table', {
+  })], 1), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("\n\t\t\t\t\tFor more detailed information, can reach GIA website query：\n\t\t\t\t\t")])], 1)]), _vm._v(" "), _c('article', [_c('table', {
     staticClass: "table is-striped is-fullwidth"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("Diamond Info(" + _vm._s(_vm.diamond.shape) + ")")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Carat Weight")]), _c('td', [_vm._v(_vm._s(_vm.diamond.weight))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Color Grade")]), _c('td', [_vm._v(_vm._s(_vm.diamond.color))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Clarity Grade")]), _c('td', [_vm._v(_vm._s(_vm.diamond.clarity))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Cut Grade")]), _c('td', [_vm._v(_vm._s(_vm.diamond.cut))])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Polish")]), _c('td', [_vm._v(_vm._s(_vm.diamond.polish))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Symmetry")]), _c('td', [_vm._v(_vm._s(_vm.diamond.symmetry))])])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Fluorescence")]), _c('td', [_vm._v(_vm._s(_vm.diamond.fluorescence))])])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('tbody', [_c('a', {
-    attrs: {
-      "href": ("https://www.gia.edu/report-check?reportno=" + (_vm.diamond.certificate))
-    }
-  }, [_c('tr', [_c('td', [_vm._v("Certificate")]), _c('td', [_vm._v(_vm._s(_vm.diamond.certificate))])])])])])])])])]), _vm._v(" "), _c('div', {
-    staticClass: "cut-bg"
-  }, [_c('div', {
-    staticClass: "caption"
-  }, [_c('span', {
-    staticClass: "border"
-  }, [_vm._v("Cut Grade: " + _vm._s(_vm.diamond.cut))]), _vm._v(" "), _c('hr'), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('span', {
-    staticClass: "cut-text"
-  }, [_vm._v("\n\t\t\t\tA cut grade is the measure of a diamond's light performance. Cut with proper proportions, light is returned out of the top of the diamond. If it is cut too shallow, light leaks out of the bottom; too deep and it escapes out of the side.\n\t  \t\t")])])]), _vm._v(" "), _c('div', {
-    staticClass: "tile is-ancestor "
-  }, [_c('div', {
-    staticClass: "tile is-parent"
-  }, [_c('div', {
-    staticClass: "tile is-child box"
-  }, [_c('article', [_c('div', {
-    staticClass: "columns"
-  }, [_c('div', {
-    staticClass: "column is-6"
-  }, [_c('center', [_c('p1', {
-    staticClass: "title is-5 is-info"
-  }, [_vm._v("\n\t\t\t  \t\t\t\t\t\tDIAMOND SIZE: " + _vm._s(_vm.diamond.weight) + " Carat\n\t\t\t  \t\t\t\t\t")]), _vm._v(" "), _c('br')], 1)], 1)]), _vm._v(" "), _c('div', {
-    staticClass: "columns"
-  }, [_c('div', {
-    staticClass: "column is-6"
-  }, [_c('center', [_c('p1', {
-    staticClass: "subtitle is-6"
-  }, [_vm._v("\n\t\t  \t\t\t\t\t\tThe international unit of weight used for measuring diamonds and gemstones, 1 carat is equal to 200 milligrams, or 0.2 grams. A specific measurement of a diamond's weight, carat weight alone may not accurately represent a diamond's visual size.\n\t\t  \t\t\t\t\t")])], 1)], 1), _vm._v(" "), _c('div', {
-    staticClass: "column is-6"
-  }, [_c('center', [_c('p1', {
-    staticClass: "subtitle is-6"
-  }, [_vm._v("\n\t\t  \t\t\t\t\t\tWe recommend considering carat weight along with two other influential characteristics: the overall dimensions and the cut grade of the diamond.\n\t\t  \t\t\t\t\t")])], 1), _vm._v(" "), _c('center', [_c('a', [_vm._v("\n\t\t  \t\t\t\t\t\tLearn More\n\t\t  \t\t\t\t\t")])])], 1), _vm._v(" "), _c('br')]), _vm._v(" "), _c('img', {
-    attrs: {
-      "src": "/front_end/diamond_show/diamond_weight.jpg"
-    }
-  })]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('article', [_c('div', {
-    staticClass: "columns"
-  }, [_c('div', {
-    staticClass: "column is-6"
-  }, [_c('center', [_c('p1', {
-    staticClass: "title is-5 is-primary"
-  }, [_vm._v("\n\t\t\t  \t\t\t\t\t\tDiamond Color: " + _vm._s(_vm.diamond.color) + " \n\t\t\t  \t\t\t\t\t")]), _vm._v(" "), _c('br')], 1)], 1)]), _vm._v(" "), _c('div', {
-    staticClass: "columns"
-  }, [_c('div', {
-    staticClass: "column is-6"
-  }, [_c('center', [_c('p1', {
-    staticClass: "subtitle is-6"
-  }, [_vm._v("\n\t\t  \t\t\t\t\t\tThe highest \"near-colourless\" grade. Colour may be detectable when compared to much higher \"colourless\" grades. Excellent value.\n\t\t  \t\t\t\t\t\t"), _c('center', [_vm._v("\n\t\t  \t\t\t\t\t\tWant to learn even more about colour?\n\t\t  \t\t\t\t\t\t"), _c('a', [_vm._v("\n\t\t  \t\t\t\t\t\tLearn More\n\t\t\t  \t\t\t\t\t")])])], 1)], 1)], 1), _vm._v(" "), _c('div', {
-    staticClass: "column is-6"
-  }, [_c('center', [_c('p1', {
-    staticClass: "subtitle is-6"
-  }, [_c('li', [_vm._v("For the purist, look for a colourless diamond with a grade of D-F for a diamond with no discernible colour.\n\t\t  \t\t\t\t\t\t\t")])]), _vm._v(" "), _c('br'), _vm._v(" "), _c('p1', {
-    staticClass: "subtitle is-6"
-  }, [_c('li', [_vm._v("For an excellent value in a diamond with little or no noticeable colour to the unaided eye, look for a near-colourless grade of G-I\n\t\t  \t\t\t\t\t\t\t")])])], 1)], 1), _vm._v(" "), _c('br')]), _vm._v(" "), _c('img', {
-    attrs: {
-      "src": "/front_end/diamond_show/diamond_color.jpg"
-    }
-  })])])])]), _vm._v(" "), _c('div', {
-    staticClass: "clarity-bg"
-  }, [_c('div', {
-    staticClass: "caption"
-  }, [_c('span', {
-    staticClass: "border"
-  }, [_vm._v("Clarity: " + _vm._s(_vm.diamond.clarity))]), _vm._v(" "), _c('hr'), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7), _vm._v(" "), _vm._m(8)])]), _vm._v(" "), _c('carousel', {
-    attrs: {
-      "carouselItems": _vm.images
-    }
-  })], 1)
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("Wedding Rings Info")]), (_vm.weddingRing.wedding_rings[1]) ? _c('th', [_vm._v("Men")]) : _vm._e(), (_vm.weddingRing.wedding_rings[1]) ? _c('th', [_vm._v("Female")]) : _vm._e()])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Unit Price")]), _c('td', [_vm._v("$" + _vm._s(_vm.weddingRing.wedding_rings[0].unit_price))]), (_vm.weddingRing.wedding_rings[1]) ? _c('td', [_vm._v("$" + _vm._s(_vm.weddingRing.wedding_rings[1].unit_price))]) : _vm._e()]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Metal")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].metal))]), (_vm.weddingRing.wedding_rings[1]) ? _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].metal))]) : _vm._e()]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Side Stone")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].sideStone))]), (_vm.weddingRing.wedding_rings[1]) ? _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].sideStone))]) : _vm._e()])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Stock")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].stock))]), (_vm.weddingRing.wedding_rings[1]) ? _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].stock))]) : _vm._e()]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Name")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].name))]), (_vm.weddingRing.wedding_rings[1]) ? _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].name))]) : _vm._e()]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Description")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].description))]), (_vm.weddingRing.wedding_rings[1]) ? _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].description))]) : _vm._e()])])])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('figure', {
-    staticClass: "image"
-  }, [_c('img', {
+  return _c('thead', [_c('tr', [_c('th', {
     attrs: {
-      "src": "https://www.gia.edu/onlineopinionV5/GIA-Logo.png"
+      "colspan": "3"
     }
-  })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th', [_vm._v("Finish")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th', [_vm._v("Fluorescence")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th', [_vm._v("Certificate")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
-    staticClass: "cut-text"
-  }, [_vm._v("Highest cut grade. Its proportions produce a beautiful balance of fire and sparkle in a diamond.\n\t  \t\t"), _c('br')])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
-    staticClass: "cut-text"
-  }, [_vm._v("Want to learn even more about cut? Learn More"), _c('br')])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
-    staticClass: "cut-text"
-  }, [_vm._v("VS1-VS2: Very slightly included. Minor inclusions ranging from difficult (VS1) to somewhat easy (VS2) to see at 10x magnification.\n\t  \t\t"), _c('br')])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
-    staticClass: "cut-text"
-  }, [_vm._v("\n\t  \t\t\tWant to learn even more about clarity?\n\t  \t\t\t"), _c('br'), _vm._v(" "), _c('a', [_vm._v("\n\t\t\t\t\tLearn More\n\t\t\t\t")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
-    staticClass: "cut-text"
-  }, [_c('li', [_vm._v("Clarity refers to a diamond's relative absence of tiny, natural characteristics known as blemishes and inclusions.\n\t\t\t\t")]), _vm._v(" "), _c('li', [_vm._v("\n\t\t\t\tMany of these characteristics are microscopic and do not affect a diamond's beauty in any discernible way.")])])
+  }, [_vm._v("More Details")])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-4aed16e6", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-22f7acef", module.exports)
   }
 }
 
 /***/ }),
 /* 91 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var disposed = false
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(92),
-  /* template */
-  __webpack_require__(93),
-  /* styles */
-  null,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/frontEnd/engagementRing/index.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(10);
 
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-758c5db9", Component.options)
-  } else {
-    hotAPI.reload("data-v-758c5db9", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
 
-module.exports = Component.exports
+/* harmony default export */ __webpack_exports__["a"] = ({
+	el: '#diamondViewerIndex',
+	router: __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */],
+	props: ['title'],
+	data: function data() {
+		return {
+			source: '/api/diamonds',
+			fetchData: {
+				shape: ['RD', 'PS', 'EM', 'PR', 'MQ', 'CU', 'AC', 'OV', 'HT', 'RA'],
+				color: ['d', 'e', 'f', 'g', 'h', 'i', 'j'],
+				clarity: ['fl', 'if', 'vvs1', 'vvs2', 'vs1', 'vs2', 'si1', 'si2', 'i1'],
+				cut: ['ex', 'vg', 'gd', 'fr', 'na'],
+				polish: ['ex', 'vg', 'gd', 'fr'],
+				symmetry: ['ex', 'vg', 'gd', 'fr'],
+				fluorescence: ['none', 'faint', 'medium', 'strong'],
+				priceRange: ['100', '5000000'],
+				weight: ['0.10', '20']
+			},
+			preset: {
+				shape: ['RD', 'PS', 'EM', 'PR', 'MQ', 'CU', 'AC', 'OV', 'HT', 'RA'],
+				color: ['d', 'e', 'f', 'g', 'h', 'i', 'j'],
+				clarity: ['fl', 'if', 'vvs1', 'vvs2', 'vs1', 'vs2', 'si1', 'si2', 'i1'],
+				cut: ['ex', 'vg', 'gd', 'fr', 'na'],
+				polish: ['ex', 'vg', 'gd', 'fr'],
+				symmetry: ['ex', 'vg', 'gd', 'fr'],
+				fluorescence: ['none', 'faint', 'medium', 'strong'],
+				priceRange: ['100', '5000000'],
+				weight: ['0.10', '20']
+			},
+			onClickedRow: '',
+			showModal: false,
+			showAdvance: false,
+			opened: [],
+			model: {},
+			clickedRows: [],
+			columnsToggle: [{ trans: ['shape', '型狀'], value: 'shape' }, { trans: ['imageLink', '型狀'], value: 'imageLink' }, { trans: ['price', '型狀'], value: 'price' }, { trans: ['weight', '型狀'], value: 'weight' }, { trans: ['color', '型狀'], value: 'color' }, { trans: ['clarity', '型狀'], value: 'clarity' }, { trans: ['cut', '型狀'], value: 'cut' }, { trans: ['polish', '型狀'], value: 'polish' }, { trans: ['symmetry', '型狀'], value: 'symmetry' }, { trans: ['fluorescence', '型狀'], value: 'fluorescence' }, { trans: ['certificate', '型狀'], value: 'certificate' }, { trans: ['lab', '型狀'], value: 'lab' }],
 
+			columns: ['shape', 'imageLink', 'price', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluorescence', 'certificate', 'lab'],
+			query: {
+				page: 1,
+				column: 'price',
+				direction: 'asc',
+				per_page: 10,
+				search_column: 'id',
+				search_operator: 'like',
+				search_input: '',
+				search_conditions: {
+					shape: [{ description: 'RD', clicked: false, display: 'Round' }, { description: 'PS', clicked: false, display: 'Pear' }, { description: 'EM', clicked: false, display: 'Emerald' }, { description: 'PR', clicked: false, display: 'Princess' }, { description: 'MQ', clicked: false, display: 'Marquise' }, { description: 'CU', clicked: false, display: 'Cushion' }, { description: 'AC', clicked: false, display: 'Asscher' }, { description: 'OV', clicked: false, display: 'Oval' }, { description: 'HT', clicked: false, display: 'Heart' }, { description: 'RA', clicked: false, display: 'Radiant' }],
+					color: [{ description: 'D', clicked: false, display: 'D' }, { description: 'E', clicked: false, display: 'E' }, { description: 'F', clicked: false, display: 'F' }, { description: 'G', clicked: false, display: 'G' }, { description: 'H', clicked: false, display: 'H' }, { description: 'I', clicked: false, display: 'I' }, { description: 'J', clicked: false, display: 'J' }],
+					cut: [{ description: 'EX', clicked: false, display: 'Excellent' }, { description: 'VG', clicked: false, display: 'Very Good' }, { description: 'GD', clicked: false, display: 'Good' }],
+					polish: [{ description: 'EX', clicked: false, display: 'Excellent' }, { description: 'VG', clicked: false, display: 'Very Good' }, { description: 'GD', clicked: false, display: 'Good' }],
+					symmetry: [{ description: 'EX', clicked: false, display: 'Excellent' }, { description: 'VG', clicked: false, display: 'Very Good' }, { description: 'GD', clicked: false, display: 'Good' }],
+					fluorescence: [{ description: 'NONE', clicked: false, display: 'None' }, { description: 'FAINT', clicked: false, display: 'Faint' }, { description: 'MEDIUM', clicked: false, display: 'Medium' }, { description: 'STRONG', clicked: false, display: 'Strong' }],
+					clarity: [{ description: 'FL', clicked: false }, { description: 'IF', clicked: false }, { description: 'VVS1', clicked: false }, { description: 'VVS2', clicked: false }, { description: 'VS1', clicked: false }, { description: 'VS2', clicked: false }, { description: 'SI1', clicked: false }, { description: 'SI2', clicked: false }, { description: 'I1', clicked: false }],
+					priceRange: [{ description: 'Price' }, { description: 'minPrice' }]
+				}
+			},
+			operators: {
+				equal: '=',
+				not_equal: '<>',
+				less_than: '<',
+				greater_than: '>',
+				less_than_or_equal_to: '<=',
+				greater_than_or_equal_to: '>=',
+				in: 'IN',
+				like: 'LIKE'
+			}
+		};
+	},
+	created: function created() {
+		this.fetchIndexData();
+	},
+
+	computed: {
+		colorClicked: function colorClicked() {
+			return this.query.search_conditions.color.filter(function (color) {
+				return color.clicked;
+			});
+		}
+	},
+	methods: {
+		clickRow: function clickRow(row, index) {
+			this.onClickedRow = row.id;
+			window.open('gia-loose-diamonds/' + row.id, '_self');
+		},
+		toggle: function toggle(id) {
+			var index = this.model.data.indexOf(id);
+			if (index > -1) {
+				this.model.data.splice(index, 1);
+			} else {
+				this.model.data.push(id);
+			}
+		},
+		moveTo: function moveTo(page) {
+			if (this.query.page + page > 0) {
+				this.query.page = this.query.page + page;
+				this.fetchIndexData();
+			}
+		},
+		filterFalse: function filterFalse(condition) {
+			var checked = this.query.search_conditions[condition].filter(function (condition) {
+				return condition.clicked;
+			});
+			this.filterDescriptions(checked);
+			this.fetchData[condition] = checked;
+
+			this.fetchIndexData();
+		},
+		filterDescriptions: function filterDescriptions(checked) {
+			for (var i = checked.length - 1; i >= 0; i--) {
+				checked[i] = checked[i].description;
+			}
+		},
+		toggleValue: function toggleValue(query, condition, number) {
+			var search_conditions = this.query.search_conditions[condition];
+
+			if (query === false) {
+				search_conditions[number].clicked = true;
+			} else {
+				search_conditions[number].clicked = false;
+			}
+
+			this.filterFalse(condition);
+		},
+
+		// toggleValueToFalseOnce(condition){
+		// 	var search_conditions = this.query.search_conditions[condition]
+		// 	for (var i = search_conditions.length - 1; i >= 0; i--) {
+		// 			search_conditions[i].clicked = false;
+		// 		}
+		// },
+		next: function next() {
+			if (this.model.next_page_url) {
+				this.query.page++;
+				this.fetchIndexData();
+			}
+		},
+		prev: function prev() {
+			if (this.model.prev_page_url) {
+				this.query.page--;
+				this.fetchIndexData();
+			}
+		},
+		toggleOrder: function toggleOrder(column) {
+			if (column === this.query.column) {
+				if (this.query.direction === 'desc') {
+					this.query.direction = 'asc';
+				} else {
+					this.query.direction = 'desc';
+				}
+			} else {
+				this.query.column = column;
+				this.direction = 'asc';
+			}
+			this.fetchIndexData();
+		},
+		fetchIndexData: function fetchIndexData() {
+			var _this = this;
+
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&color=' + (this.fetchData.color.toString() ? this.fetchData.color.toString() : this.preset.color.toString()) + '\n\t\t\t\t\t&clarity=' + (this.fetchData.clarity.toString() ? this.fetchData.clarity.toString() : this.preset.clarity.toString()) + '\n\t\t\t\t\t&cut=' + (this.fetchData.cut.toString() ? this.fetchData.cut.toString() : this.preset.cut.toString()) + '\n\t\t\t\t\t&polish=' + (this.fetchData.polish.toString() ? this.fetchData.polish.toString() : this.preset.polish.toString()) + '\n\t\t\t\t\t&symmetry=' + (this.fetchData.symmetry.toString() ? this.fetchData.symmetry.toString() : this.preset.symmetry.toString()) + '\n\t\t\t\t\t&fluorescence=' + (this.fetchData.fluorescence.toString() ? this.fetchData.fluorescence.toString() : this.preset.fluorescence.toString()) + '\n\t\t\t\t\t&shape=' + (this.fetchData.shape.toString() ? this.fetchData.shape.toString() : this.preset.shape.toString()) + '\n\t\t\t\t\t&price=' + this.fetchData.priceRange + '\n\t\t\t\t\t&weight=' + this.fetchData.weight).then(function (response) {
+				_this.model = response.data.model;
+				_this.model = response.data.model;
+				// Vue.set(vm.$data, 'columns', response.data.columns)
+			}).catch(function () {
+				console.log(response);
+			});
+		}
+	}
+});
 
 /***/ }),
 /* 92 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router__ = __webpack_require__(10);
+
+
+// import Auth from '../../store/auth'
 
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
 
+// import Flash from '../../helpers/flash'
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+	el: '#diamondViewerShow',
+	components: { Appointment: __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue___default.a, Carousel: __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue___default.a },
+	router: __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */],
+	data: function data() {
+		return {
+			// auth: Auth.state,
+			isRemoving: false,
+			appointmentState: false,
+			title: '',
+			diamond: {
+				weight: ''
+			},
+			columns: ['price', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
+
+			storeURL: '/api/diamonds/appointment',
+
+			post: {
+				invoice: {},
+				content: []
+			},
+			invoice: ''
+
+		};
+	},
+
+	watch: {
+		'$route': 'fetchData'
+	},
+	beforeMount: function beforeMount() {
+		this.fetchData();
+	},
+
+	computed: {
+		appointmentTitle: function appointmentTitle() {
+			return this.diamond.weight + 'carat, ' + this.diamond.color + ' color diamond';
+		}
+	},
+	methods: {
+		fetchData: function fetchData() {
+			var _this = this;
+
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/diamonds/' + this.$route.path.slice(23)).then(function (res) {
+				_this.diamond = res.data.diamond;
+			});
+		}
+	}
+});
+
+/***/ }),
+/* 93 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(10);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+	el: '#engagementRings',
+	router: __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */],
 	props: ['title'],
 	data: function data() {
 		return {
@@ -21562,7 +20806,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		},
 		clickRow: function clickRow(row, index) {
 			this.clickedRows.push(index);
-			this.$router.push(this.$route.path + '/' + row.id);
+			window.open(this.$route.path + '/' + row.id, '_self');
 		},
 		toggle: function toggle(id) {
 			var index = this.model.data.indexOf(id);
@@ -21668,404 +20912,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 93 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "box"
-  }, [_c('div', {
-    staticClass: "level"
-  }), _vm._v(" "), _c('nav', [_c('div', {
-    staticClass: "navbar-item is-hidden-mobile"
-  }, [_c('div', {
-    staticClass: "tile is-ancestor"
-  }, [_c('div', {
-    staticClass: "tile is-12"
-  }, [_c('div', {
-    staticClass: "tile is-parent"
-  }, [_c('article', {
-    staticClass: "tile is-child box is-4"
-  }, [_c('div', [_vm._v("Style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
-    return _c('input', {
-      staticClass: "button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.style[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.style[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.style[index].clicked, 'style', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box is-3"
-  }, [_c('div', [_vm._v("Shoulder")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.shoulder), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.shoulder[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.shoulder[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.shoulder[index].clicked, 'shoulder', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box is-3"
-  }, [_c('div', [_vm._v("Claw Prong")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.prong), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.prong[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.prong[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.prong[index].clicked, 'prong', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box is-2"
-  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.customized), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.customized[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.customized[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.customized[index].clicked, 'customized', index)
-        }
-      }
-    })
-  })], 2)])])])])]), _vm._v(" "), _c('nav', [_c('div', {
-    staticClass: "navbar-item is-hidden-desktop is-hidden-tablet is-centered"
-  }, [_c('div', {
-    on: {
-      "click": function($event) {
-        _vm.showModal = !_vm.showModal
-      }
-    }
-  }, [_c('center', [_c('button', {
-    staticClass: "button is-info "
-  }, [_vm._v("Engagement Rings")])]), _vm._v(" "), _c('div', {
-    staticClass: "modal",
-    class: {
-      'is-active': _vm.showModal
-    }
-  }, [_c('div', {
-    staticClass: "modal-background"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "modal-card"
-  }, [_c('section', {
-    staticClass: "modal-card-body",
-    on: {
-      "click": function($event) {
-        _vm.showModal = !_vm.showModal
-      }
-    }
-  }, [_c('div', {
-    staticClass: "tile is-ancestor"
-  }, [_c('div', {
-    staticClass: "tile is-12"
-  }, [_c('div', {
-    staticClass: "tile is-parent"
-  }, [_c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
-    return _c('input', {
-      staticClass: "button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.style[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.style[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.style[index].clicked, 'style', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Shoulder")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.shoulder), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.shoulder[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.shoulder[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.shoulder[index].clicked, 'shoulder', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Claw Prong")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.prong), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.prong[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.prong[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.prong[index].clicked, 'prong', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.customized), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.customized[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.customized[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.customized[index].clicked, 'customized', index)
-        }
-      }
-    })
-  })], 2)])])])]), _vm._v(" "), _vm._m(0)])])], 1)])]), _vm._v(" "), _c('div', {
-    staticClass: "is-hidden-mobile"
-  }, _vm._l((_vm.chunkedItemsDesktop), function(rings, idnex) {
-    return _c('div', {
-      staticClass: "tile is-ancestor"
-    }, _vm._l((rings), function(ring) {
-      return _c('div', {
-        staticClass: "tile is-parent is-3"
-      }, [(ring) ? _c('div', {
-        staticClass: "tile is-child"
-      }, [_c('article', {
-        staticClass: "tile"
-      }, [_c('router-link', {
-        attrs: {
-          "to": _vm.$route.path + '/' + ring.id
-        }
-      }, [(ring.cover) ? _c('img', {
-        attrs: {
-          "src": ("/images/" + (ring.cover))
-        }
-      }) : _vm._e(), _vm._v(" "), _c('center', [(ring.description) ? _c('p', {
-        staticClass: "subtitle"
-      }, [_vm._v("$" + _vm._s(ring.unit_price))]) : _vm._e(), _vm._v(" "), (ring.description) ? _c('p', [_vm._v(_vm._s(ring.description))]) : _vm._e()])], 1)], 1)]) : _vm._e()])
-    }))
-  })), _vm._v(" "), _c('div', {
-    staticClass: "is-hidden-desktop is-hidden-tablet is-centered box"
-  }, _vm._l((_vm.chunkedItemsMobile), function(rings, idnex) {
-    return _c('div', {
-      staticClass: "level is-mobile"
-    }, _vm._l((rings), function(ring) {
-      return _c('div', {
-        staticClass: "level-item"
-      }, [(ring) ? _c('div', [_c('router-link', {
-        attrs: {
-          "to": _vm.$route.path + '/' + ring.id
-        }
-      }, [(ring.cover) ? _c('img', {
-        attrs: {
-          "width": "128",
-          "height": "96",
-          "src": ("/images/" + (ring.cover))
-        }
-      }) : _vm._e(), _vm._v(" "), _c('center', [(ring.description) ? _c('p', {
-        staticClass: "subtitle"
-      }, [_vm._v("$" + _vm._s(ring.unit_price))]) : _vm._e(), _vm._v(" "), (ring.description) ? _c('p', [_vm._v(_vm._s(ring.description))]) : _vm._e()])], 1)], 1) : _vm._e()])
-    }))
-  }))])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('footer', {
-    staticClass: "modal-card-foot"
-  }, [_c('button', {
-    staticClass: "button is-success"
-  }, [_vm._v("Submit")])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-758c5db9", module.exports)
-  }
-}
-
-/***/ }),
 /* 94 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(95),
-  /* template */
-  __webpack_require__(96),
-  /* styles */
-  null,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/frontEnd/engagementRing/show.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] show.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3edd3434", Component.options)
-  } else {
-    hotAPI.reload("data-v-3edd3434", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router__ = __webpack_require__(10);
 // import Auth from '../../store/auth'
+
 
 
 
 // import Flash from '../../helpers/flash'
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["a"] = ({
+	el: '#engagementRingsShow',
 	components: { Appointment: __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue___default.a, Carousel: __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue___default.a },
+	router: __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */],
 	data: function data() {
 		return {
 			// auth: Auth.state,
@@ -22098,7 +20966,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		fetchData: function fetchData() {
 			var _this = this;
 
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/engagementRings/' + this.$route.params.id).then(function (res) {
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/engagementRings/' + this.$route.fullPath.slice(21)).then(function (res) {
 				_this.engagementRing = res.data.model;
 				_this.customerItems = res.data.posts.invPosts;
 			});
@@ -22107,1222 +20975,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 96 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "level"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "tile box"
-  }, [_c('div', {
-    staticClass: "tile notification is-primary"
-  }, [_c('p', {
-    staticClass: "title"
-  }, [_vm._v(_vm._s(_vm.engagementRing.shoulder) + " Shoulder " + _vm._s(_vm.engagementRing.prong) + " Engagement Ring")])])]), _vm._v(" "), _c('div', {
-    staticClass: "tile is-ancestor "
-  }, [_c('div', {
-    staticClass: "tile is-parent is-7"
-  }, [_c('div', {
-    staticClass: "tile is-child box"
-  }, [_c('figure', {
-    staticClass: "image",
-    on: {
-      "click": function($event) {
-        _vm.carouselState = !_vm.carouselState
-      }
-    }
-  }, [_c('carousel', {
-    attrs: {
-      "carouselActive": _vm.carouselState,
-      "items": 4,
-      "height": '500',
-      "width": '100%',
-      "carouselUpperItems": _vm.engagementRing,
-      "carouselItems": _vm.customerItems,
-      "carouselTitle": "customer jewellries"
-    },
-    on: {
-      "active": function($event) {
-        _vm.carouselState = !_vm.carouselState
-      }
-    }
-  })], 1)])]), _vm._v(" "), _c('div', {
-    staticClass: "tile is-parent is-5"
-  }, [_c('div', {
-    staticClass: "tile is-child box"
-  }, [_c('div', {
-    staticClass: "tile is-child"
-  }, [_c('article', [_c('center', [_c('button', {
-    staticClass: "button is-info",
-    on: {
-      "click": function($event) {
-        _vm.appointmentState = !_vm.appointmentState
-      }
-    }
-  }, [_vm._v("Appointment")]), _vm._v(" "), _c('appointment', {
-    attrs: {
-      "appTitle": _vm.appointmentTitle,
-      "appointActive": _vm.appointmentState,
-      "columns": _vm.columns,
-      "isProcessing": false
-    },
-    on: {
-      "active": function($event) {
-        _vm.appointmentState = !_vm.appointmentState
-      }
-    },
-    model: {
-      value: (_vm.engagementRing),
-      callback: function($$v) {
-        _vm.engagementRing = $$v
-      },
-      expression: "engagementRing"
-    }
-  })], 1), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("\n\t\t\t\t\tFor more detailed information, can reach GIA website query：\n\t\t\t\t\t")])], 1)]), _vm._v(" "), _c('article', [_c('table', {
-    staticClass: "table is-striped is-fullwidth"
-  }, [_vm._m(0), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Unit Price")]), _c('td', [_vm._v("$" + _vm._s(_vm.engagementRing.unit_price))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Shoulder")]), _c('td', [_vm._v(_vm._s(_vm.engagementRing.shoulder))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Prong")]), _c('td', [_vm._v(_vm._s(_vm.engagementRing.prong))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Side Stone")]), _c('td', [_vm._v(_vm._s(_vm.engagementRing.sideStone))])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Stock")]), _c('td', [_vm._v(_vm._s(_vm.engagementRing.stock))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Name")]), _c('td', [_vm._v(_vm._s(_vm.engagementRing.name))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Description")]), _c('td', [_vm._v(_vm._s(_vm.engagementRing.description))])])])])])])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th', [_vm._v("Engagement Ring Info")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th', [_vm._v("More Details")])])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3edd3434", module.exports)
-  }
-}
-
-/***/ }),
-/* 97 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(98),
-  /* template */
-  __webpack_require__(99),
-  /* styles */
-  null,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/frontEnd/weddingRing/index.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7feef7d0", Component.options)
-  } else {
-    hotAPI.reload("data-v-7feef7d0", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 98 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-
-	props: ['title'],
-	data: function data() {
-		return {
-			source: '/api/weddingRings',
-			fetchData: {
-				style: ['Japanese', 'Vintage', '1'],
-				metal: ['18KW', '18KR', 'PT', 'Mixed'],
-				customized: [1, 0],
-				sideStone: [1, 0],
-				gender: ['f', 'm', 1]
-			},
-			preset: {
-				style: ['Japanese', 'Vintage', '1'],
-				metal: ['18KW', '18KR', 'PT', 'Mixed'],
-				customized: [1, 0],
-				sideStone: [1, 0],
-				gender: ['f', 'm', 1]
-			},
-			showModal: false,
-			showAdvance: false,
-			opened: [],
-			model: {},
-			chunkedItemsDesktop: [],
-			chunkedItemsMobile: [],
-			sameStock: [],
-			clickedRows: [],
-			columns: ['style', 'shoulder', 'prong'],
-			query: {
-				page: 1,
-				column: 'style',
-				direction: 'asc',
-				per_page: '10',
-				search_column: 'id',
-				search_operator: 'like',
-				search_input: '',
-				search_conditions: {
-					style: [{ description: 'Japanese', clicked: false, display: 'Japanese' }, { description: 'Vintage', clicked: false, display: 'Vintage' }],
-					metal: [{ description: '18KW', clicked: false, display: '18K White' }, { description: '18KR', clicked: false, display: '18K Rose Gold' }, { description: 'PT', clicked: false, display: 'PT950/900' }, { description: 'Mixed', clicked: false, display: 'Mixed' }],
-					sideStone: [{ description: 1, clicked: false, display: 'True' }, { description: 0, clicked: false, display: 'False' }],
-					customized: [{ description: 1, clicked: false, display: 'True' }, { description: 0, clicked: false, display: 'False' }],
-					gender: [{ description: 1, clicked: false, display: 'Men' }, { description: 0, clicked: false, display: 'Female' }]
-				}
-			},
-			operators: {
-				equal: '=',
-				not_equal: '<>',
-				less_than: '<',
-				greater_than: '>',
-				less_than_or_equal_to: '<=',
-				greater_than_or_equal_to: '>=',
-				in: 'IN',
-				like: 'LIKE'
-			}
-		};
-	},
-	created: function created() {
-		this.fetchIndexData();
-	},
-
-	computed: {
-		styleClicked: function styleClicked() {
-			return this.query.search_conditions.style.filter(function (style) {
-				return style.clicked;
-			});
-		}
-	},
-	methods: {
-		toggleCustomized: function toggleCustomized() {
-			this.fetchData.customized = !this.fetchData.customized;
-			this.fetchIndexData();
-		},
-		toggleSideStone: function toggleSideStone() {
-			this.fetchData.sideStone = !this.fetchData.sideStone;
-			this.fetchIndexData();
-		},
-		clickRow: function clickRow(row, index) {
-			this.clickedRows.push(index);
-			this.$router.push(this.$route.path + '/' + row.id);
-		},
-		toggle: function toggle(id) {
-			var index = this.model.data.indexOf(id);
-			if (index > -1) {
-				this.model.data.splice(index, 1);
-			} else {
-				this.model.data.push(id);
-			}
-		},
-		moveTo: function moveTo(page) {
-			if (this.query.page + page > 0) {
-				this.query.page = this.query.page + page;
-				this.fetchIndexData();
-			}
-		},
-		filterFalse: function filterFalse(condition) {
-			var checked = this.query.search_conditions[condition].filter(function (condition) {
-				return condition.clicked;
-			});
-			this.filterDescriptions(checked);
-			this.fetchData[condition] = checked;
-
-			this.fetchIndexData();
-		},
-		filterDescriptions: function filterDescriptions(checked) {
-			for (var i = checked.length - 1; i >= 0; i--) {
-				checked[i] = checked[i].description;
-			}
-		},
-		toggleValue: function toggleValue(query, condition, number) {
-			var search_conditions = this.query.search_conditions[condition];
-
-			if (query === false) {
-				search_conditions[number].clicked = true;
-			} else {
-				search_conditions[number].clicked = false;
-			}
-
-			this.filterFalse(condition);
-		},
-
-		// toggleValueToFalseOnce(condition){
-		// 	var search_conditions = this.query.search_conditions[condition]
-		// 	for (var i = search_conditions.length - 1; i >= 0; i--) {
-		// 			search_conditions[i].clicked = false;
-		// 		}
-		// },
-		next: function next() {
-			if (this.model.next_page_url) {
-				this.query.page++;
-				this.fetchIndexData();
-			}
-		},
-		prev: function prev() {
-			if (this.model.prev_page_url) {
-				this.query.page--;
-				this.fetchIndexData();
-			}
-		},
-		toggleOrder: function toggleOrder(column) {
-			if (column === this.query.column) {
-				if (this.query.direction === 'desc') {
-					this.query.direction = 'asc';
-				} else {
-					this.query.direction = 'desc';
-				}
-			} else {
-				this.query.column = column;
-				this.direction = 'asc';
-			}
-			this.fetchIndexData();
-		},
-		chunkItems: function chunkItems() {
-			var filtered = [];
-			var chunk1 = [];
-			var chunk2 = [];
-
-			filtered = this.model.data.filter(function (data) {
-				return data.wedding_rings.length > 0;
-			});
-			for (var i = 0; filtered.length - 1 >= i;) {
-				chunk1.push(filtered.slice(i, i + 4));
-				i += 4;
-			}
-			this.chunkedItemsDesktop = chunk1;
-
-			for (var i = 0; filtered.length - 1 >= i;) {
-				chunk2.push(filtered.slice(i, i + 2));
-				i += 2;
-			}
-			this.chunkedItemsMobile = chunk2;
-
-			return;
-		},
-		fetchIndexData: function fetchIndexData() {
-			var _this = this;
-
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])(this.source + '\n\t\t\t\t\t?column=' + this.query.column + '\n\t\t\t\t\t&direction=' + this.query.direction + '\n\t\t\t\t\t&page=' + this.query.page + '\n\t\t\t\t\t&per_page=' + this.query.per_page + '\n\t\t\t\t\t&search_column=' + this.query.search_column + '\n\t\t\t\t\t&search_operator=' + this.query.search_operator + '\n\t\t\t\t\t&search_input=' + this.query.search_input + '\n\t\t\t\t\t&customized=' + (this.fetchData.customized.toString() ? this.fetchData.customized : this.preset.customized.toString()) + '\n\t\t\t\t\t&sideStone=' + (this.fetchData.sideStone.toString() ? this.fetchData.sideStone : this.preset.sideStone.toString()) + '\n\t\t\t\t\t&gender=' + (this.fetchData.gender.toString() ? this.fetchData.gender : this.preset.gender.toString()) + '\n\t\t\t\t\t&style=' + (this.fetchData.style.toString() ? this.fetchData.style.toString() : this.preset.style.toString()) + '\n\t\t\t\t\t&metal=' + (this.fetchData.metal.toString() ? this.fetchData.metal.toString() : this.preset.metal.toString()) + '\n\t\t\t\t\t').then(function (response) {
-				_this.model = response.data.model;
-				// Vue.set(vm.$data, 'columns', response.data.columns)
-				_this.chunkItems();
-				_this.pairUp();
-			}).catch(function () {
-				console.log(response);
-			});
-		}
-	}
-});
-
-/***/ }),
-/* 99 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "box"
-  }, [_c('div', {
-    staticClass: "level"
-  }), _vm._v(" "), _c('nav', [_c('div', {
-    staticClass: "navbar-item is-hidden-mobile"
-  }, [_c('div', {
-    staticClass: "tile is-ancestor"
-  }, [_c('div', {
-    staticClass: "tile is-12"
-  }, [_c('div', {
-    staticClass: "tile is-parent"
-  }, [_c('article', {
-    staticClass: "tile is-child box is-4"
-  }, [_c('div', [_vm._v("Style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
-    return _c('input', {
-      staticClass: "button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.style[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.style[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.style[index].clicked, 'style', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box is-4"
-  }, [_c('div', [_vm._v("Metal")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.metal), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.metal[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.metal[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.metal[index].clicked, 'metal', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box is-2"
-  }, [_c('div', [_vm._v("Side stone")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.sideStone), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.sideStone[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.sideStone[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.sideStone[index].clicked, 'sideStone', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box is-2"
-  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.customized), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.customized[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.customized[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.customized[index].clicked, 'customized', index)
-        }
-      }
-    })
-  })], 2)])])])])]), _vm._v(" "), _c('nav', [_c('div', {
-    staticClass: "navbar-item is-hidden-desktop is-hidden-tablet is-centered"
-  }, [_c('div', {
-    on: {
-      "click": function($event) {
-        _vm.showModal = !_vm.showModal
-      }
-    }
-  }, [_c('center', [_c('button', {
-    staticClass: "button is-info "
-  }, [_vm._v("wedding Rings")])]), _vm._v(" "), _c('div', {
-    staticClass: "modal",
-    class: {
-      'is-active': _vm.showModal
-    }
-  }, [_c('div', {
-    staticClass: "modal-background"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "modal-card"
-  }, [_c('section', {
-    staticClass: "modal-card-body",
-    on: {
-      "click": function($event) {
-        _vm.showModal = !_vm.showModal
-      }
-    }
-  }, [_c('div', {
-    staticClass: "tile is-ancestor"
-  }, [_c('div', {
-    staticClass: "tile is-12"
-  }, [_c('div', {
-    staticClass: "tile is-parent"
-  }, [_c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Style")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.style), function(value, index) {
-    return _c('input', {
-      staticClass: "button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.style[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.style[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.style[index].clicked, 'style', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Metal")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.metal), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.metal[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.metal[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.metal[index].clicked, 'metal', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Side stone")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.sideStone), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.sideStone[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.sideStone[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.sideStone[index].clicked, 'sideStone', index)
-        }
-      }
-    })
-  })], 2), _vm._v(" "), _c('article', {
-    staticClass: "tile is-child box"
-  }, [_c('div', [_vm._v("Custom-make")]), _vm._v(" "), _vm._l((_vm.query.search_conditions.customized), function(value, index) {
-    return _c('input', {
-      staticClass: " button ",
-      class: {
-        'is-info active': _vm.query.search_conditions.customized[index].clicked
-      },
-      attrs: {
-        "type": "button",
-        "value": _vm.query.search_conditions.customized[index].display
-      },
-      on: {
-        "click": function($event) {
-          _vm.toggleValue(_vm.query.search_conditions.customized[index].clicked, 'customized', index)
-        }
-      }
-    })
-  })], 2)])])])]), _vm._v(" "), _vm._m(0)])])], 1)])]), _vm._v(" "), _c('div', {
-    staticClass: "is-hidden-mobile"
-  }, _vm._l((_vm.chunkedItemsDesktop), function(rings, idnex) {
-    return _c('div', {
-      staticClass: "tile is-ancestor"
-    }, _vm._l((rings), function(ring) {
-      return _c('div', {
-        staticClass: "tile is-parent is-3"
-      }, [(ring.wedding_rings[0]) ? _c('div', {
-        staticClass: "tile is-child"
-      }, [_c('article', {
-        staticClass: "tile"
-      }, [_c('router-link', {
-        attrs: {
-          "to": _vm.$route.path + '/' + ring.id
-        }
-      }, [(ring.wedding_rings[0].cover) ? _c('img', {
-        attrs: {
-          "src": ("/images/" + (ring.wedding_rings[0].cover))
-        }
-      }) : _vm._e(), _vm._v(" "), _c('center', [_c('div', {
-        staticClass: "level"
-      }, [_c('div', {
-        staticClass: "level-item is-left"
-      }, [(ring.wedding_rings[0].unit_price) ? _c('p', {
-        staticClass: "subtitle"
-      }, [_vm._v("$" + _vm._s(ring.wedding_rings[0].unit_price))]) : _vm._e()]), _vm._v(" "), (ring.wedding_rings[1]) ? _c('div', {
-        staticClass: "level-item is-right"
-      }, [(ring.wedding_rings[1].unit_price) ? _c('p', {
-        staticClass: "subtitle"
-      }, [_vm._v("$" + _vm._s(ring.wedding_rings[1].unit_price))]) : _vm._e()]) : _vm._e()]), _vm._v(" "), _c('div', {
-        staticClass: "level"
-      }, [_c('div', {
-        staticClass: "level-item is-left"
-      }, [(ring.wedding_rings[0].description) ? _c('p', [_vm._v(_vm._s(ring.wedding_rings[0].description))]) : _vm._e()])])])], 1)], 1)]) : _vm._e()])
-    }))
-  })), _vm._v(" "), _c('div', {
-    staticClass: "is-hidden-desktop is-hidden-tablet is-centered box"
-  }, _vm._l((_vm.chunkedItemsMobile), function(rings, idnex) {
-    return _c('div', {
-      staticClass: "level is-mobile"
-    }, _vm._l((rings), function(ring) {
-      return _c('div', {
-        staticClass: "level-item"
-      }, [(ring.wedding_rings[0]) ? _c('div', [_c('router-link', {
-        attrs: {
-          "to": _vm.$route.path + '/' + ring.id
-        }
-      }, [(ring.wedding_rings[0].cover) ? _c('img', {
-        attrs: {
-          "width": "128",
-          "height": "96",
-          "src": ("/images/" + (ring.wedding_rings[0].cover))
-        }
-      }) : _vm._e(), _vm._v(" "), _c('center', [_c('div', {
-        staticClass: "level"
-      }, [_c('div', {
-        staticClass: "level-item is-left"
-      }, [(ring.wedding_rings[0].unit_price) ? _c('p', {
-        staticClass: "subtitle"
-      }, [_vm._v("$" + _vm._s(ring.wedding_rings[0].unit_price))]) : _vm._e()]), _vm._v(" "), (ring.wedding_rings[1]) ? _c('div', {
-        staticClass: "level-item is-right"
-      }, [(ring.wedding_rings[1].unit_price) ? _c('p', {
-        staticClass: "subtitle"
-      }, [_vm._v("$" + _vm._s(ring.wedding_rings[1].unit_price))]) : _vm._e()]) : _vm._e()]), _vm._v(" "), _c('div', {
-        staticClass: "level"
-      }, [_c('div', {
-        staticClass: "level-item is-left"
-      }, [(ring.wedding_rings[0].description) ? _c('p', [_vm._v("$" + _vm._s(ring.wedding_rings[0].description))]) : _vm._e()]), _vm._v(" "), (ring.wedding_rings[1]) ? _c('div', {
-        staticClass: "level-item is-right"
-      }, [(ring.wedding_rings[1].description) ? _c('p', [_vm._v("$" + _vm._s(ring.wedding_rings[1].description))]) : _vm._e()]) : _vm._e()])])], 1)], 1) : _vm._e()])
-    }))
-  }))])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('footer', {
-    staticClass: "modal-card-foot"
-  }, [_c('button', {
-    staticClass: "button is-success"
-  }, [_vm._v("Submit")])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-7feef7d0", module.exports)
-  }
-}
-
-/***/ }),
-/* 100 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(101)
-}
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(103),
-  /* template */
-  __webpack_require__(104),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/chillkwong/code/TD/resources/assets/js/views/frontEnd/weddingRing/show.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] show.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-22f7acef", Component.options)
-  } else {
-    hotAPI.reload("data-v-22f7acef", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 101 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(102);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(8)("001174e2", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-22f7acef\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-22f7acef\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 102 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\nbody, html {\n  height: 100%;\n  margin: 0;\n  color: #777;\n}\n.cut-bg, .clarity-bg, .bgimg-3 {\n  position: relative;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.cut-bg {\n    /* The image used */\n    background-image: url(\"/front_end/diamond_show/diamond_cut.jpg\");\n\n    /* Full height */\n    height: 100%;\n}\n.clarity-bg {\n    /* The image used */\n    background-image: url(\"/front_end/diamond_show/diamond_clarity.jpg\");\n\n    /* Full height */\n    height: 100%;\n}\n.caption {\n  left: 0;\n  top: 50%;\n  width: 100%;\n  text-align: left;\n  color: #000;\n  padding: 80px;\n}\n.caption span.border {\n  color: #fff;\n  font-size: 25px;\n  border: 40px;\n}\n.caption span.cut-text {\n  font-weight: bold;\n  width: 80px;\n  text-align: left;\n  color: #fff;\n  font-size: 15px;\n  border: 40px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 103 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_appointment_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-// import Auth from '../../store/auth'
-
-
-
-// import Flash from '../../helpers/flash'
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-	components: { Appointment: __WEBPACK_IMPORTED_MODULE_1__components_appointment_vue___default.a, Carousel: __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue___default.a },
-	data: function data() {
-		return {
-			// auth: Auth.state,
-			isRemoving: false,
-			carouselState: false,
-			appointmentState: false,
-			title: '',
-			weddingRing: '',
-			columns: ['unit_price', 'metal', 'sideStone', 'stock', 'name', 'description'],
-
-			storeURL: '',
-			customerItems: ''
-		};
-	},
-
-	watch: {
-		'$route': 'fetchData'
-	},
-	beforeMount: function beforeMount() {
-		this.fetchData();
-	},
-
-	computed: {
-		appointmentTitle: function appointmentTitle() {
-			return this.weddingRing.shoulder + ' shoulder, ' + this.weddingRing.prong + '  weddingRing';
-		},
-		combinedWeddingRings: function combinedWeddingRings() {
-			var obj = [];
-			obj.push(this.weddingRing.wedding_rings[0]);
-
-			if (this.weddingRing.wedding_rings[1]) {
-				obj.push(this.weddingRing.wedding_rings[1]);
-			}
-			return obj;
-		}
-	},
-	methods: {
-		fetchData: function fetchData() {
-			var _this = this;
-
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/weddingRings/' + this.$route.params.id).then(function (res) {
-				_this.weddingRing = res.data.model;
-				_this.customerItems = res.data.posts.invPosts;
-			});
-		}
-	}
-});
-
-/***/ }),
-/* 104 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "level"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "tile box"
-  }, [_c('div', {
-    staticClass: "tile notification is-primary"
-  }, [_c('p', {
-    staticClass: "title"
-  }, [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].description) + " Wedding Rings")])])]), _vm._v(" "), _c('div', {
-    staticClass: "tile is-ancestor "
-  }, [_c('div', {
-    staticClass: "tile is-parent is-7"
-  }, [_c('div', {
-    staticClass: "tile is-child box"
-  }, [_c('figure', {
-    staticClass: "image",
-    on: {
-      "click": function($event) {
-        _vm.carouselState = !_vm.carouselState
-      }
-    }
-  }, [_c('carousel', {
-    attrs: {
-      "carouselActive": _vm.carouselState,
-      "items": 4,
-      "height": '500',
-      "width": '100%',
-      "carouselUpperItems": _vm.combinedWeddingRings,
-      "carouselItems": _vm.customerItems,
-      "carouselTitle": "customer jewellries"
-    },
-    on: {
-      "active": function($event) {
-        _vm.carouselState = !_vm.carouselState
-      }
-    }
-  })], 1)])]), _vm._v(" "), _c('div', {
-    staticClass: "tile is-parent is-5"
-  }, [_c('div', {
-    staticClass: "tile is-child box"
-  }, [_c('div', {
-    staticClass: "tile is-child"
-  }, [_c('article', [_c('center', [_c('button', {
-    staticClass: "button is-info",
-    on: {
-      "click": function($event) {
-        _vm.appointmentState = !_vm.appointmentState
-      }
-    }
-  }, [_vm._v("Appointment")]), _vm._v(" "), _c('appointment', {
-    attrs: {
-      "appTitle": _vm.appointmentTitle,
-      "appointActive": _vm.appointmentState,
-      "columns": _vm.columns,
-      "isProcessing": false
-    },
-    on: {
-      "active": function($event) {
-        _vm.appointmentState = !_vm.appointmentState
-      }
-    },
-    model: {
-      value: (_vm.weddingRing.wedding_rings[0]),
-      callback: function($$v) {
-        _vm.$set(_vm.weddingRing.wedding_rings, 0, $$v)
-      },
-      expression: "weddingRing.wedding_rings[0]"
-    }
-  })], 1), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("\n\t\t\t\t\tFor more detailed information, can reach GIA website query：\n\t\t\t\t\t")])], 1)]), _vm._v(" "), _c('article', [_c('table', {
-    staticClass: "table is-striped is-fullwidth"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("Wedding Rings Info")]), (_vm.weddingRing.wedding_rings[1]) ? _c('th', [_vm._v("Men")]) : _vm._e(), (_vm.weddingRing.wedding_rings[1]) ? _c('th', [_vm._v("Female")]) : _vm._e()])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Unit Price")]), _c('td', [_vm._v("$" + _vm._s(_vm.weddingRing.wedding_rings[0].unit_price))]), (_vm.weddingRing.wedding_rings[1]) ? _c('td', [_vm._v("$" + _vm._s(_vm.weddingRing.wedding_rings[1].unit_price))]) : _vm._e()]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Metal")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].metal))]), (_vm.weddingRing.wedding_rings[1]) ? _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].metal))]) : _vm._e()]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Side Stone")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].sideStone))]), (_vm.weddingRing.wedding_rings[1]) ? _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].sideStone))]) : _vm._e()])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Stock")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].stock))]), (_vm.weddingRing.wedding_rings[1]) ? _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].stock))]) : _vm._e()]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Name")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].name))]), (_vm.weddingRing.wedding_rings[1]) ? _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].name))]) : _vm._e()]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Description")]), _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[0].description))]), (_vm.weddingRing.wedding_rings[1]) ? _c('td', [_vm._v(_vm._s(_vm.weddingRing.wedding_rings[1].description))]) : _vm._e()])])])])])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th', {
-    attrs: {
-      "colspan": "3"
-    }
-  }, [_vm._v("More Details")])])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-22f7acef", module.exports)
-  }
-}
-
-/***/ }),
-/* 105 */,
-/* 106 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */
+/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23333,18 +20986,17 @@ if (false) {
 	el: '#buyingProcedure',
 	data: function data() {
 		return {
-			trans: []
+			activedSubTab: 'Appointment First'
 		};
 	},
 
 	watch: {
 		'$route': 'fetchData'
 	},
-	beforeMount: function beforeMount() {
-		this.fetchData();
-	},
-
 	methods: {
+		activeSubTab: function activeSubTab(tab) {
+			this.activedSubTab = tab;
+		},
 		fetchData: function fetchData() {
 			var _this = this;
 
@@ -23354,6 +21006,12 @@ if (false) {
 		}
 	}
 });
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

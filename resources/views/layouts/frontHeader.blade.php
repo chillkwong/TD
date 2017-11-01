@@ -338,14 +338,14 @@
             <li :class="{'is-active': activeTab=='about-us'}"><a href=" {{url(app()->getLocale())}}/about-us">{{trans('frontHeader.About Us')}}</a></li>
           </ul>
           <div class="tabs">
-                <ul v-if="activeTab=='gia-loose-diamonds' || activeTab=='' ">
+                <ul v-if="activeTab=='gia-loose-diamonds' || activeTab.includes('gia-loose-diamonds/') ">
                   <li ><a>{{__('frontHeader.Round Diamonds')}}</a></li>
                   <li ><a>{{__('frontHeader.Fancy Cut Diamonds')}}</a></li>
                   <li ><a>{{__('frontHeader.Fancy Color Diamonds')}}</a></li>
                 
                 </ul>
 
-                <ul v-if="activeTab=='engagement-rings'">
+                <ul v-if="activeTab=='engagement-rings' || activeTab.includes('engagement-rings/')">
                   <li ><a>{{__('frontHeader.Solitaire Ring')}}</a></li>
                   <li ><a>{{__('frontHeader.Side-stone Ring')}}</a></li>
                   <li ><a>{{__('frontHeader.Halo Ring')}}</a></li>
@@ -366,7 +366,7 @@
                  
                 </ul>
 
-                <ul v-if="activeTab=='about-us'">
+                <ul v-if="activeTab=='about-us' || activeTab=='buying-procedure'">
                   <li ><a>{{__('frontHeader.About Us')}}</a></li>
                   <li ><a href="buying-procedure">{{__('frontHeader.Buying Procedure')}}</a></li>
                  

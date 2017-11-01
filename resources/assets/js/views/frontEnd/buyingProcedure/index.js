@@ -4,16 +4,16 @@ export default {
 	el: '#buyingProcedure',
 	data(){
 		return {
-			trans: []
+			activedSubTab: 'Appointment First',
 		}
 	},
 	watch:{
 		'$route': 'fetchData'
 	},
-	beforeMount(){
-		this.fetchData()
-	},
 	methods:{
+		activeSubTab(tab){
+			this.activedSubTab = tab
+		},
 		fetchData(){
 			get(`/api/buyingProcedure`)
 			.then((res)=>{

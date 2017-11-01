@@ -31,7 +31,7 @@ class WeddingRingPairController extends Controller
     {
     	return response()
     		->json([
-                'model' =>WeddingRingPair::orderBy('created_at','desc')->with(['weddingRings'=>function($query){
+                'model' =>WeddingRingPair::orderBy('created_at','desc')->has('weddingRings')->with(['weddingRings'=>function($query){
 
                             $query
                                 ->orderBy(request()->column, request()->direction)

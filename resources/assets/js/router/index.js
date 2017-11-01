@@ -45,13 +45,13 @@ import CustomerJewShow from '../views/frontEnd/customerJewellry/show.vue'
 // import CustomerJewForm from '../views/customerJewellry/form.vue'
 
 //Diamonds
-import DiamondViewer from '../views/frontEnd/diamondViewer/index.vue'
-import DiamondShow from '../views/frontEnd/diamondViewer/show.vue'
+// import DiamondViewer from '../views/frontEnd/diamondViewer/index.vue'
+// import DiamondShow from '../views/frontEnd/diamondViewer/show.vue'
 
 
 //Engagement Rings
-import EngagementRingIndex from '../views/frontEnd/engagementRing/index.vue'
-import EngagementRingShow from '../views/frontEnd/engagementRing/show.vue'
+// import EngagementRingIndex from '../views/frontEnd/engagementRing/index.vue'
+// import EngagementRingShow from '../views/frontEnd/engagementRing/show.vue'
 // import CustomerJewForm from '../views/customerJewellry/form.vue'
 
 
@@ -88,12 +88,12 @@ const router = new VueRouter({
 		{path:'',  },
 		// {path:'/posts/:id', component:PostIndex },
 
-		{path: 'customer-jewellries', component: CustomerJewIndex},
+		// {path: 'customer-jewellries', component: CustomerJewIndex},
 		{path: 'customer-jewellries/:id', component: CustomerJewShow},
 
 		//diamonds
-		{path: 'gia-loose-diamonds/', component: DiamondViewer},
-		{path: 'gia-loose-diamonds/:id', component: DiamondShow},
+		// {path: 'gia-loose-diamonds/', component: DiamondViewer},
+		// {path: 'gia-loose-diamonds/:id', component: DiamondShow},
 	
 		]},
 
@@ -106,12 +106,12 @@ const router = new VueRouter({
 		{path: 'customer-jewellries/:id', component: CustomerJewShow},
 
 		//diamonds
-		{path: 'gia-loose-diamonds/', component: DiamondViewer},
-		{path: 'gia-loose-diamonds/:id', component: DiamondShow},
+		// {path: 'gia-loose-diamonds/', component: DiamondViewer},
+		// {path: 'gia-loose-diamonds/:id', component: DiamondShow},
 
 		//engagement rings
-		{path: 'engagement-rings/', component: EngagementRingIndex},
-		{path: 'engagement-rings/:id', component: EngagementRingShow},
+		// {path: 'engagement-rings/', component: EngagementRingIndex},
+		// {path: 'engagement-rings/:id', component: EngagementRingShow},
 
 		//Wedding rings
 		{path: 'wedding-rings/', component: WeddingRingIndex},
@@ -131,12 +131,12 @@ const router = new VueRouter({
 		{path: 'customer-jewellries/:id', component: CustomerJewShow},
 
 		//diamonds
-		{path: 'gia-loose-diamonds/', component: DiamondViewer},
-		{path: 'gia-loose-diamonds/:id', component: DiamondShow},
+		// {path: 'gia-loose-diamonds/', component: DiamondViewer},
+		// {path: 'gia-loose-diamonds/:id', component: DiamondShow},
 
 		//engagement rings
-		{path: 'engagement-rings/', component: EngagementRingIndex},
-		{path: 'engagement-rings/:id', component: EngagementRingShow},
+		// {path: 'engagement-rings/', component: EngagementRingIndex},
+		// {path: 'engagement-rings/:id', component: EngagementRingShow},
 	
 		]},
 
@@ -145,16 +145,16 @@ const router = new VueRouter({
 		children:[
 		{path:'', },
 		
-		{path: 'customer-jewellries', component: CustomerJewIndex},
+		// {path: 'customer-jewellries', component: CustomerJewIndex},
 		{path: 'customer-jewellries/:id', component: CustomerJewShow},
 		
 		//diamonds
-		{path: 'gia-loose-diamonds/', component: DiamondViewer},
-		{path: 'gia-loose-diamonds/:id', component: DiamondShow},
+		// {path: 'gia-loose-diamonds/', component: DiamondViewer},
+		// {path: 'gia-loose-diamonds/:id', component: DiamondShow},
 
 		//engagement rings
-		{path: 'engagement-rings/', component: EngagementRingIndex},
-		{path: 'engagement-rings/:id', component: EngagementRingShow},
+		// {path: 'engagement-rings/', component: EngagementRingIndex},
+		// {path: 'engagement-rings/:id', component: EngagementRingShow},
 	
 		]},
 

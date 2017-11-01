@@ -199,17 +199,17 @@
 
 <script>
 
-function setIframeSrc() {
-  var s = "/images";
-  var iframe1 = document.getElementById('iframe1');
-  if ( -1 == navigator.userAgent.indexOf("MSIE") ) {
-    iframe1.src = s;
-  }
-  else {
-    iframe1.location = s;
-  }
-}
-setTimeout(setIframeSrc, 5);
+// function setIframeSrc() {
+//   var s = "/images";
+//   var iframe1 = document.getElementById('iframe1');
+//   if ( -1 == navigator.userAgent.indexOf("MSIE") ) {
+//     iframe1.src = s;
+//   }
+//   else {
+//     iframe1.location = s;
+//   }
+// }
+// setTimeout(setIframeSrc, 5);
 
 export default {
     name : 'carousel',

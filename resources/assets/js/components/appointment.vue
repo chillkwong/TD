@@ -1,9 +1,9 @@
 <template>
-	<div class="modal" :class="{'is-active': appointActive} ">
+	<div class="modal" :class="{'is-active': active} ">
   <div class="modal-background" @click="$emit('active',null)"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">{{appTitle}}</p>
+      <p class="modal-card-title">{{title}}</p>
       <button class="delete" aria-label="close" @click="$emit('active', null)"></button>
     </header>
     <section class="modal-card-body">
@@ -20,7 +20,8 @@
       <input type="text" name="name" class="input" v-model="form.name" placeholder="your name" required>
       <input type="text" name="phone" class="input" v-model="form.phone" placeholder="your Phone No." required> 
       <div>
-      <button class="button is-success " :class="{'is-loading': isProcessing}" @submit.stop="save" >Appointment</button>
+        <a class="button" :href="locale + '/about-us'">Contact Us</a>
+      <button class="button is-success " :class="{'is-loading': processing}" @submit.stop="save" >Appointment</button>
       </div>
       </form>
     </section>
@@ -42,10 +43,11 @@
 			
 				default: null
 			},
-      appointActive: false,
-      appTitle: '',
+      active: false,
+      title: '',
       columns:'',
-      isProcessing: '',
+      processing: '',
+
 		},
     data(){
       return {
@@ -56,6 +58,7 @@
             storeURL:'wwww.tingdiamond.com'+this.$route.fullPath,
           
         },
+        locale: this.$route.fullPath.slice(0,3),
 
       }
     },
@@ -87,7 +90,7 @@
               this.error = err.response.data
             }
           })
-          this.appointActive = false
+          this.active = false
 
       },
       

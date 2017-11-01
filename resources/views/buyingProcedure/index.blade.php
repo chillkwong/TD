@@ -16,7 +16,7 @@
    
     @include('layouts.frontHeader')
     <body>
-        <div class="container">
+        <div id="buyingProcedure" class="container">
         <div class="level">
             
         </div>
@@ -46,18 +46,74 @@
        
         <div class="tabs is-centered">
           <ul>
-            <li class="is-active"><a>Appointment First</a></li>
-            <li><a>Shop Or GIA Lab </a></li>
-            <li><a>Videos</a></li>
-            <li><a>Documents</a></li>
+            <li :class="{'is-active': activedSubTab=='Appointment First' }" @click="activeSubTab('Appointment First')" ><a>Appointment First</a></li>
+            <li :class="{'is-active': activedSubTab=='Shop Or GIA Lab' }" @click="activeSubTab('Shop Or GIA Lab')" ><a>Shop Or GIA Lab </a></li>
+            <li :class="{'is-active': activedSubTab=='Choose Ring Setting' }" @click="activeSubTab('Choose Ring Setting')"><a>Choose Ring Setting</a></li>
+            <li :class="{'is-active': activedSubTab=='Ring Inlay | Engrave' }" @click="activeSubTab('Ring Inlay | Engrave')"><a>Ring Inlay | Engrave</a></li>
+            <li :class="{'is-active': activedSubTab=='Pay With Satisfation' }" @click="activeSubTab('Pay With Satisfation')"><a>Pay With Satisfation</a></li>
           </ul>
         </div>
 
-        <article class="message is-info">
+        <article class="message is-info" v-if="activedSubTab=='Appointment First'">
           <div class="level is-centered">
             <div class="message-body">
             <center>
             <p class="title is-6">{{trans('buyingProcedure.FIRST TO CHOOSE DIAMONDS')}}：</p>
+            <p class="title is-6">{{trans('buyingProcedure.＊P.S.＊ choose few more diamonds that are in the similar price range, compare them at the same time.')}}</p>
+            <p class="title is-6">Whatsapp： 5484 4533 ( Winnie) / 5486 9451(Pete)</p>
+            <p class="title is-6">{{trans('buyingProcedure.Security issues，please make an appointment to shop in advance.')}}</p>
+            </center>
+          </div>
+             <a href="/front_end/buyingProcedure/Winnie_Kwong.vcf">
+            <center>  
+            <figure class="image is-128x128">
+              <p>Winnie</p>
+                <img src="/front_end/buyingProcedure/ting.png">
+            </figure>
+            </center>
+              </a>
+
+              <a href="/front_end/buyingProcedure/Pete_Kwong.vcf">
+            <center>
+            <figure class="image is-128x128">
+              <p>Pete</p>
+                <img src="/front_end/buyingProcedure/pete.png">
+            </figure>
+            </center>
+              </a>
+          </div>
+          
+        </article>
+
+
+        <article class="message is-info" v-if="activedSubTab=='Shop Or GIA Lab'">
+          <div class="level is-centered">
+            <div class="message-body">
+            <center>
+            <li>{{trans('buyingProcedure.Choose your favorite diamond，verify the GIA number on diamond’s girdle with report，full pay and take the diamond')}}</li>
+            <li>{{trans('buyingProcedure.You may also directly take diamond from GIA Lab， request a verification from GIA ，but that will need to pay certain charge')}}</li>
+            
+            </center>
+          </div>
+             
+            <center>  
+            <figure class="image is-128x128">
+              <p>GIA</p>
+                <img src="/front_end/GIA/GIA-Logo.jpg">
+            </figure>
+            </center>
+             
+          </div>
+          
+        </article>
+
+        <article class="message is-info" v-if="activedSubTab=='Choose Ring Setting'">
+          <div class="level is-centered">
+            <div class="message-body">
+            <center>
+            <p class="title is-6">{{trans('buyingProcedure.CHOOSE ENGAGEMENT RING SETTING')}}：</p>
+            <p >{{trans('buyingProcedure.Our shop also has some setting for chosen')}}：</p>
+
             <p class="title is-6">{{trans('buyingProcedure.＊P.S.＊ choose few more diamonds that are in the similar price range, compare them at the same time.')}}</p>
             <p class="title is-6">Whatsapp： 5484 4533 ( Winnie) / 5486 9451(Pete)</p>
             <p class="title is-6">{{trans('buyingProcedure.Security issues，please make an appointment to shop in advance.')}}</p>
