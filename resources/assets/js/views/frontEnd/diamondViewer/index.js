@@ -38,18 +38,18 @@ import router from '../../../router'
 				model: {},
 				clickedRows:[],
 				columnsToggle:[
-				{trans:['shape','型狀'],value: 'shape' },
-				{trans:['imageLink','型狀'],value: 'imageLink' },
-				{trans:['price','型狀'],value: 'price' },
-				{trans:['weight','型狀'],value: 'weight' },
-				{trans:['color','型狀'],value: 'color' },
-				{trans:['clarity','型狀'],value: 'clarity' },
-				{trans:['cut','型狀'],value: 'cut' },
-				{trans:['polish','型狀'],value: 'polish' },
-				{trans:['symmetry','型狀'],value: 'symmetry' },
-				{trans:['fluorescence','型狀'],value: 'fluorescence' },
-				{trans:['certificate','型狀'],value: 'certificate' },
-				{trans:['lab','型狀'],value: 'lab' },],
+				{display:['shape','型狀'],value: 'shape' },
+				{display:['imageLink','型狀'],value: 'imageLink' },
+				{display:['price','型狀'],value: 'price' },
+				{display:['weight','型狀'],value: 'weight' },
+				{display:['color','型狀'],value: 'color' },
+				{display:['clarity','型狀'],value: 'clarity' },
+				{display:['cut','型狀'],value: 'cut' },
+				{display:['polish','型狀'],value: 'polish' },
+				{display:['symmetry','型狀'],value: 'symmetry' },
+				{display:['fluorescence','型狀'],value: 'fluorescence' },
+				{display:['certificate','型狀'],value: 'certificate' },
+				{display:['lab','型狀'],value: 'lab' },],
 				
 				columns:['shape','imageLink','price','weight','color','clarity','cut','polish','symmetry','fluorescence','certificate','lab'],
 				query:{
@@ -139,6 +139,18 @@ import router from '../../../router'
 			colorClicked(){
 				return this.query.search_conditions.color.filter( color => color.clicked)
 			},
+			locale(){
+				
+				if (this.$route.fullPath.slice(1,3) == 'en') {
+					return 0
+				}
+				if (this.$route.fullPath.slice(1,3) == 'hk') {
+					return 1
+				}
+				if (this.$route.fullPath.slice(1,3) == 'cn') {
+					return 2
+				}
+			}
 
 		},
 		methods:{

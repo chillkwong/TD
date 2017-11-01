@@ -17,7 +17,6 @@
     @include('layouts.frontHeader')
     <body>
         <div id="engagementRingsShow">
-        	<div class="container">
                 <div class="level">
                 </div>
 
@@ -54,7 +53,9 @@
                                 </p>
                             </article>
                             </div>
+                            
                             <article>
+
                                 <table class="table is-striped is-fullwidth">
                                 <thead>
                                     <tr>

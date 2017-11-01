@@ -20103,12 +20103,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('div', {
       staticClass: "level-item has-text-centered"
-    }, [_c('a', [(img.type == 'video') ? _c('i', {
-      staticClass: "fa fa-play",
-      attrs: {
-        "aria-hidden": "true"
-      }
-    }) : _vm._e(), _vm._v(" "), _c('figure', {
+    }, [_c('a', [_c('figure', {
       staticClass: "image is-96x96"
     }, [_c('img', {
       attrs: {
@@ -20413,13 +20408,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('carousel', {
     attrs: {
-      "carouselActive": _vm.carouselState,
-      "items": 4,
+      "active": _vm.carouselState,
       "height": '500',
       "width": '100%',
-      "carouselUpperItems": _vm.combinedWeddingRings,
-      "carouselItems": _vm.customerItems,
-      "carouselTitle": "customer jewellries"
+      "upperitems": _vm.combinedWeddingRings,
+      "items": _vm.customerItems,
+      "title": "customer jewellries"
     },
     on: {
       "active": function($event) {
@@ -20520,7 +20514,7 @@ if (false) {
 			opened: [],
 			model: {},
 			clickedRows: [],
-			columnsToggle: [{ trans: ['shape', '型狀'], value: 'shape' }, { trans: ['imageLink', '型狀'], value: 'imageLink' }, { trans: ['price', '型狀'], value: 'price' }, { trans: ['weight', '型狀'], value: 'weight' }, { trans: ['color', '型狀'], value: 'color' }, { trans: ['clarity', '型狀'], value: 'clarity' }, { trans: ['cut', '型狀'], value: 'cut' }, { trans: ['polish', '型狀'], value: 'polish' }, { trans: ['symmetry', '型狀'], value: 'symmetry' }, { trans: ['fluorescence', '型狀'], value: 'fluorescence' }, { trans: ['certificate', '型狀'], value: 'certificate' }, { trans: ['lab', '型狀'], value: 'lab' }],
+			columnsToggle: [{ display: ['shape', '型狀'], value: 'shape' }, { display: ['imageLink', '型狀'], value: 'imageLink' }, { display: ['price', '型狀'], value: 'price' }, { display: ['weight', '型狀'], value: 'weight' }, { display: ['color', '型狀'], value: 'color' }, { display: ['clarity', '型狀'], value: 'clarity' }, { display: ['cut', '型狀'], value: 'cut' }, { display: ['polish', '型狀'], value: 'polish' }, { display: ['symmetry', '型狀'], value: 'symmetry' }, { display: ['fluorescence', '型狀'], value: 'fluorescence' }, { display: ['certificate', '型狀'], value: 'certificate' }, { display: ['lab', '型狀'], value: 'lab' }],
 
 			columns: ['shape', 'imageLink', 'price', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluorescence', 'certificate', 'lab'],
 			query: {
@@ -20563,6 +20557,18 @@ if (false) {
 			return this.query.search_conditions.color.filter(function (color) {
 				return color.clicked;
 			});
+		},
+		locale: function locale() {
+
+			if (this.$route.fullPath.slice(1, 3) == 'en') {
+				return 0;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'hk') {
+				return 1;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'cn') {
+				return 2;
+			}
 		}
 	},
 	methods: {
@@ -20774,10 +20780,10 @@ if (false) {
 				search_operator: 'like',
 				search_input: '',
 				search_conditions: {
-					style: [{ description: 'Solitaire', clicked: false, display: 'Solitaire' }, { description: 'Side-stone', clicked: false, display: 'Side-stone' }, { description: 'Halo', clicked: false, display: 'Halo' }],
-					prong: [{ description: '4-prong', clicked: false, display: '4-claw prong' }, { description: '6-prong', clicked: false, display: '6-claw prong' }],
-					shoulder: [{ description: 'Tapering', clicked: false, display: 'Tapering' }, { description: 'Parallel', clicked: false, display: 'Parallel' }, { description: 'Twisted', clicked: false, display: 'Twisted' }],
-					customized: [{ description: 1, clicked: false, display: 'True' }, { description: 0, clicked: false, display: 'False' }]
+					style: [{ description: 'Solitaire', clicked: false, display: ['Solitaire', '單鑽石'] }, { description: 'Side-stone', clicked: false, display: ['Side-stone', '輔鑽石'] }, { description: 'Halo', clicked: false, display: ['Halo', '圍圈鑽石'] }],
+					prong: [{ description: '4-prong', clicked: false, display: ['4-claw prong', '四爪'] }, { description: '6-prong', clicked: false, display: ['6-claw prong', '六爪'] }],
+					shoulder: [{ description: 'Tapering', clicked: false, display: ['Tapering', '尖臂'] }, { description: 'Parallel', clicked: false, display: ['Parallel', '平臂'] }, { description: 'Twisted', clicked: false, display: ['Twisted', '扭臂'] }],
+					customized: [{ description: 1, clicked: false, display: ['Yes', '是'] }, { description: 0, clicked: false, display: ['No', '否'] }]
 				}
 			},
 			operators: {
@@ -20801,6 +20807,18 @@ if (false) {
 			return this.query.search_conditions.style.filter(function (style) {
 				return style.clicked;
 			});
+		},
+		locale: function locale() {
+
+			if (this.$route.fullPath.slice(1, 3) == 'en') {
+				return 0;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'hk') {
+				return 1;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'cn') {
+				return 2;
+			}
 		}
 	},
 	methods: {

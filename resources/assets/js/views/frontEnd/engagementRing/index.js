@@ -42,22 +42,22 @@ import router from '../../../router'
 					search_input: '',
 					search_conditions:{
 						style: [
-						{ description: 'Solitaire', clicked: false , display: 'Solitaire'},
-						{ description: 'Side-stone', clicked: false , display: 'Side-stone'},
-						{ description: 'Halo', clicked: false , display: 'Halo'},
+						{ description: 'Solitaire', clicked: false , display: ['Solitaire','單鑽石']},
+						{ description: 'Side-stone', clicked: false , display: ['Side-stone','輔鑽石']},
+						{ description: 'Halo', clicked: false , display: ['Halo','圍圈鑽石']},
 						],
 						prong: [
-						{ description: '4-prong', clicked: false , display: '4-claw prong'},
-						{ description: '6-prong', clicked: false , display: '6-claw prong'},
+						{ description: '4-prong', clicked: false , display: ['4-claw prong', '四爪']},
+						{ description: '6-prong', clicked: false , display: ['6-claw prong','六爪']},
 						],
 						shoulder: [
-						{ description: 'Tapering', clicked: false , display: 'Tapering'},
-						{ description: 'Parallel', clicked: false , display: 'Parallel'},
-						{ description: 'Twisted', clicked: false , display: 'Twisted'},
+						{ description: 'Tapering', clicked: false , display: ['Tapering', '尖臂']},
+						{ description: 'Parallel', clicked: false , display: ['Parallel', '平臂']},
+						{ description: 'Twisted', clicked: false , display: ['Twisted', '扭臂']},
 						],
 						customized: [
-						{ description: 1, clicked: false , display: 'True'},
-						{ description: 0, clicked: false , display: 'False'},
+						{ description: 1, clicked: false , display: ['Yes','是']},
+						{ description: 0, clicked: false , display: ['No','否']},
 						],
 					}
 				},
@@ -79,6 +79,18 @@ import router from '../../../router'
 		computed:{
 			styleClicked(){
 				return this.query.search_conditions.style.filter( style => style.clicked)
+			},
+			locale(){
+				
+				if (this.$route.fullPath.slice(1,3) == 'en') {
+					return 0
+				}
+				if (this.$route.fullPath.slice(1,3) == 'hk') {
+					return 1
+				}
+				if (this.$route.fullPath.slice(1,3) == 'cn') {
+					return 2
+				}
 			}
 		},
 		methods:{

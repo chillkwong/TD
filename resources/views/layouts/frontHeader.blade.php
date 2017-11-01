@@ -13,6 +13,7 @@
       <img src="/front_end/langs/hk.png" width="20" height="10"></a>
       <a class="navbar-item is-hidden-desktop" :href="'/cn' + partialUrl" >
       <img src="/front_end/langs/china.png" width="20" height="10"></a>
+      <i class="fa fa-play" aria-hidden="true" ></i>
    
 
     <div class="navbar-burger burger" data-target="navMenuTransparentExample">

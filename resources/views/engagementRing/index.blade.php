@@ -61,23 +61,23 @@
                         <div class="tile is-12">
                             <div class="tile is-parent">
                                 <article class="tile is-child box is-4" >
-                                    <div>Style</div>
-                                    <input v-for="(value, index) in query.search_conditions.style" class="button " :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)" :value="query.search_conditions.style[index].display"> 
+                                    <div>{{trans('engagementRing.Style')}}</div>
+                                    <input v-for="(value, index) in query.search_conditions.style" class="button " :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)" :value="query.search_conditions.style[index].display[locale]"> 
                                 </article>
 
                                 <article class="tile is-child box is-3" >
                                     <div>Shoulder</div>
-                                    <input v-for="(value, index) in query.search_conditions.shoulder " class=" button " :class=" {'is-info active' : query.search_conditions.shoulder[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shoulder[index].clicked,'shoulder', index)" :value="query.search_conditions.shoulder[index].display"> 
+                                    <input v-for="(value, index) in query.search_conditions.shoulder " class=" button " :class=" {'is-info active' : query.search_conditions.shoulder[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shoulder[index].clicked,'shoulder', index)" :value="query.search_conditions.shoulder[index].display[locale]"> 
                                 </article>
 
                                 <article class="tile is-child box is-3" >
                                     <div>Claw Prong</div>
-                                    <input v-for="(value, index) in query.search_conditions.prong " class=" button " :class=" {'is-info active' : query.search_conditions.prong[index].clicked} " type="button" @click="toggleValue(query.search_conditions.prong[index].clicked,'prong', index)" :value="query.search_conditions.prong[index].display"> 
+                                    <input v-for="(value, index) in query.search_conditions.prong " class=" button " :class=" {'is-info active' : query.search_conditions.prong[index].clicked} " type="button" @click="toggleValue(query.search_conditions.prong[index].clicked,'prong', index)" :value="query.search_conditions.prong[index].display[locale]"> 
                                 </article>
 
                                 <article class="tile is-child box is-2" >
                                     <div>Custom-make</div>
-                                    <input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display"> 
+                                    <input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display[locale]"> 
                                 </article>
                             </div>
                         </div>
@@ -113,22 +113,22 @@
                             <div class="tile is-parent">
                                 <article class="tile is-child box" >
                                     <div>Style</div>
-                                    <input v-for="(value, index) in query.search_conditions.style" class="button " :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)" :value="query.search_conditions.style[index].display"> 
+                                    <input v-for="(value, index) in query.search_conditions.style" class="button" :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)" :value="query.search_conditions.style[index].display[locale]"> 
                                 </article>
 
                                 <article class="tile is-child box" >
                                     <div>Shoulder</div>
-                                    <input v-for="(value, index) in query.search_conditions.shoulder " class=" button " :class=" {'is-info active' : query.search_conditions.shoulder[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shoulder[index].clicked,'shoulder', index)" :value="query.search_conditions.shoulder[index].display"> 
+                                    <input v-for="(value, index) in query.search_conditions.shoulder " class=" button " :class=" {'is-info active' : query.search_conditions.shoulder[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shoulder[index].clicked,'shoulder', index)" :value="query.search_conditions.shoulder[index].display[locale]"> 
                                 </article>
 
                                 <article class="tile is-child box" >
                                     <div>Claw Prong</div>
-                                    <input v-for="(value, index) in query.search_conditions.prong " class=" button " :class=" {'is-info active' : query.search_conditions.prong[index].clicked} " type="button" @click="toggleValue(query.search_conditions.prong[index].clicked,'prong', index)" :value="query.search_conditions.prong[index].display"> 
+                                    <input v-for="(value, index) in query.search_conditions.prong " class=" button " :class=" {'is-info active' : query.search_conditions.prong[index].clicked} " type="button" @click="toggleValue(query.search_conditions.prong[index].clicked,'prong', index)" :value="query.search_conditions.prong[index].display[locale]"> 
                                 </article>
 
                                 <article class="tile is-child box" >
                                     <div>Custom-make</div>
-                                    <input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display"> 
+                                    <input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display[locale]"> 
                                 </article>
                             </div>
                         </div>

@@ -15,7 +15,7 @@
   		<div class="tile is-parent is-7">
   				<div class="tile is-child box">
 	  					<figure class="image" @click="carouselState=!carouselState">
-	  					<carousel @active="carouselState=!carouselState" :carouselActive="carouselState" :items="4" :height="'500'" :width="'100%'" :carouselUpperItems="combinedWeddingRings" :carouselItems="customerItems" carouselTitle="customer jewellries"></carousel>
+	  					<carousel @active="carouselState=!carouselState" :active="carouselState"  :height="'500'" :width="'100%'" :upperitems="combinedWeddingRings" :items="customerItems" title="customer jewellries"></carousel>
 	  					</figure>
   				</div>
   			</div>

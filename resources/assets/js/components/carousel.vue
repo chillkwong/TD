@@ -25,7 +25,7 @@
                                 @click="currentSelectedItem(index,'upper')" v-if="img.thumb">
                                     <div class="level-item has-text-centered" >
                                         <!-- <a @click="onClick($event)"> -->
-                                        <a><i class="fa fa-play" aria-hidden="true" v-if="img.type=='video'"></i>
+                                            <a>
                                         <figure class="image is-96x96">
                                             <img :src="images+img.thumb" ></img>
                                             <i class="fa fa-play" aria-hidden="true" v-if="img.type=='video'"></i>
