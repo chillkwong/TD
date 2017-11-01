@@ -19870,15 +19870,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'carousel',
     props: {
-        carouselItems: {
+        items: {
             Type: Array
         },
         width: '',
         height: '',
-        items: '',
-        carouselActive: '',
-        carouselUpperItems: '',
-        carouselTitle: ''
+        active: '',
+        upperitems: '',
+        title: ''
 
     },
     created: function created() {
@@ -19905,7 +19904,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         //     event.target.className = 'disabled';
         // },
         nextItem: function nextItem() {
-            if (this.currentIndex == this.carouselItems.length - 1) {
+            if (this.currentIndex == this.items.length - 1) {
                 this.currentIndex = 0;
             } else {
                 this.currentIndex++;
@@ -19913,7 +19912,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         prevItem: function prevItem() {
             if (this.currentIndex == 0) {
-                this.currentIndex = this.carouselItems.length - 1;
+                this.currentIndex = this.items.length - 1;
             } else {
                 this.currentIndex--;
             }
@@ -19940,37 +19939,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         carouselUpperItemsToArray: function carouselUpperItemsToArray() {
             var arr = [];
 
-            if (this.carouselUpperItems.length > 0) {
-                for (var i = 0; this.carouselUpperItems.length - 1 >= i; i++) {
+            if (this.upperitems.length > 0) {
+                for (var i = 0; this.upperitems.length - 1 >= i; i++) {
 
-                    if (this.carouselUpperItems[i].cover) {
-                        arr.push({ src: this.carouselUpperItems[i].cover, type: "img", thumb: this.carouselUpperItems[i].cover });
+                    if (this.upperitems[i].cover) {
+                        arr.push({ src: this.upperitems[i].cover, type: "img", thumb: this.upperitems[i].cover });
                     }
-                    if (this.carouselUpperItems[i].image1) {
-                        arr.push({ src: this.carouselUpperItems[i].image1, type: "img", thumb: this.carouselUpperItems[i].image1 });
+                    if (this.upperitems[i].image1) {
+                        arr.push({ src: this.upperitems[i].image1, type: "img", thumb: this.upperitems[i].image1 });
                     }
-                    if (this.carouselUpperItems[i].image2) {
-                        arr.push({ src: this.carouselUpperItems[i].image2, type: "img", thumb: this.carouselUpperItems[i].image2 });
+                    if (this.upperitems[i].image2) {
+                        arr.push({ src: this.upperitems[i].image2, type: "img", thumb: this.upperitems[i].image2 });
                     }
-                    if (this.carouselUpperItems[i].video) {
-                        arr.push({ src: this.carouselUpperItems[i].video, type: "video", thumb: this.carouselUpperItems[i].cover });
+                    if (this.upperitems[i].video) {
+                        arr.push({ src: this.upperitems[i].video, type: "video", thumb: this.upperitems[i].cover });
                     }
                 }
 
                 return arr;
             }
 
-            if (this.carouselUpperItems.cover) {
-                arr.push({ src: this.carouselUpperItems.cover, type: "img", thumb: this.carouselUpperItems.cover });
+            if (this.upperitems.cover) {
+                arr.push({ src: this.upperitems.cover, type: "img", thumb: this.upperitems.cover });
             }
-            if (this.carouselUpperItems.image1) {
-                arr.push({ src: this.carouselUpperItems.image1, type: "img", thumb: this.carouselUpperItems.image1 });
+            if (this.upperitems.image1) {
+                arr.push({ src: this.upperitems.image1, type: "img", thumb: this.upperitems.image1 });
             }
-            if (this.carouselUpperItems.image2) {
-                arr.push({ src: this.carouselUpperItems.image2, type: "img", thumb: this.carouselUpperItems.image2 });
+            if (this.upperitems.image2) {
+                arr.push({ src: this.upperitems.image2, type: "img", thumb: this.upperitems.image2 });
             }
-            if (this.carouselUpperItems.video) {
-                arr.push({ src: this.carouselUpperItems.video, type: "video", thumb: this.carouselUpperItems.cover });
+            if (this.upperitems.video) {
+                arr.push({ src: this.upperitems.video, type: "video", thumb: this.upperitems.cover });
             }
 
             return arr;
@@ -19978,15 +19977,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         carouselItemsToArray: function carouselItemsToArray() {
 
             var arr = [];
-            if (!this.carouselItems) {
+            if (!this.items) {
                 return arr.push({ src: '', type: '', thumb: '' });
             }
 
-            for (var i = this.carouselItems.length - 1; i >= 0; i--) {
-                if (this.carouselItems[i].cover && this.carouselItems[i].video) {
-                    arr.push({ src: this.carouselItems[i].video, type: "video", thumb: this.carouselItems[i].cover });
+            for (var i = this.items.length - 1; i >= 0; i--) {
+                if (this.items[i].cover && this.items[i].video) {
+                    arr.push({ src: this.items[i].video, type: "video", thumb: this.items[i].cover });
                 } else {
-                    arr.push({ src: this.carouselItems[i].cover, type: "img", thumb: this.carouselItems[i].cover });
+                    arr.push({ src: this.items[i].cover, type: "img", thumb: this.items[i].cover });
                 }
             }
 
@@ -20018,7 +20017,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var chunk1 = [];
             var chunk2 = [];
             var chunk3 = [];
-            if (!this.carouselItems) {
+            if (!this.items) {
                 return chunk1;
             }
             if (this.currentIndex <= 2) {
@@ -20039,7 +20038,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var chunk2 = [];
             var chunk3 = [];
 
-            if (!this.carouselItems) {
+            if (!this.items) {
                 return chunk1;
             }
             if (this.currentIndex <= 1) {
@@ -20104,7 +20103,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('div', {
       staticClass: "level-item has-text-centered"
-    }, [_c('a', [_c('figure', {
+    }, [_c('a', [(img.type == 'video') ? _c('i', {
+      staticClass: "fa fa-play",
+      attrs: {
+        "aria-hidden": "true"
+      }
+    }) : _vm._e(), _vm._v(" "), _c('figure', {
       staticClass: "image is-96x96"
     }, [_c('img', {
       attrs: {
@@ -20177,7 +20181,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }) : _vm._e()])])])]) : _vm._e()
   }))]), _vm._v(" "), _c('div', {
     staticClass: "level-item"
-  }, _vm._l((_vm.carouselItems), function(item, index) {
+  }, _vm._l((_vm.items), function(item, index) {
     return _c('a', [_c('a', {
       staticClass: "button",
       class: {
@@ -20221,7 +20225,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }) : _vm._e()])])])]) : _vm._e()
   }))]), _vm._v(" "), _c('div', {
     staticClass: "level-item"
-  }, _vm._l((_vm.carouselItems), function(item, index) {
+  }, _vm._l((_vm.items), function(item, index) {
     return _c('a', [_c('a', {
       staticClass: "button",
       class: {
@@ -20236,7 +20240,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }))], 1), _vm._v(" "), _c('div', {
     staticClass: "modal",
     class: {
-      'is-active': _vm.carouselActive
+      'is-active': _vm.active
     }
   }, [_c('div', {
     staticClass: "modal-background"
@@ -20246,7 +20250,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "modal-card-head"
   }, [_c('p', {
     staticClass: "modal-card-title"
-  }, [_vm._v(_vm._s(_vm.carouselTitle))]), _vm._v(" "), _c('button', {
+  }, [_vm._v(_vm._s(_vm.title))]), _vm._v(" "), _c('button', {
     staticClass: "delete",
     attrs: {
       "aria-label": "close"
@@ -20313,7 +20317,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }) : _vm._e()])])])]) : _vm._e()
   }))]), _vm._v(" "), _c('div', {
     staticClass: "level-item"
-  }, _vm._l((_vm.carouselItems), function(item, index) {
+  }, _vm._l((_vm.items), function(item, index) {
     return _c('a', [_c('a', {
       staticClass: "button",
       class: {
@@ -20357,7 +20361,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }) : _vm._e()])])])]) : _vm._e()
   }))]), _vm._v(" "), _c('div', {
     staticClass: "level-item"
-  }, _vm._l((_vm.carouselItems), function(item, index) {
+  }, _vm._l((_vm.items), function(item, index) {
     return _c('a', [_c('a', {
       staticClass: "button",
       class: {

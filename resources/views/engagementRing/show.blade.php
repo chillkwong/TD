@@ -33,7 +33,7 @@
                     <div class="tile is-parent is-7">
                             <div class="tile is-child box">
                                     <figure class="image" @click="carouselState=!carouselState">
-                                    <carousel @active="carouselState=!carouselState" :active="carouselState" :items="4" :height="'500'" :width="'100%'" :upperitems="engagementRing" :items="customerItems" title="customer jewellries"></carousel>
+                                    <carousel @active="carouselState=!carouselState" :active="carouselState" :height="'500'" :width="'100%'" :upperitems="engagementRing" :items="customerItems" title="customer jewellries"></carousel>
                                     </figure>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
 
                     <div class="tile is-parent is-5">
                         <div class="tile is-child box">
-
+                            
                             <div class="tile is-child">
                             <article>
                                 <center>

@@ -78,9 +78,9 @@
 				</div>
 				<div class="column is-2">
 						<div class="control">
-							<label class="label">Fluroscence</label>
-								<input type="text" class="input" v-model="diamond.fluroscence" placeholder="fluroscence" required>
-								<small class="is-danger" v-if="errors.fluroscence">{{errors.fluroscence[0]}}</small>
+							<label class="label">fluorescence</label>
+								<input type="text" class="input" v-model="diamond.fluorescence" placeholder="fluorescence" required>
+								<small class="is-danger" v-if="errors.fluorescence">{{errors.fluorescence[0]}}</small>
 						</div>
 				</div>	
 					
@@ -326,7 +326,7 @@
 					clarity: '',
 					color:'',
 					cut:'EX',
-					fluroscence:'NON',
+					fluorescence:'NON',
 					lab:'GIA',
 					polish:'EX',
 					shape:'RD',

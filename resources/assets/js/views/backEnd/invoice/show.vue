@@ -73,7 +73,7 @@
 				<tbody>
 					<tr v-for="diamond in model.inv_diamonds" v-if="model.inv_diamonds">
 						<td><small><small><small>GIA:{{diamond.certificate}}</small></small></small></td>
-						<td><small><small><small>{{diamond.weight}}ct,{{diamond.color}} Color,{{diamond.clarity}} Clarity,{{diamond.cut}} Cut,{{diamond.polish}} Polish,{{diamond.symmetry}} Symmetry,{{diamond.fluroscence}}</small></small></small></td>
+						<td><small><small><small>{{diamond.weight}}ct,{{diamond.color}} Color,{{diamond.clarity}} Clarity,{{diamond.cut}} Cut,{{diamond.polish}} Polish,{{diamond.symmetry}} Symmetry,{{diamond.fluorescence}}</small></small></small></td>
 						<td><small><small><small>1</small></small></small></td>
 						<td><small><small><small>{{diamond.price}}</small></small></small></td>
 					</tr>

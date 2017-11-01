@@ -19253,7 +19253,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('table', {
     staticClass: "table is-fullwidth"
   }, [_vm._m(2), _vm._v(" "), _c('tbody', [_vm._l((_vm.model.inv_diamonds), function(diamond) {
-    return (_vm.model.inv_diamonds) ? _c('tr', [_c('td', [_c('small', [_c('small', [_c('small', [_vm._v("GIA:" + _vm._s(diamond.certificate))])])])]), _vm._v(" "), _c('td', [_c('small', [_c('small', [_c('small', [_vm._v(_vm._s(diamond.weight) + "ct," + _vm._s(diamond.color) + " Color," + _vm._s(diamond.clarity) + " Clarity," + _vm._s(diamond.cut) + " Cut," + _vm._s(diamond.polish) + " Polish," + _vm._s(diamond.symmetry) + " Symmetry," + _vm._s(diamond.fluroscence))])])])]), _vm._v(" "), _vm._m(3, true), _vm._v(" "), _c('td', [_c('small', [_c('small', [_c('small', [_vm._v(_vm._s(diamond.price))])])])])]) : _vm._e()
+    return (_vm.model.inv_diamonds) ? _c('tr', [_c('td', [_c('small', [_c('small', [_c('small', [_vm._v("GIA:" + _vm._s(diamond.certificate))])])])]), _vm._v(" "), _c('td', [_c('small', [_c('small', [_c('small', [_vm._v(_vm._s(diamond.weight) + "ct," + _vm._s(diamond.color) + " Color," + _vm._s(diamond.clarity) + " Clarity," + _vm._s(diamond.cut) + " Cut," + _vm._s(diamond.polish) + " Polish," + _vm._s(diamond.symmetry) + " Symmetry," + _vm._s(diamond.fluorescence))])])])]), _vm._v(" "), _vm._m(3, true), _vm._v(" "), _c('td', [_c('small', [_c('small', [_c('small', [_vm._v(_vm._s(diamond.price))])])])])]) : _vm._e()
   }), _vm._v(" "), _vm._l((_vm.model.jewellries), function(jewellry) {
     return (_vm.model.jewellries) ? _c('tr', [_c('td', [_c('small', [_c('small', [_c('small', [_vm._v(_vm._s(jewellry.name))])])])]), _vm._v(" "), _c('td', [_c('small', [_c('small', [_c('small', [_vm._v(_vm._s(jewellry.description))])])])]), _vm._v(" "), _vm._m(4, true), _vm._v(" "), _c('td', [_c('small', [_c('small', [_c('small', [_vm._v(_vm._s(jewellry.unit_price))])])])])]) : _vm._e()
   })], 2), _vm._v(" "), _c('tfoot', [_c('tr', [_c('td', {
@@ -19699,7 +19699,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				clarity: '',
 				color: '',
 				cut: 'EX',
-				fluroscence: 'NON',
+				fluorescence: 'NON',
 				lab: 'GIA',
 				polish: 'EX',
 				shape: 'RD',
@@ -20288,31 +20288,31 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "control"
     }, [_c('label', {
       staticClass: "label"
-    }, [_vm._v("Fluroscence")]), _vm._v(" "), _c('input', {
+    }, [_vm._v("fluorescence")]), _vm._v(" "), _c('input', {
       directives: [{
         name: "model",
         rawName: "v-model",
-        value: (diamond.fluroscence),
-        expression: "diamond.fluroscence"
+        value: (diamond.fluorescence),
+        expression: "diamond.fluorescence"
       }],
       staticClass: "input",
       attrs: {
         "type": "text",
-        "placeholder": "fluroscence",
+        "placeholder": "fluorescence",
         "required": ""
       },
       domProps: {
-        "value": (diamond.fluroscence)
+        "value": (diamond.fluorescence)
       },
       on: {
         "input": function($event) {
           if ($event.target.composing) { return; }
-          diamond.fluroscence = $event.target.value
+          diamond.fluorescence = $event.target.value
         }
       }
-    }), _vm._v(" "), (_vm.errors.fluroscence) ? _c('small', {
+    }), _vm._v(" "), (_vm.errors.fluorescence) ? _c('small', {
       staticClass: "is-danger"
-    }, [_vm._v(_vm._s(_vm.errors.fluroscence[0]))]) : _vm._e()])])]), _vm._v(" "), _c('div', {
+    }, [_vm._v(_vm._s(_vm.errors.fluorescence[0]))]) : _vm._e()])])]), _vm._v(" "), _c('div', {
       staticClass: "columns"
     }, [_c('div', {
       staticClass: "column is-4"
