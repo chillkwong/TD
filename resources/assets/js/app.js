@@ -23,6 +23,9 @@ import DiamondViewerShow from './views/frontEnd/diamondViewer/show'
 import EngagementRingIndex from './views/frontEnd/engagementRing/index'
 import EngagementRingShow from './views/frontEnd/engagementRing/show'
 
+//Engagement Ring
+import WeddingRingIndex from './views/frontEnd/weddingRing/index'
+import WeddingRingShow from './views/frontEnd/weddingRing/show'
 
 import BuyingProcedure from './views/frontEnd/buyingProcedure/index'
 
@@ -52,7 +55,7 @@ const header = new Vue({
     router
 });
 
-console.log(window.location.pathname.slice(4,23))
+console.log(window.location.pathname.slice(4,18))
 //diamond
 if (window.location.pathname.slice(4) == 'gia-loose-diamonds') {
     const diamondViewerIndex =  new Vue(DiamondViewerIndex);
@@ -65,9 +68,17 @@ if (window.location.pathname.slice(4,23) == 'gia-loose-diamonds/') {
 if (window.location.pathname.slice(4) == 'engagement-rings') {
     const engagementRingIndex =  new Vue(EngagementRingIndex);
 }
-
 if (window.location.pathname.slice(4,21) == 'engagement-rings/') {
     const engagementRingShow =  new Vue(EngagementRingShow);
+}
+
+
+//wedding rings
+if (window.location.pathname.slice(4) == 'wedding-rings') {
+    const weddingRingIndex =  new Vue(WeddingRingIndex);
+}
+if (window.location.pathname.slice(4,18) == 'wedding-rings/') {
+    const weddingRingShow =  new Vue(WeddingRingShow);
 }
 
 //buying procedure

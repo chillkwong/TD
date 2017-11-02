@@ -19,6 +19,7 @@
       <form @submit.prevent="save">
       <input type="text" name="name" class="input" v-model="form.name" placeholder="your name" required>
       <input type="text" name="phone" class="input" v-model="form.phone" placeholder="your Phone No." required> 
+      <textarea  v-model="form.remark" rows="5" cols="80"></textarea>
       <div>
         <a class="button" :href="locale + '/about-us'">Contact Us</a>
       <button class="button is-success " :class="{'is-loading': processing}" @submit.stop="save" >Appointment</button>
@@ -55,6 +56,7 @@
           form: {
             name: '',
             phone: '',
+            remark: 'Remark:',
             storeURL:'wwww.tingdiamond.com'+this.$route.fullPath,
           
         },

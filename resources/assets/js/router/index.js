@@ -56,7 +56,7 @@ import CustomerJewShow from '../views/frontEnd/customerJewellry/show.vue'
 
 
 //Wedding Rings
-import WeddingRingIndex from '../views/frontEnd/weddingRing/index.vue'
+// import WeddingRingIndex from '../views/frontEnd/weddingRing/index.vue'
 import WeddingRingShow from '../views/frontEnd/weddingRing/show.vue'
 // import CustomerJewForm from '../views/customerJewellry/form.vue'
 
@@ -114,8 +114,8 @@ const router = new VueRouter({
 		// {path: 'engagement-rings/:id', component: EngagementRingShow},
 
 		//Wedding rings
-		{path: 'wedding-rings/', component: WeddingRingIndex},
-		{path: 'wedding-rings/:id', component: WeddingRingShow},
+		// {path: 'wedding-rings/', component: WeddingRingIndex},
+		// {path: 'wedding-rings/:id', component: WeddingRingShow},
 
 		//buying procedure
 		// {path: 'buying-procedure/', component: BuyingProcedure},

@@ -1,7 +1,7 @@
 <?php 
 
 return [
-	'Style' => 'Style',
+	'Style' => '款式',
 	
 
 ];

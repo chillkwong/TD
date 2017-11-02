@@ -166,8 +166,13 @@
                                 </div>
                             </div>
                         </div>
+                                <div class="level">
+                                    <article class="level-item" >
+                                        <button class="button is-primary" @click="more()">More</button>
+                                    </article>
+                                </div>
                     </div>
-
+                    
 
 
                     <div class="is-hidden-desktop is-hidden-tablet is-centered box" >       
@@ -184,7 +189,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+
+                        <div class="level">
+                            <article class="level-item" >
+                                <button class="button is-primary" @click="more()">More</button>
+                            </article>
+                        </div>
+                        
+                     </div>
 
 
                     </div>

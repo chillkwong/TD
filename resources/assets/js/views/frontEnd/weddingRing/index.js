@@ -2,27 +2,27 @@ import { get } from '../../../helpers/api'
 import router from '../../../router'
 
 	export default {
-		el:'#engagementRings',
+		el:'#weddingRings',
 		router,
 		props:[
 		'title'
 		],
 		data(){
 			return {
-				source:'/api/engagementRings',
+				source:'/api/weddingRings',
 				fetchData: {
-					 style: ['Solitaire','Side-stone','Halo'],
-					 prong: ['4-prong','6-prong'],
-					 shoulder: ['Tapering','Parallel','Twisted'],
+					 style: ['Japanese','Vintage','Classic'],
+					 metal: ['18KW','18KR','PT','Mixed'],
 					 customized: [1,0], 
-					 
+					 sideStone: [1,0], 
+					 gender: ['f','m',1], 
 				},
 				preset: {
-					 style: ['Solitaire','Side-stone','Halo'],
-					 prong: ['4-prong','6-prong'],
-					 shoulder: ['Tapering','Parallel','Twisted'],
+					 style: ['Japanese','Vintage','Classic'],
+					 metal: ['18KW','18KR','PT','Mixed'],
 					 customized: [1,0], 
-					 
+					 sideStone: [1,0],
+					 gender: ['f','m',1], 					 
 				},
 				showModal:false,
 				showAdvance:false,
@@ -30,34 +30,40 @@ import router from '../../../router'
 				model: {},
 				chunkedItemsDesktop: [],
 				chunkedItemsMobile: [],
+				sameStock: [],
 				clickedRows:[],
 				columns:['style','shoulder','prong'],
 				query:{
 					page:1,
 					column: 'style',
 					direction: 'asc',
-					per_page: 10,
+					per_page: '10',
 					search_column: 'id',
 					search_operator: 'like',
 					search_input: '',
 					search_conditions:{
 						style: [
-						{ description: 'Solitaire', clicked: false , display: ['Solitaire','單鑽石']},
-						{ description: 'Side-stone', clicked: false , display: ['Side-stone','輔鑽石']},
-						{ description: 'Halo', clicked: false , display: ['Halo','圍圈鑽石']},
+						{ description: 'Classic', clicked: false , display: 'Classic'},
+						{ description: 'Japanese', clicked: false , display: 'Japanese'},
+						{ description: 'Vintage', clicked: false , display: 'Vintage'},
 						],
-						prong: [
-						{ description: '4-prong', clicked: false , display: ['4-claw prong', '四爪']},
-						{ description: '6-prong', clicked: false , display: ['6-claw prong','六爪']},
+						metal: [
+						{ description: '18KW', clicked: false , display: '18K White'},
+						{ description: '18KR', clicked: false , display: '18K Rose Gold'},
+						{ description: 'PT', clicked: false , display: 'PT950/900'},
+						{ description: 'Mixed', clicked: false , display: 'Mixed'},
 						],
-						shoulder: [
-						{ description: 'Tapering', clicked: false , display: ['Tapering', '尖臂']},
-						{ description: 'Parallel', clicked: false , display: ['Parallel', '平臂']},
-						{ description: 'Twisted', clicked: false , display: ['Twisted', '扭臂']},
+						sideStone: [
+						{ description: 1, clicked: false , display: 'True'},
+						{ description: 0, clicked: false , display: 'False'},
 						],
 						customized: [
-						{ description: 1, clicked: false , display: ['Yes','是']},
-						{ description: 0, clicked: false , display: ['No','否']},
+						{ description: 1, clicked: false , display: 'True'},
+						{ description: 0, clicked: false , display: 'False'},
+						],
+						gender: [
+						{ description: 1, clicked: false , display: 'Men'},
+						{ description: 0, clicked: false , display: 'Female'},
 						],
 					}
 				},
@@ -79,18 +85,6 @@ import router from '../../../router'
 		computed:{
 			styleClicked(){
 				return this.query.search_conditions.style.filter( style => style.clicked)
-			},
-			locale(){
-				
-				if (this.$route.fullPath.slice(1,3) == 'en') {
-					return 0
-				}
-				if (this.$route.fullPath.slice(1,3) == 'hk') {
-					return 1
-				}
-				if (this.$route.fullPath.slice(1,3) == 'cn') {
-					return 2
-				}
 			}
 		},
 		methods:{
@@ -98,9 +92,13 @@ import router from '../../../router'
 				this.fetchData.customized = !this.fetchData.customized
 				this.fetchIndexData()
 			},
+			toggleSideStone(){
+				this.fetchData.sideStone = !this.fetchData.sideStone
+				this.fetchIndexData()
+			},
 			clickRow(row,index){
 				this.clickedRows.push(index)
-				window.open(this.$route.path + '/' +row.id, '_self')
+				window.open('wedding-rings/'+row.id, '_self')
 			},
 			toggle(id) {
 		    	const index = this.model.data.indexOf(id);
@@ -110,7 +108,12 @@ import router from '../../../router'
 		      	this.model.data.push(id)
 		      }
 		    },
-			
+			moveTo(page){
+					if (this.query.page + page >0 ) {
+					this.query.page = this.query.page + page
+					this.fetchIndexData()
+				}				
+			},
 			filterFalse(condition){
 				var checked = this.query.search_conditions[condition].filter( condition => condition.clicked)
 				this.filterDescriptions(checked)
@@ -140,7 +143,12 @@ import router from '../../../router'
 			// 			search_conditions[i].clicked = false;
 			// 		}
 			// },
-			
+			more(){
+				
+					this.query.per_page  +=10
+					this.fetchIndexData()
+				
+			},
 			toggleOrder(column){
 				if (column === this.query.column) {
 					if (this.query.direction === 'desc') {
@@ -155,24 +163,20 @@ import router from '../../../router'
 				}
 				this.fetchIndexData()
 			},
-			more(){
-				
-					this.query.per_page  +=10
-					this.fetchIndexData()
-				
-			},
 			chunkItems(){
+				var filtered= []
 				var chunk1 = []
 				var chunk2 = []
 				
-				for (var i = 0; this.model.data.length - 1 >= i ; ) {
-					chunk1.push(this.model.data.slice(i,i+4))
+				filtered = this.model.data.filter(data=>data.wedding_rings.length>0)
+				for (var i = 0; filtered.length - 1 >= i ; ) {
+					chunk1.push(filtered.slice(i,i+4))
 					i += 4
 				}
 				this.chunkedItemsDesktop = chunk1
 
-				for (var i = 0; this.model.data.length - 1 >= i ; ) {
-					chunk2.push(this.model.data.slice(i,i+2))
+				for (var i = 0; filtered.length - 1 >= i ; ) {
+					chunk2.push(filtered.slice(i,i+2))
 					i += 2
 				}
 				this.chunkedItemsMobile = chunk2
@@ -189,19 +193,20 @@ import router from '../../../router'
 					&search_operator=${this.query.search_operator}
 					&search_input=${this.query.search_input}
 					&customized=${this.fetchData.customized.toString()?this.fetchData.customized:this.preset.customized.toString()}
+					&sideStone=${this.fetchData.sideStone.toString()?this.fetchData.sideStone:this.preset.sideStone.toString()}
+					&gender=${this.fetchData.gender.toString()?this.fetchData.gender:this.preset.gender.toString()}
 					&style=${
 						this.fetchData.style.toString()?this.fetchData.style.toString():this.preset.style.toString()
 					}
-					&shoulder=${
-						this.fetchData.shoulder.toString()?this.fetchData.shoulder.toString():this.preset.shoulder.toString()
+					&metal=${
+						this.fetchData.metal.toString()?this.fetchData.metal.toString():this.preset.metal.toString()
 					}
-					&prong=${
-						this.fetchData.prong.toString()?this.fetchData.prong.toString():this.preset.prong.toString()
-					}`)
+					`)
 				.then((response)=>{
 					this.model= response.data.model
 					// Vue.set(vm.$data, 'columns', response.data.columns)
 					this.chunkItems()
+					this.pairUp()
 
 				}).catch(function(){
 					console.log(response)
