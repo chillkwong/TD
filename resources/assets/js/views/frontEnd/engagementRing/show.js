@@ -4,6 +4,8 @@
 	import Carousel from '../../../components/carousel.vue'
 	import router from '../../../router'
 	// import Flash from '../../helpers/flash'
+	import { transJs } from '../../../helpers/transJs'
+	import langs from '../../../langs/engagementRings'
 
 		
 	export default {
@@ -17,6 +19,7 @@
 				carouselState: false,
 				appointmentState: false,
 				title: '',
+				langs,
 				engagementRing:'',
 				columns:[
 				'unit_price',
@@ -39,6 +42,9 @@
 		beforeMount(){
 			this.fetchData()
 			
+		},
+		filters:{
+			transJs,
 		},
 		computed: {
 			appointmentTitle(){

@@ -19786,6 +19786,12 @@ if (false) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__langs_diamondViewer__ = __webpack_require__(176);
+
+
+
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -19822,8 +19828,9 @@ if (false) {
 			showAdvance: false,
 			opened: [],
 			model: {},
+			langs: __WEBPACK_IMPORTED_MODULE_3__langs_diamondViewer__["a" /* default */],
 			clickedRows: [],
-			columnsToggle: [{ display: ['shape', '型狀'], value: 'shape' }, { display: ['imageLink', '型狀'], value: 'imageLink' }, { display: ['price', '型狀'], value: 'price' }, { display: ['weight', '型狀'], value: 'weight' }, { display: ['color', '型狀'], value: 'color' }, { display: ['clarity', '型狀'], value: 'clarity' }, { display: ['cut', '型狀'], value: 'cut' }, { display: ['polish', '型狀'], value: 'polish' }, { display: ['symmetry', '型狀'], value: 'symmetry' }, { display: ['fluorescence', '型狀'], value: 'fluorescence' }, { display: ['certificate', '型狀'], value: 'certificate' }, { display: ['lab', '型狀'], value: 'lab' }],
+			columnsToggle: [{ display: 'shape', value: 'shape' }, { display: 'imageLink', value: 'imageLink' }, { display: 'price', value: 'price' }, { display: 'weight', value: 'weight' }, { display: 'color', value: 'color' }, { display: 'clarity', value: 'clarity' }, { display: 'cut', value: 'cut' }, { display: 'polish', value: 'polish' }, { display: 'symmetry', value: 'symmetry' }, { display: 'fluorescence', value: 'fluorescence' }, { display: 'certificate', value: 'certificate' }, { display: 'lab', value: 'lab' }],
 
 			columns: ['shape', 'imageLink', 'price', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluorescence', 'certificate', 'lab'],
 			query: {
@@ -19879,6 +19886,9 @@ if (false) {
 				return 2;
 			}
 		}
+	},
+	filters: {
+		transJs: __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__["a" /* transJs */]
 	},
 	methods: {
 		clickRow: function clickRow(row, index) {
@@ -19981,6 +19991,8 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__helpers_transJs__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__langs_diamondViewer__ = __webpack_require__(176);
 
 
 // import Auth from '../../store/auth'
@@ -19990,6 +20002,7 @@ if (false) {
 
 
 // import Flash from '../../helpers/flash'
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -20002,6 +20015,7 @@ if (false) {
 			isRemoving: false,
 			appointmentState: false,
 			title: '',
+			langs: __WEBPACK_IMPORTED_MODULE_5__langs_diamondViewer__["a" /* default */],
 			diamond: {
 				weight: ''
 			},
@@ -20025,6 +20039,9 @@ if (false) {
 		this.fetchData();
 	},
 
+	filters: {
+		transJs: __WEBPACK_IMPORTED_MODULE_4__helpers_transJs__["a" /* transJs */]
+	},
 	computed: {
 		appointmentTitle: function appointmentTitle() {
 			return this.diamond.weight + 'carat, ' + this.diamond.color + ' color diamond';
@@ -20048,6 +20065,11 @@ if (false) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__langs_engagementRings__ = __webpack_require__(175);
+
+
+
 
 
 
@@ -20072,6 +20094,7 @@ if (false) {
 				customized: [1, 0]
 
 			},
+			langs: __WEBPACK_IMPORTED_MODULE_3__langs_engagementRings__["a" /* default */],
 			showModal: false,
 			showAdvance: false,
 			opened: [],
@@ -20089,10 +20112,10 @@ if (false) {
 				search_operator: 'like',
 				search_input: '',
 				search_conditions: {
-					style: [{ description: 'Solitaire', clicked: false, display: ['Solitaire', '單鑽石'] }, { description: 'Side-stone', clicked: false, display: ['Side-stone', '輔鑽石'] }, { description: 'Halo', clicked: false, display: ['Halo', '圍圈鑽石'] }],
-					prong: [{ description: '4-prong', clicked: false, display: ['4-claw prong', '四爪'] }, { description: '6-prong', clicked: false, display: ['6-claw prong', '六爪'] }],
-					shoulder: [{ description: 'Tapering', clicked: false, display: ['Tapering', '尖臂'] }, { description: 'Parallel', clicked: false, display: ['Parallel', '平臂'] }, { description: 'Twisted', clicked: false, display: ['Twisted', '扭臂'] }],
-					customized: [{ description: 1, clicked: false, display: ['Yes', '是'] }, { description: 0, clicked: false, display: ['No', '否'] }]
+					style: [{ description: 'Solitaire', clicked: false, display: 'Solitaire' }, { description: 'Side-stone', clicked: false, display: 'Side-stone' }, { description: 'Halo', clicked: false, display: 'Halo' }],
+					prong: [{ description: '4-prong', clicked: false, display: '4-claw prong' }, { description: '6-prong', clicked: false, display: '6-claw prong' }],
+					shoulder: [{ description: 'Tapering', clicked: false, display: 'Tapering' }, { description: 'Parallel', clicked: false, display: 'Parallel' }, { description: 'Twisted', clicked: false, display: 'Twisted' }],
+					customized: [{ description: 1, clicked: false, display: 'Yes' }, { description: 0, clicked: false, display: 'No' }]
 				}
 			},
 			operators: {
@@ -20129,6 +20152,9 @@ if (false) {
 				return 2;
 			}
 		}
+	},
+	filters: {
+		transJs: __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__["a" /* transJs */]
 	},
 	methods: {
 		toggleCustomized: function toggleCustomized() {
@@ -20241,12 +20267,15 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__helpers_transJs__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__langs_engagementRings__ = __webpack_require__(175);
 // import Auth from '../../store/auth'
 
 
 
 
 // import Flash from '../../helpers/flash'
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -20260,6 +20289,7 @@ if (false) {
 			carouselState: false,
 			appointmentState: false,
 			title: '',
+			langs: __WEBPACK_IMPORTED_MODULE_5__langs_engagementRings__["a" /* default */],
 			engagementRing: '',
 			columns: ['unit_price', 'shoulder', 'prong', 'sideStone', 'stock', 'name', 'description'],
 
@@ -20276,6 +20306,9 @@ if (false) {
 		this.fetchData();
 	},
 
+	filters: {
+		transJs: __WEBPACK_IMPORTED_MODULE_4__helpers_transJs__["a" /* transJs */]
+	},
 	computed: {
 		appointmentTitle: function appointmentTitle() {
 			return this.engagementRing.shoulder + ' shoulder, ' + this.engagementRing.prong + '  engagementRing';
@@ -20300,6 +20333,11 @@ if (false) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__langs_weddingRings__ = __webpack_require__(173);
+
+
+
 
 
 
@@ -20328,6 +20366,7 @@ if (false) {
 			showAdvance: false,
 			opened: [],
 			model: {},
+			langs: __WEBPACK_IMPORTED_MODULE_3__langs_weddingRings__["a" /* default */],
 			chunkedItemsDesktop: [],
 			chunkedItemsMobile: [],
 			sameStock: [],
@@ -20370,7 +20409,22 @@ if (false) {
 			return this.query.search_conditions.style.filter(function (style) {
 				return style.clicked;
 			});
+		},
+		locale: function locale() {
+
+			if (this.$route.fullPath.slice(1, 3) == 'en') {
+				return 0;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'hk') {
+				return 1;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'cn') {
+				return 2;
+			}
 		}
+	},
+	filters: {
+		transJs: __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__["a" /* transJs */]
 	},
 	methods: {
 		toggleCustomized: function toggleCustomized() {
@@ -20596,6 +20650,119 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'Classic': ['Classic', '經典'] }, { 'Japanese': ['Japanese', '日本款'] }, { 'Vintage': ['Vintage', '歐洲款'] }, { '18K White': ['18K White', '18K 白'] }, { '18K Rose Gold': ['18K Rose Gold', '18K玫瑰金'] }, { 'PT950/900': ['PT950/900', '鉑金'] }, { 'Mixed': ['Mixed', '混色'] }, { 'True': ['True', '18K 白'] }, { 'False': ['False', '18K玫瑰金'] }, { 'Men': ['Men', '鉑金'] }, { 'Female': ['Female', '混色'] }]);
+
+/***/ }),
+/* 174 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = transJs;
+function transJs(data, ori, locale) {
+				var temp = '';
+
+				temp = ori.filter(function (da) {
+								return da[data];
+				});
+				return temp[0][data][locale];
+}
+
+/***/ }),
+/* 175 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'Solitaire': ['Solitaire', '單鑽石'] }, { 'Side-stone': ['Side-stone', '輔鑽石'] }, { 'Halo': ['Halo', '圍圈鑽石'] }, { '4-claw prong': ['4-claw prong', '四爪'] }, { '6-claw prong': ['6-claw prong', '六爪'] }, { 'Tapering': ['Tapering', '尖臂'] }, { 'Parallel': ['Parallel', '平臂'] }, { 'Twisted': ['Twisted', '扭臂'] }, { 'Yes': ['Yes', '是'] }, { 'No': ['No', '否'] }]);
+
+/***/ }),
+/* 176 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'shape': ['shape', '型狀'] }, { 'imageLink': ['imageLink', '圖像'] }, { 'price': ['price', '型狀'] }, { 'weight': ['weight', '型狀'] }, { 'color': ['color', '型狀'] }, { 'clarity': ['clarity', '型狀'] }, { 'cut': ['cut', '型狀'] }, { 'polish': ['polish', '型狀'] }, { 'symmetry': ['symmetry', '型狀'] }, { 'fluorescence': ['fluorescence', '型狀'] }, { 'certificate': ['certificate', '型狀'] }, { 'lab': ['lab', '型狀'] }, { 'fluorescence': ['fluorescence', '型狀'] }, { 'Yes': ['Yes', '是'] }, { 'No': ['No', '否'] }]);
 
 /***/ })
 /******/ ]);

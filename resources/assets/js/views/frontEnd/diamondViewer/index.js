@@ -1,5 +1,9 @@
 import { get } from '../../../helpers/api'
 import router from '../../../router'
+
+import { transJs } from '../../../helpers/transJs'
+import langs from '../../../langs/diamondViewer'
+
 	export default {
 		el: '#diamondViewerIndex',
 		router,
@@ -36,20 +40,21 @@ import router from '../../../router'
 				showAdvance:false,
 				opened: [],
 				model: {},
+				langs,
 				clickedRows:[],
 				columnsToggle:[
-				{display:['shape','型狀'],value: 'shape' },
-				{display:['imageLink','型狀'],value: 'imageLink' },
-				{display:['price','型狀'],value: 'price' },
-				{display:['weight','型狀'],value: 'weight' },
-				{display:['color','型狀'],value: 'color' },
-				{display:['clarity','型狀'],value: 'clarity' },
-				{display:['cut','型狀'],value: 'cut' },
-				{display:['polish','型狀'],value: 'polish' },
-				{display:['symmetry','型狀'],value: 'symmetry' },
-				{display:['fluorescence','型狀'],value: 'fluorescence' },
-				{display:['certificate','型狀'],value: 'certificate' },
-				{display:['lab','型狀'],value: 'lab' },],
+				{display:'shape',value: 'shape' },
+				{display:'imageLink',value: 'imageLink' },
+				{display:'price',value: 'price' },
+				{display:'weight',value: 'weight' },
+				{display:'color',value: 'color' },
+				{display:'clarity',value: 'clarity' },
+				{display:'cut',value: 'cut' },
+				{display:'polish',value: 'polish' },
+				{display:'symmetry',value: 'symmetry' },
+				{display:'fluorescence',value: 'fluorescence' },
+				{display:'certificate',value: 'certificate' },
+				{display:'lab',value: 'lab' },],
 				
 				columns:['shape','imageLink','price','weight','color','clarity','cut','polish','symmetry','fluorescence','certificate','lab'],
 				query:{
@@ -152,6 +157,9 @@ import router from '../../../router'
 				}
 			}
 
+		},
+		filters:{
+			transJs,
 		},
 		methods:{
 			clickRow(row,index){

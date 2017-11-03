@@ -1,6 +1,9 @@
 import { get } from '../../../helpers/api'
 import router from '../../../router'
 
+import { transJs } from '../../../helpers/transJs'
+import langs from '../../../langs/engagementRings'
+
 	export default {
 		el:'#engagementRings',
 		router,
@@ -24,6 +27,7 @@ import router from '../../../router'
 					 customized: [1,0], 
 					 
 				},
+				langs,
 				showModal:false,
 				showAdvance:false,
 				opened: [],
@@ -42,22 +46,22 @@ import router from '../../../router'
 					search_input: '',
 					search_conditions:{
 						style: [
-						{ description: 'Solitaire', clicked: false , display: ['Solitaire','單鑽石']},
-						{ description: 'Side-stone', clicked: false , display: ['Side-stone','輔鑽石']},
-						{ description: 'Halo', clicked: false , display: ['Halo','圍圈鑽石']},
+						{ description: 'Solitaire', clicked: false , display: 'Solitaire'},
+						{ description: 'Side-stone', clicked: false , display: 'Side-stone'},
+						{ description: 'Halo', clicked: false , display: 'Halo'},
 						],
 						prong: [
-						{ description: '4-prong', clicked: false , display: ['4-claw prong', '四爪']},
-						{ description: '6-prong', clicked: false , display: ['6-claw prong','六爪']},
+						{ description: '4-prong', clicked: false , display: '4-claw prong'},
+						{ description: '6-prong', clicked: false , display: '6-claw prong'},
 						],
 						shoulder: [
-						{ description: 'Tapering', clicked: false , display: ['Tapering', '尖臂']},
-						{ description: 'Parallel', clicked: false , display: ['Parallel', '平臂']},
-						{ description: 'Twisted', clicked: false , display: ['Twisted', '扭臂']},
+						{ description: 'Tapering', clicked: false , display: 'Tapering'},
+						{ description: 'Parallel', clicked: false , display: 'Parallel'},
+						{ description: 'Twisted', clicked: false , display: 'Twisted'},
 						],
 						customized: [
-						{ description: 1, clicked: false , display: ['Yes','是']},
-						{ description: 0, clicked: false , display: ['No','否']},
+						{ description: 1, clicked: false , display: 'Yes'},
+						{ description: 0, clicked: false , display: 'No'},
 						],
 					}
 				},
@@ -92,6 +96,9 @@ import router from '../../../router'
 					return 2
 				}
 			}
+		},
+		filters:{
+			transJs,
 		},
 		methods:{
 			toggleCustomized(){

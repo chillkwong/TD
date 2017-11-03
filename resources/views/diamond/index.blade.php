@@ -293,7 +293,7 @@
                         <thead>
                             <tr class="is-selected ">
                                 <th v-for="column in columnsToggle" @click="toggleOrder(column.value)">
-                                    <span>@{{ column.display[locale] }}</span>
+                                    <span>@{{ column.display | transJs(langs,locale) }}</span>
                                     <span class="dv-table-column" v-if="column.value === query.column">
                                         <span v-if="query.direction === 'desc' ">&#x25BC;</span>
                                         <span v-else >&#x25B2;</span>

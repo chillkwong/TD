@@ -61,23 +61,23 @@
                         <div class="tile is-12">
                             <div class="tile is-parent">
                                 <article class="tile is-child box is-4" >
-                                    <div>Style</div>
-                                    <input v-for="(value, index) in query.search_conditions.style" class="button " :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)" :value="query.search_conditions.style[index].display"> 
+                                    <div>Style </div>
+                                    <input v-for="(value, index) in query.search_conditions.style" class="button " :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)" :value="query.search_conditions.style[index].display | transJs(langs,locale)"> 
                                 </article>
 
                                 <article class="tile is-child box is-4" >
                                     <div>Metal</div>
-                                    <input v-for="(value, index) in query.search_conditions.metal " class=" button " :class=" {'is-info active' : query.search_conditions.metal[index].clicked} " type="button" @click="toggleValue(query.search_conditions.metal[index].clicked,'metal', index)" :value="query.search_conditions.metal[index].display"> 
+                                    <input v-for="(value, index) in query.search_conditions.metal " class=" button " :class=" {'is-info active' : query.search_conditions.metal[index].clicked} " type="button" @click="toggleValue(query.search_conditions.metal[index].clicked,'metal', index)" :value="query.search_conditions.metal[index].display | transJs(langs,locale)"> 
                                 </article>
 
                                 <article class="tile is-child box is-2" >
                                     <div>Side stone</div>
-                                    <input v-for="(value, index) in query.search_conditions.sideStone " class=" button " :class=" {'is-info active' : query.search_conditions.sideStone[index].clicked} " type="button" @click="toggleValue(query.search_conditions.sideStone[index].clicked,'sideStone', index)" :value="query.search_conditions.sideStone[index].display"> 
+                                    <input v-for="(value, index) in query.search_conditions.sideStone " class=" button " :class=" {'is-info active' : query.search_conditions.sideStone[index].clicked} " type="button" @click="toggleValue(query.search_conditions.sideStone[index].clicked,'sideStone', index)" :value="query.search_conditions.sideStone[index].display | transJs(langs,locale)"> 
                                 </article>
 
                                 <article class="tile is-child box is-2" >
                                     <div>Custom-make</div>
-                                    <input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display"> 
+                                    <input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display | transJs(langs,locale)"> 
                                 </article>
 
                                 
@@ -199,7 +199,7 @@
                         <div class="level is-mobile" v-for="(rings,idnex) in chunkedItemsMobile">
                             <div class="level-item" v-for="ring in rings">
                                 <div v-if="ring.wedding_rings[0]">
-                                        <router-link :to="$route.path +'/' + ring.id" >
+                                        <a @click= "clickRow(ring)">
                                             <img width="128" height="96" :src="`/images/${ring.wedding_rings[0].cover}`" v-if="ring.wedding_rings[0].cover">
                                         <center>
                                             <div class="level">
@@ -220,7 +220,7 @@
                                                 </div>
                                             </div>
                                         </center>
-                                        </router-link>
+                                        </a>
                                 </div>
                             </div>
                         </div>

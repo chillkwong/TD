@@ -1,6 +1,9 @@
 import { get } from '../../../helpers/api'
 import router from '../../../router'
 
+import { transJs } from '../../../helpers/transJs'
+import langs from '../../../langs/weddingRings'
+
 	export default {
 		el:'#weddingRings',
 		router,
@@ -28,6 +31,7 @@ import router from '../../../router'
 				showAdvance:false,
 				opened: [],
 				model: {},
+				langs,
 				chunkedItemsDesktop: [],
 				chunkedItemsMobile: [],
 				sameStock: [],
@@ -85,7 +89,22 @@ import router from '../../../router'
 		computed:{
 			styleClicked(){
 				return this.query.search_conditions.style.filter( style => style.clicked)
+			},
+			locale(){
+				
+				if (this.$route.fullPath.slice(1,3) == 'en') {
+					return 0
+				}
+				if (this.$route.fullPath.slice(1,3) == 'hk') {
+					return 1
+				}
+				if (this.$route.fullPath.slice(1,3) == 'cn') {
+					return 2
+				}
 			}
+		},
+		filters:{
+			transJs,
 		},
 		methods:{
 			toggleCustomized(){
