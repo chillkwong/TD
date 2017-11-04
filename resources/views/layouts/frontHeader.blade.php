@@ -28,7 +28,7 @@
       
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}">
-          {{trans('frontEnd.Diamonds')}}
+          {{trans('frontHeader.Diamonds')}}
         </a>
         <div class="navbar-dropdown is-boxed">
           <a class="navbar-item " href="/documentation/overview/start/">
@@ -74,7 +74,7 @@
       
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}">
-          {{trans('frontEnd.Engagement Rings')}}
+          {{trans('frontHeader.Engagement Rings')}}
         </a>
         <div class="navbar-dropdown is-boxed">
           <a class="navbar-item " href="/documentation/overview/start/">
@@ -120,7 +120,7 @@
       
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}">
-          {{trans('frontEnd.Wedding Rings')}}
+          {{trans('frontHeader.Wedding Rings')}}
         </a>
         <div class="navbar-dropdown is-boxed">
           <a class="navbar-item " href="/documentation/overview/start/">
@@ -272,13 +272,13 @@
 
       <div class="navbar-item has-dropdown is-hoverable">
         <div class="navbar-link">
-          Language {{trans('frontEnd.' . strToUpper(app()->getLocale(session('locale')))) }}
+          Language {{trans('frontHeader.' . strToUpper(app()->getLocale(session('locale')))) }}
         </div>
         <hr class="dropdown-divider">
         <div id="moreDropdown" class="navbar-dropdown is-boxed">
-           <a class="navbar-item " :href="'/en' + partialUrl"><img src="/front_end/langs/en.png" width="20" height="10">{{trans('frontEnd.EN')}}</a>
-           <a class="navbar-item " :href="'/hk' + partialUrl"><img src="/front_end/langs/hk.png" width="20" height="10">{{trans('frontEnd.HK')}}</a>
-           <a class="navbar-item " :href="'/cn' + partialUrl"><img src="/front_end/langs/china.png" width="20" height="10">{{trans('frontEnd.CN')}}</a>
+           <a class="navbar-item " :href="'/en' + partialUrl"><img src="/front_end/langs/en.png" width="20" height="10">{{trans('frontHeader.EN')}}</a>
+           <a class="navbar-item " :href="'/hk' + partialUrl"><img src="/front_end/langs/hk.png" width="20" height="10">{{trans('frontHeader.HK')}}</a>
+           <a class="navbar-item " :href="'/cn' + partialUrl"><img src="/front_end/langs/china.png" width="20" height="10">{{trans('frontHeader.CN')}}</a>
 
 
       </div>
@@ -353,14 +353,14 @@
                  
                 </ul>
 
-                <ul v-if="activeTab=='wedding-rings'">
+                <ul v-if="activeTab=='wedding-rings' || activeTab.includes('wedding-rings/')">
                   <li ><a>{{__('frontHeader.Classic Ring')}}</a></li>
                   <li ><a>{{__('frontHeader.Japanese Ring')}}</a></li>
                   <li ><a>{{__('frontHeader.Vintage Ring')}}</a></li>
                  
                 </ul>
 
-                <ul v-if="activeTab=='customer-jewellries'">
+                <ul v-if="activeTab=='customer-jewellries' || activeTab.includes('customer-jewellries/')">
                   <li ><a>{{__('frontHeader.Customer Jewellires')}}</a></li>
                   <li ><a>{{__('frontHeader.Customer Moments')}}</a></li>
                   <li ><a>{{__('frontHeader.Engagement Tips')}}</a></li>

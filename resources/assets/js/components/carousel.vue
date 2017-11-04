@@ -54,8 +54,8 @@
 
 
                     <div class="is-hidden-mobile">
-                        <center>
-                            <p>Customer Jewellires</p>
+                        <center v-if="chunkedItemsDesktop.length">
+                            <a>Customer Jewellires</a>
                         </center>
                         <div class="level is-mobile" >
                            <div class="level-item">
@@ -80,8 +80,8 @@
                     </div>
 
                  <div class="level is-hidden-desktop is-hidden-tablet is-centered">
-                    <center>
-                        <p>Customer Jewellires</p>
+                    <center v-if="chunkedItemsMobile.length">
+                        <a>Customer Jewellires</a>
                     </center>
                     <div class="level is-mobile" >
                         <div class="level-item">
@@ -133,8 +133,8 @@
 
             
             <div class="is-hidden-mobile">
-                <center>
-                    <p>Customer Jewellires</p>
+                <center v-if="chunkedItemsDesktop.length">
+                    <a>Customer Jewellires</a>
                 </center>
                 <div class="level is-mobile" >
                     <div class="level-item">
@@ -159,8 +159,8 @@
             </div>
 
             <div class="level is-hidden-desktop is-hidden-tablet is-centered">
-                <center>
-                    <p>Customer Jewellires</p>
+                <center v-if="chunkedItemsMobile.length">
+                    <a>Customer Jewellires</a>
                 </center>
                     <div class="level is-mobile" >
                         <div class="level-item">

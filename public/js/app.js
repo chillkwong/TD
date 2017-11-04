@@ -11550,18 +11550,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 16 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-	root: '/images/',
-	company: {
-		logo: '/images/company/' + 'logo_PNG_sq_60x60_1.png'
-	}
-});
-
-/***/ }),
+/* 16 */,
 /* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11795,7 +11784,6 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_flash__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_auth__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_images__ = __webpack_require__(16);
 //
 //
 //
@@ -11836,7 +11824,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-
+// import Images from './helpers/images'
 // import Locale from './helpers/locale'
 // import {get} from './helpers/api'
 
@@ -11847,8 +11835,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	data: function data() {
 		return {
 			flash: __WEBPACK_IMPORTED_MODULE_0__helpers_flash__["a" /* default */].state,
-			auth: __WEBPACK_IMPORTED_MODULE_1__store_auth__["a" /* default */].state,
-			images: __WEBPACK_IMPORTED_MODULE_2__helpers_images__["a" /* default */]
+			auth: __WEBPACK_IMPORTED_MODULE_1__store_auth__["a" /* default */].state
+			// images: Images
 		};
 	}
 });
@@ -18716,6 +18704,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_flash__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__ = __webpack_require__(174);
 //
 //
 //
@@ -18751,6 +18740,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
@@ -18765,7 +18755,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     active: false,
     title: '',
     columns: '',
-    processing: ''
+    processing: '',
+    langs: '',
+    locale: ''
 
   },
   data: function data() {
@@ -18778,7 +18770,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         storeURL: 'wwww.tingdiamond.com' + this.$route.fullPath
 
       },
-      locale: this.$route.fullPath.slice(0, 3)
+      hrefLangs: this.$route.fullPath.slice(0, 3)
 
     };
   },
@@ -18788,7 +18780,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (!value) return '';
       value = value.toString();
       return value.charAt(0).toUpperCase() + value.slice(1);
-    }
+    },
+    transJs: __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__["a" /* transJs */]
   },
   // computed: {
   //   formData(){
@@ -18855,7 +18848,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Details fo Appointment")]), _vm._v(" "), _c('table', {
     staticClass: "table"
   }, [_c('tr', _vm._l((_vm.columns), function(column) {
-    return _c('td', [_vm._v(_vm._s(_vm._f("capitalize")(column)))])
+    return _c('td', [_vm._v(_vm._s(_vm._f("capitalize")(_vm._f("transJs")(column, _vm.langs, _vm.locale))))])
   })), _vm._v(" "), _c('tr', _vm._l((_vm.columns), function(column) {
     return _c('td', [_vm._v(_vm._s(_vm.value[column]))])
   }))]), _vm._v(" "), _c('form', {
@@ -18934,7 +18927,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('div', [_c('a', {
     staticClass: "button",
     attrs: {
-      "href": _vm.locale + '/about-us'
+      "href": _vm.hrefLangs + '/about-us'
     }
   }, [_vm._v("Contact Us")]), _vm._v(" "), _c('button', {
     staticClass: "button is-success ",
@@ -19455,7 +19448,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })])])]), _vm._v(" "), _c('div', {
     staticClass: "is-hidden-mobile"
-  }, [_c('center', [_c('p', [_vm._v("Customer Jewellires")])]), _vm._v(" "), _c('div', {
+  }, [(_vm.chunkedItemsDesktop.length) ? _c('center', [_c('a', [_vm._v("Customer Jewellires")])]) : _vm._e(), _vm._v(" "), _c('div', {
     staticClass: "level is-mobile"
   }, [_c('div', {
     staticClass: "level-item"
@@ -19499,7 +19492,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(index + 1))])])
   }))], 1), _vm._v(" "), _c('div', {
     staticClass: "level is-hidden-desktop is-hidden-tablet is-centered"
-  }, [_c('center', [_c('p', [_vm._v("Customer Jewellires")])]), _vm._v(" "), _c('div', {
+  }, [(_vm.chunkedItemsMobile.length) ? _c('center', [_c('a', [_vm._v("Customer Jewellires")])]) : _vm._e(), _vm._v(" "), _c('div', {
     staticClass: "level is-mobile"
   }, [_c('div', {
     staticClass: "level-item"
@@ -19591,7 +19584,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })])])]), _vm._v(" "), _c('div', {
     staticClass: "is-hidden-mobile"
-  }, [_c('center', [_c('p', [_vm._v("Customer Jewellires")])]), _vm._v(" "), _c('div', {
+  }, [(_vm.chunkedItemsDesktop.length) ? _c('center', [_c('a', [_vm._v("Customer Jewellires")])]) : _vm._e(), _vm._v(" "), _c('div', {
     staticClass: "level is-mobile"
   }, [_c('div', {
     staticClass: "level-item"
@@ -19635,7 +19628,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(index + 1))])])
   }))], 1), _vm._v(" "), _c('div', {
     staticClass: "level is-hidden-desktop is-hidden-tablet is-centered"
-  }, [_c('center', [_c('p', [_vm._v("Customer Jewellires")])]), _vm._v(" "), _c('div', {
+  }, [(_vm.chunkedItemsMobile.length) ? _c('center', [_c('a', [_vm._v("Customer Jewellires")])]) : _vm._e(), _vm._v(" "), _c('div', {
     staticClass: "level is-mobile"
   }, [_c('div', {
     staticClass: "level-item"
@@ -20019,7 +20012,7 @@ if (false) {
 			diamond: {
 				weight: ''
 			},
-			columns: ['price', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluroscence', 'certificate', 'lab'],
+			columns: ['price', 'shape', 'weight', 'color', 'clarity', 'cut', 'polish', 'symmetry', 'fluorescence', 'certificate', 'lab'],
 
 			storeURL: '/api/diamonds/appointment',
 
@@ -20045,6 +20038,18 @@ if (false) {
 	computed: {
 		appointmentTitle: function appointmentTitle() {
 			return this.diamond.weight + 'carat, ' + this.diamond.color + ' color diamond';
+		},
+		locale: function locale() {
+
+			if (this.$route.fullPath.slice(1, 3) == 'en') {
+				return 0;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'hk') {
+				return 1;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'cn') {
+				return 2;
+			}
 		}
 	},
 	methods: {
@@ -20312,6 +20317,18 @@ if (false) {
 	computed: {
 		appointmentTitle: function appointmentTitle() {
 			return this.engagementRing.shoulder + ' shoulder, ' + this.engagementRing.prong + '  engagementRing';
+		},
+		locale: function locale() {
+
+			if (this.$route.fullPath.slice(1, 3) == 'en') {
+				return 0;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'hk') {
+				return 1;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'cn') {
+				return 2;
+			}
 		}
 	},
 	methods: {
@@ -20551,6 +20568,8 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_carousel_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__helpers_transJs__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__langs_weddingRings__ = __webpack_require__(173);
 
 // import Auth from '../../store/auth'
 
@@ -20558,6 +20577,7 @@ if (false) {
 
 
 // import Flash from '../../helpers/flash'
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -20571,6 +20591,7 @@ if (false) {
 			carouselState: false,
 			appointmentState: false,
 			title: '',
+			langs: __WEBPACK_IMPORTED_MODULE_5__langs_weddingRings__["a" /* default */],
 			weddingRing: '',
 			columns: ['unit_price', 'metal', 'sideStone', 'stock', 'name', 'description'],
 
@@ -20598,7 +20619,22 @@ if (false) {
 				obj.push(this.weddingRing.wedding_rings[1]);
 			}
 			return obj;
+		},
+		locale: function locale() {
+
+			if (this.$route.fullPath.slice(1, 3) == 'en') {
+				return 0;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'hk') {
+				return 1;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'cn') {
+				return 2;
+			}
 		}
+	},
+	filters: {
+		transJs: __WEBPACK_IMPORTED_MODULE_4__helpers_transJs__["a" /* transJs */]
 	},
 	methods: {
 		fetchData: function fetchData() {
@@ -20733,7 +20769,7 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ([{ 'Classic': ['Classic', '經典'] }, { 'Japanese': ['Japanese', '日本款'] }, { 'Vintage': ['Vintage', '歐洲款'] }, { '18K White': ['18K White', '18K 白'] }, { '18K Rose Gold': ['18K Rose Gold', '18K玫瑰金'] }, { 'PT950/900': ['PT950/900', '鉑金'] }, { 'Mixed': ['Mixed', '混色'] }, { 'True': ['True', '18K 白'] }, { 'False': ['False', '18K玫瑰金'] }, { 'Men': ['Men', '鉑金'] }, { 'Female': ['Female', '混色'] }]);
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'Classic': ['Classic', '經典'] }, { 'Japanese': ['Japanese', '日本款'] }, { 'Vintage': ['Vintage', '歐洲款'] }, { '18K White': ['18K White', '18K 白'] }, { '18K Rose Gold': ['18K Rose Gold', '18K玫瑰金'] }, { 'PT950/900': ['PT950/900', '鉑金'] }, { 'Mixed': ['Mixed', '混色'] }, { 'Men': ['Men', '鉑金'] }, { 'Female': ['Female', '混色'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }, { 'unit_price': ['unit_price', '扭臂'] }, { 'metal': ['metal', '混色'] }, { 'sideStone': ['side-stone', '輔鑽石'] }, { 'stock': ['stock', '輔鑽石'] }, { 'name': ['name', '名稱'] }, { 'description': ['description', '名稱'] }]);
 
 /***/ }),
 /* 174 */
@@ -20755,14 +20791,14 @@ function transJs(data, ori, locale) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ([{ 'Solitaire': ['Solitaire', '單鑽石'] }, { 'Side-stone': ['Side-stone', '輔鑽石'] }, { 'Halo': ['Halo', '圍圈鑽石'] }, { '4-claw prong': ['4-claw prong', '四爪'] }, { '6-claw prong': ['6-claw prong', '六爪'] }, { 'Tapering': ['Tapering', '尖臂'] }, { 'Parallel': ['Parallel', '平臂'] }, { 'Twisted': ['Twisted', '扭臂'] }, { 'Yes': ['Yes', '是'] }, { 'No': ['No', '否'] }]);
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'Solitaire': ['Solitaire', '單石'] }, { 'Side-stone': ['Side-stone', '輔石'] }, { 'side-stone': ['Side-stone', '輔石'] }, { 'sideStone': ['side-stone', '輔石'] }, { 'Halo': ['Halo', '圍圈'] }, { '4-claw prong': ['4-claw prong', '四爪'] }, { '4-prong': ['4-claw prong', '四爪'] }, { '6-claw prong': ['6-claw prong', '六爪'] }, { '6-prong': ['6-claw prong', '六爪'] }, { 'Tapering': ['Tapering', '尖'] }, { 'tapering': ['Tapering', '尖'] }, { 'Parallel': ['Parallel', '平'] }, { 'parallel': ['Parallel', '平'] }, { 'Twisted': ['Twisted', '扭'] }, { 'prong': ['prong', '爪數'] }, { 'unit_price': ['unit_price', '價格'] }, { 'shoulder': ['shoulder', '臂位'] }, { 'stock': ['stock', '輔鑽石'] }, { 'name': ['name', '名稱'] }, { 'description': ['description', '名稱'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
 
 /***/ }),
 /* 176 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ([{ 'shape': ['shape', '型狀'] }, { 'imageLink': ['imageLink', '圖像'] }, { 'price': ['price', '型狀'] }, { 'weight': ['weight', '型狀'] }, { 'color': ['color', '型狀'] }, { 'clarity': ['clarity', '型狀'] }, { 'cut': ['cut', '型狀'] }, { 'polish': ['polish', '型狀'] }, { 'symmetry': ['symmetry', '型狀'] }, { 'fluorescence': ['fluorescence', '型狀'] }, { 'certificate': ['certificate', '型狀'] }, { 'lab': ['lab', '型狀'] }, { 'fluorescence': ['fluorescence', '型狀'] }, { 'Yes': ['Yes', '是'] }, { 'No': ['No', '否'] }]);
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'shape': ['shape', '型狀'] }, { 'imageLink': ['imageLink', '圖像'] }, { 'price': ['price', '價格'] }, { 'weight': ['weight', '重量'] }, { 'color': ['color', '型狀'] }, { 'clarity': ['clarity', '型狀'] }, { 'cut': ['cut', '型狀'] }, { 'polish': ['polish', '型狀'] }, { 'symmetry': ['symmetry', '型狀'] }, { 'fluorescence': ['fluorescence', '型狀'] }, { 'certificate': ['certificate', '型狀'] }, { 'lab': ['lab', '型狀'] }, { 'fluorescence': ['fluorescence', '型狀'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
 
 /***/ })
 /******/ ]);

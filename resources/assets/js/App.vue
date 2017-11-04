@@ -38,7 +38,7 @@
 
 	import Flash from './helpers/flash'
 	import Auth from './store/auth'
-	import Images from './helpers/images'
+	// import Images from './helpers/images'
 	// import Locale from './helpers/locale'
   	// import {get} from './helpers/api'
 
@@ -51,7 +51,7 @@
 			return {
 				flash: Flash.state,
 				auth: Auth.state,
-				images: Images
+				// images: Images
 			}
 		},
 

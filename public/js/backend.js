@@ -11685,7 +11685,6 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_flash__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_auth__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_images__ = __webpack_require__(16);
 //
 //
 //
@@ -11726,7 +11725,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-
+// import Images from './helpers/images'
 // import Locale from './helpers/locale'
 // import {get} from './helpers/api'
 
@@ -11737,8 +11736,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	data: function data() {
 		return {
 			flash: __WEBPACK_IMPORTED_MODULE_0__helpers_flash__["a" /* default */].state,
-			auth: __WEBPACK_IMPORTED_MODULE_1__store_auth__["a" /* default */].state,
-			images: __WEBPACK_IMPORTED_MODULE_2__helpers_images__["a" /* default */]
+			auth: __WEBPACK_IMPORTED_MODULE_1__store_auth__["a" /* default */].state
+			// images: Images
 		};
 	}
 });

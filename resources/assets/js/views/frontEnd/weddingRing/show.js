@@ -5,6 +5,8 @@
 	import Carousel from '../../../components/carousel.vue'
 	import router from '../../../router'
 	// import Flash from '../../helpers/flash'
+	import { transJs } from '../../../helpers/transJs'
+	import langs from '../../../langs/weddingRings'
 
 		
 	export default {
@@ -18,6 +20,7 @@
 				carouselState: false,
 				appointmentState: false,
 				title: '',
+				langs,
 				weddingRing:'',
 				columns:[
 				'unit_price',
@@ -51,7 +54,22 @@
 					obj.push(this.weddingRing.wedding_rings[1])
 					}
 				return obj
+			},
+			locale(){
+				
+				if (this.$route.fullPath.slice(1,3) == 'en') {
+					return 0
+				}
+				if (this.$route.fullPath.slice(1,3) == 'hk') {
+					return 1
+				}
+				if (this.$route.fullPath.slice(1,3) == 'cn') {
+					return 2
+				}
 			}
+		},
+		filters:{
+			transJs,
 		},
 		methods: {
 			fetchData(){

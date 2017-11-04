@@ -49,6 +49,18 @@
 		computed: {
 			appointmentTitle(){
 				return this.engagementRing.shoulder + ' shoulder, ' + this.engagementRing.prong + '  engagementRing' 
+			},
+			locale(){
+				
+				if (this.$route.fullPath.slice(1,3) == 'en') {
+					return 0
+				}
+				if (this.$route.fullPath.slice(1,3) == 'hk') {
+					return 1
+				}
+				if (this.$route.fullPath.slice(1,3) == 'cn') {
+					return 2
+				}
 			}
 		},
 		methods: {

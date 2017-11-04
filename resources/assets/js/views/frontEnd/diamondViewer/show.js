@@ -35,7 +35,7 @@
                 'cut',
                 'polish',
                 'symmetry',
-                'fluroscence',
+                'fluorescence',
                 'certificate',
                 'lab'
                 ]
@@ -63,6 +63,18 @@
 		computed: {
 			appointmentTitle(){
 				return this.diamond.weight + 'carat, ' + this.diamond.color + ' color diamond' 
+			},
+			locale(){
+				
+				if (this.$route.fullPath.slice(1,3) == 'en') {
+					return 0
+				}
+				if (this.$route.fullPath.slice(1,3) == 'hk') {
+					return 1
+				}
+				if (this.$route.fullPath.slice(1,3) == 'cn') {
+					return 2
+				}
 			}
 		},
 		methods: {

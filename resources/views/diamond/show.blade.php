@@ -54,7 +54,7 @@
                             <article>
                                 <center>
                                     <button class="button is-info" @click="appointmentState=!appointmentState">Appointment</button>
-                                    <appointment v-model="diamond" :title="appointmentTitle" @active="appointmentState=!appointmentState" :active="appointmentState" :columns="columns" :processing="false"></appointment>
+                                    <appointment v-model="diamond" :title="appointmentTitle" @active="appointmentState=!appointmentState" :active="appointmentState" :columns="columns" :processing="false" :langs="langs" :locale="locale"></appointment>
                                 </center>
                                 <br>
                                 <p>
@@ -130,7 +130,7 @@
                     <div class="caption">
                         <span class="border">{{trans('diamondsearch.Cut Grade')}}: @{{diamond.cut}}</span>
                         <hr>
-                        <span class="cut-text">{{trans('diamondsearch.cutEx')}}.
+                        <span class="cut-text" v-if="diamond.cut == 'EX'">{{trans('diamondsearch.cutEx')}}.
                         <br>
                         </span>
                         <span class="cut-text">{{trans('diamondsearch.Want to learn even more about cut')}}? Learn More<br>

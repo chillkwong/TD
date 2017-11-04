@@ -10,10 +10,10 @@
       <h1 class="title is-6">Details fo Appointment</h1>
       <table class="table">
         <tr >
-          <td v-for="column in columns">{{column | capitalize}}</td>
+          <td v-for="column in columns">{{column | transJs(langs,locale) | capitalize }}</td>
         </tr>
         <tr >
-          <td v-for="column in columns">{{value[column]}}</td>
+          <td v-for="column in columns">{{ value[column] }}</td>
         </tr>
       </table>
       <form @submit.prevent="save">
@@ -21,7 +21,7 @@
       <input type="text" name="phone" class="input" v-model="form.phone" placeholder="your Phone No." required> 
       <textarea  v-model="form.remark" rows="5" cols="80"></textarea>
       <div>
-        <a class="button" :href="locale + '/about-us'">Contact Us</a>
+        <a class="button" :href="hrefLangs + '/about-us'">Contact Us</a>
       <button class="button is-success " :class="{'is-loading': processing}" @submit.stop="save" >Appointment</button>
       </div>
       </form>
@@ -37,6 +37,7 @@
 
 	import {post} from '../helpers/api'
   import Flash from '../helpers/flash'
+  import { transJs } from '../helpers/transJs'
 
 	export default{
 		props:{
@@ -48,6 +49,8 @@
       title: '',
       columns:'',
       processing: '',
+      langs: '',
+      locale: '',
 
 		},
     data(){
@@ -60,7 +63,7 @@
             storeURL:'wwww.tingdiamond.com'+this.$route.fullPath,
           
         },
-        locale: this.$route.fullPath.slice(0,3),
+        hrefLangs: this.$route.fullPath.slice(0,3),
 
       }
     },
@@ -69,7 +72,8 @@
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
-      }
+      },
+      transJs,
     },
     // computed: {
     //   formData(){

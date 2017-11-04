@@ -45,7 +45,7 @@
                             <article>
                                 <center>
                                     <button class="button is-info" @click="appointmentState=!appointmentState">Appointment</button>
-                                    <appointment v-model="engagementRing" :title="appointmentTitle" @active="appointmentState=!appointmentState" :active="appointmentState" :columns="columns"  :processing="false"></appointment>
+                                    <appointment v-model="engagementRing" :title="appointmentTitle" @active="appointmentState=!appointmentState" :active="appointmentState" :columns="columns"  :processing="false" :langs="langs" :locale="locale"></appointment>
                                 </center>
                                 <br>
                                 <p>
@@ -64,10 +64,10 @@
                                 </thead>
                                     
                                 <tbody>
-                                    <tr><td>Unit Price</td><td>$@{{engagementRing.unit_price}}</td></tr>
-                                    <tr><td>Shoulder</td><td>@{{engagementRing.shoulder}}</td></tr>
-                                    <tr><td>Prong</td><td>@{{engagementRing.prong}}</td></tr>
-                                    <tr><td>Side Stone</td><td>@{{engagementRing.sideStone}}</td></tr>
+                                    <tr><td>Unit Price</td><td>$@{{engagementRing.unit_price }}</td></tr>
+                                    <tr><td>Shoulder</td><td>@{{engagementRing.shoulder | transJs(langs,locale)}}</td></tr>
+                                    <tr><td>Prong</td><td>@{{engagementRing.prong | transJs(langs,locale)}}</td></tr>
+                                    <tr><td>Side Stone</td><td>@{{engagementRing.sideStone | transJs(langs,locale)}}</td></tr>
                                 </tbody>
 
                                 <thead>

@@ -62,15 +62,21 @@
                             <div class="tile is-parent">
                                 <article class="tile is-child box is-4" >
                                     <div>{{trans('engagementRing.Style')}}</div>
-                                    <input v-for="(value, index) in query.search_conditions.style" class="button " :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)" :value="query.search_conditions.style[index].display | transJs(langs,locale)"> 
+                                    <button v-for="(value, index) in query.search_conditions.style" class="button " :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)">
+                                    <img :src="'/front_end/engagementRing/'+query.search_conditions.style[index].description + '.png'" height="40" width="55">
+                                    @{{query.search_conditions.style[index].display | transJs(langs,locale)}}
+                                    </button>
                                 </article>
 
-                                <article class="tile is-child box is-3" >
-                                    <div>Shoulder</div>
-                                    <input v-for="(value, index) in query.search_conditions.shoulder " class=" button " :class=" {'is-info active' : query.search_conditions.shoulder[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shoulder[index].clicked,'shoulder', index)" :value="query.search_conditions.shoulder[index].display | transJs(langs,locale)"> 
+                                <article class="tile is-child box is-4" >
+                                    <div>{{trans('engagementRing.Shoulder')}}</div>
+                                    <button v-for="(value, index) in query.search_conditions.shoulder " class=" button " :class=" {'is-info active' : query.search_conditions.shoulder[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shoulder[index].clicked,'shoulder', index)" >
+                                    <img :src="'/front_end/engagementRing/'+query.search_conditions.shoulder[index].description + '.png'" height="40" width="55">
+                                    @{{query.search_conditions.shoulder[index].display | transJs(langs,locale)}}
+                                    </button>
                                 </article>
 
-                                <article class="tile is-child box is-3" >
+                                <article class="tile is-child box is-2" >
                                     <div>Claw Prong</div>
                                     <input v-for="(value, index) in query.search_conditions.prong " class=" button " :class=" {'is-info active' : query.search_conditions.prong[index].clicked} " type="button" @click="toggleValue(query.search_conditions.prong[index].clicked,'prong', index)" :value="query.search_conditions.prong[index].display | transJs(langs,locale)"> 
                                 </article>
@@ -113,22 +119,28 @@
                             <div class="tile is-parent">
                                 <article class="tile is-child box" >
                                     <div>Style</div>
-                                    <input v-for="(value, index) in query.search_conditions.style" class="button" :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)" :value="query.search_conditions.style[index].display[locale]"> 
+                                      <button v-for="(value, index) in query.search_conditions.style" class="button " :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)">
+                                    <img :src="'/front_end/engagementRing/'+query.search_conditions.style[index].description + '.png'" height="40" width="55">
+                                    @{{query.search_conditions.style[index].display | transJs(langs,locale)}}
+                                    </button>
                                 </article>
 
                                 <article class="tile is-child box" >
-                                    <div>Shoulder</div>
-                                    <input v-for="(value, index) in query.search_conditions.shoulder " class=" button " :class=" {'is-info active' : query.search_conditions.shoulder[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shoulder[index].clicked,'shoulder', index)" :value="query.search_conditions.shoulder[index].display[locale]"> 
+                                    <div>{{trans('engagementRing.Shoulder')}}</div>
+                                    <button v-for="(value, index) in query.search_conditions.shoulder " class=" button " :class=" {'is-info active' : query.search_conditions.shoulder[index].clicked} " type="button" @click="toggleValue(query.search_conditions.shoulder[index].clicked,'shoulder', index)" >
+                                    <img :src="'/front_end/engagementRing/'+query.search_conditions.shoulder[index].description + '.png'" height="40" width="55">
+                                    @{{query.search_conditions.shoulder[index].display | transJs(langs,locale)}}
+                                    </button>
                                 </article>
 
                                 <article class="tile is-child box" >
                                     <div>Claw Prong</div>
-                                    <input v-for="(value, index) in query.search_conditions.prong " class=" button " :class=" {'is-info active' : query.search_conditions.prong[index].clicked} " type="button" @click="toggleValue(query.search_conditions.prong[index].clicked,'prong', index)" :value="query.search_conditions.prong[index].display[locale]"> 
+                                    <input v-for="(value, index) in query.search_conditions.prong " class=" button " :class=" {'is-info active' : query.search_conditions.prong[index].clicked} " type="button" @click="toggleValue(query.search_conditions.prong[index].clicked,'prong', index)" :value="query.search_conditions.prong[index].display| transJs(langs,locale)"> 
                                 </article>
 
                                 <article class="tile is-child box" >
                                     <div>Custom-make</div>
-                                    <input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display[locale]"> 
+                                    <input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display| transJs(langs,locale)"> 
                                 </article>
                             </div>
                         </div>
@@ -158,7 +170,7 @@
                                             <img :src="`/images/${ring.cover}`" v-if="ring.cover">
                                         <center>
                                             <p  class="subtitle" v-if="ring.description">$@{{ring.unit_price}}</p>
-                                            <p v-if="ring.description">@{{ring.description}}</p>
+                                            <p >@{{ring.style | transJs(langs,locale)}}@{{ring.prong | transJs(langs,locale)}}@{{ring.shoulder | transJs(langs,locale)}}{{trans('engagementRing.shoulder')}} {{trans('engagementRing.setting')}}</p>
                                         </center>
                                         </figure>
                                         </a>
