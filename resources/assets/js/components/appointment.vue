@@ -17,8 +17,8 @@
         </tr>
       </table>
       <form @submit.prevent="save">
-      <input type="text" name="name" class="input" v-model="form.name" placeholder="your name" required>
-      <input type="text" name="phone" class="input" v-model="form.phone" placeholder="your Phone No." required> 
+      <input type="text" name="name" class="input" v-model="form.name" :placeholder="text.placeholderName | transJs(langs,locale)" required>
+      <input type="text" name="phone" class="input" v-model="form.phone" :placeholder="text.placeholderNo  | transJs(langs,locale)" required> 
       <textarea  v-model="form.remark" rows="5" cols="80"></textarea>
       <div>
         <a class="button" :href="hrefLangs + '/about-us'">{{ text.button  | transJs(langs,locale)}}</a>
@@ -68,6 +68,9 @@
         title:'Details fo Appointment',
         button: 'Contact Us',   
         button1: 'Appointment', 
+        placeholderName: 'your name',
+        placeholderNo: 'your Phone No.',
+
         },
 
 

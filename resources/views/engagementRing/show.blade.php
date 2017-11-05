@@ -22,7 +22,7 @@
 
                 <div class="tile box">
                     <div class="tile notification is-primary">
-                            <p class="title">@{{engagementRing.style | transJs(langs,locale)}}@{{engagementRing.prong | transJs(langs,locale)}}@{{engagementRing.shoulder | transJs(langs,locale)}}{{trans('engagementRing.shoulder')}}{{trans('engagementRing.setting')}}</p>
+                            <p class="title">@{{engagementRing.style | transJs(langs,locale)}}@{{engagementRing.prong | transJs(langs,locale)}}@{{engagementRing.shoulder | transJs(langs,locale)}}{{trans('engagementRing.setting')}}</p>
                     </div>       
                 </div>
 
@@ -49,7 +49,9 @@
                                 </center>
                                 <br>
                                 <p>
-                                
+                                For more detailed information, 
+                                <br>
+                                <a @click="appointmentState=!appointmentState">Make Appointment</a> or <a :href="hrefLangs + '/about-us'">contact us</a> for further：
                                 </p>
                             </article>
                             </div>
@@ -67,7 +69,7 @@
                                     <tr><td>Unit Price</td><td>$@{{engagementRing.unit_price }}</td></tr>
                                     <tr><td>Shoulder</td><td>@{{engagementRing.shoulder | transJs(langs,locale)}}</td></tr>
                                     <tr><td>Prong</td><td>@{{engagementRing.prong | transJs(langs,locale)}}</td></tr>
-                                    <tr><td>Side Stone</td><td>@{{engagementRing.sideStone | transJs(langs,locale)}}</td></tr>
+                                    <tr><td>Side Stone</td><td>@{{engagementRing.sideStone}} {{trans('engagementRing.ct')}}</td></tr>
                                 </tbody>
 
                                 <thead>
@@ -79,7 +81,7 @@
                                 <tbody>
                                     <tr><td>Stock</td><td>@{{engagementRing.stock}}</td></tr>
                                     <tr><td>Name</td><td>@{{engagementRing.name}}</td></tr>
-                                    <tr><td>Description</td><td>@{{engagementRing.description}}</td></tr>
+                                    <tr><td>Description</td><td>@{{engagementRing.style | transJs(langs,locale)}},@{{engagementRing.prong | transJs(langs,locale)}},@{{engagementRing.shoulder | transJs(langs,locale)}},{{trans('engagementRing.setting')}}</td></tr>
                                 </tbody>
 
                                 </table>

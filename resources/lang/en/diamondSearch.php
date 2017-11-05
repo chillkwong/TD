@@ -29,13 +29,14 @@ return [
 	'Learn More' => 'Learn More',
 	'GIA Certificate' => 'GIA Certificate',
 	'Appointment' => 'Appointment',
-	'Certificate' => 'Certificate',
+	'Next' => 'Next',
+	'Previous' => 'Previous',
 	'Certificate' => 'Certificate',
 
 	'If you could not find diamonds as your inquiry' => 'If you could not find diamonds as your inquiry',
 	'PLEASE（Whatsapp: Winnie－5484 4533， for the latest diamond Stock）' => 'PLEASE（Whatsapp: Winnie－5484 4533， for the latest diamond Stock）',
 	'Per Page' => 'Per Page',
-	'Next' => 'Next',
+	
 
 
 	

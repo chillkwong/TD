@@ -23,9 +23,9 @@
         <div class="tile is-ancestor" >
             <div class="tile is-parent ">
                 <div class="tile is-child notification is-primary" >
-                    <center><h1 class="title is-5">Engagement Rings - Solitaire</h1>
+                    <center><h1 class="title is-5">{{trans('engagementRing.Engagement Rings - Solitaire')}}</h1>
                         <h1 >
-                        Thank you for customers support, so that we could share their precious moments.
+                        {{trans('engagementRing.indexDescription')}}
                         </h1>
                     
                     </center>
@@ -77,12 +77,12 @@
                                 </article>
 
                                 <article class="tile is-child box is-2" >
-                                    <div>Claw Prong</div>
+                                    <div>{{trans('engagementRing.Claw Prong')}}</div>
                                     <input v-for="(value, index) in query.search_conditions.prong " class=" button " :class=" {'is-info active' : query.search_conditions.prong[index].clicked} " type="button" @click="toggleValue(query.search_conditions.prong[index].clicked,'prong', index)" :value="query.search_conditions.prong[index].display | transJs(langs,locale)"> 
                                 </article>
 
                                 <article class="tile is-child box is-2" >
-                                    <div>Custom-make</div>
+                                    <div>{{trans('engagementRing.Custom-make')}}</div>
                                     <input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display | transJs(langs,locale)"> 
                                 </article>
                             </div>
@@ -100,7 +100,7 @@
             <div @click="showModal=!showModal">
 
             <center>
-            <button class="button is-info ">Engagement Rings</button>
+            <button class="button is-info "> {{trans('engagementRing.Search Engagement Rings')}}</button>
             </center>
 
             <div class="modal" :class="{ 'is-active':showModal}">
@@ -118,7 +118,7 @@
                         <div class="tile is-12">
                             <div class="tile is-parent">
                                 <article class="tile is-child box" >
-                                    <div>Style</div>
+                                    <div>{{trans('engagementRing.Style')}}</div>
                                       <button v-for="(value, index) in query.search_conditions.style" class="button " :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)">
                                     <img :src="'/front_end/engagementRing/'+query.search_conditions.style[index].description + '.png'" height="40" width="55">
                                     @{{query.search_conditions.style[index].display | transJs(langs,locale)}}
@@ -134,12 +134,12 @@
                                 </article>
 
                                 <article class="tile is-child box" >
-                                    <div>Claw Prong</div>
+                                    <div>{{trans('engagementRing.Claw Prong')}}</div>
                                     <input v-for="(value, index) in query.search_conditions.prong " class=" button " :class=" {'is-info active' : query.search_conditions.prong[index].clicked} " type="button" @click="toggleValue(query.search_conditions.prong[index].clicked,'prong', index)" :value="query.search_conditions.prong[index].display| transJs(langs,locale)"> 
                                 </article>
 
                                 <article class="tile is-child box" >
-                                    <div>Custom-make</div>
+                                    <div>{{trans('engagementRing.Custom-make')}}</div>
                                     <input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display| transJs(langs,locale)"> 
                                 </article>
                             </div>
@@ -149,7 +149,7 @@
 
                 </section>
                 <footer class="modal-card-foot">
-                  <button class="button is-success">Submit</button>
+                  <button class="button is-success">{{trans('engagementRing.Submit')}}</button>
             <!--       <button class="button">Cancel</button>
              -->    </footer>
               </div>
@@ -170,7 +170,7 @@
                                             <img :src="`/images/${ring.cover}`" v-if="ring.cover">
                                         <center>
                                             <p  class="subtitle" v-if="ring.description">$@{{ring.unit_price}}</p>
-                                            <p >@{{ring.style | transJs(langs,locale)}} @{{ring.prong | transJs(langs,locale)}} @{{ring.shoulder | transJs(langs,locale)}} {{trans('engagementRing.shoulder')}} {{trans('engagementRing.setting')}}</p>
+                                            <p >@{{ring.style | transJs(langs,locale)}} @{{ring.prong | transJs(langs,locale)}} @{{ring.shoulder | transJs(langs,locale)}} {{trans('engagementRing.setting')}}</p>
                                         </center>
                                         </figure>
                                         </a>
@@ -180,7 +180,7 @@
                         </div>
                                 <div class="level">
                                     <article class="level-item" >
-                                        <button class="button is-primary" @click="more()">More</button>
+                                        <button class="button is-primary" @click="more()">{{trans('engagementRing.More')}}</button>
                                     </article>
                                 </div>
                     </div>
@@ -204,7 +204,7 @@
 
                         <div class="level">
                             <article class="level-item" >
-                                <button class="button is-primary" @click="more()">More</button>
+                                <button class="button is-primary" @click="more()">{{trans('engagementRing.More')}}</button>
                             </article>
                         </div>
                         

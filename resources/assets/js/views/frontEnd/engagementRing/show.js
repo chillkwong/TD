@@ -20,6 +20,10 @@
 				appointmentState: false,
 				title: '',
 				langs,
+				text:{
+					engagementRing: 'engagementRing',
+				},
+				hrefLangs: this.$route.fullPath.slice(0,3),
 				engagementRing:'',
 				columns:[
 				'unit_price',
@@ -48,7 +52,7 @@
 		},
 		computed: {
 			appointmentTitle(){
-				return this.engagementRing.shoulder + ' shoulder, ' + this.engagementRing.prong + '  engagementRing' 
+				return transJs(this.engagementRing.shoulder,this.langs,this.locale)  +' ' + transJs(this.engagementRing.prong,this.langs,this.locale)  +' '+ transJs(this.text.engagementRing,this.langs,this.locale) 
 			},
 			locale(){
 				

@@ -23,9 +23,9 @@
         <div class="tile is-ancestor" >
             <div class="tile is-parent ">
                 <div class="tile is-child notification is-primary" >
-                    <center><h1 class="title is-5">Wedding Rings</h1>
+                    <center><h1 class="title is-5">{{trans('weddingRing.Wedding Rings - Classic')}}</h1>
                         <h1 >
-                        Thank you for customers support, so that we could share their precious moments.
+                        {{trans('weddingRing.indexDescription')}}
                         </h1>
                     
                     </center>
@@ -61,22 +61,22 @@
                         <div class="tile is-12">
                             <div class="tile is-parent">
                                 <article class="tile is-child box is-4" >
-                                    <div>Style </div>
+                                    <div>{{trans('weddingRing.Style')}} </div>
                                     <input v-for="(value, index) in query.search_conditions.style" class="button " :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)" :value="query.search_conditions.style[index].display | transJs(langs,locale)"> 
                                 </article>
 
                                 <article class="tile is-child box is-4" >
-                                    <div>Metal</div>
+                                    <div>{{trans('weddingRing.Metal')}}</div>
                                     <input v-for="(value, index) in query.search_conditions.metal " class=" button " :class=" {'is-info active' : query.search_conditions.metal[index].clicked} " type="button" @click="toggleValue(query.search_conditions.metal[index].clicked,'metal', index)" :value="query.search_conditions.metal[index].display | transJs(langs,locale)"> 
                                 </article>
 
                                 <article class="tile is-child box is-2" >
-                                    <div>Side stone</div>
+                                    <div>{{trans('weddingRing.Side stone')}}</div>
                                     <input v-for="(value, index) in query.search_conditions.sideStone " class=" button " :class=" {'is-info active' : query.search_conditions.sideStone[index].clicked} " type="button" @click="toggleValue(query.search_conditions.sideStone[index].clicked,'sideStone', index)" :value="query.search_conditions.sideStone[index].display | transJs(langs,locale)"> 
                                 </article>
 
                                 <article class="tile is-child box is-2" >
-                                    <div>Custom-make</div>
+                                    <div>{{trans('weddingRing.Custom-make')}}</div>
                                     <input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display | transJs(langs,locale)"> 
                                 </article>
 
@@ -96,7 +96,7 @@
             <div @click="showModal=!showModal">
 
             <center>
-            <button class="button is-info ">wedding Rings</button>
+            <button class="button is-info ">{{trans('weddingRing.wedding Rings')}}</button>
             </center>
 
             <div class="modal" :class="{ 'is-active':showModal}">
@@ -114,22 +114,22 @@
                         <div class="tile is-12">
                             <div class="tile is-parent">
                                 <article class="tile is-child box" >
-                                    <div>Style</div>
+                                    <div>{{trans('weddingRing.Style')}}</div>
                                     <input v-for="(value, index) in query.search_conditions.style" class="button " :class=" {'is-info active' : query.search_conditions.style[index].clicked} " type="button" @click="toggleValue(query.search_conditions.style[index].clicked,'style', index)" :value="query.search_conditions.style[index].display"> 
                                 </article>
 
                                 <article class="tile is-child box" >
-                                    <div>Metal</div>
+                                    <div>{{trans('weddingRing.Metal')}}</div>
                                     <input v-for="(value, index) in query.search_conditions.metal " class=" button " :class=" {'is-info active' : query.search_conditions.metal[index].clicked} " type="button" @click="toggleValue(query.search_conditions.metal[index].clicked,'metal', index)" :value="query.search_conditions.metal[index].display"> 
                                 </article>
 
                                 <article class="tile is-child box" >
-                                    <div>Side stone</div>
+                                    <div>{{trans('weddingRing.Side stone')}}</div>
                                     <input v-for="(value, index) in query.search_conditions.sideStone " class=" button " :class=" {'is-info active' : query.search_conditions.sideStone[index].clicked} " type="button" @click="toggleValue(query.search_conditions.sideStone[index].clicked,'sideStone', index)" :value="query.search_conditions.sideStone[index].display"> 
                                 </article>
 
                                 <article class="tile is-child box" >
-                                    <div>Custom-make</div>
+                                    <div>{{trans('weddingRing.Custom-make')}}</div>
                                     <input v-for="(value, index) in query.search_conditions.customized " class=" button " :class=" {'is-info active' : query.search_conditions.customized[index].clicked} " type="button" @click="toggleValue(query.search_conditions.customized[index].clicked,'customized', index)" :value="query.search_conditions.customized[index].display"> 
                                 </article>
 
@@ -140,7 +140,7 @@
 
                 </section>
                 <footer class="modal-card-foot">
-                  <button class="button is-success">Submit</button>
+                  <button class="button is-success">{{trans('weddingRing.Submit')}}</button>
             <!--       <button class="button">Cancel</button>
              -->    </footer>
               </div>
@@ -171,7 +171,8 @@
 
                                             <div class="level">
                                                 <div class="level-item is-left">
-                                                    <p  v-if="ring.wedding_rings[0].description">@{{ring.wedding_rings[0].description}}</p>
+                                                    <p  v-if="ring.wedding_rings[0].description">@{{ring.wedding_rings[0].style | transJs(langs,locale)}} @{{ring.wedding_rings[0].metal | transJs(langs,locale)}} @{{ring.wedding_rings[0].sideStone? transJsMet(columns[2],langs,locale):''}} 
+                                                    {{trans('weddingRing.Wedding Ring')}}</p>
                                                 </div>
                                                 <!-- <div class="level-item is-right" v-if="ring.wedding_rings[1]">
                                                     <p  v-if="ring.wedding_rings[1].description">$@{{ring.wedding_rings[1].description}}</p>
@@ -188,7 +189,7 @@
 
                         <div class="level">
                             <article class="level-item" >
-                                <button class="button is-primary" @click="more()">More</button>
+                                <button class="button is-primary" @click="more()">{{trans('weddingRing.More')}}</button>
                             </article>
                         </div>
                     </div>
@@ -227,7 +228,7 @@
 
                         <div class="level">
                             <article class="level-item" >
-                                <button class="button is-primary" @click="more()">More</button>
+                                <button class="button is-primary" @click="more()">{{trans('weddingRing.More')}}</button>
                             </article>
                         </div>
                     </div>

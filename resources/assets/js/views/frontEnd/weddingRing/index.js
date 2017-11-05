@@ -36,7 +36,7 @@ import langs from '../../../langs/weddingRings'
 				chunkedItemsMobile: [],
 				sameStock: [],
 				clickedRows:[],
-				columns:['style','shoulder','prong'],
+				columns:['style','metal','sideStone'],
 				query:{
 					page:1,
 					column: 'style',
@@ -107,6 +107,9 @@ import langs from '../../../langs/weddingRings'
 			transJs,
 		},
 		methods:{
+			transJsMet(data,ori,langs){
+				return transJs(data,ori,langs)
+			},
 			toggleCustomized(){
 				this.fetchData.customized = !this.fetchData.customized
 				this.fetchIndexData()

@@ -17,10 +17,12 @@ export default[
 
 	{'carat':['carat','預約']},
 	{'diamond':['diamond','預約']},
+	{'your name':['your name','求婚戒指']},
+	{'your Phone No.':['your Phone No.','爪數']},	
 	{'Appointment':['Appointment','預約']},
 	{'Details fo Appointment':['Details fo Appointment','預約']},
 	{'Contact Us':['Contact Us','預約']},
-
+	
 	{'True':['Yes','是']},
 	{'False':['No','否']},
 	{'Yes':['Yes','是']},

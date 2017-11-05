@@ -17744,21 +17744,21 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ([{ 'shape': ['shape', '型狀'] }, { 'imageLink': ['imageLink', '圖像'] }, { 'price': ['price', '價格'] }, { 'weight': ['weight', '重量'] }, { 'color': ['color', '型狀'] }, { 'clarity': ['clarity', '型狀'] }, { 'cut': ['cut', '型狀'] }, { 'polish': ['polish', '型狀'] }, { 'symmetry': ['symmetry', '型狀'] }, { 'fluorescence': ['fluorescence', '型狀'] }, { 'certificate': ['certificate', '型狀'] }, { 'lab': ['lab', '型狀'] }, { 'fluorescence': ['fluorescence', '型狀'] }, { 'RD': ['RD', '圓形'] }, { 'carat': ['carat', '預約'] }, { 'diamond': ['diamond', '預約'] }, { 'Appointment': ['Appointment', '預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約'] }, { 'Contact Us': ['Contact Us', '預約'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'shape': ['shape', '型狀'] }, { 'imageLink': ['imageLink', '圖像'] }, { 'price': ['price', '價格'] }, { 'weight': ['weight', '重量'] }, { 'color': ['color', '型狀'] }, { 'clarity': ['clarity', '型狀'] }, { 'cut': ['cut', '型狀'] }, { 'polish': ['polish', '型狀'] }, { 'symmetry': ['symmetry', '型狀'] }, { 'fluorescence': ['fluorescence', '型狀'] }, { 'certificate': ['certificate', '型狀'] }, { 'lab': ['lab', '型狀'] }, { 'fluorescence': ['fluorescence', '型狀'] }, { 'RD': ['RD', '圓形'] }, { 'carat': ['carat', '預約'] }, { 'diamond': ['diamond', '預約'] }, { 'your name': ['your name', '求婚戒指'] }, { 'your Phone No.': ['your Phone No.', '爪數'] }, { 'Appointment': ['Appointment', '預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約'] }, { 'Contact Us': ['Contact Us', '預約'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
 
 /***/ }),
 /* 72 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ([{ 'Solitaire': ['Solitaire', '單石'] }, { 'Side-stone': ['Side-stone', '輔石'] }, { 'side-stone': ['Side-stone', '輔石'] }, { 'sideStone': ['side-stone', '輔石'] }, { 'Halo': ['Halo', '圍圈'] }, { '4-claw prong': ['4-claw prong', '四爪'] }, { '4-prong': ['4-claw prong', '四爪'] }, { '6-claw prong': ['6-claw prong', '六爪'] }, { '6-prong': ['6-claw prong', '六爪'] }, { 'Tapering': ['Tapering', '尖'] }, { 'tapering': ['Tapering', '尖'] }, { 'Parallel': ['Parallel', '平'] }, { 'parallel': ['Parallel', '平'] }, { 'Twisted': ['Twisted', '扭'] }, { 'prong': ['prong', '爪數'] }, { 'unit_price': ['unit_price', '價格'] }, { 'shoulder': ['shoulder', '臂位'] }, { 'stock': ['stock', '輔鑽石'] }, { 'name': ['name', '名稱'] }, { 'description': ['description', '名稱'] }, { 'Appointment': ['Appointment', '預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約'] }, { 'Contact Us': ['Contact Us', '預約'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'Solitaire': ['Solitaire', '單石'] }, { 'solitaire': ['Solitaire', '單石'] }, { 'Side-stone': ['Side-stone', '輔石'] }, { 'side-stone': ['Side-stone', '輔石'] }, { 'sideStone': ['side-stone', '輔石'] }, { 'Halo': ['Halo', '圍圈'] }, { 'halo': ['Halo', '圍圈'] }, { '4-claw prong': ['4-claw prong', '四爪'] }, { '4-prong': ['4-claw prong', '四爪'] }, { '6-claw prong': ['6-claw prong', '六爪'] }, { '6-prong': ['6-claw prong', '六爪'] }, { 'Tapering': ['Tapering', '尖'] }, { 'tapering': ['Tapering', '尖臂'] }, { 'Parallel': ['Parallel', '平'] }, { 'parallel': ['Parallel', '平臂'] }, { 'Twisted': ['Twisted', '扭'] }, { 'twisted': ['Twisted', '扭臂'] }, { 'prong': ['prong', '爪數'] }, { 'unit_price': ['unit_price', '價格'] }, { 'Shoulder': ['Shoulder', '臂'] }, { 'shoulder': ['shoulder', '臂位'] }, { 'stock': ['stock', '輔鑽石'] }, { 'name': ['name', '名稱'] }, { 'description': ['description', '名稱'] }, { 'engagementRing': ['Engagement Ring', '求婚戒指'] }, { 'your name': ['your name', '求婚戒指'] }, { 'your Phone No.': ['your Phone No.', '爪數'] }, { 'Appointment': ['Appointment', '預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約'] }, { 'Contact Us': ['Contact Us', '預約'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
 
 /***/ }),
 /* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ([{ 'Classic': ['Classic', '經典'] }, { 'Japanese': ['Japanese', '日本款'] }, { 'Vintage': ['Vintage', '歐洲款'] }, { '18K White': ['18K White', '18K 白'] }, { '18K Rose Gold': ['18K Rose Gold', '18K玫瑰金'] }, { 'PT950/900': ['PT950/900', '鉑金'] }, { 'Mixed': ['Mixed', '混色'] }, { 'Men': ['Men', '鉑金'] }, { 'Female': ['Female', '混色'] }, { 'unit_price': ['unit_price', '扭臂'] }, { 'metal': ['metal', '混色'] }, { 'sideStone': ['side-stone', '輔鑽石'] }, { 'stock': ['stock', '輔鑽石'] }, { 'name': ['name', '名稱'] }, { 'description': ['description', '名稱'] }, { 'Appointment': ['Appointment', '預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約'] }, { 'Contact Us': ['Contact Us', '預約'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'Classic': ['Classic', '經典'] }, { 'classic': ['Classic', '經典'] }, { 'Japanese': ['Japanese', '日本'] }, { 'Vintage': ['Vintage', '歐洲'] }, { '18K White': ['18K White', '18K 白'] }, { '18K Rose Gold': ['18K Rose Gold', '18K玫瑰金'] }, { 'PT950/900': ['PT950/900', '鉑金'] }, { 'Mixed': ['Mixed', '混色'] }, { 'Men': ['Men', '鉑金'] }, { 'Female': ['Female', '混色'] }, { 'unit_price': ['unit_price', '扭臂'] }, { 'metal': ['metal', '混色'] }, { 'sideStone': ['side-stone', '輔石'] }, { 'stock': ['stock', '輔鑽石'] }, { 'name': ['name', '名稱'] }, { 'description': ['description', '名稱'] }, { 'your name': ['your name', '求婚戒指'] }, { 'your Phone No.': ['your Phone No.', '爪數'] }, { 'Appointment': ['Appointment', '預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約'] }, { 'Contact Us': ['Contact Us', '預約'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
 
 /***/ }),
 /* 74 */
@@ -18809,7 +18809,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       text: {
         title: 'Details fo Appointment',
         button: 'Contact Us',
-        button1: 'Appointment'
+        button1: 'Appointment',
+        placeholderName: 'your name',
+        placeholderNo: 'your Phone No.'
+
       }
 
     };
@@ -18909,7 +18912,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "text",
       "name": "name",
-      "placeholder": "your name",
+      "placeholder": _vm._f("transJs")(_vm.text.placeholderName, _vm.langs, _vm.locale),
       "required": ""
     },
     domProps: {
@@ -18932,7 +18935,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "text",
       "name": "phone",
-      "placeholder": "your Phone No.",
+      "placeholder": _vm._f("transJs")(_vm.text.placeholderNo, _vm.langs, _vm.locale),
       "required": ""
     },
     domProps: {
@@ -20344,6 +20347,10 @@ if (false) {
 			appointmentState: false,
 			title: '',
 			langs: __WEBPACK_IMPORTED_MODULE_5__langs_engagementRings__["a" /* default */],
+			text: {
+				engagementRing: 'engagementRing'
+			},
+			hrefLangs: this.$route.fullPath.slice(0, 3),
 			engagementRing: '',
 			columns: ['unit_price', 'shoulder', 'prong', 'sideStone', 'stock', 'name', 'description'],
 
@@ -20365,7 +20372,7 @@ if (false) {
 	},
 	computed: {
 		appointmentTitle: function appointmentTitle() {
-			return this.engagementRing.shoulder + ' shoulder, ' + this.engagementRing.prong + '  engagementRing';
+			return Object(__WEBPACK_IMPORTED_MODULE_4__helpers_transJs__["a" /* transJs */])(this.engagementRing.shoulder, this.langs, this.locale) + ' ' + Object(__WEBPACK_IMPORTED_MODULE_4__helpers_transJs__["a" /* transJs */])(this.engagementRing.prong, this.langs, this.locale) + ' ' + Object(__WEBPACK_IMPORTED_MODULE_4__helpers_transJs__["a" /* transJs */])(this.text.engagementRing, this.langs, this.locale);
 		},
 		locale: function locale() {
 
@@ -20437,7 +20444,7 @@ if (false) {
 			chunkedItemsMobile: [],
 			sameStock: [],
 			clickedRows: [],
-			columns: ['style', 'shoulder', 'prong'],
+			columns: ['style', 'metal', 'sideStone'],
 			query: {
 				page: 1,
 				column: 'style',
@@ -20493,6 +20500,9 @@ if (false) {
 		transJs: __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__["a" /* transJs */]
 	},
 	methods: {
+		transJsMet: function transJsMet(data, ori, langs) {
+			return Object(__WEBPACK_IMPORTED_MODULE_2__helpers_transJs__["a" /* transJs */])(data, ori, langs);
+		},
 		toggleCustomized: function toggleCustomized() {
 			this.fetchData.customized = !this.fetchData.customized;
 			this.fetchIndexData();

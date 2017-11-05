@@ -240,7 +240,7 @@
 
             
             
-            <button class="button is-info" @click="showAdvance=!showAdvance">More Advancce</button>
+            <button class="button is-info" @click="showAdvance=!showAdvance">{{trans('diamondSearch.More Advance')}}</button>
         
 
 
@@ -330,7 +330,7 @@
             </div>
 
             <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-              <a class="pagination-previous" @click="prev">Previous</a>
+              <a class="pagination-previous" @click="prev">{{trans('diamondSearch.Previous')}}</a>
               <div class="field">
                  <div class="control">
                     <label>{{trans('diamondSearch.Per Page')}}</label> 
