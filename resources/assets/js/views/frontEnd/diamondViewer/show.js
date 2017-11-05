@@ -23,6 +23,11 @@
 				appointmentState: false,
 				title: '',
 				langs,
+				text:{
+					carat: 'carat',
+					diamond: 'diamond',
+
+				},
 				diamond:{
 					weight:'',
 				},
@@ -62,7 +67,7 @@
 		},
 		computed: {
 			appointmentTitle(){
-				return this.diamond.weight + 'carat, ' + this.diamond.color + ' color diamond' 
+				return this.diamond.weight + transJs(this.text.carat,this.langs,this.locale) +' ' + this.diamond.color +' '+ transJs(this.columns[3],this.langs,this.locale)+' ' + transJs(this.text.diamond,this.langs,this.locale) 
 			},
 			locale(){
 				
@@ -75,6 +80,11 @@
 				if (this.$route.fullPath.slice(1,3) == 'cn') {
 					return 2
 				}
+			},
+			localeHref(){
+				
+				return this.$route.fullPath.slice(0,4)
+					
 			}
 		},
 		methods: {

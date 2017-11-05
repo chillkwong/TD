@@ -22,7 +22,7 @@
 
                 <div class="tile box">
                     <div class="tile notification is-primary">
-                            <p class="title">@{{engagementRing.shoulder}} Shoulder @{{engagementRing.prong}} Engagement Ring</p>
+                            <p class="title">@{{engagementRing.style | transJs(langs,locale)}}@{{engagementRing.prong | transJs(langs,locale)}}@{{engagementRing.shoulder | transJs(langs,locale)}}{{trans('engagementRing.shoulder')}}{{trans('engagementRing.setting')}}</p>
                     </div>       
                 </div>
 
@@ -49,7 +49,7 @@
                                 </center>
                                 <br>
                                 <p>
-                                For more detailed information, can reach GIA website query：
+                                
                                 </p>
                             </article>
                             </div>

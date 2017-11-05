@@ -23,7 +23,9 @@
 
                 <div class="tile box">
                     <div class="tile notification is-primary">
-                            <p class="title">@{{diamond.weight}} carat @{{diamond.shape}} diamond</p>
+                            <p class="title">@{{diamond.weight}} {{trans('diamondsearch.carat')}} @{{diamond.color }} {{trans('diamondsearch.Color')}} 
+                            @{{diamond.cut }} {{trans('diamondsearch.Cut')}} 
+                            @{{diamond.shape | transJs(langs,locale)}} {{trans('diamondsearch.diamond')}}</p>
                     </div>       
                 </div>
 
@@ -53,7 +55,7 @@
                             <div class="tile is-child">
                             <article>
                                 <center>
-                                    <button class="button is-info" @click="appointmentState=!appointmentState">Appointment</button>
+                                    <button class="button is-info" @click="appointmentState=!appointmentState">{{trans('diamondsearch.Appointment')}}</button>
                                     <appointment v-model="diamond" :title="appointmentTitle" @active="appointmentState=!appointmentState" :active="appointmentState" :columns="columns" :processing="false" :langs="langs" :locale="locale"></appointment>
                                 </center>
                                 <br>
@@ -133,7 +135,15 @@
                         <span class="cut-text" v-if="diamond.cut == 'EX'">{{trans('diamondsearch.cutEx')}}.
                         <br>
                         </span>
-                        <span class="cut-text">{{trans('diamondsearch.Want to learn even more about cut')}}? Learn More<br>
+                        <span class="cut-text" v-if="diamond.cut == 'VG'">{{trans('diamondsearch.cutVg')}}.
+                        <br>
+                        </span>
+                        <span class="cut-text" v-if="diamond.cut == 'GD'">{{trans('diamondsearch.cutGd')}}.
+                        <br>
+                        </span>
+                        <span class="cut-text">{{trans('diamondsearch.Want to learn even more about cut')}}? 
+                           <a :href=" localeHref+ 'education-diamond-grading/4cs/cut/'">Learn More<br>
+                           </a>
                         </span>
                         <span class="cut-text">
                             {{trans('diamondsearch.cutDesrciption')}}.
@@ -171,7 +181,8 @@
                                             {{trans('diamondsearch.caratDescription1')}}
                                         </p1>
                                         </center>
-                                        <center><a >
+                                        <center>
+                                        <a :href=" localeHref+ 'education-diamond-grading/4cs/carat/'">
                                             {{trans('diamondsearch.Learn More')}}
                                         </a>
                                         </center>
@@ -202,27 +213,33 @@
 
                                 <div class="columns">
                                     <div class="column is-6">
-                                        <center><p1 class="subtitle is-6">
-                                            {{trans('diamondsearch.The highest "near-colourless" grade. Colour may be detectable when compared to much higher "colourless" grades. Excellent value.')}}
-                                            <center>
+                                        <center>
+                                            <span class="cut-text" v-if="diamond.color == 'D' ||diamond.color == 'E' || diamond.color == 'F'">{{trans('diamondsearch.colorDtoF')}}
+                                            <br>
+                                            </span>
+                                            <span class="cut-text" v-if="diamond.color == 'G' ||diamond.color == 'H' || diamond.color == 'I' || diamond.color == 'J'">
+                                                {{trans('diamondsearch.colorGtoJ')}}
+                                            <br>
+                                            </span>
+                                        <center>
                                             {{trans('diamondsearch.Want to learn even more about colour')}}?
-                                            <a >
+                                            <a :href=" localeHref+ 'education-diamond-grading/4cs/color/'">
                                             {{trans('diamondsearch.Learn More')}}
                                             </a>
                                             </center>
-                                        </p1>
+                                            
                                         </center>
                                         
                                     </div>
                                     <div class="column is-6">
                                         <center>
                                             <p1 class="subtitle is-6">
-                                                <li>{{trans('diamondsearch.For the purist, look for a colourless diamond with a grade of D-F for a diamond with no discernible colour.')}}
+                                                <li>{{trans('diamondsearch.colorDescription')}}
                                                 </li>
                                             </p1>
                                             <br>
                                             <p1 class="subtitle is-6">
-                                                <li>{{trans('diamondsearch.For an excellent value in a diamond with little or no noticeable colour to the unaided eye, look for a near-colourless grade of G-I')}}
+                                                <li>{{trans('diamondsearch.colorDescription1')}}
                                                 </li>
                                             </p1>
                                         </center>
@@ -241,22 +258,38 @@
                 <div class="clarity-bg">
                     <div class="caption">
                         <span class="border">{{trans('diamondsearch.Clarity')}}: @{{diamond.clarity}}</span>
-                        <hr>
-                        <span class="cut-text">{{trans('diamondsearch.VS1-VS2: Very slightly included. Minor inclusions ranging from difficult (VS1) to somewhat easy (VS2) to see at 10x magnification.
                         <br>
-                        </span>
-                        <span class="cut-text">
-                            {{trans('diamondsearch.Want to learn even more about clarity?
+                            <span class="cut-text" v-if="diamond.clarity == 'I1' ">{{trans('diamondsearch.clarityI')}}
                             <br>
-                            <a >
-                                Learn More
+                            </span>
+                            <span class="cut-text" v-if="diamond.clarity == 'SI1' || diamond.clarity == 'SI2'">{{trans('diamondsearch.claritySi')}}
+                            <br>
+                            </span>
+                            <span class="cut-text" v-if="diamond.clarity == 'VS2' ||diamond.clarity == 'VS1' ">
+                                {{trans('diamondsearch.clarityVs')}}
+                            <br>
+                            </span>
+                            <span class="cut-text" v-if="diamond.clarity == 'VVS1' || diamond.clarity == 'VVS2'">{{trans('diamondsearch.clarityVvs')}}
+                            <br>
+                            </span>
+                            <span class="cut-text" v-if="diamond.clarity == 'IF' ">
+                                {{trans('diamondsearch.clarityIf')}}
+                            <br>
+                            </span>
+                        <hr>
+                        
+                        <span class="cut-text">
+                            {{trans('diamondsearch.clarityDescription')}}?
+                            <br>
+                            <a :href="localeHref+ 'education-diamond-grading/4cs/4cs-clarity/'">
+                                {{trans('diamondsearch.Learn More')}}
                             </a>
                         </span>
                         <span class="cut-text">
-                            <li>{{trans('diamondsearch.Clarity refers to a diamond's relative absence of tiny, natural characteristics known as blemishes and inclusions.
+                            <li>{{trans('diamondsearch.clarityDescription1')}}
                             </li>
                             <li>
-                            {{trans('diamondsearch.Many of these characteristics are microscopic and do not affect a diamond's beauty in any discernible way.</li>
+                            {{trans('diamondsearch.clarityDescription2')}}</li>
                         </span>
                     </div>
                 </div>

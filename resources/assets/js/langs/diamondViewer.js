@@ -13,10 +13,18 @@ export default[
 	{'lab':['lab','型狀']},
 	{'fluorescence':['fluorescence','型狀']},
 
-	
+	{'RD':['RD','圓形']},
+
+	{'carat':['carat','預約']},
+	{'diamond':['diamond','預約']},
+	{'Appointment':['Appointment','預約']},
+	{'Details fo Appointment':['Details fo Appointment','預約']},
+	{'Contact Us':['Contact Us','預約']},
+
+	{'True':['Yes','是']},
+	{'False':['No','否']},
 	{'Yes':['Yes','是']},
 	{'1':['Yes','是']},
 	{'No':['No','否']},	
-	{'0':['No','否']},	
-	
+	{'0':['No','否']},
 ]

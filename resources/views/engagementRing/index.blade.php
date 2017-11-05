@@ -170,7 +170,7 @@
                                             <img :src="`/images/${ring.cover}`" v-if="ring.cover">
                                         <center>
                                             <p  class="subtitle" v-if="ring.description">$@{{ring.unit_price}}</p>
-                                            <p >@{{ring.style | transJs(langs,locale)}}@{{ring.prong | transJs(langs,locale)}}@{{ring.shoulder | transJs(langs,locale)}}{{trans('engagementRing.shoulder')}} {{trans('engagementRing.setting')}}</p>
+                                            <p >@{{ring.style | transJs(langs,locale)}} @{{ring.prong | transJs(langs,locale)}} @{{ring.shoulder | transJs(langs,locale)}} {{trans('engagementRing.shoulder')}} {{trans('engagementRing.setting')}}</p>
                                         </center>
                                         </figure>
                                         </a>

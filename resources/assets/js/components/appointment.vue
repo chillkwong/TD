@@ -7,7 +7,7 @@
       <button class="delete" aria-label="close" @click="$emit('active', null)"></button>
     </header>
     <section class="modal-card-body">
-      <h1 class="title is-6">Details fo Appointment</h1>
+      <h1 class="title is-6">{{text.title | transJs(langs,locale) | capitalize}}</h1>
       <table class="table">
         <tr >
           <td v-for="column in columns">{{column | transJs(langs,locale) | capitalize }}</td>
@@ -21,8 +21,8 @@
       <input type="text" name="phone" class="input" v-model="form.phone" placeholder="your Phone No." required> 
       <textarea  v-model="form.remark" rows="5" cols="80"></textarea>
       <div>
-        <a class="button" :href="hrefLangs + '/about-us'">Contact Us</a>
-      <button class="button is-success " :class="{'is-loading': processing}" @submit.stop="save" >Appointment</button>
+        <a class="button" :href="hrefLangs + '/about-us'">{{ text.button  | transJs(langs,locale)}}</a>
+      <button class="button is-success " :class="{'is-loading': processing}" @submit.stop="save" >{{text.button1 | transJs(langs,locale)}}</button>
       </div>
       </form>
     </section>
@@ -64,6 +64,12 @@
           
         },
         hrefLangs: this.$route.fullPath.slice(0,3),
+        text: {
+        title:'Details fo Appointment',
+        button: 'Contact Us',   
+        button1: 'Appointment', 
+        },
+
 
       }
     },

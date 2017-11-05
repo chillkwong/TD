@@ -2,9 +2,9 @@
 
 return [
 	'Style' => 'Style',
-	'shoulder' => '臂',
-	'Shoulder' => '臂位',
-	'setting' => '戒指托',
+	'shoulder' => 'shoulder',
+	'Shoulder' => 'Shoulder',
+	'setting' => 'setting',
 	'Style' => 'Style',
 	'Style' => 'Style',
 	

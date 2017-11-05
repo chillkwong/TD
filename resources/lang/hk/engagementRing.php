@@ -1,7 +1,11 @@
 <?php 
 
 return [
-	'Style' => '款式',
+	'Style' => 'Style',
+	'shoulder' => '臂',
+	'Shoulder' => '臂位',
+	'setting' => '戒指托',
+	'Style' => 'Style',
+	'Style' => 'Style',
 	
-
 ];

@@ -7,14 +7,7 @@ export default[
 	{'PT950/900':['PT950/900', '鉑金']},
 	{'Mixed':['Mixed', '混色']},
 	{'Men':['Men', '鉑金']},
-	{'Female':['Female', '混色']},
-
-	{'True':['Yes','是']},
-	{'False':['No','否']},
-	{'Yes':['Yes','是']},
-	{'1':['Yes','是']},
-	{'No':['No','否']},	
-	{'0':['No','否']},	
+	{'Female':['Female', '混色']},	
 
 	{'unit_price':['unit_price', '扭臂']},
 	{'metal':['metal', '混色']},
@@ -22,5 +15,17 @@ export default[
 	{'stock':['stock','輔鑽石']},
 	{'name':['name','名稱']},
 	{'description':['description','名稱']},
+
+
+	{'Appointment':['Appointment','預約']},
+	{'Details fo Appointment':['Details fo Appointment','預約']},
+	{'Contact Us':['Contact Us','預約']},
+
+	{'True':['Yes','是']},
+	{'False':['No','否']},
+	{'Yes':['Yes','是']},
+	{'1':['Yes','是']},
+	{'No':['No','否']},	
+	{'0':['No','否']},
 	
 ]

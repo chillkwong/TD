@@ -60,9 +60,9 @@
                         <div class="level is-mobile" >
                            <div class="level-item">
                                 <div :class="{'box':currentIndex == index}" v-for="(img, index) in chunkedItemsDesktop" 
-                                @click="currentSelectedItem(index,'lower')" v-if="chunkedItemsDesktop">
+                                @click="currentSelectedItem(index,'lower')">
                                     <div class="level-item has-text-centered" >
-                                        <a>
+                                        <a v-if="img.thumb">
                                         <figure class="image is-96x96">
                                             <img :src="images+img.thumb"></img>
                                             <i class="fa fa-play" aria-hidden="true" v-if="img.type=='video'"></i>
@@ -86,9 +86,9 @@
                     <div class="level is-mobile" >
                         <div class="level-item">
                             <div :class="{'box':currentIndex == index}" v-for="(img, index) in chunkedItemsMobile" 
-                            @click="currentSelectedItem(index,'lower')" v-if="chunkedItemsMobile">
+                            @click="currentSelectedItem(index,'lower')" v-if="img.thumb">
                                 <div class="level-item has-text-centered" >
-                                    <a>
+                                    <a v-if="img.thumb">
                                     <figure class="image is-96x96">
                                         <img :src="images+img.thumb"></img>
                                         <i class="fa fa-play" aria-hidden="true" v-if="img.type=='video'"></i>
@@ -141,7 +141,7 @@
                     <div :class="{'box':currentIndex == index}" v-for="(img, index) in chunkedItemsDesktop" 
                     @click="currentSelectedItem(index,'lower')" v-if="chunkedItemsDesktop">
                         <div class="level-item has-text-centered" >
-                            <a>
+                            <a v-if="img.thumb">
                             <figure class="image is-96x96">
                                 <img :src="images+img.thumb" ></img>
                                 <i class="fa fa-play" aria-hidden="true" v-if="img.type=='video'"></i>
@@ -167,7 +167,7 @@
                         <div :class="{'box':currentIndex == index}" v-for="(img, index) in chunkedItemsMobile" 
                         @click="currentSelectedItem(index,'lower')" v-if="chunkedItemsMobile">
                             <div class="level-item has-text-centered" >
-                                <a>
+                                <a v-if="img.thumb">
                                 <figure class="image is-96x96">
                                     <img :src="images+img.thumb"></img>
                                     <i class="fa fa-play" aria-hidden="true" v-if="img.type=='video'"></i>
