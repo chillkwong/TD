@@ -23,9 +23,9 @@
 
                 <div class="tile box">
                     <div class="tile notification is-primary">
-                            <p class="title">@{{diamond.weight}} {{trans('diamondsearch.carat')}} @{{diamond.color }} {{trans('diamondsearch.Color')}} 
-                            @{{diamond.cut }} {{trans('diamondsearch.Cut')}} 
-                            @{{diamond.shape | transJs(langs,locale)}} {{trans('diamondsearch.diamond')}}</p>
+                            <p class="title">@{{diamond.weight}} {{trans('diamondSearch.carat')}} @{{diamond.color }} {{trans('diamondSearch.Color')}} 
+                            @{{diamond.cut }} {{trans('diamondSearch.Cut')}} 
+                            @{{diamond.shape | transJs(langs,locale)}} {{trans('diamondSearch.diamond')}}</p>
                     </div>       
                 </div>
 
@@ -55,7 +55,7 @@
                             <div class="tile is-child">
                             <article>
                                 <center>
-                                    <button class="button is-info" @click="appointmentState=!appointmentState">{{trans('diamondsearch.Appointment')}}</button>
+                                    <button class="button is-info" @click="appointmentState=!appointmentState">{{trans('diamondSearch.Appointment')}}</button>
                                     <appointment v-model="diamond" :title="appointmentTitle" @active="appointmentState=!appointmentState" :active="appointmentState" :columns="columns" :processing="false" :langs="langs" :locale="locale"></appointment>
                                 </center>
                                 <br>
@@ -63,7 +63,7 @@
                                 {{trans('For more detailed information, can reach GIA website query')}}：
                                 </p>
                                 <a :href="`https://www.gia.edu/report-check?reportno=${diamond.certificate}`">
-                                    <center>{{trans('diamondsearch.GIA Certificate')}}</center>
+                                    <center>{{trans('diamondSearch.GIA Certificate')}}</center>
                                     <figure class="image">
                                         <img src="https://www.gia.edu/onlineopinionV5/GIA-Logo.png">
                                     </figure>
@@ -74,47 +74,47 @@
                                 <table class="table is-striped is-fullwidth">
                                 <thead>
                                     <tr>
-                                        <th>{{trans('diamondsearch.Diamond Info')}} (@{{diamond.shape}})</th>
+                                        <th>{{trans('diamondSearch.Diamond Info')}} (@{{diamond.shape}})</th>
                                     </tr>
                                 </thead>
                                     
                                 <tbody>
-                                    <tr><td>{{trans('diamondsearch.Carat Weight')}}</td><td>@{{diamond.weight}}</td></tr>
-                                    <tr><td>{{trans('diamondsearch.Color Grade')}}</td><td>@{{diamond.color}}</td></tr>
-                                    <tr><td>{{trans('diamondsearch.Clarity Grade')}}</td><td>@{{diamond.clarity}}</td></tr>
-                                    <tr><td>{{trans('diamondsearch.Cut Grade')}}</td><td>@{{diamond.cut}}</td></tr>
+                                    <tr><td>{{trans('diamondSearch.Carat Weight')}}</td><td>@{{diamond.weight}}</td></tr>
+                                    <tr><td>{{trans('diamondSearch.Color Grade')}}</td><td>@{{diamond.color}}</td></tr>
+                                    <tr><td>{{trans('diamondSearch.Clarity Grade')}}</td><td>@{{diamond.clarity}}</td></tr>
+                                    <tr><td>{{trans('diamondSearch.Cut Grade')}}</td><td>@{{diamond.cut}}</td></tr>
                                 </tbody>
 
                                 <thead>
                                     <tr>
-                                        <th>{{trans('diamondsearch.Finish')}}</th>
+                                        <th>{{trans('diamondSearch.Finish')}}</th>
                                     </tr>
                                 </thead>
                                     
                                 <tbody>
-                                    <tr><td>{{trans('diamondsearch.Polish')}}</td><td>@{{diamond.polish}}</td></tr>
-                                    <tr><td>{{trans('diamondsearch.Symmetry')}}</td><td>@{{diamond.symmetry}}</td></tr>
+                                    <tr><td>{{trans('diamondSearch.Polish')}}</td><td>@{{diamond.polish}}</td></tr>
+                                    <tr><td>{{trans('diamondSearch.Symmetry')}}</td><td>@{{diamond.symmetry}}</td></tr>
                                 </tbody>
 
                                 <thead>
                                     <tr>
-                                        <th>{{trans('diamondsearch.Fluorescence')}}</th>
+                                        <th>{{trans('diamondSearch.Fluorescence')}}</th>
                                     </tr>
                                 </thead>
                                     
                                 <tbody>
-                                    <tr><td>{{trans('diamondsearch.Fluorescence')}}</td><td>@{{diamond.fluorescence}}</td></tr>
+                                    <tr><td>{{trans('diamondSearch.Fluorescence')}}</td><td>@{{diamond.fluorescence}}</td></tr>
                                 </tbody>
                                 
                                 <thead>
                                     <tr>
-                                        <th>{{trans('diamondsearch.Certificate')}}</th>
+                                        <th>{{trans('diamondSearch.Certificate')}}</th>
                                     </tr>
                                 </thead>
                                     
                                 <tbody>
                                     <a :href="`https://www.gia.edu/report-check?reportno=${diamond.certificate}`">
-                                    <tr><td>{{trans('diamondsearch.Certificate')}}</td><td>@{{diamond.certificate}}</td></tr>
+                                    <tr><td>{{trans('diamondSearch.Certificate')}}</td><td>@{{diamond.certificate}}</td></tr>
                                     </a>
                                 </tbody>
 
@@ -130,23 +130,23 @@
                 
                 <div class="cut-bg">
                     <div class="caption">
-                        <span class="border">{{trans('diamondsearch.Cut Grade')}}: @{{diamond.cut}}</span>
+                        <span class="border">{{trans('diamondSearch.Cut Grade')}}: @{{diamond.cut}}</span>
                         <hr>
-                        <span class="cut-text" v-if="diamond.cut == 'EX'">{{trans('diamondsearch.cutEx')}}.
+                        <span class="cut-text" v-if="diamond.cut == 'EX'">{{trans('diamondSearch.cutEx')}}.
                         <br>
                         </span>
-                        <span class="cut-text" v-if="diamond.cut == 'VG'">{{trans('diamondsearch.cutVg')}}.
+                        <span class="cut-text" v-if="diamond.cut == 'VG'">{{trans('diamondSearch.cutVg')}}.
                         <br>
                         </span>
-                        <span class="cut-text" v-if="diamond.cut == 'GD'">{{trans('diamondsearch.cutGd')}}.
+                        <span class="cut-text" v-if="diamond.cut == 'GD'">{{trans('diamondSearch.cutGd')}}.
                         <br>
                         </span>
-                        <span class="cut-text">{{trans('diamondsearch.Want to learn even more about cut')}}? 
+                        <span class="cut-text">{{trans('diamondSearch.Want to learn even more about cut')}}? 
                            <a :href=" localeHref+ 'education-diamond-grading/4cs/cut/'">Learn More<br>
                            </a>
                         </span>
                         <span class="cut-text">
-                            {{trans('diamondsearch.cutDesrciption')}}.
+                            {{trans('diamondSearch.cutDesrciption')}}.
                         </span>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
                                     <div class="column is-6">
                                         <center>
                                             <p1 class="title is-5 is-info">
-                                                {{trans('diamondsearch.DIAMOND SIZE')}}: @{{diamond.weight}} Carat
+                                                {{trans('diamondSearch.DIAMOND SIZE')}}: @{{diamond.weight}} Carat
                                             </p1>
                                             <br>
                                         </center>
@@ -171,19 +171,19 @@
                                 <div class="columns">
                                     <div class="column is-6">
                                         <center><p1 class="subtitle is-6">
-                                            {{trans('diamondsearch.caratDescription')}}
+                                            {{trans('diamondSearch.caratDescription')}}
                                         </p1>
                                         </center>
                                         
                                     </div>
                                     <div class="column is-6">
                                         <center><p1 class="subtitle is-6">
-                                            {{trans('diamondsearch.caratDescription1')}}
+                                            {{trans('diamondSearch.caratDescription1')}}
                                         </p1>
                                         </center>
                                         <center>
                                         <a :href=" localeHref+ 'education-diamond-grading/4cs/carat/'">
-                                            {{trans('diamondsearch.Learn More')}}
+                                            {{trans('diamondSearch.Learn More')}}
                                         </a>
                                         </center>
                                         
@@ -203,7 +203,7 @@
                                     
                                         <center>
                                             <p1 class="title is-5 is-primary">
-                                                {{trans('diamondsearch.Diamond Color')}}: @{{diamond.color}} 
+                                                {{trans('diamondSearch.Diamond Color')}}: @{{diamond.color}} 
                                             </p1>
                                             <br>
                                         </center>
@@ -214,17 +214,17 @@
                                 <div class="columns">
                                     <div class="column is-6">
                                         <center>
-                                            <span class="cut-text" v-if="diamond.color == 'D' ||diamond.color == 'E' || diamond.color == 'F'">{{trans('diamondsearch.colorDtoF')}}
+                                            <span class="cut-text" v-if="diamond.color == 'D' ||diamond.color == 'E' || diamond.color == 'F'">{{trans('diamondSearch.colorDtoF')}}
                                             <br>
                                             </span>
                                             <span class="cut-text" v-if="diamond.color == 'G' ||diamond.color == 'H' || diamond.color == 'I' || diamond.color == 'J'">
-                                                {{trans('diamondsearch.colorGtoJ')}}
+                                                {{trans('diamondSearch.colorGtoJ')}}
                                             <br>
                                             </span>
                                         <center>
-                                            {{trans('diamondsearch.Want to learn even more about colour')}}?
+                                            {{trans('diamondSearch.Want to learn even more about colour')}}?
                                             <a :href=" localeHref+ 'education-diamond-grading/4cs/color/'">
-                                            {{trans('diamondsearch.Learn More')}}
+                                            {{trans('diamondSearch.Learn More')}}
                                             </a>
                                             </center>
                                             
@@ -234,12 +234,12 @@
                                     <div class="column is-6">
                                         <center>
                                             <p1 class="subtitle is-6">
-                                                <li>{{trans('diamondsearch.colorDescription')}}
+                                                <li>{{trans('diamondSearch.colorDescription')}}
                                                 </li>
                                             </p1>
                                             <br>
                                             <p1 class="subtitle is-6">
-                                                <li>{{trans('diamondsearch.colorDescription1')}}
+                                                <li>{{trans('diamondSearch.colorDescription1')}}
                                                 </li>
                                             </p1>
                                         </center>
@@ -257,39 +257,39 @@
 
                 <div class="clarity-bg">
                     <div class="caption">
-                        <span class="border">{{trans('diamondsearch.Clarity')}}: @{{diamond.clarity}}</span>
+                        <span class="border">{{trans('diamondSearch.Clarity')}}: @{{diamond.clarity}}</span>
                         <br>
-                            <span class="cut-text" v-if="diamond.clarity == 'I1' ">{{trans('diamondsearch.clarityI')}}
+                            <span class="cut-text" v-if="diamond.clarity == 'I1' ">{{trans('diamondSearch.clarityI')}}
                             <br>
                             </span>
-                            <span class="cut-text" v-if="diamond.clarity == 'SI1' || diamond.clarity == 'SI2'">{{trans('diamondsearch.claritySi')}}
+                            <span class="cut-text" v-if="diamond.clarity == 'SI1' || diamond.clarity == 'SI2'">{{trans('diamondSearch.claritySi')}}
                             <br>
                             </span>
                             <span class="cut-text" v-if="diamond.clarity == 'VS2' ||diamond.clarity == 'VS1' ">
-                                {{trans('diamondsearch.clarityVs')}}
+                                {{trans('diamondSearch.clarityVs')}}
                             <br>
                             </span>
-                            <span class="cut-text" v-if="diamond.clarity == 'VVS1' || diamond.clarity == 'VVS2'">{{trans('diamondsearch.clarityVvs')}}
+                            <span class="cut-text" v-if="diamond.clarity == 'VVS1' || diamond.clarity == 'VVS2'">{{trans('diamondSearch.clarityVvs')}}
                             <br>
                             </span>
                             <span class="cut-text" v-if="diamond.clarity == 'IF' ">
-                                {{trans('diamondsearch.clarityIf')}}
+                                {{trans('diamondSearch.clarityIf')}}
                             <br>
                             </span>
                         <hr>
                         
                         <span class="cut-text">
-                            {{trans('diamondsearch.clarityDescription')}}?
+                            {{trans('diamondSearch.clarityDescription')}}?
                             <br>
                             <a :href="localeHref+ 'education-diamond-grading/4cs/4cs-clarity/'">
-                                {{trans('diamondsearch.Learn More')}}
+                                {{trans('diamondSearch.Learn More')}}
                             </a>
                         </span>
                         <span class="cut-text">
-                            <li>{{trans('diamondsearch.clarityDescription1')}}
+                            <li>{{trans('diamondSearch.clarityDescription1')}}
                             </li>
                             <li>
-                            {{trans('diamondsearch.clarityDescription2')}}</li>
+                            {{trans('diamondSearch.clarityDescription2')}}</li>
                         </span>
                     </div>
                 </div>
