@@ -8,6 +8,8 @@ use App\Invoice;
 use App\InvContent;
 use App\InvDiamond;
 use App\Jewellry;
+use App\EngagementRing;
+use App\WeddingRing;
 use App\Tag;
 use File;
 
@@ -129,10 +131,13 @@ class InvPostController extends Controller
     		$post = InvPost::with(['contents'=> function($query){$query->where('locale',app()->getLocale())->get();}])
     				->findOrFail($id);
 
-    		if (Invoice::whereId($post->invoice_id)->with(['invDiamonds','jewellries'])->get()) {
-    			$invoice = Invoice::whereId($post->invoice->id)->with(['invDiamonds','jewellries'])->get();
+
+            
+    		if (Invoice::whereId($post->invoice_id)) {
+    			$invoice = Invoice::whereId($post->invoice->id)->with(['invDiamonds','jewellries','engagementRings','weddingRings'])->get();
     		}
 
+            
     		// if (Jewellry::invoices($post->invoice->id)->get()) {
     		// 	$jewellries = Jewellry::invoices($post->invoice->id)->get();
     		// }

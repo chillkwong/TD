@@ -40,8 +40,8 @@ import JewellryShow from '../views/backEnd/jewellry/show.vue'
 // import JewellryForm from '../views/jewellry/form.vue'
 
 //customer Jewellries
-import CustomerJewIndex from '../views/frontEnd/customerJewellry/index.vue'
-import CustomerJewShow from '../views/frontEnd/customerJewellry/show.vue'
+// import CustomerJewIndex from '../views/frontEnd/customerJewellry/index.vue'
+// import CustomerJewShow from '../views/frontEnd/customerJewellry/show.vue'
 // import CustomerJewForm from '../views/customerJewellry/form.vue'
 
 //Diamonds
@@ -89,7 +89,7 @@ const router = new VueRouter({
 		// {path:'/posts/:id', component:PostIndex },
 
 		// {path: 'customer-jewellries', component: CustomerJewIndex},
-		{path: 'customer-jewellries/:id', component: CustomerJewShow},
+		// {path: 'customer-jewellries/:id', component: CustomerJewShow},
 
 		//diamonds
 		// {path: 'gia-loose-diamonds/', component: DiamondViewer},
@@ -102,8 +102,8 @@ const router = new VueRouter({
 		{path:'',  },
 		// {path:'/posts/:id', component:PostIndex },
 
-		{path: 'customer-jewellries', component: CustomerJewIndex},
-		{path: 'customer-jewellries/:id', component: CustomerJewShow},
+		// {path: 'customer-jewellries', component: CustomerJewIndex},
+		// {path: 'customer-jewellries/:id', component: CustomerJewShow},
 
 		//diamonds
 		// {path: 'gia-loose-diamonds/', component: DiamondViewer},
@@ -127,8 +127,8 @@ const router = new VueRouter({
 		children:[
 		{path:'',  },
 
-		{path: 'customer-jewellries', component: CustomerJewIndex},
-		{path: 'customer-jewellries/:id', component: CustomerJewShow},
+		// {path: 'customer-jewellries', component: CustomerJewIndex},
+		// {path: 'customer-jewellries/:id', component: CustomerJewShow},
 
 		//diamonds
 		// {path: 'gia-loose-diamonds/', component: DiamondViewer},
@@ -146,7 +146,7 @@ const router = new VueRouter({
 		{path:'', },
 		
 		// {path: 'customer-jewellries', component: CustomerJewIndex},
-		{path: 'customer-jewellries/:id', component: CustomerJewShow},
+		// {path: 'customer-jewellries/:id', component: CustomerJewShow},
 		
 		//diamonds
 		// {path: 'gia-loose-diamonds/', component: DiamondViewer},

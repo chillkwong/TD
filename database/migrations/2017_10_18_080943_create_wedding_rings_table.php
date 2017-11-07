@@ -21,6 +21,7 @@ class CreateWeddingRingsTable extends Migration
             $table->string('metal')->default('18k');
             $table->string('style')->default('classic');
             $table->boolean('sideStone')->default(false);
+            $table->float('ct')->default(0);
             $table->string('cover')->nullable();
             $table->string('image1')->nullable();
             $table->string('image2')->nullable();

@@ -23,9 +23,13 @@ import DiamondViewerShow from './views/frontEnd/diamondViewer/show'
 import EngagementRingIndex from './views/frontEnd/engagementRing/index'
 import EngagementRingShow from './views/frontEnd/engagementRing/show'
 
-//Engagement Ring
+//wedding Ring
 import WeddingRingIndex from './views/frontEnd/weddingRing/index'
 import WeddingRingShow from './views/frontEnd/weddingRing/show'
+
+//wedding Ring
+import CustomerJewellryIndex from './views/frontEnd/customerJewellry/index'
+import CustomerJewellryShow from './views/frontEnd/customerJewellry/show'
 
 import BuyingProcedure from './views/frontEnd/buyingProcedure/index'
 
@@ -55,7 +59,7 @@ const header = new Vue({
     router
 });
 
-console.log(window.location.pathname.slice(4,18))
+console.log(window.location.pathname.slice(4,24))
 //diamond
 if (window.location.pathname.slice(4) == 'gia-loose-diamonds') {
     const diamondViewerIndex =  new Vue(DiamondViewerIndex);
@@ -72,13 +76,20 @@ if (window.location.pathname.slice(4,21) == 'engagement-rings/') {
     const engagementRingShow =  new Vue(EngagementRingShow);
 }
 
-
 //wedding rings
 if (window.location.pathname.slice(4) == 'wedding-rings') {
     const weddingRingIndex =  new Vue(WeddingRingIndex);
 }
 if (window.location.pathname.slice(4,18) == 'wedding-rings/') {
     const weddingRingShow =  new Vue(WeddingRingShow);
+}
+
+//wedding rings
+if (window.location.pathname.slice(4) == 'customer-jewellries') {
+    const ustomerJewellryIndex =  new Vue(CustomerJewellryIndex);
+}
+if (window.location.pathname.slice(4,24) == 'customer-jewellries/') {
+    const customerJewellryShow =  new Vue(CustomerJewellryShow);
 }
 
 //buying procedure

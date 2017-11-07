@@ -1,6 +1,7 @@
 <?php 
 
 return [
+	'Wedding Rings' => 'Wedding Rings',	
 	'Wedding Rings - Classic' => 'Wedding Rings - Classic',
 	'Wedding Ring' => 'Wedding Ring',
 	'Style' => 'Style',
@@ -11,11 +12,23 @@ return [
 	'Submit' => 'Submit',
 	'indexDescription' => 'Thank you for customers support, so that we could share their precious moments.',
 	'Engagement Rings - Solitaire' => 'Engagement Rings - Solitaire',
+	'indexDescription1' => 'For more detailed information, can reach GIA website query：',	
 	'Side stone' => 'Side stone',
 	'Custom-make' => 'Custom-make',
 	'More' => 'More',
 	'ct' => 'ct',
+	'Appointment' => 'Appointment',
+	'Wedding Rings Info' => 'Wedding Rings Info',
+	'Men' => 'Men',	
+	'Female' => 'Female',
+	'Unit Price' => 'Unit Price',
+	'Metal' => 'Metal',
+	'Side Stone' => 'Side Stone',
+	'More Details' => 'More Details',
+	'Stock' => 'Stock',
+	'Name' => 'Name',
+	'Description' => 'Description',
+	'Style' => 'Style',
+	'Style' => 'Style',
 
-
-	
 ];

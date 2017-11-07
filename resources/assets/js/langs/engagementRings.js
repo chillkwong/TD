@@ -4,6 +4,7 @@ export default[
 	{'Side-stone':['Side-stone','輔石']},
 	{'side-stone':['Side-stone','輔石']},
 	{'sideStone':['side-stone','輔石']},
+	{'ct':['ct','輔石']},	
 	{'Halo':['Halo','圍圈']},
 	{'halo':['Halo','圍圈']},
 	{'4-claw prong':['4-claw prong', '四爪']},

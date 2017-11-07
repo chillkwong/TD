@@ -16,11 +16,11 @@ class CreateJewellriesTable extends Migration
         Schema::create('jewellries', function (Blueprint $table) {
             $table->increments('id');
             $table->string('stock');
+            $table->string('type');
             $table->string('name');
             $table->string('description');
-            $table->string('mounting')->default('4-prongs');
-            $table->string('shoulder')->default('slim');
             $table->string('sideStone')->default(false);
+            $table->float('ct')->default(0);
             $table->string('cover')->nullable();
             $table->string('image1')->nullable();
             $table->string('video')->nullable();

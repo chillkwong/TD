@@ -29,7 +29,7 @@
 				'unit_price',
                 'shoulder',
                 'prong',
-                'sideStone',
+                'ct',
                 'stock',
                 'name',
                 'description',

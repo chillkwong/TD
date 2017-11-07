@@ -58,9 +58,12 @@ class WeddingRingPairController extends Controller
             
             $post1 = WeddingRing::findOrFail($weddingRingPairs->weddingRings[0]->id)->invoices()->with('invPosts')->get();
 
-            foreach ($post1 as $p ) {
-                $invPosts['invPosts'][] = $p->invPosts[0];
+            if ($post1->has('invPosts')) {
+                foreach ($post1 as $p ) {
+                    $invPosts['invPosts'][] = $p->invPosts[0];
+                }
             }
+            
 
         }
  
@@ -69,10 +72,12 @@ class WeddingRingPairController extends Controller
             
             $post2 = WeddingRing::findOrFail($weddingRingPairs->weddingRings[1]->id)->invoices()->with('invPosts')->get();
 
-            foreach ($post2 as $p ) {
-                $invPosts['invPosts'][] = $p->invPosts[0];
+            if ($post2->has('invPosts')) {
+                foreach ($post2 as $p ) {
+                    $invPosts['invPosts'][] = $p->invPosts[0];
+                }
             }
-
+            
         }
         
         

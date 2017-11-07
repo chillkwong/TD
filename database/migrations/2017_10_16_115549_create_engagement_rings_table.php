@@ -21,7 +21,7 @@ class CreateEngagementRingsTable extends Migration
             $table->string('prong')->default('4-prong');
             $table->string('shoulder')->default('tapering');
             $table->string('style')->default('solitaire');
-            $table->float('sideStone')->default(false);
+            $table->float('ct')->default(0);
             $table->string('cover')->nullable();
             $table->string('image1')->nullable();
             $table->string('video')->nullable();

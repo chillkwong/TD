@@ -42,8 +42,32 @@
         </div>
         </div>
         
-        <div id="root">
-        	
+        <div id="customerJewellryIndex">
+        	<div class="box">
+        <div class="columns">
+            <div class="column">
+            </div>
+        </div>
+
+        
+        <div class="tile is-ancestor" v-for="pos in posts">
+            <div class="tile is-parent is-4" v-for="post in pos">
+                <div class="tile is-child" v-if="post">
+                    <article class="tile">
+                        <a @click="clickRow(post)">
+                            <img :src="`/images/${post.cover}`" v-if="post.cover">
+                            <center>
+                            <p class="subtitle" v-if="post.contents[0]">@{{post.contents[0].content}}</p>
+                        </center>
+                        </a>
+                        
+                    </article>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
         </div>
 
 

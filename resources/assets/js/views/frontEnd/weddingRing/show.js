@@ -25,12 +25,15 @@
 				columns:[
 				'unit_price',
                 'metal',
-                'sideStone',
+                'ct',
                 'stock',
                 'name',
                 'description',
                 ]
 				,
+				text:{
+					weddingRing: 'Wedding Ring', 
+				},
 				storeURL: '',
 				customerItems: '',
 			}
@@ -44,7 +47,7 @@
 		},
 		computed: {
 			appointmentTitle(){
-				return this.weddingRing.shoulder + ' shoulder, ' + this.weddingRing.prong + '  weddingRing' 
+				return transJs(this.weddingRing.wedding_rings[0].style,this.langs,this.locale)  + ' ' + transJs(this.weddingRing.wedding_rings[0].metal,this.langs,this.locale)  + transJs(this.text.weddingRing,this.langs,this.locale) 
 			},
 			combinedWeddingRings(){ 
 				var obj = []
@@ -78,6 +81,9 @@
 					this.weddingRing = res.data.model
 					this.customerItems = res.data.posts.invPosts
 				})
+			},
+			transJsMet(data,ori,langs){
+				return transJs(data,ori,langs)
 			},
 			
 		}

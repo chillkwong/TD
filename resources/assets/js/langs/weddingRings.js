@@ -12,12 +12,13 @@ export default[
 
 	{'unit_price':['unit_price', '扭臂']},
 	{'metal':['metal', '混色']},
-	{'sideStone':['side-stone','輔石']},
+	{'sideStone':['side stone','輔石']},
 	{'stock':['stock','輔鑽石']},
 	{'name':['name','名稱']},
 	{'description':['description','名稱']},
 
-
+	{'ct':['ct', '混色']},	
+	{'Wedding Ring':['Wedding Ring','經典']},
 	{'your name':['your name','求婚戒指']},
 	{'your Phone No.':['your Phone No.','爪數']},	
 	{'Appointment':['Appointment','預約']},

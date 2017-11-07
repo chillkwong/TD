@@ -22,7 +22,7 @@
 
                 <div class="tile box">
                     <div class="tile notification is-primary">
-                            <p class="title">@{{engagementRing.style | transJs(langs,locale)}}@{{engagementRing.prong | transJs(langs,locale)}}@{{engagementRing.shoulder | transJs(langs,locale)}}{{trans('engagementRing.setting')}}</p>
+                            <p class="title">@{{engagementRing.style | transJs(langs,locale)}} @{{engagementRing.prong | transJs(langs,locale)}} @{{engagementRing.shoulder | transJs(langs,locale)}} {{trans('engagementRing.setting')}}</p>
                     </div>       
                 </div>
 
@@ -49,9 +49,9 @@
                                 </center>
                                 <br>
                                 <p>
-                                For more detailed information, 
+                                {{trans('engagementRing.For more detailed information')}}, 
                                 <br>
-                                <a @click="appointmentState=!appointmentState">Make Appointment</a> or <a :href="hrefLangs + '/about-us'">contact us</a> for further：
+                                <a @click="appointmentState=!appointmentState">{{trans('engagementRing.Make Appointment')}}</a> or <a :href="hrefLangs + '/about-us'">{{trans('engagementRing.contact us')}}</a> {{trans('engagementRing.for further')}}：
                                 </p>
                             </article>
                             </div>
@@ -69,7 +69,7 @@
                                     <tr><td>Unit Price</td><td>$@{{engagementRing.unit_price }}</td></tr>
                                     <tr><td>Shoulder</td><td>@{{engagementRing.shoulder | transJs(langs,locale)}}</td></tr>
                                     <tr><td>Prong</td><td>@{{engagementRing.prong | transJs(langs,locale)}}</td></tr>
-                                    <tr><td>Side Stone</td><td>@{{engagementRing.sideStone}} {{trans('engagementRing.ct')}}</td></tr>
+                                    <tr><td>Side Stone</td><td>@{{engagementRing.ct}} {{trans('engagementRing.ct')}}</td></tr>
                                 </tbody>
 
                                 <thead>
