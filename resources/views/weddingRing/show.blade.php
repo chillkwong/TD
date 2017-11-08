@@ -62,7 +62,7 @@
                                 <table class="table is-striped is-fullwidth">
                                 <thead>
                                     <tr>
-                                        <th>{{trans('weddingRing.Wedding Rings Info')}}</th><th v-if="weddingRing.wedding_rings[1]">{{trans('weddingRing.Men')}}</th><th v-if="weddingRing.wedding_rings[1]">{{trans('weddingRing.Female')}}</th>
+                                        <th>{{trans('weddingRing.Wedding Rings Info')}}</th><th v-if="weddingRing.wedding_rings[1]">@{{weddingRing.wedding_rings[0].gender | transJs(langs,locale)}}</th><th v-if="weddingRing.wedding_rings[1]">@{{weddingRing.wedding_rings[1].gender | transJs(langs,locale)}}</th>
                                     </tr>
                                 </thead>
                                     

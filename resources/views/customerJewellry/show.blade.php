@@ -44,10 +44,9 @@
 
                             <div class="tile is-chill">
                             <article>
-                                <p>客人珠寶首飾分享，可作參考。
-                                鑽石4Cs資料，
-
-                                更詳細資料，亦可到GIA官方網站查詢：
+                                <p>
+                                {{trans('diamondSearch.giaShare')}}客人珠寶首飾分享，可作參考。
+                                {{trans('diamondSearch.For more detailed')}}：
                                 </p>
                                 <a :href="`https://www.gia.edu/report-check?reportno=${invoice[0].inv_diamonds[0].certificate}`"><center>GIA Certificate</center><figure class="image"><img src="https://www.gia.edu/onlineopinionV5/GIA-Logo.png"></figure></a>
                             </article>
@@ -129,7 +128,9 @@
                         </div>
                         <div class="tile is-child">
                             <article>
-                                <figure><img src="/front_end/diamond/GIA-Laser-Inscription-girdle.jpg"></figure>
+                                <figure>
+                                    <img src="/front_end/diamond/GIA-Laser-Inscription-girdle.jpg">
+                                </figure>
                                 <p class="subtitle">
                                 鑽石腰部編號就好像是人的身份證，用來確認鑽石它的4Cs，到底是什麼那些級別。
                                 </p>
@@ -142,27 +143,81 @@
                 </div>
 
 
-                <div class="tile is-ancestor">
+                <div class="tile is-ancestor" v-if="invoice[0].engagement_rings[0]">
                     <div class="tile is-parent is-6">
                             <div class="tile is-child box">
-                                <a :href="'/adm/jewellries/' + invoice[0].jewellries[0].id">
+                                <a :href=" langHref +'/engagement_rings/' + invoice[0].engagement_rings[0].id">
+                                    <figure class="image">
+                                    <img :src="`/images/${invoice[0].engagement_rings[0].cover}`">
+                                    </figure>
+                                </a>
+                                <a :href=" langHref +'/engagement_rings/' + invoice[0].engagement_rings[0].id">
+                                    <figure class="image">
+                                    <img :src="`/images/${invoice[0].engagement_rings[0].image1}`">
+                                    </figure>
+                                </a>
+                            </div>
+                        </div>
+
+                    <div class="tile is-parent" >
+                        <div class="tile is-child box">
+                            <article>
+                                <div>
+                                  <p>
+                                    <iframe width="90%" height="315" :src="youtube + `${invoice[0].engagement_rings[0].video}`" frameborder="0" allowfullscreen></iframe>
+                                  </p>
+                                 </div>
+                                <table class="table is-striped is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th>Engagement Ring Info</th>
+                                    </tr>
+                                </thead>
+                                    
+                                <tbody> 
+                                    <tr><td>Shoulder</td><td>@{{invoice[0].engagement_rings[0].shoulder}}</td></tr>
+                                    <tr><td>Prong</td><td>@{{invoice[0].engagement_rings[0].prong}}</td></tr>
+                                    <tr><td>Side stone</td><td>@{{invoice[0].engagement_rings[0].ct}}ct</td></tr>
+
+                                    <thead>
+                                    <tr>
+                                        <th>Engagement Ring Info</th>
+                                    </tr>
+                                    </thead>
+                                    <tr><td>Stock No.</td><td>@{{invoice[0].engagement_rings[0].stock}}</td></tr> 
+                                    <tr><td>Title</td><td>@{{invoice[0].engagement_rings[0].name}}</td></tr>
+                                    <tr><td>Description</td><td>@{{invoice[0].engagement_rings[0].style | transJs(langs,locale)}},@{{invoice[0].engagement_rings[0].prong | transJs(langs,locale)}},@{{invoice[0].engagement_rings[0].shoulder | transJs(langs,locale)}},{{trans('engagementRing.setting')}}</td></tr>
+                                    
+                                </tbody>
+
+                                </table>
+                            </article>                            
+                        </div>
+                    </div>   
+                </div>
+
+                <div class="tile is-ancestor" v-if="invoice[0].jewellries[0]">
+                    <div class="tile is-parent is-6">
+                            <div class="tile is-child box">
+                                <a :href=" langHref +'/jewellries/' + invoice[0].jewellries[0].id">
                                     <figure class="image">
                                     <img :src="`/images/${invoice[0].jewellries[0].cover}`">
                                     </figure>
                                 </a>
-                                <a :href="'/adm/jewellries/' + invoice[0].jewellries[0].id">
+                                <a :href=" langHref +'/jewellries/' + invoice[0].jewellries[0].id">
                                     <figure class="image">
                                     <img :src="`/images/${invoice[0].jewellries[0].image1}`">
                                     </figure>
                                 </a>
                             </div>
                         </div>
-                    <div class="tile is-parent" v-if="invoice[0].jewellries[0]">
+
+                    <div class="tile is-parent" >
                         <div class="tile is-child box">
                             <article>
                                 <div>
                                   <p>
-                                    <iframe width="90%" height="315" :src="`https://www.youtube.com/embed/${invoice[0].jewellries[0].video}`" frameborder="0" allowfullscreen></iframe>
+                                    <iframe width="90%" height="315" :src="youtube + `${invoice[0].jewellries[0].video}`" frameborder="0" allowfullscreen></iframe>
                                   </p>
                                  </div>
                                 <table class="table is-striped is-fullwidth">
@@ -176,18 +231,112 @@
                                     <tr><td>Stock No.</td><td>@{{invoice[0].jewellries[0].stock}}</td></tr>  
                                     <tr><td>Title</td><td>@{{invoice[0].jewellries[0].name}}</td></tr>
                                     <tr><td>Description</td><td>@{{invoice[0].jewellries[0].description}}</td></tr>
-                                    <tr><td>Side stone</td><td>@{{invoice[0].jewellries[0].sideStone?'Yes':'No'}}</td></tr>
+                                    <tr><td>Side stone</td><td>@{{invoice[0].jewellries[0].ct}}</td></tr>
                                     <tr><td>Mounting</td><td>@{{invoice[0].jewellries[0].mounting}}</td></tr>
                                 </tbody>
 
                                 </table>
-                            </article>
-
-                            
+                            </article>                            
                         </div>
-                    </div>
-                    
+                    </div>   
                 </div>
+
+
+
+                <div class="tile is-ancestor" v-if="invoice[0].wedding_rings[0]">
+                    <div class="tile is-parent is-6">
+                            <div class="tile is-child box">
+                                <a :href=" langHref +'/wedding_rings/' + invoice[0].wedding_rings[0].id">
+                                    <figure class="image">
+                                    <img :src="`/images/${invoice[0].wedding_rings[0].image1}`">
+                                    </figure>
+                                </a>
+                                <a :href=" langHref +'/wedding_rings/' + invoice[0].wedding_rings[0].id">
+                                    <figure class="image">
+                                    <img :src="`/images/${invoice[0].wedding_rings[0].image2}`">
+                                    </figure>
+                                </a>
+                            </div>
+                        </div>
+
+                    <div class="tile is-parent" >
+                        <div class="tile is-child box">
+                            <article>
+                                <div>
+                                  <p>
+                                    <iframe width="90%" height="315" :src="youtube + `${invoice[0].wedding_rings[0].video}`" frameborder="0" allowfullscreen></iframe>
+                                  </p>
+                                 </div>
+                                <table class="table is-striped is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th>Wedding Ring Info - @{{invoice[0].wedding_rings[0].gender | transJs(langs,locale)}}</th>
+                                    </tr>
+                                </thead>
+                                    
+                                <tbody>
+                                    <tr><td>Metal</td><td>@{{invoice[0].wedding_rings[0].metal}}</td></tr>
+                                    <tr><td>Side stone</td><td>@{{invoice[0].wedding_rings[0].ct}}ct</td></tr>
+                                    <tr><td>Stock No.</td><td>@{{invoice[0].wedding_rings[0].stock}}</td></tr>  
+                                    <tr><td>Title</td><td>@{{invoice[0].wedding_rings[0].name}}</td></tr>
+                                    <tr><td>Description</td><td>@{{invoice[0].wedding_rings[0].style | transJs(langs,locale)}},@{{invoice[0].wedding_rings[0].metal | transJs(langs,locale)}},@{{invoice[0].wedding_rings[0].sideStone? transJsMet('ct',langs,locale):''}}
+                                    {{trans('weddingRing.Wedding Ring')}}</td></tr>
+                              
+                                </tbody>
+
+                                </table>
+                            </article>                            
+                        </div>
+                    </div>   
+                </div>
+
+
+                <div class="tile is-ancestor" v-if="invoice[0].wedding_rings[1]">
+                    <div class="tile is-parent is-6">
+                            <div class="tile is-child box">
+                                <a :href=" langHref +'/wedding_rings/' + invoice[0].wedding_rings[1].id">
+                                    <figure class="image">
+                                    <img :src="`/images/${invoice[0].wedding_rings[1].image1}`">
+                                    </figure>
+                                </a>
+                                <a :href=" langHref +'/wedding_rings/' + invoice[0].wedding_rings[1].id">
+                                    <figure class="image">
+                                    <img :src="`/images/${invoice[0].wedding_rings[1].image2}`">
+                                    </figure>
+                                </a>
+                            </div>
+                        </div>
+
+                    <div class="tile is-parent" >
+                        <div class="tile is-child box">
+                            <article>
+                                <div>
+                                  <p>
+                                    <iframe width="90%" height="315" :src="youtube + `${invoice[0].wedding_rings[1].video}`" frameborder="0" allowfullscreen></iframe>
+                                  </p>
+                                 </div>
+                                <table class="table is-striped is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th>Wedding Ring Info - @{{invoice[0].wedding_rings[1].gender | transJs(langs,locale)}}</th>
+                                    </tr>
+                                </thead>
+                                    
+                                <tbody>
+                                    <tr><td>Metal</td><td>@{{invoice[0].wedding_rings[1].metal}}</td></tr>
+                                    <tr><td>Side stone</td><td>@{{invoice[0].wedding_rings[1].ct}}ct</td></tr>
+                                    <tr><td>Stock No.</td><td>@{{invoice[0].wedding_rings[1].stock}}</td></tr>  
+                                    <tr><td>Title</td><td>@{{invoice[0].wedding_rings[1].name}}</td></tr>
+                                    <tr><td>Description</td><td>@{{invoice[0].wedding_rings[1].style | transJs(langs,locale)}},@{{invoice[0].wedding_rings[1].metal | transJs(langs,locale)}},@{{invoice[0].wedding_rings[1].sideStone? transJsMet('ct',langs,locale):''}}
+                                    {{trans('weddingRing.Wedding Ring')}}</td></tr>
+                                </tbody>
+
+                                </table>
+                            </article>                            
+                        </div>
+                    </div>   
+                </div>
+
 
                 <nav class="level" v-if="post.id">
                     <p class="level-item has-text-centered">
@@ -196,7 +345,7 @@
                 </nav>
                 <nav class="level">
                   <p class="level-item has-text-centered">
-                    <iframe width="90%" height="555" :src="`https://www.youtube.com/embed/${post.video}`" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="90%" height="555" :src="youtube + `${post.video}`" frameborder="0" allowfullscreen></iframe>
                   </p>
                  </nav>
 

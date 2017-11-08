@@ -9,6 +9,8 @@ export default[
 	{'Mixed':['Mixed', '混色']},
 	{'Men':['Men', '鉑金']},
 	{'Female':['Female', '混色']},	
+	{'m':['Men', '鉑金']},
+	{'f':['Female', '混色']},		
 
 	{'unit_price':['unit_price', '扭臂']},
 	{'metal':['metal', '混色']},

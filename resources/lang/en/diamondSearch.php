@@ -32,7 +32,7 @@ return [
 	'Next' => 'Next',
 	'Previous' => 'Previous',
 	'Certificate' => 'Certificate',
-
+	'For more detailed' => 'For more detailed information, can reach GIA website query',
 	'If you could not find diamonds as your inquiry' => 'If you could not find diamonds as your inquiry',
 	'PLEASE（Whatsapp: Winnie－5484 4533， for the latest diamond Stock）' => 'PLEASE（Whatsapp: Winnie－5484 4533， for the latest diamond Stock）',
 	'Per Page' => 'Per Page',

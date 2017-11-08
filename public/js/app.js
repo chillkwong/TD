@@ -17744,14 +17744,14 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ([{ 'Classic': ['Classic', '經典'] }, { 'classic': ['Classic', '經典'] }, { 'Japanese': ['Japanese', '日本'] }, { 'Vintage': ['Vintage', '歐洲'] }, { '18K White': ['18K White', '18K 白'] }, { '18K Rose Gold': ['18K Rose Gold', '18K玫瑰金'] }, { 'PT950/900': ['PT950/900', '鉑金'] }, { 'Mixed': ['Mixed', '混色'] }, { 'Men': ['Men', '鉑金'] }, { 'Female': ['Female', '混色'] }, { 'unit_price': ['unit_price', '扭臂'] }, { 'metal': ['metal', '混色'] }, { 'sideStone': ['side stone', '輔石'] }, { 'stock': ['stock', '輔鑽石'] }, { 'name': ['name', '名稱'] }, { 'description': ['description', '名稱'] }, { 'ct': ['ct', '混色'] }, { 'Wedding Ring': ['Wedding Ring', '經典'] }, { 'your name': ['your name', '求婚戒指'] }, { 'your Phone No.': ['your Phone No.', '爪數'] }, { 'Appointment': ['Appointment', '預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約'] }, { 'Contact Us': ['Contact Us', '預約'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'Classic': ['Classic', '經典'] }, { 'classic': ['Classic', '經典'] }, { 'Japanese': ['Japanese', '日本'] }, { 'Vintage': ['Vintage', '歐洲'] }, { '18K White': ['18K White', '18K 白'] }, { '18K Rose Gold': ['18K Rose Gold', '18K玫瑰金'] }, { 'PT950/900': ['PT950/900', '鉑金'] }, { 'Mixed': ['Mixed', '混色'] }, { 'Men': ['Men', '鉑金'] }, { 'Female': ['Female', '混色'] }, { 'm': ['Men', '鉑金'] }, { 'f': ['Female', '混色'] }, { 'unit_price': ['unit_price', '扭臂'] }, { 'metal': ['metal', '混色'] }, { 'sideStone': ['side stone', '輔石'] }, { 'stock': ['stock', '輔鑽石'] }, { 'name': ['name', '名稱'] }, { 'description': ['description', '名稱'] }, { 'ct': ['ct', '混色'] }, { 'Wedding Ring': ['Wedding Ring', '經典'] }, { 'your name': ['your name', '求婚戒指'] }, { 'your Phone No.': ['your Phone No.', '爪數'] }, { 'Appointment': ['Appointment', '預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約'] }, { 'Contact Us': ['Contact Us', '預約'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
 
 /***/ }),
 /* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony default export */ var _unused_webpack_default_export = ([{ 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
 
 /***/ }),
 /* 75 */
@@ -17780,7 +17780,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_weddingRing_show__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_customerJewellry_index__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_customerJewellry_show__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_buyingProcedure_index__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_education_index__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_buyingProcedure_index__ = __webpack_require__(94);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -17812,6 +17813,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 //wedding Ring
 
+
+
+//Education
 
 
 
@@ -17868,17 +17872,22 @@ if (window.location.pathname.slice(4, 18) == 'wedding-rings/') {
     var weddingRingShow = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_8__views_frontEnd_weddingRing_show__["a" /* default */]);
 }
 
-//wedding rings
+//Customer share
 if (window.location.pathname.slice(4) == 'customer-jewellries') {
-    var ustomerJewellryIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_9__views_frontEnd_customerJewellry_index__["a" /* default */]);
+    var customerJewellryIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_9__views_frontEnd_customerJewellry_index__["a" /* default */]);
 }
 if (window.location.pathname.slice(4, 24) == 'customer-jewellries/') {
     var customerJewellryShow = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_10__views_frontEnd_customerJewellry_show__["a" /* default */]);
 }
 
+//Education
+if (window.location.pathname.slice(4) == 'education-diamond-grading') {
+    var educationIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_11__views_frontEnd_education_index__["a" /* default */]);
+}
+
 //buying procedure
 if (window.location.pathname.slice(4) == 'buying-procedure') {
-    var buyingProcedure = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_11__views_frontEnd_buyingProcedure_index__["a" /* default */]);
+    var buyingProcedure = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_12__views_frontEnd_buyingProcedure_index__["a" /* default */]);
 }
 
 // const diamondViewer = new Vue({
@@ -19998,7 +20007,7 @@ if (false) {
 				// Vue.set(vm.$data, 'columns', response.data.columns)
 				_this.chunkItems();
 				_this.pairUp();
-			}).catch(function () {
+			}).catch(function (response) {
 				console.log(response);
 			});
 		}
@@ -20046,6 +20055,7 @@ if (false) {
 			text: {
 				weddingRing: 'Wedding Ring'
 			},
+			langHref: '/' + this.$route.fullPath.slice(1, 3),
 			storeURL: '',
 			customerItems: ''
 		};
@@ -20122,7 +20132,13 @@ if (false) {
 	router: __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */],
 	data: function data() {
 		return {
-			posts: []
+			query: {
+				per_page: 10
+			},
+			langs: __WEBPACK_IMPORTED_MODULE_3__langs_customerJewellry__["a" /* default */],
+			posts: [],
+			chunkedItemsDesktop: {},
+			chunkedItemsMobile: {}
 		};
 	},
 
@@ -20133,7 +20149,47 @@ if (false) {
 		this.fetchData();
 	},
 
+	computed: {
+		locale: function locale() {
+
+			if (this.$route.fullPath.slice(1, 3) == 'en') {
+				return 0;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'hk') {
+				return 1;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'cn') {
+				return 2;
+			}
+		}
+	},
+	filters: {
+		transJs: __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__["a" /* transJs */]
+	},
 	methods: {
+		more: function more() {
+
+			this.query.per_page += 10;
+			this.fetchData();
+		},
+		chunkItems: function chunkItems() {
+			var chunk1 = [];
+			var chunk2 = [];
+
+			for (var i = 0; this.posts.data.length - 1 >= i;) {
+				chunk1.push(this.posts.data.slice(i, i + 4));
+				i += 4;
+			}
+			this.chunkedItemsDesktop = chunk1;
+
+			for (var i = 0; this.posts.data.length - 1 >= i;) {
+				chunk2.push(this.posts.data.slice(i, i + 2));
+				i += 2;
+			}
+			this.chunkedItemsMobile = chunk2;
+
+			return;
+		},
 		clickRow: function clickRow(row, index) {
 			this.onClickedRow = row.id;
 			window.open('customer-jewellries/' + row.id, '_self');
@@ -20141,8 +20197,9 @@ if (false) {
 		fetchData: function fetchData() {
 			var _this = this;
 
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/invPosts', this.$route.fullPath.slice(1, 3)).then(function (res) {
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/invPosts?per_page=' + this.query.per_page, this.$route.fullPath.slice(1, 3)).then(function (res) {
 				_this.posts = res.data.posts;
+				_this.chunkItems();
 			});
 		}
 	}
@@ -20156,7 +20213,9 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__langs_customerJewellry__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__langs_diamondViewer__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__langs_engagementRings__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__langs_weddingRings__ = __webpack_require__(73);
 // import Auth from '../../store/auth'
 
 // import Flash from '../../helpers/flash'
@@ -20165,6 +20224,9 @@ if (false) {
 
 
 
+
+
+// import langs from '../../../langs/customerJewellry'
 
 /* harmony default export */ __webpack_exports__["a"] = ({
 	el: '#customerJewellryShow',
@@ -20177,7 +20239,10 @@ if (false) {
 				invoice: {},
 				content: []
 			},
-			invoice: ''
+			youtube: 'https://www.youtube.com/embed/',
+			langs: __WEBPACK_IMPORTED_MODULE_3__langs_diamondViewer__["a" /* default */].concat(__WEBPACK_IMPORTED_MODULE_4__langs_engagementRings__["a" /* default */], __WEBPACK_IMPORTED_MODULE_5__langs_weddingRings__["a" /* default */]),
+			invoice: '',
+			langHref: '/' + this.$route.fullPath.slice(1, 3)
 		};
 	},
 
@@ -20188,7 +20253,27 @@ if (false) {
 		this.fetchData();
 	},
 
+	computed: {
+		locale: function locale() {
+
+			if (this.$route.fullPath.slice(1, 3) == 'en') {
+				return 0;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'hk') {
+				return 1;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'cn') {
+				return 2;
+			}
+		}
+	},
+	filters: {
+		transJs: __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__["a" /* transJs */]
+	},
 	methods: {
+		transJsMet: function transJsMet(data, ori, langs) {
+			return Object(__WEBPACK_IMPORTED_MODULE_2__helpers_transJs__["a" /* transJs */])(data, ori, langs);
+		},
 		fetchData: function fetchData() {
 			var _this = this;
 
@@ -20249,6 +20334,180 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__langs_customerJewellry__ = __webpack_require__(74);
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+	el: '#education',
+	router: __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */],
+	data: function data() {
+		return {
+			query: {
+				per_page: 10
+			},
+			langs: __WEBPACK_IMPORTED_MODULE_3__langs_customerJewellry__["a" /* default */],
+			posts: [],
+			chunkedItemsDesktop: {},
+			chunkedItemsMobile: {},
+			activedSubTab: 'carat'
+		};
+	},
+
+	watch: {
+		'$route': 'fetchData'
+	},
+	beforeMount: function beforeMount() {
+		this.fetchData();
+	},
+
+	computed: {
+		locale: function locale() {
+
+			if (this.$route.fullPath.slice(1, 3) == 'en') {
+				return 0;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'hk') {
+				return 1;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'cn') {
+				return 2;
+			}
+		}
+	},
+	filters: {
+		transJs: __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__["a" /* transJs */]
+	},
+	methods: {
+		activeSubTab: function activeSubTab(tab) {
+			this.activedSubTab = tab;
+		},
+		more: function more() {
+
+			this.query.per_page += 10;
+			this.fetchData();
+		},
+		chunkItems: function chunkItems() {
+			var chunk1 = [];
+			var chunk2 = [];
+
+			for (var i = 0; this.posts.data.length - 1 >= i;) {
+				chunk1.push(this.posts.data.slice(i, i + 4));
+				i += 4;
+			}
+			this.chunkedItemsDesktop = chunk1;
+
+			for (var i = 0; this.posts.data.length - 1 >= i;) {
+				chunk2.push(this.posts.data.slice(i, i + 2));
+				i += 2;
+			}
+			this.chunkedItemsMobile = chunk2;
+
+			return;
+		},
+		clickRow: function clickRow(row, index) {
+			this.onClickedRow = row.id;
+			window.open('customer-jewellries/' + row.id, '_self');
+		},
+		fetchData: function fetchData() {
+			var _this = this;
+
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/invPosts?per_page=' + this.query.per_page, this.$route.fullPath.slice(1, 3)).then(function (res) {
+				_this.posts = res.data.posts;
+				_this.chunkItems();
+			});
+		}
+	}
+});
 
 /***/ })
 /******/ ]);

@@ -34,6 +34,7 @@
 				text:{
 					weddingRing: 'Wedding Ring', 
 				},
+				langHref : '/' + this.$route.fullPath.slice(1,3),				
 				storeURL: '',
 				customerItems: '',
 			}

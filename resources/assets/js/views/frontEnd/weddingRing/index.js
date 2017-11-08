@@ -230,7 +230,7 @@ import langs from '../../../langs/weddingRings'
 					this.chunkItems()
 					this.pairUp()
 
-				}).catch(function(){
+				}).catch((response)=>{
 					console.log(response)
 				})
 				

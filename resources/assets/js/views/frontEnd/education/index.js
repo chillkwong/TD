@@ -5,7 +5,7 @@ import { transJs } from '../../../helpers/transJs'
 import langs from '../../../langs/customerJewellry'
 
 export default {
-		el: '#customerJewellryIndex',
+		el: '#education',
 		router,	
 	data(){
 		return {
@@ -15,7 +15,8 @@ export default {
 			langs,
 			posts: [],
 			chunkedItemsDesktop:{},
-			chunkedItemsMobile:{},			
+			chunkedItemsMobile:{},
+			activedSubTab: 'carat',	
 		}
 	},
 	watch:{
@@ -36,12 +37,16 @@ export default {
 				if (this.$route.fullPath.slice(1,3) == 'cn') {
 					return 2
 				}
-			}
+			},
+
 		},
 	filters:{
 			transJs,
 	},
 	methods:{
+		activeSubTab(tab){
+			this.activedSubTab = tab
+		},
 		more(){
 				
 					this.query.per_page  +=10

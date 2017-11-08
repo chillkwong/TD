@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Search Engagement Ring</title>
+        <title>Search post</title>
 
         <!-- Fonts -->
        
@@ -44,27 +44,57 @@
         
         <div id="customerJewellryIndex">
         	<div class="box">
-        <div class="columns">
-            <div class="column">
-            </div>
-        </div>
+               <!--  <div class="columns">
+                    <div class="column">
+                    </div>
+                </div>
 
         
-        <div class="tile is-ancestor" v-for="pos in posts">
-            <div class="tile is-parent is-4" v-for="post in pos">
-                <div class="tile is-child" v-if="post">
-                    <article class="tile">
-                        <a @click="clickRow(post)">
-                            <img :src="`/images/${post.cover}`" v-if="post.cover">
-                            <center>
-                            <p class="subtitle" v-if="post.contents[0]">@{{post.contents[0].content}}</p>
-                        </center>
-                        </a>
-                        
-                    </article>
-                </div>
-            </div>
+                <div class="tile is-ancestor" v-for="pos in posts.data">
+                    <div class="tile is-parent is-4" v-for="post in pos">
+                        <div class="tile is-child" v-if="post">
+                            <article class="tile">
+                                <a @click="clickRow(post)">
+                                    <img :src="`/images/${post.cover}`" v-if="post.cover">
+                                    <center>
+                                    <p class="subtitle" v-if="post.contents[0]">@{{post.contents[0].content}}</p>
+                                </center>
+                                </a>
+                                
+                            </article>
+                        </div>
+                    </div> -->
+                
+
+                <div class="">      
+                        <div class="tile is-ancestor" v-for="(posts,idnex) in chunkedItemsDesktop">
+                            <div class="tile is-parent is-4" v-for="post in posts">
+                                <div class="tile is-child" v-if="post">
+                                    <article class="tile" @click="clickRow(post)">
+                                        <a>
+                                        <figure class="image">
+                                            <img :src="`/images/${post.cover}`" v-if="post.cover">
+                                        <center>
+                                            <p  class="subtitle" v-if="post.description">$@{{post.unit_price}}</p>
+                                            <p >@{{post.contents[0].content }} </p>
+                                        </center>
+                                        </figure>
+                                        </a>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                                <div class="level">
+                                    <article class="level-item" >
+                                        <button class="button is-primary" @click="more()">{{trans('engagementRing.More')}}</button>
+                                    </article>
+                                </div>
+                    </div>
+                    
+
         </div>
+
+
 
 
     </div>

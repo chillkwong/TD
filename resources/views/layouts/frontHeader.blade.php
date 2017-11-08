@@ -360,6 +360,14 @@
                  
                 </ul>
 
+                <ul v-if="activeTab=='education-diamond-grading' || activeTab.includes('education-diamond-grading/')">
+                  <li ><a>{{__('frontHeader.Diamond Grading')}}</a></li>
+                  <li ><a>{{__('frontHeader.Diamond Certficate')}}</a></li>
+                  <li ><a>{{__('frontHeader.Diamond AnaTomy')}}</a></li>
+                  <li ><a>{{__('frontHeader.Fancy Color Diamond')}}</a></li>
+                 
+                </ul>
+
                 <ul v-if="activeTab=='customer-jewellries' || activeTab.includes('customer-jewellries/')">
                   <li ><a>{{__('frontHeader.Customer Jewellires')}}</a></li>
                   <li ><a>{{__('frontHeader.Customer Moments')}}</a></li>

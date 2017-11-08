@@ -31,6 +31,10 @@ import WeddingRingShow from './views/frontEnd/weddingRing/show'
 import CustomerJewellryIndex from './views/frontEnd/customerJewellry/index'
 import CustomerJewellryShow from './views/frontEnd/customerJewellry/show'
 
+//Education
+import EducationIndex from './views/frontEnd/education/index'
+
+
 import BuyingProcedure from './views/frontEnd/buyingProcedure/index'
 
 /**
@@ -84,12 +88,17 @@ if (window.location.pathname.slice(4,18) == 'wedding-rings/') {
     const weddingRingShow =  new Vue(WeddingRingShow);
 }
 
-//wedding rings
+//Customer share
 if (window.location.pathname.slice(4) == 'customer-jewellries') {
-    const ustomerJewellryIndex =  new Vue(CustomerJewellryIndex);
+    const customerJewellryIndex =  new Vue(CustomerJewellryIndex);
 }
 if (window.location.pathname.slice(4,24) == 'customer-jewellries/') {
     const customerJewellryShow =  new Vue(CustomerJewellryShow);
+}
+
+//Education
+if (window.location.pathname.slice(4) == 'education-diamond-grading') {
+    const educationIndex =  new Vue(EducationIndex);
 }
 
 //buying procedure

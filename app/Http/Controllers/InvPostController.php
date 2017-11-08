@@ -53,7 +53,7 @@ class InvPostController extends Controller
         $posts = InvPost::orderBy('created_at', 'desc')
                 ->with(['contents' => function($query){
                     $query->where('locale',app()->getLocale())->get();}])
-                ->get(['cover', 'id'])->chunk(3);
+                ->paginate(request()->per_page);
 
         return response()
             ->json([

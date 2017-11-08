@@ -21,6 +21,18 @@ return [
 	'Customer Moments' => 'Customer Moments',
 	'About Us' => 'About Us',
 	'Language' => 'Language',
+	'Classic Ring' => 'Classic Ring',
+	'Japanese Ring' => 'Japanese Ring',
+	'Vintage Ring' => 'Vintage Ring',
+	'Customer Jewellires' => 'Customer Jewellires',
+	'Engagement Tips' => 'Engagement Tips',
+	'Diamond Grading' => 'Diamond Grading',
+	'Diamond Certficate' => 'Diamond Certficate',
+	'Diamond AnaTomy' => 'Diamond AnaTomy',
+	'Fancy Color Diamond' => 'Fancy Color Diamond',
+	'Diamond' => 'Diamond',
+	'Diamond' => 'Diamond',
+
 	'appointmentSuccess' => 'You have successfully sent appointment, we will contact you soon!
 							 Or you can also contact us Immediately' 
 
