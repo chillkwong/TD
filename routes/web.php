@@ -36,8 +36,8 @@ Route::get('/{locale}/customer-jewellries/', 'InvPostController@bladeIndex');
 Route::get('/{locale}/customer-jewellries/{id}', 'InvPostController@bladeShow');
 
 //education 
-Route::get('/{locale}/education-diamond-grading/', 'educationController@bladeIndex');
-Route::get('/{locale}/education-diamond-grading/{id}', 'educationController@bladeShow');
+Route::get('/{locale}/education-diamond-grading/', 'EducationController@bladeIndex');
+Route::get('/{locale}/education-diamond-grading/{id}', 'EducationController@bladeShow');
 
 Route::get('/{locale}/buying-procedure', 'BuyingProcedureController@bladeIndex');
 
