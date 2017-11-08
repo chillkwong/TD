@@ -35,7 +35,7 @@ import CustomerJewellryShow from './views/frontEnd/customerJewellry/show'
 import EducationIndex from './views/frontEnd/education/index'
 
 
-import BuyingProcedure from './views/frontEnd/buyingProcedure/index'
+import AboutUs from './views/frontEnd/aboutUs/index'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -63,9 +63,9 @@ const header = new Vue({
     router
 });
 
-console.log(window.location.pathname.slice(4,24))
+ var pUrl = window.location.pathname.slice(4)
 //diamond
-if (window.location.pathname.slice(4) == 'gia-loose-diamonds') {
+if (pUrl == 'gia-loose-diamonds') {
     const diamondViewerIndex =  new Vue(DiamondViewerIndex);
 }
 if (window.location.pathname.slice(4,23) == 'gia-loose-diamonds/') {
@@ -73,7 +73,7 @@ if (window.location.pathname.slice(4,23) == 'gia-loose-diamonds/') {
 }
 
 //engagement rings
-if (window.location.pathname.slice(4) == 'engagement-rings') {
+if (pUrl == 'engagement-rings') {
     const engagementRingIndex =  new Vue(EngagementRingIndex);
 }
 if (window.location.pathname.slice(4,21) == 'engagement-rings/') {
@@ -81,7 +81,7 @@ if (window.location.pathname.slice(4,21) == 'engagement-rings/') {
 }
 
 //wedding rings
-if (window.location.pathname.slice(4) == 'wedding-rings') {
+if (pUrl == 'wedding-rings') {
     const weddingRingIndex =  new Vue(WeddingRingIndex);
 }
 if (window.location.pathname.slice(4,18) == 'wedding-rings/') {
@@ -89,7 +89,7 @@ if (window.location.pathname.slice(4,18) == 'wedding-rings/') {
 }
 
 //Customer share
-if (window.location.pathname.slice(4) == 'customer-jewellries') {
+if (pUrl == 'customer-jewellries') {
     const customerJewellryIndex =  new Vue(CustomerJewellryIndex);
 }
 if (window.location.pathname.slice(4,24) == 'customer-jewellries/') {
@@ -97,13 +97,13 @@ if (window.location.pathname.slice(4,24) == 'customer-jewellries/') {
 }
 
 //Education
-if (window.location.pathname.slice(4) == 'education-diamond-grading') {
+if (pUrl == 'education-diamond-grading') {
     const educationIndex =  new Vue(EducationIndex);
 }
 
 //buying procedure
-if (window.location.pathname.slice(4) == 'buying-procedure') {
-    const buyingProcedure =  new Vue(BuyingProcedure);
+if ( pUrl == 'about-us' || pUrl =='buying-procedure') {
+    const aboutUs =  new Vue(AboutUs);
 }
 
 

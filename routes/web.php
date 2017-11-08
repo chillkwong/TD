@@ -35,11 +35,16 @@ Route::get('/{locale}/wedding-rings/{id}', 'WeddingRingPairController@bladeShow'
 Route::get('/{locale}/customer-jewellries/', 'InvPostController@bladeIndex');
 Route::get('/{locale}/customer-jewellries/{id}', 'InvPostController@bladeShow');
 
+//CustomerMoment
+Route::get('/{locale}/customer-moments/', 'CustomerMomentController@bladeIndex');
+
 //education 
 Route::get('/{locale}/education-diamond-grading/', 'EducationController@bladeIndex');
 Route::get('/{locale}/education-diamond-grading/{id}', 'EducationController@bladeShow');
 
-Route::get('/{locale}/buying-procedure', 'BuyingProcedureController@bladeIndex');
+//about-us
+Route::get('/{locale}/buying-procedure', 'AboutUsController@aboutUs');
+Route::get('/{locale}/buying-procedure', 'AboutUsController@buyingProcedure');
 
 
 Route::get('/{locale}/{vue_capture?}', function ($locale) {

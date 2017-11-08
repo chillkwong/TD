@@ -103,7 +103,7 @@ class InvoiceController extends Controller
     		->json([
     			'form' => $invoice,
     			'option' => [
-                    'customers' => Customer::orderBy('name')->select('id','name as text')->get(),
+                    'customers' => Customer::orderBy('name')->select('id','phone as text')->get(),
                      'jewellries' => Jewellry::select('id','name as text','description','unit_price')->get()
                                          ],
 

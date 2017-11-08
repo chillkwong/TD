@@ -272,7 +272,7 @@
 
       <div class="navbar-item has-dropdown is-hoverable">
         <div class="navbar-link">
-          Language {{trans('frontHeader.' . strToUpper(app()->getLocale(session('locale')))) }}
+          {{trans('frontHeader.Language')}} {{trans('frontHeader.' . strToUpper(app()->getLocale(session('locale')))) }}
         </div>
         <hr class="dropdown-divider">
         <div id="moreDropdown" class="navbar-dropdown is-boxed">
@@ -283,26 +283,6 @@
 
       </div>
 
-<!-- 
-      <div class="dropdown is-hoverable">
-    <div class="dropdown-trigger">
-      <a class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
-        <span>Language</span>
-        <span class="icon is-small">
-          <i class="fa fa-angle-down" aria-hidden="true"></i>
-        </span>
-      </a> 
-
-        </div>
-
-            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-              <div class="dropdown-content">
-                <div class="dropdown-item">
-                 
-                </div>
-              </div>
-            </div>
-        </div> -->
 
       
 
@@ -340,43 +320,43 @@
           </ul>
           <div class="tabs">
                 <ul v-if="activeTab=='gia-loose-diamonds' || activeTab.includes('gia-loose-diamonds/') ">
-                  <li ><a>{{__('frontHeader.Round Diamonds')}}</a></li>
-                  <li ><a>{{__('frontHeader.Fancy Cut Diamonds')}}</a></li>
-                  <li ><a>{{__('frontHeader.Fancy Color Diamonds')}}</a></li>
+                  <li ><a href="gia-loose-diamonds/round-cut">{{__('frontHeader.Round Diamonds')}}</a></li>
+                  <li ><a href="gia-loose-diamonds/fancy-cut-diamond">{{__('frontHeader.Fancy Cut Diamonds')}}</a></li>
+                  <li ><a href="gia-loose-diamonds/fancy-color">{{__('frontHeader.Fancy Color Diamonds')}}</a></li>
                 
                 </ul>
 
                 <ul v-if="activeTab=='engagement-rings' || activeTab.includes('engagement-rings/')">
-                  <li ><a>{{__('frontHeader.Solitaire Ring')}}</a></li>
-                  <li ><a>{{__('frontHeader.Side-stone Ring')}}</a></li>
-                  <li ><a>{{__('frontHeader.Halo Ring')}}</a></li>
+                  <li ><a href="engagement-rings/solitaire-ring-setting">{{__('frontHeader.Solitaire Ring')}}</a></li>
+                  <li ><a href="engagement-rings/side-stones-setting">{{__('frontHeader.Side-stone Ring')}}</a></li>
+                  <li ><a href="engagement-rings/halo-setting">{{__('frontHeader.Halo Ring')}}</a></li>
                  
                 </ul>
 
                 <ul v-if="activeTab=='wedding-rings' || activeTab.includes('wedding-rings/')">
-                  <li ><a>{{__('frontHeader.Classic Ring')}}</a></li>
-                  <li ><a>{{__('frontHeader.Japanese Ring')}}</a></li>
-                  <li ><a>{{__('frontHeader.Vintage Ring')}}</a></li>
+                  <li ><a href="wedding-rings/classic">{{__('frontHeader.Classic Ring')}}</a></li>
+                  <li ><a href="wedding-rings/japanese">{{__('frontHeader.Japanese Ring')}}</a></li>
+                  <li ><a href="wedding-rings/vintage">{{__('frontHeader.Vintage Ring')}}</a></li>
                  
                 </ul>
 
                 <ul v-if="activeTab=='education-diamond-grading' || activeTab.includes('education-diamond-grading/')">
-                  <li ><a>{{__('frontHeader.Diamond Grading')}}</a></li>
-                  <li ><a>{{__('frontHeader.Diamond Certficate')}}</a></li>
-                  <li ><a>{{__('frontHeader.Diamond AnaTomy')}}</a></li>
+                  <li ><a href="education-diamond-grading/4cs">{{__('frontHeader.Diamond Grading')}}</a></li>
+                  <li ><a href="education-diamond-grading/gia-report">{{__('frontHeader.Diamond Certficate')}}</a></li>
+                  <li ><a href="education-diamond-grading/shape">{{__('frontHeader.Diamond AnaTomy')}}</a></li>
                   <li ><a>{{__('frontHeader.Fancy Color Diamond')}}</a></li>
                  
                 </ul>
 
                 <ul v-if="activeTab=='customer-jewellries' || activeTab.includes('customer-jewellries/')">
-                  <li ><a>{{__('frontHeader.Customer Jewellires')}}</a></li>
-                  <li ><a>{{__('frontHeader.Customer Moments')}}</a></li>
-                  <li ><a>{{__('frontHeader.Engagement Tips')}}</a></li>
+                  <li ><a href="customer-jewellries">{{__('frontHeader.Customer Jewellires')}}</a></li>
+                  <li ><a href="customer-moments">{{__('frontHeader.Customer Moments')}}</a></li>
+                  <li ><a href="engagement-tips">{{__('frontHeader.Engagement Tips')}}</a></li>
                  
                 </ul>
 
                 <ul v-if="activeTab=='about-us' || activeTab=='buying-procedure'">
-                  <li ><a>{{__('frontHeader.About Us')}}</a></li>
+                  <li ><a href="about-us">{{__('frontHeader.About Us')}}</a></li>
                   <li ><a href="buying-procedure">{{__('frontHeader.Buying Procedure')}}</a></li>
                  
                 </ul>

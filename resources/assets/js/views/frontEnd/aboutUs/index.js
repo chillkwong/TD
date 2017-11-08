@@ -1,7 +1,7 @@
 import { get } from '../../../helpers/api'
 
 export default {
-	el: '#buyingProcedure',
+	el: '#aboutUs',
 	data(){
 		return {
 			activedSubTab: 'Appointment First',
@@ -9,6 +9,11 @@ export default {
 	},
 	watch:{
 		'$route': 'fetchData'
+	},
+	computed:{
+		partialUrl(){
+			return this.$route.fullPath.slice(4)
+		}
 	},
 	methods:{
 		activeSubTab(tab){

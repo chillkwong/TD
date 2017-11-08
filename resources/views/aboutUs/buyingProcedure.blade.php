@@ -16,7 +16,7 @@
    
     @include('layouts.frontHeader')
     <body>
-        <div id="buyingProcedure" class="container">
+        <div id="aboutUs" class="container">
         <div class="level">
             
         </div>

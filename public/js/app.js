@@ -17781,7 +17781,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_customerJewellry_index__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_customerJewellry_show__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_education_index__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_buyingProcedure_index__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_aboutUs_index__ = __webpack_require__(174);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -17847,9 +17847,9 @@ var header = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     router: __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */]
 });
 
-console.log(window.location.pathname.slice(4, 24));
+var pUrl = window.location.pathname.slice(4);
 //diamond
-if (window.location.pathname.slice(4) == 'gia-loose-diamonds') {
+if (pUrl == 'gia-loose-diamonds') {
     var diamondViewerIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_3__views_frontEnd_diamondViewer_index__["a" /* default */]);
 }
 if (window.location.pathname.slice(4, 23) == 'gia-loose-diamonds/') {
@@ -17857,7 +17857,7 @@ if (window.location.pathname.slice(4, 23) == 'gia-loose-diamonds/') {
 }
 
 //engagement rings
-if (window.location.pathname.slice(4) == 'engagement-rings') {
+if (pUrl == 'engagement-rings') {
     var engagementRingIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_5__views_frontEnd_engagementRing_index__["a" /* default */]);
 }
 if (window.location.pathname.slice(4, 21) == 'engagement-rings/') {
@@ -17865,7 +17865,7 @@ if (window.location.pathname.slice(4, 21) == 'engagement-rings/') {
 }
 
 //wedding rings
-if (window.location.pathname.slice(4) == 'wedding-rings') {
+if (pUrl == 'wedding-rings') {
     var weddingRingIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_7__views_frontEnd_weddingRing_index__["a" /* default */]);
 }
 if (window.location.pathname.slice(4, 18) == 'wedding-rings/') {
@@ -17873,7 +17873,7 @@ if (window.location.pathname.slice(4, 18) == 'wedding-rings/') {
 }
 
 //Customer share
-if (window.location.pathname.slice(4) == 'customer-jewellries') {
+if (pUrl == 'customer-jewellries') {
     var customerJewellryIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_9__views_frontEnd_customerJewellry_index__["a" /* default */]);
 }
 if (window.location.pathname.slice(4, 24) == 'customer-jewellries/') {
@@ -17881,13 +17881,13 @@ if (window.location.pathname.slice(4, 24) == 'customer-jewellries/') {
 }
 
 //Education
-if (window.location.pathname.slice(4) == 'education-diamond-grading') {
+if (pUrl == 'education-diamond-grading') {
     var educationIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_11__views_frontEnd_education_index__["a" /* default */]);
 }
 
 //buying procedure
-if (window.location.pathname.slice(4) == 'buying-procedure') {
-    var buyingProcedure = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_12__views_frontEnd_buyingProcedure_index__["a" /* default */]);
+if (pUrl == 'about-us' || pUrl == 'buying-procedure') {
+    var aboutUs = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_12__views_frontEnd_aboutUs_index__["a" /* default */]);
 }
 
 // const diamondViewer = new Vue({
@@ -20297,39 +20297,7 @@ if (false) {
 });
 
 /***/ }),
-/* 94 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-	el: '#buyingProcedure',
-	data: function data() {
-		return {
-			activedSubTab: 'Appointment First'
-		};
-	},
-
-	watch: {
-		'$route': 'fetchData'
-	},
-	methods: {
-		activeSubTab: function activeSubTab(tab) {
-			this.activedSubTab = tab;
-		},
-		fetchData: function fetchData() {
-			var _this = this;
-
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/buyingProcedure').then(function (res) {
-				_this.trans = res.data.trans;
-			});
-		}
-	}
-});
-
-/***/ }),
+/* 94 */,
 /* 95 */
 /***/ (function(module, exports) {
 
@@ -20504,6 +20472,44 @@ if (false) {
 			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/invPosts?per_page=' + this.query.per_page, this.$route.fullPath.slice(1, 3)).then(function (res) {
 				_this.posts = res.data.posts;
 				_this.chunkItems();
+			});
+		}
+	}
+});
+
+/***/ }),
+/* 174 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+	el: '#aboutUs',
+	data: function data() {
+		return {
+			activedSubTab: 'Appointment First'
+		};
+	},
+
+	watch: {
+		'$route': 'fetchData'
+	},
+	computed: {
+		partialUrl: function partialUrl() {
+			return this.$route.fullPath.slice(4);
+		}
+	},
+	methods: {
+		activeSubTab: function activeSubTab(tab) {
+			this.activedSubTab = tab;
+		},
+		fetchData: function fetchData() {
+			var _this = this;
+
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/buyingProcedure').then(function (res) {
+				_this.trans = res.data.trans;
 			});
 		}
 	}
