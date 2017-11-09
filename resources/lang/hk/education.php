@@ -37,13 +37,52 @@ return [
 	'clarityTitle1' => 'WHICH CLARITY GRADE YOU SHOULD CHOOSE？',
 	'clarityPara1' => 'Select a diamond, and its contents will not affect the overall beauty of the diamond, which is very important. If you want to make sure 100% “visually clean”, do not see the diamond inclusions, you can choose VS2 or above grade diamonds. Purchase of SI grade diamonds, “price” is very high, very worth to buy, but may first look at the distribution of the diamond body containing determine diamond inclusions are not visible to the naked eye.',
 	'clarityPara2' => 'Typically balance between color and clarity, is that if you are looking for diamond color range between the “D-F colorless”, you can choose VS2 or above. And select “G-I nearly colorless” diamond color range, then combined SI level, would be very good value.',
-	'Shape' => 'Shape',
-	'Shape' => 'Shape',
-	'Shape' => 'Shape',
-	'Shape' => 'Shape',
-	'Shape' => 'Shape',
-	'Shape' => 'Shape',
-	'Shape' => 'Shape',
 
+	//cert
+	'certTitle1' => 'WHAT IS DIAMOND CERTIFICATE ?',
+	'certPara1' => 'Diamond certificate can check details of diamonds, including diamond color, carat, clarity, and its cut grade. You should never buy a diamond without a certificate. Laboratories with more well known, including the Gemological Institute of America (GIA), International Gemological Institute (IGI).',
+	'certPara2' => 'The value of diamonds will be priced according to their quality, and that is the public awareness of 4Cs, color, Clarity , cut and carat weight. Relations between four quality properties is used to determine the value of a diamond.  Four of them, carat weight affects the price more than the rest of the color, clarity and cut.',
+
+	//eye Clean
+	'eyeCleanTitle1' => 'WHAT IS EYE CLEAN DIAMOND ?',
+	'eyeCleanPara1' => 'Ting Diamond considered that when a diamond measure, at close range 10-15cm (with normal 20/20 vision) look down and see the diamond, with the naked eye clean.Clean eye this definition, different retailers also have various, but generally have these two factors:',
+	'eyeCleanPara2' => 'The distance between diamond and viewer',
+	'eyeCleanPara3' => 'The viewer’s vision',
+
+	'eyeCleanPara4' => 'According to their ratings, GIA diamond gradings of clarity in Flawless (FL), within Internal Flawless (IF), very very slight (VVS), and slight (VS) are eye clean visually',
+
+	//gia cert
+	'giaTitle1' => 'GIA REPORT AS A BENCHMARK',
+	'giaPara1' => 'I used to find information within the GIA report, the subdivision becomes different parts. GIA certificate report use as a benchmark, because they are one of the earliest pioneers and height are recognized in the gem industry.',
+	'giaPara2' => '# Some historians trivial things – you know that diamonds are the GIA 4Cs create out of it? Because going to simplify diamonds in gemological information on this rating system has been widely praised by consumers and business people alike. The fact is that now other precious stones with GIA assurance agencies have adopted similar rating system.',
+	'giaPara3' => 'So, you know how to interpret GIA Report, basically to see other diamond certification reports, such as: IGI or HRD, will not have any difficulty, but the main is that they are called, respectively, or a little different category.',
+
+	'giaTitle2' => 'ANATOMY GIA  REPORT',
+	'giaTitle3' => '1. THE TITLE OF DIAMOND REPORT – WHICH IS LAB TO TEST DIAMOND DIAMONDS?',
+	'giaPara4' => 'The first see is that between the identification certificate issued. Identification of the more famous,',
+	'giaPara4.1' => 'there are GIA, IGI, AGS, EGL, HRD, but there are a number of different identification of the certificate will be issued.',
+
+	'giaPara5' => 'The more important question is, who will use these certificates and why? You may encounter some diamond certificates from unknown and independent gemologist, while the sale price is very cheap.',
+	'giaPara6' => 'The fact is that cheap diamonds are usually some low-quality diamonds, they are not worth the money sent for identification did ratings. Instead, they will be sent home and some independent gemologist certificate, a certificate made some rating higher.',
+	'giaTitle4' => '2. THE CERTIFICATE NUMBER, SHAPE AND SIZE OF THE CUT',
+	'giaPara7' => 'Then came the certificate number, it is a unique number used to record and tracing diamonds.',
+	'giaPara7.1' => ' Identification of where the vast majority of their library will keep the details of that number, in case you mismatch certificate, or needs to be replaced. More important is that this number can allow you to directly from their website, check the diamond and certificate information.More carefully, you can find information on diamonds, you can follow according to its shape, size and cut, to be checked.',
+	'giaTitle5' => '3. DIAMOND 4CS',
+	'giaPara8' => 'Move to the next part is the diamond weight (Carat), which is used to record the weight of the diamond,',
+	'giaPara8.1' => ' the unit is one percent carats. Diamond color (Color) It is now clear, colorless diamond extent, by the D-Z color, while color diamond rating system, after the color is displayed when a diamond beyond Z, will use colored diamonds rating.Diamond Clarity (Clarity) It is with gemologists, at 10 times the magnifying glass to watch its contents.If diamonds are the standard 57 cutting surface (facet), all Diamond Report in 2006 after both contain diamond cut (Cut). Diamond Cut GIA report is based within a range from excellent to very poor. Uninitiated, diamond cut is the most important condition to comment on the quality of the diamond, because it directly affects the “Brightness” and “fire color” diamonds.',
+	'giaTitle6' => '4. ADDITIONAL GRADING INFORMATION',
+	'giaPara9' => 'Perfect Diamond 2 will also be affected by other factors: symmetrical polished diamonds and diamonds.',
+	'giaPara9.1' => 'Their ratings will affect the attractiveness of diamonds, because they are directly related to low levels of both diamond appearance.Diamond polishing (polish) refers to the diamond surface smooth degree. Because a well polished diamonds, there will be “total internal reflection.” Diamond symmetry (Symmetry) is a diamond cutting surface (facet) and cases with other facets symmetrical rows.',
+	'giaPara10' => 'After the diamond fluorescence response is characteristic, which means that when the intensity of a diamond in the ultraviolet (UV), the light it emits.
+In the “other comments” section below, all other diamonds are written in the mixed information here. For example: laser engraving, other additional aid in identification, can not be used when the distribution of inclusions (clarity plot) to describe its characteristics, will be written here.',
+	'giaTitle7' => '5. CHARACTERISTIC PLOT',
+	'giaPara11' => 'From the diamond clarity, every one diamond is unique, just like our fingerprints, inclusions map “Clarity Plot” is plotting ways to represent diamonds “birthmarks.',
+	'giaPara11.1' => '”Defects (Blemishes) is external, with the green color graphics, and inclusions (inclusion) is internal, in red paint.Chart ratio (proportions diagram) is very important, it can make people with mesa% Depth% crown%, thickness pavilion% and waist to analyze diamonds. In the flower-shaped cut diamonds ratio chart (proportions diagram), their crown and pavilion%% usually can be ignored.The proportion of the chart (proportions diagram), the thickness of the bottom tip and waist have stated. In the popular brilliant cut, it will not advocate the bottom tip, because it will lead from the bottom of light leakage. The thickness of the waist, usually selected from thin to slightly thick, from the station and will look bigger.',
+	'giaTitle8' => '6. AUTHORITY AND THE SECURITY FEATURES',
+	'giaPara12' => 'In the final portion of the certificate, you can pay attention to the safety function, which is used to authority supporting documents. Generally,',
+	'giaPara12.1' => 'these security watermark can be a hologram, a common product number, or relief printing. In order to be assured that the majority will be identified by the offer online check.',
+	'giaPara13' => 'HOW TO INTEPREPT GIA REPORT?',
+	
+	
 
 ];
