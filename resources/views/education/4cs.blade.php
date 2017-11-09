@@ -44,18 +44,10 @@
             </div>
         </div>
 
-       
-        <div class="tabs is-centered">
-          <ul>
-            <li :class="{'is-active': activedSubTab=='carat' }" @click="activeSubTab('carat')" ><a>Diamond Carat</a></li>
-            <li :class="{'is-active': activedSubTab=='cut' }" @click="activeSubTab('cut')" ><a>Diamond Cut </a></li>
-            <li :class="{'is-active': activedSubTab=='color' }" @click="activeSubTab('color')"><a>Diamond Color</a></li>
-            <li :class="{'is-active': activedSubTab=='clarity' }" @click="activeSubTab('clarity')"><a>Diamond Clarity</a></li>
-            
-          </ul>
-        </div>
+       @include('layouts.subTabs.4cs')
+        
 
-        <article class="message is-primary" v-if="activedSubTab=='carat'">
+        <article class="message is-primary" v-if="activedSubTab=='carat' ||activedSubTab=='4cs'">
           <div class="level is-centered">
             <div class="message-body">
             <center>

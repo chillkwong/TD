@@ -63,10 +63,12 @@
                                 {{trans('For more detailed information, can reach GIA website query')}}：
                                 </p>
                                 <a :href="`https://www.gia.edu/report-check?reportno=${diamond.certificate}`">
-                                    <center>{{trans('diamondSearch.GIA Certificate')}}</center>
+                                    <div class="level">
                                     <figure class="image">
                                         <img src="https://www.gia.edu/onlineopinionV5/GIA-Logo.png">
                                     </figure>
+                                    <p class="button is-primary">{{trans('diamondSearch.GIA Certificate Download')}}</p>
+                                    </div>
                                 </a>
                             </article>
                             </div>

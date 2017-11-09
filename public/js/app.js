@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 75);
+/******/ 	return __webpack_require__(__webpack_require__.s = 74);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10726,7 +10726,7 @@ module.exports = Vue$3;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_backEnd_jewellry_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_backEnd_jewellry_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_backEnd_jewellry_show_vue__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_backEnd_jewellry_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_backEnd_jewellry_show_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_weddingRing_show_vue__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_weddingRing_show_vue__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_weddingRing_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_frontEnd_weddingRing_show_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_backEnd_Auth_adm_login_vue__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_backEnd_Auth_adm_login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_backEnd_Auth_adm_login_vue__);
@@ -11557,9 +11557,9 @@ module.exports = Cancel;
 var disposed = false
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(81),
+  __webpack_require__(80),
   /* template */
-  __webpack_require__(82),
+  __webpack_require__(81),
   /* styles */
   null,
   /* scopeId */
@@ -11597,9 +11597,9 @@ module.exports = Component.exports
 var disposed = false
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(83),
+  __webpack_require__(82),
   /* template */
-  __webpack_require__(84),
+  __webpack_require__(83),
   /* styles */
   null,
   /* scopeId */
@@ -17730,39 +17730,32 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ([{ 'shape': ['shape', '型狀'] }, { 'imageLink': ['imageLink', '圖像'] }, { 'price': ['price', '價格'] }, { 'weight': ['weight', '重量'] }, { 'color': ['color', '型狀'] }, { 'clarity': ['clarity', '型狀'] }, { 'cut': ['cut', '型狀'] }, { 'polish': ['polish', '型狀'] }, { 'symmetry': ['symmetry', '型狀'] }, { 'fluorescence': ['fluorescence', '型狀'] }, { 'certificate': ['certificate', '型狀'] }, { 'lab': ['lab', '型狀'] }, { 'fluorescence': ['fluorescence', '型狀'] }, { 'RD': ['RD', '圓形'] }, { 'carat': ['carat', '預約'] }, { 'diamond': ['diamond', '預約'] }, { 'your name': ['your name', '求婚戒指'] }, { 'your Phone No.': ['your Phone No.', '爪數'] }, { 'Appointment': ['Appointment', '預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約'] }, { 'Contact Us': ['Contact Us', '預約'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'shape': ['shape', '型狀', ''] }, { 'imageLink': ['imageLink', '圖像', ''] }, { 'price': ['price', '價格', ''] }, { 'weight': ['weight', '重量', ''] }, { 'color': ['color', '顏色', ''] }, { 'clarity': ['clarity', '淨度', ''] }, { 'cut': ['cut', '切工', ''] }, { 'polish': ['polish', '打磨', ''] }, { 'symmetry': ['symmetry', '對稱', ''] }, { 'fluorescence': ['fluorescence', '螢光', ''] }, { 'certificate': ['certificate', '證書編號', ''] }, { 'lab': ['lab', '檢驗中心', ''] }, { 'fluorescence': ['fluorescence', '螢光'] }, { 'RD': ['RD', '圓形'] }, { 'carat': ['carat', '重量'] }, { 'diamond': ['diamond', '鑽石'] }, { 'your name': ['your name', '提供名字'] }, { 'your Phone No.': ['your Phone No.', '提供電話號碼'] }, { 'Appointment': ['Appointment', '預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約細節'] }, { 'Contact Us': ['Contact Us', '聯絡我們'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
 
 /***/ }),
 /* 72 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ([{ 'Solitaire': ['Solitaire', '單石'] }, { 'solitaire': ['Solitaire', '單石'] }, { 'Side-stone': ['Side-stone', '輔石'] }, { 'side-stone': ['Side-stone', '輔石'] }, { 'sideStone': ['side-stone', '輔石'] }, { 'ct': ['ct', '輔石'] }, { 'Halo': ['Halo', '圍圈'] }, { 'halo': ['Halo', '圍圈'] }, { '4-claw prong': ['4-claw prong', '四爪'] }, { '4-prong': ['4-claw prong', '四爪'] }, { '6-claw prong': ['6-claw prong', '六爪'] }, { '6-prong': ['6-claw prong', '六爪'] }, { 'Tapering': ['Tapering', '尖'] }, { 'tapering': ['Tapering', '尖臂'] }, { 'Parallel': ['Parallel', '平'] }, { 'parallel': ['Parallel', '平臂'] }, { 'Twisted': ['Twisted', '扭'] }, { 'twisted': ['Twisted', '扭臂'] }, { 'prong': ['prong', '爪數'] }, { 'unit_price': ['unit_price', '價格'] }, { 'Shoulder': ['Shoulder', '臂'] }, { 'shoulder': ['shoulder', '臂位'] }, { 'stock': ['stock', '輔鑽石'] }, { 'name': ['name', '名稱'] }, { 'description': ['description', '名稱'] }, { 'engagementRing': ['Engagement Ring', '求婚戒指'] }, { 'your name': ['your name', '求婚戒指'] }, { 'your Phone No.': ['your Phone No.', '爪數'] }, { 'Appointment': ['Appointment', '預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約'] }, { 'Contact Us': ['Contact Us', '預約'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'Solitaire': ['Solitaire', '單石'] }, { 'solitaire': ['Solitaire', '單石'] }, { 'Side-stone': ['Side-stone', '輔石'] }, { 'side-stone': ['Side-stone', '輔石'] }, { 'sideStone': ['side-stone', '輔石'] }, { 'ct': ['ct', '重量'] }, { 'Halo': ['Halo', '圍圈'] }, { 'halo': ['Halo', '圍圈'] }, { '4-claw prong': ['4-claw prong', '四爪'] }, { '4-prong': ['4-claw prong', '四爪'] }, { '6-claw prong': ['6-claw prong', '六爪'] }, { '6-prong': ['6-claw prong', '六爪'] }, { 'Tapering': ['Tapering', '尖'] }, { 'tapering': ['Tapering', '尖臂'] }, { 'Parallel': ['Parallel', '平'] }, { 'parallel': ['Parallel', '平臂'] }, { 'Twisted': ['Twisted', '扭'] }, { 'twisted': ['Twisted', '扭臂'] }, { 'prong': ['prong', '爪數'] }, { 'unit_price': ['unit_price', '價格'] }, { 'Shoulder': ['Shoulder', '臂'] }, { 'shoulder': ['shoulder', '臂位'] }, { 'stock': ['stock', '輔鑽石'] }, { 'name': ['name', '名稱'] }, { 'description': ['description', '名稱'] }, { 'engagementRing': ['Engagement Ring', '求婚戒指'] }, { 'your name': ['your name', '客人稱呼'] }, { 'your Phone No.': ['your Phone No.', '客人電話號碼'] }, { 'Appointment': ['Appointment', '請預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約詳情'] }, { 'Contact Us': ['Contact Us', '聯絡我們'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
 
 /***/ }),
 /* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ([{ 'Classic': ['Classic', '經典'] }, { 'classic': ['Classic', '經典'] }, { 'Japanese': ['Japanese', '日本'] }, { 'Vintage': ['Vintage', '歐洲'] }, { '18K White': ['18K White', '18K 白'] }, { '18K Rose Gold': ['18K Rose Gold', '18K玫瑰金'] }, { 'PT950/900': ['PT950/900', '鉑金'] }, { 'Mixed': ['Mixed', '混色'] }, { 'Men': ['Men', '鉑金'] }, { 'Female': ['Female', '混色'] }, { 'm': ['Men', '鉑金'] }, { 'f': ['Female', '混色'] }, { 'unit_price': ['unit_price', '扭臂'] }, { 'metal': ['metal', '混色'] }, { 'sideStone': ['side stone', '輔石'] }, { 'stock': ['stock', '輔鑽石'] }, { 'name': ['name', '名稱'] }, { 'description': ['description', '名稱'] }, { 'ct': ['ct', '混色'] }, { 'Wedding Ring': ['Wedding Ring', '經典'] }, { 'your name': ['your name', '求婚戒指'] }, { 'your Phone No.': ['your Phone No.', '爪數'] }, { 'Appointment': ['Appointment', '預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約'] }, { 'Contact Us': ['Contact Us', '預約'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'Classic': ['Classic', '經典款式'] }, { 'classic': ['Classic', '經典款式'] }, { 'Japanese': ['Japanese', '日本款'] }, { 'Vintage': ['Vintage', '歐洲款'] }, { '18K White': ['18K White', '18K 白'] }, { '18K Rose Gold': ['18K Rose Gold', '18K玫瑰金'] }, { 'PT950/900': ['PT950/900', '鉑金'] }, { 'Mixed': ['Mixed', '混色'] }, { 'Men': ['Men', '男士款式'] }, { 'Female': ['Female', '女士款式'] }, { 'm': ['Men', '男士款式'] }, { 'f': ['Female', '女士款式'] }, { 'unit_price': ['unit_price', '價格'] }, { 'metal': ['metal', '金屬'] }, { 'sideStone': ['side stone', '輔石'] }, { 'stock': ['stock', '款號'] }, { 'name': ['name', '名稱'] }, { 'description': ['description', '詳情描述'] }, { 'ct': ['ct', '重量'] }, { 'Wedding Ring': ['Wedding Ring', '結婚對戒'] }, { 'your name': ['your name', '客人稱呼'] }, { 'your Phone No.': ['your Phone No.', '客人電話號碼'] }, { 'Appointment': ['Appointment', '請預約'] }, { 'Details fo Appointment': ['Details fo Appointment', '預約詳情'] }, { 'Contact Us': ['Contact Us', '聯絡我們'] }, { 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
 
 /***/ }),
 /* 74 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ([{ 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
+__webpack_require__(75);
+module.exports = __webpack_require__(96);
+
 
 /***/ }),
 /* 75 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(76);
-module.exports = __webpack_require__(95);
-
-
-/***/ }),
-/* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17772,16 +17765,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_frontEnd_diamondViewer_index__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_frontEnd_diamondViewer_show__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_frontEnd_engagementRing_index__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_frontEnd_engagementRing_show__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_weddingRing_index__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_weddingRing_show__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_customerJewellry_index__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_frontEnd_diamondViewer_index__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_frontEnd_diamondViewer_show__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_frontEnd_engagementRing_index__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_frontEnd_engagementRing_show__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_frontEnd_weddingRing_index__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_weddingRing_show__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_customerJewellry_index__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_customerJewellry_show__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_education_index__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_aboutUs_index__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_education_index__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_aboutUs_index__ = __webpack_require__(95);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -17881,7 +17874,7 @@ if (window.location.pathname.slice(4, 24) == 'customer-jewellries/') {
 }
 
 //Education
-if (pUrl == 'education-diamond-grading') {
+if (pUrl.includes('education-diamond-grading')) {
     var educationIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_11__views_frontEnd_education_index__["a" /* default */]);
 }
 
@@ -17895,19 +17888,19 @@ if (pUrl == 'about-us' || pUrl == 'buying-procedure') {
 // });
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(78)
+  __webpack_require__(77)
 }
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(80),
+  __webpack_require__(79),
   /* template */
-  __webpack_require__(85),
+  __webpack_require__(84),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -17939,13 +17932,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(79);
+var content = __webpack_require__(78);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -17965,7 +17958,7 @@ if(false) {
 }
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(10)(undefined);
@@ -17979,7 +17972,7 @@ exports.push([module.i, "\nbody, html {\n  height: 100%;\n  margin: 0;\n  color:
 
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18130,7 +18123,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18250,7 +18243,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -18392,7 +18385,7 @@ if (false) {
 }
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18800,7 +18793,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19122,7 +19115,7 @@ if (false) {
 }
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19214,7 +19207,7 @@ if (false) {
 }
 
 /***/ }),
-/* 86 */
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19415,7 +19408,7 @@ if (false) {
 });
 
 /***/ }),
-/* 87 */
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19514,7 +19507,7 @@ if (false) {
 });
 
 /***/ }),
-/* 88 */
+/* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19712,7 +19705,7 @@ if (false) {
 });
 
 /***/ }),
-/* 89 */
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19798,7 +19791,7 @@ if (false) {
 });
 
 /***/ }),
-/* 90 */
+/* 89 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20015,7 +20008,7 @@ if (false) {
 });
 
 /***/ }),
-/* 91 */
+/* 90 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20113,14 +20106,14 @@ if (false) {
 });
 
 /***/ }),
-/* 92 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__langs_customerJewellry__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__langs_customerJewellry__ = __webpack_require__(92);
 
 
 
@@ -20204,6 +20197,13 @@ if (false) {
 		}
 	}
 });
+
+/***/ }),
+/* 92 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ([{ 'True': ['Yes', '是'] }, { 'False': ['No', '否'] }, { 'Yes': ['Yes', '是'] }, { '1': ['Yes', '是'] }, { 'No': ['No', '否'] }, { '0': ['No', '否'] }]);
 
 /***/ }),
 /* 93 */
@@ -20297,98 +20297,14 @@ if (false) {
 });
 
 /***/ }),
-/* 94 */,
-/* 95 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */
+/* 94 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__langs_customerJewellry__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__langs_customerJewellry__ = __webpack_require__(92);
 
 
 
@@ -20416,6 +20332,11 @@ if (false) {
 	},
 	beforeMount: function beforeMount() {
 		this.fetchData();
+
+		if (this.$route.fullPath.includes('education-diamond-grading/gia-report/4cs')) {
+			return this.activedSubTab = this.$route.fullPath.slice(41) ? this.$route.fullPath.slice(41) : 'carat';
+		}
+		this.activedSubTab = this.$route.fullPath.slice(30) ? this.$route.fullPath.slice(30) : 'carat';
 	},
 
 	computed: {
@@ -20478,7 +20399,7 @@ if (false) {
 });
 
 /***/ }),
-/* 174 */
+/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20514,6 +20435,12 @@ if (false) {
 		}
 	}
 });
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

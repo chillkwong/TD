@@ -24,6 +24,11 @@ export default {
 	},
 	beforeMount(){
 		this.fetchData()
+		
+		if (this.$route.fullPath.includes('education-diamond-grading/gia-report/4cs')) {
+			return this.activedSubTab = this.$route.fullPath.slice(41)?this.$route.fullPath.slice(41):'carat'
+		}
+		this.activedSubTab = this.$route.fullPath.slice(30)?this.$route.fullPath.slice(30):'carat'
 	},
 	computed:{
 			locale(){

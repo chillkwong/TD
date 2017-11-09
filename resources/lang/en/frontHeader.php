@@ -28,7 +28,7 @@ return [
 	'Engagement Tips' => 'Engagement Tips',
 	'Diamond Grading' => 'Diamond Grading',
 	'Diamond Certficate' => 'Diamond Certficate',
-	'Diamond AnaTomy' => 'Diamond AnaTomy',
+	'Diamond Anatomy' => 'Diamond Anatomy',
 	'Fancy Color Diamond' => 'Fancy Color Diamond',
 	'Diamond' => 'Diamond',
 	'Diamond' => 'Diamond',

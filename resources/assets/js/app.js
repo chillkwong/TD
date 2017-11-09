@@ -97,7 +97,7 @@ if (window.location.pathname.slice(4,24) == 'customer-jewellries/') {
 }
 
 //Education
-if (pUrl == 'education-diamond-grading') {
+if (pUrl.includes('education-diamond-grading')) {
     const educationIndex =  new Vue(EducationIndex);
 }
 

@@ -18,11 +18,7 @@ return [
 	'Make Appointment' => 'Make Appointment',
 	'contact us' => 'contact us',
 	'for further' => 'for further',
-	'Style' => 'Style',
-	'Style' => 'Style',
-	'Style' => 'Style',
-	'Style' => 'Style',
-	'Style' => 'Style',
+
 
 	
 ];

@@ -40,7 +40,21 @@ Route::get('/{locale}/customer-moments/', 'CustomerMomentController@bladeIndex')
 
 //education 
 Route::get('/{locale}/education-diamond-grading/', 'EducationController@bladeIndex');
-Route::get('/{locale}/education-diamond-grading/{id}', 'EducationController@bladeShow');
+
+//4cs
+Route::get('/{locale}/education-diamond-grading/gia-report', 'EducationController@giaReport');
+Route::get('/{locale}/education-diamond-grading/gia-report/4cs', 'EducationController@fourCs');
+Route::get('/{locale}/education-diamond-grading/gia-report/4cs/carat', 'EducationController@diamondCarat');
+Route::get('/{locale}/education-diamond-grading/gia-report/4cs/color', 'EducationController@diamondColor');
+Route::get('/{locale}/education-diamond-grading/gia-report/4cs/cut', 'EducationController@diamondCut');
+Route::get('/{locale}/education-diamond-grading/gia-report/4cs/clarity', 'EducationController@diamondClarity');
+
+//cert
+Route::get('/{locale}/education-diamond-grading/grading-certficate', 'EducationController@diamondCertificate');
+Route::get('/{locale}/education-diamond-grading/gia-report', 'EducationController@giaReport');
+
+Route::get('/{locale}/education-diamond-grading/shape', 'EducationController@diamondShape');
+
 
 //about-us
 Route::get('/{locale}/buying-procedure', 'AboutUsController@aboutUs');
