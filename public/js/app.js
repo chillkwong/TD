@@ -17773,8 +17773,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_frontEnd_weddingRing_show__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_frontEnd_customerJewellry_index__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_frontEnd_customerJewellry_show__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_education_index__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_aboutUs_index__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_frontEnd_customerMoment_index__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_frontEnd_education_index__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_frontEnd_aboutUs_index__ = __webpack_require__(95);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -17806,6 +17807,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 //wedding Ring
 
+
+
+//wedding Ring
 
 
 //Education
@@ -17873,14 +17877,19 @@ if (window.location.pathname.slice(4, 24) == 'customer-jewellries/') {
     var customerJewellryShow = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_10__views_frontEnd_customerJewellry_show__["a" /* default */]);
 }
 
+//Customer share
+if (pUrl == 'customer-jewellries') {
+    var _customerJewellryIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_9__views_frontEnd_customerJewellry_index__["a" /* default */]);
+}
+
 //Education
-if (pUrl.includes('education-diamond-grading')) {
-    var educationIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_11__views_frontEnd_education_index__["a" /* default */]);
+if (pUrl.includes('customer-moments')) {
+    var customerMomentIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_11__views_frontEnd_customerMoment_index__["a" /* default */]);
 }
 
 //buying procedure
 if (pUrl == 'about-us' || pUrl == 'buying-procedure') {
-    var aboutUs = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_12__views_frontEnd_aboutUs_index__["a" /* default */]);
+    var aboutUs = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_13__views_frontEnd_aboutUs_index__["a" /* default */]);
 }
 
 // const diamondViewer = new Vue({
@@ -20311,7 +20320,7 @@ if (false) {
 
 
 
-/* harmony default export */ __webpack_exports__["a"] = ({
+/* unused harmony default export */ var _unused_webpack_default_export = ({
 	el: '#education',
 	router: __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */],
 	data: function data() {
@@ -20334,8 +20343,13 @@ if (false) {
 		this.fetchData();
 
 		if (this.$route.fullPath.includes('education-diamond-grading/gia-report/4cs')) {
+			return this.activedSubTab = this.$route.fullPath.slice(45) ? this.$route.fullPath.slice(45) : 'carat';
+		}
+
+		if (this.$route.fullPath.includes('education-diamond-grading/gia-report/')) {
 			return this.activedSubTab = this.$route.fullPath.slice(41) ? this.$route.fullPath.slice(41) : 'carat';
 		}
+
 		this.activedSubTab = this.$route.fullPath.slice(30) ? this.$route.fullPath.slice(30) : 'carat';
 	},
 
@@ -20441,6 +20455,176 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__langs_customerJewellry__ = __webpack_require__(92);
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+	el: '#customerJewellryIndex',
+	router: __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */],
+	data: function data() {
+		return {
+			query: {
+				per_page: 10
+			},
+			langs: __WEBPACK_IMPORTED_MODULE_3__langs_customerJewellry__["a" /* default */],
+			posts: [],
+			chunkedItemsDesktop: {},
+			chunkedItemsMobile: {}
+		};
+	},
+
+	watch: {
+		'$route': 'fetchData'
+	},
+	beforeMount: function beforeMount() {
+		this.fetchData();
+	},
+
+	computed: {
+		locale: function locale() {
+
+			if (this.$route.fullPath.slice(1, 3) == 'en') {
+				return 0;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'hk') {
+				return 1;
+			}
+			if (this.$route.fullPath.slice(1, 3) == 'cn') {
+				return 2;
+			}
+		}
+	},
+	filters: {
+		transJs: __WEBPACK_IMPORTED_MODULE_2__helpers_transJs__["a" /* transJs */]
+	},
+	methods: {
+		more: function more() {
+
+			this.query.per_page += 10;
+			this.fetchData();
+		},
+		chunkItems: function chunkItems() {
+			var chunk1 = [];
+			var chunk2 = [];
+
+			for (var i = 0; this.posts.data.length - 1 >= i;) {
+				chunk1.push(this.posts.data.slice(i, i + 4));
+				i += 4;
+			}
+			this.chunkedItemsDesktop = chunk1;
+
+			for (var i = 0; this.posts.data.length - 1 >= i;) {
+				chunk2.push(this.posts.data.slice(i, i + 2));
+				i += 2;
+			}
+			this.chunkedItemsMobile = chunk2;
+
+			return;
+		},
+		clickRow: function clickRow(row, index) {
+			this.onClickedRow = row.id;
+			window.open('customer-jewellries/' + row.id, '_self');
+		},
+		fetchData: function fetchData() {
+			var _this = this;
+
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* get */])('/api/invPosts?per_page=' + this.query.per_page, this.$route.fullPath.slice(1, 3)).then(function (res) {
+				_this.posts = res.data.posts;
+				_this.chunkItems();
+			});
+		}
+	}
+});
 
 /***/ })
 /******/ ]);

@@ -31,6 +31,9 @@ import WeddingRingShow from './views/frontEnd/weddingRing/show'
 import CustomerJewellryIndex from './views/frontEnd/customerJewellry/index'
 import CustomerJewellryShow from './views/frontEnd/customerJewellry/show'
 
+//wedding Ring
+import CustomerMomentIndex from './views/frontEnd/customerMoment/index'
+
 //Education
 import EducationIndex from './views/frontEnd/education/index'
 
@@ -96,9 +99,15 @@ if (window.location.pathname.slice(4,24) == 'customer-jewellries/') {
     const customerJewellryShow =  new Vue(CustomerJewellryShow);
 }
 
+//Customer share
+if (pUrl == 'customer-jewellries') {
+    const customerJewellryIndex =  new Vue(CustomerJewellryIndex);
+}
+
+
 //Education
-if (pUrl.includes('education-diamond-grading')) {
-    const educationIndex =  new Vue(EducationIndex);
+if (pUrl.includes('customer-moments')) {
+    const customerMomentIndex =  new Vue(CustomerMomentIndex);
 }
 
 //buying procedure

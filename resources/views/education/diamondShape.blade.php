@@ -45,15 +45,8 @@
         </div>
 
        
-        <div class="tabs is-centered">
-          <ul>
-            <li :class="{'is-active': activedSubTab=='shape' }" @click="activeSubTab('shape')" ><a>Diamond Shape</a></li>
-            <li :class="{'is-active': activedSubTab=='gia-report' }" @click="activeSubTab('gia-report')" ><a>Gia Report </a></li>
-            <li :class="{'is-active': activedSubTab=='grading-eye-clean' }" @click="activeSubTab('grading-eye-clean')"><a>Eye Clean Diamond</a></li>
-           
-            
-          </ul>
-        </div>
+        @include('layouts.subTabs.anatony')
+
 
         <div v-if="activedSubTab=='shape'">
         <article class="message is-primary" >

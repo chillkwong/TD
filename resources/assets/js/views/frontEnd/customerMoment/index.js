@@ -5,7 +5,7 @@ import { transJs } from '../../../helpers/transJs'
 import langs from '../../../langs/customerJewellry'
 
 export default {
-		el: '#education',
+		el: '#customerJewellryIndex',
 		router,	
 	data(){
 		return {
@@ -15,8 +15,7 @@ export default {
 			langs,
 			posts: [],
 			chunkedItemsDesktop:{},
-			chunkedItemsMobile:{},
-			activedSubTab: 'carat',	
+			chunkedItemsMobile:{},			
 		}
 	},
 	watch:{
@@ -24,17 +23,6 @@ export default {
 	},
 	beforeMount(){
 		this.fetchData()
-
-		if (this.$route.fullPath.includes('education-diamond-grading/gia-report/4cs')) {
-			return this.activedSubTab = this.$route.fullPath.slice(45)?this.$route.fullPath.slice(45):'carat'
-		}
-		
-		if (this.$route.fullPath.includes('education-diamond-grading/gia-report/')) {
-			return this.activedSubTab = this.$route.fullPath.slice(41)?this.$route.fullPath.slice(41):'carat'
-		}
-
-	
-		this.activedSubTab = this.$route.fullPath.slice(30)?this.$route.fullPath.slice(30):'carat'
 	},
 	computed:{
 			locale(){
@@ -48,16 +36,12 @@ export default {
 				if (this.$route.fullPath.slice(1,3) == 'cn') {
 					return 2
 				}
-			},
-
+			}
 		},
 	filters:{
 			transJs,
 	},
 	methods:{
-		activeSubTab(tab){
-			this.activedSubTab = tab
-		},
 		more(){
 				
 					this.query.per_page  +=10

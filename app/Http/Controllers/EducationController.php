@@ -69,7 +69,6 @@ class EducationController extends Controller
     }
 
 
-
     public function diamondCertificate($locale)
     {
       App()->setLocale($locale);
@@ -88,6 +87,50 @@ class EducationController extends Controller
  
     }
 
+    public function diamondHeartAndArrow($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('education.diamondHeartAndArrow', compact(''));
+ 
+    }
+
+    public function diamondProportion($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('education.diamondProportion', compact(''));
+ 
+    }
+
+    public function diamondSymmetry($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('education.diamondSymmetry', compact(''));
+ 
+    }
+
+    public function diamondPolish($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('education.diamondPolish', compact(''));
+ 
+    }
+
+    public function diamondFluorescence($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('education.diamondFluorescence', compact(''));
+ 
+    }
 
 
 }

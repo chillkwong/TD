@@ -319,28 +319,28 @@
             <li :class="{'is-active': activeTab=='about-us'}"><a href=" {{url(app()->getLocale())}}/about-us">{{trans('frontHeader.About Us')}}</a></li>
           </ul>
           <div class="tabs">
-                <ul v-if="activeTab=='gia-loose-diamonds' || activeTab.includes('gia-loose-diamonds/') ">
+                <ul v-if="activeTab.includes('gia-loose-diamonds') ">
                   <li ><a href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut">{{__('frontHeader.Round Diamonds')}}</a></li>
                   <li ><a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond">{{__('frontHeader.Fancy Cut Diamonds')}}</a></li>
                   <li ><a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-color">{{__('frontHeader.Fancy Color Diamonds')}}</a></li>
                 
                 </ul>
 
-                <ul v-if="activeTab=='engagement-rings' || activeTab.includes('engagement-rings/')">
+                <ul v-if="activeTab.includes('engagement-rings')">
                   <li ><a href="{{url(app()->getLocale())}}/engagement-rings/solitaire-ring-setting">{{__('frontHeader.Solitaire Ring')}}</a></li>
                   <li ><a href="{{url(app()->getLocale())}}/engagement-rings/side-stones-setting">{{__('frontHeader.Side-stone Ring')}}</a></li>
                   <li ><a href="{{url(app()->getLocale())}}/engagement-rings/halo-setting">{{__('frontHeader.Halo Ring')}}</a></li>
                  
                 </ul>
 
-                <ul v-if="activeTab=='wedding-rings' || activeTab.includes('wedding-rings/')">
+                <ul v-if="activeTab.includes('wedding-rings')">
                   <li ><a href="{{url(app()->getLocale())}}/wedding-rings/classic">{{__('frontHeader.Classic Ring')}}</a></li>
                   <li ><a href="{{url(app()->getLocale())}}/wedding-rings/japanese">{{__('frontHeader.Japanese Ring')}}</a></li>
                   <li ><a href="{{url(app()->getLocale())}}/wedding-rings/vintage">{{__('frontHeader.Vintage Ring')}}</a></li>
                  
                 </ul>
 
-                <ul v-if="activeTab=='education-diamond-grading' || activeTab.includes('education-diamond-grading/')">
+                <ul v-if="activeTab.includes('education-diamond-grading')">
                   <li ><a href="{{url(app()->getLocale())}}/education-diamond-grading/gia-report/4cs">{{__('frontHeader.Diamond Grading')}}</a></li>
                   <li ><a href="{{url(app()->getLocale())}}/education-diamond-grading/grading-certficate">{{__('frontHeader.Diamond Certficate')}}</a></li>
                   <li ><a href="{{url(app()->getLocale())}}/education-diamond-grading/shape">{{__('frontHeader.Diamond Anatomy')}}</a></li>
@@ -348,14 +348,14 @@
                  
                 </ul>
 
-                <ul v-if="activeTab=='customer-jewellries' || activeTab.includes('customer-jewellries/')">
+                <ul v-if="activeTab.includes('customer-jewellries') || activeTab.includes('customer-moments') || activeTab.includes('engagement-tips')">
                   <li ><a href="{{url(app()->getLocale())}}/customer-jewellries">{{__('frontHeader.Customer Jewellires')}}</a></li>
                   <li ><a href="{{url(app()->getLocale())}}/customer-moments">{{__('frontHeader.Customer Moments')}}</a></li>
                   <li ><a href="{{url(app()->getLocale())}}/engagement-tips">{{__('frontHeader.Engagement Tips')}}</a></li>
                  
                 </ul>
 
-                <ul v-if="activeTab=='about-us' || activeTab=='buying-procedure'">
+                <ul v-if="activeTab.includes('about-us')  || activeTab.includes('buying-procedure')">
                   <li ><a href="{{url(app()->getLocale())}}/about-us">{{__('frontHeader.About Us')}}</a></li>
                   <li ><a href="{{url(app()->getLocale())}}/buying-procedure">{{__('frontHeader.Buying Procedure')}}</a></li>
                  

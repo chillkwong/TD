@@ -23,7 +23,7 @@
         <div class="tile is-ancestor" >
             <div class="tile is-parent ">
                 <div class="tile is-child notification is-primary" >
-                   <center><h1 class="title is-5">Customer Moments - Customer</h1>
+                   <center><h1 class="title is-5">Customer Moments</h1>
                     
                         
                         <h1 >
@@ -44,28 +44,8 @@
         
         <div id="customerJewellryIndex">
         	<div class="box">
-               <!--  <div class="columns">
-                    <div class="column">
-                    </div>
-                </div>
-
-        
-                <div class="tile is-ancestor" v-for="pos in posts.data">
-                    <div class="tile is-parent is-4" v-for="post in pos">
-                        <div class="tile is-child" v-if="post">
-                            <article class="tile">
-                                <a @click="clickRow(post)">
-                                    <img :src="`/images/${post.cover}`" v-if="post.cover">
-                                    <center>
-                                    <p class="subtitle" v-if="post.contents[0]">@{{post.contents[0].content}}</p>
-                                </center>
-                                </a>
-                                
-                            </article>
-                        </div>
-                    </div> -->
+               
                 
-
                 <div class="">      
                         <div class="tile is-ancestor" v-for="(posts,idnex) in chunkedItemsDesktop">
                             <div class="tile is-parent is-4" v-for="post in posts">
