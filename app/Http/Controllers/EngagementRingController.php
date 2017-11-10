@@ -94,8 +94,10 @@ class EngagementRingController extends Controller
         $posts = EngagementRing::findOrFail($id)->invoices()->with('invPosts')->get();
 
         $invPosts = [];
+
+        // dd($posts[0]->invPosts[0]);
         
-        if ($posts->has('invPosts')) {
+        if ($posts[0]->has('invPosts')) {
             foreach ($posts as $p ) {
                 $invPosts['invPosts'][] = $p->invPosts[0];
             }

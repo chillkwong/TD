@@ -17877,14 +17877,13 @@ if (window.location.pathname.slice(4, 24) == 'customer-jewellries/') {
     var customerJewellryShow = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_10__views_frontEnd_customerJewellry_show__["a" /* default */]);
 }
 
-//Customer share
-if (pUrl == 'customer-jewellries') {
-    var _customerJewellryIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_9__views_frontEnd_customerJewellry_index__["a" /* default */]);
+if (pUrl.includes('customer-moments')) {
+    var customerMomentIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_11__views_frontEnd_customerMoment_index__["a" /* default */]);
 }
 
 //Education
-if (pUrl.includes('customer-moments')) {
-    var customerMomentIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_11__views_frontEnd_customerMoment_index__["a" /* default */]);
+if (pUrl.includes('education-diamond-grading')) {
+    var educationIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_12__views_frontEnd_education_index__["a" /* default */]);
 }
 
 //buying procedure
@@ -20320,7 +20319,7 @@ if (false) {
 
 
 
-/* unused harmony default export */ var _unused_webpack_default_export = ({
+/* harmony default export */ __webpack_exports__["a"] = ({
 	el: '#education',
 	router: __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */],
 	data: function data() {

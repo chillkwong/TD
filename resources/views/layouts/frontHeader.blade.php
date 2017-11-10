@@ -310,13 +310,13 @@
       <nav class="tabs is-fullwidth" >
         <div class="container">
           <ul>
-            <li :class="{'is-active': activeTab=='gia-loose-diamonds' || activeTab=='' }"><a href=" {{url(app()->getLocale())}}/gia-loose-diamonds">{{trans('frontHeader.Diamonds')}}</a>
+            <li :class="{'is-active': activeTab.includes('gia-loose-diamonds') || activeTab.includes('') }"><a href=" {{url(app()->getLocale())}}/gia-loose-diamonds">{{trans('frontHeader.Diamonds')}}</a>
             </li>
-            <li :class="{'is-active': activeTab=='engagement-rings'}"><a href=" {{url(app()->getLocale())}}/engagement-rings">{{trans('frontHeader.Engagement Rings')}}</a></li>
-            <li :class="{'is-active': activeTab=='wedding-rings'}"><a href=" {{url(app()->getLocale())}}/wedding-rings">{{trans('frontHeader.Wedding Rings')}}</a></li>
-            <li :class="{'is-active': activeTab=='education-diamond-grading'}"><a href=" {{url(app()->getLocale())}}/education-diamond-grading">{{trans('frontHeader.Education')}}</a></li>
-            <li :class="{'is-active': activeTab=='customer-jewellries'}"><a href=" {{url(app()->getLocale())}}/customer-jewellries">{{trans('frontHeader.Customer Moments')}}</a></li>
-            <li :class="{'is-active': activeTab=='about-us'}"><a href=" {{url(app()->getLocale())}}/about-us">{{trans('frontHeader.About Us')}}</a></li>
+            <li :class="{'is-active': activeTab.includes('engagement-rings') }"><a href=" {{url(app()->getLocale())}}/engagement-rings">{{trans('frontHeader.Engagement Rings')}}</a></li>
+            <li :class="{'is-active': activeTab.includes('wedding-rings') }"><a href=" {{url(app()->getLocale())}}/wedding-rings">{{trans('frontHeader.Wedding Rings')}}</a></li>
+            <li :class="{'is-active': activeTab.includes('education-diamond-grading') }"><a href=" {{url(app()->getLocale())}}/education-diamond-grading">{{trans('frontHeader.Education')}}</a></li>
+            <li :class="{'is-active': activeTab.includes('customer-jewellries') }"><a href=" {{url(app()->getLocale())}}/customer-jewellries">{{trans('frontHeader.Customer Moments')}}</a></li>
+            <li :class="{'is-active': activeTab.includes('about-us') }"><a href=" {{url(app()->getLocale())}}/about-us">{{trans('frontHeader.About Us')}}</a></li>
           </ul>
           <div class="tabs">
                 <ul v-if="activeTab.includes('gia-loose-diamonds') ">

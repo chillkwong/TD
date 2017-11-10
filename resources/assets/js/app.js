@@ -99,15 +99,13 @@ if (window.location.pathname.slice(4,24) == 'customer-jewellries/') {
     const customerJewellryShow =  new Vue(CustomerJewellryShow);
 }
 
-//Customer share
-if (pUrl == 'customer-jewellries') {
-    const customerJewellryIndex =  new Vue(CustomerJewellryIndex);
-}
-
-
-//Education
 if (pUrl.includes('customer-moments')) {
     const customerMomentIndex =  new Vue(CustomerMomentIndex);
+}
+
+//Education
+if (pUrl.includes('education-diamond-grading')) {
+    const educationIndex =  new Vue(EducationIndex);
 }
 
 //buying procedure
