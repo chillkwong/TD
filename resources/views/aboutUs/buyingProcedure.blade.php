@@ -92,6 +92,8 @@
           Your browser does not support the video tag.
         </video>
 
+        <video controls="controls" width="800" height="600" name="Video Name" src="/videos/IMG_2017_09_18_0118.mov"></video>
+
 
         <article class="message is-info" v-if="activedSubTab=='Shop Or GIA Lab'">
           <div class="level is-centered">
