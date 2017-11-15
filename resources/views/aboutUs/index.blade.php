@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Buying Procedure</title>
+        <title>About US</title>
 
         <!-- Fonts -->
        
@@ -23,7 +23,7 @@
         <div class="tile is-ancestor" >
             <div class="tile is-parent ">
                 <div class="tile is-child notification is-primary" >
-                    <center><h1 class="title is-5">BUYING PROCEDURE</h1>
+                    <center><h1 class="title is-5">About US</h1>
                         First to buy diamonds, then buy ring setting
                     </center>
                 </div>
@@ -46,43 +46,45 @@
        
         <div class="tabs is-centered">
           <ul>
-            <li :class="{'is-active': activedSubTab=='Appointment First' }" @click="activeSubTab('Appointment First')" ><a>Appointment First</a></li>
-            <li :class="{'is-active': activedSubTab=='Shop Or GIA Lab' }" @click="activeSubTab('Shop Or GIA Lab')" ><a>Shop Or GIA Lab </a></li>
-            <li :class="{'is-active': activedSubTab=='Choose Ring Setting' }" @click="activeSubTab('Choose Ring Setting')"><a>Choose Ring Setting</a></li>
-            <li :class="{'is-active': activedSubTab=='Ring Inlay | Engrave' }" @click="activeSubTab('Ring Inlay | Engrave')"><a>Ring Inlay | Engrave</a></li>
-            <li :class="{'is-active': activedSubTab=='Pay With Satisfation' }" @click="activeSubTab('Pay With Satisfation')"><a>Pay With Satisfation</a></li>
+            <li :class="{'is-active': activedSubTab=='Contact Us' }" @click="activeSubTab('Contact Us')" ><a>Contact Us</a></li>
+            <li :class="{'is-active': activedSubTab=='Quality Guarantee' }" @click="activeSubTab('Quality Guarantee')" ><a>Quality Guarantee </a></li>
+            <li :class="{'is-active': activedSubTab=='Satification Insurence' }" @click="activeSubTab('Satification Insurence')"><a>Satification Insurence</a></li>
           </ul>
         </div>
 
-        <article class="message is-info" v-if="activedSubTab=='Appointment First'">
-          <div class="level is-centered">
-            <div class="message-body">
-            <center>
-            <p class="title is-6">{{trans('buyingProcedure.FIRST TO CHOOSE DIAMONDS')}}：</p>
-            <p class="title is-6">{{trans('buyingProcedure.＊P.S.＊ choose few more diamonds that are in the similar price range, compare them at the same time.')}}</p>
-            <p class="title is-6">Whatsapp： 5484 4533 ( Winnie) / 5486 9451(Pete)</p>
-            <p class="title is-6">{{trans('buyingProcedure.Security issues，please make an appointment to shop in advance.')}}</p>
-            </center>
-          </div>
-             <a href="/front_end/buyingProcedure/Winnie_Kwong.vcf">
-            <center>  
-            <figure class="image is-128x128">
-              <p>Winnie</p>
-                <img src="/front_end/buyingProcedure/ting.png">
-            </figure>
-            </center>
-              </a>
+        <article class="message is-info" v-if="activedSubTab=='Contact Us'">
+            <div class="level is-centered">
+            
+            <div class="tile is-ancestor">
+                  <div class="tile is-10">
+                
+                        
+                        <center>
 
-              <a href="/front_end/buyingProcedure/Pete_Kwong.vcf">
-            <center>
-            <figure class="image is-128x128">
-              <p>Pete</p>
-                <img src="/front_end/buyingProcedure/pete.png">
-            </figure>
-            </center>
-              </a>
+                            <center><p class="title is-6">{{trans('aboutUs.title1')}}</p>
+                            </center>
+                            <div class="level">
+                            <li>{{trans('aboutUs.para1')}}</li>
+                               
+                            </div>
+                        
+                        </center>
+                        
+                      </div>
+                    
+              <div class="tile">
+
+             <a class="box">
+                <center>  
+                    <figure class="image">
+                      <p>CUSHION CUT DIAMOND</p>
+                        <img src="/front_end/education/shape/cushion-glam-1-150x150.jpg">
+                    </figure>
+                </center>
+            </a>
           </div>
-          
+
+        </div>
         </article>
 
 

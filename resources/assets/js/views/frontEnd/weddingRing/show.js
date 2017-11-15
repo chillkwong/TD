@@ -22,6 +22,7 @@
 				title: '',
 				langs,
 				weddingRing:'',
+				hrefLangs: this.$route.fullPath.slice(0,3),
 				columns:[
 				'unit_price',
                 'metal',

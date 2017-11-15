@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class CustomerMoment extends Model
 {
-    public function image()
+    public function images()
 	    {
-	        return $this->morphMany('App\Page', 'imageable');
+	        return $this->morphMany('App\Image', 'imageable');
 	    }
 }

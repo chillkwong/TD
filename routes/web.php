@@ -53,6 +53,7 @@ Route::get('/{locale}/education-diamond-grading/gia-report/4cs/clarity', 'Educat
 Route::get('/{locale}/education-diamond-grading/grading-certficate', 'EducationController@diamondCertificate');
 Route::get('/{locale}/education-diamond-grading/gia-report', 'EducationController@giaReport');
 
+
 //anatony
 Route::get('/{locale}/education-diamond-grading/shape', 'EducationController@diamondShape');
 Route::get('/{locale}/education-diamond-grading/hearts-and-arrows', 'EducationController@diamondHeartAndArrow');
@@ -63,7 +64,7 @@ Route::get('/{locale}/education-diamond-grading/anatomy-fluorescence', 'Educatio
 
 
 //about-us
-Route::get('/{locale}/buying-procedure', 'AboutUsController@aboutUs');
+Route::get('/{locale}/about-us', 'AboutUsController@aboutUs');
 Route::get('/{locale}/buying-procedure', 'AboutUsController@buyingProcedure');
 
 

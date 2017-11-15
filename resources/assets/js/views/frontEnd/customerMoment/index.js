@@ -3,19 +3,23 @@ import router from '../../../router'
 
 import { transJs } from '../../../helpers/transJs'
 import langs from '../../../langs/customerJewellry'
+import ImageCarousel from '../../../components/imageCarousel.vue'
 
 export default {
 		el: '#customerJewellryIndex',
-		router,	
+		router,
+		components: {ImageCarousel},
 	data(){
 		return {
 			query:{
 				per_page: 10,
 			},
 			langs,
-			posts: [],
+			customers: [],
 			chunkedItemsDesktop:{},
-			chunkedItemsMobile:{},			
+			chunkedItemsMobile:{},	
+			carouselActive:false,
+			carouselItems:'',	
 		}
 	},
 	watch:{
@@ -36,12 +40,17 @@ export default {
 				if (this.$route.fullPath.slice(1,3) == 'cn') {
 					return 2
 				}
-			}
+			},
+
 		},
 	filters:{
 			transJs,
 	},
 	methods:{
+		selectedCarouselItems(images){
+			this.carouselItems = images
+			this.carouselActive=!this.carouselActive
+		},
 		more(){
 				
 					this.query.per_page  +=10
@@ -52,14 +61,14 @@ export default {
 				var chunk1 = []
 				var chunk2 = []
 				
-				for (var i = 0; this.posts.data.length - 1 >= i ; ) {
-					chunk1.push(this.posts.data.slice(i,i+4))
+				for (var i = 0; this.customers.data.length - 1 >= i ; ) {
+					chunk1.push(this.customers.data.slice(i,i+4))
 					i += 4
 				}
 				this.chunkedItemsDesktop = chunk1
 
-				for (var i = 0; this.posts.data.length - 1 >= i ; ) {
-					chunk2.push(this.posts.data.slice(i,i+2))
+				for (var i = 0; this.customers.data.length - 1 >= i ; ) {
+					chunk2.push(this.customers.data.slice(i,i+2))
 					i += 2
 				}
 				this.chunkedItemsMobile = chunk2
@@ -71,9 +80,9 @@ export default {
 				window.open('customer-jewellries/'+row.id, '_self')
 			},
 		fetchData(){
-			get(`/api/invPosts?per_page=${this.query.per_page}`, this.$route.fullPath.slice(1,3),)
+			get(`/api/customerMoments?per_page=${this.query.per_page}`, this.$route.fullPath.slice(1,3),)
 			.then((res)=>{
-				this.posts = res.data.posts
+				this.customers = res.data.customers
 				this.chunkItems()
 			})
 		}

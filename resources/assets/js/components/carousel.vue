@@ -39,7 +39,7 @@
 
 
                 <div class="" @click="$emit('active', null)">
-                    <figure class="image">
+                    <figure class="image" @click="nextItem">
                         <img :src="images+currentItem.src" v-if="currentItem.type=='img'">
                         <iframe id="iframe1" :src="youtube+currentItem.src+rel" :width="width" :height="height" v-if="currentItem.type=='video'"></iframe>
                         <figcaption class="has-text-centered">
@@ -249,7 +249,7 @@ export default {
         //     event.target.className = 'disabled';
         // },
         nextItem () {
-            if(this.currentIndex == this.items.length-1){
+            if(this.currentIndex == this.carouselUpperItemsToArray.length-1){
                 this.currentIndex = 0;
             }else{
                 this.currentIndex++;  
@@ -257,7 +257,7 @@ export default {
         },
         prevItem () {
             if(this.currentIndex == 0){
-                this.currentIndex = this.items.length-1;
+                this.currentIndex = this.carouselUpperItemsToArray.length-1;
             }else{
                 this.currentIndex--;  
             }
@@ -271,6 +271,7 @@ export default {
                 return this.showUpper = true
             }
             this.showUpper = false
+            this.currentIndex = 0
             this.currentIndex = index
             
         },

@@ -39,8 +39,12 @@ Route::get('buyingProcedure', 'BuyingProcedureController@index');
 
 // Route::resource('weddingRings', 'WeddingRingController');
 
-Route::resource('posts', 'PostController');
+//customer-moments
 Route::resource('invPosts', 'InvPostController');
+Route::resource('customerMoments', 'CustomerMomentController');
+
+Route::resource('posts', 'PostController');
+
 Route::resource('jewellries', 'JewellryController');
 
 Route::resource('diamonds', 'DiamondController');

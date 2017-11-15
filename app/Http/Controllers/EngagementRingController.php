@@ -95,13 +95,12 @@ class EngagementRingController extends Controller
 
         $invPosts = [];
 
-        // dd($posts[0]->invPosts[0]);
+        // dd(count($posts)); 
         
-        if ($posts[0]->has('invPosts')) {
+        if (!empty($posts[0])) {
             foreach ($posts as $p ) {
                 $invPosts['invPosts'][] = $p->invPosts[0];
             }
-            // return $posts[0]->only('invPosts');
         }
 
     	return response()

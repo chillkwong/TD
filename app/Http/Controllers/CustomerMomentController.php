@@ -15,4 +15,16 @@ class CustomerMomentController extends Controller
       return view('CustomerMoment.index', compact(''));
  
     }
+
+    public function index()
+    {
+        $customers = CustomerMoment::orderBy('created_at', 'desc')
+                ->with(['images'])
+                ->paginate(request()->per_page);
+
+        return response()
+            ->json([
+                'customers' => $customers
+                ]);
+    }
 }

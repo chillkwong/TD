@@ -45,21 +45,22 @@
         <div id="customerJewellryIndex">
         	<div class="box">
                
-                
+               <!-- <img :src="`/images/lJ2fvr7ni4k1SdRP.jpeg`" >  -->
                 <div class="">      
-                        <div class="tile is-ancestor" v-for="(posts,idnex) in chunkedItemsDesktop">
-                            <div class="tile is-parent is-4" v-for="post in posts">
-                                <div class="tile is-child" v-if="post">
-                                    <article class="tile" @click="clickRow(post)">
+                        <div class="tile is-ancestor" v-for="(arrs,index) in chunkedItemsDesktop">
+                            <div class="tile is-parent is-3" v-for="(arr,ind) in arrs">
+                                <div class="tile is-child" v-if="arr.images[0]">
+                                    <article class="tile" @click="selectedCarouselItems(arr.images)">
                                         <a>
                                         <figure class="image">
-                                            <img :src="`/images/${post.cover}`" v-if="post.cover">
+                                            <img :src="'/images/' + arr.images[0].image" v-if="arr.images[0].image">
                                         <center>
-                                            <p  class="subtitle" v-if="post.description">$@{{post.unit_price}}</p>
-                                            <p >@{{post.contents[0].content }} </p>
+                                            <p  class="subtitle" ></p>
+                                            <p>@{{arr.id}}</p>
                                         </center>
                                         </figure>
                                         </a>
+                                        
                                     </article>
                                 </div>
                             </div>
@@ -73,7 +74,7 @@
                     
 
         </div>
-
+        <image-carousel :active="carouselActive" :items="carouselItems" @active="carouselActive=!carouselActive"></image-carousel>
 
 
 

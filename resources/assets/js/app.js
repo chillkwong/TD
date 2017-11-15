@@ -109,7 +109,7 @@ if (pUrl.includes('education-diamond-grading')) {
 }
 
 //buying procedure
-if ( pUrl == 'about-us' || pUrl =='buying-procedure') {
+if ( pUrl.includes('about-us') || pUrl.includes('buying-procedure')) {
     const aboutUs =  new Vue(AboutUs);
 }
 

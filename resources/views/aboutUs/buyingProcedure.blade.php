@@ -85,6 +85,13 @@
           
         </article>
 
+        
+        <video width="320" height="240" controls>
+          <source src="/videos/IMG_2017_09_18_0118.mov" type="video/mp4">
+          <source src="movie.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+        </video>
+
 
         <article class="message is-info" v-if="activedSubTab=='Shop Or GIA Lab'">
           <div class="level is-centered">
