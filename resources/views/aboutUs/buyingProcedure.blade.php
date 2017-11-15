@@ -67,7 +67,7 @@
              <a href="/front_end/buyingProcedure/Winnie_Kwong.vcf">
             <center>  
             <figure class="image is-128x128">
-              <p>Winnie</p>
+              <p>Mobile Import Winnie</p>
                 <img src="/front_end/buyingProcedure/ting.png">
             </figure>
             </center>
@@ -76,7 +76,7 @@
               <a href="/front_end/buyingProcedure/Pete_Kwong.vcf">
             <center>
             <figure class="image is-128x128">
-              <p>Pete</p>
+              <p>Mobile Import Pete</p>
                 <img src="/front_end/buyingProcedure/pete.png">
             </figure>
             </center>

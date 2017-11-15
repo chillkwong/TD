@@ -12,7 +12,7 @@ class CustomerMomentController extends Controller
       App()->setLocale($locale);
 
 
-      return view('CustomerMoment.index', compact(''));
+      return view('customerMoment.index', compact(''));
  
     }
 

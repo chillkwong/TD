@@ -52,17 +52,21 @@
           </ul>
         </div>
 
-        <article class="message is-info" v-if="activedSubTab=='Contact Us'">
+        <div v-if="activedSubTab=='Contact Us'">
+
+        <article class="message is-info" >
+            
             <div class="level is-centered">
             
             <div class="tile is-ancestor">
-                  <div class="tile is-10">
+                  <div class="tile is-8">
                 
-                        
+                        <div class="message-body">
                         <center>
 
                             <center><p class="title is-6">{{trans('aboutUs.title1')}}</p>
                             </center>
+                            <br>
                             <div class="level">
                             <li>{{trans('aboutUs.para1')}}</li>
                                
@@ -71,14 +75,16 @@
                         </center>
                         
                       </div>
-                    
+                         
+                  </div>
+
               <div class="tile">
 
-             <a class="box">
+             <a class="">
                 <center>  
                     <figure class="image">
-                      <p>CUSHION CUT DIAMOND</p>
-                        <img src="/front_end/education/shape/cushion-glam-1-150x150.jpg">
+                      <p></p>
+                        <img src="/front_end/aboutUs/address/IMG_7397.HEIC">
                     </figure>
                 </center>
             </a>
@@ -87,60 +93,210 @@
         </div>
         </article>
 
-
-        <article class="message is-info" v-if="activedSubTab=='Shop Or GIA Lab'">
-          <div class="level is-centered">
-            <div class="message-body">
-            <center>
-            <li>{{trans('buyingProcedure.Choose your favorite diamond，verify the GIA number on diamond’s girdle with report，full pay and take the diamond')}}</li>
-            <li>{{trans('buyingProcedure.You may also directly take diamond from GIA Lab， request a verification from GIA ，but that will need to pay certain charge')}}</li>
+        <article class="message is-info" >
             
-            </center>
-          </div>
-             
-            <center>  
-            <figure class="image is-128x128">
-              <p>GIA</p>
-                <img src="/front_end/GIA/GIA-Logo.jpg">
-            </figure>
-            </center>
-             
-          </div>
-          
+            <div class="level is-centered">
+            
+            <div class="tile is-ancestor">
+                  <div class="tile is-6">
+                
+                        <div class="">
+                        <center>
+                          <br>
+                            <center><p class="title is-6">{{trans('aboutUs.Quick Chat With')}} Winnie</p>
+                            </center>
+                            <br>
+                            <div class="level">
+                            
+                               
+                            </div>
+                        
+                        </center>
+                        <a class="">
+                            <center>  
+                                <figure class="image">
+                                  <a href="/front_end/buyingProcedure/Winnie_Kwong.vcf">Mobile Import Winnie</a>
+                                    <img src="/front_end/aboutUs/ting.png">
+                                </figure>
+                            </center>
+                        </a>
+                        
+                      </div>
+                         
+                  </div>
+
+                 <div class="tile is-6">
+                
+                        <div class="">
+                        <center>
+                          <br>
+                            <center><p class="title is-6">{{trans('aboutUs.Quick Chat With')}} Pete</p>
+                            </center>
+                            <br>
+                            <div class="level">
+                            
+                               
+                            </div>
+                        
+                        </center>
+                        <a class="" >
+                            <center>  
+                                <figure class="image">
+                                  <a href="/front_end/buyingProcedure/Pete_Kwong.vcf">Mobile Import Pete</a>
+                                    <img src="/front_end/aboutUs/pete.png">
+                                </figure>
+                            </center>
+                        </a>
+                        
+                      </div>
+                         
+                  </div>
+
+
+              
+
+        </div>
         </article>
 
-        <article class="message is-info" v-if="activedSubTab=='Choose Ring Setting'">
-          <div class="level is-centered">
-            <div class="message-body">
-            <center>
-            <p class="title is-6">{{trans('buyingProcedure.CHOOSE ENGAGEMENT RING SETTING')}}：</p>
-            <p >{{trans('buyingProcedure.Our shop also has some setting for chosen')}}：</p>
+        <article class="message is-info" >
+            
+            <div class="level is-centered">
+            
+            <div class="tile is-ancestor">
+                  <div class="tile is-5">
+                
+                        <div class="">
 
-            <p class="title is-6">{{trans('buyingProcedure.＊P.S.＊ choose few more diamonds that are in the similar price range, compare them at the same time.')}}</p>
-            <p class="title is-6">Whatsapp： 5484 4533 ( Winnie) / 5486 9451(Pete)</p>
-            <p class="title is-6">{{trans('buyingProcedure.Security issues，please make an appointment to shop in advance.')}}</p>
-            </center>
-          </div>
-             <a href="/front_end/buyingProcedure/Winnie_Kwong.vcf">
-            <center>  
-            <figure class="image is-128x128">
-              <p>Winnie</p>
-                <img src="/front_end/buyingProcedure/ting.png">
-            </figure>
-            </center>
-              </a>
+                          <a class="">
+                            <center>  
+                                <figure class="image">
+                                  <p></p>
+                                    <img src="/front_end/aboutUs/CCI15122016-343x240.jpg">
+                                </figure>
+                            </center>
+                        </a>
+                        
+                        
+                      </div>
+                         
+                  </div>
 
-              <a href="/front_end/buyingProcedure/Pete_Kwong.vcf">
-            <center>
-            <figure class="image is-128x128">
-              <p>Pete</p>
-                <img src="/front_end/buyingProcedure/pete.png">
-            </figure>
-            </center>
-              </a>
+              <div class="tile">
+                <center>
+                  <br>
+                            <center><p class="title is-6">{{trans('aboutUs.British qualifier professional qualifications')}}</p>
+                            </center>
+                            <br>
+                            <div class="">
+                            <li>{{trans('aboutUs.para2')}}</li>
+                            <a href="https://www.gem-a.info/">{{trans('aboutUs.para3')}}</a>
+                               
+                            </div>
+                        
+                        </center>
+             
           </div>
-          
+
+        </div>
         </article>
+
+        <article class="message is-info" >
+            
+            <div class="level is-centered">
+            
+            <div class="tile is-ancestor">
+                  <div class="tile is-8">
+                
+                   <a class="">
+                      <center>  
+                          <figure class="image">
+                            <p></p>
+                              <img src="/front_end/aboutUs/address/map.jpg">
+                          </figure>
+                      </center>
+                  </a>
+
+                  </div>
+
+              <div class="tile">
+
+                <div class="message-body">
+                    <br>
+                        <center>
+
+                            <center><p class="title is-6">{{trans('aboutUs.address')}}</p>
+                            </center>
+                            <br>
+                            <div class="">
+                            <li>{{trans('aboutUs.Office Hours')}}</li>
+                            <a>{{trans('aboutUs.Monday to Friday')}}</a>
+                               
+                            </div>
+                        
+                        </center>
+                        
+                      </div>
+              </div>
+
+        </div>
+
+        </article>
+
+        <figure >
+          <img src="/front_end/aboutUs/address/zh_map.jpg">
+        </figure>
+
+      </div>
+
+        
+
+        <div v-if="activedSubTab=='Quality Guarantee'">
+
+        <article class="message is-info" >
+            
+            <div class="level is-centered">
+            
+            <div class="tile is-ancestor">
+                  <div class="tile is-8">
+                
+                        <div class="message-body">
+                        <center>
+
+                            <center><p class="title is-6">{{trans('aboutUs.title1')}}</p>
+                            </center>
+                            <br>
+                            <div class="level">
+                            <li>{{trans('aboutUs.para1')}}</li>
+                               
+                            </div>
+                        
+                        </center>
+                        
+                      </div>
+                         
+                  </div>
+
+              <div class="tile">
+
+             <a class="">
+                <center>  
+                    <figure class="image">
+                      <p></p>
+                        <img src="/front_end/aboutUs/address/IMG_7397.HEIC">
+                    </figure>
+                </center>
+            </a>
+          </div>
+
+        </div>
+        </article>
+
+        
+
+      </div>
+
+
+
 
 
 
