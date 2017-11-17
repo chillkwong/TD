@@ -310,7 +310,7 @@
       <nav class="tabs is-fullwidth" >
         <div class="container">
           <ul>
-            <li :class="{'is-active': activeTab.includes('gia-loose-diamonds') || activeTab.includes('') }"><a href=" {{url(app()->getLocale())}}/gia-loose-diamonds">{{trans('frontHeader.Diamonds')}}</a>
+            <li :class="{'is-active': activeTab.includes('gia-loose-diamonds') }"><a href=" {{url(app()->getLocale())}}/gia-loose-diamonds">{{trans('frontHeader.Diamonds')}}</a>
             </li>
             <li :class="{'is-active': activeTab.includes('engagement-rings') }"><a href=" {{url(app()->getLocale())}}/engagement-rings">{{trans('frontHeader.Engagement Rings')}}</a></li>
             <li :class="{'is-active': activeTab.includes('wedding-rings') }"><a href=" {{url(app()->getLocale())}}/wedding-rings">{{trans('frontHeader.Wedding Rings')}}</a></li>

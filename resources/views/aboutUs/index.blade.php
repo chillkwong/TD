@@ -54,14 +54,16 @@
 
         <div v-if="activedSubTab=='Contact Us'">
 
-        <article class="message is-info" >
+
+          <article class="message is-primary" >
             
             <div class="level is-centered">
-            
+            <div class="message-body">
             <div class="tile is-ancestor">
+              
                   <div class="tile is-8">
                 
-                        <div class="message-body">
+                        
                         <center>
 
                             <center><p class="title is-6">{{trans('aboutUs.title1')}}</p>
@@ -74,7 +76,7 @@
                         
                         </center>
                         
-                      </div>
+                      
                          
                   </div>
 
@@ -88,46 +90,17 @@
                     </figure>
                 </center>
             </a>
+
+            </div>
           </div>
 
-        </div>
-        </article>
 
-        <article class="message is-info" >
-            
-            <div class="level is-centered">
-            
-            <div class="tile is-ancestor">
+          <hr>
+           <div class="tile is-ancestor">
+              
                   <div class="tile is-6">
                 
-                        <div class="">
-                        <center>
-                          <br>
-                            <center><p class="title is-6">{{trans('aboutUs.Quick Chat With')}} Winnie</p>
-                            </center>
-                            <br>
-                            <div class="level">
-                            
-                               
-                            </div>
                         
-                        </center>
-                        <a class="">
-                            <center>  
-                                <figure class="image">
-                                  <a href="/front_end/buyingProcedure/Winnie_Kwong.vcf">Mobile Import Winnie</a>
-                                    <img src="/front_end/aboutUs/ting.png">
-                                </figure>
-                            </center>
-                        </a>
-                        
-                      </div>
-                         
-                  </div>
-
-                 <div class="tile is-6">
-                
-                        <div class="">
                         <center>
                           <br>
                             <center><p class="title is-6">{{trans('aboutUs.Quick Chat With')}} Pete</p>
@@ -138,52 +111,68 @@
                                
                             </div>
                         
-                        </center>
+                        
                         <a class="" >
                             <center>  
+                              <a href="/front_end/buyingProcedure/Pete_Kwong.vcf">Mobile Import Pete</a>
                                 <figure class="image">
-                                  <a href="/front_end/buyingProcedure/Pete_Kwong.vcf">Mobile Import Pete</a>
                                     <img src="/front_end/aboutUs/pete.png">
                                 </figure>
                             </center>
                         </a>
-                        
-                      </div>
-                         
-                  </div>
-
-
-              
-
-        </div>
-        </article>
-
-        <article class="message is-info" >
-            
-            <div class="level is-centered">
-            
-            <div class="tile is-ancestor">
-                  <div class="tile is-5">
-                
-                        <div class="">
-
-                          <a class="">
-                            <center>  
-                                <figure class="image">
-                                  <p></p>
-                                    <img src="/front_end/aboutUs/CCI15122016-343x240.jpg">
-                                </figure>
-                            </center>
-                        </a>
-                        
-                        
-                      </div>
+                        </center>
+                      
                          
                   </div>
 
               <div class="tile">
-                <center>
-                  <br>
+
+                       <center>
+                          <br>
+                            <center><p class="title is-6">{{trans('aboutUs.Quick Chat With')}} Pete</p>
+                            </center>
+                            <br>
+                            <div class="level">
+                            
+                               
+                            </div>
+                        
+                        <a class="" >
+                            <center>  
+                              <a href="/front_end/buyingProcedure/Pete_Kwong.vcf">Mobile Import Pete</a>
+                                <figure class="image">
+                                    <img src="/front_end/aboutUs/pete.png">
+                                </figure>
+                            </center>
+                        </a>
+
+                        </center>
+
+            </div>
+          </div>
+
+
+          <hr>
+           <div class="tile is-ancestor">
+              
+                  <div class="tile is-5">
+                
+                        
+                        <center>
+                          <figure class="image">
+                                  <p></p>
+                                    <img src="/front_end/aboutUs/CCI15122016-343x240.jpg">
+                                </figure>
+                         
+                        </center>
+                      
+                         
+                  </div>
+
+              <div class="tile">
+
+                       <center>
+                        <br>
                             <center><p class="title is-6">{{trans('aboutUs.British qualifier professional qualifications')}}</p>
                             </center>
                             <br>
@@ -192,39 +181,34 @@
                             <a href="https://www.gem-a.info/">{{trans('aboutUs.para3')}}</a>
                                
                             </div>
-                        
+                          
+
                         </center>
-             
+
+            </div>
           </div>
 
-        </div>
-        </article>
-
-        <article class="message is-info" >
-            
-            <div class="level is-centered">
-            
-            <div class="tile is-ancestor">
+          <hr>
+           <div class="tile is-ancestor">
+              
                   <div class="tile is-8">
                 
-                   <a class="">
-                      <center>  
+                        
+                        <center>
                           <figure class="image">
                             <p></p>
                               <img src="/front_end/aboutUs/address/map.jpg">
                           </figure>
-                      </center>
-                  </a>
-
+                         
+                        </center>
+                      
+                         
                   </div>
 
               <div class="tile">
 
-                <div class="message-body">
-                    <br>
-                        <center>
-
-                            <center><p class="title is-6">{{trans('aboutUs.address')}}</p>
+                       <center>
+                        <center><p class="title is-6">{{trans('aboutUs.address')}}</p>
                             </center>
                             <br>
                             <div class="">
@@ -232,47 +216,49 @@
                             <a>{{trans('aboutUs.Monday to Friday')}}</a>
                                
                             </div>
-                        
+                          
+
                         </center>
-                        
-                      </div>
-              </div>
 
-        </div>
+            </div>
+          </div>
 
-        </article>
 
-        <figure >
+          <figure >
           <img src="/front_end/aboutUs/address/zh_map.jpg">
         </figure>
 
+
+        </div>
+        </article>
       </div>
 
-        
 
         <div v-if="activedSubTab=='Quality Guarantee'">
 
-        <article class="message is-info" >
+        <article class="message is-primary" >
             
             <div class="level is-centered">
-            
+            <div class="message-body">
+
             <div class="tile is-ancestor">
-                  <div class="tile is-8">
+              
+                  <div class="tile is-9">
                 
-                        <div class="message-body">
+                        
                         <center>
 
-                            <center><p class="title is-6">{{trans('aboutUs.title1')}}</p>
+                            <center><p class="title is-6">{{trans('aboutUs.title2')}}</p>
                             </center>
                             <br>
                             <div class="level">
-                            <li>{{trans('aboutUs.para1')}}</li>
+                            <li>{{trans('aboutUs.para4')}} <a href="education-diamond-grading/gia-report/">GIA Report</a>?</li>
                                
                             </div>
                         
                         </center>
                         
-                      </div>
+                      
                          
                   </div>
 
@@ -282,18 +268,331 @@
                 <center>  
                     <figure class="image">
                       <p></p>
-                        <img src="/front_end/aboutUs/address/IMG_7397.HEIC">
+                        <img src="/front_end/aboutUs/guarantee/Diamond-Grading-Report-300x139_1364898592668-300x169.jpg">
                     </figure>
                 </center>
             </a>
+
+            </div>
           </div>
 
-        </div>
+          <hr>
+          <div class="tile is-ancestor">
+              
+                  <div class="tile is-9">
+                
+                        
+                        <center>
+
+                            <center><p class="title is-6">{{trans('aboutUs.title3')}}</p>
+                            </center>
+                            <br>
+                            <div class="level">
+                            <li>{{trans('aboutUs.para5')}} 
+                              <a href="https://www.gia.edu/">{{trans('aboutUs.GIA official website')}}
+                              </a> {{trans('aboutUs.para5.1')}}</li>
+                               
+                            </div>
+                        
+                        </center>
+                        
+                      
+                         
+                  </div>
+
+              <div class="tile">
+
+             <a class="">
+                <center>  
+                    <figure class="image">
+                      <p></p>
+                        <img src="/front_end/aboutUs/guarantee/Photo 10-9-2017, 10 46 56 PM.jpg">
+                    </figure>
+                </center>
+            </a>
+
+            </div>
+          </div>
+
+
+          <hr>
+          <div class="tile is-ancestor">
+              
+                  <div class="tile is-9">
+                
+                        
+                        <center>
+
+                            <center><p class="title is-6">{{trans('aboutUs.title4')}}</p>
+                            </center>
+                            <br>
+                            <div class="level">
+                            <li>{{trans('aboutUs.para6')}} 
+                              <a href="http://presidium.com.sg/psdproduct/multi-tester-iii/">
+                               {{trans('aboutUs.para6.1')}}</a></li>
+                               
+                            </div>
+                        
+                        </center>
+                        
+                      
+                         
+                  </div>
+
+              <div class="tile">
+
+             <a class="">
+                <center>  
+                    <figure class="image">
+                      <p></p>
+                        <img src="/front_end/aboutUs/guarantee/3-Pmut_III_full2.jpg">
+                    </figure>
+                </center>
+            </a>
+
+            </div>
+          </div>
+
+          <hr>
+          <div class="tile is-ancestor">
+              
+                  <div class="tile is-9">
+                
+                        
+                        <center>
+
+                            <center><p class="title is-6">{{trans('aboutUs.title5')}}</p>
+                            </center>
+                            <br>
+                            <div class="level">
+                            <li>{{trans('aboutUs.para7')}} 
+                              <a href="http://presidium.com.sg/psdproduct/multi-tester-iii/">
+                               </a></li>
+                               
+                            </div>
+                        
+                        </center>
+                        
+                      
+                         
+                  </div>
+
+              <div class="tile">
+
+             <a class="">
+                <center>  
+                    <figure class="image">
+                      <p></p>
+                        <img src="/front_end/aboutUs/guarantee/HK-Welcome-522x311_1355960572014.jpg">
+                    </figure>
+                </center>
+            </a>
+
+            </div>
+          </div>
+
+
+
+              
+          </div>
+
+          </div>
         </article>
 
         
 
       </div>
+
+
+
+      <div v-if="activedSubTab=='Satification Insurence'">
+
+        <article class="message is-primary" >
+            
+            <div class="level is-centered">
+            <div class="message-body">
+
+            <div class="tile is-ancestor">
+              
+                  <div class="tile is-3">
+                    <a class="">
+                        <center>  
+                            <figure class="image">
+                              <p></p>
+                                <img src="/front_end/aboutUs/insurence/HS_EngagementGuide_RingSizer-539x303.jpg">
+                            </figure>
+                        </center>
+                    </a>
+                        
+                  </div>
+
+              <div class="tile">
+
+                  <center>
+
+                        <center><p class="title is-6">{{trans('aboutUs.title6')}}</p>
+                        </center>
+                        <br>
+                        <div class="level">
+                        <li>{{trans('aboutUs.para8')}}</li>
+                           
+                        </div>
+                    
+                    </center>
+
+             
+
+            </div>
+          </div>
+
+          <hr>
+          <div class="tile is-ancestor">
+              
+                  <div class="tile is-3">
+                    <a class="">
+                        <center>  
+                            <figure class="image">
+                              <p></p>
+                                <img src="/front_end/aboutUs/insurence/Sterling-Silver-My-Heart-is-Yours-Engraved-CZ-Heart-Promise-Ring-MLA14618486.jpg">
+                            </figure>
+                        </center>
+                    </a>
+                        
+                  </div>
+
+              <div class="tile">
+
+                  <center>
+
+                        <center><p class="title is-6">{{trans('aboutUs.title7')}}</p>
+                        </center>
+                        <br>
+                        <div class="level">
+                        <li>{{trans('aboutUs.para9')}}</li>
+                           
+                        </div>
+                    
+                    </center>
+
+             
+
+            </div>
+          </div>
+
+          <hr>
+          <div class="tile is-ancestor">
+              
+                  <div class="tile is-3">
+                    <a class="">
+                        <center>  
+                            <figure class="image">
+                              <p></p>
+                                <img src="/front_end/aboutUs/insurence/130218-hero_1356018657153.jpg">
+                            </figure>
+                        </center>
+                    </a>
+                        
+                  </div>
+
+              <div class="tile">
+
+                  <center>
+
+                        <center><p class="title is-6">{{trans('aboutUs.title8')}}</p>
+                        </center>
+                        <br>
+                        <div class="level">
+                        <li>{{trans('aboutUs.para10')}}</li>
+                           
+                        </div>
+                    
+                    </center>
+
+             
+
+            </div>
+          </div>
+
+          <hr>
+          <div class="tile is-ancestor">
+              
+                  <div class="tile is-3">
+                    <a class="">
+                        <center>  
+                            <figure class="image">
+                              <p></p>
+                                <img src="/front_end/aboutUs/insurence/diamondup-img.jpg">
+                            </figure>
+                        </center>
+                    </a>
+                        
+                  </div>
+
+              <div class="tile">
+
+                  <center>
+
+                        <center><p class="title is-6">{{trans('aboutUs.title9')}}</p>
+                        </center>
+                        <br>
+                        <div class="level">
+                        <li>{{trans('aboutUs.para11')}}</li>
+                           
+                        </div>
+                    
+                    </center>
+
+             
+
+            </div>
+          </div>
+
+          <hr>
+          <div class="tile is-ancestor">
+              
+                  <div class="tile is-3">
+                    <a class="">
+                        <center>  
+                            <figure class="image">
+                              <p></p>
+                                <img src="/front_end/aboutUs/insurence/Photo-11-9-2016-1-07-18-PM_1-700x525.jpg">
+                            </figure>
+                        </center>
+                    </a>
+                        
+                  </div>
+
+              <div class="tile">
+
+                  <center>
+
+                        <center><p class="title is-6">{{trans('aboutUs.title10')}}</p>
+                        </center>
+                        <br>
+                        <div class="level">
+                        <li>{{trans('aboutUs.para12')}}</li>
+                           
+                        </div>
+                    
+                    </center>
+
+             
+
+            </div>
+          </div>
+
+
+
+              
+          </div>
+
+          </div>
+        </article>
+
+        
+
+      </div>
+
 
 
 
