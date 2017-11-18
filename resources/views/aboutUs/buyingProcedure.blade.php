@@ -87,7 +87,7 @@
 
         
         <video width="320" height="240" controls>
-          <source src="/videos/IMG_2017_09_18_0118.mov" type="video/mp4">
+          <source src="https://tdpublic.nyc3.digitaloceanspaces.com/public/images/0.45_D_SI2.mp4" type="video/mp4">
           <source src="movie.ogg" type="video/ogg">
           Your browser does not support the video tag.
         </video>

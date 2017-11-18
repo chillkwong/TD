@@ -27,4 +27,12 @@ class CustomerMomentController extends Controller
                 'customers' => $customers
                 ]);
     }
+
+    public function engagementTips(){
+
+        App()->setLocale($locale);
+
+      return view('customerMoment.engagementTips', compact(''));
+        
+    }
 }

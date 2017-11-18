@@ -59,7 +59,7 @@ class DiamondController extends Controller
 
     public function store(Request $request){
 
-      // dd($request->csv);
+      
 
         $path = $this->getFileName($request->csv[0]);
         $request->csv[0]->move(base_path('public/files'), $path);
@@ -76,6 +76,42 @@ class DiamondController extends Controller
                   ->json([
                     'saved' => 'Insert Record successfully.'
                   ]);
+
+
+
+       // $fileNames = ['RU-DiamondData.csv'];
+       //          $connIPs = ['54.254.191.140'];
+       //          $ftp_user_names = ['ru_user1'];
+       //          $ftp_user_passes =  ['ru_user2017'];
+
+       //          $local_file = 'files/' . $fileNames[0];
+       //          $server_file = $fileNames[0];
+
+       //          // set up basic connection
+       //          $conn_id = ftp_connect($connIPs[0]);
+
+       //          // login with username and password
+       //          $login_result = ftp_login($conn_id, $ftp_user_names[0], $ftp_user_passes[0]);
+
+       //          // try to download $server_file and save to $local_file
+       //          if (ftp_get($conn_id, $local_file, $server_file, FTP_BINARY)) {
+       //              echo "Successfully written to $local_file\n";
+       //          } else {
+       //              echo "There was a problem\n";
+       //          }
+
+       //          // close the connection
+       //          ftp_close($conn_id);
+
+
+       //  // $path = Input::file('excel')->getRealPath();
+       //  $results = Excel::load($local_file, function($reader){
+       //                                          $reader->all();
+       //                                          })->get();
+
+       // unlink($local_file);
+       // // dd(parse_url('http://segoma.com/v.php?type=view&id=N12SEP444'));
+       //  $this->importToDatabase($results);
 
     }
 
