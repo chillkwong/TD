@@ -56,7 +56,7 @@
                                             <img :src="'/images/' + arr.images[0].image" v-if="arr.images[0].image">
                                         <center>
                                             <p  class="subtitle" ></p>
-                                            <p>@{{arr.id}}</p>
+                                            <p v-if="arr.id">@{{arr.id}}</p>
                                         </center>
                                         </figure>
                                         </a>

@@ -67,8 +67,8 @@
                 
 
                 <div class="">      
-                        <div class="tile is-ancestor" v-for="(posts,idnex) in chunkedItemsDesktop">
-                            <div class="tile is-parent is-4" v-for="post in posts">
+                        <div class="tile is-ancestor" v-for="(posts,index) in chunkedItemsDesktop">
+                            <div class="tile is-parent is-4" v-for="post in posts" v-if="posts">
                                 <div class="tile is-child" v-if="post">
                                     <article class="tile" @click="clickRow(post)">
                                         <a>
@@ -76,7 +76,7 @@
                                             <img :src="`/images/${post.cover}`" v-if="post.cover">
                                         <center>
                                             <p  class="subtitle" v-if="post.description">$@{{post.unit_price}}</p>
-                                            <p >@{{post.contents[0].content }} </p>
+                                            <p v-if="post.contents[0]">@{{post.contents[0].content }} </p>
                                         </center>
                                         </figure>
                                         </a>

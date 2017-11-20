@@ -28,7 +28,7 @@ class CustomerMomentController extends Controller
                 ]);
     }
 
-    public function engagementTips(){
+    public function engagementTips($locale){
 
         App()->setLocale($locale);
 

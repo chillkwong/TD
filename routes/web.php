@@ -31,12 +31,15 @@ Route::get('/{locale}/engagement-rings/{id}', 'EngagementRingController@bladeSho
 Route::get('/{locale}/wedding-rings/', 'WeddingRingPairController@bladeIndex');
 Route::get('/{locale}/wedding-rings/{id}', 'WeddingRingPairController@bladeShow');
 
+//CustomerMoment
+Route::get('/{locale}/customer-moments/', 'CustomerMomentController@bladeIndex');
+Route::get('/{locale}/engagement-tips/', 'CustomerMomentController@engagementTips');
+
 //CustomerJewellry 
 Route::get('/{locale}/customer-jewellries/', 'InvPostController@bladeIndex');
 Route::get('/{locale}/customer-jewellries/{id}', 'InvPostController@bladeShow');
 
-//CustomerMoment
-Route::get('/{locale}/customer-moments/', 'CustomerMomentController@bladeIndex');
+
 
 //education 
 Route::get('/{locale}/education-diamond-grading/', 'EducationController@bladeIndex');

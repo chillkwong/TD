@@ -54,100 +54,111 @@
           </ul>
         </div>
 
-        <article class="message is-info" v-if="activedSubTab=='Appointment First'">
+        <article class="message is-primary" >
           <div class="level is-centered">
             <div class="message-body">
-            <center>
-            <p class="title is-6">{{trans('buyingProcedure.FIRST TO CHOOSE DIAMONDS')}}：</p>
-            <p class="title is-6">{{trans('buyingProcedure.＊P.S.＊ choose few more diamonds that are in the similar price range, compare them at the same time.')}}</p>
-            <p class="title is-6">Whatsapp： 5484 4533 ( Winnie) / 5486 9451(Pete)</p>
-            <p class="title is-6">{{trans('buyingProcedure.Security issues，please make an appointment to shop in advance.')}}</p>
-            </center>
-          </div>
-             <a href="/front_end/buyingProcedure/Winnie_Kwong.vcf">
-            <center>  
-            <figure class="image is-128x128">
-              <p>Mobile Import Winnie</p>
-                <img src="/front_end/buyingProcedure/ting.png">
-            </figure>
-            </center>
-              </a>
 
-              <a href="/front_end/buyingProcedure/Pete_Kwong.vcf">
-            <center>
-            <figure class="image is-128x128">
-              <p>Mobile Import Pete</p>
-                <img src="/front_end/buyingProcedure/pete.png">
-            </figure>
-            </center>
-              </a>
+              <div class="tile is-ancestor" v-if="activedSubTab=='Appointment First'">
+              
+                  <div class="tile is-8">
+
+                    <center>
+                      <p class="title is-6">{{trans('buyingProcedure.FIRST TO CHOOSE DIAMONDS')}}：</p>
+                      <p class="title is-6">{{trans('buyingProcedure.＊P.S.＊ choose few more diamonds that are in the similar price range, compare them at the same time.')}}</p>
+                      <p class="title is-6">Whatsapp： 5484 4533 ( Winnie) / 5486 9451(Pete)</p>
+                      <p class="title is-6">{{trans('buyingProcedure.Security issues，please make an appointment to shop in advance.')}}</p>
+                    </center>
+                    
+                        
+                  </div>
+
+              <div class="tile is-2">
+                   <a href="/front_end/buyingProcedure/Winnie_Kwong.vcf">
+                    <center>  
+                    <figure class="image">
+                      <p>Mobile Import Winnie</p>
+                        <img src="/front_end/buyingProcedure/ting.png">
+                    </figure>
+                    </center>
+                  </a>
+              </div>
+
+              <div class="tile is-2">
+                   <a href="/front_end/buyingProcedure/Pete_Kwong.vcf">
+                    <center>
+                    <figure class="image">
+                      <p>Mobile Import Pete</p>
+                        <img src="/front_end/buyingProcedure/pete.png">
+                    </figure>
+                    </center>
+                   </a>
+              </div>
+              
+            </div>
+            <br>
+          
+
+
+              <div class="tile is-ancestor" v-if="activedSubTab=='Shop Or GIA Lab'">
+              
+                  <div class="tile is-10">
+
+                    <center>
+                    <li>{{trans('buyingProcedure.Choose your favorite diamond，verify the GIA number on diamond’s girdle with report，full pay and take the diamond')}}</li>
+                    <li>{{trans('buyingProcedure.You may also directly take diamond from GIA Lab， request a verification from GIA ，but that will need to pay certain charge')}}</li>
+                    
+                    </center>
+                    
+                        
+                  </div>
+
+                  <div class="tile">
+                       <center>  
+                        <figure class="image">
+                          <p>GIA</p>
+                            <img src="/front_end/GIA/GIA-Logo.jpg">
+                        </figure>
+                        </center>
+                  </div>
+
+                  
+                </div>
+                <br>
+
+
+                <div class="tile is-ancestor" v-if="activedSubTab=='Choose Ring Setting'">
+              
+                  <div class="tile is-10">
+
+                    <center>
+                    <li>{{trans('buyingProcedure.Choose your favorite diamond，verify the GIA number on diamond’s girdle with report，full pay and take the diamond')}}</li>
+                    <li>{{trans('buyingProcedure.You may also directly take diamond from GIA Lab， request a verification from GIA ，but that will need to pay certain charge')}}</li>
+                    
+                    </center>
+                    
+                        
+                  </div>
+
+                  <div class="tile">
+                       <center>  
+                        <figure class="image">
+                          <p>GIA</p>
+                            <img src="/front_end/GIA/GIA-Logo.jpg">
+                        </figure>
+                        </center>
+                  </div>
+
+                  
+                </div>
+                <br>
+
+
+            </div>
           </div>
           
         </article>
 
-        
-        <video width="320" height="240" controls>
-          <source src="https://tdpublic.nyc3.digitaloceanspaces.com/public/images/MVI_1351.mp4" type="video/mp4">
-          <source src="movie.ogg" type="video/ogg">
-          Your browser does not support the video tag.
-        </video>
 
-        <video controls="controls" width="400" height="300" name="Video Name" src="/videos/MVI_1351.mp4"></video>
-
-
-        <article class="message is-info" v-if="activedSubTab=='Shop Or GIA Lab'">
-          <div class="level is-centered">
-            <div class="message-body">
-            <center>
-            <li>{{trans('buyingProcedure.Choose your favorite diamond，verify the GIA number on diamond’s girdle with report，full pay and take the diamond')}}</li>
-            <li>{{trans('buyingProcedure.You may also directly take diamond from GIA Lab， request a verification from GIA ，but that will need to pay certain charge')}}</li>
-            
-            </center>
-          </div>
-             
-            <center>  
-            <figure class="image is-128x128">
-              <p>GIA</p>
-                <img src="/front_end/GIA/GIA-Logo.jpg">
-            </figure>
-            </center>
-             
-          </div>
-          
-        </article>
-
-        <article class="message is-info" v-if="activedSubTab=='Choose Ring Setting'">
-          <div class="level is-centered">
-            <div class="message-body">
-            <center>
-            <p class="title is-6">{{trans('buyingProcedure.CHOOSE ENGAGEMENT RING SETTING')}}：</p>
-            <p >{{trans('buyingProcedure.Our shop also has some setting for chosen')}}：</p>
-
-            <p class="title is-6">{{trans('buyingProcedure.＊P.S.＊ choose few more diamonds that are in the similar price range, compare them at the same time.')}}</p>
-            <p class="title is-6">Whatsapp： 5484 4533 ( Winnie) / 5486 9451(Pete)</p>
-            <p class="title is-6">{{trans('buyingProcedure.Security issues，please make an appointment to shop in advance.')}}</p>
-            </center>
-          </div>
-             <a href="/front_end/buyingProcedure/Winnie_Kwong.vcf">
-            <center>  
-            <figure class="image is-128x128">
-              <p>Winnie</p>
-                <img src="/front_end/buyingProcedure/ting.png">
-            </figure>
-            </center>
-              </a>
-
-              <a href="/front_end/buyingProcedure/Pete_Kwong.vcf">
-            <center>
-            <figure class="image is-128x128">
-              <p>Pete</p>
-                <img src="/front_end/buyingProcedure/pete.png">
-            </figure>
-            </center>
-              </a>
-          </div>
-          
-        </article>
 
 
 
