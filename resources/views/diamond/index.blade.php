@@ -68,6 +68,7 @@
             </div>
             </div>
 
+
             <div id="diamondViewerIndex">
                 <div class="box">
         <div class="level">
@@ -354,6 +355,7 @@
                 <li><a class="pagination-link" aria-label="Goto page 86"  @click="moveTo(5)">@{{5+model.current_page}}</a></li>
               </ul>
             </nav>
+            
 
         </div>
         	

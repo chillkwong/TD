@@ -20,6 +20,14 @@ class EngagementRingController extends Controller
  
     }
 
+    public function solitaireRingSetting($locale){
+
+        App()->setLocale($locale);
+
+
+          return view('engagementRing.solitaireRingSetting', compact(''));
+        
+    }
 
     public function bladeShow($locale, $id)
     {

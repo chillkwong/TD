@@ -36,7 +36,7 @@
         </div>
         
         <div id="engagementRings">
-        	<div class="box">
+            <div class="box">
                 <div class="level">
 
                 </div>

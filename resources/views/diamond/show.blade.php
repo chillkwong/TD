@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Show Diamonds</title>
+        <title>{{$diamond->weight}} {{trans('diamondSearch.carat')}} {{$diamond->color}} {{trans('diamondSearch.Color')}} {{$diamond->cut}} {{trans('diamondSearch.Cut')}} {{$diamond->shape}}  {{trans('diamondSearch.diamond')}}</title>
 
         <!-- Fonts -->
        

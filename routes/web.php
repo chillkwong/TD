@@ -24,8 +24,10 @@ Route::get('/{locale}/gia-loose-diamonds/', 'DiamondController@bladeIndex');
 Route::get('/{locale}/gia-loose-diamonds/{id}', 'DiamondController@bladeShow');
 
 //engagementRing 
+Route::get('/{locale}/engagement-rings/solitaire-ring-setting', 'EngagementRingController@solitaireRingSetting');
 Route::get('/{locale}/engagement-rings/', 'EngagementRingController@bladeIndex');
 Route::get('/{locale}/engagement-rings/{id}', 'EngagementRingController@bladeShow');
+
 
 //weddingRingPair 
 Route::get('/{locale}/wedding-rings/', 'WeddingRingPairController@bladeIndex');
@@ -55,6 +57,7 @@ Route::get('/{locale}/education-diamond-grading/gia-report/4cs/clarity', 'Educat
 //cert
 Route::get('/{locale}/education-diamond-grading/grading-certficate', 'EducationController@diamondCertificate');
 Route::get('/{locale}/education-diamond-grading/gia-report', 'EducationController@giaReport');
+Route::get('/{locale}/education-diamond-grading/grading-eye-clean', 'EducationController@gradingEyeClean');
 
 
 //anatony

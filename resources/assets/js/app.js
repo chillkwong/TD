@@ -66,9 +66,9 @@ const header = new Vue({
     router
 });
 
- var pUrl = window.location.pathname.slice(4)
+ var pUrl = window.location.pathname.slice(3)
 //diamond
-if (pUrl == 'gia-loose-diamonds') {
+if (pUrl.includes('/gia-loose-diamonds')) {
     const diamondViewerIndex =  new Vue(DiamondViewerIndex);
 }
 if (window.location.pathname.slice(4,23) == 'gia-loose-diamonds/') {
@@ -76,7 +76,7 @@ if (window.location.pathname.slice(4,23) == 'gia-loose-diamonds/') {
 }
 
 //engagement rings
-if (pUrl == 'engagement-rings') {
+if (pUrl.includes('/engagement-rings')) {
     const engagementRingIndex =  new Vue(EngagementRingIndex);
 }
 if (window.location.pathname.slice(4,21) == 'engagement-rings/') {
@@ -84,7 +84,7 @@ if (window.location.pathname.slice(4,21) == 'engagement-rings/') {
 }
 
 //wedding rings
-if (pUrl == 'wedding-rings') {
+if (pUrl.includes('/wedding-rings')) {
     const weddingRingIndex =  new Vue(WeddingRingIndex);
 }
 if (window.location.pathname.slice(4,18) == 'wedding-rings/') {
@@ -92,19 +92,19 @@ if (window.location.pathname.slice(4,18) == 'wedding-rings/') {
 }
 
 //Customer share
-if (pUrl == 'customer-jewellries') {
+if (pUrl.includes('/customer-jewellries') ||pUrl.includes('/engagement-tips')) {
     const customerJewellryIndex =  new Vue(CustomerJewellryIndex);
 }
 if (window.location.pathname.slice(4,24) == 'customer-jewellries/') {
     const customerJewellryShow =  new Vue(CustomerJewellryShow);
 }
 
-if (pUrl.includes('customer-moments')) {
+if (pUrl.includes('/customer-moments')) {
     const customerMomentIndex =  new Vue(CustomerMomentIndex);
 }
 
 //Education
-if (pUrl.includes('education-diamond-grading')) {
+if (pUrl.includes('/education-diamond-grading')) {
     const educationIndex =  new Vue(EducationIndex);
 }
 

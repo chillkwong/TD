@@ -47,35 +47,37 @@
        
         @include('layouts.subTabs.gradingCert')
 
-        <article class="message is-primary" v-if="activedSubTab=='grading-certficate'">
+        
+
+
+
+        <article class="message is-primary" v-if="activedSubTab=='grading-eye-clean'">
           <div class="level is-centered">
             <div class="message-body">
             <center>
 
-            <center><p class="title is-6">{{trans('education.giaTitle1')}}</p></center>
+            <center><p class="title is-6">{{trans('education.eyeCleanTitle1')}}</p></center>
             <div class="level">
-            <li>{{trans('education.giaPara1')}}</li>
+            <li>{{trans('education.eyeCleanPara1')}}</li>
                 <a>
                 <center>  
                 <figure class="image is-128x128">
-                  <p>Diamond Certficate</p>
-                    <img src="/front_end/education/grading-certficate/pageImage.jpg">
+                  <p>Eye Clean Diamond</p>
+                    <img src="/front_end/education/grading-eye-clean/pageImage1.jpg">
                 </figure>
                 </center>
                   </a>
             </div>
             
             </center>
-            <li>{{trans('education.giaPara2')}}</li>
-            <li>{{trans('education.giaPara3')}}</li>
+            <li>{{trans('education.eyeCleanPara2')}}</li>
+            <li>{{trans('education.eyeCleanPara3')}}</li>
           </div>
              
 
           </div>
           
         </article>
-
-
 
 
 

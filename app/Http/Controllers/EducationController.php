@@ -16,14 +16,6 @@ class EducationController extends Controller
  
     }
 
-    public function giaReport($locale)
-    {
-      App()->setLocale($locale);
-
-
-      return view('education.giaReport', compact(''));
- 
-    }
 
     public function fourCs($locale)
     {
@@ -68,15 +60,6 @@ class EducationController extends Controller
  
     }
 
-
-    public function diamondCertificate($locale)
-    {
-      App()->setLocale($locale);
-
-
-      return view('education.diamondCertificate', compact(''));
- 
-    }
 
     public function diamondShape($locale)
     {
@@ -131,6 +114,35 @@ class EducationController extends Controller
       return view('education.diamondFluorescence', compact(''));
  
     }
+
+    //certs
+    public function gradingEyeClean($locale){
+
+      App()->setLocale($locale);
+
+
+      return view('education.gradingEyeClean', compact(''));
+      
+    }
+    
+    public function giaReport($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('education.giaReport', compact(''));
+ 
+    }
+
+    public function diamondCertificate($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('education.diamondCertificate', compact(''));
+ 
+    }
+
 
 
 }
