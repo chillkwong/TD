@@ -21,7 +21,7 @@ export default {
 		this.fetchData()
 		console.log(this.$route.fullPath.slice(12))
 		if (this.$route.fullPath.includes('buying-procedure')) {
-			return this.activedSubTab = this.$route.fullPath.slice(20)?this.$route.fullPath.slice(20):'Appointment First'
+			return this.activedSubTab = this.$route.fullPath.slice(21)?this.$route.fullPath.slice(21):'Appointment First'
 		}
 		
 		if (this.$route.fullPath.includes('about-us')) {

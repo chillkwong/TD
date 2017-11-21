@@ -68,9 +68,27 @@ Route::get('/{locale}/education-diamond-grading/anatomy-fluorescence', 'Educatio
 
 //about-us
 Route::get('/{locale}/about-us', 'AboutUsController@aboutUs');
+
+//buying procedure
 Route::get('/{locale}/buying-procedure', 'AboutUsController@buyingProcedure');
+Route::get('/{locale}/buying-procedure/custom-engagement-rings', 'AboutUsController@customEngagementRing');
+Route::get('/{locale}/buying-procedure/diamond-inlay-engrave', 'AboutUsController@diamondInlayEngrave');
 
 
+
+//sitemap
+Route::get('/sitemap_index.xml', function(){
+    
+$d = include 'sitemapRoutes.php';
+
+return $d;
+    
+});
+
+
+
+
+//all others
 Route::get('/{locale}/{vue_capture?}', function ($locale) {
 	App::setLocale($locale);
     return view('welcome1');

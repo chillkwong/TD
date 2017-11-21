@@ -326,7 +326,7 @@
                 
                 </ul>
 
-                <ul v-if="activeTab.includes('engagement-rings')">
+                <ul v-if="activeTab.includes('/engagement-rings')">
                   <li ><a href="{{url(app()->getLocale())}}/engagement-rings/solitaire-ring-setting">{{__('frontHeader.Solitaire Ring')}}</a></li>
                   <li ><a href="{{url(app()->getLocale())}}/engagement-rings/side-stones-setting">{{__('frontHeader.Side-stone Ring')}}</a></li>
                   <li ><a href="{{url(app()->getLocale())}}/engagement-rings/halo-setting">{{__('frontHeader.Halo Ring')}}</a></li>

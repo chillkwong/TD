@@ -86,7 +86,7 @@
                 <center>  
                     <figure class="image">
                       <p></p>
-                        <img src="/front_end/aboutUs/address/IMG_7397.HEIC">
+                        <img src="/front_end/aboutUs/address/IMG_7397.jpg">
                     </figure>
                 </center>
             </a>

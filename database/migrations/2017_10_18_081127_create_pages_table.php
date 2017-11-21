@@ -16,8 +16,8 @@ class CreatePagesTable extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('url');
-            $table->integer('paginable_id'); 
-            $table->string('paginable_type');  
+            $table->integer('paginable_id')->nullable(); 
+            $table->string('paginable_type')->nullable();  
             $table->timestamps();
         });
     }

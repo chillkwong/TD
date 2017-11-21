@@ -67,6 +67,7 @@
 	      	<img src="/front_end/footer/logo_mastercard.jpg" width="40px" >
 	      	<img src="/front_end/footer/logo_unionpay.jpg" width="40px" >
 	      	<img src="/front_end/footer/logo_visa.jpg" width="40px" >
+	      	<img src="/front_end/footer/brand012.jpg" width="40px" >
 	      </p>
 
 	       <p>

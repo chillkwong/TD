@@ -44,13 +44,13 @@
         </div>
 
        
-      @include('layouts.subTabs.buyingProcedure')
+       @include('layouts.subTabs.buyingProcedure')
 
         <article class="message is-primary" >
           <div class="level is-centered">
             <div class="message-body">
 
-              @include('aboutUs.buyingProcedureContent')
+               @include('aboutUs.buyingProcedureContent')
 
 
 
