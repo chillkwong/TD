@@ -21,16 +21,24 @@ Route::get('/adm/{vue_capture?}', function () {
 
 //diamond 
 Route::get('/{locale}/gia-loose-diamonds/', 'DiamondController@bladeIndex');
+Route::get('/{locale}/gia-loose-diamonds/round-cut', 'DiamondController@roundCut');
+Route::get('/{locale}/gia-loose-diamonds/fancy-cut-diamond', 'DiamondController@fancyColor');
+Route::get('/{locale}/gia-loose-diamonds/fancy-color', 'DiamondController@fancyCutDiamond');
 Route::get('/{locale}/gia-loose-diamonds/{id}', 'DiamondController@bladeShow');
 
 //engagementRing 
-Route::get('/{locale}/engagement-rings/solitaire-ring-setting', 'EngagementRingController@solitaireRingSetting');
 Route::get('/{locale}/engagement-rings/', 'EngagementRingController@bladeIndex');
+Route::get('/{locale}/engagement-rings/solitaire-ring-setting', 'EngagementRingController@solitaireRingSetting');
+Route::get('/{locale}/engagement-rings/side-stones-setting', 'EngagementRingController@sideStonesSetting');
+Route::get('/{locale}/engagement-rings/halo-setting', 'EngagementRingController@haloSetting');
 Route::get('/{locale}/engagement-rings/{id}', 'EngagementRingController@bladeShow');
 
 
 //weddingRingPair 
 Route::get('/{locale}/wedding-rings/', 'WeddingRingPairController@bladeIndex');
+Route::get('/{locale}/wedding-rings/classic', 'WeddingRingPairController@classic');
+Route::get('/{locale}/wedding-rings/japanese', 'WeddingRingPairController@japanese');
+Route::get('/{locale}/wedding-rings/vintage', 'WeddingRingPairController@vintage');
 Route::get('/{locale}/wedding-rings/{id}', 'WeddingRingPairController@bladeShow');
 
 //CustomerMoment

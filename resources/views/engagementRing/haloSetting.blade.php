@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Search Wedding Ring</title>
+        <title>Search Engagement Ring</title>
 
         <!-- Fonts -->
        
@@ -23,9 +23,9 @@
         <div class="tile is-ancestor" >
             <div class="tile is-parent ">
                 <div class="tile is-child notification is-primary" >
-                    <center><h1 class="title is-5">{{trans('weddingRing.Wedding Rings - Classic')}}</h1>
+                    <center><h1 class="title is-5">{{trans('engagementRing.Engagement Rings - Solitaire')}}</h1>
                         <h1 >
-                        {{trans('weddingRing.indexDescription')}}
+                        {{trans('engagementRing.indexDescription')}}
                         </h1>
                     
                     </center>
@@ -35,8 +35,8 @@
         </div>
         </div>
         
-        <div id="weddingRings">
-            <div class="box">
+        <div id="engagementRings">
+        	<div class="box">
                 <div class="level">
 
                 </div>
@@ -44,7 +44,7 @@
                     <!-- <div class="tile is-ancestor" >
                         <div class="tile is-parent ">
                             <div class="tile is-child notification is-primary" >
-                                <center><h1 class="title is-5">Wedding Rings</h1>
+                                <center><h1 class="title is-5">Engagement Rings - Solitaire</h1>
                                     <h1 >
                                     Thank you for customers support, so that we could share their precious moments.
                                     </h1>
@@ -55,19 +55,17 @@
                         </div>
                     </div> -->
 
-                @include('weddingRing.weddingRingContent')
+                @include('engagementRing.engagementRingContent')
 
 
+                    </div>
 
-                </div>
-        	
         </div>
 
 
     @include('layouts.frontFooter')
 
   
-     
 </body>
 
 

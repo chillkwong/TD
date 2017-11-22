@@ -68,26 +68,26 @@ const header = new Vue({
 
  var pUrl = window.location.pathname.slice(3)
 //diamond
-if (pUrl.includes('/gia-loose-diamonds')) {
+if (pUrl == '/gia-loose-diamonds' || pUrl.includes('/gia-loose-diamonds/round-cut') || pUrl.includes('/gia-loose-diamonds/fancy-cut-diamond') || pUrl.includes('/gia-loose-diamonds/fancy-color')) {
     const diamondViewerIndex =  new Vue(DiamondViewerIndex);
 }
-if (window.location.pathname.slice(4,23) == 'gia-loose-diamonds/') {
+if (!pUrl.includes('/gia-loose-diamonds/round-cut') && !pUrl.includes('/gia-loose-diamonds/fancy-cut-diamond') && !pUrl.includes('/gia-loose-diamonds/fancy-color') && window.location.pathname.slice(4,23) == 'gia-loose-diamonds/') {
     const diamondViewerShow =  new Vue(DiamondViewerShow);
 }
 
 //engagement rings
-if (pUrl.includes('/engagement-rings')) {
+if (pUrl == '/engagement-rings' || pUrl.includes('/engagement-rings/solitaire-ring-setting') || pUrl.includes('/engagement-rings/side-stones-setting') || pUrl.includes('/engagement-rings/halo-setting')) {
     const engagementRingIndex =  new Vue(EngagementRingIndex);
 }
-if (window.location.pathname.slice(4,21) == 'engagement-rings/') {
+if (!pUrl.includes('/engagement-rings/solitaire-ring-setting') && !pUrl.includes('/engagement-rings/side-stones-setting') && !pUrl.includes('/engagement-rings/halo-setting') && window.location.pathname.slice(4,21) == 'engagement-rings/') {
     const engagementRingShow =  new Vue(EngagementRingShow);
 }
 
 //wedding rings
-if (pUrl.includes('/wedding-rings')) {
+if (pUrl == '/wedding-rings' || pUrl.includes('/wedding-rings/classic') || pUrl.includes('/wedding-rings/japanese') || pUrl.includes('/wedding-rings/vintage')) {
     const weddingRingIndex =  new Vue(WeddingRingIndex);
 }
-if (window.location.pathname.slice(4,18) == 'wedding-rings/') {
+if (!pUrl.includes('/wedding-rings/classic') && !pUrl.includes('/wedding-rings/japanese') && !pUrl.includes('/wedding-rings/vintage') && window.location.pathname.slice(4,18) == 'wedding-rings/') {
     const weddingRingShow =  new Vue(WeddingRingShow);
 }
 

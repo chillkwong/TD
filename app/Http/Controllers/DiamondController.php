@@ -22,6 +22,34 @@ class DiamondController extends Controller
       return view('diamond.index', compact(''));
  
     }
+    
+
+    public function roundCut($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.roundCut', compact(''));
+ 
+    }
+    
+    public function fancyCutDiamond($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyCutDiamond', compact(''));
+ 
+    }
+
+    public function fancyColor($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyColor', compact(''));
+ 
+    }
 
 
     public function bladeShow($locale, $id)

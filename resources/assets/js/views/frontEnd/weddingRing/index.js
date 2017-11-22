@@ -84,6 +84,18 @@ import langs from '../../../langs/weddingRings'
 			};
 		},
 		created(){
+			if (this.$route.fullPath.slice(3).includes('wedding-rings/classic')) {
+				this.fetchData.style = ['Classic']
+				this.query.search_conditions.style[0].clicked = true
+			}
+			if (this.$route.fullPath.slice(3).includes('wedding-rings/japanese')) {
+				this.fetchData.style = ['Japanese']
+				this.query.search_conditions.style[1].clicked = true
+			}
+			if (this.$route.fullPath.slice(3).includes('wedding-rings/vintage')) {
+				this.fetchData.style = ['vintage']
+				this.query.search_conditions.style[2].clicked = true
+			}
 			this.fetchIndexData();
 		},
 		computed:{

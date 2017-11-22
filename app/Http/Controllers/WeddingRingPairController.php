@@ -18,6 +18,33 @@ class WeddingRingPairController extends Controller
  
     }
 
+    public function classic($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('weddingRing.classic', compact(''));
+ 
+    }
+
+    public function japanese($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('weddingRing.japanese', compact(''));
+ 
+    }
+
+    public function vintage($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('weddingRing.vintage', compact(''));
+ 
+    }
+
 
     public function bladeShow($locale, $id)
     {

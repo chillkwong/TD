@@ -17853,26 +17853,26 @@ var header = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 var pUrl = window.location.pathname.slice(3);
 //diamond
-if (pUrl.includes('/gia-loose-diamonds')) {
+if (pUrl == '/gia-loose-diamonds' || pUrl.includes('/gia-loose-diamonds/round-cut') || pUrl.includes('/gia-loose-diamonds/fancy-cut-diamond') || pUrl.includes('/gia-loose-diamonds/fancy-color')) {
     var diamondViewerIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_3__views_frontEnd_diamondViewer_index__["a" /* default */]);
 }
-if (window.location.pathname.slice(4, 23) == 'gia-loose-diamonds/') {
+if (!pUrl.includes('/gia-loose-diamonds/round-cut') && !pUrl.includes('/gia-loose-diamonds/fancy-cut-diamond') && !pUrl.includes('/gia-loose-diamonds/fancy-color') && window.location.pathname.slice(4, 23) == 'gia-loose-diamonds/') {
     var diamondViewerShow = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_4__views_frontEnd_diamondViewer_show__["a" /* default */]);
 }
 
 //engagement rings
-if (pUrl.includes('/engagement-rings')) {
+if (pUrl == '/engagement-rings' || pUrl.includes('/engagement-rings/solitaire-ring-setting') || pUrl.includes('/engagement-rings/side-stones-setting') || pUrl.includes('/engagement-rings/halo-setting')) {
     var engagementRingIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_5__views_frontEnd_engagementRing_index__["a" /* default */]);
 }
-if (window.location.pathname.slice(4, 21) == 'engagement-rings/') {
+if (!pUrl.includes('/engagement-rings/solitaire-ring-setting') && !pUrl.includes('/engagement-rings/side-stones-setting') && !pUrl.includes('/engagement-rings/halo-setting') && window.location.pathname.slice(4, 21) == 'engagement-rings/') {
     var engagementRingShow = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_6__views_frontEnd_engagementRing_show__["a" /* default */]);
 }
 
 //wedding rings
-if (pUrl.includes('/wedding-rings')) {
+if (pUrl == '/wedding-rings' || pUrl.includes('/wedding-rings/classic') || pUrl.includes('/wedding-rings/japanese') || pUrl.includes('/wedding-rings/vintage')) {
     var weddingRingIndex = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_7__views_frontEnd_weddingRing_index__["a" /* default */]);
 }
-if (window.location.pathname.slice(4, 18) == 'wedding-rings/') {
+if (!pUrl.includes('/wedding-rings/classic') && !pUrl.includes('/wedding-rings/japanese') && !pUrl.includes('/wedding-rings/vintage') && window.location.pathname.slice(4, 18) == 'wedding-rings/') {
     var weddingRingShow = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_8__views_frontEnd_weddingRing_show__["a" /* default */]);
 }
 
@@ -19311,6 +19311,18 @@ if (false) {
 		};
 	},
 	created: function created() {
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/round-cut')) {
+			this.fetchData.shape = ['RD'];
+			this.query.search_conditions.shape[0].clicked = true;
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond')) {
+			this.fetchData.shape = ['PS', 'EM', 'PR', 'MQ', 'CU', 'AC', 'OV', 'HT', 'RA'];
+
+			for (var i = this.query.search_conditions.shape.length - 1; i >= 0; i--) {
+				this.query.search_conditions.shape[i].clicked = true;
+				this.query.search_conditions.shape[0].clicked = false;
+			}
+		}
 		this.fetchIndexData();
 	},
 
@@ -19339,7 +19351,7 @@ if (false) {
 	methods: {
 		clickRow: function clickRow(row, index) {
 			this.onClickedRow = row.id;
-			window.open('gia-loose-diamonds/' + row.id, '_self');
+			window.open(this.$route.fullPath.slice(0, 3) + '/gia-loose-diamonds/' + row.id, '_self');
 		},
 		toggle: function toggle(id) {
 			var index = this.model.data.indexOf(id);
@@ -19598,6 +19610,18 @@ if (false) {
 		};
 	},
 	created: function created() {
+		if (this.$route.fullPath.slice(3).includes('engagement-rings/solitaire-ring-setting')) {
+			this.fetchData.style = ['Solitaire'];
+			this.query.search_conditions.style[0].clicked = true;
+		}
+		if (this.$route.fullPath.slice(3).includes('engagement-rings/side-stones-setting')) {
+			this.fetchData.style = ['Side-stone'];
+			this.query.search_conditions.style[1].clicked = true;
+		}
+		if (this.$route.fullPath.slice(3).includes('engagement-rings/halo-setting')) {
+			this.fetchData.style = ['Halo'];
+			this.query.search_conditions.style[2].clicked = true;
+		}
 		this.fetchIndexData();
 	},
 
@@ -19884,6 +19908,18 @@ if (false) {
 		};
 	},
 	created: function created() {
+		if (this.$route.fullPath.slice(3).includes('wedding-rings/classic')) {
+			this.fetchData.style = ['Classic'];
+			this.query.search_conditions.style[0].clicked = true;
+		}
+		if (this.$route.fullPath.slice(3).includes('wedding-rings/japanese')) {
+			this.fetchData.style = ['Japanese'];
+			this.query.search_conditions.style[1].clicked = true;
+		}
+		if (this.$route.fullPath.slice(3).includes('wedding-rings/vintage')) {
+			this.fetchData.style = ['vintage'];
+			this.query.search_conditions.style[2].clicked = true;
+		}
 		this.fetchIndexData();
 	},
 

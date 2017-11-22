@@ -29,6 +29,24 @@ class EngagementRingController extends Controller
         
     }
 
+    public function sideStonesSetting($locale){
+
+        App()->setLocale($locale);
+
+
+          return view('engagementRing.sideStonesSetting', compact(''));
+        
+    }
+
+    public function haloSetting($locale){
+
+        App()->setLocale($locale);
+
+
+          return view('engagementRing.haloSetting', compact(''));
+        
+    }
+
     public function bladeShow($locale, $id)
     {
       App()->setLocale($locale);

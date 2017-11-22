@@ -78,6 +78,18 @@ import langs from '../../../langs/engagementRings'
 			};
 		},
 		created(){
+			if (this.$route.fullPath.slice(3).includes('engagement-rings/solitaire-ring-setting')) {
+				this.fetchData.style = ['Solitaire']
+				this.query.search_conditions.style[0].clicked = true
+			}
+			if (this.$route.fullPath.slice(3).includes('engagement-rings/side-stones-setting')) {
+				this.fetchData.style = ['Side-stone']
+				this.query.search_conditions.style[1].clicked = true
+			}
+			if (this.$route.fullPath.slice(3).includes('engagement-rings/halo-setting')) {
+				this.fetchData.style = ['Halo']
+				this.query.search_conditions.style[2].clicked = true
+			}
 			this.fetchIndexData();
 		},
 		computed:{

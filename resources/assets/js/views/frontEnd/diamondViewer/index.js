@@ -138,6 +138,19 @@ import langs from '../../../langs/diamondViewer'
 			};
 		},
 		created(){
+			if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/round-cut')) {
+				this.fetchData.shape = ['RD']
+				this.query.search_conditions.shape[0].clicked = true
+			}
+			if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond')) {
+				this.fetchData.shape = ['PS','EM','PR','MQ','CU','AC','OV','HT','RA']
+				
+				for (var i = this.query.search_conditions.shape.length - 1; i >= 0; i--) {
+					this.query.search_conditions.shape[i].clicked = true
+					this.query.search_conditions.shape[0].clicked = false
+				}
+				
+			}
 			this.fetchIndexData();
 		},
 		computed:{
@@ -164,7 +177,7 @@ import langs from '../../../langs/diamondViewer'
 		methods:{
 			clickRow(row,index){
 				this.onClickedRow = row.id
-				window.open('gia-loose-diamonds/'+row.id, '_self')
+				window.open(this.$route.fullPath.slice(0,3) + '/gia-loose-diamonds/'+row.id, '_self')
 			},
 			toggle(id) {
 		    	const index = this.model.data.indexOf(id);
