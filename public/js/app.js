@@ -19311,10 +19311,36 @@ if (false) {
 		};
 	},
 	created: function created() {
+		//round
 		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/round-cut')) {
 			this.fetchData.shape = ['RD'];
 			this.query.search_conditions.shape[0].clicked = true;
 		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/round-cut/0-30-0-49-carat-weight')) {
+			this.fetchData.weight = ['0.30', '0.49'];
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/round-cut/0-50-0-79-carat-weight')) {
+			this.fetchData.weight = ['0.50', '0.79'];
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/round-cut/0-80-0-99-carat-weight')) {
+			this.fetchData.weight = ['0.80', '0.99'];
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/round-cut/1-00-1-19-carat-weight')) {
+			this.fetchData.weight = ['1.00', '1.19'];
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/round-cut/1-20-1-49-carat-weight')) {
+			this.fetchData.weight = ['1.30', '1.49'];
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/round-cut/1-50-1-99-carat-weight')) {
+			this.fetchData.weight = ['1.50', '1.99'];
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/round-cut/2-00-2-99-carat-weight')) {
+			this.fetchData.weight = ['2.00', '2.99'];
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/round-cut/3-00-up-carat-weight')) {
+			this.fetchData.weight = ['3.00', '20'];
+		}
+		//fancy cut
 		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond')) {
 			this.fetchData.shape = ['PS', 'EM', 'PR', 'MQ', 'CU', 'AC', 'OV', 'HT', 'RA'];
 
@@ -19323,6 +19349,50 @@ if (false) {
 				this.query.search_conditions.shape[0].clicked = false;
 			}
 		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/')) {
+
+			for (var i = this.query.search_conditions.shape.length - 1; i >= 0; i--) {
+				this.query.search_conditions.shape[i].clicked = false;
+			}
+		}
+
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/pear-shaped')) {
+			this.fetchData.shape = ['PR'];
+			this.query.search_conditions.shape[1].clicked = true;
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/emerald-cut')) {
+			this.fetchData.shape = ['EM'];
+			this.query.search_conditions.shape[2].clicked = true;
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/princess-cut')) {
+			this.fetchData.shape = ['PR'];
+			this.query.search_conditions.shape[2].clicked = true;
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/marquise-cut')) {
+			this.fetchData.shape = ['MQ'];
+			this.query.search_conditions.shape[2].clicked = true;
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/cushion-cut')) {
+			this.fetchData.shape = ['CU'];
+			this.query.search_conditions.shape[2].clicked = true;
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/asscher-cut')) {
+			this.fetchData.shape = ['AC'];
+			this.query.search_conditions.shape[2].clicked = true;
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/oval-cut')) {
+			this.fetchData.shape = ['OV'];
+			this.query.search_conditions.shape[2].clicked = true;
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/heart-shaped')) {
+			this.fetchData.shape = ['HT'];
+			this.query.search_conditions.shape[8].clicked = true;
+		}
+		if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/radiant-cut')) {
+			this.fetchData.shape = ['RA'];
+			this.query.search_conditions.shape[8].clicked = true;
+		}
+
 		this.fetchIndexData();
 	},
 

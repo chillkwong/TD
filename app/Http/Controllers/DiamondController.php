@@ -33,6 +33,81 @@ class DiamondController extends Controller
  
     }
     
+    public function p03roundCut($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.p03roundCut', compact(''));
+ 
+    }
+
+    public function p05roundCut($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.p05roundCut', compact(''));
+ 
+    }
+    
+
+    public function p08roundCut($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.p08roundCut', compact(''));
+ 
+    }
+
+    public function p10roundCut($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.p10roundCut', compact(''));
+ 
+    }
+
+    public function p12roundCut($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.p12roundCut', compact(''));
+ 
+    }
+
+    public function p15roundCut($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.p15roundCut', compact(''));
+ 
+    }
+
+    public function p20roundCut($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.p20roundCut', compact(''));
+ 
+    }
+
+    public function p30roundCut($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.p30roundCut', compact(''));
+ 
+    }
+
+    //fancy cut Diamond
+    
     public function fancyCutDiamond($locale)
     {
       App()->setLocale($locale);
@@ -42,6 +117,80 @@ class DiamondController extends Controller
  
     }
 
+    public function fancyCutHeart($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyCutHeart', compact(''));
+ 
+    }
+    public function fancyCutPrincess($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyCutPrincess', compact(''));
+ 
+    }
+    public function fancyCutEmerald($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyCutEmerald', compact(''));
+ 
+    }
+    public function fancyCutAsscher($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyCutAsscher', compact(''));
+ 
+    }
+    public function fancyCutOval($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyCutOval', compact(''));
+ 
+    }
+    public function fancyCutRadiant($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyCutRadiant', compact(''));
+ 
+    }
+    public function fancyCutPear($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyCutPear', compact(''));
+ 
+    }
+    public function fancyCutMarquise($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyCutMarquise', compact(''));
+ 
+    }
+    public function fancyCutCushion($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyCutCushion', compact(''));
+ 
+    }
+    
+   //
     public function fancyColor($locale)
     {
       App()->setLocale($locale);

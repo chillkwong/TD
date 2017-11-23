@@ -71,7 +71,7 @@
 	      </p>
 
 	       <p>
-		<strong>Ting Diamond</strong> by <a href="/">Ting Diamond</a>
+		<strong>Ting Diamond</strong> by <a href="/">Ting Diamond</a> | <a href="/sitemap_index.xml">Site Map</a> 
 	      </p>
 	    </div>
 	  </div>

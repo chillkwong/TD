@@ -24,7 +24,15 @@
                                 <input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.weight[0]" @focus="$event.target.select()">
 
                                 <input class="input" type="text" @keyup="fetchIndexData()" v-model="fetchData.weight[1]" @focus="$event.target.select()">       
-                            </div>              
+                            </div>  
+                            <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut/0-30-0-49-carat-weight"><span class="tag is-info">0.3-0.49</span></a>
+                            <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut/0-50-0-79-carat-weight"><span class="tag is-info">0.5-0.79</span></a>
+                            <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut/0-80-0-99-carat-weight"><span class="tag is-info">0.8-0.99</span></a>
+                            <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut/1-00-1-19-carat-weight"><span class="tag is-info">1.0-1.19</span></a>
+                            <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut/1-20-1-49-carat-weight"><span class="tag is-info">1.2-1.49</span></a>
+                            <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut/1-50-1-99-carat-weight"><span class="tag is-info">1.5-1.99</span></a>
+                            <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut/2-00-2-99-carat-weight"><span class="tag is-info">2.0-2.99</span></a>
+                            <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut/3-00-up-carat-weight"><span class="tag is-info">3.0 up</span></a>      
                             </article>
                         </div>
                 </div>

@@ -21,9 +21,30 @@ Route::get('/adm/{vue_capture?}', function () {
 
 //diamond 
 Route::get('/{locale}/gia-loose-diamonds/', 'DiamondController@bladeIndex');
+//round
 Route::get('/{locale}/gia-loose-diamonds/round-cut', 'DiamondController@roundCut');
-Route::get('/{locale}/gia-loose-diamonds/fancy-cut-diamond', 'DiamondController@fancyColor');
-Route::get('/{locale}/gia-loose-diamonds/fancy-color', 'DiamondController@fancyCutDiamond');
+Route::get('/{locale}/gia-loose-diamonds/round-cut/0-30-0-49-carat-weight', 'DiamondController@p03roundCut');
+Route::get('/{locale}/gia-loose-diamonds/round-cut/0-50-0-79-carat-weight', 'DiamondController@p05roundCut');
+Route::get('/{locale}/gia-loose-diamonds/round-cut/0-80-0-99-carat-weight', 'DiamondController@p08roundCut');
+Route::get('/{locale}/gia-loose-diamonds/round-cut/1-00-1-19-carat-weight', 'DiamondController@p10roundCut');
+Route::get('/{locale}/gia-loose-diamonds/round-cut/1-20-1-49-carat-weight', 'DiamondController@p12roundCut');
+Route::get('/{locale}/gia-loose-diamonds/round-cut/1-50-1-99-carat-weight', 'DiamondController@p15roundCut');
+Route::get('/{locale}/gia-loose-diamonds/round-cut/2-00-2-99-carat-weight', 'DiamondController@p20roundCut');
+Route::get('/{locale}/gia-loose-diamonds/round-cut/3-00-up-carat-weight', 'DiamondController@p30roundCut');
+//fancy cut
+Route::get('/{locale}/gia-loose-diamonds/fancy-cut-diamond', 'DiamondController@fancyCutDiamond');
+Route::get('/{locale}/gia-loose-diamonds/fancy-cut-diamond/heart-shaped', 'DiamondController@fancyCutHeart');
+Route::get('/{locale}/gia-loose-diamonds/fancy-cut-diamond/princess-cut', 'DiamondController@fancyCutPrincess');
+Route::get('/{locale}/gia-loose-diamonds/fancy-cut-diamond/emerald-cut', 'DiamondController@fancyCutEmerald');
+Route::get('/{locale}/gia-loose-diamonds/fancy-cut-diamond/asscher-cut', 'DiamondController@fancyCutAsscher');
+Route::get('/{locale}/gia-loose-diamonds/fancy-cut-diamond/oval-cut', 'DiamondController@fancyCutOval');
+Route::get('/{locale}/gia-loose-diamonds/fancy-cut-diamond/radiant-cut', 'DiamondController@fancyCutRadiant');
+Route::get('/{locale}/gia-loose-diamonds/fancy-cut-diamond/pear-shaped', 'DiamondController@fancyCutPear');
+Route::get('/{locale}/gia-loose-diamonds/fancy-cut-diamond/marquise-cut', 'DiamondController@fancyCutMarquise');
+Route::get('/{locale}/gia-loose-diamonds/fancy-cut-diamond/cushion-cut', 'DiamondController@fancyCutCushion');
+Route::get('/{locale}/gia-loose-diamonds/fancy-cut-diamond/trillion-cut', 'DiamondController@fancyCutTrillion');
+
+Route::get('/{locale}/gia-loose-diamonds/fancy-color', 'DiamondController@fancyColor');
 Route::get('/{locale}/gia-loose-diamonds/{id}', 'DiamondController@bladeShow');
 
 //engagementRing 

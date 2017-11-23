@@ -71,15 +71,15 @@
 
             <div id="diamondViewerIndex">
                 <div class="box">
-                    <div class="level">
+        <div class="level">
 
-                    </div>
+        </div>
 
-                    @include('diamond.diamondContent')            
+        @include('diamond.diamondContent')            
 
-                    </div>
-                    	
-                    </div>
+        </div>
+        	
+        </div>
 
 
     @include('layouts.frontFooter')
