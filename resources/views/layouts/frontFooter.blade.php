@@ -4,41 +4,41 @@
 	        	<div class="column is-3">
 	        		<br>
 	        		<h1 class="subtitle is-6">{{trans('frontFooter.DIAMOND PRICES')}}</h1>
-	        		<a href="">{{trans('frontFooter.Round cut diamond')}}</a><br>
-	        		<a href="">{{trans('frontFooter.Fancy Cut Diamond')}}</a><br>
-	        		<a href="">{{trans('frontFooter.Fancy Color Diamond')}}</a><br>
+	        		<a href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut">{{trans('frontFooter.Round Cut Diamond')}}</a><br>
+	        		<a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond">{{trans('frontFooter.Fancy Cut Diamond')}}</a><br>
+	        		<a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-color">{{trans('frontFooter.Fancy Color Diamond')}}</a><br>
 	        		<p >{{trans('frontFooter.TING DIAMOND PROVIDES BRILLIANT GIA')}}</p>
 
 	        	</div>
 	        	<div class="column is-3">
 	        		<br>
 	        		<h1 class="subtitle is-6">{{trans('frontFooter.DIAMOND JEWELLRY')}}</h1>
-	        		<a href="">{{trans('frontFooter.Setting')}} | {{trans('frontFooter.solitaire ring')}}</a><br>
-	        		<a href="">{{trans('frontFooter.Setting')}} | {{trans('frontFooter.Side stone ring')}}</a><br>
-	        		<a href="">{{trans('frontFooter.Setting')}} | {{trans('frontFooter.Halo ring')}}</a><br>
-	        		<a href="">{{trans('frontFooter.Women')}} | {{trans('frontFooter.Classic rings')}}</a><br>
-	        		<a href="">{{trans('frontFooter.Men')}} | {{trans('frontFooter.Classic Rings')}}</a>
+	        		<a href="{{url(app()->getLocale())}}/engagement-rings/solitaire-ring-setting">{{trans('frontFooter.Setting')}} | {{trans('frontFooter.Solitaire Ring')}}</a><br>
+	        		<a href="{{url(app()->getLocale())}}/engagement-rings/side-stones-setting">{{trans('frontFooter.Setting')}} | {{trans('frontFooter.Side Stone Ring')}}</a><br>
+	        		<a href="{{url(app()->getLocale())}}/engagement-rings/halo-setting">{{trans('frontFooter.Setting')}} | {{trans('frontFooter.Halo Ring')}}</a><br>
+	        		<a href="{{url(app()->getLocale())}}/wedding-rings/classic">{{trans('frontFooter.Women')}} | {{trans('frontFooter.Classic Rings')}}</a><br>
+	        		<a href="{{url(app()->getLocale())}}/wedding-rings/classic">{{trans('frontFooter.Men')}} | {{trans('frontFooter.Classic Rings')}}</a>
 	        		
 	        	</div>
 
 	        	<div class="column is-3">
 	        		<br>
 	        		<h1 class="subtitle is-6">{{trans('frontFooter.DIAMOND EDUCATION')}}</h1>
-	        		<a href="">{{trans('frontFooter.How to choose diamond 4Cs')}}？</a><br>
-	        		<a href="">{{trans('frontFooter.what is diamond fluorescence')}} ?</a><br>
-	        		<a href="">{{trans('frontFooter.what is diamond symmetry')}} ?</a><br>
-	        		<a href="">{{trans('frontFooter.what is diamond proportion')}} ?</a><br>
-	        		<a href="">{{trans('frontFooter.Fancy color intensity')}}</a>
+	        		<a href="{{url(app()->getLocale())}}/education-diamond-grading">{{trans('frontFooter.How To Choose Diamond 4Cs')}}？</a><br>
+	        		<a href="{{url(app()->getLocale())}}/education-diamond-grading/anatomy-fluorescence">{{trans('frontFooter.What Is Diamond Fluorescence')}} ?</a><br>
+	        		<a href="{{url(app()->getLocale())}}/education-diamond-grading/anatomy-symmetry">{{trans('frontFooter.What Is Diamond Symmetry')}} ?</a><br>
+	        		<a href="{{url(app()->getLocale())}}/education-diamond-grading/anatomy-proportion">{{trans('frontFooter.What Is Diamond Proportion')}} ?</a><br>
+	        		<a >{{trans('frontFooter.Fancy Color Intensity')}}</a>
 	        		
 	        	</div>
 
 	        	<div class="column is-3">
 	        		<br>
 	        		<h1 class="subtitle is-6">{{trans('frontFooter.ABOUT TING DIAMOD')}}</h1>
-	        		<a href="">{{trans('frontFooter.About us')}}</a><br>
-	        		<a href="">{{trans('frontFooter.Custom make Engagement rings')}}</a><br>
-	        		<a href="">{{trans('frontFooter.Diamond inlay')}} | {{trans('frontFooter.Engrave')}}</a><br>
-	        		<a href="">{{trans('frontFooter.Customer Monents')}}</a><br>
+	        		<a href="{{url(app()->getLocale())}}/about-us">{{trans('frontFooter.About Us')}}</a><br>
+	        		<a href="{{url(app()->getLocale())}}/buying-procedure/custom-engagement-rings">{{trans('frontFooter.Custom Make Engagement Rings')}}</a><br>
+	        		<a href="{{url(app()->getLocale())}}/buying-procedure/diamond-inlay-engrave">{{trans('frontFooter.Diamond Inlay')}} | {{trans('frontFooter.Engrave')}}</a><br>
+	        		<a href="{{url(app()->getLocale())}}/customer-jewellries">{{trans('frontFooter.Customer Monents')}}</a><br>
 	        		<img src="/front_end/GIA/GIA-Logo.jpg" width="100px" >
 		        		
 	        	</div>

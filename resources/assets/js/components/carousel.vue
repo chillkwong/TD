@@ -37,7 +37,7 @@
                         </div>
 
 
-
+             <div class="holds-the-iframe">
                 <div class="" @click="$emit('active', null)">
                     <figure class="image" @click="nextItem">
                         <img :src="images+currentItem.src" v-if="currentItem.type=='img'">
@@ -50,6 +50,7 @@
 
                     </figure>
                 </div>
+            </div>
 
 
 
@@ -211,6 +212,22 @@
 // }
 // setTimeout(setIframeSrc, 5);
 
+// (function(d){
+//   var iframe = d.body.appendChild(d.createElement('iframe')),
+//   doc = iframe.contentWindow.document;
+
+//   // style the iframe with some CSS
+//   iframe.style.cssText = "position:absolute;width:200px;height:100px;left:0px;";
+  
+//   doc.open().write('<body onload="' + 
+//   'var d = document;d.getElementsByTagName(\'head\')[0].' + 
+//   'appendChild(d.createElement(\'script\')).src' + 
+//   '=\'\/path\/to\/file\'">');
+  
+//   doc.close(); //iframe onload event happens
+
+//   })(document);
+
 export default {
     name : 'carousel',
     props: {
@@ -283,6 +300,7 @@ export default {
             }
             return this.carouselItemsToArray[this.currentIndex];
         },
+
         carouselUpperItemsToArray(){
                     var arr = []
 
@@ -417,3 +435,9 @@ export default {
     }
 }    
 </script>
+
+<style type="text/css">
+.holds-the-iframe {
+  background:url(../../../../public/front_end/loader.gif) center center no-repeat;
+ }
+</style>

@@ -176,11 +176,17 @@
                 <p><img src="/front_end/engagementRing/Solitaire.png" width="30">{{trans('frontHeader.Solitaire Ring')}}</p>
               </div>
           </a>
+
+          <hr class="navbar-divider">
+
           <a class="navbar-item " href="{{url(app()->getLocale())}}/engagement-rings/side-stones-setting">
            <div class="navbar-content">
                 <p><img src="/front_end/engagementRing/Side-stone.png" width="30">{{trans('frontHeader.Side-stone Ring')}}</p>
               </div>
           </a>
+
+          <hr class="navbar-divider">
+
           <a class="navbar-item " href="{{url(app()->getLocale())}}/engagement-rings/halo-setting">
            <div class="navbar-content">
                 <p><img src="/front_end/engagementRing/Halo.png" width="30">{{trans('frontHeader.Halo Ring')}}</p>
@@ -204,11 +210,17 @@
                 <p>{{trans('frontHeader.Classic Ring')}}</p>
               </div>
           </a>
+
+          <hr class="navbar-divider">
+
           <a class="navbar-item " href="{{url(app()->getLocale())}}/wedding-rings/japanese">
            <div class="navbar-content">
                 <p>{{trans('frontHeader.Japanese Ring')}}</p>
               </div>
           </a>
+
+          <hr class="navbar-divider">
+
           <a class="navbar-item " href="{{url(app()->getLocale())}}/wedding-rings/vintage">
            <div class="navbar-content">
                 <p><p>{{trans('frontHeader.Vintage Ring')}}</p></p>
@@ -284,24 +296,29 @@
                   <div class="level is-mobile">
                     <div class="level-left">
                       <div class="level-item">
-                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/shape/carat">{{trans('frontHeader.Carat')}}</a>
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/shape">{{trans('frontHeader.Shape')}}</a>
                       </div>
                       <div class="level-item">
-                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/shape/cut">{{trans('frontHeader.Cut')}}</a>
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/hearts-and-arrows">{{trans('frontHeader.Heards And Arrows')}}</a>
                       </div>
                       <div class="level-item">
-                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/shape/color">{{trans('frontHeader.Color')}}</a>
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/anatomy-proportion">{{trans('frontHeader.Proportion')}}</a>
                       </div>
                       <div class="level-item">
-                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/shape/clarity">{{trans('frontHeader.Clarity')}}</a>
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/anatomy-symmetry">{{trans('frontHeader.Symmetry')}}</a>
                     </div>
+                     <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/anatomy-polish">{{trans('frontHeader.Polish')}}</a>
+                      </div>
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/anatomy-fluorescence">{{trans('frontHeader.Fluorescence')}}</a>
+                      </div>
                    
                     </div>
                   </div>
                 </div>
               </div>
 
-              <hr class="navbar-divider">
 
          
                   
@@ -309,97 +326,66 @@
       </div>
       
 
-      
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link " href="http://bulma.io/blog/">
-          Blog
+        <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}/customer-jewellries">
+          {{trans('frontHeader.Customer Moments')}}
         </a>
-        <div id="blogDropdown" class="navbar-dropdown is-boxed" data-style="width: 18rem;">
-          
-            <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-              <div class="navbar-content">
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/customer-jewellries">
+           <div class="navbar-content">
                 <p>
-                  <small class="has-text-info">03 Aug 2017</small>
+                  <small class="has-text-info">{{trans('frontHeader.Wedding Rings')}}</small>
                 </p>
-                <p>New feature: list of tags</p>
+                <p>{{trans('frontHeader.Customer Jewellries')}}</p>
               </div>
-            </a>
-          
-            <a class="navbar-item" href="/2017/08/01/bulma-bootstrap-comparison/">
-              <div class="navbar-content">
-                <p>
-                  <small class="has-text-info">01 Aug 2017</small>
-                </p>
-                <p>Bulma / Bootstrap comparison</p>
-              </div>
-            </a>
-          
-            <a class="navbar-item" href="/2017/07/24/access-previous-bulma-versions/">
-              <div class="navbar-content">
-                <p>
-                  <small class="has-text-info">24 Jul 2017</small>
-                </p>
-                <p>Access previous Bulma versions</p>
-              </div>
-            </a>
-          
-          <a class="navbar-item" href="http://bulma.io/blog/">
-            More posts
           </a>
+
           <hr class="navbar-divider">
-          <div class="navbar-item">
-            <div class="navbar-content">
-              <div class="level is-mobile">
-                <div class="level-left">
-                  <div class="level-item">
-                    <strong>Stay up to date!</strong>
-                  </div>
-                </div>
-                <div class="level-right">
-                  <div class="level-item">
-                    <a class="button bd-is-rss is-small" href="http://bulma.io/atom.xml">
-                      <span class="icon is-small">
-                        <i class="fa fa-rss"></i>
-                      </span>
-                      <span>Subscribe</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <div class="navbar-link">
-          More
-        </div>
-        <div id="moreDropdown" class="navbar-dropdown is-boxed">
-          <a class="navbar-item " href="http://bulma.io/extensions/">
-            <div class="level is-mobile">
-              <div class="level-left">
-                <div class="level-item">
-                  <p>
-                    <strong>Extensions</strong>
-                    <br>
-                    <small>Side projects to enhance Bulma</small>
-                  </p>
-                </div>
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/customer-moments">
+           <div class="navbar-content">
+                <p>{{trans('frontHeader.Customer Moments')}}</p>
               </div>
-              <div class="level-right">
-                <div class="level-item">
-                  <span class="icon has-text-info">
-                    <i class="fa fa-plug"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
           </a>
+
+          <hr class="navbar-divider">
+
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/engagement-tips">
+           <div class="navbar-content">
+                <p><p>{{trans('frontHeader.Engagement Tips')}}</p></p>
+              </div>
+          </a>
+                  
         </div>
       </div>
+      
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}/about-us">
+          {{trans('frontHeader.About Us')}}
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/about-us">
+           <div class="navbar-content">
+                <p>
+                  <small class="has-text-info">{{trans('frontHeader.About Us')}}</small>
+                </p>
+                <p>{{trans('frontHeader.About Us')}}</p>
+              </div>
+          </a>
+          
+          <hr class="navbar-divider">
+
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/buying-procedure">
+           <div class="navbar-content">
+                <p>{{trans('frontHeader.Buying Procedure')}}</p>
+              </div>
+          </a>
+                  
+        </div>
+      </div>
+      
+     
+     
       
      
     </div>
@@ -411,11 +397,7 @@
           <i class="fa fa-lg fa-github"></i>
         </span>
       </a> -->
-      <a class="navbar-item is-hidden-desktop-only" href="https://twitter.com/jgthms" target="_blank">
-        <span class="icon" style="color: #55acee;">
-          <i class="fa fa-lg fa-twitter"></i>
-        </span>
-      </a>
+      
 
       <div class="navbar-item has-dropdown is-hoverable">
         <div class="navbar-link">

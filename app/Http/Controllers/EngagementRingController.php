@@ -55,6 +55,8 @@ class EngagementRingController extends Controller
  
     }
 
+    //CRUD
+
 	public function index()
     {
     	return response()
