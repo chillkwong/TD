@@ -190,13 +190,87 @@ class DiamondController extends Controller
  
     }
     
-   //
+   //fancy Color
     public function fancyColor($locale)
     {
       App()->setLocale($locale);
 
 
       return view('diamond.fancyColor', compact(''));
+ 
+    }
+
+    public function fancyColorYellow($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyColorYellow', compact(''));
+ 
+    }
+
+    public function fancyColorPink($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyColorPink', compact(''));
+ 
+    }
+    public function fancyColorPurple($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyColorPurple', compact(''));
+ 
+    }
+    public function fancyColorBlue($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyColorBlue', compact(''));
+ 
+    }
+    public function fancyColorGreen($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyColorGreen', compact(''));
+ 
+    }
+    public function fancyColorOrange($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyColorOrange', compact(''));
+ 
+    }
+    public function fancyColorBrown($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyColorBrown', compact(''));
+ 
+    }
+    public function fancyColorBlack($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyColorBlack', compact(''));
+ 
+    }
+    public function fancyColorGrey($locale)
+    {
+      App()->setLocale($locale);
+
+
+      return view('diamond.fancyColorGrey', compact(''));
  
     }
 

@@ -36,6 +36,7 @@ return [
 	'If you could not find diamonds as your inquiry' => 'If you could not find diamonds as your inquiry',
 	'PLEASE（Whatsapp: Winnie－5484 4533， for the latest diamond Stock）' => 'PLEASE（Whatsapp: Winnie－5484 4533， for the latest diamond Stock）',
 	'Per Page' => 'Per Page',
+	'Page is on update' => 'Page is on update',
 	
 
 

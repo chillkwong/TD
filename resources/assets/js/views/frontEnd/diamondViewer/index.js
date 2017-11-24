@@ -195,23 +195,23 @@ import langs from '../../../langs/diamondViewer'
 			}
 			if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/princess-cut')) {
 				this.fetchData.shape = ['PR']
-				this.query.search_conditions.shape[2].clicked = true
+				this.query.search_conditions.shape[3].clicked = true
 			}
 			if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/marquise-cut')) {
 				this.fetchData.shape = ['MQ']
-				this.query.search_conditions.shape[2].clicked = true
+				this.query.search_conditions.shape[4].clicked = true
 			}
 			if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/cushion-cut')) {
 				this.fetchData.shape = ['CU']
-				this.query.search_conditions.shape[2].clicked = true
+				this.query.search_conditions.shape[5].clicked = true
 			}
 			if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/asscher-cut')) {
 				this.fetchData.shape = ['AC']
-				this.query.search_conditions.shape[2].clicked = true
+				this.query.search_conditions.shape[6].clicked = true
 			}
 			if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/oval-cut')) {
 				this.fetchData.shape = ['OV']
-				this.query.search_conditions.shape[2].clicked = true
+				this.query.search_conditions.shape[7].clicked = true
 			}
 			if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/heart-shaped')) {
 				this.fetchData.shape = ['HT']
@@ -219,7 +219,7 @@ import langs from '../../../langs/diamondViewer'
 			}
 			if (this.$route.fullPath.slice(3).includes('gia-loose-diamonds/fancy-cut-diamond/radiant-cut')) {
 				this.fetchData.shape = ['RA']
-				this.query.search_conditions.shape[8].clicked = true
+				this.query.search_conditions.shape[9].clicked = true
 			}			
 
 			this.fetchIndexData();

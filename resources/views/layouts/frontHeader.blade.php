@@ -27,140 +27,287 @@
     <div class="navbar-start">
       
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}">
+        <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}/gia-loose-diamonds">
           {{trans('frontHeader.Diamonds')}}
         </a>
         <div class="navbar-dropdown is-boxed">
-          <a class="navbar-item " href="/documentation/overview/start/">
-            Loose Diamond
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/gia-loose-diamonds">
+            <small class="has-text-info">Loose Diamonds</small>
           </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
-            Modifiers
-          </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/columns/basics/">
-            Columns
-          </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/layout/container/">
-            Layout
-          </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/form/general/">
-            Form
-          </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/elements/box/">
-            Elements
-          </a>
-          
-            <a class="navbar-item is-active" href="http://bulma.io/documentation/components/breadcrumb/">
-              Components
-            </a>
-          
+              <div class="navbar-item">
+                <div class="navbar-content">
+                  <div class="level is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut"><img src="/front_end/diamond_shapes/RD.png" width="15"> Round</a>
+                      </div>
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
           <hr class="navbar-divider">
-          <div class="navbar-item">
-            <div>
-              <p class="is-size-6-desktop">
-                <strong class="has-text-info">0.5.2</strong>
-              </p>
-              
-                <small>
-                  <a class="bd-view-all-versions" href="/versions">View all versions</a>
-                </small>
-              
-            </div>
-          </div>
+
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond">
+            <small class="has-text-info">Fancy Cut Diamonds</small>
+          </a>
+              <div class="navbar-item">
+                <div class="navbar-content">
+                  <div class="level is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond/heart-shaped"><img src="/front_end/diamond_shapes/HT.png" width="15"> Heart
+                        </a>
+                      </div>
+                      
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond/princess-cut"><img src="/front_end/diamond_shapes/PR.png" width="15"> Princess
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="navbar-item">
+                <div class="navbar-content">
+                  <div class="level is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond/emerald-cut"><img src="/front_end/diamond_shapes/EM.png" width="15"> Emerald
+                        </a>
+                      </div>
+                      
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond/asscher-cut"><img src="/front_end/diamond_shapes/AC.png" width="15"> Asscher
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="navbar-item">
+                <div class="navbar-content">
+                  <div class="level is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond/oval-cut"><img src="/front_end/diamond_shapes/OV.png" width="15"> Oval
+                        </a>
+                      </div>
+                      
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond/cushion-cut"><img src="/front_end/diamond_shapes/CU.png" width="15"> Cushion
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="navbar-item">
+                <div class="navbar-content">
+                  <div class="level is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond/marquise-cut"><img src="/front_end/diamond_shapes/MQ.png" width="15"> Marquise
+                        </a>
+                      </div>
+                      
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond/Radiant-cut"><img src="/front_end/diamond_shapes/RA.png" width="15"> Radiant
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="navbar-item">
+                <div class="navbar-content">
+                  <div class="level is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond/pear-cut"><img src="/front_end/diamond_shapes/PS.png" width="15"> Pear
+                        </a>
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <hr class="navbar-divider">
+
+              <a class="navbar-item " href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-color">
+                <small class="has-text-info">Fancy Color Diamonds</small>
+              </a>
+                  
         </div>
       </div>
 
 
       
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}">
+        <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}/engagement-rings">
           {{trans('frontHeader.Engagement Rings')}}
         </a>
         <div class="navbar-dropdown is-boxed">
-          <a class="navbar-item " href="/documentation/overview/start/">
-            Loose Diamond
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/engagement-rings/solitaire-ring-setting">
+           <div class="navbar-content">
+                <p>
+                  <small class="has-text-info">{{trans('frontHeader.Engagement Rings')}}</small>
+                </p>
+                <p><img src="/front_end/engagementRing/Solitaire.png" width="30">{{trans('frontHeader.Solitaire Ring')}}</p>
+              </div>
           </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
-            Modifiers
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/engagement-rings/side-stones-setting">
+           <div class="navbar-content">
+                <p><img src="/front_end/engagementRing/Side-stone.png" width="30">{{trans('frontHeader.Side-stone Ring')}}</p>
+              </div>
           </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/columns/basics/">
-            Columns
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/engagement-rings/halo-setting">
+           <div class="navbar-content">
+                <p><img src="/front_end/engagementRing/Halo.png" width="30">{{trans('frontHeader.Halo Ring')}}</p>
+              </div>
           </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/layout/container/">
-            Layout
-          </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/form/general/">
-            Form
-          </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/elements/box/">
-            Elements
-          </a>
-          
-            <a class="navbar-item is-active" href="http://bulma.io/documentation/components/breadcrumb/">
-              Components
-            </a>
-          
-          <hr class="navbar-divider">
-          <div class="navbar-item">
-            <div>
-              <p class="is-size-6-desktop">
-                <strong class="has-text-info">0.5.2</strong>
-              </p>
-              
-                <small>
-                  <a class="bd-view-all-versions" href="/versions">View all versions</a>
-                </small>
-              
-            </div>
-          </div>
+                  
         </div>
       </div>
 
-      
-      
+
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}">
+        <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}/wedding-rings">
           {{trans('frontHeader.Wedding Rings')}}
         </a>
         <div class="navbar-dropdown is-boxed">
-          <a class="navbar-item " href="/documentation/overview/start/">
-            Loose Diamond
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/wedding-rings/classic">
+           <div class="navbar-content">
+                <p>
+                  <small class="has-text-info">{{trans('frontHeader.Wedding Rings')}}</small>
+                </p>
+                <p>{{trans('frontHeader.Classic Ring')}}</p>
+              </div>
           </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
-            Modifiers
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/wedding-rings/japanese">
+           <div class="navbar-content">
+                <p>{{trans('frontHeader.Japanese Ring')}}</p>
+              </div>
           </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/columns/basics/">
-            Columns
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/wedding-rings/vintage">
+           <div class="navbar-content">
+                <p><p>{{trans('frontHeader.Vintage Ring')}}</p></p>
+              </div>
           </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/layout/container/">
-            Layout
-          </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/form/general/">
-            Form
-          </a>
-          <a class="navbar-item " href="http://bulma.io/documentation/elements/box/">
-            Elements
-          </a>
-          
-            <a class="navbar-item is-active" href="http://bulma.io/documentation/components/breadcrumb/">
-              Components
-            </a>
-          
-          <hr class="navbar-divider">
-          <div class="navbar-item">
-            <div>
-              <p class="is-size-6-desktop">
-                <strong class="has-text-info">0.5.2</strong>
-              </p>
-              
-                <small>
-                  <a class="bd-view-all-versions" href="/versions">View all versions</a>
-                </small>
-              
-            </div>
-          </div>
+                  
         </div>
       </div>
+      
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link  is-active" href="{{url(app()->getLocale())}}/education-diamond-grading">
+          {{trans('frontHeader.Education')}}
+        </a>
+        <div class="navbar-dropdown is-boxed">
+
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/education-diamond-grading/gia-report/4cs">
+            <small class="has-text-info">{{trans('frontHeader.Diamond Grading')}}</small>
+          </a>
+              <div class="navbar-item">
+                <div class="navbar-content">
+                  <div class="level is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/gia-report/4cs/carat">{{trans('frontHeader.Carat')}}</a>
+                      </div>
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/gia-report/4cs/cut">{{trans('frontHeader.Cut')}}</a>
+                      </div>
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/gia-report/4cs/color">{{trans('frontHeader.Color')}}</a>
+                      </div>
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/gia-report/4cs/clarity">{{trans('frontHeader.Clarity')}}</a>
+                    </div>
+                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="navbar-divider">
+
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/education-diamond-grading/grading-certficate">
+            <small class="has-text-info">{{trans('frontHeader.Diamond Certificate')}}</small>
+          </a>
+              <div class="navbar-item">
+                <div class="navbar-content">
+                  <div class="level is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/grading-certficate">{{trans('frontHeader.Certificate')}}</a>
+                      </div>
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/gia-report">{{trans('frontHeader.GIA Report')}}</a>
+                      </div>
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/grading-eye-clean">{{trans('frontHeader.Eye Clean Diamond')}}</a>
+                      </div>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <hr class="navbar-divider">
+
+          <a class="navbar-item " href="{{url(app()->getLocale())}}/education-diamond-grading/shape">
+            <small class="has-text-info">{{trans('frontHeader.Diamond Anatomy')}}</small>
+          </a>
+              <div class="navbar-item">
+                <div class="navbar-content">
+                  <div class="level is-mobile">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/shape/carat">{{trans('frontHeader.Carat')}}</a>
+                      </div>
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/shape/cut">{{trans('frontHeader.Cut')}}</a>
+                      </div>
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/shape/color">{{trans('frontHeader.Color')}}</a>
+                      </div>
+                      <div class="level-item">
+                        <a href="{{url(app()->getLocale())}}/education-diamond-grading/shape/clarity">{{trans('frontHeader.Clarity')}}</a>
+                    </div>
+                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="navbar-divider">
+
+         
+                  
+        </div>
+      </div>
+      
 
       
       <div class="navbar-item has-dropdown is-hoverable">
