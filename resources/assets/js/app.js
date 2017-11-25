@@ -15,6 +15,9 @@ import App from './App.vue'
 import router from './router'
 // import ActiveTab from './helpers/session'
 
+//home
+import HomeIndex from './views/frontEnd/home/index'
+
 //diamond
 import DiamondViewerIndex from './views/frontEnd/diamondViewer/index'
 import DiamondViewerShow from './views/frontEnd/diamondViewer/show'
@@ -66,6 +69,9 @@ const header = new Vue({
     router
 });
 
+if (window.location.pathname == '/' || window.location.pathname == '/en' || window.location.pathname == '/hk' || window.location.pathname == '/cn') {
+    const home =  new Vue(HomeIndex);
+}
  var pUrl = window.location.pathname.slice(3)
 //diamond
 if (pUrl == '/gia-loose-diamonds' || pUrl.includes('/gia-loose-diamonds/round-cut') || pUrl.includes('/gia-loose-diamonds/fancy-cut-diamond') || pUrl.includes('/gia-loose-diamonds/fancy-color')) {

@@ -17,6 +17,8 @@ Route::get('/adm/{vue_capture?}', function () {
 })->where('vue_capture', '[\/\w\.-]*');
 
 
+Route::get('/', 'HomeController@index');
+Route::get('/{locale}', 'HomeController@indexLang');
 //page
 
 //diamond 
@@ -114,6 +116,8 @@ Route::get('/{locale}/buying-procedure', 'AboutUsController@buyingProcedure');
 Route::get('/{locale}/buying-procedure/custom-engagement-rings', 'AboutUsController@customEngagementRing');
 Route::get('/{locale}/buying-procedure/diamond-inlay-engrave', 'AboutUsController@diamondInlayEngrave');
 
+//outbound
+// Route::get('/{locale}/outbound/{link}', 'OutboundController@directTo');
 
 
 //sitemap

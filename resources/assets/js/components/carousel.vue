@@ -435,9 +435,3 @@ export default {
     }
 }    
 </script>
-
-<style type="text/css">
-.holds-the-iframe {
-  background:url(../../../../public/front_end/loader.gif) center center no-repeat;
- }
-</style>
