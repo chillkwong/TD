@@ -16,11 +16,12 @@
         "jquery": "^3.1.1",
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
-        "vue": "^2.4.2",
-        "maatwebsite/excel":"~2.1.0"
+        "maatwebsite/excel": "~2.1.0",
+        "video.js": "^6.4.0",
+        "vue": "^2.4.2"
     },
     "dependencies": {
-        "bulma": "^0.5.1",
-        "vue-router": "^2.7.0"
+        "bulma": "^0.5.3",
+        "vue-router": "^2.8.1"
     }
 }

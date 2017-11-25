@@ -48,6 +48,20 @@
        
         <link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
         <link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
+        <style>
+        #carousel  {
+            background-image: url("/front_end/home/dreamstime.jpg");
+            background-size: cover;
+            background-position: center; 
+            background-repeat: no-repeat;
+            padding: 150px;
+        }
+
+        #education {
+            background-color: rgb(250, 250, 250);
+        }
+
+        </style>
        
     </head>
 
@@ -109,7 +123,6 @@
                                 <br>
                                 <p1 class="title is-6">{{trans('home.para1')}}</p1>
                             </center>
-
                         </div>
                      
                 </div>
@@ -130,27 +143,12 @@
     @include('layouts.frontFooter')
 
 
+<script src="//vjs.zencdn.net/5.19/video.min.js"></script>
 </body>
 
-<script src="//vjs.zencdn.net/5.19/video.min.js"></script>
 
 
-<style>
-#carousel  {
-    background-image: url("/front_end/home/dreamstime.jpg");
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
-    padding: 150px;
-}
 
-#education {
-    background-color: rgb(250, 250, 250);
-}
 
-#education {
-    background-color: rgb(250, 250, 250);
-}
-</style>
 
 </html>
