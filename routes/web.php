@@ -121,6 +121,8 @@ Route::get('/{locale}/buying-procedure/diamond-inlay-engrave', 'AboutUsControlle
 
 //pages
 Route::get('/{locale}/hca', 'PageController@hca');
+Route::get('/{locale}/鑽石/鑽石淨度/鑽石淨度特徵的類型', 'PageController@characteristics');
+Route::get('/{locale}/鑽石/鑽石鑑定/香港鑽石鑑定機構', 'PageController@hkLabs');
 
 
 //sitemap

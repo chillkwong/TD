@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>WHAT IS DIAMOND POLISH ?</title>
+        <title>WHAT IS DIAMOND POLISH ? - {{trans('home.webTitle')}}</title>
 
         <!-- Fonts -->
        

@@ -10,7 +10,7 @@
         <html itemscope itemtype="http://schema.org/Article">
 
         <!-- Place this data between the <head> tags of your website --> 
-        <title>{{trans('searchDiamond.Search Diamonds')}}</title>
+        <title>{{trans('searchDiamond.Search Diamonds')}} - {{trans('home.webTitle')}}</title>
         <meta name="description" content="{{trans('searchDiamond.Search Diamonds')}}" />
 
         <!-- Google Authorship and Publisher Markup --> 

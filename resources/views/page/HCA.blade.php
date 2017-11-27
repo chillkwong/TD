@@ -10,7 +10,7 @@
         <html itemscope itemtype="http://schema.org/Article">
 
         <!-- Place this data between the <head> tags of your website --> 
-        <title>{{trans('searchDiamond.Search Diamonds')}}</title>
+        <title>{{trans('searchDiamond.Search Diamonds')}} - {{trans('home.webTitle')}}</title>
         <meta name="description" content="{{trans('searchDiamond.Search Diamonds')}}" />
 
         <!-- Google Authorship and Publisher Markup --> 
@@ -162,7 +162,7 @@
                                   controls preload="auto" width="500" height="264"
                                   poster="/front_end/home/gia_video.jpg"
                                   data-setup='{"example_option":true, "fluid": true}'>
-                                 <source src="https://tdpublic.nyc3.digitaloceanspaces.com/public/videos/HCAHolloway%20Cut%20Adviser%20%20Diamond.mp4" type="video/mp4" />
+                                 <source src="https://tdpublic.nyc3.digitaloceanspaces.com/public/videos/HCAHolloway%20Cut%20Adviser%20%20Diamond.mp4" type="video/mp4" >
 		<div class="wpb_video_wrapper"><iframe width="1060" height="596" src="https://www.youtube.com/embed/PZQ2rWxyCY4?feature=oembed" frameborder="0" allowfullscreen></iframe></div>
 		</div>
 		</div>

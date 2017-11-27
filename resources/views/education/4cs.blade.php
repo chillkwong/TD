@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Diamond 4Cs</title>
+        <title>Diamond 4Cs - {{trans('home.webTitle')}}</title>
 
         <!-- Fonts -->
        

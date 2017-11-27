@@ -409,7 +409,6 @@
            <a class="navbar-item " :href="'/hk' + partialUrl"><img src="/front_end/langs/hk.png" width="20" height="10">{{trans('frontHeader.HK')}}</a>
            <a class="navbar-item " :href="'/cn' + partialUrl"><img src="/front_end/langs/china.png" width="20" height="10">{{trans('frontHeader.CN')}}</a>
 
-
       </div>
 
 
@@ -444,7 +443,7 @@
             <li :class="{'is-active': activeTab.includes('engagement-rings') }"><a href=" {{url(app()->getLocale())}}/engagement-rings">{{trans('frontHeader.Engagement Rings')}}</a></li>
             <li :class="{'is-active': activeTab.includes('wedding-rings') }"><a href=" {{url(app()->getLocale())}}/wedding-rings">{{trans('frontHeader.Wedding Rings')}}</a></li>
             <li :class="{'is-active': activeTab.includes('education-diamond-grading') }"><a href=" {{url(app()->getLocale())}}/education-diamond-grading">{{trans('frontHeader.Education')}}</a></li>
-            <li :class="{'is-active': activeTab.includes('customer-jewellries') }"><a href=" {{url(app()->getLocale())}}/customer-jewellries">{{trans('frontHeader.Customer Moments')}}</a></li>
+            <li :class="{'is-active': activeTab.includes('customer-jewellries')|| activeTab.includes('customer-moments') || activeTab.includes('engagement-tips') }"><a href=" {{url(app()->getLocale())}}/customer-jewellries">{{trans('frontHeader.Customer Moments')}}</a></li>
             <li :class="{'is-active': activeTab.includes('about-us') }"><a href=" {{url(app()->getLocale())}}/about-us">{{trans('frontHeader.About Us')}}</a></li>
           </ul>
         </div>
@@ -452,7 +451,7 @@
     </div>
 
 </section>
-<nav class="navbar has-shadow ">
+<nav class="navbar has-shadow" v-if="activeTab !== ''">
   <div class="container">
     <div class="navbar-tabs " v-if="activeTab.includes('gia-loose-diamonds') ">
       <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut">{{__('frontHeader.Round Diamonds')}}</a>

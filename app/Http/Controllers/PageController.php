@@ -22,4 +22,14 @@ class PageController extends Controller
 	    return view('page.HCA');
     }
 
+    public function characteristics($locale){
+        App()->setLocale($locale);
+        return view('page.characteristics');
+    }
+
+    public function hkLabs($locale){
+        App()->setLocale($locale);
+        return view('page.hkLabs');
+    }
+
 }
