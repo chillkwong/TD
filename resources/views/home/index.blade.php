@@ -106,14 +106,11 @@
                         <div class="tile is-6">
                             <center>
                                 <a class="title is-6"><strong>{{trans('home.Must Watch')}}:</strong> {{trans('home.GIA Teaches You 4Cs')}}</a>
-                            
                                 <video id="example_video_1" class="video-js vjs-default-skin"
-                                  controls preload="auto" width="500" height="264"
+                                  controls preload="auto" 
                                   poster="/front_end/home/gia_video.jpg"
-                                  data-setup='{"example_option":true}'>
-                                 <source src="/front_end/home/GIA_10mins.mp4" type="video/mp4" />
-                                 <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-                                </video>
+                                  data-setup='{"example_option":true, "fluid": true}'>
+                                 <source src="/front_end/home/GIA_10mins.mp4" type="video/mp4">
                             </center>
 
                         </div>

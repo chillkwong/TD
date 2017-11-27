@@ -119,6 +119,9 @@ Route::get('/{locale}/buying-procedure/diamond-inlay-engrave', 'AboutUsControlle
 //outbound
 // Route::get('/{locale}/outbound/{link}', 'OutboundController@directTo');
 
+//pages
+Route::get('/{locale}/hca', 'PageController@hca');
+
 
 //sitemap
 Route::get('/sitemap_index.xml', function(){

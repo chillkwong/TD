@@ -17,4 +17,9 @@ class PageController extends Controller
     			]);
     }
 
+    public function hca($locale){
+    	App()->setLocale($locale);
+	    return view('page.HCA');
+    }
+
 }
