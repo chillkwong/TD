@@ -16,7 +16,7 @@
       <i class="fa fa-play" aria-hidden="true" ></i>
    
 
-    <div class="navbar-burger burger" data-target="navMenuTransparentExample">
+    <div class="button navbar-burger burger" data-target="navMenuTransparentExample">
       <span></span>
       <span></span>
       <span></span>
@@ -436,7 +436,7 @@
 
   <!-- Hero footer: will stick at the bottom -->
     <div class="hero-foot">
-      <nav class="tabs is-fullwidth" >
+      <nav class="tabs is-boxed is-fullwidth" >
         <div class="container">
           <ul>
             <li :class="{'is-active': activeTab.includes('gia-loose-diamonds') }"><a href=" {{url(app()->getLocale())}}/gia-loose-diamonds">{{trans('frontHeader.Diamonds')}}</a>
@@ -447,57 +447,90 @@
             <li :class="{'is-active': activeTab.includes('customer-jewellries') }"><a href=" {{url(app()->getLocale())}}/customer-jewellries">{{trans('frontHeader.Customer Moments')}}</a></li>
             <li :class="{'is-active': activeTab.includes('about-us') }"><a href=" {{url(app()->getLocale())}}/about-us">{{trans('frontHeader.About Us')}}</a></li>
           </ul>
-          <div class="tabs">
+          <!-- <nav class="navbar has-shadow">
                 <ul v-if="activeTab.includes('gia-loose-diamonds') ">
-                  <li ><a href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut">{{__('frontHeader.Round Diamonds')}}</a></li>
-                  <li ><a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond">{{__('frontHeader.Fancy Cut Diamonds')}}</a></li>
-                  <li ><a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-color">{{__('frontHeader.Fancy Color Diamonds')}}</a></li>
+                  <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut">{{__('frontHeader.Round Diamonds')}}</a>
+                  <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond">{{__('frontHeader.Fancy Cut Diamonds')}}</a>
+                  <a href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-color">{{__('frontHeader.Fancy Color Diamonds')}}</a>
                 
                 </ul>
 
                 <ul v-if="activeTab.includes('/engagement-rings')">
-                  <li ><a href="{{url(app()->getLocale())}}/engagement-rings/solitaire-ring-setting">{{__('frontHeader.Solitaire Ring')}}</a></li>
-                  <li ><a href="{{url(app()->getLocale())}}/engagement-rings/side-stones-setting">{{__('frontHeader.Side-stone Ring')}}</a></li>
-                  <li ><a href="{{url(app()->getLocale())}}/engagement-rings/halo-setting">{{__('frontHeader.Halo Ring')}}</a></li>
+                  <a href="{{url(app()->getLocale())}}/engagement-rings/solitaire-ring-setting">{{__('frontHeader.Solitaire Ring')}}</a>
+                  <a href="{{url(app()->getLocale())}}/engagement-rings/side-stones-setting">{{__('frontHeader.Side-stone Ring')}}</a>
+                  <a href="{{url(app()->getLocale())}}/engagement-rings/halo-setting">{{__('frontHeader.Halo Ring')}}</a>
                  
                 </ul>
 
                 <ul v-if="activeTab.includes('wedding-rings')">
-                  <li ><a href="{{url(app()->getLocale())}}/wedding-rings/classic">{{__('frontHeader.Classic Ring')}}</a></li>
-                  <li ><a href="{{url(app()->getLocale())}}/wedding-rings/japanese">{{__('frontHeader.Japanese Ring')}}</a></li>
-                  <li ><a href="{{url(app()->getLocale())}}/wedding-rings/vintage">{{__('frontHeader.Vintage Ring')}}</a></li>
+                  <a href="{{url(app()->getLocale())}}/wedding-rings/classic">{{__('frontHeader.Classic Ring')}}</a>
+                  <a href="{{url(app()->getLocale())}}/wedding-rings/japanese">{{__('frontHeader.Japanese Ring')}}</a>
+                  <a href="{{url(app()->getLocale())}}/wedding-rings/vintage">{{__('frontHeader.Vintage Ring')}}</a>
                  
                 </ul>
 
                 <ul v-if="activeTab.includes('education-diamond-grading')">
-                  <li ><a href="{{url(app()->getLocale())}}/education-diamond-grading/gia-report/4cs">{{__('frontHeader.Diamond Grading')}}</a></li>
-                  <li ><a href="{{url(app()->getLocale())}}/education-diamond-grading/grading-certficate">{{__('frontHeader.Diamond Certficate')}}</a></li>
-                  <li ><a href="{{url(app()->getLocale())}}/education-diamond-grading/shape">{{__('frontHeader.Diamond Anatomy')}}</a></li>
-                  <li ><a>{{__('frontHeader.Fancy Color Diamond')}}</a></li>
+                  <a href="{{url(app()->getLocale())}}/education-diamond-grading/gia-report/4cs">{{__('frontHeader.Diamond Grading')}}</a>
+                  <a href="{{url(app()->getLocale())}}/education-diamond-grading/grading-certficate">{{__('frontHeader.Diamond Certficate')}}</a>
+                  <a href="{{url(app()->getLocale())}}/education-diamond-grading/shape">{{__('frontHeader.Diamond Anatomy')}}</a>
+                  <a>{{__('frontHeader.Fancy Color Diamond')}}</a>
                  
                 </ul>
 
                 <ul v-if="activeTab.includes('customer-jewellries') || activeTab.includes('customer-moments') || activeTab.includes('engagement-tips')">
-                  <li ><a href="{{url(app()->getLocale())}}/customer-jewellries">{{__('frontHeader.Customer Jewellires')}}</a></li>
-                  <li ><a href="{{url(app()->getLocale())}}/customer-moments">{{__('frontHeader.Customer Moments')}}</a></li>
-                  <li ><a href="{{url(app()->getLocale())}}/engagement-tips">{{__('frontHeader.Engagement Tips')}}</a></li>
+                  <a href="{{url(app()->getLocale())}}/customer-jewellries">{{__('frontHeader.Customer Jewellires')}}</a>
+                  <a href="{{url(app()->getLocale())}}/customer-moments">{{__('frontHeader.Customer Moments')}}</a>
+                  <a href="{{url(app()->getLocale())}}/engagement-tips">{{__('frontHeader.Engagement Tips')}}</a>
                  
                 </ul>
 
                 <ul v-if="activeTab.includes('about-us')  || activeTab.includes('buying-procedure')">
-                  <li ><a href="{{url(app()->getLocale())}}/about-us">{{__('frontHeader.About Us')}}</a></li>
-                  <li ><a href="{{url(app()->getLocale())}}/buying-procedure">{{__('frontHeader.Buying Procedure')}}</a></li>
+                  <a href="{{url(app()->getLocale())}}/about-us">{{__('frontHeader.About Us')}}</a>
+                  <a href="{{url(app()->getLocale())}}/buying-procedure">{{__('frontHeader.Buying Procedure')}}</a>
                  
                 </ul>
                  
-              </div>
+              </nav> -->
         </div>
       </nav>
     </div>
 
- 
-
 </section>
+<nav class="navbar has-shadow ">
+  <div class="container">
+    <div class="navbar-tabs " v-if="activeTab.includes('gia-loose-diamonds') ">
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/gia-loose-diamonds/round-cut">{{__('frontHeader.Round Diamonds')}}</a>
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-cut-diamond">{{__('frontHeader.Fancy Cut Diamonds')}}</a>
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/gia-loose-diamonds/fancy-color">{{__('frontHeader.Fancy Color Diamonds')}}</a>
+    </div>
+    <div class="navbar-tabs" v-if="activeTab.includes('/engagement-rings')">
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/engagement-rings/solitaire-ring-setting">{{__('frontHeader.Solitaire Ring')}}</a>
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/engagement-rings/side-stones-setting">{{__('frontHeader.Side-stone Ring')}}</a>
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/engagement-rings/halo-setting">{{__('frontHeader.Halo Ring')}}</a>
+    </div>
+    <div class="navbar-tabs" v-if="activeTab.includes('/wedding-rings')">
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/wedding-rings/classic">{{__('frontHeader.Classic Ring')}}</a>
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/wedding-rings/japanese">{{__('frontHeader.Japanese Ring')}}</a>
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/wedding-rings/vintage">{{__('frontHeader.Vintage Ring')}}</a>
+    </div>
+    <div class="navbar-tabs" v-if="activeTab.includes('/education-diamond-grading')">
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/education-diamond-grading/gia-report/4cs">{{__('frontHeader.Diamond Grading')}}</a>
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/education-diamond-grading/grading-certficate">{{__('frontHeader.Diamond Certficate')}}</a>
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/education-diamond-grading/shape">{{__('frontHeader.Diamond Anatomy')}}</a>
+      <a class="navbar-item is-tab " >{{__('frontHeader.Fancy Color Diamond')}}</a>
+    </div>
+    <div class="navbar-tabs" v-if="activeTab.includes('customer-jewellries') || activeTab.includes('customer-moments') || activeTab.includes('engagement-tips')">
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/customer-jewellries">{{__('frontHeader.Customer Jewellires')}}</a>
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/customer-moments">{{__('frontHeader.Customer Moments')}}</a>
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/engagement-tips">{{__('frontHeader.Engagement Tips')}}</a>
+    </div>
+    <div class="navbar-tabs" v-if="activeTab.includes('about-us')  || activeTab.includes('buying-procedure')">
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/about-us">{{__('frontHeader.About Us')}}</a>
+      <a class="navbar-item is-tab " href="{{url(app()->getLocale())}}/buying-procedure">{{__('frontHeader.Buying Procedure')}}</a>
+    </div>
+  </div>
+</nav>
+
  </div>
 
 <!-- <script type="text/javascript" src="{{mix('js/app.js')}}"></script> 
